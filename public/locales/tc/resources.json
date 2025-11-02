@@ -1,0 +1,39 @@
+{
+  "pageTitle": "資源分享 | SustainSage Group",
+  "pageDescription": "這些是我們精選的工具和文章，希望能為您的反思之旅提供一些起點。",
+
+  "hero": {
+    "title": "探索您的工具箱",
+    "subtitle": "這些是我們精選的工具和文章，希望能為您的反思之旅提供一些起點。"
+  },
+
+  "filters": {
+    "all": "全部",
+    "career": "職涯反思",
+    "culture": "跨文化適應",
+    "growth": "自我成長"
+  },
+
+  "cards": {
+    "resource1": {
+      "type": "反思工具表",
+      "title": "釐清您的核心價值觀 (Worksheet)",
+      "action": "下載"
+    },
+    "resource2": {
+      "type": "推薦閱讀",
+      "title": "關於「冒牌者症候群」的三個思考",
+      "action": "閱讀"
+    },
+    "resource3": {
+      "type": "簡短音頻",
+      "title": "2分鐘冥想：找回當下",
+      "action": "播放"
+    },
+    "resource4": {
+      "type": "反思工具表",
+      "title": "跨文化適應檢核表",
+      "action": "下載"
+    }
+  }
+}

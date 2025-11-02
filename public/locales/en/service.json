@@ -1,0 +1,46 @@
+{
+  "pageTitle": "Our Service | SustainSage Group",
+  "pageDescription": "A coaching journey tailored to you. We partner with you to design an approach that respects your unique context and goals.",
+
+  "hero": {
+    "title": "A coaching journey tailored to you",
+    "subtitle": "Coaching is not 'one size fits all'. We partner with you to design an approach that respects your unique context and goals."
+  },
+
+  "howWeWork": {
+    "title": "How we partner together",
+    "step1": {
+      "title": "1. Discovery",
+      "desc": "A complimentary, no-pressure chat (30 mins) to see if we are the right fit."
+    },
+    "step2": {
+      "title": "2. Clarity",
+      "desc": "Co-creating your goals and defining what matters most to you right now."
+    },
+    "step3": {
+      "title": "3. Partnership",
+      "desc": "Ongoing sessions (typically 6-12) focused on your agenda, supporting your actions and insights."
+    }
+  },
+
+  "focusAreas": {
+    "title": "Areas we can explore",
+    "card1": {
+      "title": "Career Transitions",
+      "desc": "Exploring what's next, whether that's a new role, promotion, or returning to the workforce."
+    },
+    "card2": {
+      "title": "Navigating New Chapters",
+      "desc": "Helping new immigrants or graduates build confidence and a sense of belonging in a new environment."
+    },
+    "card3": {
+      "title": "Self-Awareness & Leadership",
+      "desc": "Deepening your understanding of your values and potential to lead with more authentic impact."
+    }
+  },
+
+  "cta": {
+    "title": "The first step is often a conversation.",
+    "button": "Enquire About a Conversation"
+  }
+}

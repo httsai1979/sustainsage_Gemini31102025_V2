@@ -1,0 +1,29 @@
+{
+  "pageTitle": "联系我们 | SustainSage Group",
+  "pageDescription": "让我们开启一段对话。我们很乐意听听您的故事。",
+
+  "hero": {
+    "title": "让我们开启一段对话",
+    "subtitle": "我们很乐意听听您的故事。所有讯息将被严格保密。"
+  },
+
+  "form": {
+    "name": "姓名",
+    "email": "电子邮件",
+    "interest": "我感兴趣的主题...",
+    "optionCareer": "职涯转型",
+    "optionGraduate": "社会新鲜人",
+    "optionImmigrant": "新移民",
+    "optionOther": "其他",
+    "message": "您在思考些什么？",
+    "submit": "传送讯息",
+    "feedbackSuccess": "感谢您的讯息，我们将尽快与您联系。",
+    "feedbackError": "发生错误，请稍后再试。"
+  },
+
+  "details": {
+    "title": "直接联系",
+    "location": "Southsea, England",
+    "availability": "我们主要提供全球在线服务，亦可预约于Southsea面谈。"
+  }
+}

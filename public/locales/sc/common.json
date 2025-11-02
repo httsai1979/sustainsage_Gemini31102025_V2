@@ -1,0 +1,110 @@
+{
+  "header": {
+    "navHome": "Home",
+    "navAbout": "About",
+    "navService": "Service",
+    "navResources": "Resources",
+    "navBlog": "Blog",
+    "navContact": "Contact"
+  },
+  "footer": {
+    "philosophy": "Clarity through conversation.",
+    "sitemapTitle": "网站地图",
+    "contactTitle": "联系资讯",
+    "copyright": "© 2025 SustainSage Group Ltd.",
+    "privacyPolicy": "隐私政策"
+  },
+  "home": {
+    "heroTitle": "准备好，探索您的下一步？",
+    "heroSubtitle": "在转变的十字路口，我们与您同行，发掘清晰的方向与内在的力量。",
+    "heroCta": "展开对话",
+    "forWhomTitle": "您是否正处于...",
+    "forWhomCard1": "职涯中途的省思？",
+    "forWhomCard2": "刚启程寻找方向？",
+    "forWhomCard3": "在新环境中重塑定位？",
+    "serviceIntroTitle": "教练 (Coaching)，是一段共同探索的旅程",
+    "serviceIntroCta": "了解我们的服务",
+    "foundersIntroTitle": "认识您的教练与顾问",
+    "foundersIntroCta": "我们的故事"
+  },
+  "about": {
+    "heroTitle": "我们的理念：以伙伴关系启发潜能",
+    "heroSubtitle": "我们相信，每个人都拥有自我导航所需的力量与智慧。SustainSage的存在，是为了提供一个专业且无評判的空间，让这份潜能得以被看见与实现。",
+    "teamTitle": "我们的团队",
+    "haoQuote": "“我的角色不是提供答案，而是提出有力的问题，协助您看见自己的资源。”",
+    "yiLingQuote": "“我们相信，深刻的转变来自于清晰的洞察与可持续的实践。”",
+    "commitmentTitle": "我们的教练准则",
+    "commitmentCard1": "绝对保密",
+    "commitmentCard2": "客户为中心",
+    "commitmentCard3": "非評判空间",
+    "commitmentCard4": "专业伙伴"
+  },
+  "service": {
+    "heroTitle": "为您量身打造的教练旅程",
+    "heroSubtitle": "教练服务并非“一体适用”。我们将根据您的独特情境与目标，共同设计最适合您的合作方式。",
+    "howWeWorkTitle": "我们的合作方式",
+    "howWeWorkStep1Title": "探索 (Discovery)",
+    "howWeWorkStep1Desc": "一场无压力的初步对话（免费，30分钟），让我们彼此了解，并探讨合作的可能性。",
+    "howWeWorkStep2Title": "厘清 (Clarity)",
+    "howWeWorkStep2Desc": "共同设定您期望的目标，厘清您现阶段最关注的议题。",
+    "howWeWorkStep3Title": "同行 (Partnership)",
+    "howWeWorkStep3Desc": "在固定的教练会谈中（通常为6-12次），我们专注于您的议程，支持您的行动与反思。",
+    "focusAreasTitle": "我们可以探索的领域",
+    "focusAreasCard1Front": "职涯转型",
+    "focusAreasCard1Back": "探索下一步的可能性，无论是转职、升迁或重返职场。",
+    "focusAreasCard2Front": "新阶段适应",
+    "focusAreasCard2Back": "协助新移民或社会新鲜人，在新环境中建立自信与归属感。",
+    "focusAreasCard3Front": "自我觉察与领导力",
+    "focusAreasCard3Back": "深入了解您的价值观与潜力，发挥更真实的影响力。",
+    "ctaTitle": "改变的第一步，从对话开始。",
+    "ctaButton": "预约初步咨询"
+  },
+  "resources": {
+    "heroTitle": "探索您的工具箱",
+    "heroSubtitle": "这是我们精选的工具和文章，希望能为您的反思之旅提供一些起点。",
+    "filterAll": "全部",
+    "filterCareer": "职涯反思",
+    "filterCrossCulture": "跨文化适应",
+    "filterGrowth": "自我成长",
+    "cardTypeWorksheet": "反思工具表 (Worksheets)",
+    "cardTypeReading": "推荐阅读 (Reading)",
+    "cardTypeAudio": "简短音频 (Audio)",
+    "exampleWorksheetTitle": "厘清您的核心价值观 (Worksheet)",
+    "exampleReadingTitle": "关于「冒牌者症候群」的三个思考",
+    "exampleAudioTitle": "2分钟冥想：找回当下",
+    "ctaDownload": "下载",
+    "ctaRead": "阅读",
+    "ctaPlay": "播放"
+  },
+  "blog": {
+    "heroTitle": "观点与洞察",
+    "heroSubtitle": "我们对教练、职涯与个人成长的反思。",
+    "examplePostTitle1": "转职，是“失去”还是“获得”？一个教练的观察",
+    "examplePostTitle2": "在英国找工作，履历之外的“潜台id”"
+  },
+  "contact": {
+    "heroTitle": "让我们开启一段对话",
+    "heroSubtitle": "我们很乐意听听您的故事。所有讯息将被严格保密。",
+    "formTitle": "联系表单",
+    "formName": "姓名",
+    "formEmail": "电子邮件",
+    "formTopic": "我感兴趣的主题",
+    "formTopicOption1": "Career Transition",
+    "formTopicOption2": "New Graduate",
+    "formTopicOption3": "New Immigrant",
+    "formTopicOption4": "Other",
+    "formMessage": "您的讯息",
+    "formPlaceholder": "您在思考些什么？",
+    "formSubmit": "传送讯息",
+    "directInfoTitle": "直接联系",
+    "directInfoNote": "我们主要提供全球线上服务，亦可预约于Southsea面谈。",
+    "form": {
+      "status": {
+        "submitting": "传送中...",
+        "success": "Thank you. We'll be in touch shortly.",
+        "error": "发生错误，请再试一次。",
+        "errorRequired": "请填写所有必填字段。"
+      }
+    }
+  }
+}

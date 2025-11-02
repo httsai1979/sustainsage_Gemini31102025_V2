@@ -1,0 +1,39 @@
+{
+  "pageTitle": "Resources | SustainSage Group",
+  "pageDescription": "A curated collection of tools and articles to support your reflection.",
+
+  "hero": {
+    "title": "Explore your toolkit",
+    "subtitle": "A curated collection of tools and articles to support your reflection."
+  },
+
+  "filters": {
+    "all": "All",
+    "career": "Career Reflection",
+    "culture": "Cross-cultural",
+    "growth": "Self-Growth"
+  },
+
+  "cards": {
+    "resource1": {
+      "type": "Worksheet",
+      "title": "Clarifying Your Core Values",
+      "action": "Download"
+    },
+    "resource2": {
+      "type": "Reading",
+      "title": "Three thoughts on \"Imposter Syndrome\"",
+      "action": "Read more"
+    },
+    "resource3": {
+      "type": "Audio",
+      "title": "2-Minute Grounding Exercise",
+      "action": "Play Audio"
+    },
+    "resource4": {
+      "type": "Worksheet",
+      "title": "Cultural Adjustment Check-in",
+      "action": "Download"
+    }
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "header": {
+    "navHome": "Home",
+    "navAbout": "About",
+    "navService": "Service",
+    "navResources": "Resources",
+    "navBlog": "Blog",
+    "navContact": "Contact"
+  },
+  "footer": {
+    "philosophy": "Clarity through conversation.",
+    "sitemapTitle": "Sitemap",
+    "contactTitle": "Contact Info",
+    "copyright": "© 2025 SustainSage Group Ltd.",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "home": {
+    "heroTitle": "Ready to explore what's next?",
+    "heroSubtitle": "At life's transitions, we partner with you to find clarity and confidence.",
+    "heroCta": "Begin the Conversation",
+    "forWhomTitle": "Do you find yourself...",
+    "forWhomCard1": "...reflecting on your mid-career path?",
+    "forWhomCard2": "...launching your professional journey?",
+    "forWhomCard3": "...navigating your life in a new place?",
+    "serviceIntroTitle": "Coaching: A journey of shared discovery.",
+    "serviceIntroCta": "Explore our approach",
+    "foundersIntroTitle": "Meet your coach and advisor",
+    "foundersIntroCta": "Our Story"
+  },
+  "about": {
+    "heroTitle": "Our Philosophy: Partnership in Potential",
+    "heroSubtitle": "We believe everyone holds the strength and wisdom for their own journey. SustainSage exists to provide a professional, non-judgemental space for that potential to be seen and realised.",
+    "teamTitle": "Our Team",
+    "haoQuote": "\"My role isn't to provide answers, but to ask the questions that help you find your own.\"",
+    "yiLingQuote": "\"We believe sustainable change is built on clear insights and consistent practice.\"",
+    "commitmentTitle": "Our Coaching Commitment",
+    "commitmentCard1": "Confidentiality",
+    "commitmentCard2": "Client-led",
+    "commitmentCard3": "Non-Judgemental",
+    "commitmentCard4": "Professional Partnership"
+  },
+  "service": {
+    "heroTitle": "A coaching journey tailored to you",
+    "heroSubtitle": "Coaching is not 'one size fits all'. We partner with you to design an approach that respects your unique context and goals.",
+    "howWeWorkTitle": "How we partner together",
+    "howWeWorkStep1Title": "Discovery",
+    "howWeWorkStep1Desc": "A complimentary, no-pressure chat (30 mins) to see if we are the right fit.",
+    "howWeWorkStep2Title": "Clarity",
+    "howWeWorkStep2Desc": "Co-creating your goals and defining what matters most to you right now.",
+    "howWeWorkStep3Title": "Partnership",
+    "howWeWorkStep3Desc": "Ongoing sessions (typically 6-12) focused on your agenda, supporting your actions and insights.",
+    "focusAreasTitle": "Areas we can explore",
+    "focusAreasCard1Front": "Career Transitions",
+    "focusAreasCard1Back": "Exploring the possibilities for your next step, whether it's a job change, promotion, or returning to the workforce.",
+    "focusAreasCard2Front": "Navigating New Chapters",
+    "focusAreasCard2Back": "Helping new immigrants or recent graduates build confidence and a sense of belonging in a new environment.",
+    "focusAreasCard3Front": "Self-Awareness & Leadership",
+    "focusAreasCard3Back": "Deeply understand your values and potential to exert a more authentic influence.",
+    "ctaTitle": "The first step is often a conversation.",
+    "ctaButton": "Enquire About a Conversation"
+  },
+  "resources": {
+    "heroTitle": "Explore your toolkit",
+    "heroSubtitle": "A curated collection of tools and articles to support your reflection.",
+    "filterAll": "All",
+    "filterCareer": "Career Reflection",
+    "filterCrossCulture": "Cross-cultural Adaptation",
+    "filterGrowth": "Self-Growth",
+    "cardTypeWorksheet": "Worksheets",
+    "cardTypeReading": "Reading",
+    "cardTypeAudio": "Audio",
+    "exampleWorksheetTitle": "Clarifying Your Core Values (Worksheet)",
+    "exampleReadingTitle": "Three thoughts on \"Imposter Syndrome\"",
+    "exampleAudioTitle": "2-Minute Grounding Exercise",
+    "ctaDownload": "Download",
+    "ctaRead": "Read",
+    "ctaPlay": "Play"
+  },
+  "blog": {
+    "heroTitle": "Perspectives & Insights",
+    "heroSubtitle": "Our reflections on coaching, careers, and personal growth.",
+    "examplePostTitle1": "Career Change: A 'Loss' or a 'Gain'? A Coach's Perspective",
+    "examplePostTitle2": "On the UK Job Hunt: Reading Between the Lines"
+  },
+  "contact": {
+    "heroTitle": "Let's begin the conversation",
+    "heroSubtitle": "We look forward to hearing your story. All enquiries are held in strict confidence.",
+    "formTitle": "Contact Form",
+    "formName": "Full Name",
+    "formEmail": "Email Address",
+    "formTopic": "I'm interested in...",
+    "formTopicOption1": "Career Transition",
+    "formTopicOption2": "New Graduate",
+    "formTopicOption3": "New Immigrant",
+    "formTopicOption4": "Other",
+    "formMessage": "Your Message",
+    "formPlaceholder": "What's on your mind?",
+    "formSubmit": "Send Message",
+    "directInfoTitle": "Direct Contact",
+    "directInfoNote": "We work with clients globally online, and in-person by appointment in Southsea.",
+    "form": {
+      "status": {
+        "submitting": "Sending...",
+        "success": "Thank you. We'll be in touch shortly.",
+        "error": "An error occurred. Please try again.",
+        "errorRequired": "Please fill in all required fields."
+      }
+    }
+  }
+}
