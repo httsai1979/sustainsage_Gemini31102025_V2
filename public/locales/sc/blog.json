@@ -3,8 +3,10 @@
   "pageDescription": "我们对教练、职涯与个人成长的反思。",
   "hero": {
     "title": "观点与洞察",
-    "subtitle": "我们对教练、职涯与个人成長的反思。"
+    "subtitle": "我们对教练、职涯与个人成长的反思。"
   },
+  "emptyState": "目前还没有文章。",
+  "errorMessage": "暂时无法载入文章。{{message}}",
   "post1": {
     "category": "职涯反思",
     "title": "转职，是“失去”还是“获得”？一个教练的观察",
