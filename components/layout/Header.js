@@ -30,16 +30,19 @@ export default function Header() {
 
   const navLinks = [
     { href: '/', labelKey: 'header.navHome' },
+    { href: '/about', labelKey: 'header.navAbout' },
+    { href: '/service', labelKey: 'header.navService' },
     { href: '/resources', labelKey: 'header.navResources' },
     { href: '/blog', labelKey: 'header.navBlog' },
     { href: '/contact', labelKey: 'header.navContact' },
   ];
 
   const isNavLinkActive = (href) => {
+    const currentPath = router.asPath.split('?')[0];
     if (href === '/') {
-      return router.pathname === '/';
+      return currentPath === '/';
     }
-    return router.pathname.startsWith(href);
+    return currentPath.startsWith(href);
   };
 
   const langButtons = [

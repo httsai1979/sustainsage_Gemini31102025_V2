@@ -3,6 +3,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import ContactForm from '../components/Sections/ContactForm';
+import nextI18NextConfig from '../next-i18next.config.js';
 
 export default function ContactPage() {
   const { t } = useTranslation('common');
@@ -33,7 +34,7 @@ export default function ContactPage() {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
     },
   };
 }

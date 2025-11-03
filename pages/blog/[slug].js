@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { fetchBlogPostBySlug } from '../../lib/contentful';
+import nextI18NextConfig from '../../next-i18next.config.js';
 
 export default function BlogPost({ post = null, error = null }) {
   if (error) {
@@ -92,7 +93,7 @@ export async function getStaticProps({ params, locale }) {
     return {
       props: {
         post,
-        ...(await serverSideTranslations(locale, ['common', 'blog'])),
+        ...(await serverSideTranslations(locale, ['common', 'blog'], nextI18NextConfig)),
       },
       revalidate: 60,
     };
@@ -101,7 +102,7 @@ export async function getStaticProps({ params, locale }) {
       props: {
         post: null,
         error: String(e),
-        ...(await serverSideTranslations(locale, ['common', 'blog'])),
+        ...(await serverSideTranslations(locale, ['common', 'blog'], nextI18NextConfig)),
       },
       revalidate: 30,
     };

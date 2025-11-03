@@ -2,6 +2,8 @@ import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import nextI18NextConfig from '../next-i18next.config.js';
+
 import HomeHero from '../components/Sections/HomeHero';
 import HomeForWhom from '../components/Sections/HomeForWhom';
 import HomeServiceIntro from '../components/Sections/HomeServiceIntro';
@@ -27,7 +29,7 @@ export default function HomePage() {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'home'])),
+      ...(await serverSideTranslations(locale, ['common', 'home'], nextI18NextConfig)),
     },
   };
 }
