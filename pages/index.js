@@ -1,41 +1,33 @@
-import MainLayout from '../components/layout/MainLayout';
-import { NextSeo } from 'next-seo';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import HomeHero from '../components/Sections/HomeHero';
-import HomeServiceIntro from '../components/Sections/HomeServiceIntro';
 import HomeForWhom from '../components/Sections/HomeForWhom';
+import HomeServiceIntro from '../components/Sections/HomeServiceIntro';
 import HomeFounderIntro from '../components/Sections/HomeFounderIntro';
-import ContactForm from '../components/Sections/ContactForm';
 
 export default function HomePage() {
   const { t } = useTranslation('home');
 
   return (
-    <MainLayout>
-      <NextSeo title={t('pageTitle')} description={t('pageDescription')} />
-
+    <>
+      <Head>
+        <title>{t('pageTitle')}</title>
+        <meta name="description" content={t('pageDescription')} />
+      </Head>
       <HomeHero />
-      <HomeServiceIntro />
       <HomeForWhom />
+      <HomeServiceIntro />
       <HomeFounderIntro />
-
-      <section className="section-padding bg-white">
-        <div className="content-container">
-          <ContactForm />
-        </div>
-      </section>
-    </MainLayout>
+    </>
   );
 }
 
 export async function getStaticProps({ locale }) {
-  const translations = await serverSideTranslations(locale, ['common', 'home']);
-
   return {
     props: {
-      ...translations,
+      ...(await serverSideTranslations(locale, ['common', 'home'])),
     },
   };
 }

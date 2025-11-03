@@ -1,34 +1,40 @@
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { NextSeo } from 'next-seo';
+import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import MainLayout from '../../components/layout/MainLayout';
+import BlogCard from '../../components/blog/BlogCard';
 import { fetchBlogPosts } from '../../lib/contentful';
 
-export default function BlogIndexPage({ posts = [], error = null }) {
+export default function BlogIndex({ posts = [], error = null }) {
   const { t } = useTranslation('blog');
-  const { locale } = useRouter();
 
   return (
-    <MainLayout>
-      <NextSeo title={t('pageTitle')} description={t('pageDescription')} />
+    <>
+      <Head>
+        <title>{t('pageTitle')}</title>
+        <meta name="description" content={t('pageDescription')} />
+      </Head>
 
-      <section className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {t('hero.title')}
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              {t('hero.subtitle')}
+      <section className="mx-auto max-w-6xl px-6 py-16">
+        <header className="mb-10 text-center md:text-left">
+          <h1 className="text-3xl font-semibold tracking-tight">
+            {t('hero.title')}
+          </h1>
+          <p className="mt-3 text-gray-600">{t('hero.subtitle')}</p>
+          {error && (
+            <p className="mt-3 rounded-lg bg-red-50 p-3 text-sm text-red-700">
+              Contentful error: {error}
             </p>
-            {error && (
-              <p className="mt-3 rounded-lg bg-red-50 p-3 text-sm text-red-700">
-                {t('errorMessage', { message: error })}
-              </p>
-            )}
+          )}
+        </header>
+
+        {posts.length === 0 ? (
+          <p className="text-gray-600">{t('empty', 'No posts yet.')}</p>
+        ) : (
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <BlogCard key={post.id} post={post} />
+            ))}
           </div>
 
           <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -88,32 +94,26 @@ export default function BlogIndexPage({ posts = [], error = null }) {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }
 
 export async function getStaticProps({ locale }) {
   try {
     const posts = await fetchBlogPosts();
-    const translations = await serverSideTranslations(locale, ['common', 'blog']);
-
     return {
       props: {
         posts,
-        ...translations,
+        ...(await serverSideTranslations(locale, ['common', 'blog'])),
       },
       revalidate: 60,
     };
   } catch (e) {
-    console.error('Failed to load blog posts:', e);
-    const translations = await serverSideTranslations(locale, ['common', 'blog']);
-    const errorMessage = e instanceof Error ? e.message : 'Unknown error';
-
     return {
       props: {
         posts: [],
-        error: errorMessage,
-        ...translations,
+        error: String(e),
+        ...(await serverSideTranslations(locale, ['common', 'blog'])),
       },
       revalidate: 30,
     };
