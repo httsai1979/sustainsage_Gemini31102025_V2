@@ -1,51 +1,32 @@
-// pages/blog/[slug].js
 import Link from 'next/link';
-import MainLayout from '../../components/layout/MainLayout';
-import { fetchBlogPostBySlug } from '../../lib/contentful';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export default function BlogPost({ post = null, error = null }) {
-  if (error) {
-    return (
-      <MainLayout>
-        <section className="mx-auto max-w-3xl px-6 py-16">
-          <p className="rounded-lg bg-red-50 p-3 text-sm text-red-700">Contentful error: {error}</p>
-          <p className="mt-4"><Link href="/blog" className="underline">Back to Blog</Link></p>
-        </section>
-      </MainLayout>
-    );
-  }
-  if (!post) {
-    return (
-      <MainLayout>
-        <section className="mx-auto max-w-3xl px-6 py-16">
-          <p className="text-gray-600">Post not found.</p>
-          <p className="mt-4"><Link href="/blog" className="underline">Back to Blog</Link></p>
-        </section>
-      </MainLayout>
-    );
-  }
-
-  const cover = post.cover || (post.featuredImage?.fields?.file?.url ? ('https:' + post.featuredImage.fields.file.url) : null);
+export default function BlogPostPlaceholder({ slug = '' }) {
+  const { t } = useTranslation('common');
 
   return (
-    <MainLayout>
-      <article className="mx-auto max-w-3xl px-6 py-16 prose prose-gray">
-        <p className="mb-4 text-sm text-gray-500">
-          <Link href="/blog" className="underline">← Back to Blog</Link>
+    <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-16">
+      <p className="mb-6 text-sm text-gray-500">
+        <Link href="/blog" className="underline">
+          {t('blog.backToIndex', '← Back to Blog')}
+        </Link>
+      </p>
+      <h1 className="text-3xl font-semibold text-gray-900">
+        {t('blog.placeholderTitle', 'Blog post coming soon')}
+      </h1>
+      <p className="mt-4 text-gray-700">
+        {t(
+          'blog.placeholderBody',
+          'We have not published this article yet. Please check back later for more insights.'
+        )}
+      </p>
+      {slug ? (
+        <p className="mt-6 text-sm text-gray-500">
+          {t('blog.requestedSlug', 'Requested slug')}: <span className="font-mono">{slug}</span>
         </p>
-        <h1>{post.title}</h1>
-        {post.publishedDate && <p className="text-sm text-gray-500">{new Date(post.publishedDate).toLocaleDateString()}</p>}
-        {cover && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={cover} alt={post.title} className="my-6 w-full rounded-lg" />
-        )}
-        {typeof post.content === 'string' ? (
-          <p>{post.content}</p>
-        ) : (
-          <p className="text-gray-600">This post has no plain-text body. Add a "content" (Text) field or extend the renderer.</p>
-        )}
-      </article>
-    </MainLayout>
+      ) : null}
+    </main>
   );
 }
 

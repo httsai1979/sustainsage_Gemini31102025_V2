@@ -74,13 +74,19 @@
     "exampleAudioTitle": "2-Minute Grounding Exercise",
     "ctaDownload": "Download",
     "ctaRead": "Read",
-    "ctaPlay": "Play"
+    "ctaPlay": "Play",
+    "placeholderBody": "We are preparing helpful materials for you. Please check back soon for worksheets, readings, and audio lessons.",
+    "backToHome": "\u2190 Back to Home"
   },
   "blog": {
     "heroTitle": "Perspectives & Insights",
     "heroSubtitle": "Our reflections on coaching, careers, and personal growth.",
     "examplePostTitle1": "Career Change: A 'Loss' or a 'Gain'? A Coach's Perspective",
-    "examplePostTitle2": "On the UK Job Hunt: Reading Between the Lines"
+    "examplePostTitle2": "On the UK Job Hunt: Reading Between the Lines",
+    "backToIndex": "\u2190 Back to Blog",
+    "placeholderTitle": "Blog post coming soon",
+    "placeholderBody": "We have not published this article yet. Please check back later for more insights.",
+    "requestedSlug": "Requested slug"
   },
   "contact": {
     "heroTitle": "Let's begin the conversation",
