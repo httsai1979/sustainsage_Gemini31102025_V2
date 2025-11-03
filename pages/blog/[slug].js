@@ -34,12 +34,14 @@ export async function getStaticPaths() {
   return { paths: [], fallback: 'blocking' };
 }
 
-export async function getStaticProps({ locale, params }) {
-  return {
-    props: {
-      slug: params?.slug ?? '',
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-    revalidate: 60,
-  };
+export async function getStaticProps({ params }) {
+  try {
+    const post = await fetchBlogPostBySlug(params?.slug);
+    if (!post) return { notFound: true };
+    return { props: { post }, revalidate: 60 };
+  } catch (e) {
+    console.error('Failed to load blog post:', e);
+    const errorMessage = e instanceof Error ? e.message : 'Unknown error';
+    return { props: { post: null, error: errorMessage }, revalidate: 30 };
+  }
 }

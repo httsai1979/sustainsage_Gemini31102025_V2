@@ -1,38 +1,41 @@
-import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
+import MainLayout from '../components/layout/MainLayout';
+import { NextSeo } from 'next-seo';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+import HomeHero from '../components/Sections/HomeHero';
+import HomeServiceIntro from '../components/Sections/HomeServiceIntro';
+import HomeForWhom from '../components/Sections/HomeForWhom';
+import HomeFounderIntro from '../components/Sections/HomeFounderIntro';
+import ContactForm from '../components/Sections/ContactForm';
 
 export default function HomePage() {
   const { t } = useTranslation('home');
 
   return (
-    <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-16">
-      <h1 className="text-4xl font-bold tracking-tight text-gray-900">
-        {t('hero.title')}
-      </h1>
-      <p className="mt-4 text-lg text-gray-700">
-        {t('hero.subtitle')}
-      </p>
+    <MainLayout>
+      <NextSeo title={t('pageTitle')} description={t('pageDescription')} />
 
-      <nav className="mt-10 flex flex-wrap gap-4">
-        <Link href="/service" className="text-blue-600 hover:underline">
-          {t('links.service', 'Our Services')}
-        </Link>
-        <Link href="/resources" className="text-blue-600 hover:underline">
-          {t('links.resources', 'Resources')}
-        </Link>
-        <Link href="/contact" className="text-blue-600 hover:underline">
-          {t('links.contact', 'Contact')}
-        </Link>
-      </nav>
-    </main>
+      <HomeHero />
+      <HomeServiceIntro />
+      <HomeForWhom />
+      <HomeFounderIntro />
+
+      <section className="section-padding bg-white">
+        <div className="content-container">
+          <ContactForm />
+        </div>
+      </section>
+    </MainLayout>
   );
 }
 
 export async function getStaticProps({ locale }) {
+  const translations = await serverSideTranslations(locale, ['common', 'home']);
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'home'])),
+      ...translations,
     },
   };
 }
