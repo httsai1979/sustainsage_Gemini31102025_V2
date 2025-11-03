@@ -59,6 +59,8 @@ export async function getStaticProps({ params }) {
     if (!post) return { notFound: true };
     return { props: { post }, revalidate: 60 };
   } catch (e) {
-    return { props: { post: null, error: String(e) }, revalidate: 30 };
+    console.error('Failed to load blog post:', e);
+    const errorMessage = e instanceof Error ? e.message : 'Unknown error';
+    return { props: { post: null, error: errorMessage }, revalidate: 30 };
   }
 }
