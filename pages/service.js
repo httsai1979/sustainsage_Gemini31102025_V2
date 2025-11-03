@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 // 引入 UI 元件
 import Reveal from '../components/ui/Reveal';
 import FlipCard from '../components/ui/FlipCard'; // **使用我們剛建立的元件**
+import nextI18NextConfig from '../next-i18next.config.js';
 
 /**
  * 服務內容 (Service)
@@ -191,10 +192,14 @@ export default function Service() {
 export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, [
-        'common', // 用於 Header/Footer
-        'service',// 用於此頁面內容
-      ])),
+      ...(await serverSideTranslations(
+        locale,
+        [
+          'common', // 用於 Header/Footer
+          'service', // 用於此頁面內容
+        ],
+        nextI18NextConfig,
+      )),
     },
   };
 }

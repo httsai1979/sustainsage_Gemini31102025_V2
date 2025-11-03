@@ -33,27 +33,27 @@ export default function Footer() {
               </span>
             </Link>
             <p className="caption mt-4">
-              <span>{t('footer.tagline')}</span>
+              <span>{t('footer.philosophy')}</span>
             </p>
           </div>
 
           {/* Col 2: 網站地圖 */}
           <div>
             <h4 className="font-semibold text-text-primary mb-4">
-              <span>{t('footer.sitemap')}</span>
+              <span>{t('footer.sitemapTitle')}</span>
             </h4>
             <ul className="space-y-2 caption">
-              <li><Link href="/" className="hover:text-link"><span>{t('header.home')}</span></Link></li>
-              <li><Link href="/resources" className="hover:text-link"><span>{t('header.resources')}</span></Link></li>
-              <li><Link href="/blog" className="hover:text-link"><span>{t('header.blog')}</span></Link></li>
-              <li><Link href="/contact" className="hover:text-link"><span>{t('header.contact')}</span></Link></li>
+              <li><Link href="/" className="hover:text-link"><span>{t('header.navHome')}</span></Link></li>
+              <li><Link href="/resources" className="hover:text-link"><span>{t('header.navResources')}</span></Link></li>
+              <li><Link href="/blog" className="hover:text-link"><span>{t('header.navBlog')}</span></Link></li>
+              <li><Link href="/contact" className="hover:text-link"><span>{t('header.navContact')}</span></Link></li>
             </ul>
           </div>
 
           {/* Col 3: 聯繫資訊 */}
           <div>
             <h4 className="font-semibold text-text-primary mb-4">
-              <span>{t('footer.contactInfo')}</span>
+              <span>{t('footer.contactTitle')}</span>
             </h4>
             <ul className="space-y-2 caption">
               <li><a href="mailto:hc.tsai@sustainsage-group.com" className="hover:text-link">hc.tsai@sustainsage-group.com</a></li>

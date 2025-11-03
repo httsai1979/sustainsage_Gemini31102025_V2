@@ -3,7 +3,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
-// [ ! ] 確保這裡的路徑是正確的，並且套件已在 Step 1 安裝
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
 /**
@@ -17,7 +16,7 @@ export default function Header() {
   const { locale } = router;
 
   const handleLangChange = (newLocale) => {
-    router.push(router.pathname, router.asPath, { locale: newLocale });
+    router.push(router.asPath, undefined, { locale: newLocale });
   };
 
   // 監聽滾動事件
@@ -30,11 +29,21 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { href: '/', labelKey: 'header.home' },
-    { href: '/resources', labelKey: 'header.resources' },
-    { href: '/blog', labelKey: 'header.blog' },
-    { href: '/contact', labelKey: 'header.contact' },
+    { href: '/', labelKey: 'header.navHome' },
+    { href: '/about', labelKey: 'header.navAbout' },
+    { href: '/service', labelKey: 'header.navService' },
+    { href: '/resources', labelKey: 'header.navResources' },
+    { href: '/blog', labelKey: 'header.navBlog' },
+    { href: '/contact', labelKey: 'header.navContact' },
   ];
+
+  const isNavLinkActive = (href) => {
+    const currentPath = router.asPath.split('?')[0];
+    if (href === '/') {
+      return currentPath === '/';
+    }
+    return currentPath.startsWith(href);
+  };
 
   const langButtons = [
     { code: 'en', label: 'EN' },
@@ -76,7 +85,7 @@ export default function Header() {
               href={link.href}
               className={`
                 text-base font-medium transition-colors
-                ${router.pathname === link.href 
+                ${isNavLinkActive(link.href)
                   ? 'font-bold text-primary' 
                   : 'text-text-secondary hover:text-primary-dark'
                 }
@@ -138,9 +147,9 @@ export default function Header() {
               <Link 
                 key={link.href} 
                 href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)} // 點擊連結時自動關閉選單
+                onClick={() => setIsMobileMenuOpen(false)}
                 className={`
-                  ${router.pathname === link.href 
+                  ${isNavLinkActive(link.href)
                     ? 'font-bold text-primary' 
                     : 'text-text-primary hover:text-primary-dark'
                   }
