@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -57,10 +58,16 @@ export default function ResourcesPage({ allResources = [] }) {
   };
 
   return (
-    <>
+    <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-16">
       <Head>
-        <title>{t('resources.heroTitle')}</title>
-        <meta name="description" content={t('resources.heroSubtitle')} />
+        <title>{t('resources.heroTitle', 'Resources')}</title>
+        <meta
+          name="description"
+          content={t(
+            'resources.heroSubtitle',
+            'Explore guides, worksheets, and curated links to support your journey.'
+          )}
+        />
       </Head>
 
       <div className="bg-white py-16 sm:py-24">
@@ -125,8 +132,7 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      allResources,
-      ...translations,
+      ...(await serverSideTranslations(locale, ['common'])),
     },
     revalidate: 60,
   };

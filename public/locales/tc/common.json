@@ -75,13 +75,19 @@
     "exampleAudioTitle": "2分鐘冥想：找回當下",
     "ctaDownload": "下載",
     "ctaRead": "閱讀",
-    "ctaPlay": "播放"
+    "ctaPlay": "播放",
+    "placeholderBody": "我們正在準備更多資源。請稍後再回來查看新的工具表、文章與音頻內容。",
+    "backToHome": "\u2190 返回首頁"
   },
   "blog": {
     "heroTitle": "觀點與洞察",
     "heroSubtitle": "我們對教練、職涯與個人成長的反思。",
     "examplePostTitle1": "轉職，是「失去」還是「獲得」？一個教練的觀察",
-    "examplePostTitle2": "在英國找工作，履歷之外的「潛台詞」"
+    "examplePostTitle2": "在英國找工作，履歷之外的「潛台詞」",
+    "backToIndex": "\u2190 返回部落格",
+    "placeholderTitle": "文章即將推出",
+    "placeholderBody": "我們尚未發布這篇文章，歡迎稍後再回來看看最新內容。",
+    "requestedSlug": "要求的網址代稱"
   },
   "contact": {
     "heroTitle": "讓我們開啟一段對話",
