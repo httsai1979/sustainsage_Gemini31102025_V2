@@ -5,7 +5,9 @@
     "navService": "Service",
     "navResources": "Resources",
     "navBlog": "Blog",
-    "navContact": "Contact"
+    "navContact": "Contact",
+    "openMenu": "Open navigation",
+    "closeMenu": "Close navigation"
   },
   "footer": {
     "philosophy": "Clarity through conversation.",
@@ -69,6 +71,7 @@
     "cardTypeWorksheet": "Worksheets",
     "cardTypeReading": "Reading",
     "cardTypeAudio": "Audio",
+    "emptyState": "No resources found for this category.",
     "exampleWorksheetTitle": "Clarifying Your Core Values (Worksheet)",
     "exampleReadingTitle": "Three thoughts on \"Imposter Syndrome\"",
     "exampleAudioTitle": "2-Minute Grounding Exercise",

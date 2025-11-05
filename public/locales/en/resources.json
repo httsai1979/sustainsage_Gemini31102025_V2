@@ -1,39 +1,49 @@
 {
   "pageTitle": "Resources | SustainSage Group",
   "pageDescription": "A curated collection of tools and articles to support your reflection.",
-
   "hero": {
     "title": "Explore your toolkit",
     "subtitle": "A curated collection of tools and articles to support your reflection."
   },
-
   "filters": {
     "all": "All",
     "career": "Career Reflection",
     "culture": "Cross-cultural",
     "growth": "Self-Growth"
   },
-
-  "cards": {
-    "resource1": {
-      "type": "Worksheet",
+  "types": {
+    "worksheet": "Worksheet",
+    "reading": "Article",
+    "audio": "Audio Practice"
+  },
+  "actions": {
+    "default": "View resource",
+    "worksheet": "Download worksheet",
+    "reading": "Read article",
+    "audio": "Play recording"
+  },
+  "items": {
+    "valuesWorksheet": {
       "title": "Clarifying Your Core Values",
-      "action": "Download"
+      "summary": "A guided worksheet to capture the values that anchor your career and life decisions.",
+      "cta": "Request this worksheet"
     },
-    "resource2": {
-      "type": "Reading",
-      "title": "Three thoughts on \"Imposter Syndrome\"",
-      "action": "Read more"
+    "groundingAudio": {
+      "title": "Two-minute Grounding Practice",
+      "summary": "Reset your focus with a short breathing practice recorded by our coaching team.",
+      "cta": "Listen now"
     },
-    "resource3": {
-      "type": "Audio",
-      "title": "2-Minute Grounding Exercise",
-      "action": "Play Audio"
+    "imposterReading": {
+      "title": "Three Perspectives on Imposter Feelings",
+      "summary": "Coaching questions to help you respond when the inner critic gets loud during a transition.",
+      "cta": "Read the reflection"
     },
-    "resource4": {
-      "type": "Worksheet",
-      "title": "Cultural Adjustment Check-in",
-      "action": "Download"
+    "cultureChecklist": {
+      "title": "Cross-cultural Adjustment Check-in",
+      "summary": "A light-touch checklist to notice wins and challenges in a new environment.",
+      "cta": "Request this checklist"
     }
-  }
+  },
+  "emptyState": "No resources found for this category.",
+  "contactPrompt": "Looking for something else? Contact us and we'll point you to a tailored resource."
 }

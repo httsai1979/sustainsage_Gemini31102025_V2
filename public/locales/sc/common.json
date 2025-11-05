@@ -5,7 +5,9 @@
     "navService": "Service",
     "navResources": "Resources",
     "navBlog": "Blog",
-    "navContact": "Contact"
+    "navContact": "Contact",
+    "openMenu": "打开导航",
+    "closeMenu": "关闭导航"
   },
   "footer": {
     "philosophy": "Clarity through conversation.",
@@ -69,6 +71,7 @@
     "cardTypeWorksheet": "反思工具表 (Worksheets)",
     "cardTypeReading": "推荐阅读 (Reading)",
     "cardTypeAudio": "简短音频 (Audio)",
+    "emptyState": "此分类暂时没有相关资源。",
     "exampleWorksheetTitle": "厘清您的核心价值观 (Worksheet)",
     "exampleReadingTitle": "关于「冒牌者症候群」的三个思考",
     "exampleAudioTitle": "2分钟冥想：找回当下",
@@ -80,7 +83,7 @@
     "heroTitle": "观点与洞察",
     "heroSubtitle": "我们对教练、职涯与个人成长的反思。",
     "examplePostTitle1": "转职，是“失去”还是“获得”？一个教练的观察",
-    "examplePostTitle2": "在英国找工作，履历之外的“潜台id”"
+    "examplePostTitle2": "在英国找工作，履历之外的“潜台词”"
   },
   "contact": {
     "heroTitle": "让我们开启一段对话",
