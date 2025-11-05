@@ -37,7 +37,7 @@ export default function BlogIndex({ posts = [], error = null }) {
               <BlogCard key={post.id} post={post} />
             ))}
           </div>
-        )}
+        </div>
       </section>
     </>
   );

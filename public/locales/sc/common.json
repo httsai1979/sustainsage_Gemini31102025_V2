@@ -77,7 +77,9 @@
     "exampleAudioTitle": "2分钟冥想：找回当下",
     "ctaDownload": "下载",
     "ctaRead": "阅读",
-    "ctaPlay": "播放"
+    "ctaPlay": "播放",
+    "placeholderBody": "我们正在准备更多资源。请稍后再回来查看新的工具表、文章与音频内容。",
+    "backToHome": "\u2190 返回首页"
   },
   "blog": {
     "heroTitle": "观点与洞察",

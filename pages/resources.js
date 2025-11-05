@@ -177,7 +177,7 @@ export default function ResourcesPage({ allResources = [] }) {
   );
 
   return (
-    <>
+    <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-16">
       <Head>
         <title>{t('pageTitle')}</title>
         <meta name="description" content={t('pageDescription')} />
@@ -234,8 +234,7 @@ export async function getStaticProps({ locale }) {
 
   return {
     props: {
-      allResources,
-      ...translations,
+      ...(await serverSideTranslations(locale, ['common'])),
     },
     revalidate: 60,
   };
