@@ -1,40 +1,53 @@
-import Head from 'next/head';
-import { useTranslation } from 'next-i18next';
+import Hero from '@/components/layout/Hero';
+import ICFNotice from '@/components/legal/ICFNotice';
+import MainLayout from '@/components/layout/MainLayout';
+import ContactForm from '@/components/Sections/ContactForm';
+import { SITE_URL } from '@/lib/seo';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
-import ContactForm from '../components/Sections/ContactForm';
 import nextI18NextConfig from '../next-i18next.config.js';
 
-export default function ContactPage() {
-  const { t } = useTranslation('common');
+function ContactPage() {
+  const { t } = useTranslation('contact');
 
   return (
     <>
-      <Head>
-        <title>{t('contact.heroTitle')}</title>
-        <meta name="description" content={t('contact.heroSubtitle')} />
-      </Head>
-
-      <section className="bg-white py-16">
-        <div className="content-container text-center max-w-3xl mx-auto">
-          <h1 className="text-3xl font-semibold tracking-tight text-gray-900">
-            {t('contact.heroTitle')}
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">{t('contact.heroSubtitle')}</p>
-        </div>
-      </section>
-
-      <div className="py-12">
+      <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} align="left" />
+      <div className="pb-12">
         <ContactForm />
+      </div>
+      <div className="px-6 pb-16">
+        <ICFNotice className="mx-auto max-w-4xl" />
       </div>
     </>
   );
 }
 
-export async function getStaticProps({ locale }) {
+ContactPage.getLayout = function getLayout(page) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    url: `${SITE_URL}/contact`,
+    about: {
+      '@type': 'Organization',
+      name: 'SustainSage Group Ltd.',
+    },
+  };
+
+  return (
+    <MainLayout title="Contact | SustainSage" desc="Get in touch—consent-led and clear." jsonLd={jsonLd}>
+      {page}
+    </MainLayout>
+  );
+};
+
+export async function getStaticProps({ locale = 'en' }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common', 'contact'], nextI18NextConfig)),
     },
   };
 }
+
+export default ContactPage;

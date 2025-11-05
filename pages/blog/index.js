@@ -1,14 +1,16 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-
+import Hero from '@/components/layout/Hero';
+import ICFNotice from '@/components/legal/ICFNotice';
+import MainLayout from '@/components/layout/MainLayout';
+import { Reveal } from '@/components/ui/Motion';
 import BlogCard from '@/components/blog/BlogCard';
 import { fetchBlogPosts } from '@/lib/contentful';
-import nextI18NextConfig from '@/next-i18next.config.js';
 import { getFallbackPostsFromTranslations } from '@/lib/blogFallback';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
-export default function BlogIndex({ posts = [], error = null }) {
+import nextI18NextConfig from '@/next-i18next.config.js';
+
+function BlogIndex({ posts = [], error = null }) {
   const { t } = useTranslation('blog');
   const fallbackPosts = getFallbackPostsFromTranslations(t);
   const hasCmsPosts = Array.isArray(posts) && posts.length > 0;
@@ -28,51 +30,58 @@ export default function BlogIndex({ posts = [], error = null }) {
 
   return (
     <>
-      <Head>
-        <title>{t('pageTitle')}</title>
-        <meta name="description" content={t('pageDescription')} />
-      </Head>
+      <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} align="left" />
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <header className="mb-12 text-center md:text-left">
-          <h1 className="text-3xl font-semibold tracking-tight text-gray-900">
-            {t('hero.title')}
-          </h1>
-          <p className="mt-3 text-lg text-gray-600">{t('hero.subtitle')}</p>
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-6">
           {error && (
-            <p className="mt-4 rounded-lg bg-red-50 p-3 text-sm text-red-700">
-              Contentful error: {error}
+            <p className="mb-6 rounded-2xl border border-red-100 bg-red-50 p-4 text-sm text-red-700">
+              {t('error', { defaultValue: 'We could not load the latest posts just now. Showing our curated stories instead.' })}
+              <span className="block text-xs text-red-500">{error}</span>
             </p>
           )}
-        </header>
 
-        {visiblePosts.length === 0 ? (
-          <p className="text-gray-600">{t('emptyState')}</p>
-        ) : (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {visiblePosts.map((post) => (
-              <BlogCard key={post.slug || post.id} post={post} />
-            ))}
-          </div>
-        )}
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('listTitle')}
+            </h2>
+          </Reveal>
 
-        {!hasCmsPosts && fallbackPosts.length > 0 && (
-          <p className="mt-12 text-center text-sm text-gray-500">
-            {t('fallbackNotice', 'These articles are shared directly by our team while the CMS content is loading.')}
-          </p>
-        )}
+          {visiblePosts.length === 0 ? (
+            <p className="mt-6 text-sm text-slate-600">{t('emptyState')}</p>
+          ) : (
+            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {visiblePosts.map((post) => (
+                <BlogCard key={post.slug || post.id} post={post} />
+              ))}
+            </div>
+          )}
 
-        <div className="mt-16 text-center">
-          <Link href="/contact" className="text-sm font-semibold text-primary hover:text-primary-dark">
-            {t('contactCta', 'Looking for a specific topic? Reach out to us →')}
-          </Link>
+          {!hasCmsPosts && fallbackPosts.length > 0 && (
+            <p className="mt-12 text-sm text-slate-500">{t('fallbackNotice')}</p>
+          )}
         </div>
       </section>
+
+      <div className="px-6 pb-16">
+        <ICFNotice className="mx-auto max-w-4xl" />
+      </div>
     </>
   );
 }
 
-export async function getStaticProps({ locale }) {
+BlogIndex.getLayout = function getLayout(page) {
+  return (
+    <MainLayout
+      title="Blog | SustainSage"
+      desc="Short, reflective reads with prompts grounded in coaching ethics."
+    >
+      {page}
+    </MainLayout>
+  );
+};
+
+export async function getStaticProps({ locale = 'en' }) {
   try {
     const posts = await fetchBlogPosts();
 
@@ -94,3 +103,5 @@ export async function getStaticProps({ locale }) {
     };
   }
 }
+
+export default BlogIndex;

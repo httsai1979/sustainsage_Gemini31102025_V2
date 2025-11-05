@@ -1,251 +1,136 @@
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
-import { DocumentArrowDownIcon, BookOpenIcon, PlayCircleIcon } from '@heroicons/react/24/outline';
-import { useTranslation } from 'next-i18next';
+
+import Hero from '@/components/layout/Hero';
+import ICFNotice from '@/components/legal/ICFNotice';
+import MainLayout from '@/components/layout/MainLayout';
+import { HoverLift, Reveal } from '@/components/ui/Motion';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
-import { fetchResourceItems } from '@/lib/contentful';
-import nextI18NextConfig from '@/next-i18next.config.js';
-
-const FILTER_ORDER = ['all', 'career', 'culture', 'growth'];
+import nextI18NextConfig from '../next-i18next.config.js';
 
 const FALLBACK_RESOURCES = [
   {
-    id: 'values-worksheet',
-    translationKey: 'items.valuesWorksheet',
-    type: 'worksheet',
-    category: 'career',
+    id: 'self-talk-reframe',
     image: '/images/resources/values-worksheet.svg',
-    href: '/contact?topic=values-worksheet',
+    translationKey: 'items.selfTalk',
+    href: '/contact?topic=self-talk-reframe',
   },
   {
-    id: 'grounding-audio',
-    translationKey: 'items.groundingAudio',
-    type: 'audio',
-    category: 'growth',
-    image: '/images/resources/grounding-audio.svg',
-    href: '/contact?topic=grounding-audio',
-  },
-  {
-    id: 'imposter-reading',
-    translationKey: 'items.imposterReading',
-    type: 'reading',
-    category: 'career',
-    image: '/images/resources/imposter-reading.svg',
-    href: '/blog/career-change-coaching-perspective',
-  },
-  {
-    id: 'culture-checklist',
-    translationKey: 'items.cultureChecklist',
-    type: 'worksheet',
-    category: 'culture',
+    id: 'experiment-ladder',
     image: '/images/resources/culture-checklist.svg',
-    href: '/contact?topic=culture-checklist',
+    translationKey: 'items.experimentLadder',
+    href: '/contact?topic=experiment-ladder',
+  },
+  {
+    id: 'values-map',
+    image: '/images/resources/values-worksheet.svg',
+    translationKey: 'items.valuesMap',
+    href: '/contact?topic=values-map',
+  },
+  {
+    id: 'emotion-triangle',
+    image: '/images/resources/grounding-audio.svg',
+    translationKey: 'items.emotionTriangle',
+    href: '/contact?topic=emotion-triangle',
+  },
+  {
+    id: 'thought-log',
+    image: '/images/resources/imposter-reading.svg',
+    translationKey: 'items.thoughtLog',
+    href: '/contact?topic=thought-log',
+  },
+  {
+    id: 'beliefs-explorer',
+    image: '/images/resources/culture-checklist.svg',
+    translationKey: 'items.beliefsExplorer',
+    href: '/contact?topic=beliefs-explorer',
   },
 ];
 
-const TYPE_ICON = {
-  worksheet: DocumentArrowDownIcon,
-  reading: BookOpenIcon,
-  audio: PlayCircleIcon,
-};
-
-const TYPE_FALLBACK_IMAGE = {
-  worksheet: '/images/resources/values-worksheet.svg',
-  reading: '/images/resources/imposter-reading.svg',
-  audio: '/images/resources/grounding-audio.svg',
-};
-
-const normalizeCategory = (value) => (value ? value.toLowerCase() : 'career');
-const normalizeType = (value) => (value ? value.toLowerCase() : 'worksheet');
-
-const buildHref = (item) => {
-  if (item.externalUrl) {
-    return item.externalUrl;
-  }
-  const fileUrl = item.file?.fields?.file?.url;
-  if (fileUrl) {
-    return fileUrl.startsWith('http') ? fileUrl : `https:${fileUrl}`;
-  }
-  return item.href || null;
-};
-
-function ResourceCard({ resource, typeLabel }) {
-  const Icon = TYPE_ICON[resource.type] || DocumentArrowDownIcon;
-  const href = resource.href || '/contact';
-  const isExternal = href.startsWith('http');
-  const imageSrc = resource.image || TYPE_FALLBACK_IMAGE[resource.type] || TYPE_FALLBACK_IMAGE.worksheet;
-  const ctaLabel = resource.ctaLabel || resource.typeLabel || 'View resource';
-
-  const content = (
-    <>
-      <div className="relative overflow-hidden rounded-2xl bg-emerald-50">
-        <Image
-          src={imageSrc}
-          alt={resource.title}
-          width={480}
-          height={320}
-          className="h-48 w-full object-cover"
-        />
-      </div>
-      <div className="mt-6 flex-1 space-y-3">
-        <div className="flex items-center space-x-2 text-sm font-semibold uppercase tracking-wide text-primary">
-          <Icon className="h-5 w-5" aria-hidden="true" />
-          <span>{typeLabel}</span>
-        </div>
-        <h3 className="text-xl font-semibold text-gray-900">{resource.title}</h3>
-        {resource.summary && <p className="text-sm leading-6 text-gray-600">{resource.summary}</p>}
-      </div>
-    </>
-  );
-
+function ResourceCard({ resource }) {
   return (
-    <article className="flex h-full flex-col justify-between rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-200 transition hover:-translate-y-1 hover:shadow-lg">
-      {content}
-      <div className="mt-6">
-        {isExternal ? (
-          <a
-            href={href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-          >
-            {ctaLabel}
-          </a>
-        ) : (
+    <HoverLift className="h-full">
+      <article className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+        <div>
+          <div className="relative overflow-hidden rounded-2xl bg-emerald-50">
+            <Image
+              src={resource.image}
+              alt={resource.title}
+              width={400}
+              height={280}
+              className="h-44 w-full object-cover"
+            />
+          </div>
+          <h3 className="mt-5 text-lg font-semibold text-slate-900">{resource.title}</h3>
+          <p className="mt-3 text-sm leading-6 text-slate-600">{resource.summary}</p>
+          <p className="mt-3 text-xs uppercase tracking-wide text-emerald-700">{resource.formatLabel}</p>
+        </div>
+        <div className="mt-6">
           <Link
-            href={href}
-            className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            href={resource.href}
+            className="inline-flex items-center justify-center rounded-xl border border-emerald-200 px-4 py-2 text-sm font-semibold text-emerald-700 transition hover:border-emerald-300 hover:text-emerald-800"
           >
-            {ctaLabel}
+            {resource.cta}
           </Link>
-        )}
-      </div>
-    </article>
+        </div>
+      </article>
+    </HoverLift>
   );
 }
 
-export default function ResourcesPage({ allResources = [] }) {
+function ResourcesPage() {
   const { t } = useTranslation('resources');
-  const [activeFilter, setActiveFilter] = useState('all');
-
-  const preparedResources = useMemo(() => {
-    if (Array.isArray(allResources) && allResources.length > 0) {
-      return allResources
-        .map((item) => {
-          if (!item) return null;
-          const type = normalizeType(item.type);
-          const category = normalizeCategory(item.category);
-          const href = buildHref(item);
-
-          return {
-            id: item.id,
-            title: item.title,
-            summary: item.summary || '',
-            type,
-            category,
-            image: item.image || TYPE_FALLBACK_IMAGE[type] || null,
-            href,
-            ctaLabel:
-              item.ctaText ||
-              t(`actions.${type}`, {
-                defaultValue: t('actions.default', 'View resource'),
-              }),
-          };
-        })
-        .filter(Boolean);
-    }
-
-    return FALLBACK_RESOURCES.map((resource) => {
-      const type = normalizeType(resource.type);
-      return {
-        id: resource.id,
-        title: t(`${resource.translationKey}.title`),
-        summary: t(`${resource.translationKey}.summary`),
-        type,
-        category: resource.category,
-        image: resource.image || TYPE_FALLBACK_IMAGE[type],
-        href: resource.href,
-        ctaLabel: t(`${resource.translationKey}.cta`),
-      };
-    });
-  }, [allResources, t]);
-
-  const filters = FILTER_ORDER.map((filterId) => ({
-    id: filterId,
-    label: t(`filters.${filterId}`),
+  const resources = FALLBACK_RESOURCES.map((item) => ({
+    ...item,
+    title: t(`${item.translationKey}.title`),
+    summary: t(`${item.translationKey}.summary`),
+    formatLabel: t(`${item.translationKey}.format`),
+    cta: t(`${item.translationKey}.cta`),
   }));
 
-  const visibleResources = preparedResources.filter((resource) =>
-    activeFilter === 'all' ? true : resource.category === activeFilter,
-  );
-
   return (
-    <main className="mx-auto flex min-h-screen max-w-3xl flex-col justify-center px-6 py-16">
-      <Head>
-        <title>{t('pageTitle')}</title>
-        <meta name="description" content={t('pageDescription')} />
-      </Head>
+    <>
+      <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} align="left" />
 
-      <section className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {t('hero.title')}
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">{t('hero.subtitle')}</p>
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('curatedTitle')}
+            </h2>
+          </Reveal>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {resources.map((resource) => (
+              <ResourceCard key={resource.id} resource={resource} />
+            ))}
           </div>
-
-          <div className="mt-16 flex flex-wrap justify-center gap-3">
-            {filters.map((filter) => {
-              const isActive = activeFilter === filter.id;
-              return (
-                <button
-                  key={filter.id}
-                  type="button"
-                  onClick={() => setActiveFilter(filter.id)}
-                  className={[
-                    'rounded-full px-4 py-2 text-sm font-medium transition-colors',
-                    isActive ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
-                  ].join(' ')}
-                >
-                  {filter.label}
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {visibleResources.length === 0 ? (
-              <p className="col-span-3 text-center text-gray-600">{t('emptyState')}</p>
-            ) : (
-              visibleResources.map((resource) => (
-                <ResourceCard
-                  key={resource.id}
-                  resource={resource}
-                  typeLabel={t(`types.${resource.type}`, { defaultValue: resource.type })}
-                />
-              ))
-            )}
-          </div>
-
-          <p className="mt-16 text-center text-sm text-gray-500">{t('contactPrompt')}</p>
+          <p className="mt-10 text-sm text-slate-600">{t('usageNote')}</p>
         </div>
       </section>
+
+      <div className="px-6">
+        <ICFNotice className="mx-auto max-w-4xl" />
+      </div>
     </>
   );
 }
 
-export async function getStaticProps({ locale }) {
-  const allResources = await fetchResourceItems();
-  const translations = await serverSideTranslations(locale, ['common', 'resources'], nextI18NextConfig);
+ResourcesPage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout title="Resources | SustainSage" desc="Self-reflection tools you can use at your pace.">
+      {page}
+    </MainLayout>
+  );
+};
 
+export async function getStaticProps({ locale = 'en' }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common', 'resources'], nextI18NextConfig)),
     },
-    revalidate: 60,
   };
 }
+
+export default ResourcesPage;

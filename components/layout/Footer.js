@@ -4,56 +4,65 @@ import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
   const { t } = useTranslation('common');
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="mt-20 border-t border-gray-200 bg-white">
+    <footer className="mt-20 border-t border-slate-200 bg-white">
       <div className="content-container section-padding">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
           <div>
             <Link href="/" className="flex items-center space-x-2">
               <Image src="/logo.png" alt="SustainSage Group Logo" width={32} height={32} className="h-8 w-8" />
-              <span className="text-lg font-semibold text-text-primary">SustainSage Group Ltd.</span>
+              <span className="text-lg font-semibold text-slate-900">SustainSage Group Ltd.</span>
             </Link>
-            <p className="caption mt-4 text-text-secondary">
-              <span>{t('footer.philosophy')}</span>
-            </p>
+            <p className="caption mt-4 text-slate-600">{t('footer.philosophy')}</p>
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-text-primary">
-              <span>{t('footer.sitemapTitle')}</span>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-900">
+              {t('footer.sitemapTitle')}
             </h4>
             <ul className="caption space-y-2">
               <li>
-                <Link href="/" className="hover:text-link">
-                  <span>{t('header.navHome')}</span>
+                <Link href="/" className="hover:text-emerald-700">
+                  {t('header.navHome')}
                 </Link>
               </li>
               <li>
-                <Link href="/resources" className="hover:text-link">
-                  <span>{t('header.navResources')}</span>
+                <Link href="/about" className="hover:text-emerald-700">
+                  {t('header.navAbout')}
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="hover:text-link">
-                  <span>{t('header.navBlog')}</span>
+                <Link href="/services" className="hover:text-emerald-700">
+                  {t('header.navServices')}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-link">
-                  <span>{t('header.navContact')}</span>
+                <Link href="/resources" className="hover:text-emerald-700">
+                  {t('header.navResources')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="hover:text-emerald-700">
+                  {t('header.navBlog')}
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-emerald-700">
+                  {t('header.navContact')}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-text-primary">
-              <span>{t('footer.contactTitle')}</span>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wide text-slate-900">
+              {t('footer.contactTitle')}
             </h4>
-            <ul className="caption space-y-2 text-text-secondary">
+            <ul className="caption space-y-2 text-slate-600">
               <li>
-                <a href="mailto:hc.tsai@sustainsage-group.com" className="hover:text-link">
+                <a href="mailto:hc.tsai@sustainsage-group.com" className="hover:text-emerald-700">
                   hc.tsai@sustainsage-group.com
                 </a>
               </li>
@@ -67,7 +76,7 @@ export default function Footer() {
                   className="group flex items-center space-x-2"
                 >
                   <svg
-                    className="h-5 w-5 text-text-secondary transition-colors group-hover:text-link"
+                    className="h-5 w-5 text-slate-500 transition-colors group-hover:text-emerald-700"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
@@ -81,8 +90,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="caption mt-12 text-center text-gray-500">
-          <p>&copy; {new Date().getFullYear()} SustainSage Group Ltd. All rights reserved.</p>
+        <div className="caption mt-12 text-center text-slate-500">
+          <p>{t('footer.copyright', { year: currentYear })}</p>
         </div>
       </div>
     </footer>

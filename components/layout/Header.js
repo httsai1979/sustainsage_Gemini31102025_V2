@@ -8,7 +8,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 const NAV_LINKS = [
   { href: '/', labelKey: 'header.navHome' },
   { href: '/about', labelKey: 'header.navAbout' },
-  { href: '/service', labelKey: 'header.navService' },
+  { href: '/services', labelKey: 'header.navServices' },
   { href: '/resources', labelKey: 'header.navResources' },
   { href: '/blog', labelKey: 'header.navBlog' },
   { href: '/contact', labelKey: 'header.navContact' },
@@ -54,24 +54,20 @@ export default function Header() {
     [
       'text-base font-medium transition-colors',
       isNavLinkActive(href)
-        ? 'font-semibold text-primary'
-        : 'text-text-secondary hover:text-primary-dark',
+        ? 'font-semibold text-emerald-700'
+        : 'text-slate-600 hover:text-emerald-700',
     ].join(' ');
 
   const desktopLocaleButtonClasses = (code) =>
     [
       'rounded-md px-3 py-2 text-sm font-medium transition-colors',
-      activeLocale === code
-        ? 'bg-primary text-white'
-        : 'text-text-secondary hover:bg-gray-100',
+      activeLocale === code ? 'bg-emerald-700 text-white' : 'text-slate-600 hover:bg-emerald-50',
     ].join(' ');
 
   const mobileLocaleButtonClasses = (code) =>
     [
       'rounded-md px-3 py-2 text-base font-medium transition-colors',
-      activeLocale === code
-        ? 'bg-primary text-white'
-        : 'text-text-secondary hover:bg-gray-100',
+      activeLocale === code ? 'bg-emerald-700 text-white' : 'text-slate-600 hover:bg-emerald-50',
     ].join(' ');
 
   return (
@@ -79,7 +75,7 @@ export default function Header() {
       <div className="content-container flex items-center justify-between py-4">
         <Link href="/" className="flex items-center space-x-2">
           <Image src="/logo.png" alt="SustainSage Group Logo" width={32} height={32} className="h-8 w-8" />
-          <span className="text-lg font-semibold text-text-primary">SustainSage Group Ltd.</span>
+          <span className="text-lg font-semibold text-slate-900">SustainSage Group Ltd.</span>
         </Link>
 
         <nav className="hidden items-center space-x-8 md:flex">
@@ -96,6 +92,7 @@ export default function Header() {
               key={code}
               onClick={() => handleLangChange(code)}
               className={desktopLocaleButtonClasses(code)}
+              type="button"
             >
               {label}
             </button>
@@ -103,9 +100,9 @@ export default function Header() {
         </div>
 
         <div className="md:hidden">
-          <button onClick={() => setIsMobileMenuOpen(true)} className="rounded-md p-2 text-gray-700">
+          <button onClick={() => setIsMobileMenuOpen(true)} className="rounded-md p-2 text-slate-700">
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-            <span className="sr-only">{t('header.openMenu', 'Open navigation')}</span>
+            <span className="sr-only">{t('header.openMenu')}</span>
           </button>
         </div>
       </div>
@@ -113,9 +110,9 @@ export default function Header() {
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-50 bg-white/95 backdrop-blur-sm md:hidden">
           <div className="flex justify-end p-4">
-            <button onClick={() => setIsMobileMenuOpen(false)} className="rounded-md p-2 text-gray-700">
+            <button onClick={() => setIsMobileMenuOpen(false)} className="rounded-md p-2 text-slate-700">
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-              <span className="sr-only">{t('header.closeMenu', 'Close navigation')}</span>
+              <span className="sr-only">{t('header.closeMenu')}</span>
             </button>
           </div>
 
@@ -127,20 +124,21 @@ export default function Header() {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={
                   isNavLinkActive(href)
-                    ? 'font-semibold text-primary'
-                    : 'text-text-primary hover:text-primary-dark'
+                    ? 'font-semibold text-emerald-700'
+                    : 'text-slate-900 hover:text-emerald-700'
                 }
               >
                 <span>{t(labelKey)}</span>
               </Link>
             ))}
 
-            <div className="mt-8 flex justify-center space-x-2 border-t border-gray-300 pt-8">
+            <div className="mt-8 flex justify-center space-x-2 border-t border-slate-200 pt-8">
               {LOCALES.map(({ code, label }) => (
                 <button
                   key={code}
                   onClick={() => handleLangChange(code)}
                   className={mobileLocaleButtonClasses(code)}
+                  type="button"
                 >
                   {label}
                 </button>

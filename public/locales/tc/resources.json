@@ -1,49 +1,46 @@
 {
-  "pageTitle": "資源分享 | SustainSage Group",
-  "pageDescription": "這些是我們精選的工具和文章，希望能為您的反思之旅提供一些起點。",
   "hero": {
-    "title": "探索您的工具箱",
-    "subtitle": "這些是我們精選的工具和文章，希望能為您的反思之旅提供一些起點。"
+    "title": "資源",
+    "subtitle": "輕量、可自我反思的工具。選擇對你有幫助的，其他的可以暫放。"
   },
-  "filters": {
-    "all": "全部",
-    "career": "職涯反思",
-    "culture": "跨文化適應",
-    "growth": "自我成長"
-  },
-  "types": {
-    "worksheet": "工具表",
-    "reading": "文章",
-    "audio": "音頻練習"
-  },
-  "actions": {
-    "default": "查看資源",
-    "worksheet": "下載工具表",
-    "reading": "閱讀文章",
-    "audio": "播放音頻"
-  },
+  "curatedTitle": "我們在教練工作中整理的工具",
+  "usageNote": "每一份資源僅供個人反思與教練工作使用，不等同於治療或專業建議。",
   "items": {
-    "valuesWorksheet": {
-      "title": "釐清核心價值觀",
-      "summary": "透過這份引導式工具表，整理支撐你職涯與生活決策的核心價值。",
-      "cta": "索取工具表"
+    "selfTalk": {
+      "title": "自我對話調頻卡",
+      "summary": "用溫柔提問，把苛刻的自我對話轉換成實用又尊重自己的語句。",
+      "format": "格式：PDF",
+      "cta": "索取資源"
     },
-    "groundingAudio": {
-      "title": "兩分鐘專注練習",
-      "summary": "由教練親自錄製的短暫呼吸練習，幫助你在轉換間隙重新聚焦。",
-      "cta": "立即收聽"
+    "experimentLadder": {
+      "title": "行為實驗階梯",
+      "summary": "設計小而安全、由你掌控的實驗。",
+      "format": "格式：PDF",
+      "cta": "索取資源"
     },
-    "imposterReading": {
-      "title": "面對冒牌者感的三個觀點",
-      "summary": "在轉換期內心批評聲音特別大時，這些反思問題能協助你回到當下。",
-      "cta": "閱讀文章"
+    "valuesMap": {
+      "title": "價值地圖",
+      "summary": "釐清對你重要的事，並共同設計對應的行動。",
+      "format": "格式：PDF",
+      "cta": "索取資源"
     },
-    "cultureChecklist": {
-      "title": "跨文化適應檢核表",
-      "summary": "一份輕量的檢核表，協助你看見在新環境中的亮點與挑戰。",
-      "cta": "索取檢核表"
+    "emotionTriangle": {
+      "title": "情緒三角圖",
+      "summary": "觀察感受、想法與行為之間的連結，不帶自我責備。",
+      "format": "格式：投影片",
+      "cta": "索取資源"
+    },
+    "thoughtLog": {
+      "title": "思緒記錄表",
+      "summary": "辨識慣性模式，選擇不同的下一步。",
+      "format": "格式：表單",
+      "cta": "索取資源"
+    },
+    "beliefsExplorer": {
+      "title": "限制性信念探索",
+      "summary": "以富同理心的好奇心，鬆動僵化的故事。",
+      "format": "格式：文件",
+      "cta": "索取資源"
     }
-  },
-  "emptyState": "目前此分類尚無資源，歡迎稍後再來看看。",
-  "contactPrompt": "想找其他資源嗎？歡迎與我們聯繫，我們會提供更貼近你需求的建議。"
+  }
 }

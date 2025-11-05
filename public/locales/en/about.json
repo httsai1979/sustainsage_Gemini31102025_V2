@@ -1,33 +1,15 @@
 {
-  "pageTitle": "Our Philosophy | SustainSage Group",
-  "pageDescription": "We believe everyone holds the strength and wisdom for their own journey. SustainSage exists to provide a professional, non-judgemental space.",
-
   "hero": {
-    "title": "Our Philosophy: Partnership in Potential",
-    "subtitle": "We believe everyone holds the strength and wisdom for their own journey. SustainSage exists to provide a professional, non-judgemental space for that potential to be seen and realised."
+    "title": "About us",
+    "subtitle": "ICF-aligned practice. Presence, curiosity and respect—for your pace, context and choices."
   },
-
-  "team": {
-    "title": "Our Team",
-    "hc": {
-      "name": "Hao-Cheng Tsai",
-      "title": "Co-founder & Coach",
-      "bio": "Hao-Cheng is an ICF-certified coach focused on supporting individuals through career and life transitions. His approach is grounded in creating a safe, reflective space for clients to explore their goals.",
-      "quote": "My role isn't to provide answers, but to ask the questions that help you find your own."
-    },
-    "yl": {
-      "name": "Yi-Ling Lai",
-      "title": "Co-founder & Science Advisory",
-      "bio": "With a background in behavioural science, Yi-Ling ensures our coaching framework is evidence-based and effective, integrating proven methodologies to support sustainable client growth.",
-      "quote": "We believe sustainable change is built on clear insights and consistent practice."
-    }
-  },
-
-  "commitment": {
-    "title": "Our Coaching Commitment",
-    "card1": "Confidentiality",
-    "card2": "Client-led",
-    "card3": "Non-Judgemental",
-    "card4": "Professional Partnership"
+  "intro": "We coach in a steady, human way—no pressure, no slogans. You set the topic; we partner to deepen awareness and support committed action in your real context.",
+  "commitments": {
+    "title": "What anchors our practice",
+    "items": [
+      "Ethical practice and clear agreements",
+      "Active listening and reflective questions",
+      "Gentle accountability and regular review"
+    ]
   }
 }

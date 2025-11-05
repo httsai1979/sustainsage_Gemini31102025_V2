@@ -1,21 +1,21 @@
 {
-  "pageTitle": "Perspectives & Insights | SustainSage Group",
-  "pageDescription": "Our reflections on coaching, careers, and personal growth.",
   "hero": {
-    "title": "Perspectives & Insights",
-    "subtitle": "Our reflections on coaching, careers, and personal growth."
+    "title": "Reflective coaching stories",
+    "subtitle": "Short reads with prompts you can adapt—grounded in ICF ethics and real-life transitions."
   },
-  "emptyState": "No posts published yet. Please check back soon.",
-  "fallbackNotice": "The articles below are curated directly by our coaches while our CMS content refreshes.",
-  "contactCta": "Looking for a specific topic? Reach out to us →",
+  "listTitle": "Latest reflections",
+  "emptyState": "No posts are live just yet. Please check back soon.",
+  "fallbackNotice": "The articles below are curated directly by our coaches while the CMS content refreshes.",
+  "error": "We could not load the latest posts just now. Showing our curated stories instead.",
+  "errorDetail": "If this continues, please let us know via the contact form.",
   "backToList": "Back to all posts",
   "missingBody": "This article is being prepared. Please check back soon.",
   "notFound": "The requested article could not be found.",
   "post1": {
     "slug": "career-change-coaching-perspective",
-    "category": "Career Reflection",
-    "title": "Career Change: A 'Loss' or a 'Gain'? A Coach's Perspective",
-    "excerpt": "Exploring the complex emotions that come with making a significant professional shift.",
+    "category": "Career reflection",
+    "title": "Career change: loss, gain, and grounded choices",
+    "excerpt": "Exploring the emotions that surface when you leave a known role for a new chapter.",
     "image": "/images/blog/career-change.svg",
     "publishedDate": "2025-10-25",
     "meta": {
@@ -25,37 +25,36 @@
     },
     "article": {
       "paragraphs": [
-        "When clients come to coaching considering a career change, they often focus on the 'gain' – a new title, more flexibility, or more meaningful work. This is the exciting part. But any change, even a positive one, involves a 'loss'.",
-        "What might be lost? Familiarity. A clear identity. The comfort of expertise. Financial stability. It's often the unacknowledged grief for these 'losses' that keeps us stuck, not the fear of the new 'gain'."
+        "Clients considering a career shift often focus on the gain—a new title, flexibility or meaning. Yet any change, even a positive one, carries a sense of loss.",
+        "What might be lost? Familiarity, identity, the comfort of expertise, financial stability. Naming these honestly reduces the surprise when grief shows up mid-transition."
       ],
-      "quote": "A coaching space allows us to name these losses without judgement, to honour what was, so we can fully step into what's next.",
+      "quote": "A coaching space lets us honour what is ending so we can step into what is beginning—without judgement.",
       "sections": [
         {
           "heading": "Honouring what changes",
           "paragraphs": [
-            "Before racing ahead, we spend time naming what is ending. Sometimes that means acknowledging the friendships, routines, or status that came with the previous role.",
-            "By slowing down to notice these changes, we reduce the surprise when unexpected emotions surface later in the transition."
+            "Before racing ahead, we notice which relationships, routines or markers of success are shifting.",
+            "This acknowledgement brings compassion and steadiness when doubt appears later."
           ]
         },
         {
           "heading": "Designing the next chapter deliberately",
           "paragraphs": [
-            "Once the losses are seen, we begin to design the habits, conversations, and support structures that will carry you forward.",
-            "This is where a coach partners with you to clarify your values and to experiment with new possibilities in a safe way."
+            "Once losses are seen, we design the habits, conversations and experiments that support the new role.",
+            "Coaching helps you test options safely and align choices with your values."
           ]
         }
       ],
       "outro": [
-        "So, the question isn't just 'What do I want to gain?'. It's also, 'What am I willing to let go of?' and 'How can I honour the transition?'"
+        "Ask not only ‘What do I want to gain?’ but also ‘What am I willing to release?’ and ‘How will I mark the transition?’."
       ]
-    },
-    "backButton": "Back to all posts"
+    }
   },
   "post2": {
     "slug": "uk-job-hunt-reading-between-the-lines",
     "category": "Cross-cultural",
-    "title": "On the UK Job Hunt: Reading Between the Lines",
-    "excerpt": "Understanding the unwritten rules of the UK job market for new immigrants.",
+    "title": "Reading between the lines of the UK job hunt",
+    "excerpt": "Making sense of the unwritten expectations new arrivals face in the UK job market.",
     "image": "/images/blog/uk-job-hunt.svg",
     "publishedDate": "2025-08-12",
     "meta": {
@@ -65,36 +64,35 @@
     },
     "article": {
       "paragraphs": [
-        "Moving to the UK introduces new accents, weather patterns, and—surprisingly—new job-hunt etiquette. Many newcomers assume that strong credentials and a polished CV will speak for themselves, only to discover the hidden rules that shape every interaction.",
-        "Coaching conversations often begin with frustration: 'I've sent fifty applications with no reply.' Together we unpick what employers expect between the lines."
+        "Moving to the UK brings new accents, weather patterns—and job-hunt etiquette. Many newcomers discover hidden rules after sending dozens of applications with no reply.",
+        "Coaching sessions often start with frustration. Together we decode what employers expect between the lines."
       ],
       "sections": [
         {
           "heading": "Reading job descriptions carefully",
           "paragraphs": [
-            "Words like 'self-starter' or 'comfortable with ambiguity' signal that examples of proactivity will matter more than listing duties.",
-            "Highlighting collaborative achievements and demonstrating curiosity about the organisation's mission can move an application from the general pile to the shortlist."
+            "Words like ‘self-starter’ signal that proactive examples matter more than listing duties.",
+            "Showing curiosity about the organisation and linking your story to its mission helps you stand out."
           ]
         },
         {
-          "heading": "Conversations that continue after the interview",
+          "heading": "Following up with intention",
           "paragraphs": [
-            "Following up with a short thank-you note feels unusual in some cultures, yet in the UK it reinforces interest and professionalism.",
-            "Small touches—referencing a topic from the conversation or sharing a relevant article—signal attentiveness and help you stand out."
+            "A short thank-you note after interviews can feel unusual but signals professionalism in the UK context.",
+            "Referencing a point from the conversation or sharing a relevant resource shows attentiveness."
           ],
           "list": [
-            "Summarise what energised you during the discussion.",
-            "Connect the role to the organisation's broader goals.",
-            "Invite the interviewer to continue the conversation if helpful."
+            "Summarise what energised you in the discussion.",
+            "Connect the role to the organisation’s broader goals.",
+            "Invite the interviewer to keep the conversation going if helpful."
           ]
         }
       ],
       "quote": "Cross-cultural transitions are not about abandoning who you are, but expanding how you communicate your strengths.",
       "outro": [
-        "With practice, the job search becomes less about decoding mystery rules and more about sharing your story with clarity.",
-        "If you'd like a partner in that process, our coaching sessions create the space to rehearse, experiment, and build confidence."
+        "With practice the job search becomes less about decoding mystery rules and more about sharing your story with clarity.",
+        "Coaching creates a space to rehearse, experiment and build confidence."
       ]
-    },
-    "backButton": "Back to all posts"
+    }
   }
 }

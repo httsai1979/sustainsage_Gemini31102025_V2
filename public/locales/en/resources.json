@@ -1,49 +1,46 @@
 {
-  "pageTitle": "Resources | SustainSage Group",
-  "pageDescription": "A curated collection of tools and articles to support your reflection.",
   "hero": {
-    "title": "Explore your toolkit",
-    "subtitle": "A curated collection of tools and articles to support your reflection."
+    "title": "Resources",
+    "subtitle": "Light, reflective tools. Use what serves you; ignore what doesn’t."
   },
-  "filters": {
-    "all": "All",
-    "career": "Career Reflection",
-    "culture": "Cross-cultural",
-    "growth": "Self-Growth"
-  },
-  "types": {
-    "worksheet": "Worksheet",
-    "reading": "Article",
-    "audio": "Audio Practice"
-  },
-  "actions": {
-    "default": "View resource",
-    "worksheet": "Download worksheet",
-    "reading": "Read article",
-    "audio": "Play recording"
-  },
+  "curatedTitle": "Curated tools from our coaching practice",
+  "usageNote": "Each resource is for personal reflection and coaching use only. They are not therapy or professional advice.",
   "items": {
-    "valuesWorksheet": {
-      "title": "Clarifying Your Core Values",
-      "summary": "A guided worksheet to capture the values that anchor your career and life decisions.",
-      "cta": "Request this worksheet"
+    "selfTalk": {
+      "title": "Self-talk reframe cards",
+      "summary": "Gentle prompts to shift harsh self-talk into useful, self-honouring language.",
+      "format": "Format: PDF",
+      "cta": "Request this resource"
     },
-    "groundingAudio": {
-      "title": "Two-minute Grounding Practice",
-      "summary": "Reset your focus with a short breathing practice recorded by our coaching team.",
-      "cta": "Listen now"
+    "experimentLadder": {
+      "title": "Behavioural experiment ladder",
+      "summary": "Plan small, safe tests that you design and own.",
+      "format": "Format: PDF",
+      "cta": "Request this resource"
     },
-    "imposterReading": {
-      "title": "Three Perspectives on Imposter Feelings",
-      "summary": "Coaching questions to help you respond when the inner critic gets loud during a transition.",
-      "cta": "Read the reflection"
+    "valuesMap": {
+      "title": "Values map",
+      "summary": "Name what matters and co-design aligned actions.",
+      "format": "Format: PDF",
+      "cta": "Request this resource"
     },
-    "cultureChecklist": {
-      "title": "Cross-cultural Adjustment Check-in",
-      "summary": "A light-touch checklist to notice wins and challenges in a new environment.",
-      "cta": "Request this checklist"
+    "emotionTriangle": {
+      "title": "Emotion triangle",
+      "summary": "Notice links between feelings, thoughts and behaviours—without self-judgement.",
+      "format": "Format: Slides",
+      "cta": "Request this resource"
+    },
+    "thoughtLog": {
+      "title": "Thought log",
+      "summary": "Spot patterns and choose different next steps.",
+      "format": "Format: Sheet",
+      "cta": "Request this resource"
+    },
+    "beliefsExplorer": {
+      "title": "Limiting beliefs explorer",
+      "summary": "Loosen rigid stories with compassionate curiosity.",
+      "format": "Format: Doc",
+      "cta": "Request this resource"
     }
-  },
-  "emptyState": "No resources found for this category.",
-  "contactPrompt": "Looking for something else? Contact us and we'll point you to a tailored resource."
+  }
 }
