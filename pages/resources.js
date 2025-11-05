@@ -92,7 +92,12 @@ function ResourcesPage() {
 
   return (
     <>
-      <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} align="left" />
+      <Hero
+        image="/hero/resources.svg"
+        align="left"
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+      />
 
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
@@ -110,7 +115,7 @@ function ResourcesPage() {
         </div>
       </section>
 
-      <div className="px-6">
+      <div className="px-6 pb-16">
         <ICFNotice className="mx-auto max-w-4xl" />
       </div>
     </>

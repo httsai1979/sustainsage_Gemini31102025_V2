@@ -65,5 +65,24 @@
       "question": "你们遵循哪个伦理规范？",
       "answer": "我们遵循 ICF 国际教练联盟的伦理守则与核心能力。"
     }
-  ]
+  ],
+  "founders": {
+    "title": "会与你合作的人",
+    "subtitle": "共同创办人结合教练、引导与设计背景，让对话兼具伦理、稳定与实用。",
+    "cta": "认识我们",
+    "people": [
+      {
+        "name": "蔡皓丞",
+        "role": "ICF 教练／服务设计师",
+        "bio": "擅长系统思维与跨文化转换，陪你设计踏实可行的行动。",
+        "image": "/images/founders/hao-cheng-tsai.svg"
+      },
+      {
+        "name": "赖怡伶",
+        "role": "ICF 教练／引导者",
+        "bio": "以沉稳好奇的节奏陪伴，聚焦职涯厘清、价值探索与自信建立。",
+        "image": "/images/founders/yi-ling-lai.svg"
+      }
+    ]
+  }
 }

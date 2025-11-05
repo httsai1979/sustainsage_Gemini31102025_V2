@@ -6,24 +6,31 @@
     "navResources": "資源",
     "navBlog": "部落格",
     "navContact": "聯絡",
-    "openMenu": "開啟導覽選單",
-    "closeMenu": "關閉導覽選單"
+    "openMenu": "開啟導覽",
+    "closeMenu": "關閉導覽"
   },
   "footer": {
-    "philosophy": "透過對話看見清晰。",
-    "sitemapTitle": "網站導覽",
-    "contactTitle": "聯絡方式",
+    "philosophy": "透過對話釐清下一步。",
+    "sitemapTitle": "網站地圖",
+    "contactTitle": "聯絡資訊",
     "copyright": "© {{year}} SustainSage Group Ltd. 版權所有。",
     "privacyPolicy": "隱私權政策"
   },
   "stickyCta": {
-    "title": "隨時準備好陪伴你",
-    "subtitle": "預約 20 分鐘線上聊聊，看看教練是否適合你。",
+    "title": "隨時準備好時",
+    "subtitle": "預約 20 分鐘初談，看看教練是否適合你。",
     "button": "預約初談"
   },
   "icfNotice": {
-    "ariaLabel": "教練倫理與合作範疇",
-    "paragraph1": "我們遵循 ICF 國際教練聯盟倫理守則。教練是一種以來談者為主的合作關係，支持你自我學習與改變。它不是治療、諮商、醫療、法律或財務建議；你仍對自己的決定與行動負責。",
-    "paragraph2": "除非涉及法律規定或安全風險，我們會維持保密。在合作前會一起確認約定、目標與界線，並取得你對合作方式與資訊處理的知情同意。"
+    "ariaLabel": "教練倫理與合作範圍",
+    "paragraph1": "我們遵循國際教練聯盟 (ICF) 倫理守則。教練是一段合作、由來談者主導的過程，用來支持你自主的學習與改變。這不是治療、諮商、醫療、法律或財務建議；你仍對自己的選擇與行動負責。",
+    "paragraph2": "除非法律要求或有危害風險，我們會保護你的保密性。開始之前會與你一起建立清楚的合作約定、目標與界線，並取得你對工作方式與資料處理的知情同意。"
+  },
+  "errorPages": {
+    "notFoundTitle": "找不到這個頁面",
+    "notFoundSubtitle": "連結可能已過期或頁面已移動，我們一起回到有用的頁面吧。",
+    "serverErrorTitle": "系統發生狀況",
+    "serverErrorSubtitle": "發生了非預期的錯誤，請稍後再試，或通知我們協助處理。",
+    "cta": "回到首頁"
   }
 }

@@ -1,7 +1,6 @@
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
-import { Reveal } from '@/components/ui/Motion';
 import { SITE_URL } from '@/lib/seo';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -14,25 +13,28 @@ function AboutPage() {
 
   return (
     <>
-      <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} align="left" />
+      <Hero
+        image="/hero/about.svg"
+        align="left"
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+      />
 
       <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-4xl px-6">
-          <Reveal>
-            <p className="text-lg leading-8 text-slate-700">{t('intro')}</p>
-          </Reveal>
-          <Reveal className="mt-8">
-            <h2 className="text-xl font-semibold text-slate-900">{t('commitments.title')}</h2>
-            <ul className="mt-4 list-disc space-y-3 pl-6 text-sm leading-7 text-slate-700">
-              {commitments.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          </Reveal>
+        <div className="mx-auto max-w-5xl px-6">
+          <p className="text-lg leading-8 text-slate-700">{t('intro')}</p>
+          <h2 className="mt-8 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            {t('commitments.title')}
+          </h2>
+          <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+            {commitments.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
-      <div className="px-6">
+      <div className="px-6 pb-16">
         <ICFNotice className="mx-auto max-w-4xl" />
       </div>
     </>

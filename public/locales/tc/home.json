@@ -65,5 +65,24 @@
       "question": "你們遵循哪個倫理規範？",
       "answer": "我們遵循 ICF 國際教練聯盟的倫理守則與核心能力。"
     }
-  ]
+  ],
+  "founders": {
+    "title": "會與你合作的人",
+    "subtitle": "共同創辦人結合教練、引導與設計背景，讓對話兼具倫理、穩定與實用。",
+    "cta": "認識我們",
+    "people": [
+      {
+        "name": "蔡皓丞",
+        "role": "ICF 教練／服務設計師",
+        "bio": "擅長系統思維與跨文化轉換，陪你設計踏實可行的行動。",
+        "image": "/images/founders/hao-cheng-tsai.svg"
+      },
+      {
+        "name": "賴怡伶",
+        "role": "ICF 教練／引導者",
+        "bio": "以沉穩好奇的節奏陪伴，聚焦職涯釐清、價值探索與自信建立。",
+        "image": "/images/founders/yi-ling-lai.svg"
+      }
+    ]
+  }
 }

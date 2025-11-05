@@ -30,13 +30,21 @@ function BlogIndex({ posts = [], error = null }) {
 
   return (
     <>
-      <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} align="left" />
+      <Hero
+        image="/hero/blog.svg"
+        align="left"
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+      />
 
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
           {error && (
             <p className="mb-6 rounded-2xl border border-red-100 bg-red-50 p-4 text-sm text-red-700">
-              {t('error', { defaultValue: 'We could not load the latest posts just now. Showing our curated stories instead.' })}
+              {t('error', {
+                defaultValue:
+                  'We could not load the latest posts just now. Showing our curated stories instead.',
+              })}
               <span className="block text-xs text-red-500">{error}</span>
             </p>
           )}

@@ -13,7 +13,12 @@ function ContactPage() {
 
   return (
     <>
-      <Hero title={t('hero.title')} subtitle={t('hero.subtitle')} align="left" />
+      <Hero
+        image="/hero/contact.svg"
+        align="left"
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+      />
       <div className="pb-12">
         <ContactForm />
       </div>

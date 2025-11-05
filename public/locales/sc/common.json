@@ -6,24 +6,31 @@
     "navResources": "资源",
     "navBlog": "部落格",
     "navContact": "联络",
-    "openMenu": "开启导航选单",
-    "closeMenu": "关闭导航选单"
+    "openMenu": "开启导览",
+    "closeMenu": "关闭导览"
   },
   "footer": {
-    "philosophy": "透过对话看见清晰。",
-    "sitemapTitle": "网站导览",
-    "contactTitle": "联络方式",
+    "philosophy": "透过对话厘清下一步。",
+    "sitemapTitle": "网站地图",
+    "contactTitle": "联络资讯",
     "copyright": "© {{year}} SustainSage Group Ltd. 版权所有。",
     "privacyPolicy": "隐私权政策"
   },
   "stickyCta": {
-    "title": "随时准备好陪伴你",
-    "subtitle": "预约 20 分钟线上聊聊，看看教练是否适合你。",
+    "title": "随时准备好时",
+    "subtitle": "预约 20 分钟初谈，看看教练是否适合你。",
     "button": "预约初谈"
   },
   "icfNotice": {
-    "ariaLabel": "教练伦理与合作范畴",
-    "paragraph1": "我们遵循 ICF 国际教练联盟伦理守则。教练是一种以来谈者为主的合作关系，支持你自我学习与改变。它不是治疗、谘商、医疗、法律或财务建议；你仍对自己的决定与行动负责。",
-    "paragraph2": "除非涉及法律规定或安全风险，我们会维持保密。在合作前会一起确认约定、目标与界线，并取得你对合作方式与资讯处理的知情同意。"
+    "ariaLabel": "教练伦理与合作范围",
+    "paragraph1": "我们遵循国际教练联盟 (ICF) 伦理守则。教练是一段合作、由来谈者主导的过程，用来支持你自主的学习与改变。这不是治疗、谘商、医疗、法律或财务建议；你仍对自己的选择与行动负责。",
+    "paragraph2": "除非法律要求或有危害风险，我们会保护你的保密性。开始之前会与你一起建立清楚的合作约定、目标与界线，并取得你对工作方式与资料处理的知情同意。"
+  },
+  "errorPages": {
+    "notFoundTitle": "找不到这个页面",
+    "notFoundSubtitle": "连结可能已过期或页面已移动，我们一起回到有用的页面吧。",
+    "serverErrorTitle": "系统发生状况",
+    "serverErrorSubtitle": "发生了非预期的错误，请稍后再试，或通知我们协助处理。",
+    "cta": "回到首页"
   }
 }

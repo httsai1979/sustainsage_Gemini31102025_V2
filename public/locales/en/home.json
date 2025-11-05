@@ -65,5 +65,24 @@
       "question": "Do you follow a code of ethics?",
       "answer": "Yes. We work to the ICF Code of Ethics and core competencies."
     }
-  ]
+  ],
+  "founders": {
+    "title": "Who you'll meet",
+    "subtitle": "Co-founders who blend coaching, facilitation, and design so conversations stay ethical, grounded, and useful.",
+    "cta": "Meet the practice",
+    "people": [
+      {
+        "name": "Hao-Cheng Tsai",
+        "role": "ICF coach & service designer",
+        "bio": "Grounds sessions in systems thinking, cultural transitions, and realistic action design.",
+        "image": "/images/founders/hao-cheng-tsai.svg"
+      },
+      {
+        "name": "Yi-Ling Lai",
+        "role": "ICF coach & facilitator",
+        "bio": "Holds space with calm curiosity, focusing on career clarity, values, and confidence building.",
+        "image": "/images/founders/yi-ling-lai.svg"
+      }
+    ]
+  }
 }
