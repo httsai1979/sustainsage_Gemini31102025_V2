@@ -5,7 +5,9 @@
     "navService": "Service",
     "navResources": "Resources",
     "navBlog": "Blog",
-    "navContact": "Contact"
+    "navContact": "Contact",
+    "openMenu": "開啟導覽",
+    "closeMenu": "關閉導覽"
   },
   "footer": {
     "philosophy": "Clarity through conversation.",
@@ -69,6 +71,7 @@
     "cardTypeWorksheet": "反思工具表 (Worksheets)",
     "cardTypeReading": "推薦閱讀 (Reading)",
     "cardTypeAudio": "簡短音頻 (Audio)",
+    "emptyState": "此分類暫無可用資源。",
     "exampleWorksheetTitle": "釐清您的核心價值觀 (Worksheet)",
     "exampleReadingTitle": "關於「冒牌者症候群」的三個思考",
     "exampleAudioTitle": "2分鐘冥想：找回當下",
