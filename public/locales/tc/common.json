@@ -1,110 +1,29 @@
 {
   "header": {
-    "navHome": "Home",
-    "navAbout": "About",
-    "navService": "Service",
-    "navResources": "Resources",
-    "navBlog": "Blog",
-    "navContact": "Contact"
+    "navHome": "首頁",
+    "navAbout": "關於我們",
+    "navServices": "服務",
+    "navResources": "資源",
+    "navBlog": "部落格",
+    "navContact": "聯絡",
+    "openMenu": "開啟導覽選單",
+    "closeMenu": "關閉導覽選單"
   },
   "footer": {
-    "philosophy": "Clarity through conversation.",
-    "sitemapTitle": "網站地圖",
-    "contactTitle": "聯繫資訊",
-    "copyright": "© 2025 SustainSage Group Ltd.",
-    "privacyPolicy": "隱私政策"
+    "philosophy": "透過對話看見清晰。",
+    "sitemapTitle": "網站導覽",
+    "contactTitle": "聯絡方式",
+    "copyright": "© {{year}} SustainSage Group Ltd. 版權所有。",
+    "privacyPolicy": "隱私權政策"
   },
-  "home": {
-    "heroTitle": "準備好，探索您的下一步？",
-    "heroSubtitle": "在轉變的十字路口，我們與您同行，發掘清晰的方向與內在的力量。",
-    "heroCta": "展開對話",
-    "forWhomTitle": "您是否正處於...",
-    "forWhomCard1": "職涯中途的省思？",
-    "forWhomCard2": "剛啟程尋找方向？",
-    "forWhomCard3": "在新環境中重塑定位？",
-    "serviceIntroTitle": "教練 (Coaching)，是一段共同探索的旅程",
-    "serviceIntroCta": "了解我們的服務",
-    "foundersIntroTitle": "認識您的教練與顧問",
-    "foundersIntroCta": "我們的故事"
+  "stickyCta": {
+    "title": "隨時準備好陪伴你",
+    "subtitle": "預約 20 分鐘線上聊聊，看看教練是否適合你。",
+    "button": "預約初談"
   },
-  "about": {
-    "heroTitle": "我們的理念：以夥伴關係啟發潛能",
-    "heroSubtitle": "我們相信，每個人都擁有自我導航所需的力量與智慧。SustainSage的存在，是為了提供一個專業且無評判的空間，讓這份潛能得以被看見與實現。",
-    "teamTitle": "我們的團隊",
-    "haoQuote": "「我的角色不是提供答案，而是提出有力的問題，協助您看見自己的資源。」",
-    "yiLingQuote": "「我們相信，深刻的轉變來自於清晰的洞察與可持續的實踐。」",
-    "commitmentTitle": "我們的教練準則",
-    "commitmentCard1": "絕對保密",
-    "commitmentCard2": "客戶為中心",
-    "commitmentCard3": "非評判空間",
-    "commitmentCard4": "專業夥伴"
-  },
-  "service": {
-    "heroTitle": "為您量身打造的教練旅程",
-    "heroSubtitle": "教練服務並非「一體適用」。我們將根據您的獨特情境與目標，共同設計最適合您的合作方式。",
-    "howWeWorkTitle": "我們的合作方式",
-    "howWeWorkStep1Title": "探索 (Discovery)",
-    "howWeWorkStep1Desc": "一場無壓力的初步對話（免費，30分鐘），讓我們彼此了解，並探討合作的可能性。",
-    "howWeWorkStep2Title": "釐清 (Clarity)",
-    "howWeWorkStep2Desc": "共同設定您期望的目標，釐清您現階段最關注的議題。",
-    "howWeWorkStep3Title": "同行 (Partnership)",
-    "howWeWorkStep3Desc": "在固定的教練會談中（通常為6-12次），我們專注於您的議程，支持您的行動與反思。",
-    "focusAreasTitle": "我們可以探索的領域",
-    "focusAreasCard1Front": "職涯轉型",
-    "focusAreasCard1Back": "探索下一步的可能性，無論是轉職、升遷或重返職場。",
-    "focusAreasCard2Front": "新階段適應",
-    "focusAreasCard2Back": "協助新移民或社會新鮮人，在新環境中建立自信與歸屬感。",
-    "focusAreasCard3Front": "自我覺察與領導力",
-    "focusAreasCard3Back": "深入了解您的價值觀與潛力，發揮更真實的影響力。",
-    "ctaTitle": "改變的第一步，從對話開始。",
-    "ctaButton": "預約初步諮詢"
-  },
-  "resources": {
-    "heroTitle": "探索您的工具箱",
-    "heroSubtitle": "這些是我們精選的工具和文章，希望能為您的反思之旅提供一些起點。",
-    "filterAll": "全部",
-    "filterCareer": "職涯反思",
-    "filterCrossCulture": "跨文化適應",
-    "filterGrowth": "自我成長",
-    "cardTypeWorksheet": "反思工具表 (Worksheets)",
-    "cardTypeReading": "推薦閱讀 (Reading)",
-    "cardTypeAudio": "簡短音頻 (Audio)",
-    "exampleWorksheetTitle": "釐清您的核心價值觀 (Worksheet)",
-    "exampleReadingTitle": "關於「冒牌者症候群」的三個思考",
-    "exampleAudioTitle": "2分鐘冥想：找回當下",
-    "ctaDownload": "下載",
-    "ctaRead": "閱讀",
-    "ctaPlay": "播放"
-  },
-  "blog": {
-    "heroTitle": "觀點與洞察",
-    "heroSubtitle": "我們對教練、職涯與個人成長的反思。",
-    "examplePostTitle1": "轉職，是「失去」還是「獲得」？一個教練的觀察",
-    "examplePostTitle2": "在英國找工作，履歷之外的「潛台詞」"
-  },
-  "contact": {
-    "heroTitle": "讓我們開啟一段對話",
-    "heroSubtitle": "我們很樂意聽聽您的故事。所有訊息將被嚴格保密。",
-    "formTitle": "聯繫表單",
-    "formName": "姓名",
-    "formEmail": "電子郵件",
-    "formTopic": "我感興趣的主題",
-    "formTopicOption1": "Career Transition",
-    "formTopicOption2": "New Graduate",
-    "formTopicOption3": "New Immigrant",
-    "formTopicOption4": "Other",
-    "formMessage": "您的訊息",
-    "formPlaceholder": "您在思考些什麼？",
-    "formSubmit": "傳送訊息",
-    "directInfoTitle": "直接聯繫",
-    "directInfoNote": "我們主要提供全球線上服務，亦可預約於Southsea面談。",
-    "form": {
-      "status": {
-        "submitting": "傳送中...",
-        "success": "Thank you. We'll be in touch shortly.",
-        "error": "發生錯誤，請再試一次。",
-        "errorRequired": "請填寫所有必填欄位。"
-      }
-    }
+  "icfNotice": {
+    "ariaLabel": "教練倫理與合作範疇",
+    "paragraph1": "我們遵循 ICF 國際教練聯盟倫理守則。教練是一種以來談者為主的合作關係，支持你自我學習與改變。它不是治療、諮商、醫療、法律或財務建議；你仍對自己的決定與行動負責。",
+    "paragraph2": "除非涉及法律規定或安全風險，我們會維持保密。在合作前會一起確認約定、目標與界線，並取得你對合作方式與資訊處理的知情同意。"
   }
 }

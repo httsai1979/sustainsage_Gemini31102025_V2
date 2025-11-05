@@ -1,39 +1,46 @@
 {
-  "pageTitle": "資源分享 | SustainSage Group",
-  "pageDescription": "這些是我們精選的工具和文章，希望能為您的反思之旅提供一些起點。",
-
   "hero": {
-    "title": "探索您的工具箱",
-    "subtitle": "這些是我們精選的工具和文章，希望能為您的反思之旅提供一些起點。"
+    "title": "資源",
+    "subtitle": "輕量、可自我反思的工具。選擇對你有幫助的，其他的可以暫放。"
   },
-
-  "filters": {
-    "all": "全部",
-    "career": "職涯反思",
-    "culture": "跨文化適應",
-    "growth": "自我成長"
-  },
-
-  "cards": {
-    "resource1": {
-      "type": "反思工具表",
-      "title": "釐清您的核心價值觀 (Worksheet)",
-      "action": "下載"
+  "curatedTitle": "我們在教練工作中整理的工具",
+  "usageNote": "每一份資源僅供個人反思與教練工作使用，不等同於治療或專業建議。",
+  "items": {
+    "selfTalk": {
+      "title": "自我對話調頻卡",
+      "summary": "用溫柔提問，把苛刻的自我對話轉換成實用又尊重自己的語句。",
+      "format": "格式：PDF",
+      "cta": "索取資源"
     },
-    "resource2": {
-      "type": "推薦閱讀",
-      "title": "關於「冒牌者症候群」的三個思考",
-      "action": "閱讀"
+    "experimentLadder": {
+      "title": "行為實驗階梯",
+      "summary": "設計小而安全、由你掌控的實驗。",
+      "format": "格式：PDF",
+      "cta": "索取資源"
     },
-    "resource3": {
-      "type": "簡短音頻",
-      "title": "2分鐘冥想：找回當下",
-      "action": "播放"
+    "valuesMap": {
+      "title": "價值地圖",
+      "summary": "釐清對你重要的事，並共同設計對應的行動。",
+      "format": "格式：PDF",
+      "cta": "索取資源"
     },
-    "resource4": {
-      "type": "反思工具表",
-      "title": "跨文化適應檢核表",
-      "action": "下載"
+    "emotionTriangle": {
+      "title": "情緒三角圖",
+      "summary": "觀察感受、想法與行為之間的連結，不帶自我責備。",
+      "format": "格式：投影片",
+      "cta": "索取資源"
+    },
+    "thoughtLog": {
+      "title": "思緒記錄表",
+      "summary": "辨識慣性模式，選擇不同的下一步。",
+      "format": "格式：表單",
+      "cta": "索取資源"
+    },
+    "beliefsExplorer": {
+      "title": "限制性信念探索",
+      "summary": "以富同理心的好奇心，鬆動僵化的故事。",
+      "format": "格式：文件",
+      "cta": "索取資源"
     }
   }
 }
