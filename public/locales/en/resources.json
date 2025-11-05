@@ -17,6 +17,7 @@
     "audio": "Audio Practice"
   },
   "actions": {
+    "default": "View resource",
     "worksheet": "Download worksheet",
     "reading": "Read article",
     "audio": "Play recording"

@@ -6,8 +6,8 @@ import { DocumentArrowDownIcon, BookOpenIcon, PlayCircleIcon } from '@heroicons/
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { fetchResourceItems } from '../lib/contentful';
-import nextI18NextConfig from '../next-i18next.config.js';
+import { fetchResourceItems } from '@/lib/contentful';
+import nextI18NextConfig from '@/next-i18next.config.js';
 
 const FILTER_ORDER = ['all', 'career', 'culture', 'growth'];
 
@@ -34,7 +34,7 @@ const FALLBACK_RESOURCES = [
     type: 'reading',
     category: 'career',
     image: '/images/resources/imposter-reading.svg',
-    href: '/blog',
+    href: '/blog/career-change-coaching-perspective',
   },
   {
     id: 'culture-checklist',
@@ -69,7 +69,7 @@ const buildHref = (item) => {
   if (fileUrl) {
     return fileUrl.startsWith('http') ? fileUrl : `https:${fileUrl}`;
   }
-  return null;
+  return item.href || null;
 };
 
 function ResourceCard({ resource, typeLabel }) {
@@ -77,48 +77,52 @@ function ResourceCard({ resource, typeLabel }) {
   const href = resource.href || '/contact';
   const isExternal = href.startsWith('http');
   const imageSrc = resource.image || TYPE_FALLBACK_IMAGE[resource.type] || TYPE_FALLBACK_IMAGE.worksheet;
-  const cardBody = (
+  const ctaLabel = resource.ctaLabel || resource.typeLabel || 'View resource';
+
+  const content = (
     <>
-        <div className="relative overflow-hidden rounded-2xl bg-emerald-50">
-          <Image
-            src={imageSrc}
-            alt={resource.title}
-            width={480}
-            height={320}
-            className="h-48 w-full object-cover"
-          />
-        </div>
-      <div className="mt-6 space-y-3">
+      <div className="relative overflow-hidden rounded-2xl bg-emerald-50">
+        <Image
+          src={imageSrc}
+          alt={resource.title}
+          width={480}
+          height={320}
+          className="h-48 w-full object-cover"
+        />
+      </div>
+      <div className="mt-6 flex-1 space-y-3">
         <div className="flex items-center space-x-2 text-sm font-semibold uppercase tracking-wide text-primary">
           <Icon className="h-5 w-5" aria-hidden="true" />
           <span>{typeLabel}</span>
         </div>
         <h3 className="text-xl font-semibold text-gray-900">{resource.title}</h3>
-        <p className="text-sm leading-6 text-gray-600">{resource.summary}</p>
+        {resource.summary && <p className="text-sm leading-6 text-gray-600">{resource.summary}</p>}
       </div>
     </>
   );
 
-  const ctaClasses =
-    'mt-6 inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2';
-
-  if (isExternal) {
-    return (
-      <article className="flex h-full flex-col justify-between rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-200 transition hover:shadow-lg">
-        <a href={href} target="_blank" rel="noopener noreferrer" className="flex h-full flex-col">
-          {cardBody}
-          <span className={ctaClasses}>{resource.ctaLabel}</span>
-        </a>
-      </article>
-    );
-  }
-
   return (
-    <article className="flex h-full flex-col justify-between rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-200 transition hover:shadow-lg">
-      <Link href={href} className="flex h-full flex-col">
-        {cardBody}
-        <span className={ctaClasses}>{resource.ctaLabel}</span>
-      </Link>
+    <article className="flex h-full flex-col justify-between rounded-3xl bg-white p-6 shadow-sm ring-1 ring-gray-200 transition hover:-translate-y-1 hover:shadow-lg">
+      {content}
+      <div className="mt-6">
+        {isExternal ? (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          >
+            {ctaLabel}
+          </a>
+        ) : (
+          <Link
+            href={href}
+            className="inline-flex items-center justify-center rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+          >
+            {ctaLabel}
+          </Link>
+        )}
+      </div>
     </article>
   );
 }
@@ -128,15 +132,13 @@ export default function ResourcesPage({ allResources = [] }) {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const preparedResources = useMemo(() => {
-    if (allResources.length > 0) {
+    if (Array.isArray(allResources) && allResources.length > 0) {
       return allResources
         .map((item) => {
-          if (!item) {
-            return null;
-          }
+          if (!item) return null;
           const type = normalizeType(item.type);
           const category = normalizeCategory(item.category);
-          const href = buildHref(item) || '/contact';
+          const href = buildHref(item);
 
           return {
             id: item.id,
@@ -144,9 +146,13 @@ export default function ResourcesPage({ allResources = [] }) {
             summary: item.summary || '',
             type,
             category,
-            image: item.image || TYPE_FALLBACK_IMAGE[type] || TYPE_FALLBACK_IMAGE.worksheet,
+            image: item.image || TYPE_FALLBACK_IMAGE[type] || null,
             href,
-            ctaLabel: item.ctaText || t(`actions.${type}`),
+            ctaLabel:
+              item.ctaText ||
+              t(`actions.${type}`, {
+                defaultValue: t('actions.default', 'View resource'),
+              }),
           };
         })
         .filter(Boolean);
@@ -183,7 +189,7 @@ export default function ResourcesPage({ allResources = [] }) {
         <meta name="description" content={t('pageDescription')} />
       </Head>
 
-      <div className="bg-white py-16 sm:py-24">
+      <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -193,18 +199,22 @@ export default function ResourcesPage({ allResources = [] }) {
           </div>
 
           <div className="mt-16 flex flex-wrap justify-center gap-3">
-            {filters.map((filter) => (
-              <button
-                key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
-                className={[
-                  'rounded-full px-4 py-2 text-sm font-medium transition-colors',
-                  activeFilter === filter.id ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
-                ].join(' ')}
-              >
-                {filter.label}
-              </button>
-            ))}
+            {filters.map((filter) => {
+              const isActive = activeFilter === filter.id;
+              return (
+                <button
+                  key={filter.id}
+                  type="button"
+                  onClick={() => setActiveFilter(filter.id)}
+                  className={[
+                    'rounded-full px-4 py-2 text-sm font-medium transition-colors',
+                    isActive ? 'bg-primary text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
+                  ].join(' ')}
+                >
+                  {filter.label}
+                </button>
+              );
+            })}
           </div>
 
           <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
@@ -215,7 +225,7 @@ export default function ResourcesPage({ allResources = [] }) {
                 <ResourceCard
                   key={resource.id}
                   resource={resource}
-                  typeLabel={t(`types.${resource.type}`, resource.type)}
+                  typeLabel={t(`types.${resource.type}`, { defaultValue: resource.type })}
                 />
               ))
             )}
@@ -223,7 +233,7 @@ export default function ResourcesPage({ allResources = [] }) {
 
           <p className="mt-16 text-center text-sm text-gray-500">{t('contactPrompt')}</p>
         </div>
-      </div>
+      </section>
     </>
   );
 }

@@ -6,27 +6,95 @@
     "subtitle": "Our reflections on coaching, careers, and personal growth."
   },
   "emptyState": "No posts published yet. Please check back soon.",
+  "fallbackNotice": "The articles below are curated directly by our coaches while our CMS content refreshes.",
+  "contactCta": "Looking for a specific topic? Reach out to us →",
+  "backToList": "Back to all posts",
+  "missingBody": "This article is being prepared. Please check back soon.",
+  "notFound": "The requested article could not be found.",
   "post1": {
+    "slug": "career-change-coaching-perspective",
     "category": "Career Reflection",
     "title": "Career Change: A 'Loss' or a 'Gain'? A Coach's Perspective",
     "excerpt": "Exploring the complex emotions that come with making a significant professional shift.",
-    "action": "Read more",
+    "image": "/images/blog/career-change.svg",
+    "publishedDate": "2025-10-25",
     "meta": {
       "author": "By Hao-Cheng Tsai",
-      "date": "25 Oct 2025"
+      "date": "25 Oct 2025",
+      "readingTime": "4 min read"
     },
     "article": {
-      "p1": "When clients come to coaching considering a career change, they often focus on the 'gain' – a new title, more flexibility, or more meaningful work. This is the exciting part. But any change, even a positive one, involves a 'loss'.",
-      "p2": "What might be lost? Familiarity. A clear identity. The comfort of expertise. Financial stability. It's often the unacknowledged grief for these 'losses' that keeps us stuck, not the fear of the new 'gain'.",
+      "paragraphs": [
+        "When clients come to coaching considering a career change, they often focus on the 'gain' – a new title, more flexibility, or more meaningful work. This is the exciting part. But any change, even a positive one, involves a 'loss'.",
+        "What might be lost? Familiarity. A clear identity. The comfort of expertise. Financial stability. It's often the unacknowledged grief for these 'losses' that keeps us stuck, not the fear of the new 'gain'."
+      ],
       "quote": "A coaching space allows us to name these losses without judgement, to honour what was, so we can fully step into what's next.",
-      "p3": "So, the question isn't just \"What do I want to gain?\". It's also, \"What am I willing to let go of?\" and \"How can I honour the transition?\""
+      "sections": [
+        {
+          "heading": "Honouring what changes",
+          "paragraphs": [
+            "Before racing ahead, we spend time naming what is ending. Sometimes that means acknowledging the friendships, routines, or status that came with the previous role.",
+            "By slowing down to notice these changes, we reduce the surprise when unexpected emotions surface later in the transition."
+          ]
+        },
+        {
+          "heading": "Designing the next chapter deliberately",
+          "paragraphs": [
+            "Once the losses are seen, we begin to design the habits, conversations, and support structures that will carry you forward.",
+            "This is where a coach partners with you to clarify your values and to experiment with new possibilities in a safe way."
+          ]
+        }
+      ],
+      "outro": [
+        "So, the question isn't just 'What do I want to gain?'. It's also, 'What am I willing to let go of?' and 'How can I honour the transition?'"
+      ]
     },
     "backButton": "Back to all posts"
   },
   "post2": {
+    "slug": "uk-job-hunt-reading-between-the-lines",
     "category": "Cross-cultural",
     "title": "On the UK Job Hunt: Reading Between the Lines",
     "excerpt": "Understanding the unwritten rules of the UK job market for new immigrants.",
-    "action": "Read more"
+    "image": "/images/blog/uk-job-hunt.svg",
+    "publishedDate": "2025-08-12",
+    "meta": {
+      "author": "By Yi-Ling Lai",
+      "date": "12 Aug 2025",
+      "readingTime": "5 min read"
+    },
+    "article": {
+      "paragraphs": [
+        "Moving to the UK introduces new accents, weather patterns, and—surprisingly—new job-hunt etiquette. Many newcomers assume that strong credentials and a polished CV will speak for themselves, only to discover the hidden rules that shape every interaction.",
+        "Coaching conversations often begin with frustration: 'I've sent fifty applications with no reply.' Together we unpick what employers expect between the lines."
+      ],
+      "sections": [
+        {
+          "heading": "Reading job descriptions carefully",
+          "paragraphs": [
+            "Words like 'self-starter' or 'comfortable with ambiguity' signal that examples of proactivity will matter more than listing duties.",
+            "Highlighting collaborative achievements and demonstrating curiosity about the organisation's mission can move an application from the general pile to the shortlist."
+          ]
+        },
+        {
+          "heading": "Conversations that continue after the interview",
+          "paragraphs": [
+            "Following up with a short thank-you note feels unusual in some cultures, yet in the UK it reinforces interest and professionalism.",
+            "Small touches—referencing a topic from the conversation or sharing a relevant article—signal attentiveness and help you stand out."
+          ],
+          "list": [
+            "Summarise what energised you during the discussion.",
+            "Connect the role to the organisation's broader goals.",
+            "Invite the interviewer to continue the conversation if helpful."
+          ]
+        }
+      ],
+      "quote": "Cross-cultural transitions are not about abandoning who you are, but expanding how you communicate your strengths.",
+      "outro": [
+        "With practice, the job search becomes less about decoding mystery rules and more about sharing your story with clarity.",
+        "If you'd like a partner in that process, our coaching sessions create the space to rehearse, experiment, and build confidence."
+      ]
+    },
+    "backButton": "Back to all posts"
   }
 }

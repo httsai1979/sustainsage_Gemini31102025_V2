@@ -17,6 +17,7 @@
     "audio": "音頻練習"
   },
   "actions": {
+    "default": "查看資源",
     "worksheet": "下載工具表",
     "reading": "閱讀文章",
     "audio": "播放音頻"

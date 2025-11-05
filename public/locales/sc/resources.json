@@ -17,6 +17,7 @@
     "audio": "音频练习"
   },
   "actions": {
+    "default": "查看资源",
     "worksheet": "下载工具表",
     "reading": "阅读文章",
     "audio": "播放音频"
