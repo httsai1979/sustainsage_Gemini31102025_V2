@@ -5,7 +5,9 @@
     "navService": "Service",
     "navResources": "Resources",
     "navBlog": "Blog",
-    "navContact": "Contact"
+    "navContact": "Contact",
+    "openMenu": "打开导航",
+    "closeMenu": "关闭导航"
   },
   "footer": {
     "philosophy": "Clarity through conversation.",

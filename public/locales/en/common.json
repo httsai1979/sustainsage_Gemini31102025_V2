@@ -5,7 +5,9 @@
     "navService": "Service",
     "navResources": "Resources",
     "navBlog": "Blog",
-    "navContact": "Contact"
+    "navContact": "Contact",
+    "openMenu": "Open navigation",
+    "closeMenu": "Close navigation"
   },
   "footer": {
     "philosophy": "Clarity through conversation.",

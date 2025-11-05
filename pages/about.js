@@ -50,16 +50,15 @@ export default function About() {
               <span>{t('team.title')}</span>
             </h2>
           </Reveal>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            
-            {/* Hao-Cheng Tsai */}
+          <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2">
             <Reveal className="reveal-1">
               <Image
-                src="https://placehold.co/600x400/F5F5F7/1D1D1F?text=Hao-Cheng+Tsai"
+                src="/images/founders/hao-cheng-tsai.svg"
                 alt={t('team.hc.name')}
                 width={600}
                 height={400}
-                className="rounded-2xl w-full h-auto" // 保持寬高比
+                className="h-auto w-full rounded-2xl bg-emerald-50"
+                priority
               />
               <h3 className="h3 mt-6">
                 <span>{t('team.hc.name')}</span>
@@ -75,14 +74,13 @@ export default function About() {
               </blockquote>
             </Reveal>
             
-            {/* Yi-Ling Lai */}
             <Reveal className="reveal-2">
               <Image
-                src="https://placehold.co/600x400/F5F5F7/1D1D1F?text=Yi-Ling+Lai"
+                src="/images/founders/yi-ling-lai.svg"
                 alt={t('team.yl.name')}
                 width={600}
                 height={400}
-                className="rounded-2xl w-full h-auto" // 保持寬高比
+                className="h-auto w-full rounded-2xl bg-indigo-50"
               />
               <h3 className="h3 mt-6">
                 <span>{t('team.yl.name')}</span>
