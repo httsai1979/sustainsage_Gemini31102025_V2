@@ -1,16 +1,15 @@
-// pages/_app.js
-
-import '../styles/globals.css'; 
+import '../styles/globals.css';
 import { appWithTranslation } from 'next-i18next';
-// ⚠️ 檢查這裡的路徑是否正確：對於 _app.js 來說，Layout 在 components/layout 內
-import Layout from '../components/layout/Layout'; // <-- 確保是 `../components/layout/Layout`
+
+import MainLayout from '@/components/layout/MainLayout';
+import nextI18NextConfig from '../next-i18next.config.js';
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
-  );
+  const getLayout = Component.getLayout || ((page) => (
+    <MainLayout {...(Component.layoutProps || pageProps?.layoutProps)}>{page}</MainLayout>
+  ));
+
+  return getLayout(<Component {...pageProps} />);
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp, nextI18NextConfig);

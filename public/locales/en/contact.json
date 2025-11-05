@@ -1,29 +1,37 @@
 {
-  "pageTitle": "Contact Us | SustainSage Group",
-  "pageDescription": "Let's begin the conversation. We look forward to hearing your story.",
-
   "hero": {
-    "title": "Let's begin the conversation",
-    "subtitle": "We look forward to hearing your story. All enquiries are held in strict confidence."
+    "title": "Contact",
+    "subtitle": "Say hello. Share what you’d like help with and how you’d prefer to meet."
   },
-
   "form": {
-    "name": "Full Name",
-    "email": "Email Address",
-    "interest": "I'm interested in...",
-    "optionCareer": "Career Transition",
-    "optionGraduate": "New Graduate",
-    "optionImmigrant": "New Immigrant",
-    "optionOther": "Other",
-    "message": "What's on your mind?",
-    "submit": "Send Message",
-    "feedbackSuccess": "Thank you. We'll be in touch shortly.",
-    "feedbackError": "An error occurred. Please try again."
+    "title": "Send us a note",
+    "subtitle": "Everything you share is confidential within legal and safeguarding limits.",
+    "name": "Full name",
+    "email": "Email address",
+    "topicLabel": "I’m interested in…",
+    "topicPlaceholder": "Select a focus",
+    "message": "What would you like to explore?",
+    "consent": "I consent to be contacted about scheduling an intro chat. I understand this is not medical, legal or financial advice.",
+    "submit": "Send",
+    "status": {
+      "submitting": "Sending…",
+      "success": "Thank you. We’ll respond within two working days.",
+      "error": "Something went wrong. Please try again or email us directly.",
+      "errorRequired": "Please complete all required fields and confirm consent."
+    },
+    "topics": [
+      { "value": "CAREER_TRANSITION", "label": "Career transition" },
+      { "value": "NEW_GRADUATE", "label": "Graduate support" },
+      { "value": "NEW_IMMIGRANT", "label": "New to the UK" },
+      { "value": "OTHER", "label": "Something else" }
+    ]
   },
-
-  "details": {
-    "title": "Direct Contact",
-    "location": "Southsea, England",
-    "availability": "We work with clients globally online, and in-person by appointment in Southsea."
+  "sidebar": {
+    "title": "What happens next",
+    "description": "We’ll suggest a 20-minute chat to understand your context and co-design next steps.",
+    "responseTitle": "Response time",
+    "responseCopy": "You’ll hear from us within two working days, often sooner.",
+    "privacyTitle": "Confidentiality",
+    "privacyCopy": "We protect your information and only break confidentiality if safety or law requires it."
   }
 }

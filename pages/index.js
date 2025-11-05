@@ -1,104 +1,194 @@
-// pages/blog/index.js
-// [ ! ] 最終還原：重新啟用 MainLayout 和 NextSeo
-
-import MainLayout from '../../components/layout/MainLayout'; // <-- [!] 還原匯入 (使用 ../../)
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { NextSeo } from 'next-seo'; // <-- [!] 還原匯入
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
+import Image from 'next/image';
 import Link from 'next/link';
-import { fetchBlogPosts } from '../../lib/contentful';
 
-export default function BlogIndexPage({ posts }) {
-  const { t } = useTranslation('common');
-  const { locale } = useRouter(); 
+import StickyCTA from '@/components/StickyCTA';
+import Hero from '@/components/layout/Hero';
+import ICFNotice from '@/components/legal/ICFNotice';
+import { HoverLift, Reveal } from '@/components/ui/Motion';
+import { SITE_URL } from '@/lib/seo';
+import MainLayout from '@/components/layout/MainLayout';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+import nextI18NextConfig from '../next-i18next.config.js';
+
+function HomePage() {
+  const { t } = useTranslation('home');
+  const audiences = t('audiences', { returnObjects: true });
+  const process = t('process', { returnObjects: true });
+  const faqs = t('faqs', { returnObjects: true });
+  const founders = t('founders.people', { returnObjects: true });
 
   return (
-    <MainLayout> {/* <-- [!] 還原 MainLayout */}
-      {/* [ ! ] 已修復：移除了錯誤的內部註解 */}
-      <NextSeo
-        title={t('blog.heroTitle')}
-        description={t('blog.heroSubtitle')}
-      />
-      
-      <div className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {t('blog.heroTitle')}
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              {t('blog.heroSubtitle')}
-            </p>
-          </div>
-          
-          <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {!posts || posts.length === 0 ? (
-              <p className="text-gray-600">No blog posts found.</p>
-            ) : (
-              posts.map((post) => (
-                <article
-                  key={post.id}
-                  className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
-                >
-                  {post.featuredImage && post.featuredImage.fields && post.featuredImage.fields.file ? (
-                    <img 
-                      src={`https_:${post.featuredImage.fields.file.url}`} 
-                      alt={post.title} 
-                      className="absolute inset-0 -z-10 h-full w-full object-cover" 
-                    />
-                  ) : (
-                    <div className="absolute inset-0 -z-10 bg-gray-300" />
-                  )}
+    <>
+      <Hero
+        image="/hero/home.svg"
+        priority
+        align="left"
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+      >
+        <Link
+          href="/contact"
+          className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900 focus-visible:ring-white"
+        >
+          {t('hero.primaryCta')}
+        </Link>
+        <a
+          href="#how-it-works"
+          className="rounded-xl border border-white/60 px-4 py-2 text-sm font-semibold text-white transition hover:border-white"
+        >
+          {t('hero.secondaryCta')}
+        </a>
+      </Hero>
 
-                  <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
-                  <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-
-                  <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                    <time dateTime={post.publishedDate} className="mr-8">
-                      {new Date(post.publishedDate).toLocaleDateString(locale, {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </time>
-                    <div className="-ml-4 flex items-center gap-x-4">
-                      <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
-                        <circle cx={1} cy={1} r={1} />
-                      </svg>
-                      <div className="flex gap-x-2.5">
-                        {post.author?.name}
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                    <Link href={`/blog/${post.slug}`}>
-                      <span className="absolute inset-0" />
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-gray-300">
-                    {post.excerpt}
-                  </p>
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('audiencesTitle')}
+            </h2>
+          </Reveal>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {audiences.map((item) => (
+              <HoverLift key={item.title} className="h-full">
+                <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
                 </article>
-              ))
-            )}
+              </HoverLift>
+            ))}
           </div>
         </div>
+      </section>
+
+      <section id="how-it-works" className="bg-emerald-50 py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('processTitle')}
+            </h2>
+          </Reveal>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {process.map((step) => (
+              <HoverLift key={step.title} className="h-full">
+                <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+                  <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{step.description}</p>
+                </article>
+              </HoverLift>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-5xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('faqTitle')}
+            </h2>
+          </Reveal>
+          <div className="mt-6 space-y-4">
+            {faqs.map((item) => (
+              <details key={item.question} className="group rounded-3xl border border-emerald-100 bg-white p-5 shadow-sm">
+                <summary className="cursor-pointer text-base font-semibold text-slate-900">
+                  {item.question}
+                </summary>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-emerald-900 py-12 text-emerald-50 sm:py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+              {t('founders.title')}
+            </h2>
+          </Reveal>
+          <Reveal className="reveal-1">
+            <p className="mt-4 max-w-3xl text-sm leading-7 text-emerald-100 sm:text-base">
+              {t('founders.subtitle')}
+            </p>
+          </Reveal>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {founders.map((person) => (
+              <HoverLift key={person.name} className="h-full">
+                <article className="flex h-full flex-col gap-4 rounded-3xl border border-emerald-500/40 bg-emerald-800/60 p-6 shadow-xl shadow-black/20">
+                  <div className="flex items-center gap-4">
+                    <Image
+                      src={person.image}
+                      alt={person.name}
+                      width={80}
+                      height={80}
+                      className="h-16 w-16 rounded-full border border-emerald-300/40 bg-emerald-700 object-cover"
+                    />
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">{person.name}</h3>
+                      <p className="text-sm text-emerald-200">{person.role}</p>
+                    </div>
+                  </div>
+                  <p className="text-sm leading-6 text-emerald-100">{person.bio}</p>
+                </article>
+              </HoverLift>
+            ))}
+          </div>
+          <div className="mt-10">
+            <Link
+              href="/about"
+              className="inline-flex items-center rounded-xl bg-white px-4 py-2 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900 focus-visible:ring-white"
+            >
+              {t('founders.cta')}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <div className="px-6">
+        <ICFNotice className="mx-auto max-w-4xl" />
       </div>
-    </MainLayout>
+
+      <StickyCTA />
+    </>
   );
 }
 
-export async function getStaticProps({ locale }) {
-  const posts = await fetchBlogPosts();
-  const translations = await serverSideTranslations(locale, ['common']);
+HomePage.getLayout = function getLayout(page) {
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      url: SITE_URL,
+      name: 'SustainSage Coaching',
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      name: 'SustainSage Group Ltd.',
+      url: SITE_URL,
+    },
+  ];
 
+  return (
+    <MainLayout
+      title="SustainSage | Coaching"
+      desc="Calm, client-led coaching grounded in ICF ethics."
+      jsonLd={jsonLd}
+    >
+      {page}
+    </MainLayout>
+  );
+};
+
+export async function getStaticProps({ locale = 'en' }) {
   return {
     props: {
-      posts,
-      ...translations,
+      ...(await serverSideTranslations(locale, ['common', 'home'], nextI18NextConfig)),
     },
-    revalidate: 60, 
   };
 }
+
+export default HomePage;

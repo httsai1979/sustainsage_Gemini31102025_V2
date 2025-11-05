@@ -1,163 +1,141 @@
-// pages/resources.js
+import Image from 'next/image';
+import Link from 'next/link';
 
-import { useState } from 'react'; // [ ! ] 我們需要 useState 來管理篩選器
-import Head from 'next/head';
-import { useTranslation } from 'next-i18next';
+import Hero from '@/components/layout/Hero';
+import ICFNotice from '@/components/legal/ICFNotice';
+import MainLayout from '@/components/layout/MainLayout';
+import { HoverLift, Reveal } from '@/components/ui/Motion';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
-// [ ! ] 匯入 Contentful 服務 (使用 ../ 路徑)
-import { fetchResourceItems } from '../lib/contentful';
+import nextI18NextConfig from '../next-i18next.config.js';
 
-// [ ! ] 匯入我們需要的圖示
-import { DocumentArrowDownIcon, LinkIcon, PlayCircleIcon } from '@heroicons/react/24/outline';
+const FALLBACK_RESOURCES = [
+  {
+    id: 'self-talk-reframe',
+    image: '/images/resources/values-worksheet.svg',
+    translationKey: 'items.selfTalk',
+    href: '/contact?topic=self-talk-reframe',
+  },
+  {
+    id: 'experiment-ladder',
+    image: '/images/resources/culture-checklist.svg',
+    translationKey: 'items.experimentLadder',
+    href: '/contact?topic=experiment-ladder',
+  },
+  {
+    id: 'values-map',
+    image: '/images/resources/values-worksheet.svg',
+    translationKey: 'items.valuesMap',
+    href: '/contact?topic=values-map',
+  },
+  {
+    id: 'emotion-triangle',
+    image: '/images/resources/grounding-audio.svg',
+    translationKey: 'items.emotionTriangle',
+    href: '/contact?topic=emotion-triangle',
+  },
+  {
+    id: 'thought-log',
+    image: '/images/resources/imposter-reading.svg',
+    translationKey: 'items.thoughtLog',
+    href: '/contact?topic=thought-log',
+  },
+  {
+    id: 'beliefs-explorer',
+    image: '/images/resources/culture-checklist.svg',
+    translationKey: 'items.beliefsExplorer',
+    href: '/contact?topic=beliefs-explorer',
+  },
+];
 
-// 篩選器的類型
-// 註：V1.0 規格書要求按「主題」篩選 (例如 職涯反思)。
-// 我們的模型目前只有「類型」。我們暫時先按「類型」篩選，功能是相同的。
-const filterTypes = ['All', 'Worksheet', 'Reading', 'Audio'];
+function ResourceCard({ resource }) {
+  return (
+    <HoverLift className="h-full">
+      <article className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+        <div>
+          <div className="relative overflow-hidden rounded-2xl bg-emerald-50">
+            <Image
+              src={resource.image}
+              alt={resource.title}
+              width={400}
+              height={280}
+              className="h-44 w-full object-cover"
+            />
+          </div>
+          <h3 className="mt-5 text-lg font-semibold text-slate-900">{resource.title}</h3>
+          <p className="mt-3 text-sm leading-6 text-slate-600">{resource.summary}</p>
+          <p className="mt-3 text-xs uppercase tracking-wide text-emerald-700">{resource.formatLabel}</p>
+        </div>
+        <div className="mt-6">
+          <Link
+            href={resource.href}
+            className="inline-flex items-center justify-center rounded-xl border border-emerald-200 px-4 py-2 text-sm font-semibold text-emerald-700 transition hover:border-emerald-300 hover:text-emerald-800"
+          >
+            {resource.cta}
+          </Link>
+        </div>
+      </article>
+    </HoverLift>
+  );
+}
 
-export default function ResourcesPage({ allResources }) {
-  const { t } = useTranslation('common');
-
-  // [ ! ] 篩選器狀態管理
-  const [filter, setFilter] = useState('All'); // 預設顯示 "All"
-
-  // 根據當前 'filter' 狀態過濾 'allResources'
-  const filteredResources = allResources.filter(resource => {
-    if (filter === 'All') {
-      return true; // "All" = 顯示全部
-    }
-    // 只顯示 'type' 與當前 'filter' 匹配的資源
-    return resource.type === filter; 
-  });
-
-  // [ ! ] 根據資源類型返回對應的圖示
-  const getIcon = (type) => {
-    switch (type) {
-      case 'Worksheet':
-        return <DocumentArrowDownIcon className="h-8 w-8 text-gray-700" />;
-      case 'Reading':
-        return <LinkIcon className="h-8 w-8 text-gray-700" />;
-      case 'Audio':
-        return <PlayCircleIcon className="h-8 w-8 text-gray-700" />;
-      default:
-        return null;
-    }
-  };
-
-  // [ ! ] 根據資源類型返回對應的 CTA 連結
-  const getResourceLink = (item) => {
-    if (item.type === 'Worksheet' && item.file?.fields?.file?.url) {
-      // 類型：Worksheet (PDF) -> 連結到 Contentful 媒體檔案
-      return {
-        href: `https:${item.file.fields.file.url}`,
-        target: '_blank', // 在新分頁開啟 PDF
-        rel: 'noopener noreferrer',
-      };
-    }
-    if ((item.type === 'Reading' || item.type === 'Audio') && item.externalUrl) {
-      // 類型：Reading / Audio -> 連結到外部 URL
-      return {
-        href: item.externalUrl,
-        target: '_blank', // 在新分頁開啟
-        rel: 'noopener noreferrer',
-      };
-    }
-    // 預設/備用連結
-    return { href: '#', target: '_self' };
-  };
+function ResourcesPage() {
+  const { t } = useTranslation('resources');
+  const resources = FALLBACK_RESOURCES.map((item) => ({
+    ...item,
+    title: t(`${item.translationKey}.title`),
+    summary: t(`${item.translationKey}.summary`),
+    formatLabel: t(`${item.translationKey}.format`),
+    cta: t(`${item.translationKey}.cta`),
+  }));
 
   return (
     <>
-      <Head>
-        <title>{t('resources.heroTitle')}</title>
-        <meta name="description" content={t('resources.heroSubtitle')} />
-      </Head>
+      <Hero
+        image="/hero/resources.svg"
+        align="left"
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+      />
 
-      <div className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          {/* V1.0 規格書 2.4 節 - Hero 區 */}
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {t('resources.heroTitle')}
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              {t('resources.heroSubtitle')}
-            </p>
-          </div>
-
-          {/* [ ! ] 篩選器按鈕 */}
-          <div className="mt-16 flex items-center justify-center space-x-4">
-            {filterTypes.map((type) => (
-              <button
-                key={type}
-                onClick={() => setFilter(type)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors
-                  ${filter === type
-                    ? 'bg-indigo-600 text-white' // 選中狀態
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200' // 未選中狀態
-                  }
-                `}
-              >
-                {/* 我們從 common.json 獲取翻譯。
-                  t('resources.filterAll') = All
-                  t('resources.cardTypeWorksheet') = Worksheets
-                  ...
-                */}
-                {type === 'All' ? t('resources.filterAll') : t(`resources.cardType${type}`)}
-              </button>
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('curatedTitle')}
+            </h2>
+          </Reveal>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {resources.map((resource) => (
+              <ResourceCard key={resource.id} resource={resource} />
             ))}
           </div>
-
-          {/* [ ! ] 資源卡片網格 */}
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {filteredResources.length === 0 ? (
-              <p className="text-gray-600 col-span-3 text-center">No resources found for this category.</p>
-            ) : (
-              filteredResources.map((item) => (
-                <a
-                  key={item.id}
-                  {...getResourceLink(item)} // 動態設定連結 (href, target)
-                  className="block rounded-2xl bg-gray-50 p-6 shadow-sm ring-1 ring-inset ring-gray-200 hover:ring-indigo-400 transition-shadow"
-                >
-                  <div className="flex items-center space-x-4">
-                    <div className="flex-shrink-0">
-                      {getIcon(item.type)}
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">
-                        {item.title}
-                      </h3>
-                      <p className="text-sm font-medium text-indigo-600">
-                        {item.ctaText}
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              ))
-            )}
-          </div>
-
+          <p className="mt-10 text-sm text-slate-600">{t('usageNote')}</p>
         </div>
+      </section>
+
+      <div className="px-6 pb-16">
+        <ICFNotice className="mx-auto max-w-4xl" />
       </div>
     </>
   );
 }
 
-// [ ! ] getStaticProps
-export async function getStaticProps({ locale }) {
-  // 1. 從 Contentful 獲取所有資源
-  const allResources = await fetchResourceItems();
-  
-  // 2. 獲取翻譯
-  const translations = await serverSideTranslations(locale, ['common']);
+ResourcesPage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout title="Resources | SustainSage" desc="Self-reflection tools you can use at your pace.">
+      {page}
+    </MainLayout>
+  );
+};
 
-  // 3. 將 allResources 和 translations 作為 props 傳遞給頁面
+export async function getStaticProps({ locale = 'en' }) {
   return {
     props: {
-      allResources,
-      ...translations,
+      ...(await serverSideTranslations(locale, ['common', 'resources'], nextI18NextConfig)),
     },
-    revalidate: 60, // 啟用 ISR
   };
 }
+
+export default ResourcesPage;
