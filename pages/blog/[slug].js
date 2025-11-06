@@ -1,64 +1,80 @@
-// pages/blog/[slug].js
 import Link from 'next/link';
-import MainLayout from '../../components/layout/MainLayout';
-import { fetchBlogPostBySlug } from '../../lib/contentful';
+import MainLayout from '@/components/layout/MainLayout';
+import Hero from '@/components/layout/Hero';
+import CardImage from '@/components/CardImage';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export default function BlogPost({ post = null, error = null }) {
-  if (error) {
-    return (
-      <MainLayout>
-        <section className="mx-auto max-w-3xl px-6 py-16">
-          <p className="rounded-lg bg-red-50 p-3 text-sm text-red-700">Contentful error: {error}</p>
-          <p className="mt-4"><Link href="/blog" className="underline">Back to Blog</Link></p>
-        </section>
-      </MainLayout>
-    );
-  }
+const articles = {
+  'career-change': {
+    title: 'Navigating a career change with steadiness',
+    excerpt: 'Questions and reflective prompts to help you sense next steps without pressure.',
+    paragraphs: [
+      'Career change rarely happens in one leap. Give yourself permission to explore possibilities in smaller experiments.',
+      'Begin by naming the conditions you need to feel safe enough to move. Then co-design the smallest action that honours those needs.',
+    ],
+  },
+  'uk-workplace': {
+    title: 'Finding your footing in the UK workplace',
+    excerpt: 'Decode culture, expectations, and communication styles with curiosity, not perfectionism.',
+    paragraphs: [
+      'Notice the unwritten rules by observing meetings, emails, and how decisions are made. Ask colleagues you trust what “good” looks like.',
+      'When something feels unclear, frame questions around shared goals. Most people appreciate context and clarity.',
+    ],
+  },
+};
+
+function BlogPostPage({ post, slug }) {
   if (!post) {
     return (
-      <MainLayout>
+      <MainLayout title="Article not found | SustainSage" desc="The article you requested could not be found.">
         <section className="mx-auto max-w-3xl px-6 py-16">
-          <p className="text-gray-600">Post not found.</p>
-          <p className="mt-4"><Link href="/blog" className="underline">Back to Blog</Link></p>
+          <p className="text-lg font-semibold text-slate-900">We could not find that article.</p>
+          <p className="mt-3 text-sm text-slate-600">
+            It may have been moved. Please browse the blog for other reflective resources.
+          </p>
+          <Link href="/blog" className="mt-6 inline-block rounded border border-emerald-400 px-3 py-1.5 text-sm">
+            Back to blog
+          </Link>
         </section>
       </MainLayout>
     );
   }
 
-  const cover = post.cover || (post.featuredImage?.fields?.file?.url ? ('https:' + post.featuredImage.fields.file.url) : null);
-
   return (
-    <MainLayout>
-      <article className="mx-auto max-w-3xl px-6 py-16 prose prose-gray">
-        <p className="mb-4 text-sm text-gray-500">
-          <Link href="/blog" className="underline">← Back to Blog</Link>
+    <MainLayout title={`${post.title} | SustainSage`} desc={post.excerpt}>
+      <Hero image="/hero/blog.svg" align="left" title={post.title} subtitle={post.excerpt} />
+      <article className="prose prose-slate mx-auto max-w-3xl px-6 py-16">
+        <CardImage className="mb-6" alt={post.title} />
+        {post.paragraphs.map((paragraph, index) => (
+          <p key={`${slug}-paragraph-${index}`}>{paragraph}</p>
+        ))}
+        <p>
+          <Link href="/blog">Back to blog</Link>
         </p>
-        <h1>{post.title}</h1>
-        {post.publishedDate && <p className="text-sm text-gray-500">{new Date(post.publishedDate).toLocaleDateString()}</p>}
-        {cover && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={cover} alt={post.title} className="my-6 w-full rounded-lg" />
-        )}
-        {typeof post.content === 'string' ? (
-          <p>{post.content}</p>
-        ) : (
-          <p className="text-gray-600">This post has no plain-text body. Add a "content" (Text) field or extend the renderer.</p>
-        )}
       </article>
     </MainLayout>
   );
 }
 
 export async function getStaticPaths() {
-  return { paths: [], fallback: 'blocking' };
+  const paths = Object.keys(articles).map((slug) => ({ params: { slug } }));
+  return { paths, fallback: false };
 }
 
-export async function getStaticProps({ params }) {
-  try {
-    const post = await fetchBlogPostBySlug(params?.slug);
-    if (!post) return { notFound: true };
-    return { props: { post }, revalidate: 60 };
-  } catch (e) {
-    return { props: { post: null, error: String(e) }, revalidate: 30 };
+export async function getStaticProps({ params, locale }) {
+  const post = articles[params.slug] || null;
+
+  if (!post) {
+    return { notFound: true };
   }
+
+  return {
+    props: {
+      post,
+      slug: params.slug,
+      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+    },
+  };
 }
+
+export default BlogPostPage;
