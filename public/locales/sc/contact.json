@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "title": "联络我们",
+    "subtitle": "欢迎分享你想讨论的主题，以及偏好的合作方式。"
+  },
+  "form": {
+    "title": "写信给我们",
+    "subtitle": "你提供的资讯会在法律与安全例外范围内保密。",
+    "name": "姓名",
+    "email": "电子邮件",
+    "topicLabel": "我想了解…",
+    "topicPlaceholder": "请选择关注主题",
+    "message": "想一起探索的内容",
+    "consent": "我同意 SustainSage 与我联系，讨论初谈安排。我理解这不属于医疗、法律或财务建议。",
+    "submit": "送出",
+    "status": {
+      "submitting": "传送中…",
+      "success": "谢谢你，我们会在两个工作天内回复。",
+      "error": "传送时发生问题，请再试一次或直接寄信给我们。",
+      "errorRequired": "请完成所有必填栏位并确认同意。"
+    },
+    "topics": [
+      { "value": "CAREER_TRANSITION", "label": "职涯转换" },
+      { "value": "NEW_GRADUATE", "label": "应届毕业生" },
+      { "value": "NEW_IMMIGRANT", "label": "新移民适应" },
+      { "value": "OTHER", "label": "其他需求" }
+    ]
+  },
+  "sidebar": {
+    "title": "接下来会怎么进行",
+    "description": "我们会邀请你安排 20 分钟初谈，了解情境并共同设计下一步。",
+    "responseTitle": "回复时间",
+    "responseCopy": "一般在两个工作天内回复，通常会更快。",
+    "privacyTitle": "保密说明",
+    "privacyCopy": "除非涉及安全或法律需求，我们不会在未经同意的情况下分享你的资讯。"
+  }
+}

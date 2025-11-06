@@ -1,58 +1,58 @@
-import Link from 'next/link';
-import MainLayout from '../components/layout/MainLayout';
-import { useTranslation } from 'next-i18next';
+import Hero from '@/components/layout/Hero';
+import ICFNotice from '@/components/legal/ICFNotice';
+import MainLayout from '@/components/layout/MainLayout';
+import ContactForm from '@/components/Sections/ContactForm';
+import { SITE_URL } from '@/lib/seo';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
-export default function ContactPage() {
+import nextI18NextConfig from '../next-i18next.config.js';
+
+function ContactPage() {
   const { t } = useTranslation('contact');
 
   return (
-    <MainLayout
-      title="Contact - SustainSage"
-      desc={t('hero.lead', { defaultValue: 'Get in touch. Bilingual, practical, no-hype coaching.' })}
-      jsonLd={{ '@context': 'https://schema.org', '@type': 'ContactPage', name: 'Contact - SustainSage' }}
-    >
-      <section className="py-12 md:py-16">
-        <div className="mx-auto max-w-3xl">
-          <h1 className="text-3xl md:text-4xl font-semibold mb-3">
-            {t('hero.title', { defaultValue: 'Contact us' })}
-          </h1>
-          <p className="text-lg text-[#555] mb-10">
-            {t('hero.lead', { defaultValue: 'Send a message and we’ll reply within 1-2 business days.' })}
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="rounded-xl border bg-white p-5">
-              <h2 className="font-medium mb-2">{t('ways.email_title', { defaultValue: 'Email' })}</h2>
-              <p className="text-sm text-[#666] mb-3">{t('ways.email_note', { defaultValue: 'Best for detailed questions or sharing context.' })}</p>
-              <a className="inline-block px-3 py-2 rounded-md bg-[#4A6C56] text-white" href="mailto:hc.tsai@sustainsage-group.com">
-                hc.tsai@sustainsage-group.com
-              </a>
-            </div>
-            <div className="rounded-xl border bg-white p-5">
-              <h2 className="font-medium mb-2">{t('ways.intro_title', { defaultValue: 'Book an intro' })}</h2>
-              <p className="text-sm text-[#666] mb-3">
-                {t('ways.intro_note', { defaultValue: 'Free 20-minute intro call. No pressure, just clarity.' })}
-              </p>
-              <Link className="inline-block rounded-md border px-3 py-2" href="/contact">
-                {t('ways.intro_cta', { defaultValue: 'See availability' })}
-              </Link>
-            </div>
-          </div>
-
-          <div className="mt-10 text-sm text-[#666]">
-            {t('disclaimer', { defaultValue: 'We’re UK-based (UTC). Responses within business hours.' })}
-          </div>
-        </div>
-      </section>
-    </MainLayout>
+    <>
+      <Hero
+        image="/hero/contact.svg"
+        align="left"
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+      />
+      <div className="pb-12">
+        <ContactForm />
+      </div>
+      <div className="px-6 pb-16">
+        <ICFNotice className="mx-auto max-w-4xl" />
+      </div>
+    </>
   );
 }
 
-export async function getStaticProps({ locale }) {
+ContactPage.getLayout = function getLayout(page) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    url: `${SITE_URL}/contact`,
+    about: {
+      '@type': 'Organization',
+      name: 'SustainSage Group Ltd.',
+    },
+  };
+
+  return (
+    <MainLayout title="Contact | SustainSage" desc="Get in touch—consent-led and clear." jsonLd={jsonLd}>
+      {page}
+    </MainLayout>
+  );
+};
+
+export async function getStaticProps({ locale = 'en' }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'contact'])),
+      ...(await serverSideTranslations(locale, ['common', 'contact'], nextI18NextConfig)),
     },
   };
 }
+
+export default ContactPage;

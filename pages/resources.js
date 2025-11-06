@@ -1,41 +1,118 @@
-import MainLayout from '../components/layout/MainLayout';
-import Hero from '../components/layout/Hero';
-import ICFNotice from '../components/legal/ICFNotice';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Image from 'next/image';
+import Link from 'next/link';
 
-const resources = [
-  { name: 'Self-talk Reframe Cards', type: 'PDF', description: 'Gentle prompts to shift harsh self-talk into useful, self-honouring language.' },
-  { name: 'Behavioural Experiment Ladder', type: 'PDF', description: 'Plan small, safe tests that you design and own.' },
-  { name: 'Values Map', type: 'PDF', description: 'Name what matters; co-design aligned actions.' },
-  { name: 'Emotion Triangle', type: 'Slides', description: 'Notice links between feelings, thoughts and behaviours—without self-judgement.' },
-  { name: 'Thought Log', type: 'Sheet', description: 'Spot patterns and choose different next steps.' },
-  { name: 'Limiting Beliefs Explorer', type: 'Doc', description: 'Loosen rigid stories with compassionate curiosity.' },
+import Hero from '@/components/layout/Hero';
+import ICFNotice from '@/components/legal/ICFNotice';
+import MainLayout from '@/components/layout/MainLayout';
+import { HoverLift, Reveal } from '@/components/ui/Motion';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+
+import nextI18NextConfig from '../next-i18next.config.js';
+
+const FALLBACK_RESOURCES = [
+  {
+    id: 'self-talk-reframe',
+    image: '/images/resources/values-worksheet.svg',
+    translationKey: 'items.selfTalk',
+    href: '/contact?topic=self-talk-reframe',
+  },
+  {
+    id: 'experiment-ladder',
+    image: '/images/resources/culture-checklist.svg',
+    translationKey: 'items.experimentLadder',
+    href: '/contact?topic=experiment-ladder',
+  },
+  {
+    id: 'values-map',
+    image: '/images/resources/values-worksheet.svg',
+    translationKey: 'items.valuesMap',
+    href: '/contact?topic=values-map',
+  },
+  {
+    id: 'emotion-triangle',
+    image: '/images/resources/grounding-audio.svg',
+    translationKey: 'items.emotionTriangle',
+    href: '/contact?topic=emotion-triangle',
+  },
+  {
+    id: 'thought-log',
+    image: '/images/resources/imposter-reading.svg',
+    translationKey: 'items.thoughtLog',
+    href: '/contact?topic=thought-log',
+  },
+  {
+    id: 'beliefs-explorer',
+    image: '/images/resources/culture-checklist.svg',
+    translationKey: 'items.beliefsExplorer',
+    href: '/contact?topic=beliefs-explorer',
+  },
 ];
+
+function ResourceCard({ resource }) {
+  return (
+    <HoverLift className="h-full">
+      <article className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+        <div>
+          <div className="relative overflow-hidden rounded-2xl bg-emerald-50">
+            <Image
+              src={resource.image}
+              alt={resource.title}
+              width={400}
+              height={280}
+              className="h-44 w-full object-cover"
+            />
+          </div>
+          <h3 className="mt-5 text-lg font-semibold text-slate-900">{resource.title}</h3>
+          <p className="mt-3 text-sm leading-6 text-slate-600">{resource.summary}</p>
+          <p className="mt-3 text-xs uppercase tracking-wide text-emerald-700">{resource.formatLabel}</p>
+        </div>
+        <div className="mt-6">
+          <Link
+            href={resource.href}
+            className="inline-flex items-center justify-center rounded-xl border border-emerald-200 px-4 py-2 text-sm font-semibold text-emerald-700 transition hover:border-emerald-300 hover:text-emerald-800"
+          >
+            {resource.cta}
+          </Link>
+        </div>
+      </article>
+    </HoverLift>
+  );
+}
+
+function ResourcesPage() {
+  const { t } = useTranslation('resources');
+  const resources = FALLBACK_RESOURCES.map((item) => ({
+    ...item,
+    title: t(`${item.translationKey}.title`),
+    summary: t(`${item.translationKey}.summary`),
+    formatLabel: t(`${item.translationKey}.format`),
+    cta: t(`${item.translationKey}.cta`),
+  }));
 
 function ResourcesPage() {
   return (
-    <MainLayout title="Resources | SustainSage" desc="Self-reflection tools you can use at your pace.">
+    <>
       <Hero
         image="/hero/resources.svg"
         align="left"
-        title="Resources"
-        subtitle="Light, reflective tools. Use what serves you; ignore what doesn’t."
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
       />
 
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-6 md:grid-cols-3">
-            {resources.map((item) => (
-              <article key={item.name} className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900">{item.name}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
-                <p className="mt-2 text-xs uppercase tracking-wide text-slate-500">Format: {item.type}</p>
-                <a className="mt-4 inline-block rounded border border-emerald-400 px-3 py-1.5 text-sm" href="#">
-                  Download
-                </a>
-              </article>
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('curatedTitle')}
+            </h2>
+          </Reveal>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {resources.map((resource) => (
+              <ResourceCard key={resource.id} resource={resource} />
             ))}
           </div>
+          <p className="mt-10 text-sm text-slate-600">{t('usageNote')}</p>
         </div>
       </section>
 
@@ -46,10 +123,18 @@ function ResourcesPage() {
   );
 }
 
-export async function getStaticProps({ locale }) {
+ResourcesPage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout title="Resources | SustainSage" desc="Self-reflection tools you can use at your pace.">
+      {page}
+    </MainLayout>
+  );
+};
+
+export async function getStaticProps({ locale = 'en' }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+      ...(await serverSideTranslations(locale, ['common', 'resources'], nextI18NextConfig)),
     },
   };
 }
