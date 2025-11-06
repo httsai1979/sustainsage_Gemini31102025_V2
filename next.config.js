@@ -17,6 +17,14 @@ const nextConfig = {
       },
     ];
   },
+  images: {
+    formats: ['image/avif', 'image/webp']
+  },
+  async redirects() {
+    return [
+      { source: '/service', destination: '/services', permanent: true }
+    ];
+  }
 };
 
 module.exports = nextConfig;

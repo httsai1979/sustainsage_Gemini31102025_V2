@@ -49,6 +49,9 @@ export default function ContactPage() {
   );
 }
 
+ContactPage.getLayout = (page) => <MainLayout title="Contact | SustainSage">{page}</MainLayout>;
+export default ContactPage;
+
 export async function getStaticProps({ locale }) {
   return {
     props: {
