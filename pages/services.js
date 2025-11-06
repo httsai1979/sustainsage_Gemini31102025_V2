@@ -1,6 +1,6 @@
-import MainLayout from '@/components/layout/MainLayout';
-import Hero from '@/components/layout/Hero';
-import ICFNotice from '@/components/legal/ICFNotice';
+import MainLayout from '../components/layout/MainLayout';
+import Hero from '../components/layout/Hero';
+import ICFNotice from '../components/legal/ICFNotice';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const formats = [

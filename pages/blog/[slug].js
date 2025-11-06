@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import MainLayout from '@/components/layout/MainLayout';
-import Hero from '@/components/layout/Hero';
-import CardImage from '@/components/CardImage';
+import MainLayout from '../../components/layout/MainLayout';
+import Hero from '../../components/layout/Hero';
+import CardImage from '../../components/CardImage';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const articles = {
@@ -54,7 +54,7 @@ function BlogPostPage({ post, slug }) {
       </article>
     </MainLayout>
   );
-}
+};
 
 export async function getStaticPaths() {
   const paths = Object.keys(articles).map((slug) => ({ params: { slug } }));

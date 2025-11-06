@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import MainLayout from '@/components/layout/MainLayout';
-import Hero from '@/components/layout/Hero';
+import MainLayout from '../components/layout/MainLayout';
+import Hero from '../components/layout/Hero';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 function ServerErrorPage() {

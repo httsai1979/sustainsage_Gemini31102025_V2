@@ -1,7 +1,8 @@
-import MainLayout from '@/components/layout/MainLayout';
-import Hero from '@/components/layout/Hero';
-import CardImage from '@/components/CardImage';
+import MainLayout from '../components/layout/MainLayout';
+import Hero from '../components/layout/Hero';
+import CardImage from '../components/CardImage';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 const highlights = [
   {

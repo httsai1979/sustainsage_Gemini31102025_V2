@@ -1,7 +1,7 @@
-import MainLayout from '@/components/layout/MainLayout';
-import Hero from '@/components/layout/Hero';
-import ICFNotice from '@/components/legal/ICFNotice';
-import CardImage from '@/components/CardImage';
+import MainLayout from '../../components/layout/MainLayout';
+import Hero from '../../components/layout/Hero';
+import ICFNotice from '../../components/legal/ICFNotice';
+import CardImage from '../../components/CardImage';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 const posts = [

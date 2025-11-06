@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import MainLayout from '@/components/layout/MainLayout';
+import MainLayout from '../components/layout/MainLayout';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
