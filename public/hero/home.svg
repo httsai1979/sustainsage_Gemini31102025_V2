@@ -1,1 +1,16 @@
-<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="rg" cx="30%" cy="20%" r="90%"><stop offset="0%" stop-color="#4A6C56"/><stop offset="100%" stop-color="#0b1f16"/></radialGradient></defs><rect width="1600" height="900" fill="url(#rg)"/><g opacity=".08"><circle cx="200" cy="250" r="180" fill="#fff"/><circle cx="1450" cy="700" r="260" fill="#fff"/><circle cx="800" cy="450" r="320" fill="#fff"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" role="img" aria-labelledby="title">
+  <title>Emerald field background for home hero</title>
+  <defs>
+    <radialGradient id="gradient" cx="30%" cy="20%" r="85%">
+      <stop offset="0%" stop-color="#2f5d43"/>
+      <stop offset="55%" stop-color="#214432"/>
+      <stop offset="100%" stop-color="#0b1b14"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="720" fill="url(#gradient)"/>
+  <g fill="#ffffff" opacity="0.08">
+    <circle cx="320" cy="200" r="180"/>
+    <circle cx="1140" cy="520" r="260"/>
+    <circle cx="720" cy="360" r="220"/>
+  </g>
+</svg>

@@ -1,34 +1,12 @@
 {
-  "nav": { "home": "Home", "services": "Services", "resources": "Resources", "about": "About", "blog": "Blog", "contact": "Contact" },
-  "cta": { "book": "Book intro", "how": "See how it works" },
-  "footer": {
-    "privacy": "Privacy",
-    "terms": "Terms",
-    "icf_note": "ICF-aligned. Coaching only; not therapy or legal, medical, or immigration advice."
+  "stickyCta": {
+    "title": "Ready when you are",
+    "subtitle": "Book a 20-minute intro chat to see if coaching is right for you.",
+    "button": "Schedule a chat"
   },
-  "home": {
-    "hero_title": "Clear, calm coaching for real-life change",
-    "hero_subtitle": "We help mid-career professionals, UK newcomers, returners and graduates think clearly, choose next steps, and move at a sustainable pace.",
-    "who_title": "Who we help",
-    "who_items": [
-      { "h": "Mid-career returners", "d": "Re-enter with a realistic plan, updated narrative and steady support." },
-      { "h": "Newcomers to the UK", "d": "Navigate culture, norms and choices without losing who you are." },
-      { "h": "Graduates and early careers", "d": "Turn uncertainty into small experiments and clearer direction." },
-      { "h": "Parents and carers", "d": "Rebuild rhythm between care, work and your own goals." }
-    ],
-    "how_title": "How coaching with us works",
-    "how_steps": [
-      { "h": "Intro call (20 mins)", "d": "Clarify aims, ethics, consent and logistics. You decide if this feels right." },
-      { "h": "Focused sessions", "d": "4-6 sessions, 50-60 minutes. You set the topic; we partner with questions and reflection." },
-      { "h": "Review and next steps", "d": "Look at what shifted, what you learned, and what you want to do next." }
-    ],
-    "faq_title": "FAQ (ICF-aligned)",
-    "faq_items": [
-      { "q": "Is this therapy or counselling?", "a": "No. Coaching is future-focused and non-clinical. We do not diagnose or treat. If therapy is more suitable we will say so." },
-      { "q": "Do you follow the ICF Code of Ethics?", "a": "Yes. We work to the ICF Code of Ethics, including confidentiality, informed consent, clear agreements and scope." },
-      { "q": "Is my information confidential?", "a": "Yes, except where law or safeguarding requires disclosure. We explain this before we begin." },
-      { "q": "Can we discuss job search, immigration or exams?", "a": "Yes, within a coaching frame. We explore options and strategy with you; we do not provide legal or immigration advice." },
-      { "q": "What languages do you use?", "a": "English and Traditional Chinese. We can flex for bilingual or cross-cultural contexts." }
-    ]
+  "icfNotice": {
+    "ariaLabel": "Coaching ethics and scope",
+    "paragraph1": "We coach in line with the ICF Code of Ethics. Coaching is a collaborative, client-led partnership that supports your self-directed learning and change. It is not therapy, counselling, medical, legal or financial advice. You remain responsible for your choices and actions.",
+    "paragraph2": "We maintain confidentiality except where required by law or where there is a risk of harm. We will establish clear agreements, goals and boundaries together before we begin, and we will obtain your informed consent for how we work and how your information is handled."
   }
 }

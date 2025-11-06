@@ -1,57 +1,18 @@
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import LocaleSwitcher from './LocaleSwitcher';
-
-const NAV = [
-  { key: 'home', href: '/' },
-  { key: 'services', href: '/services' },
-  { key: 'resources', href: '/resources' },
-  { key: 'about', href: '/about' },
-  { key: 'blog', href: '/blog' },
-  { key: 'contact', href: '/contact' }
-];
 
 export default function NavBar() {
-  const { t } = useTranslation('common');
-  const router = useRouter();
-  const locale = router.locale || 'en';
-
-  const isActive = (item) => {
-    if (item.key === 'home') return router.pathname === '/';
-    if (item.key === 'blog') return router.pathname.startsWith('/blog');
-    return router.pathname === item.href;
-  };
-
   return (
-    <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
-      <div className="mx-auto max-w-6xl px-4 h-14 flex items-center justify-between gap-4">
-        <Link href="/" locale={locale} className="font-semibold" aria-label="SustainSage home">
-          SustainSage
-        </Link>
-        <nav aria-label="Primary" className="hidden md:flex items-center gap-6">
-          {NAV.map((item) => {
-            const active = isActive(item);
-            return (
-              <Link
-                key={item.key}
-                href={item.href}
-                locale={locale}
-                className={`text-sm ${active ? 'text-black font-medium' : 'text-neutral-600 hover:text-black'}`}
-                aria-current={active ? 'page' : undefined}
-              >
-                {t(`nav.${item.key}`)}
-              </Link>
-            );
-          })}
-        </nav>
-        <div className="flex items-center gap-3">
-          <Link href="/contact" locale={locale} className="rounded-md bg-[#4A6C56] px-3 py-1.5 text-white text-sm">
-            {t('cta.book')}
-          </Link>
-          <LocaleSwitcher />
+    <header className="border-b bg-white/70 backdrop-blur">
+      <nav className="max-w-6xl mx-auto px-6 h-14 flex items-center gap-6">
+        <Link href="/" className="font-semibold">SustainSage</Link>
+        <div className="ml-auto flex gap-4 text-sm">
+          <Link href="/services">Services</Link>
+          <Link href="/resources">Resources</Link>
+          <Link href="/about">About</Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/contact">Contact</Link>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

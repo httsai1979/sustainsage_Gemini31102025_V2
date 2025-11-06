@@ -1,23 +1,17 @@
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
 
 export default function Footer() {
-  const { t } = useTranslation('common');
   const year = new Date().getFullYear();
-
   return (
-    <footer className="mt-12 border-t bg-white">
-      <div className="mx-auto max-w-6xl px-4 py-6 text-xs text-neutral-600 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-        <div>
-          <div className="font-semibold text-neutral-800">SustainSage Group Ltd.</div>
-          <div>ICF-aligned coaching. UK and Taiwan bilingual.</div>
-          <div>© {year} SustainSage. All rights reserved.</div>
-        </div>
-        <div className="flex flex-wrap gap-3">
-          <Link href="/legal/privacy" className="hover:underline">{t('footer.privacy')}</Link>
-          <Link href="/legal/terms" className="hover:underline">{t('footer.terms')}</Link>
-          <span className="text-neutral-400">{t('footer.icf_note')}</span>
-        </div>
+    <footer className="border-t mt-12">
+      <div className="max-w-6xl mx-auto px-6 py-10 text-sm text-slate-600 flex items-center justify-between">
+        <p>© {year} SustainSage Group Ltd.</p>
+        <nav className="flex gap-4">
+          <Link href="/about">About</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/resources">Resources</Link>
+          <Link href="/contact">Contact</Link>
+        </nav>
       </div>
     </footer>
   );

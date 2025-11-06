@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "title": "Services",
+    "subtitle": "Simple formats. Clear agreements. You lead the topic; we partner with presence and curiosity."
+  },
+  "formats": {
+    "title": "Formats",
+    "items": [
+      {
+        "title": "1:1 coaching",
+        "description": "50–60 minutes. You set the agenda. We co-create goals and reflective experiments."
+      },
+      {
+        "title": "Small-group clinics",
+        "description": "Focused clinics—interviews, UK workplace norms, transitions. Shared learning without unsolicited advice."
+      }
+    ]
+  },
+  "commitments": {
+    "title": "What we commit to",
+    "items": [
+      "ICF ethics, clear boundaries and informed consent",
+      "Non-directive partnership; you retain choice and responsibility",
+      "Confidentiality within legal and safeguarding limits",
+      "Regular review of aims, pace and usefulness"
+    ]
+  },
+  "boundaries": {
+    "title": "What we do not do",
+    "items": [
+      "Therapy, counselling, assessment or diagnosis",
+      "Legal, immigration, medical or financial advice",
+      "Guarantees of outcomes"
+    ]
+  },
+  "practicalities": {
+    "title": "Practicalities",
+    "items": [
+      "Online, UK time zone. Session notes are light and client-owned.",
+      "Pricing is shared after the intro chat once scope is clear.",
+      "We may use supervision; identifying details are protected."
+    ]
+  }
+}

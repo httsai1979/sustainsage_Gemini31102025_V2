@@ -1,81 +1,38 @@
-import Hero from '@/components/layout/Hero';
-import { Reveal, HoverLift } from '@/components/ui/Motion';
-import ICFNotice from '@/components/legal/ICFNotice';
-import StickyCTA from '@/components/StickyCTA';
-import FAQ from '@/components/faq/FAQ';
-import Link from 'next/link';
+import MainLayout from '@/components/layout/MainLayout';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import nextI18NextConfig from '../next-i18next.config.js';
-import MainLayout from '@/components/layout/MainLayout';
 
-function HomePage() {
-  const { t } = useTranslation('common');
-  const who = t('home.who_items', { returnObjects: true }) || [];
-  const steps = t('home.how_steps', { returnObjects: true }) || [];
-  const faqItems = t('home.faq_items', { returnObjects: true }) || [];
-
+export default function Home() {
+  const { t } = useTranslation(['home', 'common']);
   return (
-    <>
-      <Hero image="/hero/default.svg" priority title={t('home.hero_title')} subtitle={t('home.hero_subtitle')}>
-        <Link href="/contact" className="rounded-lg bg-[#4A6C56] px-4 py-2 text-white">{t('cta.book')}</Link>
-        <a href="#how-it-works" className="rounded-lg border px-4 py-2 bg-white/10 text-white">{t('cta.how')}</a>
-      </Hero>
-
-      <section className="py-10">
-        <Reveal><h2 className="text-xl font-semibold">{t('home.who_title')}</h2></Reveal>
-        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {who.map((item) => (
-            <HoverLift key={item.h}>
-              <div className="rounded-2xl border bg-white p-6 h-full">
-                <h3 className="font-medium">{item.h}</h3>
-                <p className="mt-2 text-sm text-neutral-600">{item.d}</p>
-              </div>
-            </HoverLift>
-          ))}
+    <MainLayout
+      title="SustainSage — Coaching for real-life change"
+      desc={t('hero.lead', 'Clear, calm coaching for real-life change.')}
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "SustainSage — Home"
+      }}
+    >
+      <section className="py-12 md:py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <h1 className="text-3xl md:text-4xl font-semibold mb-4">
+            {t('hero.title', 'Clear, calm coaching for real-life change')}
+          </h1>
+          <p className="text-slate-600">
+            {t('hero.lead', 'We help mid-career professionals, newcomers and graduates find traction—without hype.')}
+          </p>
         </div>
       </section>
-
-      <section id="how-it-works" className="py-10 bg-[#F0F2F4]">
-        <div className="mx-auto max-w-6xl px-4">
-          <Reveal><h2 className="text-xl font-semibold">{t('home.how_title')}</h2></Reveal>
-          <div className="mt-6 grid gap-4 md:grid-cols-3">
-            {steps.map((item) => (
-              <div key={item.h} className="rounded-2xl border bg-white p-6 h-full">
-                <h3 className="font-medium">{item.h}</h3>
-                <p className="mt-2 text-sm text-neutral-600">{item.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="mx-auto max-w-6xl px-4">
-        <FAQ title={t('home.faq_title')} items={faqItems} />
-        <ICFNotice />
-      </div>
-
-      <StickyCTA />
-    </>
+    </MainLayout>
   );
 }
 
-HomePage.getLayout = (page) => (
-  <MainLayout
-    title="SustainSage | Clear, calm coaching"
-    desc=""
-    jsonLd={{ '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'SustainSage' }}
-  >
-    {page}
-  </MainLayout>
-);
-
-export default HomePage;
-
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale = 'en' }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig))
-    }
+      ...(await serverSideTranslations(locale, ['common', 'home'], nextI18NextConfig)),
+    },
   };
 }

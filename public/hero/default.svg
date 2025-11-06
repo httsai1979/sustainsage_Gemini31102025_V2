@@ -1,1 +1,16 @@
-<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="rg" cx="30%" cy="20%" r="90%"><stop offset="0%" stop-color="#4A6C56"/><stop offset="100%" stop-color="#0b1f16"/></radialGradient></defs><rect width="1600" height="900" fill="url(#rg)"/><g opacity=".08"><circle cx="200" cy="250" r="180" fill="#fff"/><circle cx="1450" cy="700" r="260" fill="#fff"/><circle cx="800" cy="450" r="320" fill="#fff"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" role="img" aria-labelledby="title">
+  <title>Soft emerald gradient backdrop</title>
+  <defs>
+    <radialGradient id="radial" cx="20%" cy="15%" r="80%">
+      <stop offset="0%" stop-color="#1f3d2c"/>
+      <stop offset="45%" stop-color="#2f5240"/>
+      <stop offset="100%" stop-color="#0f1f17"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="720" fill="url(#radial)"/>
+  <g fill="#ffffff" opacity="0.08">
+    <circle cx="1280" cy="220" r="220"/>
+    <circle cx="180" cy="540" r="260"/>
+    <circle cx="720" cy="360" r="200"/>
+  </g>
+</svg>

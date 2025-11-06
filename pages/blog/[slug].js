@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import MainLayout from '@/components/layout/MainLayout';
-import Hero from '@/components/layout/Hero';
-import CardImage from '@/components/ui/CardImage.jsx';
+import MainLayout from '../../components/layout/MainLayout';
+import Hero from '../../components/layout/Hero';
+import CardImage from '../../components/CardImage';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-const ARTICLES = {
+const articles = {
   'career-change': {
     title: 'Navigating a career change with steadiness',
     excerpt: 'Questions and reflective prompts to help you sense next steps without pressure.',
@@ -15,9 +15,9 @@ const ARTICLES = {
   },
   'uk-workplace': {
     title: 'Finding your footing in the UK workplace',
-    excerpt: 'Decode culture, expectations and communication styles with curiosity, not perfectionism.',
+    excerpt: 'Decode culture, expectations, and communication styles with curiosity, not perfectionism.',
     paragraphs: [
-      'Notice the unwritten rules by observing meetings, emails and how decisions are made. Ask colleagues you trust what good looks like.',
+      'Notice the unwritten rules by observing meetings, emails, and how decisions are made. Ask colleagues you trust what “good” looks like.',
       'When something feels unclear, frame questions around shared goals. Most people appreciate context and clarity.',
     ],
   },
@@ -42,9 +42,9 @@ function BlogPostPage({ post, slug }) {
 
   return (
     <MainLayout title={`${post.title} | SustainSage`} desc={post.excerpt}>
-      <Hero image="/hero/blog.svg" title={post.title} subtitle={post.excerpt} />
+      <Hero image="/hero/blog.svg" align="left" title={post.title} subtitle={post.excerpt} />
       <article className="prose prose-slate mx-auto max-w-3xl px-6 py-16">
-        <CardImage className="mb-6" alt={post.title} src="/hero/default.svg" />
+        <CardImage className="mb-6" alt={post.title} />
         {post.paragraphs.map((paragraph, index) => (
           <p key={`${slug}-paragraph-${index}`}>{paragraph}</p>
         ))}
@@ -54,15 +54,15 @@ function BlogPostPage({ post, slug }) {
       </article>
     </MainLayout>
   );
-}
+};
 
 export async function getStaticPaths() {
-  const paths = Object.keys(ARTICLES).map((slug) => ({ params: { slug } }));
+  const paths = Object.keys(articles).map((slug) => ({ params: { slug } }));
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params, locale }) {
-  const post = ARTICLES[params.slug] || null;
+  const post = articles[params.slug] || null;
 
   if (!post) {
     return { notFound: true };
