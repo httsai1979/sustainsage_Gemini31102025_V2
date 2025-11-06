@@ -1,0 +1,21 @@
+<svg width="480" height="320" viewBox="0 0 480 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cultureTitle cultureDesc">
+  <title id="cultureTitle">Cross-cultural checklist illustration</title>
+  <desc id="cultureDesc">Globe icon with task list representing cross-cultural resources</desc>
+  <defs>
+    <linearGradient id="cultureBg" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E0F1FF" />
+      <stop offset="100%" stop-color="#C2E2FF" />
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" rx="24" fill="url(#cultureBg)" />
+  <circle cx="160" cy="160" r="70" fill="#4A6C56" opacity="0.75" />
+  <path d="M160 100a60 60 0 0 0 0 120a60 60 0 0 0 0-120z" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.8" />
+  <path d="M100 160h120" stroke="#FFFFFF" stroke-width="4" opacity="0.8" />
+  <path d="M160 100c20 20 30 40 30 60s-10 40-30 60c-20-20-30-40-30-60s10-40 30-60z" fill="none" stroke="#FFFFFF" stroke-width="4" opacity="0.8" />
+  <rect x="240" y="110" width="140" height="20" rx="10" fill="#0F7DC2" opacity="0.4" />
+  <rect x="240" y="150" width="120" height="18" rx="9" fill="#0F7DC2" opacity="0.3" />
+  <rect x="240" y="190" width="130" height="18" rx="9" fill="#0F7DC2" opacity="0.2" />
+  <circle cx="230" cy="120" r="9" fill="#0F7DC2" />
+  <circle cx="230" cy="160" r="9" fill="#0F7DC2" opacity="0.7" />
+  <circle cx="230" cy="200" r="9" fill="#0F7DC2" opacity="0.5" />
+</svg>

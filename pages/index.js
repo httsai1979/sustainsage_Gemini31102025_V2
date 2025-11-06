@@ -1,104 +1,81 @@
-// pages/blog/index.js
-// [ ! ] 最終還原：重新啟用 MainLayout 和 NextSeo
-
-import MainLayout from '../../components/layout/MainLayout'; // <-- [!] 還原匯入 (使用 ../../)
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { NextSeo } from 'next-seo'; // <-- [!] 還原匯入
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
+import Hero from '@/components/layout/Hero';
+import { Reveal, HoverLift } from '@/components/ui/Motion';
+import ICFNotice from '@/components/legal/ICFNotice';
+import StickyCTA from '@/components/StickyCTA';
+import FAQ from '@/components/faq/FAQ';
 import Link from 'next/link';
-import { fetchBlogPosts } from '../../lib/contentful';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import nextI18NextConfig from '../next-i18next.config.js';
+import MainLayout from '@/components/layout/MainLayout';
 
-export default function BlogIndexPage({ posts }) {
+function HomePage() {
   const { t } = useTranslation('common');
-  const { locale } = useRouter(); 
+  const who = t('home.who_items', { returnObjects: true }) || [];
+  const steps = t('home.how_steps', { returnObjects: true }) || [];
+  const faqItems = t('home.faq_items', { returnObjects: true }) || [];
 
   return (
-    <MainLayout> {/* <-- [!] 還原 MainLayout */}
-      {/* [ ! ] 已修復：移除了錯誤的內部註解 */}
-      <NextSeo
-        title={t('blog.heroTitle')}
-        description={t('blog.heroSubtitle')}
-      />
-      
-      <div className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {t('blog.heroTitle')}
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              {t('blog.heroSubtitle')}
-            </p>
-          </div>
-          
-          <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {!posts || posts.length === 0 ? (
-              <p className="text-gray-600">No blog posts found.</p>
-            ) : (
-              posts.map((post) => (
-                <article
-                  key={post.id}
-                  className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
-                >
-                  {post.featuredImage && post.featuredImage.fields && post.featuredImage.fields.file ? (
-                    <img 
-                      src={`https_:${post.featuredImage.fields.file.url}`} 
-                      alt={post.title} 
-                      className="absolute inset-0 -z-10 h-full w-full object-cover" 
-                    />
-                  ) : (
-                    <div className="absolute inset-0 -z-10 bg-gray-300" />
-                  )}
+    <>
+      <Hero image="/hero/default.svg" priority title={t('home.hero_title')} subtitle={t('home.hero_subtitle')}>
+        <Link href="/contact" className="rounded-lg bg-[#4A6C56] px-4 py-2 text-white">{t('cta.book')}</Link>
+        <a href="#how-it-works" className="rounded-lg border px-4 py-2 bg-white/10 text-white">{t('cta.how')}</a>
+      </Hero>
 
-                  <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
-                  <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+      <section className="py-10">
+        <Reveal><h2 className="text-xl font-semibold">{t('home.who_title')}</h2></Reveal>
+        <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {who.map((item) => (
+            <HoverLift key={item.h}>
+              <div className="rounded-2xl border bg-white p-6 h-full">
+                <h3 className="font-medium">{item.h}</h3>
+                <p className="mt-2 text-sm text-neutral-600">{item.d}</p>
+              </div>
+            </HoverLift>
+          ))}
+        </div>
+      </section>
 
-                  <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                    <time dateTime={post.publishedDate} className="mr-8">
-                      {new Date(post.publishedDate).toLocaleDateString(locale, {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </time>
-                    <div className="-ml-4 flex items-center gap-x-4">
-                      <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
-                        <circle cx={1} cy={1} r={1} />
-                      </svg>
-                      <div className="flex gap-x-2.5">
-                        {post.author?.name}
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                    <Link href={`/blog/${post.slug}`}>
-                      <span className="absolute inset-0" />
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-gray-300">
-                    {post.excerpt}
-                  </p>
-                </article>
-              ))
-            )}
+      <section id="how-it-works" className="py-10 bg-[#F0F2F4]">
+        <div className="mx-auto max-w-6xl px-4">
+          <Reveal><h2 className="text-xl font-semibold">{t('home.how_title')}</h2></Reveal>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            {steps.map((item) => (
+              <div key={item.h} className="rounded-2xl border bg-white p-6 h-full">
+                <h3 className="font-medium">{item.h}</h3>
+                <p className="mt-2 text-sm text-neutral-600">{item.d}</p>
+              </div>
+            ))}
           </div>
         </div>
+      </section>
+
+      <div className="mx-auto max-w-6xl px-4">
+        <FAQ title={t('home.faq_title')} items={faqItems} />
+        <ICFNotice />
       </div>
-    </MainLayout>
+
+      <StickyCTA />
+    </>
   );
 }
 
-export async function getStaticProps({ locale }) {
-  const posts = await fetchBlogPosts();
-  const translations = await serverSideTranslations(locale, ['common']);
+HomePage.getLayout = (page) => (
+  <MainLayout
+    title="SustainSage | Clear, calm coaching"
+    desc=""
+    jsonLd={{ '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'SustainSage' }}
+  >
+    {page}
+  </MainLayout>
+);
 
+export default HomePage;
+
+export async function getStaticProps({ locale }) {
   return {
     props: {
-      posts,
-      ...translations,
-    },
-    revalidate: 60, 
+      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig))
+    }
   };
 }
