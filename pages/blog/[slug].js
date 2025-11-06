@@ -54,7 +54,7 @@ function BlogPostPage({ post, slug }) {
       </article>
     </MainLayout>
   );
-}
+};
 
 export async function getStaticPaths() {
   const paths = Object.keys(articles).map((slug) => ({ params: { slug } }));

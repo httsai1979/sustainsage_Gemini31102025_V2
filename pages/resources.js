@@ -2,6 +2,7 @@ import MainLayout from '../components/layout/MainLayout';
 import Hero from '../components/layout/Hero';
 import ICFNotice from '../components/legal/ICFNotice';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 const resources = [
   { name: 'Self-talk Reframe Cards', type: 'PDF', description: 'Gentle prompts to shift harsh self-talk into useful, self-honouring language.' },
