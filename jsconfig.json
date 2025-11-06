@@ -1,10 +1,12 @@
-// jsconfig.json
 {
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["*"],
+      "@/components/*": ["components/*"],
+      "@/pages/*": ["pages/*"],
+      "@/public/*": ["public/*"],
+      "@/lib/*": ["lib/*"]
     }
-  },
-  "exclude": ["node_modules"]
+  }
 }

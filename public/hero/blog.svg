@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" role="img" aria-labelledby="title">
+  <title>Blog hero gradient</title>
+  <defs>
+    <radialGradient id="gradient" cx="60%" cy="22%" r="92%">
+      <stop offset="0%" stop-color="#2d6248"/>
+      <stop offset="55%" stop-color="#1f4634"/>
+      <stop offset="100%" stop-color="#0a1b14"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="720" fill="url(#gradient)"/>
+  <g fill="#ffffff" opacity="0.09">
+    <circle cx="300" cy="500" r="240"/>
+    <circle cx="1180" cy="220" r="210"/>
+    <circle cx="760" cy="360" r="190"/>
+  </g>
+</svg>
