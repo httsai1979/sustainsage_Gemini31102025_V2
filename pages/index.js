@@ -1,104 +1,156 @@
-// pages/blog/index.js
-// [ ! ] 最終還原：重新啟用 MainLayout 和 NextSeo
-
-import MainLayout from '../../components/layout/MainLayout'; // <-- [!] 還原匯入 (使用 ../../)
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { NextSeo } from 'next-seo'; // <-- [!] 還原匯入
-import { useTranslation } from 'next-i18next';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { fetchBlogPosts } from '../../lib/contentful';
+import MainLayout from '../components/layout/MainLayout';
+import Hero from '../components/layout/Hero';
+import ICFNotice from '../components/legal/ICFNotice';
+import StickyCTA from '../components/StickyCTA';
+import { Reveal, HoverLift } from '../components/ui/Motion';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-export default function BlogIndexPage({ posts }) {
-  const { t } = useTranslation('common');
-  const { locale } = useRouter(); 
+const audiences = [
+  { title: 'Mid-career returners', description: 'Co-create a realistic plan to re-enter with confidence.' },
+  { title: 'Newcomers to the UK', description: 'Reflect on norms, choices and practical moves in context.' },
+  { title: 'Graduates', description: 'Turn uncertainty into small, testable next steps.' },
+  { title: 'Parents back to work', description: 'Rebuild rhythm with gentle structure and accountability.' },
+];
 
+const steps = [
+  { title: 'Intro chat', description: 'We clarify aims, boundaries, and fit. You choose the topic; we agree how we’ll work.' },
+  { title: 'Focused sessions', description: 'Typically 4–6 × 50–60 mins. You lead; we partner to evoke awareness and options.' },
+  { title: 'Review & next steps', description: 'We reflect on learning, adjust the plan, and agree what support you want next.' },
+];
+
+const faqs = [
+  {
+    question: 'Is coaching the same as therapy or counselling?',
+    answer:
+      'No. Coaching is future-focused and client-led. We do not assess, diagnose or treat. If therapy seems more appropriate, we will signpost respectfully.',
+  },
+  {
+    question: 'Do you give advice?',
+    answer: 'We are non-directive. We may offer observations or frameworks with your permission, but you choose what to do.',
+  },
+  {
+    question: 'Is it confidential?',
+    answer: 'Yes, within legal and safeguarding limits. We explain confidentiality and data handling in our agreement.',
+  },
+  {
+    question: 'How many sessions will I need?',
+    answer: 'Many people start with 4–6. We review together and you decide what is useful.',
+  },
+  {
+    question: 'Can sessions be recorded?',
+    answer: 'Only with your explicit consent and for a clear purpose. Otherwise, we do not record.',
+  },
+  {
+    question: 'Do you follow a code of ethics?',
+    answer: 'Yes. We work to the ICF Code of Ethics and core competencies.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: 'https://www.sustainsage-group.com',
+    name: 'SustainSage Coaching',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SustainSage Group Ltd.',
+    url: 'https://www.sustainsage-group.com',
+  },
+];
+
+function HomePage() {
   return (
-    <MainLayout> {/* <-- [!] 還原 MainLayout */}
-      {/* [ ! ] 已修復：移除了錯誤的內部註解 */}
-      <NextSeo
-        title={t('blog.heroTitle')}
-        description={t('blog.heroSubtitle')}
-      />
-      
-      <div className="bg-white py-16 sm:py-24">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              {t('blog.heroTitle')}
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              {t('blog.heroSubtitle')}
-            </p>
-          </div>
-          
-          <div className="mx-auto mt-16 grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {!posts || posts.length === 0 ? (
-              <p className="text-gray-600">No blog posts found.</p>
-            ) : (
-              posts.map((post) => (
-                <article
-                  key={post.id}
-                  className="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-8 pb-8 pt-80 sm:pt-48 lg:pt-80"
-                >
-                  {post.featuredImage && post.featuredImage.fields && post.featuredImage.fields.file ? (
-                    <img 
-                      src={`https_:${post.featuredImage.fields.file.url}`} 
-                      alt={post.title} 
-                      className="absolute inset-0 -z-10 h-full w-full object-cover" 
-                    />
-                  ) : (
-                    <div className="absolute inset-0 -z-10 bg-gray-300" />
-                  )}
+    <MainLayout
+      title="SustainSage | Coaching"
+      desc="Calm, client-led coaching grounded in ICF ethics."
+      jsonLd={jsonLd}
+    >
+      <Hero
+        image="/hero/home.svg"
+        priority
+        align="left"
+        title="Calm, client-led coaching for real-life change"
+        subtitle="A steady, non-directive space to think clearly, choose next steps, and move at your pace—without hype."
+      >
+        <Link href="/contact" className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-emerald-900 shadow-sm">
+          Book a 20-minute chat
+        </Link>
+        <a href="#how-it-works" className="rounded-xl border border-white/60 px-4 py-2 text-sm font-semibold text-white">
+          See how it works
+        </a>
+      </Hero>
 
-                  <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
-                  <div className="absolute inset-0 -z-10 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-
-                  <div className="flex flex-wrap items-center gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">
-                    <time dateTime={post.publishedDate} className="mr-8">
-                      {new Date(post.publishedDate).toLocaleDateString(locale, {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </time>
-                    <div className="-ml-4 flex items-center gap-x-4">
-                      <svg viewBox="0 0 2 2" className="-ml-0.5 h-0.5 w-0.5 flex-none fill-white/50">
-                        <circle cx={1} cy={1} r={1} />
-                      </svg>
-                      <div className="flex gap-x-2.5">
-                        {post.author?.name}
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="mt-3 text-lg font-semibold leading-6 text-white">
-                    <Link href={`/blog/${post.slug}`}>
-                      <span className="absolute inset-0" />
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="mt-2 text-sm leading-6 text-gray-300">
-                    {post.excerpt}
-                  </p>
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">Who we help</h2>
+          </Reveal>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {audiences.map((item) => (
+              <HoverLift key={item.title} className="h-full">
+                <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
                 </article>
-              ))
-            )}
+              </HoverLift>
+            ))}
           </div>
         </div>
+      </section>
+
+      <section id="how-it-works" className="bg-emerald-50 py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">How it works</h2>
+          </Reveal>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {steps.map((step) => (
+              <HoverLift key={step.title} className="h-full">
+                <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+                  <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{step.description}</p>
+                </article>
+              </HoverLift>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-5xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">Frequently asked questions</h2>
+          </Reveal>
+          <div className="mt-6 space-y-4">
+            {faqs.map((item) => (
+              <details key={item.question} className="group rounded-3xl border border-emerald-100 bg-white p-5 shadow-sm">
+                <summary className="cursor-pointer text-base font-semibold text-slate-900">{item.question}</summary>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{item.answer}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="px-6">
+        <ICFNotice className="mx-auto max-w-4xl" />
       </div>
+
+      <StickyCTA />
     </MainLayout>
   );
 }
 
 export async function getStaticProps({ locale }) {
-  const posts = await fetchBlogPosts();
-  const translations = await serverSideTranslations(locale, ['common']);
-
   return {
     props: {
-      posts,
-      ...translations,
+      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
     },
-    revalidate: 60, 
   };
 }
+
+export default HomePage;
