@@ -9,15 +9,16 @@ export default function Hero({
   subtitle,
   eyebrow,
   children,
-  align = 'left',
+  align = 'center',
   image = '/hero/default.svg',
   imageAlt = 'Abstract gradient background',
   overlay = 'dark',
   priority = false,
 }) {
-  const isLeft = align === 'left';
-  const overlayClass =
-    overlay === 'light' ? 'bg-white/35' : 'bg-slate-950/55';
+  const isLeftAligned = align === 'left';
+  const alignmentClasses = isLeftAligned ? 'items-start text-left' : 'items-center text-center';
+  const actionsAlignment = isLeftAligned ? 'justify-start' : 'justify-center';
+  const overlayClass = overlay === 'light' ? 'bg-white/35' : 'bg-slate-950/55';
 
   return (
     <section className="relative isolate overflow-hidden">
@@ -28,34 +29,32 @@ export default function Hero({
           fill
           priority={priority}
           sizes="100vw"
-          style={{ objectFit: 'cover' }}
+          className="object-cover"
         />
-        <div className={classNames('absolute inset-0', overlayClass)} />
+        <div className={classNames('absolute inset-0', overlayClass)} aria-hidden="true" />
       </div>
-      <div
-        className={classNames(
-          'mx-auto flex max-w-6xl flex-col gap-4 px-4 py-16 md:py-24 text-white',
-          isLeft ? 'items-start text-left' : 'items-center text-center'
-        )}
-      >
-        {eyebrow && (
-          <p className="text-sm font-medium uppercase tracking-wide text-white/70">
-            {eyebrow}
-          </p>
-        )}
-        {title && (
-          <h1 className="text-3xl font-semibold md:text-5xl">{title}</h1>
-        )}
-        {subtitle && (
-          <p className="max-w-3xl text-base text-white/90">{subtitle}</p>
-        )}
+
+      <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
+        <div className={classNames('flex max-w-3xl flex-col gap-5 text-white', alignmentClasses)}>
+          {eyebrow && (
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-200">
+              {eyebrow}
+            </p>
+          )}
+          {title && (
+            <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
+              {title}
+            </h1>
+          )}
+          {subtitle && (
+            <p className="text-lg leading-8 text-emerald-50/90 sm:text-xl">
+              {subtitle}
+            </p>
+          )}
+        </div>
+
         {children && (
-          <div
-            className={classNames(
-              'mt-4 flex flex-wrap gap-3',
-              isLeft ? 'justify-start' : 'justify-center'
-            )}
-          >
+          <div className={classNames('mt-8 flex flex-wrap gap-3', actionsAlignment)}>
             {children}
           </div>
         )}

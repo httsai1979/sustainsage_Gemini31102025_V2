@@ -1,18 +1,15 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import RevealBase from './Reveal';
 
-export function Reveal({ children, delay = 0, y = 12 }) {
-  const reduce = useReducedMotion();
-  const initial = reduce ? {} : { opacity: 0, y };
-  const animate = reduce ? {} : { opacity: 1, y: 0 };
-  return (
-    <motion.div initial={initial} whileInView={animate} viewport={{ once: true, margin: '-20%' }} transition={{ duration: 0.45, delay }}>
-      {children}
-    </motion.div>
-  );
-}
+export const Reveal = ({ children, className = '', threshold }) => (
+  <RevealBase className={className} threshold={threshold}>
+    {children}
+  </RevealBase>
+);
 
-export function HoverLift({ children }) {
-  const reduce = useReducedMotion();
-  if (reduce) return children;
-  return <motion.div whileHover={{ y: -4 }} whileTap={{ y: 0 }}>{children}</motion.div>;
-}
+export const HoverLift = ({ children, className = '' }) => (
+  <div
+    className={`transition duration-300 ease-out hover:-translate-y-1 hover:shadow-lg motion-reduce:transform-none motion-reduce:transition-none ${className}`.trim()}
+  >
+    {children}
+  </div>
+);

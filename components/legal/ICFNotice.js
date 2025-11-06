@@ -1,8 +1,16 @@
+import { useTranslation } from 'next-i18next';
+
 export default function ICFNotice({ className = '' }) {
+  const { t } = useTranslation('common');
+
   return (
-    <aside className={`mx-auto max-w-6xl px-4 mt-10 text-sm text-neutral-700 ${className}`} role="note" aria-label="Coaching ethics and scope">
-      <p>Coaching is a collaborative, client-led partnership grounded in the ICF Code of Ethics. It supports your self-directed learning and change.</p>
-      <p className="mt-2">It is not therapy, counselling, medical, legal or financial advice. You remain responsible for your decisions and actions. We maintain confidentiality except where required by law or risk of harm.</p>
+    <aside
+      className={`mt-10 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-sm leading-relaxed text-neutral-700 shadow-sm ring-1 ring-neutral-100 ${className}`.trim()}
+      role="note"
+      aria-label={t('icfNotice.ariaLabel')}
+    >
+      <p>{t('icfNotice.paragraph1')}</p>
+      <p className="mt-3">{t('icfNotice.paragraph2')}</p>
     </aside>
   );
 }

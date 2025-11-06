@@ -1,32 +1,38 @@
-import MainLayout from '../components/layout/MainLayout';
-import Hero from '../components/layout/Hero';
+import MainLayout from '@/components/layout/MainLayout';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import nextI18NextConfig from '../next-i18next.config.js';
 
 export default function Home() {
+  const { t } = useTranslation(['home', 'common']);
   return (
     <MainLayout
-      title="Calm, client-led coaching for real-life change"
-      desc="We help mid-career professionals, newcomers and graduates find traction—without hype."
+      title="SustainSage — Coaching for real-life change"
+      desc={t('hero.lead', 'Clear, calm coaching for real-life change.')}
       jsonLd={{
-        '@context': 'https://schema.org',
-        '@type': 'ProfessionalService',
-        name: 'SustainSage Coaching'
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "SustainSage — Home"
       }}
     >
-      <Hero
-        title="Calm, client-led coaching for real-life change"
-        subtitle="We help mid-career professionals, newcomers and graduates find traction—without hype."
-        align="left"
-        image="/hero/home.svg"
-        priority
-      />
-      <section className="py-10">
-        <h2 className="text-xl font-semibold">Who we work with</h2>
-        <p className="mt-4 max-w-3xl text-gray-700">
-          Mid-career professionals, newcomers to the UK, graduates and parents
-          returning to work who want steady, ethical support to think clearly
-          and move on real decisions.
-        </p>
+      <section className="py-12 md:py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <h1 className="text-3xl md:text-4xl font-semibold mb-4">
+            {t('hero.title', 'Clear, calm coaching for real-life change')}
+          </h1>
+          <p className="text-slate-600">
+            {t('hero.lead', 'We help mid-career professionals, newcomers and graduates find traction—without hype.')}
+          </p>
+        </div>
       </section>
     </MainLayout>
   );
+}
+
+export async function getStaticProps({ locale = 'en' }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common', 'home'], nextI18NextConfig)),
+    },
+  };
 }

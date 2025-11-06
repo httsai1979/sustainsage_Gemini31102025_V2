@@ -1,1 +1,16 @@
-<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg"><defs><radialGradient id="rg" cx="30%" cy="20%" r="90%"><stop offset="0%" stop-color="#4A6C56"/><stop offset="100%" stop-color="#0b1f16"/></radialGradient></defs><rect width="1600" height="900" fill="url(#rg)"/><g opacity=".08"><circle cx="200" cy="250" r="180" fill="#fff"/><circle cx="1450" cy="700" r="260" fill="#fff"/><circle cx="800" cy="450" r="320" fill="#fff"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" role="img" aria-labelledby="title">
+  <title>About hero gradient</title>
+  <defs>
+    <radialGradient id="gradient" cx="40%" cy="18%" r="90%">
+      <stop offset="0%" stop-color="#2c5b41"/>
+      <stop offset="50%" stop-color="#1e3e2d"/>
+      <stop offset="100%" stop-color="#091712"/>
+    </radialGradient>
+  </defs>
+  <rect width="1440" height="720" fill="url(#gradient)"/>
+  <g fill="#ffffff" opacity="0.09">
+    <circle cx="320" cy="220" r="210"/>
+    <circle cx="1100" cy="560" r="240"/>
+    <circle cx="760" cy="360" r="200"/>
+  </g>
+</svg>

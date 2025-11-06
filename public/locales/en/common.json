@@ -1,18 +1,12 @@
 {
-  "nav": {
-    "home": "Home",
-    "services": "Services",
-    "resources": "Resources",
-    "about": "About",
-    "blog": "Blog",
-    "contact": "Contact"
+  "stickyCta": {
+    "title": "Ready when you are",
+    "subtitle": "Book a 20-minute intro chat to see if coaching is right for you.",
+    "button": "Schedule a chat"
   },
-  "cta": {
-    "book": "Book an intro",
-    "how": "How coaching works"
-  },
-  "icf": {
-    "disclaimerShort": "Coaching is a collaborative, non-directive process. It is not therapy, counselling, medical, legal or financial advice. You remain responsible for your decisions.",
-    "confidentiality": "We follow the ICF Code of Ethics and explain confidentiality and its limits before we begin."
+  "icfNotice": {
+    "ariaLabel": "Coaching ethics and scope",
+    "paragraph1": "We coach in line with the ICF Code of Ethics. Coaching is a collaborative, client-led partnership that supports your self-directed learning and change. It is not therapy, counselling, medical, legal or financial advice. You remain responsible for your choices and actions.",
+    "paragraph2": "We maintain confidentiality except where required by law or where there is a risk of harm. We will establish clear agreements, goals and boundaries together before we begin, and we will obtain your informed consent for how we work and how your information is handled."
   }
 }
