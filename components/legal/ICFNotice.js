@@ -1,20 +1,16 @@
+import { useTranslation } from 'next-i18next';
+
 export default function ICFNotice({ className = '' }) {
+  const { t } = useTranslation('common');
+
   return (
     <aside
-      className={`mx-auto mt-10 max-w-6xl px-4 text-sm text-neutral-700 ${className}`}
+      className={`mt-10 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-sm leading-relaxed text-neutral-700 shadow-sm ring-1 ring-neutral-100 ${className}`.trim()}
       role="note"
-      aria-label="Coaching ethics and scope"
+      aria-label={t('icfNotice.ariaLabel')}
     >
-      <p>
-        We coach in line with the ICF Code of Ethics. Coaching is a collaborative, client-led partnership that supports your
-        self-directed learning and change. It is not therapy, counselling, medical, legal or financial advice. You remain
-        responsible for your choices and actions.
-      </p>
-      <p className="mt-2">
-        We maintain confidentiality except where required by law or where there is a risk of harm. We will establish clear
-        agreements, goals and boundaries together before we begin, and we will obtain your informed consent for how we work and
-        how your information is handled.
-      </p>
+      <p>{t('icfNotice.paragraph1')}</p>
+      <p className="mt-3">{t('icfNotice.paragraph2')}</p>
     </aside>
   );
 }

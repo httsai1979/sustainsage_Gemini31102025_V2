@@ -1,81 +1,58 @@
-import MainLayout from '@/components/layout/MainLayout';
-import Hero from '@/components/layout/Hero';
-import ICFNotice from '@/components/legal/ICFNotice';
-import CardImage from '@/components/ui/CardImage.jsx';
+import MainLayout from '../components/layout/MainLayout';
+import Hero from '../components/layout/Hero';
+import ICFNotice from '../components/legal/ICFNotice';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import nextI18NextConfig from '../next-i18next.config';
+import { useTranslation } from 'next-i18next';
 
-const ITEMS = [
-  {
-    name: 'Self-talk Reframe Cards',
-    type: 'PDF',
-    desc: 'Gentle prompts to shift harsh self-talk into useful language.',
-    img: '/hero/default.svg',
-  },
-  {
-    name: 'Behavioural Experiment Ladder',
-    type: 'PDF',
-    desc: 'Plan small, safe tests that you design and own.',
-    img: '/hero/default.svg',
-  },
-  {
-    name: 'Values Map',
-    type: 'PDF',
-    desc: 'Name what matters; co-design aligned actions.',
-    img: '/hero/default.svg',
-  },
-  {
-    name: 'Emotion Triangle',
-    type: 'Slides',
-    desc: 'Notice links between feelings, thoughts and behaviours.',
-    img: '/hero/default.svg',
-  },
-  {
-    name: 'Thought Log',
-    type: 'Sheet',
-    desc: 'Spot patterns and choose different next steps.',
-    img: '/hero/default.svg',
-  },
-  {
-    name: 'Limiting Beliefs Explorer',
-    type: 'Doc',
-    desc: 'Loosen rigid stories with compassionate curiosity.',
-    img: '/hero/default.svg',
-  },
+const resources = [
+  { name: 'Self-talk Reframe Cards', type: 'PDF', description: 'Gentle prompts to shift harsh self-talk into useful, self-honouring language.' },
+  { name: 'Behavioural Experiment Ladder', type: 'PDF', description: 'Plan small, safe tests that you design and own.' },
+  { name: 'Values Map', type: 'PDF', description: 'Name what matters; co-design aligned actions.' },
+  { name: 'Emotion Triangle', type: 'Slides', description: 'Notice links between feelings, thoughts and behaviours—without self-judgement.' },
+  { name: 'Thought Log', type: 'Sheet', description: 'Spot patterns and choose different next steps.' },
+  { name: 'Limiting Beliefs Explorer', type: 'Doc', description: 'Loosen rigid stories with compassionate curiosity.' },
 ];
 
-export default function Resources() {
+function ResourcesPage() {
   return (
     <MainLayout title="Resources | SustainSage" desc="Self-reflection tools you can use at your pace.">
       <Hero
         image="/hero/resources.svg"
+        align="left"
         title="Resources"
-        subtitle="Light, reflective tools. Use what serves you; ignore what does not."
+        subtitle="Light, reflective tools. Use what serves you; ignore what doesn’t."
       />
-      <section className="py-4">
-        <div className="grid gap-6 md:grid-cols-3">
-          {ITEMS.map(({ name, type, desc, img }) => (
-            <article key={name} className="rounded-2xl border p-4">
-              <CardImage src={img} alt={name} />
-              <h3 className="mt-4 font-medium">{name}</h3>
-              <p className="mt-2 text-sm text-neutral-600">{desc}</p>
-              <p className="mt-2 text-xs text-neutral-500">Format: {type}</p>
-              <a className="mt-4 inline-block rounded border px-3 py-1.5" href="#">
-                Download
-              </a>
-            </article>
-          ))}
+
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="grid gap-6 md:grid-cols-3">
+            {resources.map((item) => (
+              <article key={item.name} className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900">{item.name}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">{item.description}</p>
+                <p className="mt-2 text-xs uppercase tracking-wide text-slate-500">Format: {item.type}</p>
+                <a className="mt-4 inline-block rounded border border-emerald-400 px-3 py-1.5 text-sm" href="#">
+                  Download
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
-      <ICFNotice />
+
+      <div className="px-6 pb-16">
+        <ICFNotice className="mx-auto max-w-4xl" />
+      </div>
     </MainLayout>
   );
 }
 
-export async function getStaticProps({ locale = 'en' }) {
+export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
     },
   };
 }
+
+export default ResourcesPage;

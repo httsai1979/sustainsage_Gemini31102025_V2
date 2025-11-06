@@ -1,13 +1,16 @@
 import Link from 'next/link';
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
-    <footer className="mt-16 border-t">
-      <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 text-sm text-neutral-700 md:flex-row md:items-center md:justify-between">
-        <p>© {new Date().getFullYear()} SustainSage</p>
+    <footer className="border-t mt-12">
+      <div className="max-w-6xl mx-auto px-6 py-10 text-sm text-slate-600 flex items-center justify-between">
+        <p>© {year} SustainSage Group Ltd.</p>
         <nav className="flex gap-4">
-          <Link href="/legal/privacy">Privacy</Link>
-          <Link href="/legal/terms">Terms</Link>
+          <Link href="/about">About</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/resources">Resources</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
       </div>
     </footer>
