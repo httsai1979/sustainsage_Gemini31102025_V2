@@ -19,6 +19,56 @@ function HomePage() {
   const faqs = t('faqs', { returnObjects: true });
   const founders = t('founders.people', { returnObjects: true });
 
+const steps = [
+  { title: 'Intro chat', description: 'We clarify aims, boundaries, and fit. You choose the topic; we agree how we’ll work.' },
+  { title: 'Focused sessions', description: 'Typically 4–6 × 50–60 mins. You lead; we partner to evoke awareness and options.' },
+  { title: 'Review & next steps', description: 'We reflect on learning, adjust the plan, and agree what support you want next.' },
+];
+
+const faqs = [
+  {
+    question: 'Is coaching the same as therapy or counselling?',
+    answer:
+      'No. Coaching is future-focused and client-led. We do not assess, diagnose or treat. If therapy seems more appropriate, we will signpost respectfully.',
+  },
+  {
+    question: 'Do you give advice?',
+    answer: 'We are non-directive. We may offer observations or frameworks with your permission, but you choose what to do.',
+  },
+  {
+    question: 'Is it confidential?',
+    answer: 'Yes, within legal and safeguarding limits. We explain confidentiality and data handling in our agreement.',
+  },
+  {
+    question: 'How many sessions will I need?',
+    answer: 'Many people start with 4–6. We review together and you decide what is useful.',
+  },
+  {
+    question: 'Can sessions be recorded?',
+    answer: 'Only with your explicit consent and for a clear purpose. Otherwise, we do not record.',
+  },
+  {
+    question: 'Do you follow a code of ethics?',
+    answer: 'Yes. We work to the ICF Code of Ethics and core competencies.',
+  },
+];
+
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: 'https://www.sustainsage-group.com',
+    name: 'SustainSage Coaching',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SustainSage Group Ltd.',
+    url: 'https://www.sustainsage-group.com',
+  },
+];
+
+function HomePage() {
   return (
     <>
       <Hero

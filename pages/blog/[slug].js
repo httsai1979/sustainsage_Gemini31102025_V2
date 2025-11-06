@@ -208,7 +208,8 @@ BlogPost.getLayout = function getLayout(page) {
 };
 
 export async function getStaticPaths() {
-  return { paths: [], fallback: 'blocking' };
+  const paths = Object.keys(articles).map((slug) => ({ params: { slug } }));
+  return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params, locale = 'en' }) {
@@ -247,6 +248,14 @@ export async function getStaticProps({ params, locale = 'en' }) {
       revalidate: 30,
     };
   }
+
+  return {
+    props: {
+      post,
+      slug: params.slug,
+      ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+    },
+  };
 }
 
 export default BlogPost;

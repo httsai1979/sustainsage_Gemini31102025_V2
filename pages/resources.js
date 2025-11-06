@@ -90,6 +90,7 @@ function ResourcesPage() {
     cta: t(`${item.translationKey}.cta`),
   }));
 
+function ResourcesPage() {
   return (
     <>
       <Hero
@@ -118,7 +119,7 @@ function ResourcesPage() {
       <div className="px-6 pb-16">
         <ICFNotice className="mx-auto max-w-4xl" />
       </div>
-    </>
+    </MainLayout>
   );
 }
 

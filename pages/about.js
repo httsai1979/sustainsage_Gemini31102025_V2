@@ -11,6 +11,7 @@ function AboutPage() {
   const { t } = useTranslation('about');
   const commitments = t('commitments.items', { returnObjects: true });
 
+function AboutPage() {
   return (
     <>
       <Hero
