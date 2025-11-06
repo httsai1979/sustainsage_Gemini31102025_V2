@@ -1,29 +1,14 @@
 {
-  "pageTitle": "Contact Us | SustainSage Group",
-  "pageDescription": "Let's begin the conversation. We look forward to hearing your story.",
-
   "hero": {
-    "title": "Let's begin the conversation",
-    "subtitle": "We look forward to hearing your story. All enquiries are held in strict confidence."
+    "title": "Contact us",
+    "lead": "Send a message and we’ll reply within 1-2 business days."
   },
-
-  "form": {
-    "name": "Full Name",
-    "email": "Email Address",
-    "interest": "I'm interested in...",
-    "optionCareer": "Career Transition",
-    "optionGraduate": "New Graduate",
-    "optionImmigrant": "New Immigrant",
-    "optionOther": "Other",
-    "message": "What's on your mind?",
-    "submit": "Send Message",
-    "feedbackSuccess": "Thank you. We'll be in touch shortly.",
-    "feedbackError": "An error occurred. Please try again."
+  "ways": {
+    "email_title": "Email",
+    "email_note": "Best for detailed questions or sharing context.",
+    "intro_title": "Book an intro",
+    "intro_note": "Free 20-minute intro call. No pressure, just clarity.",
+    "intro_cta": "See availability"
   },
-
-  "details": {
-    "title": "Direct Contact",
-    "location": "Southsea, England",
-    "availability": "We work with clients globally online, and in-person by appointment in Southsea."
-  }
+  "disclaimer": "We’re UK-based (UTC). Responses within business hours."
 }
