@@ -1,35 +1,35 @@
-// pages/blog/index.js
-import MainLayout from '../../components/layout/MainLayout';
-import BlogCard from '../../components/blog/BlogCard';
-import { fetchBlogPosts } from '../../lib/contentful';
+import Hero from '@/components/layout/Hero';
+import MainLayout from '@/components/layout/MainLayout';
+import ICFNotice from '@/components/legal/ICFNotice';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import nextI18NextConfig from '../../next-i18next.config';
 
-export default function BlogIndex({ posts = [], error = null }) {
+function BlogIndex() {
+  const posts = [1, 2, 3, 4].map((i) => ({
+    title: `Post title ${i}`,
+    summary: 'A brief, non-directive exploration with questions you can try.'
+  }));
+
   return (
-    <MainLayout>
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <header className="mb-10">
-          <h1 className="text-3xl font-semibold tracking-tight">Blog</h1>
-          <p className="mt-3 text-gray-600">Articles and notes that are actually useful.</p>
-          {error && <p className="mt-3 rounded-lg bg-red-50 p-3 text-sm text-red-700">Contentful error: {error}</p>}
-        </header>
-
-        {posts.length === 0 ? (
-          <p className="text-gray-600">No posts yet.</p>
-        ) : (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {posts.map((p) => <BlogCard key={p.id} post={p} />)}
-          </div>
-        )}
+    <>
+      <Hero image="/hero/default.svg" title="Blog" subtitle="Short reads with reflective prompts and simple structures you can adapt." />
+      <section className="mx-auto max-w-6xl px-4 py-8 grid gap-4 md:grid-cols-2">
+        {posts.map((p) => (
+          <article key={p.title} className="rounded-2xl border bg-white p-6">
+            <h3 className="font-medium">{p.title}</h3>
+            <p className="mt-2 text-sm text-neutral-600">{p.summary}</p>
+            <a className="mt-4 inline-block rounded border px-3 py-1.5">Read</a>
+          </article>
+        ))}
       </section>
-    </MainLayout>
+      <ICFNotice />
+    </>
   );
 }
 
-export async function getStaticProps() {
-  try {
-    const posts = await fetchBlogPosts();
-    return { props: { posts }, revalidate: 60 };
-  } catch (e) {
-    return { props: { posts: [], error: String(e) }, revalidate: 30 };
-  }
+BlogIndex.getLayout = (page) => <MainLayout title="Blog | SustainSage">{page}</MainLayout>;
+export default BlogIndex;
+
+export async function getStaticProps({ locale }) {
+  return { props: { ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)) } };
 }

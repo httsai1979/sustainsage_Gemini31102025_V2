@@ -1,0 +1,15 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Hao-Cheng Tsai portrait illustration</title>
+  <desc id="desc">Circular illustration with soft gradients and the initials HC</desc>
+  <defs>
+    <radialGradient id="hcGradient" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#E8F5F0" />
+      <stop offset="60%" stop-color="#C8E6D8" />
+      <stop offset="100%" stop-color="#A4D4C2" />
+    </radialGradient>
+  </defs>
+  <circle cx="160" cy="160" r="150" fill="url(#hcGradient)" />
+  <circle cx="160" cy="140" r="70" fill="#FDFEFE" opacity="0.7" />
+  <path d="M100 210 Q160 260 220 210" fill="none" stroke="#5C8A72" stroke-width="10" stroke-linecap="round" />
+  <text x="160" y="185" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="96" font-weight="700" fill="#3A5F4B">HC</text>
+</svg>
