@@ -10,16 +10,16 @@
     "closeMenu": "關閉導覽"
   },
   "footer": {
-    "philosophy": "透過對話釐清下一步。",
+    "philosophy": "以穩定的對話釐清方向。",
     "sitemapTitle": "網站地圖",
     "contactTitle": "聯絡資訊",
     "copyright": "© {{year}} SustainSage Group Ltd. 版權所有。",
     "privacyPolicy": "隱私權政策"
   },
   "stickyCta": {
-    "title": "隨時準備好時",
-    "subtitle": "預約 20 分鐘初談，看看教練是否適合你。",
-    "button": "預約初談"
+    "title": "預約 20 分鐘互相了解是否適合",
+    "subtitle": "以中英雙語聊聊你的情況、語言需求與合作邊界，看看 SustainSage 是否適合你。",
+    "button": "前往預約"
   },
   "icfNotice": {
     "ariaLabel": "教練倫理與合作範圍",

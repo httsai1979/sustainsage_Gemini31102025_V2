@@ -1,44 +1,87 @@
 {
+  "seo": {
+    "title": "Services | SustainSage",
+    "description": "Bilingual coaching plans for UK newcomers, returners, graduates, and mid-career professionals."
+  },
   "hero": {
     "title": "Services",
-    "subtitle": "Simple formats. Clear agreements. You lead the topic; we partner with presence and curiosity."
+    "subtitle": "Structured yet flexible coaching plans that honour your pace, culture, and goals."
   },
-  "formats": {
-    "title": "Formats",
+  "plans": {
+    "title": "Coaching plans built around your context",
+    "intro": "Each plan provides a starting structure. We fine-tune cadence, language, and support once we understand your priorities.",
+    "fields": {
+      "audience": "Best for",
+      "format": "Format & rhythm",
+      "process": "How it works",
+      "outcomes": "You can expect"
+    },
     "items": [
       {
-        "title": "1:1 coaching",
-        "description": "50–60 minutes. You set the agenda. We co-create goals and reflective experiments."
+        "title": "Landing in the UK coaching series",
+        "audience": "Internationally trained professionals and newcomers learning how UK workplaces operate.",
+        "format": "4–6 sessions over 8–12 weeks; 50-minute virtual sessions with optional bilingual summaries.",
+        "process": "We start with clarity on goals, support systems, and cultural questions, then alternate reflection and experiment design check-ins.",
+        "outcomes": "Map the norms you need to decode, rehearse key conversations, and test low-risk experiments to build confidence."
       },
       {
-        "title": "Small-group clinics",
-        "description": "Focused clinics—interviews, UK workplace norms, transitions. Shared learning without unsolicited advice."
+        "title": "Mid-career recalibration",
+        "audience": "Mid-career leaders weighing role changes, portfolio careers, or postgraduate study.",
+        "format": "6 sessions across 3–4 months; remote conversations plus light asynchronous prompts between meetings.",
+        "process": "We combine values clarification, stakeholder mapping, and experiment ladders to evaluate options in your real context.",
+        "outcomes": "Define decision criteria, design small trials, and craft narratives for senior stakeholders or hiring panels."
+      },
+      {
+        "title": "Return-to-work runway",
+        "audience": "Professionals re-entering work after caregiving, health, or relocation pauses.",
+        "format": "5 sessions over 10–14 weeks; bilingual coaching with practical templates for routines and conversations.",
+        "process": "We begin with a gentle debrief of the pause, then co-design energy checkpoints, support requests, and experiments that rebuild momentum.",
+        "outcomes": "Tell a grounded return story, set sustainable routines, and create check-ins for the first 90 days back."
+      },
+      {
+        "title": "Graduate & early-career lab",
+        "audience": "Recent graduates or career shifters preparing for their first professional role in the UK.",
+        "format": "4 sessions across 8 weeks; remote coaching with optional peer practice activities.",
+        "process": "We blend reflective questions with scenario rehearsal around interviews, onboarding, and everyday workplace communication.",
+        "outcomes": "Name your strengths, design learning experiments, and set up accountability that keeps you moving without overwhelm."
       }
     ]
   },
-  "commitments": {
-    "title": "What we commit to",
+  "partnership": {
+    "title": "What we hold in every engagement",
+    "lead": "Regardless of the plan, you receive steady partnership that keeps ethics, pace, and context in view.",
     "items": [
-      "ICF ethics, clear boundaries and informed consent",
-      "Non-directive partnership; you retain choice and responsibility",
-      "Confidentiality within legal and safeguarding limits",
-      "Regular review of aims, pace and usefulness"
+      {
+        "title": "ICF-aligned ethics",
+        "description": "We work under the International Coaching Federation code, with informed consent, clear confidentiality boundaries, and supervision when needed."
+      },
+      {
+        "title": "Co-created experiments",
+        "description": "You lead the agenda. We co-design reflective practices and real-world experiments that you own, iterate, or decline."
+      },
+      {
+        "title": "Bilingual, culturally aware support",
+        "description": "Sessions can move between English and Mandarin. We stay mindful of both UK workplace norms and the nuances of Chinese-speaking cultures."
+      }
+    ],
+    "notes": [
+      "We regularly review usefulness, pause when required, and signpost therapy, legal, or medical professionals if that becomes more appropriate."
     ]
   },
   "boundaries": {
-    "title": "What we do not do",
+    "title": "Where coaching is not a fit",
     "items": [
-      "Therapy, counselling, assessment or diagnosis",
-      "Legal, immigration, medical or financial advice",
-      "Guarantees of outcomes"
+      "Therapy, counselling, psychiatric care, or crisis intervention.",
+      "Immigration, legal, tax, or financial advice.",
+      "Guaranteed job placements or outcomes."
     ]
   },
-  "practicalities": {
-    "title": "Practicalities",
+  "logistics": {
+    "title": "Practical details",
     "items": [
-      "Online, UK time zone. Session notes are light and client-owned.",
-      "Pricing is shared after the intro chat once scope is clear.",
-      "We may use supervision; identifying details are protected."
+      "Sessions are online in UK time. We agree on scheduling windows that respect your other commitments.",
+      "Pricing is shared after the intro call once scope and organisational sponsorship (if any) are clear.",
+      "We keep light, client-owned session notes and store data in UK/EU compliant systems."
     ]
   }
 }

@@ -1,46 +1,57 @@
 {
+  "seo": {
+    "title": "資源｜SustainSage",
+    "description": "結合教練實務的反思題目、職涯實驗與文化適應工具，適合在會談之間延伸使用。"
+  },
   "hero": {
     "title": "資源",
-    "subtitle": "輕量、可自我反思的工具。選擇對你有幫助的，其他的可以暫放。"
+    "subtitle": "輕量卻有深度的反思工具，讓你在會談之間持續前進。"
   },
-  "curatedTitle": "我們在教練工作中整理的工具",
-  "usageNote": "每一份資源僅供個人反思與教練工作使用，不等同於治療或專業建議。",
+  "curatedTitle": "與教練客戶共同整理的資源",
+  "curatedIntro": "這些工具來自實際教練合作中的提問、清單與模板。有些可以立即提供，有些仍在試行階段—歡迎告訴我們你最需要什麼。",
+  "usageNote": "這些資源用於反思與設計實驗，並非治療、法律意見或其他專業服務的替代方案。",
   "items": {
-    "selfTalk": {
-      "title": "自我對話調頻卡",
-      "summary": "用溫柔提問，把苛刻的自我對話轉換成實用又尊重自己的語句。",
-      "format": "格式：PDF",
-      "cta": "索取資源"
+    "reflectionQuestions": {
+      "title": "反思問題組",
+      "summary": "協助你察覺文化轉換、價值與決策節點的假設。",
+      "format": "格式：PDF 包",
+      "status": "可立即取得",
+      "cta": "索取題目包"
     },
-    "experimentLadder": {
-      "title": "行為實驗階梯",
-      "summary": "設計小而安全、由你掌控的實驗。",
-      "format": "格式：PDF",
-      "cta": "索取資源"
+    "careerExperiments": {
+      "title": "職涯實驗模板",
+      "summary": "一步步規劃低風險實驗，在做出重大決定前先測試。",
+      "format": "格式：工作表組合",
+      "status": "客戶試行中",
+      "cta": "加入試行名單"
     },
-    "valuesMap": {
-      "title": "價值地圖",
-      "summary": "釐清對你重要的事，並共同設計對應的行動。",
-      "format": "格式：PDF",
-      "cta": "索取資源"
+    "culturalChecklists": {
+      "title": "文化適應清單",
+      "summary": "引導你觀察英國職場規範，同時保留原有優勢。",
+      "format": "格式：核對表",
+      "status": "可立即取得",
+      "cta": "索取清單"
     },
-    "emotionTriangle": {
-      "title": "情緒三角圖",
-      "summary": "觀察感受、想法與行為之間的連結，不帶自我責備。",
-      "format": "格式：投影片",
-      "cta": "索取資源"
+    "conversationGuides": {
+      "title": "對話演練指南",
+      "summary": "準備利害關係人更新、回饋對話與人脈經營的框架與腳本。",
+      "format": "格式：簡報",
+      "status": "開發中",
+      "cta": "登記興趣"
     },
-    "thoughtLog": {
-      "title": "思緒記錄表",
-      "summary": "辨識慣性模式，選擇不同的下一步。",
-      "format": "格式：表單",
-      "cta": "索取資源"
-    },
-    "beliefsExplorer": {
-      "title": "限制性信念探索",
-      "summary": "以富同理心的好奇心，鬆動僵化的故事。",
+    "selfAdvocacy": {
+      "title": "自我倡議工具包",
+      "summary": "提供請求資源、爭取機會時的句型與節奏提示。",
       "format": "格式：文件",
-      "cta": "索取資源"
+      "status": "客戶試行中",
+      "cta": "加入試行名單"
+    },
+    "reviewJournal": {
+      "title": "月度回顧手冊",
+      "summary": "以溫和的結構紀錄每月的亮點、學習與下階段實驗。",
+      "format": "格式：Notion / PDF",
+      "status": "可立即取得",
+      "cta": "索取手冊"
     }
   }
 }
