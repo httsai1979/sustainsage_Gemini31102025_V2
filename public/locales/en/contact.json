@@ -8,6 +8,7 @@
     "subtitle": "Tell us what you are navigating. We reply within two UK working days and only use your details to arrange coaching conversations.",
     "imageAlt": "Illustration of scheduling a coaching session"
   },
+  "intro": "You do not need a perfect story or long explanation. A few honest lines about where you are and what you hope for are enough.",
   "highlights": {
     "title": "What to expect",
     "intro": "A short overview before you send your note.",
@@ -43,7 +44,7 @@
     ],
     "timezone": "Preferred time zone / time window",
     "timezonePlaceholder": "e.g. GMT+8 evenings, or UK lunchtime",
-    "consent": "I consent to SustainSage contacting me about coaching. I understand my details will only be used to arrange conversations and will be stored securely.",
+    "consent": "I consent to SustainSage contacting me about coaching. I understand my details are used only for this purpose and handled with confidentiality, with legal or safeguarding exceptions.",
     "privacyNote": "We store your information only for the purposes of contacting you about coaching and delete it if we do not begin working together, unless law requires otherwise.",
     "submit": "Send message",
     "status": {
@@ -52,6 +53,19 @@
       "error": "Something went wrong. Please try again or email contact@sustainsage.com.",
       "errorRequired": "Please complete the required fields and confirm consent."
     }
+  },
+  "afterSubmit": [
+    "We usually reply within 2 working days with a link to book a free 20-minute intro call.",
+    "In that call, we check fit, clarify boundaries, fees and languages. You decide calmly whether to go ahead.",
+    "If coaching is not the right support, we will say so honestly."
+  ],
+  "consent": {
+    "label": "Consent & boundaries",
+    "points": [
+      "Your details are used only to contact you about coaching.",
+      "Coaching is not therapy, counselling, medical, legal, immigration or financial advice.",
+      "We follow the ICF Code of Ethics, including confidentiality with legal and safety exceptions."
+    ]
   },
   "sidebar": {
     "title": "What happens next",

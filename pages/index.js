@@ -4,7 +4,9 @@ import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
+import HomeForWhom from '@/components/Sections/HomeForWhom';
 import StickyCTA from '@/components/StickyCTA';
+import { Reveal } from '@/components/ui/Motion';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -36,11 +38,12 @@ function StepCard({ title, description, index }) {
 
 function HomePage() {
   const { t } = useTranslation('home');
-  const forWhomItems = t('forWhom.items', { returnObjects: true });
   const servicesOverview = t('servicesOverview.cards', { returnObjects: true });
   const howSteps = t('howItWorks.steps', { returnObjects: true });
   const whyPoints = t('whySustainSage.points', { returnObjects: true });
   const founders = t('founders.people', { returnObjects: true });
+  const deepDiveLabels = t('deepDive.labels', { returnObjects: true });
+  const deepDiveStories = t('deepDive.stories', { returnObjects: true });
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
@@ -58,22 +61,31 @@ function HomePage() {
         </Link>
       </Hero>
 
-      <section className="bg-white py-16 sm:py-20" id="who-we-help">
-        <div className="mx-auto max-w-6xl px-6">
+      <HomeForWhom />
+
+      <section className="bg-emerald-50/60 py-16 sm:py-20" id="home-stories">
+        <div className="mx-auto max-w-5xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('forWhom.title')}
-            </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">{t('forWhom.intro')}</p>
+            <Reveal>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                {deepDiveLabels.storiesTitle}
+              </h2>
+            </Reveal>
+            <Reveal className="reveal-1">
+              <p className="mt-4 text-base leading-7 text-emerald-900">
+                {deepDiveLabels.storiesIntro}
+              </p>
+            </Reveal>
           </div>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {forWhomItems.map((item, index) => (
-              <EmojiCard
-                key={item.title}
-                icon={['🌱', '🌍', '🧭', '👂'][index % 4]}
-                title={item.title}
-                description={item.description}
-              />
+
+          <div className="mt-12 space-y-6">
+            {deepDiveStories.map((story, index) => (
+              <Reveal key={story.title} className={`reveal-${index + 2}`}>
+                <article className={`${CARD_BASE_CLASS} bg-white text-left`}>
+                  <h3 className="text-lg font-semibold text-slate-900">{story.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{story.text}</p>
+                </article>
+              </Reveal>
             ))}
           </div>
         </div>
