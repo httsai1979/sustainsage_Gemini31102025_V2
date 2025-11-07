@@ -1,86 +1,90 @@
 {
   "hero": {
-    "title": "Calm, client-led coaching for real-life change",
-    "subtitle": "A steady, non-directive space to think clearly, choose next steps, and move at your pace—without hype.",
+    "eyebrow": "ICF-aligned coaching practice",
+    "title": "Bilingual coaching for UK-based transitions",
+    "subtitle": "ICF-aligned coaches fluent in English and Traditional Chinese, attuned to UK workplaces and Chinese cultural rhythms. We partner with mid-career professionals, returners, newcomers, and graduates to design small experiments that move you forward.",
     "primaryCta": "Book a 20-minute chat",
     "secondaryCta": "See how it works"
   },
-  "audiencesTitle": "Who we work with",
+  "audiencesTitle": "Who we support",
+  "audiencesIntro": "We coach people who are rebuilding direction in the UK while holding onto their own cultural wisdom. Each partnership blends reflective space with practical experiments you can test safely.",
   "audiences": [
     {
-      "title": "Mid-career returners",
-      "description": "Co-create a realistic plan to re-enter work with confidence and care."
+      "title": "Mid-career professionals",
+      "description": "Pause the noise of relocation or role changes, clarify what a sustainable next chapter looks like, and prototype it step by step."
+    },
+    {
+      "title": "Returners after a career break",
+      "description": "Re-enter work with bilingual support that honours your pace, rebuilds confidence, and sets up routines you can test at home and in the office."
     },
     {
       "title": "Newcomers to the UK",
-      "description": "Reflect on norms, choices and practical moves in context, without judgement."
+      "description": "Translate between British workplace norms and Chinese cultural expectations while choosing actions that fit your values."
     },
     {
-      "title": "Graduates",
-      "description": "Turn uncertainty into small, testable next steps you design and own."
-    },
-    {
-      "title": "Parents returning to work",
-      "description": "Rebuild rhythm with gentle structure, reflection and accountability."
+      "title": "Recent graduates",
+      "description": "Turn uncertainty into small experiments—from informational chats to role trials—that help you learn before you leap."
     }
   ],
   "processTitle": "How it works",
+  "processIntro": "Our ICF-aligned approach keeps you in the lead. Sessions can flow in English, Traditional Chinese, or both, and each step focuses on small experiments that build evidence for your decisions.",
   "process": [
     {
-      "title": "Intro chat",
-      "description": "We clarify aims, boundaries and fit. You choose the topic; we agree how we'll work."
+      "title": "Fit conversation",
+      "description": "A 20-minute bilingual chat to understand your context, language preferences, and what support feels respectful for you."
     },
     {
-      "title": "Focused sessions",
-      "description": "Typically 4–6 × 50–60 minutes. You lead; we partner to evoke awareness and options."
+      "title": "Coaching cycles",
+      "description": "4–6 sessions of 50–60 minutes where you choose the focus. We listen, reflect, and co-design experiments grounded in ICF competencies."
     },
     {
-      "title": "Review and next steps",
-      "description": "We reflect on learning, adjust the plan and agree what support you want next."
+      "title": "Review and sustain",
+      "description": "We harvest learning, adjust experiments, and plan what rhythm of support you want next—whether that’s continued coaching or self-led check-ins."
     }
   ],
   "faqTitle": "Frequently asked questions",
+  "faqIntro": "Here’s how we keep coaching ethical, culturally aware, and practical for the transitions you’re navigating.",
   "faqs": [
     {
-      "question": "Is coaching the same as therapy or counselling?",
-      "answer": "No. Coaching is future-focused and client-led. We do not assess, diagnose or treat. If therapy seems more appropriate, we will signpost respectfully."
+      "question": "What does ICF-aligned coaching look like here?",
+      "answer": "We work to the International Coaching Federation Code of Ethics: you stay in charge of the agenda, we design clear agreements, and every tool or observation is used with your permission."
+    },
+    {
+      "question": "Which languages can we use?",
+      "answer": "We coach in English and Traditional Chinese, switching whenever it helps you express nuance or process cultural context."
     },
     {
       "question": "Do you give advice?",
-      "answer": "We are non-directive. We may offer observations or frameworks with your permission, but you decide what to do."
+      "answer": "We stay non-directive. When useful, we may offer reflections or frameworks, and you decide how to adapt them into your experiments."
     },
     {
-      "question": "Is it confidential?",
-      "answer": "Yes, within legal and safeguarding limits. We explain confidentiality and data handling in our agreement."
+      "question": "How many sessions will we plan?",
+      "answer": "Many clients begin with 4–6 sessions. We review progress frequently and you choose whether to extend, pause, or conclude."
     },
     {
-      "question": "How many sessions will I need?",
-      "answer": "Many people start with 4–6 sessions. We review together and you decide what is useful."
+      "question": "Is coaching the same as therapy or counselling?",
+      "answer": "No. Coaching is forward-looking and doesn’t diagnose or treat. If therapy seems more suitable, we will signpost other services respectfully."
     },
     {
-      "question": "Can sessions be recorded?",
-      "answer": "Only with your explicit consent and for a clear purpose. Otherwise, we do not record."
-    },
-    {
-      "question": "Do you follow a code of ethics?",
-      "answer": "Yes. We work to the ICF Code of Ethics and core competencies."
+      "question": "What happens between sessions?",
+      "answer": "We agree on small experiments or reflections you will try. You own the actions; we meet again to learn from what happened."
     }
   ],
   "founders": {
     "title": "Who you'll meet",
-    "subtitle": "Co-founders who blend coaching, facilitation, and design so conversations stay ethical, grounded, and useful.",
+    "subtitle": "Co-founders who bridge UK and Chinese contexts with ICF-aligned coaching, facilitation, and design thinking.",
     "cta": "Meet the practice",
     "people": [
       {
         "name": "Hao-Cheng Tsai",
         "role": "ICF coach & service designer",
-        "bio": "Grounds sessions in systems thinking, cultural transitions, and realistic action design.",
+        "bio": "Connects systems thinking with cultural transitions so your experiments stay grounded in real constraints.",
         "image": "/images/founders/hao-cheng-tsai.svg"
       },
       {
         "name": "Yi-Ling Lai",
         "role": "ICF coach & facilitator",
-        "bio": "Holds space with calm curiosity, focusing on career clarity, values, and confidence building.",
+        "bio": "Holds calm, bilingual space for career clarity, values exploration, and confidence that sticks beyond each session.",
         "image": "/images/founders/yi-ling-lai.svg"
       }
     ]

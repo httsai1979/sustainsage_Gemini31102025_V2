@@ -32,6 +32,9 @@ function HomePage() {
   const process = t('process', { returnObjects: true });
   const faqs = t('faqs', { returnObjects: true });
   const founders = t('founders.people', { returnObjects: true });
+  const audiencesIntro = t('audiencesIntro');
+  const processIntro = t('processIntro');
+  const faqIntro = t('faqIntro');
 
   return (
     <>
@@ -41,6 +44,7 @@ function HomePage() {
         align="left"
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
+        eyebrow={t('hero.eyebrow')}
       >
         <Link
           href="/contact"
@@ -63,6 +67,13 @@ function HomePage() {
               {t('audiencesTitle')}
             </h2>
           </Reveal>
+          {audiencesIntro && (
+            <Reveal className="reveal-1">
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
+                {audiencesIntro}
+              </p>
+            </Reveal>
+          )}
           <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
             {audiences.map((item) => (
               <HoverLift key={item.title} className="h-full">
@@ -83,6 +94,13 @@ function HomePage() {
               {t('processTitle')}
             </h2>
           </Reveal>
+          {processIntro && (
+            <Reveal className="reveal-1">
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
+                {processIntro}
+              </p>
+            </Reveal>
+          )}
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {process.map((step) => (
               <HoverLift key={step.title} className="h-full">
@@ -103,6 +121,13 @@ function HomePage() {
               {t('faqTitle')}
             </h2>
           </Reveal>
+          {faqIntro && (
+            <Reveal className="reveal-1">
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
+                {faqIntro}
+              </p>
+            </Reveal>
+          )}
           <div className="mt-6 space-y-4">
             {faqs.map((item) => (
               <details key={item.question} className="group rounded-3xl border border-emerald-100 bg-white p-5 shadow-sm">
@@ -172,7 +197,7 @@ function HomePage() {
 
 HomePage.layoutProps = {
   title: 'SustainSage | Coaching',
-  desc: 'Calm, client-led coaching grounded in ICF ethics.',
+  desc: 'Calm, bilingual coaching for UK transitions, aligned with ICF ethics.',
   jsonLd: HOME_JSON_LD,
 };
 
