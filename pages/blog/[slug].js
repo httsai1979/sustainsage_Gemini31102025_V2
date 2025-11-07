@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import MainLayout from '@/components/layout/MainLayout';
 import ICFNotice from '@/components/legal/ICFNotice';
 import { fetchBlogPostBySlug } from '@/lib/contentful';
 import { resolveFallbackKey } from '@/lib/blogFallback.server';
@@ -194,13 +195,29 @@ function BlogPost({ post = null, error = null, fallbackKey = null }) {
   );
 }
 
-BlogPost.layoutProps = (pageProps) => {
-  const post = pageProps?.post;
+BlogPost.getLayout = function getLayout(page) {
+  const defaultTitle = 'Blog | SustainSage';
+  const defaultDesc = 'Short, reflective reads with prompts grounded in coaching ethics.';
+  const post = page.props?.post;
+  const fallbackKey = page.props?.fallbackKey;
+  const i18n = page.props?._nextI18Next;
+  const locale = i18n?.initialLocale;
+  const fallbackData =
+    fallbackKey && locale ? i18n?.initialI18nStore?.[locale]?.blog?.[fallbackKey] : null;
 
-  return {
-    title: post?.title ? `${post.title} | SustainSage` : 'Blog | SustainSage',
-    desc: post?.excerpt || 'Short, reflective reads with prompts grounded in coaching ethics.',
-  };
+  const title = post?.title
+    ? `${post.title} | SustainSage`
+    : fallbackData?.title
+    ? `${fallbackData.title} | SustainSage`
+    : defaultTitle;
+
+  const desc = post?.excerpt || fallbackData?.excerpt || defaultDesc;
+
+  return (
+    <MainLayout title={title} desc={desc}>
+      {page}
+    </MainLayout>
+  );
 };
 
 export async function getStaticPaths() {

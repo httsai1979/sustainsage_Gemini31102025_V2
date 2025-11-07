@@ -1,14 +1,13 @@
-import Image from 'next/image';
-import Link from 'next/link';
-
-import StickyCTA from '@/components/StickyCTA';
-import Hero from '@/components/layout/Hero';
+import MainLayout from '@/components/layout/MainLayout';
 import ICFNotice from '@/components/legal/ICFNotice';
-import { HoverLift, Reveal } from '@/components/ui/Motion';
-import { SITE_URL } from '@/lib/seo';
+import StickyCTA from '@/components/StickyCTA';
+import HomeFounderIntro from '@/components/Sections/HomeFounderIntro';
+import HomeForWhom from '@/components/Sections/HomeForWhom';
+import HomeHero from '@/components/Sections/HomeHero';
+import HomeServiceIntro from '@/components/Sections/HomeServiceIntro';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
 
+import { SITE_URL } from '@/lib/seo';
 import nextI18NextConfig from '../next-i18next.config.js';
 
 const HOME_JSON_LD = [
@@ -26,210 +25,31 @@ const HOME_JSON_LD = [
   },
 ];
 
-const ensureArray = (value) => (Array.isArray(value) ? value : []);
-
 function HomePage() {
-  const { t } = useTranslation('home');
-  const audiences = ensureArray(t('audiences', { returnObjects: true }));
-  const process = ensureArray(t('process', { returnObjects: true }));
-  const whySustainSage = ensureArray(t('whySustainSage.items', { returnObjects: true }));
-  const faqs = ensureArray(t('faqs', { returnObjects: true }));
-  const founders = ensureArray(t('founders.people', { returnObjects: true }));
-  const audiencesIntro = t('audiencesIntro');
-  const processIntro = t('processIntro');
-  const whySustainSageIntro = t('whySustainSageIntro');
-  const faqIntro = t('faqIntro');
-
   return (
     <>
-      <Hero
-        image="/hero/home.svg"
-        priority
-        align="left"
-        title={t('hero.title')}
-        subtitle={t('hero.subtitle')}
-        eyebrow={t('hero.eyebrow')}
-      >
-        <Link
-          href="/contact"
-          className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900 focus-visible:ring-white"
-        >
-          {t('hero.primaryCta')}
-        </Link>
-        <a
-          href="#how-coaching-works"
-          className="rounded-xl border border-white/60 px-4 py-2 text-sm font-semibold text-white transition hover:border-white"
-        >
-          {t('hero.secondaryCta')}
-        </a>
-      </Hero>
-
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('audiencesTitle')}
-            </h2>
-          </Reveal>
-          {audiencesIntro && (
-            <Reveal className="reveal-1">
-              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
-                {audiencesIntro}
-              </p>
-            </Reveal>
-          )}
-          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {audiences.map((item) => (
-              <HoverLift key={item.title} className="h-full">
-                <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
-                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-                </article>
-              </HoverLift>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="how-coaching-works" className="bg-emerald-50 py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('processTitle')}
-            </h2>
-          </Reveal>
-          {processIntro && (
-            <Reveal className="reveal-1">
-              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
-                {processIntro}
-              </p>
-            </Reveal>
-          )}
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {process.map((step) => (
-              <HoverLift key={step.title} className="h-full">
-                <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
-                  <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{step.description}</p>
-                </article>
-              </HoverLift>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('whySustainSage.title')}
-            </h2>
-          </Reveal>
-          {whySustainSageIntro && (
-            <Reveal className="reveal-1">
-              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
-                {whySustainSageIntro}
-              </p>
-            </Reveal>
-          )}
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {whySustainSage.map((item) => (
-              <HoverLift key={item.title} className="h-full">
-                <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
-                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-                </article>
-              </HoverLift>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-5xl px-6">
-          <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('faqTitle')}
-            </h2>
-          </Reveal>
-          {faqIntro && (
-            <Reveal className="reveal-1">
-              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
-                {faqIntro}
-              </p>
-            </Reveal>
-          )}
-          <div className="mt-6 space-y-4">
-            {faqs.map((item) => (
-              <details key={item.question} className="group rounded-3xl border border-emerald-100 bg-white p-5 shadow-sm">
-                <summary className="cursor-pointer text-base font-semibold text-slate-900">
-                  {item.question}
-                </summary>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{item.answer}</p>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-emerald-900 py-12 text-emerald-50 sm:py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
-              {t('founders.title')}
-            </h2>
-          </Reveal>
-          <Reveal className="reveal-1">
-            <p className="mt-4 max-w-3xl text-sm leading-7 text-emerald-100 sm:text-base">
-              {t('founders.subtitle')}
-            </p>
-          </Reveal>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {founders.map((person) => (
-              <HoverLift key={person.name} className="h-full">
-                <article className="flex h-full flex-col gap-4 rounded-3xl border border-emerald-500/40 bg-emerald-800/60 p-6 shadow-xl shadow-black/20">
-                  <div className="flex items-center gap-4">
-                    <Image
-                      src={person.image}
-                      alt={person.name}
-                      width={80}
-                      height={80}
-                      className="h-16 w-16 rounded-full border border-emerald-300/40 bg-emerald-700 object-cover"
-                    />
-                    <div>
-                      <h3 className="text-lg font-semibold text-white">{person.name}</h3>
-                      <p className="text-sm text-emerald-200">{person.role}</p>
-                    </div>
-                  </div>
-                  <p className="text-sm leading-6 text-emerald-100">{person.bio}</p>
-                </article>
-              </HoverLift>
-            ))}
-          </div>
-          <div className="mt-10">
-            <Link
-              href="/about"
-              className="inline-flex items-center rounded-xl bg-white px-4 py-2 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900 focus-visible:ring-white"
-            >
-              {t('founders.cta')}
-            </Link>
-          </div>
-        </div>
-      </section>
-
+      <HomeHero />
+      <HomeForWhom />
+      <HomeServiceIntro />
+      <HomeFounderIntro />
       <div className="px-6">
         <ICFNotice className="mx-auto max-w-4xl" />
       </div>
-
       <StickyCTA />
     </>
   );
 }
 
-HomePage.layoutProps = {
-  title: 'SustainSage | Coaching',
-  desc: 'Calm, bilingual coaching for UK transitions, aligned with ICF ethics.',
-  jsonLd: HOME_JSON_LD,
+HomePage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout
+      title="SustainSage | Coaching"
+      desc="Calm, bilingual coaching for UK transitions, aligned with ICF ethics."
+      jsonLd={HOME_JSON_LD}
+    >
+      {page}
+    </MainLayout>
+  );
 };
 
 export async function getStaticProps({ locale = 'en' }) {

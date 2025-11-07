@@ -1,3 +1,4 @@
+import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -117,9 +118,12 @@ function ServicesPage() {
   );
 }
 
-ServicesPage.layoutProps = {
-  title: 'Services | SustainSage',
-  desc: 'ICF-aligned, client-led coaching formats.',
+ServicesPage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout title="Services | SustainSage" desc="ICF-aligned, client-led coaching formats.">
+      {page}
+    </MainLayout>
+  );
 };
 
 export async function getStaticProps({ locale = 'en' }) {
