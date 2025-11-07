@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
-import MainLayout from '@/components/layout/MainLayout';
 import { HoverLift, Reveal } from '@/components/ui/Motion';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -122,12 +121,9 @@ function ResourcesPage() {
   );
 }
 
-ResourcesPage.getLayout = function getLayout(page) {
-  return (
-    <MainLayout title="Resources | SustainSage" desc="Self-reflection tools you can use at your pace.">
-      {page}
-    </MainLayout>
-  );
+ResourcesPage.layoutProps = {
+  title: 'Resources | SustainSage',
+  desc: 'Self-reflection tools you can use at your pace.',
 };
 
 export async function getStaticProps({ locale = 'en' }) {

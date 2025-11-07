@@ -1,6 +1,5 @@
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
-import MainLayout from '@/components/layout/MainLayout';
 import { Reveal } from '@/components/ui/Motion';
 import BlogCard from '@/components/blog/BlogCard';
 import { fetchBlogPosts } from '@/lib/contentful';
@@ -78,15 +77,9 @@ function BlogIndex({ posts = [], error = null }) {
   );
 }
 
-BlogIndex.getLayout = function getLayout(page) {
-  return (
-    <MainLayout
-      title="Blog | SustainSage"
-      desc="Short, reflective reads with prompts grounded in coaching ethics."
-    >
-      {page}
-    </MainLayout>
-  );
+BlogIndex.layoutProps = {
+  title: 'Blog | SustainSage',
+  desc: 'Short, reflective reads with prompts grounded in coaching ethics.',
 };
 
 export async function getStaticProps({ locale = 'en' }) {
