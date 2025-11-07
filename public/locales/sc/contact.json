@@ -1,86 +1,85 @@
 {
   "seo": {
     "title": "联系我们｜SustainSage",
-    "description": "开始与 SustainSage 的教练对话。分享你的情况，我们会提供初谈时间、清楚界线与下一步。"
+    "description": "留下几个重点，开始与 SustainSage 的教练洽询。我们会回复初谈时段、说明界线并提供下一步建议。"
   },
   "hero": {
-    "title": "从踏实的对话开始",
-    "subtitle": "告诉我们你现在的位置，我们会一起判断教练是否合适。"
+    "title": "先一起确认现况",
+    "subtitle": "告诉我们你现在的状态，我们会一起判断教练是否适合。"
   },
   "intro": {
-    "title": "可以分享的重点",
-    "description": "几条要点就够，只要让我们理解你的处境。",
+    "title": "可以分享的内容",
+    "description": "几个重点就够了，让我们理解你的情境。",
     "bullets": [
-      "此刻最在意的转变或决定。",
-      "任何时间压力、协助需求或界线。",
-      "希望使用的语言与初谈方便的时区。"
+      "你正在面对的转换、决策或实验。",
+      "需要尊重的时间安排、无障碍需求或界线。",
+      "初谈希望使用的语言与时区。"
     ]
   },
   "process": {
-    "title": "送出表单后的流程",
-    "description": "流程轻巧透明，没有推销压力。",
+    "title": "填表后会发生什么",
+    "description": "流程保持轻盈透明，不会施压你做决定。",
     "bullets": [
-      "两到三个英国工作日内回复，提供初谈时段。",
-      "20 分钟初谈，厘清焦点、合适度与安全界线。",
-      "是否开始方案由你决定，不会被强迫成交。"
+      "2–3 个英国工作日内回复初谈时段选项。",
+      "20 分钟初谈，用来厘清焦点、合适度与安全界线。",
+      "是否开始合作由你决定，没有话术或推销。"
     ]
   },
   "assurance": {
-    "title": "我们如何守护空间",
-    "description": "讯息与会谈中都可以自由切换语言，步调由你掌握。",
+    "title": "我们提供的支持",
+    "description": "此表单仅用于教练洽询。如需紧急或临床协助，请先联系当地适当的服务。",
     "bullets": [
-      "可使用英语、繁体中文、简体中文。",
-      "预设为线上会谈，如时间允许可在英国面谈。",
-      "资料仅用于安排教练，除法律要求外不会另作他用。"
+      "可使用英文、繁体中文、简体中文，过程中可随时切换。",
+      "预设采用线上会谈；若在英国且时程合适，可讨论面对面。",
+      "除了安排教练所需，我们不会额外储存资料，除非法律要求。"
     ]
   },
   "faq": {
-    "title": "预约前常见问题",
-    "intro": "先回答几个重点，完整 FAQ 会提供更多伦理、流程与安全资讯。"
+    "title": "预约前的常见问题",
+    "intro": "这里先回应几个重点，完整 FAQ 有更多伦理、流程与安全资讯。"
   },
   "form": {
     "title": "写信给我们",
-    "subtitle": "提供足够的背景，好让我们用心回复。欢迎条列。",
+    "subtitle": "提供足够资讯让我们细致回复，条列式也可以。",
     "name": "姓名",
     "email": "Email",
-    "help": "现在最想谈的转变或决定？",
-    "helpHint": "例如：搬到英国、产后重返职场、跨文化领导、倦怠风险。",
-    "focusArea": "想聚焦的主题（选填）",
-    "focusAreaPlaceholder": "选择主题",
+    "help": "你正在思考的转换或决定是什么？",
+    "helpHint": "例如：搬到英国、建立表达自信、设计有伦理的实验、预防过劳。",
+    "focusArea": "想讨论的主题（可选）",
+    "focusAreaPlaceholder": "选择一个焦点",
     "focusAreaOptions": [
-      { "value": "transition", "label": "转变方案" },
-      { "value": "returning", "label": "重返职场" },
-      { "value": "new-to-uk", "label": "初到英国" },
-      { "value": "check-in", "label": "定期 check-in" },
-      { "value": "other", "label": "其他" }
+      { "value": "transition", "label": "Transition 转换方案" },
+      { "value": "confidence", "label": "Confidence & voice" },
+      { "value": "experiments", "label": "Experiments & stewardship" },
+      { "value": "other", "label": "其他或尚未确定" }
     ],
-    "focusHint": "可以先选最贴近的选项，没有头绪也没关系。",
-    "language": "偏好语言",
+    "focusHint": "选择最接近的选项即可，也欢迎保持弹性。",
+    "language": "偏好的语言",
     "languagePlaceholder": "选择语言",
     "languageOptions": [
       { "value": "EN", "label": "English" },
-      { "value": "TC", "label": "繁體中文" },
+      { "value": "TC", "label": "繁体中文" },
       { "value": "SC", "label": "简体中文" },
-      { "value": "MIX", "label": "语言混用" }
+      { "value": "MIX", "label": "英中混用" }
     ],
-    "timezone": "方便的时区或时段",
-    "timezonePlaceholder": "例如：英国早上、GMT+8 晚上或弹性",
-    "consent": "我同意 SustainSage 因教练目的与我联系。",
-    "scopeAcknowledgement": "我了解此表单仅用于教练洽询，不是心理治疗、紧急协助、法律或移民咨询。",
-    "privacyNote": "若最终没有合作，我们会删除资料，除非法律另有要求。",
-    "submit": "送出讯息",
+    "timezone": "偏好的时区／时段",
+    "timezonePlaceholder": "例如：英国上午、GMT+8 晚上或可弹性安排",
+    "consent": "我同意 SustainSage 就教练洽询与我联系。",
+    "scopeAcknowledgement": "我了解此表单仅用于教练洽询，并非治疗、紧急支援、法律、财务或移民建议。",
+    "privacyNote": "若未正式合作，我们会删除资料；法律要求时除外。",
+    "submit": "发送讯息",
     "status": {
-      "submitting": "传送中…",
-      "success": "收到你的讯息，我们会在三个英国工作日内回复。",
-      "error": "传送失败，请再试一次或来信 contact@sustainsage.com。",
+      "submitting": "发送中…",
+      "success": "谢谢你！我们会在三个英国工作日内回复。",
+      "error": "发送时发生问题，请再试一次或写信到 contact@sustainsage.com。",
       "errorRequired": "请填写必填栏位并勾选同意。"
     }
   },
   "formNote": {
     "lines": [
       "一般回复时间：约三个英国工作日内。",
-      "我们可使用 English、繁體中文、简体中文，欢迎自由切换。",
-      "更多保密与资料照护说明请见 {privacyLink}。"
+      "我们可使用 English、繁體中文、简体中文，欢迎自由混用。",
+      "更多关于保密与资料照护，请阅读 {privacyLink}。"
     ],
     "privacyLabel": "隐私与伦理说明",
     "privacyHref": "/contact#icf"

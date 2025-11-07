@@ -54,7 +54,8 @@
         "format": "Google Doc · bilingual",
         "cta": "Make a copy"
       }
-    ]
+    ],
+    "defaultCta": "Open resource"
   },
   "disclaimer": {
     "title": "Use with care",
