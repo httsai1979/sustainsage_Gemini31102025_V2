@@ -1,11 +1,17 @@
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
-import MainLayout from '@/components/layout/MainLayout';
 import { SITE_URL } from '@/lib/seo';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 import nextI18NextConfig from '../next-i18next.config.js';
+
+const ABOUT_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'SustainSage Group Ltd.',
+  url: SITE_URL,
+};
 
 function AboutPage() {
   const { t } = useTranslation('about');
@@ -41,19 +47,10 @@ function AboutPage() {
   );
 }
 
-AboutPage.getLayout = function getLayout(page) {
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
-    name: 'SustainSage Group Ltd.',
-    url: SITE_URL,
-  };
-
-  return (
-    <MainLayout title="About | SustainSage" desc="ICF-aligned practice. Calm, practical, client-led." jsonLd={jsonLd}>
-      {page}
-    </MainLayout>
-  );
+AboutPage.layoutProps = {
+  title: 'About | SustainSage',
+  desc: 'ICF-aligned practice. Calm, practical, client-led.',
+  jsonLd: ABOUT_JSON_LD,
 };
 
 export async function getStaticProps({ locale = 'en' }) {
