@@ -3,7 +3,6 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import ICFNotice from '@/components/legal/ICFNotice';
-import MainLayout from '@/components/layout/MainLayout';
 import { fetchBlogPostBySlug } from '@/lib/contentful';
 import { resolveFallbackKey } from '@/lib/blogFallback.server';
 
@@ -195,16 +194,13 @@ function BlogPost({ post = null, error = null, fallbackKey = null }) {
   );
 }
 
-BlogPost.getLayout = function getLayout(page) {
-  const { post } = page.props || {};
-  const metaTitle = post?.title ? `${post.title} | SustainSage` : 'Blog | SustainSage';
-  const metaDesc = post?.excerpt || 'Short, reflective reads with prompts grounded in coaching ethics.';
+BlogPost.layoutProps = (pageProps) => {
+  const post = pageProps?.post;
 
-  return (
-    <MainLayout title={metaTitle} desc={metaDesc}>
-      {page}
-    </MainLayout>
-  );
+  return {
+    title: post?.title ? `${post.title} | SustainSage` : 'Blog | SustainSage',
+    desc: post?.excerpt || 'Short, reflective reads with prompts grounded in coaching ethics.',
+  };
 };
 
 export async function getStaticPaths() {
