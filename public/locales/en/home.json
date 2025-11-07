@@ -1,288 +1,142 @@
 {
   "seo": {
-    "title": "SustainSage | Coaching for calm, bilingual transitions",
-    "description": "Bilingual coaching for UK-based professionals navigating career, culture, and life transitions. SustainSage offers ICF-aligned conversations in English, Traditional Chinese, and Simplified Chinese."
+    "title": "SustainSage | Coaching for transitions",
+    "description": "ICF-aligned, bilingual coaching helping you navigate relocation, career shifts, or returning to work at your pace."
   },
   "hero": {
-    "title": "Calm, client-led coaching for real-life transitions",
-    "subtitle": "For professionals navigating change across cultures, careers and countries. A steady space to think clearly, choose next steps, and move at your pace.",
-    "note": "No sales script. Just 20 minutes to see whether this space serves you.",
-    "primaryCta": "Book an intro session",
-    "secondaryCta": "View services",
-    "primaryCtaAria": "Book an intro session with SustainSage",
-    "secondaryCtaAria": "View SustainSage services",
-    "imageAlt": "Illustration of a coach and client planning next steps"
+    "title": "Calm, client-led coaching for real transitions.",
+    "subtitle": "For people navigating relocation, career shifts, or returning to work — in English, 繁體中文, 简体中文.",
+    "note": "Every session is co-created with consent. Coaching is not therapy, counselling, legal, financial, or immigration advice.",
+    "primaryCta": "Book a 20-min intro session",
+    "secondaryCta": "See how it works",
+    "primaryCtaAria": "Book a 20-minute intro session with SustainSage",
+    "secondaryCtaAria": "Scroll to the how it works section",
+    "imageAlt": "A calm conversation about life transitions"
   },
-  "workingTogether": {
-    "title": "What working together looks like",
-    "intro": "Every conversation is co-created. We protect space so you decide pace, language, and depth while we bring steady reflection.",
-    "points": [
-      {
-        "title": "You lead, we partner",
-        "description": "You choose the topic each time. We listen, question, and mirror patterns so decisions come from your judgement, not our agenda."
-      },
-      {
-        "title": "Small, realistic experiments",
-        "description": "Sessions end with one or two actions you willingly choose—often tiny, evidence-gathering steps that fit UK life, visas, and capacity."
-      },
-      {
-        "title": "Ethical, confidential, calm",
-        "description": "We follow ICF ethics, name boundaries clearly, and keep conversations grounded. No guarantees, no pressure, always with consent."
-      }
-    ]
-  },
-  "forWhom": {
-    "title": "Who coaching is for",
-    "intro": "We support people juggling UK work, relocation, and caring responsibilities who want a thoughtful place to decide their own direction.",
+  "keyOutcomes": {
+    "title": "Key outcomes",
+    "subtitle": "Short, grounding conversations that keep change realistic.",
     "items": [
       {
-        "key": "midCareer",
-        "title": "Mid-career returners",
-        "summary": "You are re-entering the UK market after a pause and want a grounded plan rather than urgent fixes.",
-        "contextLines": [
-          "Negotiating visa updates or skilled worker routes while explaining a CV gap.",
-          "Balancing care duties, pensions, and flexible work expectations across UK employers.",
-          "Weighing part-time, portfolio, or contract roles that respect energy and finances."
-        ],
-        "conversationFocus": "Topics you can bring: narrating your break, boundaries with recruiters, phased return experiments.",
-        "linkLabel": "See how the Transition Series works",
-        "linkHref": "/services#transition"
+        "icon": "leaf",
+        "title": "More grounded choices",
+        "description": "Pause, surface assumptions, and decide with context instead of urgency."
       },
       {
-        "key": "newToUK",
-        "title": "Newcomers working in the UK",
-        "summary": "You are settling into the UK and want bilingual space to translate culture shocks into workable strategies.",
-        "contextLines": [
-          "Learning unwritten workplace norms while keeping home-culture values alive.",
-          "Building networks without feeling transactional, from meet-ups to LinkedIn outreach.",
-          "Navigating HR language, sponsorship, or probation expectations with confidence."
-        ],
-        "conversationFocus": "Topics you can bring: cross-cultural communication, boundary scripts, mapping realistic support networks.",
-        "linkLabel": "Explore the UK newcomer focus",
-        "linkHref": "/services#transition"
+        "icon": "compass",
+        "title": "Clear next steps",
+        "description": "Name what you will try between sessions and agree how to check in on progress."
       },
       {
-        "key": "graduates",
-        "title": "Early-career explorers",
-        "summary": "You want room to test possibilities after graduation or first roles without pretending to have it all figured out.",
-        "contextLines": [
-          "Comparing grad schemes, creative projects, or further study with UK cost-of-living in mind.",
-          "Debriefing interviews to refine stories that stay honest yet compelling.",
-          "Balancing family expectations, visas, or side jobs while choosing next moves."
-        ],
-        "conversationFocus": "Topics you can bring: decision frameworks, confidence wobbles, designing low-risk trials.",
-        "linkLabel": "View early-career coaching details",
-        "linkHref": "/services#early-career"
-      },
-      {
-        "key": "parents",
-        "title": "Carers and parents on pause",
-        "summary": "You are caring for family across borders and want work-life plans that honour the realities of UK support systems.",
-        "contextLines": [
-          "Coordinating childcare, eldercare, and NHS appointments while negotiating flexible work.",
-          "Rebuilding confidence after stepping back, including conversations about pay and progression.",
-          "Working out boundaries with partners, relatives, or managers when priorities shift."
-        ],
-        "conversationFocus": "Topics you can bring: advocating for flexibility, pacing return-to-work experiments, naming needs clearly.",
-        "linkLabel": "Look at the Sustain & Balance format",
-        "linkHref": "/services#leadership"
+        "icon": "steps",
+        "title": "Support that respects your pace",
+        "description": "Co-create experiments that fit your capacity, constraints, and responsibilities."
       }
     ]
   },
-  "deepDive": {
-    "labels": {
-      "learnMore": "Learn more",
-      "close": "Hide details",
-      "scenarios": "Example scenarios",
-      "approach": "How we might work",
-      "questions": "Reflection prompts we may explore",
-      "storiesTitle": "Examples from recent coaching",
-      "storiesIntro": "Every client sets their own goals. These short stories are illustrations, not guarantees."
-    },
-    "audience": {
-      "midCareer": {
-        "label": "Mid-career returners",
-        "scenarios": [
-          "You have taken several years out for caring, health or relocation and feel unsure how to position your experience in the UK market.",
-          "You worry your skills or story look 'outdated' and want a grounded view of what is actually possible.",
-          "You want to return on your own terms rather than rushing back into the wrong role."
-        ],
-        "approach": [
-          "Clarify what a sustainable next chapter looks like for you in this season of life.",
-          "Map realistic role and sector options for your situation instead of generic 'dream job' talk.",
-          "Design small, low-risk experiments so you can test ideas without burning out."
-        ],
-        "questions": [
-          "If you paused the pressure to 'catch up', what would a kinder and wiser path look like?",
-          "Which parts of your past experience still feel alive and valuable now — and how might we bring them forward?"
-        ]
-      },
-      "newToUK": {
-        "label": "Newcomers to the UK",
-        "scenarios": [
-          "You are navigating UK hiring norms or workplace culture for the first time and want context without losing your own voice.",
-          "Visa timelines, family responsibilities or finances add urgency, and you need calm structure rather than hustle slogans.",
-          "You would like a space where bilingual thinking is welcomed so you can integrate experiences across cultures."
-        ],
-        "approach": [
-          "Name what stability looks like in the near term so decisions feel less binary.",
-          "Translate UK expectations into language that makes sense for you and your stakeholders.",
-          "Design conversations and boundaries that honour both home-culture values and local realities."
-        ],
-        "questions": [
-          "What would make the UK feel more like a place you can shape rather than just survive?",
-          "How do you want to describe your cross-border experience so it stays truthful and compelling?"
-        ]
-      },
-      "graduates": {
-        "label": "Recent graduates and early-career explorers",
-        "scenarios": [
-          "You are juggling internships, applications or portfolio building and want to choose next steps without burning bridges.",
-          "You sense pressure to pick one 'perfect' path and would like to experiment with a kinder frame.",
-          "You want support navigating family expectations, finances, or visas alongside work decisions."
-        ],
-        "approach": [
-          "Define what learning, stability and joy mean for you in this stage rather than copying peers.",
-          "Co-design low-risk experiments to test options and collect evidence for future choices.",
-          "Build language to talk about your strengths and boundaries in interviews or networking without exaggeration."
-        ],
-        "questions": [
-          "If you gave yourself permission to be 'in progress', what would you try first?",
-          "Which environments help you think clearly — and how can we seek more of those?"
-        ]
-      },
-      "parents": {
-        "label": "Parents and carers re-entering work",
-        "scenarios": [
-          "You are balancing care, health or community commitments and want work to fit real capacity.",
-          "You feel torn between conflicting advice from employers, family or peers and want a grounded plan.",
-          "You want to advocate for flexible arrangements or boundaries without feeling confrontational."
-        ],
-        "approach": [
-          "Clarify what a workable week looks like, including rest, care and paid work.",
-          "Develop language to request support or boundaries with employers and loved ones.",
-          "Experiment with phased returns or collaborative care plans so you can test and adjust."
-        ],
-        "questions": [
-          "What support structures would make this season more sustainable for everyone involved?",
-          "How can you describe your needs in a way that invites collaboration instead of guilt?"
-        ]
-      }
-    },
-    "stories": [
-      {
-        "title": "Relocating and starting again",
-        "text": "A professional moved to the UK and felt their CV had been reset. Across several sessions we clarified what 'good enough for now' meant, mapped realistic options, and designed two practical experiments. They chose their next step with more calm and ownership. This is an example, not a template or guarantee."
-      },
-      {
-        "title": "Returning after caring leave",
-        "text": "After years out for family care, a client used coaching to rebuild confidence and boundaries. Together we shaped a narrative they genuinely believed. They chose conversations and roles that matched their real capacity."
-      }
-    ]
-  },
-  "miniCases": {
-    "title": "Mini case snapshots",
-    "intro": "Anonymous composites that show how small, client-chosen experiments can look in practice.",
-    "disclaimer": "Outcome owned and chosen by the client.",
+  "whoWeHelp": {
+    "title": "Who we help",
+    "subtitle": "Situations where a steady coaching space is most useful.",
     "cards": [
       {
-        "title": "Returning professional in her 40s",
-        "story": "Felt pressure to accept the first full-time role after relocating for her partner's job.\nWe mapped what financial stability actually required and rehearsed language for boundary-setting.\nShe chose to test a part-time contract and a local volunteering role before deciding on permanent posts."
+        "icon": "globe",
+        "title": "Mid-career in a new country",
+        "scenario": "You’re relocating or settling into UK work culture.",
+        "support": [
+          "Make sense of expectations across systems you straddle.",
+          "Map options that keep your wellbeing and commitments intact."
+        ]
       },
       {
-        "title": "Newcomer product manager",
-        "story": "Arrived in the UK on a partner visa and worried about starting 'too junior'.\nSessions focused on translating previous Asia-Pacific experience into UK hiring language and noticing impostor triggers.\nHe created a six-week networking experiment, including bilingual coffee chats and a blog post, before applying selectively."
+        "icon": "compass",
+        "title": "Graduates / early career feeling stuck",
+        "scenario": "First roles aren’t matching your values or strengths.",
+        "support": [
+          "Clarify what energises you and what boundaries you need.",
+          "Design next conversations or experiments without overcommitting."
+        ]
       },
       {
-        "title": "Graduate navigating visa deadlines",
-        "story": "Held a graduate visa expiring in 8 months and felt scattered by conflicting advice.\nWe clarified decision criteria around sponsorship, wellbeing, and family expectations, then sized experiments.\nThey chose to approach three target employers with a clear ask and schedule rest days around interviews."
-      }
-    ]
-  },
-  "servicesOverview": {
-    "title": "Ways to work together",
-    "intro": "Each format begins with an intro conversation to scope goals, languages, and boundaries together.",
-    "cards": [
-      {
-        "title": "Transition Series · 6 sessions",
-        "description": "Hold structure through a specific UK life or career shift, paced so you can test ideas between conversations."
+        "icon": "chat",
+        "title": "Parents returning to work",
+        "scenario": "You’re re-entering paid work while balancing care.",
+        "support": [
+          "Rebuild confidence with compassionate accountability.",
+          "Co-design routines that protect rest, caregiving, and focus time."
+        ]
       },
       {
-        "title": "Sustain & Balance · 8 sessions",
-        "description": "Longer partnerships for ongoing change, accountability, and reflective pauses across a season."
-      },
-      {
-        "title": "Single deep dive · 90 minutes",
-        "description": "One-off session to map options, name boundaries, or prepare for a pivotal conversation."
+        "icon": "anchor",
+        "title": "People living between cultures/systems",
+        "scenario": "You shift between languages, policies, or family systems daily.",
+        "support": [
+          "Name the invisible labour you carry and what you need from allies.",
+          "Create agreements that honour your limits without guilt."
+        ]
       }
     ]
   },
   "howItWorks": {
-    "title": "How coaching flows",
-    "intro": "We stay non-directive and consent-led, adjusting cadence so you can absorb insights without overwhelm.",
+    "title": "How it works",
+    "subtitle": "A simple arc that keeps you in charge of depth and direction.",
     "steps": [
       {
         "title": "Intro call",
-        "description": "Align on expectations, scope, and boundaries, and decide together whether coaching is the right fit."
+        "description": "20 minutes to check fit, set consent, and choose a starting topic."
       },
       {
-        "title": "Agreement",
-        "description": "Co-create coaching goals, format, fees, and safeguarding arrangements before any paid session begins."
+        "title": "4–6 focused sessions",
+        "description": "You lead the agenda. We coach, reflect, and co-create experiments that feel doable."
       },
       {
-        "title": "Coaching sessions",
-        "description": "40–60 minute conversations online or in-person, led by your agenda, with reflective questions and experiments you choose."
+        "title": "Review & next steps",
+        "description": "Pause to capture learning, adjust agreements, or close when you feel complete."
+      }
+    ]
+  },
+  "starterPackages": {
+    "title": "Starter packages",
+    "subtitle": "Three ways to begin — all can flex based on your consent and capacity.",
+    "cards": [
+      {
+        "icon": "steps",
+        "title": "Transition package (6 sessions)",
+        "description": "Ideal for relocation or role shifts that need sustained reflection.",
+        "linkLabel": "Explore package details",
+        "ariaLabel": "View services to learn about the transition package"
       },
       {
-        "title": "Review",
-        "description": "Harvest learning, agree next steps, and either continue, pause, or close the work with clarity."
+        "icon": "compass",
+        "title": "Grounding sprint (3 sessions)",
+        "description": "Short, steady space to reduce overwhelm and clarify one key decision.",
+        "linkLabel": "See the sprint structure",
+        "ariaLabel": "View services to learn about the grounding sprint"
+      },
+      {
+        "icon": "chat",
+        "title": "Ongoing partnership (3+ months)",
+        "description": "Regular coaching with optional async check-ins for evolving topics.",
+        "linkLabel": "Compare ongoing support",
+        "ariaLabel": "View services to learn about ongoing partnership options"
       }
     ]
   },
   "whySustainSage": {
     "title": "Why SustainSage",
-    "intro": "A bilingual, ICF-aligned practice grounded in calm structure and real-life pressure awareness.",
+    "subtitle": "Grounded coaching from practitioners who live between worlds too.",
     "points": [
-      {
-        "title": "ICF-aligned ethics",
-        "description": "Transparent contracts, informed consent, and clear safeguarding from first contact onwards."
-      },
-      {
-        "title": "Cross-cultural & bilingual",
-        "description": "UK-based coaches fluent in English, Traditional Chinese, and Simplified Chinese with diaspora lived experience."
-      },
-      {
-        "title": "Calm, structured, zero hype",
-        "description": "Evidence-informed coaching that honours pacing—no forced positivity, no hustle slogans."
-      }
+      "ICF-aligned and trauma-aware coaching practice.",
+      "Bilingual conversations across English, Traditional and Simplified Chinese.",
+      "Clear agreements on scope, boundaries, and consent before we begin.",
+      "Respect for rest, constraints, and the pace your body can sustain."
     ]
   },
-  "founders": {
-    "title": "Meet the founders",
-    "intro": "We are coaches and facilitators who bridge UK and Taiwanese contexts, design thinking, and community practice.",
-    "people": [
-      {
-        "name": "Hao-Cheng Tsai",
-        "role": "ICF coach · Service designer",
-        "bio": "Integrates systems thinking, civic design, and bilingual facilitation so experiments stay rooted in reality.",
-        "image": "/images/founders/hao-cheng-tsai.svg"
-      },
-      {
-        "name": "Yi-Ling Lai",
-        "role": "ICF coach · Learning facilitator",
-        "bio": "Holds reflective, trauma-informed space for diaspora professionals balancing family, work, and wellbeing.",
-        "image": "/images/founders/yi-ling-lai.svg"
-      }
-    ],
-    "cta": "Learn about SustainSage",
-    "ctaAria": "Learn more about SustainSage"
-  },
   "cta": {
-    "title": "Ready to take the next steady step?",
-    "body": "Share what you are navigating and we will co-design a coaching rhythm—or signpost alternatives if coaching is not right now.",
-    "primaryCta": "Book an intro session",
-    "secondaryCta": "Explore services",
-    "primaryAria": "Book an intro session with SustainSage",
-    "secondaryAria": "Explore SustainSage services"
+    "title": "Begin when you’re ready",
+    "body": "Share the transition you’re holding. We’ll recommend a starting package or signpost another support if coaching isn’t right now.",
+    "primaryCta": "Book a 20-min intro session",
+    "secondaryCta": "See services",
+    "primaryAria": "Book a 20-minute intro session with SustainSage",
+    "secondaryAria": "View SustainSage coaching services"
   }
 }

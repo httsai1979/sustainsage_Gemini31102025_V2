@@ -1,10 +1,8 @@
-import Image from 'next/image';
 import Link from 'next/link';
 
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
-import HomeForWhom from '@/components/Sections/HomeForWhom';
 import StickyCTA from '@/components/StickyCTA';
 import { Reveal } from '@/components/ui/Motion';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -15,37 +13,94 @@ import nextI18NextConfig from '../next-i18next.config.js';
 const CARD_BASE_CLASS =
   'rounded-2xl border border-emerald-100 bg-white/80 p-4 md:p-6 shadow-sm transition hover:shadow-md';
 
-function EmojiCard({ icon, title, description }) {
-  return (
-    <article className={`${CARD_BASE_CLASS} h-full`}>
-      <span className="text-3xl" aria-hidden="true">
-        {icon}
-      </span>
-      <h3 className="mt-4 text-lg font-semibold text-slate-900">{title}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-600">{description}</p>
-    </article>
-  );
-}
+const ICONS = {
+  leaf: (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-700" aria-hidden="true">
+      <path
+        d="M19.5 4.5c-7.5-.5-12 2.5-15 8 4-3 9.5-4.5 14.5-3.5-3.5 2-6 4.5-7.5 7.5"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  ),
+  compass: (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-700" aria-hidden="true">
+      <path
+        d="M12 3.75a8.25 8.25 0 1 1 0 16.5 8.25 8.25 0 0 1 0-16.5Zm0 0v4.5m0 12v-4.5m0 0 4.24-4.24m-8.48 0L12 12"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  ),
+  steps: (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-700" aria-hidden="true">
+      <path
+        d="M5 17h5v-3h4v-3h5V8"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path d="M5 20h14" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
+    </svg>
+  ),
+  chat: (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-700" aria-hidden="true">
+      <path
+        d="M7 9h6m-6 4h4m9-1.5a7.5 7.5 0 0 0-7.5-7.5H8.25A5.25 5.25 0 0 0 3 9.75v5.5A3.75 3.75 0 0 0 6.75 19h.75v3l3-3h3a7.5 7.5 0 0 0 7.5-7.5Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  ),
+  globe: (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-700" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M12 3.75c-2.5 3-2.5 13.5 0 16.5m0-16.5c2.5 3 2.5 13.5 0 16.5M3.75 12h16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+  ),
+  anchor: (
+    <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-700" aria-hidden="true">
+      <path
+        d="M12 4.5v11.25M9 7.5 12 4.5l3 3m6 5.25a9 9 0 0 1-18 0"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  ),
+};
 
-function StepCard({ title, description, index }) {
+function IconBadge({ icon }) {
   return (
-    <article className={`${CARD_BASE_CLASS} h-full`}>
-      <p className="text-sm font-semibold text-emerald-700">{`${index}. ${title}`}</p>
-      <p className="mt-3 text-sm leading-6 text-slate-600">{description}</p>
-    </article>
+    <span
+      className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100"
+      aria-hidden="true"
+    >
+      {ICONS[icon] ?? ICONS.leaf}
+    </span>
   );
 }
 
 function HomePage() {
   const { t } = useTranslation('home');
-  const servicesOverview = t('servicesOverview.cards', { returnObjects: true });
+  const outcomes = t('keyOutcomes.items', { returnObjects: true });
+  const whoCards = t('whoWeHelp.cards', { returnObjects: true });
   const howSteps = t('howItWorks.steps', { returnObjects: true });
+  const packages = t('starterPackages.cards', { returnObjects: true });
   const whyPoints = t('whySustainSage.points', { returnObjects: true });
-  const founders = t('founders.people', { returnObjects: true });
-  const deepDiveLabels = t('deepDive.labels', { returnObjects: true });
-  const deepDiveStories = t('deepDive.stories', { returnObjects: true });
-  const workingTogetherPoints = t('workingTogether.points', { returnObjects: true });
-  const miniCaseCards = t('miniCases.cards', { returnObjects: true });
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
@@ -59,30 +114,30 @@ function HomePage() {
         <Link href="/contact" className="btn-primary" aria-label={t('hero.primaryCtaAria')}>
           {t('hero.primaryCta')}
         </Link>
-        <Link href="/services" className="btn-secondary" aria-label={t('hero.secondaryCtaAria')}>
+        <Link href="#how-it-works" className="btn-secondary" aria-label={t('hero.secondaryCtaAria')}>
           {t('hero.secondaryCta')}
         </Link>
       </Hero>
 
-      <section className="bg-white py-16 sm:py-20" id="working-together">
+      <section className="bg-white py-16 sm:py-20" id="key-outcomes">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                {t('workingTogether.title')}
+                {t('keyOutcomes.title')}
               </h2>
             </Reveal>
             <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-slate-600">{t('workingTogether.intro')}</p>
+              <p className="mt-4 text-base leading-7 text-slate-600">{t('keyOutcomes.subtitle')}</p>
             </Reveal>
           </div>
-
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {workingTogetherPoints.map((point, index) => (
-              <Reveal key={point.title} className={`reveal-${index + 2}`}>
+            {outcomes.map((item, index) => (
+              <Reveal key={item.title} className={`reveal-${index + 2}`}>
                 <article className={`${CARD_BASE_CLASS} h-full text-left`}>
-                  <h3 className="text-lg font-semibold text-slate-900">{point.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{point.description}</p>
+                  <IconBadge icon={item.icon} />
+                  <h3 className="mt-4 text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
                 </article>
               </Reveal>
             ))}
@@ -90,30 +145,33 @@ function HomePage() {
         </div>
       </section>
 
-      <HomeForWhom />
-
-      <section className="bg-emerald-50/60 py-16 sm:py-20" id="mini-cases">
+      <section className="bg-emerald-50/60 py-16 sm:py-20" id="who-we-help">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                {t('miniCases.title')}
+                {t('whoWeHelp.title')}
               </h2>
             </Reveal>
             <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-emerald-900">{t('miniCases.intro')}</p>
+              <p className="mt-4 text-base leading-7 text-emerald-900">{t('whoWeHelp.subtitle')}</p>
             </Reveal>
           </div>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {miniCaseCards.map((card, index) => (
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
+            {whoCards.map((card, index) => (
               <Reveal key={card.title} className={`reveal-${index + 2}`}>
                 <article className={`${CARD_BASE_CLASS} bg-white text-left`}>
-                  <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600 whitespace-pre-line">{card.story}</p>
-                  <p className="mt-4 text-xs font-medium uppercase tracking-wide text-emerald-700">
-                    {t('miniCases.disclaimer')}
-                  </p>
+                  <IconBadge icon={card.icon} />
+                  <h3 className="mt-4 text-lg font-semibold text-slate-900">{card.title}</h3>
+                  <p className="mt-3 text-sm font-medium text-emerald-700">{card.scenario}</p>
+                  <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
+                    {card.support.map((line) => (
+                      <li key={line} className="flex gap-2">
+                        <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </article>
               </Reveal>
             ))}
@@ -121,116 +179,86 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="bg-emerald-50/60 py-16 sm:py-20" id="home-stories">
+      <section className="bg-white py-16 sm:py-20" id="how-it-works">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                {deepDiveLabels.storiesTitle}
+                {t('howItWorks.title')}
               </h2>
             </Reveal>
             <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-emerald-900">
-                {deepDiveLabels.storiesIntro}
-              </p>
+              <p className="mt-4 text-base leading-7 text-slate-600">{t('howItWorks.subtitle')}</p>
             </Reveal>
           </div>
-
-          <div className="mt-12 space-y-6">
-            {deepDiveStories.map((story, index) => (
-              <Reveal key={story.title} className={`reveal-${index + 2}`}>
-                <article className={`${CARD_BASE_CLASS} bg-white text-left`}>
-                  <h3 className="text-lg font-semibold text-slate-900">{story.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{story.text}</p>
-                </article>
+          <ol className="mt-12 grid gap-6 md:grid-cols-3">
+            {howSteps.map((step, index) => (
+              <Reveal key={step.title} className={`reveal-${index + 2}`}>
+                <li className={`${CARD_BASE_CLASS} h-full text-left`}>
+                  <p className="text-sm font-semibold text-emerald-700">{`${index + 1}. ${step.title}`}</p>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{step.description}</p>
+                </li>
               </Reveal>
             ))}
-          </div>
+          </ol>
         </div>
       </section>
 
-      <section className="bg-emerald-50/60 py-16 sm:py-20" id="services-overview">
+      <section className="bg-emerald-50/60 py-16 sm:py-20" id="starter-packages">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('servicesOverview.title')}
-            </h2>
-            <p className="mt-4 text-base leading-7 text-emerald-900">{t('servicesOverview.intro')}</p>
+            <Reveal>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                {t('starterPackages.title')}
+              </h2>
+            </Reveal>
+            <Reveal className="reveal-1">
+              <p className="mt-4 text-base leading-7 text-emerald-900">{t('starterPackages.subtitle')}</p>
+            </Reveal>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {servicesOverview.map((card, index) => (
-              <EmojiCard
-                key={card.title}
-                icon={['🪴', '🧭', '🔍'][index % 3]}
-                title={card.title}
-                description={card.description}
-              />
+            {packages.map((pkg, index) => (
+              <Reveal key={pkg.title} className={`reveal-${index + 2}`}>
+                <article className={`${CARD_BASE_CLASS} bg-white text-left`}>
+                  <IconBadge icon={pkg.icon} />
+                  <h3 className="mt-4 text-lg font-semibold text-slate-900">{pkg.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{pkg.description}</p>
+                  <Link
+                    href="/services"
+                    className="mt-4 inline-flex text-sm font-semibold text-emerald-700 transition hover:text-emerald-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+                    aria-label={pkg.ariaLabel}
+                  >
+                    {pkg.linkLabel}
+                  </Link>
+                </article>
+              </Reveal>
             ))}
-          </div>
-
-          <div className="mt-16">
-            <h3 className="text-xl font-semibold text-slate-900 sm:text-2xl">{t('howItWorks.title')}</h3>
-            <p className="mt-3 text-base leading-7 text-slate-600">{t('howItWorks.intro')}</p>
-            <div className="mt-8 grid gap-6 md:grid-cols-3">
-              {howSteps.map((step, index) => (
-                <StepCard
-                  key={step.title}
-                  index={index + 1}
-                  title={step.title}
-                  description={step.description}
-                />
-              ))}
-            </div>
           </div>
         </div>
       </section>
 
       <section className="bg-white py-16 sm:py-20" id="why-sustainsage">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
               {t('whySustainSage.title')}
             </h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">{t('whySustainSage.intro')}</p>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {whyPoints.map((point, index) => (
-              <EmojiCard
-                key={point.title}
-                icon={['🧭', '🌐', '🛡️'][index % 3]}
-                title={point.title}
-                description={point.description}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-emerald-50/60 py-16 sm:py-20" id="founders">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('founders.title')}
-            </h2>
-            <p className="mt-4 text-base leading-7 text-emerald-900">{t('founders.intro')}</p>
-          </div>
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {founders.map((founder) => (
-              <article key={founder.name} className={`${CARD_BASE_CLASS} flex h-full flex-col items-start text-left`}>
-                <div className="relative h-20 w-20 overflow-hidden rounded-full border border-emerald-100">
-                  <Image src={founder.image} alt={founder.name} fill sizes="80px" className="object-cover" />
-                </div>
-                <h3 className="mt-4 text-lg font-semibold text-slate-900">{founder.name}</h3>
-                <p className="text-sm font-medium text-emerald-700">{founder.role}</p>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{founder.bio}</p>
-              </article>
-            ))}
-          </div>
-          <div className="mt-12 text-center">
-            <Link href="/about" className="btn-secondary" aria-label={t('founders.ctaAria')}>
-              {t('founders.cta')}
-            </Link>
-          </div>
+          </Reveal>
+          <Reveal className="reveal-1">
+            <p className="mt-4 text-base leading-7 text-slate-600">{t('whySustainSage.subtitle')}</p>
+          </Reveal>
+          <Reveal className="reveal-2">
+            <ul className="mt-6 grid gap-4 text-sm leading-6 text-slate-700 sm:grid-cols-2">
+              {whyPoints.map((point) => (
+                <li key={point} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}> 
+                  <span className="flex items-center gap-2">
+                    <IconBadge icon="anchor" />
+                    <span>{point}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
 

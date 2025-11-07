@@ -1,125 +1,84 @@
 {
   "seo": {
-    "title": "联系我们｜SustainSage",
-    "description": "预约一场沉稳的双语初谈，分享你的情境，我们会提供选项、告知与下一步。"
+    "title": "联系｜SustainSage",
+    "description": "预约一场沉稳的双语初谈。分享你的情况，我们会回应可能的合作方式、同意界线与下一步。"
   },
   "hero": {
-    "title": "联系与下一步",
-    "subtitle": "告诉我们你正在面对的状况。不需要完美故事，几句真实的线索就足够。",
-    "note": "通常会在几个英国工作日内回复，只会把你的信息用于安排教练对话。",
-    "imageAlt": "安排教练时间的插图"
+    "title": "先打声招呼——没有压力。",
+    "subtitle": "用一场简短的初谈，确认彼此是否合适。",
+    "note": "通常会在三个英国工作日内回复。你的资料仅由教练团队保存。",
+    "imageAlt": "安排教练对谈的插图"
   },
-  "intro": "你无需一次说完所有细节。分享目前最需要支持的部分，我们会一起整理下一步。",
-  "highlights": {
-    "title": "发送信息前",
-    "intro": "先了解我们会如何陪你往下走。",
+  "expect": {
+    "title": "初谈会怎么进行",
+    "subtitle": "过程以你的节奏与同意为核心。",
     "items": [
-      {
-        "title": "20 分钟初谈",
-        "description": "以无压力的对话确认适配、范围与界线，没有任何强迫承诺。"
-      },
-      {
-        "title": "资料保密处理",
-        "description": "信息由 ICF 教练阅读，只保留安排初谈需要的资料，其余都会删除。"
-      },
-      {
-        "title": "诚实转介",
-        "description": "若教练不是最适合的支持，我们会推荐心理、法律、移民等资源，而不是硬性推销。"
-      }
+      "20 分钟了解你的脉络与问题。",
+      "你分享重点即可——条列或关键词都可以。",
+      "我们说明教练可能的样貌与适用界线。",
+      "没有义务、不推销，由你决定下一步。"
+    ],
+    "languageTitle": "语言与形式",
+    "languages": [
+      "可用英文、繁体中文、简体中文进行对谈。",
+      "欢迎在讯息或会谈中自由切换语言。",
+      "预设为线上进行；若时间允许，可在英国面谈。"
     ]
   },
   "form": {
-    "title": "写信给我们",
-    "subtitle": "信息越具体，我们越能在初谈时尊重你的节奏与界线。",
+    "title": "写下想和我们聊的事",
+    "subtitle": "提供一些脉络，让我们以合适方式回应。条列也可以。",
     "name": "姓名",
     "email": "Email",
-    "help": "想谈的主题",
-    "helpHint": "可以用关键字描述，例如：签证焦虑、复工安排、角色转换、倦怠调整。",
-    "focusArea": "希望聚焦的面向（可选填）",
-    "focusAreaPlaceholder": "选择一个面向",
+    "help": "最近想厘清的转变或决定？",
+    "helpHint": "例如：搬到英国、育婴后重返职场、跨文化领导、倦怠征兆。",
+    "focusArea": "想聚焦的主题（可选）",
+    "focusAreaPlaceholder": "选择主题",
     "focusAreaOptions": [
-      { "value": "relocation", "label": "移居／在英国工作" },
-      { "value": "career", "label": "职业转换／角色转换" },
-      { "value": "return", "label": "暂停后复工" },
-      { "value": "confidence", "label": "自信／冒充者感受" },
+      { "value": "relocation", "label": "搬迁／在英国工作" },
+      { "value": "career", "label": "职业或角色转变" },
+      { "value": "return", "label": "暂停后重返职场" },
+      { "value": "leadership", "label": "领导／社群工作" },
       { "value": "other", "label": "其他" }
     ],
-    "focusHint": "若先选择面向，我们能更快匹配教练；若尚未确定也没关系。",
+    "focusHint": "如果还不确定，也可以留白。",
     "language": "偏好语言",
-    "languagePlaceholder": "请选择语言",
+    "languagePlaceholder": "选择语言",
     "languageOptions": [
-      { "value": "EN", "label": "English" },
+      { "value": "EN", "label": "英文" },
       { "value": "TC", "label": "繁体中文" },
       { "value": "SC", "label": "简体中文" },
-      { "value": "MIX", "label": "双语混合" }
+      { "value": "MIX", "label": "混合语言" }
     ],
-    "timezone": "偏好时区／时段",
-    "timezonePlaceholder": "例如：GMT+8 晚上，或英国中午",
-    "consent": "我同意 SustainSage 就教练服务与我联系。理解资料仅用于联络教练，除非有法律或安全需求，否则会保密处理。",
-    "privacyNote": "若未进入合作，我们会删除联络信息，除非法律另有要求。",
-    "submit": "发送信息",
+    "timezone": "偏好的时区／时段",
+    "timezonePlaceholder": "例如：英国上午、GMT+8 晚上或弹性",
+    "consent": "我同意 SustainSage 就教练事宜联系我。资料仅用于此目的，除法律或安全义务外皆保密。",
+    "privacyNote": "若未开始合作，我们会删除你的资料，除非法律另有要求。",
+    "submit": "发送讯息",
     "status": {
-      "submitting": "发送中…",
-      "success": "已收到你的信息，预计几个英国工作日内回复。",
-      "error": "发送失败，请再试一次或写信至 contact@sustainsage.com。",
+      "submitting": "传送中…",
+      "success": "收到，谢谢你。我们会在三个英国工作日内回复。",
+      "error": "发送时发生问题，请再试一次或写信至 contact@sustainsage.com。",
       "errorRequired": "请完成必填栏位并勾选同意。"
     }
   },
-  "nextSteps": {
-    "title": "发送后会发生什么",
-    "items": [
-      "我们会回复并提供 20 分钟初谈的预约连结。",
-      "初谈会确认期待、界线、费用与语言偏好。",
-      "你可以自由决定要开始教练、暂缓或转向其他资源。"
-    ]
-  },
-  "consent": {
-    "label": "同意与保密",
-    "points": [
-      "个人资料仅用于联系教练。",
-      "教练不同于心理咨询、医疗、法律、移民或财务咨询。",
-      "遵循 ICF 伦理与保密原则，仅在法律或安全必要时才会揭露信息。"
-    ]
-  },
-  "faq": {
-    "title": "常见问题",
-    "intro": "如果以下没有你的疑问，欢迎在信息里提出。",
-    "items": [
-      {
-        "question": "初谈需要收费吗？",
-        "answer": "初谈免费，用来确认适配与范围，没有后续的压力。"
-      },
-      {
-        "question": "还不确定要不要教练，可以只先问问题吗？",
-        "answer": "可以。即使最后没有预约，我们仍会分享资源或建议。"
-      },
-      {
-        "question": "多久会回复？",
-        "answer": "通常在几个英国工作日内回复；若我们休假会设定自动回复告知。"
-      },
-      {
-        "question": "遇到紧急或心理危机怎么办？",
-        "answer": "教练无法处理急性危机，请优先联系 NHS 111、Samaritans（116 123）或当地紧急／心理支援服务。"
-      }
-    ]
-  },
-  "icfSummary": {
-    "title": "我们的伦理承诺",
-    "intro": "SustainSage 的教练以共同创造、同意与界线为核心：",
-    "points": [
-      "议题与节奏由你决定，任何时候都可以暂停、放慢或停止。",
-      "若需要心理、法律、移民或财务专业，我们会协助转介。",
-      "遵循 ICF 伦理与保密原则，只有在法律或安全必要时才会揭露信息。"
-    ]
+  "formNote": {
+    "lines": [
+      "平均回复时间：约三个英国工作日。",
+      "我们可使用英文、繁体中文、简体中文——欢迎混用。",
+      "想了解保密与资料照护，请参阅 {privacyLink}。"
+    ],
+    "privacyLabel": "隐私与伦理说明",
+    "privacyHref": "/contact#icf"
   },
   "sidebar": {
-    "title": "我们如何处理你的信息",
-    "description": "信息由教练亲自阅读与回复，而非外包助理。",
+    "title": "我们如何处理你的讯息",
+    "description": "由教练亲自阅读并回复，不交由助理处理。",
     "responseTitle": "回复时间",
-    "responseCopy": "目标是在几个英国工作日内回复；若我们休假会以自动回复告知。",
-    "privacyTitle": "资料处理",
-    "privacyCopy": "仅保留必要信息，若未合作会删除，除非法律另有要求。",
-    "nextTitle": "初谈会谈内容",
-    "nextCopy": "会一起确认目标、界线与流程，让你判断教练是否合适。"
+    "responseCopy": "通常三个英国工作日内回复，如外出会启动自动回复。",
+    "privacyTitle": "资料保存",
+    "privacyCopy": "资料以安全方式保存，若未合作即删除，除非法律要求。",
+    "nextTitle": "初谈内容",
+    "nextCopy": "共同确认目标、界线、费用与流程，让你判断是否继续。"
   }
 }
