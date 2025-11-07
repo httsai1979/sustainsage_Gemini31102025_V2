@@ -135,7 +135,7 @@ function ResourcesPage() {
 
 ResourcesPage.layoutProps = {
   title: 'Resources | SustainSage',
-  desc: 'Coaching-informed, bilingual-friendly resources for reflection and career experiments.',
+  desc: 'Self-reflection tools you can use at your pace.',
 };
 
 export async function getStaticProps({ locale = 'en' }) {

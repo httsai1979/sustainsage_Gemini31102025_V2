@@ -10,6 +10,10 @@ function MyApp({ Component, pageProps }) {
       ? Component.layoutProps(pageProps)
       : Component.layoutProps || pageProps?.layoutProps;
 
+  const getLayout = Component.getLayout || ((page) => (
+    <MainLayout {...resolvedLayoutProps}>{page}</MainLayout>
+  ));
+
   const layoutProps = resolvedLayoutProps || {};
   const page = <Component {...pageProps} />;
   const content = Component.getLayout ? Component.getLayout(page, layoutProps) : page;

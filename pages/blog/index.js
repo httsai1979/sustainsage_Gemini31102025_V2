@@ -77,16 +77,9 @@ function BlogIndex({ posts = [], error = null }) {
   );
 }
 
-BlogIndex.layoutProps = (pageProps) => {
-  const locale = pageProps?._nextI18Next?.initialLocale;
-  const store = pageProps?._nextI18Next?.initialI18nStore?.[locale]?.blog;
-
-  return {
-    title: store?.seo?.title ?? 'Blog | SustainSage',
-    desc:
-      store?.seo?.description ??
-      'Short, reflective reads with prompts grounded in coaching ethics.',
-  };
+BlogIndex.layoutProps = {
+  title: 'Blog | SustainSage',
+  desc: 'Short, reflective reads with prompts grounded in coaching ethics.',
 };
 
 export async function getStaticProps({ locale = 'en' }) {
