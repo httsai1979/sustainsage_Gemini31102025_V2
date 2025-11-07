@@ -11,8 +11,8 @@
     "title": "What to share",
     "description": "A few bullet points are enough—we just need a sense of your context.",
     "bullets": [
-      "The transition or decision that feels most alive.",
-      "Any time pressures, access needs or boundaries we should know.",
+      "The transition, decision or experiment you are holding.",
+      "Any time pressures, access needs or boundaries we should respect.",
       "Your preferred language and time zone for the intro call."
     ]
   },
@@ -27,7 +27,7 @@
   },
   "assurance": {
     "title": "How we hold the space",
-    "description": "You can switch languages mid-message or mid-session—your pace matters.",
+    "description": "This form is for coaching enquiries only. If you need emergency or clinical support, please contact appropriate local services first.",
     "bullets": [
       "Coaching available in English, Traditional Chinese and Simplified Chinese.",
       "Online by default; in-person in the UK when schedules align.",
@@ -44,14 +44,13 @@
     "name": "Name",
     "email": "Email",
     "help": "What transition or decision is on your mind?",
-    "helpHint": "Examples: moving to the UK, returning after parental leave, cross-cultural leadership, burnout risk.",
+    "helpHint": "Examples: relocating to the UK, leadership confidence, designing ethical experiments, burnout risk.",
     "focusArea": "Preferred focus area (optional)",
     "focusAreaPlaceholder": "Select a focus area",
     "focusAreaOptions": [
       { "value": "transition", "label": "Transition package" },
-      { "value": "returning", "label": "Returning to work" },
-      { "value": "new-to-uk", "label": "New to the UK" },
-      { "value": "check-in", "label": "Steady check-ins" },
+      { "value": "confidence", "label": "Confidence & voice" },
+      { "value": "experiments", "label": "Experiments & stewardship" },
       { "value": "other", "label": "Something else" }
     ],
     "focusHint": "Choose the option that feels closest; it is fine to stay uncertain.",
@@ -66,7 +65,7 @@
     "timezone": "Preferred time zone / time window",
     "timezonePlaceholder": "e.g. UK mornings, GMT+8 evenings, or flexible",
     "consent": "I consent to SustainSage contacting me about coaching.",
-    "scopeAcknowledgement": "I understand this form is for coaching enquiries, not therapy, crisis support, legal or immigration advice.",
+    "scopeAcknowledgement": "I understand this form is for coaching enquiries, not therapy, crisis support, legal, financial or immigration advice.",
     "privacyNote": "We store your information only to arrange coaching conversations and delete it if we do not work together, unless law requires otherwise.",
     "submit": "Send message",
     "status": {

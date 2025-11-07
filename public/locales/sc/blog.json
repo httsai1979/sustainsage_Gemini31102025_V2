@@ -1,26 +1,50 @@
 {
   "seo": {
     "title": "博客｜SustainSage",
-    "description": "SustainSage 分享的反思文章与教练提问，涵盖职业转换、文化桥接与温和领导。"
+    "description": "SustainSage 的教练式反思与故事。阅读双语文章，陪你走过职业转换、文化桥接与温柔领导。"
   },
   "hero": {
-    "title": "停一停，实验，再观察",
-    "subtitle": "短篇阅读搭配教练式提问，陪你深呼吸、觉察，并选择下一个小实验。"
+    "title": "停一停，看看自己在哪里",
+    "subtitle": "短篇文章与提问，邀请你呼吸、思考，并设计下一个实验。"
   },
   "filters": [
-    { "value": "all", "label": "全部主题" },
-    { "value": "career", "label": "职业转换" },
-    { "value": "culture", "label": "文化与归属" },
-    { "value": "leadership", "label": "领导与团队" },
-    { "value": "wellbeing", "label": "身心与节奏" }
+    {
+      "value": "all",
+      "label": "全部"
+    },
+    {
+      "value": "career",
+      "label": "职业转换"
+    },
+    {
+      "value": "culture",
+      "label": "文化与归属"
+    },
+    {
+      "value": "leadership",
+      "label": "领导与团队"
+    },
+    {
+      "value": "wellbeing",
+      "label": "步调与身心"
+    }
   ],
   "listTitle": "最新反思",
-  "emptyState": "文章筹备中，欢迎稍后再来或订阅电子报。",
-  "fallbackNotice": "以下文章为我们准备新内容前的反思占位稿。",
+  "notice": "文章提供反思与学习，并不等同于医疗、法律、财务或移民建议。",
+  "emptyState": "我们正在酝酿新的文章，欢迎稍后再回来看或订阅电子报。",
+  "fallbackNotice": "这些文章作为过渡期的反思，陪你在等待新内容时仍有东西可读。",
+  "articleCta": {
+    "title": "想把这些想法变成对话吗？",
+    "body": "教练提供保密空间，让你把反思化成自己负责的选择。",
+    "primary": "查看服务",
+    "primaryHref": "/services",
+    "secondary": "预约初谈",
+    "secondaryHref": "/contact"
+  },
   "post1": {
     "slug": "making-room-for-slow-transition",
-    "title": "为慢速转变留出空间",
-    "excerpt": "当你想顾及家人期待又想在英国调整职业，可以如何安排节奏？试试这些提问。",
+    "title": "为缓慢的转换保留空间",
+    "excerpt": "在规划英国的职业转换时，如何同时顾及家庭期待？这些提问陪你找到自己的步调。",
     "category": "career",
     "image": "/images/blog/slow-transition.svg",
     "publishedDate": "2024-02-11",
@@ -29,14 +53,14 @@
       "readingTime": "约 5 分钟"
     },
     "prompts": [
-      "在做下一个决定前，故事里哪些部分需要被看见？",
-      "哪一个小实验能同时照顾现在的能量？"
+      "在做下一个决定前，哪段故事需要先被看见？",
+      "此刻哪个小实验最尊重你的能量？"
     ]
   },
   "post2": {
     "slug": "bridging-languages-at-work",
-    "title": "在职场搭起语言桥梁",
-    "excerpt": "如何运用双语教练提问，让英国职场规范与华人文化智慧相互对话、不再耗竭。",
+    "title": "在工作中搭起语言桥梁",
+    "excerpt": "用双语提问让英国职场规范与华人文化智慧对话，而不是硬要二选一。",
     "category": "culture",
     "image": "/images/blog/bridging-languages.svg",
     "publishedDate": "2024-03-19",
@@ -45,8 +69,13 @@
       "readingTime": "约 6 分钟"
     },
     "prompts": [
-      "哪种语言能让你自在地表达疑惑而不用道歉？",
-      "你需要在哪里设下界线，让多语能力保持喜悦？"
+      "什么语言能让你在表达疑虑时不必道歉？",
+      "在哪些场景需要界线，才能保留语言带来的喜悦？"
     ]
-  }
+  },
+  "missingBody": "我们暂时无法载入这篇文章，欢迎稍后再试。",
+  "backToList": "回到文章列表",
+  "errorDetail": "目前无法打开这篇文章，请稍后再尝试或阅读其他内容。",
+  "notFound": "找不到这篇文章，可能已下架或移动。",
+  "error": "目前无法载入最新文章，暂时显示我们整理过的精选内容。"
 }

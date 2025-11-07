@@ -68,14 +68,50 @@ function buildFallbackNodes(article) {
   return nodes;
 }
 
-function FallbackArticle({ fallbackData, t }) {
+function ArticleNotice({ notice }) {
+  if (!notice) return null;
+  return (
+    <p className="rounded-2xl border border-emerald-100 bg-emerald-50/70 px-4 py-3 text-sm leading-6 text-emerald-900">
+      {notice}
+    </p>
+  );
+}
+
+function ArticleCta({ cta }) {
+  if (!cta?.title) return null;
+  return (
+    <section className="bg-white py-16 sm:py-20">
+      <div className="mx-auto max-w-3xl rounded-3xl border border-emerald-100 bg-emerald-50/70 px-8 py-12 text-center shadow-sm">
+        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{cta.title}</h2>
+        {cta.body && <p className="mt-4 text-base leading-7 text-slate-700">{cta.body}</p>}
+        <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <Link
+            href={cta.primaryHref || '/services'}
+            className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800"
+          >
+            {cta.primary || 'Explore services'}
+          </Link>
+          <Link
+            href={cta.secondaryHref || '/contact'}
+            className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100"
+          >
+            {cta.secondary || 'Book an intro call'}
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FallbackArticle({ fallbackData, t, notice }) {
   const nodes = buildFallbackNodes(fallbackData.article);
   const publishedLabel = fallbackData.meta?.date || formatPublishedDate(fallbackData.publishedDate);
 
   return (
     <article className="prose prose-slate mx-auto max-w-3xl px-6 py-16">
+      <ArticleNotice notice={notice} />
       {fallbackData.category && (
-        <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{fallbackData.category}</p>
+        <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-emerald-700">{fallbackData.category}</p>
       )}
       <h1>{fallbackData.title}</h1>
       {publishedLabel && <p className="text-sm text-slate-500">{publishedLabel}</p>}
@@ -115,14 +151,15 @@ function FallbackArticle({ fallbackData, t }) {
   );
 }
 
-function CmsArticle({ post, t }) {
+function CmsArticle({ post, t, notice }) {
   const cover =
     post.cover || (post.featuredImage?.fields?.file?.url ? `https:${post.featuredImage.fields.file.url}` : null);
   const publishedLabel = formatPublishedDate(post.publishedDate);
 
   return (
     <article className="prose prose-slate mx-auto max-w-3xl px-6 py-16">
-      {post.category && <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{post.category}</p>}
+      <ArticleNotice notice={notice} />
+      {post.category && <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-emerald-700">{post.category}</p>}
       <h1>{post.title}</h1>
       {publishedLabel && <p className="text-sm text-slate-500">{publishedLabel}</p>}
       {cover && (
@@ -146,6 +183,8 @@ function CmsArticle({ post, t }) {
 function BlogPost({ post = null, error = null, fallbackKey = null }) {
   const { t } = useTranslation('blog');
   const fallbackData = fallbackKey ? t(fallbackKey, { returnObjects: true }) : null;
+  const notice = t('notice');
+  const articleCta = t('articleCta', { returnObjects: true });
 
   if (error) {
     return (
@@ -164,7 +203,8 @@ function BlogPost({ post = null, error = null, fallbackKey = null }) {
   if (post) {
     return (
       <>
-        <CmsArticle post={post} t={t} />
+        <CmsArticle post={post} t={t} notice={notice} />
+        <ArticleCta cta={articleCta} />
         <div className="px-6 pb-16">
           <ICFNotice className="mx-auto max-w-4xl" />
         </div>
@@ -175,7 +215,8 @@ function BlogPost({ post = null, error = null, fallbackKey = null }) {
   if (fallbackData) {
     return (
       <>
-        <FallbackArticle fallbackData={fallbackData} t={t} />
+        <FallbackArticle fallbackData={fallbackData} t={t} notice={notice} />
+        <ArticleCta cta={articleCta} />
         <div className="px-6 pb-16">
           <ICFNotice className="mx-auto max-w-4xl" />
         </div>

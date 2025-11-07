@@ -1,141 +1,315 @@
 {
   "sectionTitles": {
     "who": "Who this is for",
-    "topics": "What we work on together",
+    "topics": "What we work on",
     "how": "How it works",
     "approach": "Our coaching approach",
-    "not": "What this is not"
+    "boundaries": "Our boundaries",
+    "not": "What this is not",
+    "notIncluded": "Not included",
+    "reflection": "Questions to reflect on"
   },
   "transition": {
     "slug": "transition",
-    "title": "Transition package – 6 sessions for relocation or role change",
-    "subtitle": "A contained space to think clearly, recalibrate, and move through change without burning out.",
+    "title": "Transition package",
+    "tagline": "Six sessions to move through relocation or role change without losing your footing.",
+    "summary": "We create a steady, private space for the push and pull of change. Together we map constraints, name emotions and design grounded experiments so you can act with consent.",
     "who": [
-      "Professionals relocating to the UK or between cities, unsure how to rebuild work and life rhythms.",
-      "People moving into a new role or sector and wanting a grounded, values-aligned plan.",
-      "Those navigating mixed feelings: excitement, grief, pressure to 'have it all sorted'."
+      "Professionals relocating to or within the UK who need time to design new rhythms.",
+      "People stepping into a new role, sector or organisation with mixed excitement and doubt.",
+      "Those juggling migration paperwork, family expectations and work commitments at once."
     ],
     "topics": [
-      "Clarifying what “a good move” means in your context, not social media’s.",
-      "Mapping financial, family, visa and wellbeing constraints into real options.",
-      "Setting boundaries with employers, family, or yourself around pace and expectations.",
-      "Designing low-risk experiments instead of one-shot, high-pressure decisions."
+      "Clarifying what a ‘good move’ looks like in your context, not anyone else’s.",
+      "Making practical plans across housing, finances, care roles and wellbeing.",
+      "Holding space for grief, frustration and hope without rushing to fix them.",
+      "Turning big decisions into low-risk experiments you can test and adjust."
     ],
     "how": [
-      "6 × 55–60 minute sessions over 3–4 months, online (Zoom).",
-      "Light check-ins between sessions when useful (email or message, not extra sessions).",
-      "Optional short reflection notes after sessions to help you track learning and decisions.",
-      "Language: English or Mandarin; we stay attentive to culture, class, migration and care roles."
+      "Six 55–60 minute sessions over three to four months, online via Zoom.",
+      "Light check-ins between sessions when you request them—no surprise extras.",
+      "Optional reflection notes after sessions so you can track decisions and learning.",
+      "Sessions available in English or Mandarin; we stay attentive to culture and class."
     ],
     "approach": [
-      "ICF-aligned, non-directive coaching: you set the agenda; we bring presence, questions and structure.",
-      "We work with the whole person: practical steps, emotions, identity, relationships and rest.",
-      "We slow things down enough for you to hear your own thinking, then move into specific next steps."
+      "ICF-aligned, non-directive partnership where you lead the agenda.",
+      "We combine practical planning with emotional literacy and embodied pace.",
+      "We name structural realities—immigration, racism, caregiving—without blame."
+    ],
+    "boundaries": [
+      "This is coaching, not therapy or crisis intervention.",
+      "We do not provide immigration, legal, financial or medical advice.",
+      "You remain responsible for decisions, actions and communications.",
+      "We uphold confidentiality within ICF ethics and safeguarding law."
     ],
     "not": [
-      "Not therapy, counselling, legal, financial or immigration advice.",
-      "Not a guarantee that relocation or a new role will feel perfect.",
-      "Not performance coaching for someone else’s agenda without your consent."
+      "No guaranteed job offers, housing or perfect relocation outcomes.",
+      "No done-for-you paperwork, applications or conversations.",
+      "No pressure to present a ‘success story’ for our marketing."
     ],
-    "cta": "If this sounds close to what you need, use the contact form and note 'Transition package'. We will arrange a short call to check fit before you decide.",
-    "ctaButton": "Contact us about the Transition package"
+    "notIncluded": [
+      "Immigration consultancy, legal representation or financial planning.",
+      "Therapeutic treatment for trauma, burnout or mental health crises."
+    ],
+    "reflection": [
+      "What feels most unsettled or ‘in-between’ for me right now?",
+      "What would feeling steadier in three months look and sound like?",
+      "What am I ready to bring honestly into these conversations?"
+    ],
+    "cta": "If this sounds close to your situation, you are welcome to book an intro call and note ‘Transition’. We will confirm fit together before you commit.",
+    "ctaButton": "Book the intro call for Transition"
   },
-  "returning": {
-    "slug": "returning",
-    "title": "Returning to work – 6 sessions after a break",
-    "subtitle": "Thoughtful support for stepping back into paid work without abandoning what matters.",
+  "confidence": {
+    "slug": "confidence",
+    "title": "Confidence & voice",
+    "tagline": "Five sessions to strengthen your voice without abandoning nuance or care.",
+    "summary": "This coaching arc helps you speak up with steadiness, especially when culture, language or past experiences make visibility feel risky.",
     "who": [
-      "Parents or carers re-entering the workforce.",
-      "Those returning after illness, burnout, study or a career pause.",
-      "People feeling guilt, fear of judgment, or uncertainty about 'what I can still do'."
+      "Leaders or emerging managers who want to advocate without mimicking dominant styles.",
+      "Professionals navigating imposter feelings after moving countries, sectors or seniority levels.",
+      "People who want to set boundaries kindly yet firmly in collaborative spaces."
     ],
     "topics": [
-      "Reframing your story so your break becomes context, not a secret or a flaw.",
-      "Clarifying what kinds of work, teams and rhythms are now realistic and respectful.",
-      "Preparing for conversations with employers, partners and family.",
-      "Building self-trust: starting small, testing assumptions, adjusting without shame."
+      "Tracing the narratives that mute your voice and choosing what to keep or release.",
+      "Designing language, rituals and supports that help you show up with integrity.",
+      "Practising consent-based conversations about expectations, feedback and power.",
+      "Building repeatable experiments to test new behaviours in real meetings."
     ],
     "how": [
-      "6 × 55–60 minute sessions over 3–4 months.",
-      "Optional CV / LinkedIn review inside the coaching frame (you stay in charge).",
-      "Between-session prompts to notice energy, capacity and boundaries in daily life."
+      "Five 55–60 minute sessions over two to three months, held online.",
+      "Pre-session prompts to gather real scenarios you want to rehearse or reframe.",
+      "Optional recorded reflections you can revisit privately between sessions.",
+      "We can coach bilingually (English/Mandarin) if that supports expression."
     ],
     "approach": [
-      "Gentle but honest: we name constraints without collapsing into them.",
-      "We treat care work, unpaid labour and health realities as real, not side notes.",
-      "We invite reflection instead of pressure; you choose commitments that fit."
+      "We slow down automatic responses so you can choose aligned action.",
+      "We celebrate quiet strength as much as visible leadership.",
+      "We use somatic, narrative and systems-aware questions—always with consent."
+    ],
+    "boundaries": [
+      "We do not provide executive assessments or competency scoring.",
+      "We do not override organisational policies or intervene on your behalf.",
+      "We stay within coaching; trauma or medical care sits with qualified practitioners.",
+      "You decide which experiments to run and how to evaluate them."
     ],
     "not": [
-      "Not a 'fix your gap in three hacks' package.",
-      "Not clinical support for active mental health crises.",
-      "Not recruitment or guaranteed placement."
+      "Not a ‘speak louder’ bootcamp or charismatic persona training.",
+      "Not public relations, crisis communications or media coaching.",
+      "Not performance management disguised as support for someone else’s agenda."
     ],
-    "cta": "Mention 'Returning to work' in the contact form. We will co-check expectations, capacity and timing before starting.",
-    "ctaButton": "Ask about the Returning to work package"
+    "notIncluded": [
+      "Formal psychometric tools or personality diagnostics.",
+      "Template scripts to copy without adaptation."
+    ],
+    "reflection": [
+      "Where do I already show courage, even if it looks quiet?",
+      "When do I shrink back, and what am I protecting when that happens?",
+      "What support do I need around me to practise new ways of speaking up?"
+    ],
+    "cta": "Mention ‘Confidence & voice’ when you contact us. We will explore your context, boundaries and aims before confirming the series.",
+    "ctaButton": "Start a Confidence & voice enquiry"
+  },
+  "experiments": {
+    "slug": "experiments",
+    "title": "Experiments & stewardship",
+    "tagline": "Four sessions to design ethical experiments when you want change without harm.",
+    "summary": "Ideal for community builders, founders or intrapreneurs who hold responsibility for people and impact. We help you design experiments that respect capacity, consent and data.",
+    "who": [
+      "Leaders testing new programmes or services who need a thinking partner for ethical risk.",
+      "Teams exploring culture change, equity or sustainability shifts without over-claiming.",
+      "Practitioners balancing innovation with care for staff, volunteers or beneficiaries."
+    ],
+    "topics": [
+      "Clarifying the stewardship question: who is affected, who decides, who is accountable.",
+      "Mapping assumptions and designing experiments that surface learning without causing harm.",
+      "Agreeing decision gates, consent processes and communications that keep agency with stakeholders.",
+      "Reviewing data with context so you respond, iterate or stop responsibly."
+    ],
+    "how": [
+      "Four 70-minute sessions over eight to ten weeks, online with collaborative tools.",
+      "Shared working documents so actions, decisions and risks stay visible.",
+      "Between-session check-ins focused on accountability you define.",
+      "We can include up to two stakeholders in selected sessions with prior consent."
+    ],
+    "approach": [
+      "We blend coaching with reflective facilitation while keeping you in authorship.",
+      "We foreground ethics, accessibility and impact alongside innovation.",
+      "We pace experiments so learning integrates rather than overwhelms."
+    ],
+    "boundaries": [
+      "We do not provide legal, safeguarding or financial audits.",
+      "We do not run the experiments for you or manage your team.",
+      "We avoid conflicts of interest and name them if they arise.",
+      "You remain accountable to the people and systems you serve."
+    ],
+    "not": [
+      "Not a rapid-growth accelerator or venture fundraising programme.",
+      "Not a substitute for specialist consulting or compliance work.",
+      "Not a guarantee that every idea will land or scale."
+    ],
+    "notIncluded": [
+      "Hands-on project management or implementation support.",
+      "Marketing, sales or investor outreach on your behalf."
+    ],
+    "reflection": [
+      "What change am I stewarding, and who trusts me to do this with care?",
+      "Where do I need more consent, clarity or data before moving forward?",
+      "What conditions would tell me to pause, stop or celebrate progress?"
+    ],
+    "cta": "If you are ready to steward experiments with integrity, book the intro call and note ‘Experiments’. We will check scope and capacity together.",
+    "ctaButton": "Book the intro call for Experiments"
+  },
+  "backToOverview": "Back to all services",
+  "checkIn": {
+    "slug": "check-in",
+    "title": "Single session check-in",
+    "tagline": "A 75-minute conversation to steady yourself before the next step.",
+    "subtitle": "A 75-minute conversation to steady yourself before the next step.",
+    "summary": "A single, focused session for when you need a calm, confidential space to reflect before deciding what comes next.",
+    "who": [
+      "You need a one-off reflective space before a decision or courageous conversation.",
+      "You want to experience our coaching style before committing to a longer package.",
+      "You have worked with us before and want a guided reset between packages."
+    ],
+    "topics": [
+      "Mapping what is present right now—emotions, constraints and choices.",
+      "Clarifying what you want from the upcoming decision, conversation or change.",
+      "Designing one small experiment or pause that honours your capacity."
+    ],
+    "how": [
+      "75-minute coaching session on Zoom.",
+      "Short pre-session prompt so you arrive with focus.",
+      "Summary notes with observations and optional questions within two working days.",
+      "Option to schedule a follow-up within 30 days if we both agree it is useful."
+    ],
+    "approach": [
+      "Grounded, ICF-aligned coaching that keeps you in authorship.",
+      "We move at your pace and use questions, reflection and somatic cues.",
+      "We keep scope to one core topic so you leave with clarity."
+    ],
+    "boundaries": [
+      "Not therapy, crisis support or clinical advice.",
+      "We do not give legal, financial or immigration recommendations.",
+      "You remain responsible for decisions and follow-up actions.",
+      "Confidentiality follows ICF ethics and safeguarding law."
+    ],
+    "not": [
+      "Not an emergency appointment or on-call service.",
+      "Not a substitute for ongoing support if your situation needs a series.",
+      "Not a place for someone else’s performance management."
+    ],
+    "notIncluded": [
+      "Written reports for employers or institutions.",
+      "Contacting third parties on your behalf."
+    ],
+    "reflection": [
+      "What feels most important to acknowledge before we meet?",
+      "What would feeling ‘more resourced’ at the end of the session look like?",
+      "What ongoing support might I need after this conversation?"
+    ],
+    "cta": "Mention ‘Check-in session’ in the form and share a few lines about your context. We will confirm fit and schedule with care.",
+    "ctaButton": "Book a check-in session"
   },
   "newToUk": {
     "slug": "new-to-uk",
-    "title": "New to the UK – context-aware coaching",
-    "subtitle": "Space to decode norms, choose your stance, and navigate work and life without losing yourself.",
+    "title": "New to the UK coaching arc",
+    "tagline": "Three sessions to orient gently to life, work and support networks in the UK.",
+    "subtitle": "Three sessions to orient gently to life, work and support networks in the UK.",
+    "summary": "We create a steady container for the first months of relocation so you can integrate, make decisions and ask for support without burning out.",
     "who": [
-      "Newcomers balancing immigration rules, job search, and family expectations.",
-      "People navigating language, race, class, or accent bias at work.",
-      "Those feeling 'grateful but small', stuck between survival mode and wanting more."
+      "Professionals who relocated to the UK within the last 12 months.",
+      "Partners, carers or students adjusting to new systems alongside work or study.",
+      "People balancing visas, housing and community building while staying well."
     ],
     "topics": [
-      "Understanding how UK workplace norms might meet your values and limits.",
-      "Choosing how much to adapt, when to push back, and what to ignore.",
-      "Exploring realistic job search strategies that protect dignity and health.",
-      "Naming grief, anger or loneliness without pathologising your reaction."
+      "Naming what feels unfamiliar or overwhelming about UK systems and culture.",
+      "Designing rhythms that respect health, relationships and finances.",
+      "Mapping networks and requesting support with consent.",
+      "Deciding what needs action now, later or not at all."
     ],
     "how": [
-      "4–6 × 55–60 minute sessions online.",
-      "We can work bilingually (English / Mandarin) where helpful.",
-      "We signpost to other services (legal, mental health, community) when appropriate—never as an upsell."
+      "Three 60-minute sessions across six to eight weeks, online via Zoom.",
+      "Optional asynchronous check-ins for key paperwork or conversations.",
+      "Resource suggestions tailored to your region, language and needs.",
+      "We can involve a partner or trusted ally for part of a session if that helps."
     ],
     "approach": [
-      "We hold immigration and structural constraints in view without blaming you.",
-      "We stay curious about culture, faith, class, gender, language and power.",
-      "You define what 'settling' or 'belonging' should mean for you now."
+      "We blend practical planning with emotional regulation and narrative work.",
+      "We acknowledge migration realities, racism and bureaucracy without blame.",
+      "We keep you in authorship of choices; we do not take over decisions."
+    ],
+    "boundaries": [
+      "We do not provide immigration, housing or legal services.",
+      "We do not guarantee job offers, sponsorship or specific outcomes.",
+      "We stay within coaching; therapy or clinical care sits with qualified providers.",
+      "You choose what information to share and what actions to take."
     ],
     "not": [
-      "Not immigration advice or visa consultancy.",
-      "Not emergency crisis support.",
-      "Not 'just be positive' coaching."
+      "Not a relocation agency or concierge service.",
+      "Not financial planning or tax advice.",
+      "Not an emergency support line."
     ],
-    "cta": "If this resonates, select 'New to the UK' in the contact form and briefly share your context.",
-    "ctaButton": "Start a New to the UK enquiry"
+    "notIncluded": [
+      "Completion of visa forms or legal paperwork.",
+      "Direct contact with employers, landlords or authorities on your behalf."
+    ],
+    "reflection": [
+      "What part of settling in feels most tender or confusing right now?",
+      "What would feeling more at home in three months look like?",
+      "Who could be part of your support web as you integrate?"
+    ],
+    "cta": "Note ‘New to the UK’ in your message. We will confirm scope, timelines and whether this arc fits your situation.",
+    "ctaButton": "Start the New to the UK arc"
   },
-  "checkIn": {
-    "slug": "check-in",
-    "title": "Steady check-ins – 1 or 3 sessions",
-    "subtitle": "For when you don’t need a big package, just a clear, ethical space to think.",
+  "returning": {
+    "slug": "returning",
+    "title": "Returning client tune-up",
+    "tagline": "Three sessions to reconnect with coaching after a pause.",
+    "subtitle": "Three sessions to reconnect with coaching after a pause.",
+    "summary": "Designed for previous clients who want a fresh container for new experiments while honouring past learning.",
     "who": [
-      "Clients who completed a package and want light-touch follow-up.",
-      "Leaders, carers or professionals who occasionally need a neutral sounding board.",
-      "People facing one decision and wanting space to think it through."
+      "Previous SustainSage clients who want support for a new chapter.",
+      "People who completed a package and now face a fresh transition.",
+      "Clients who want accountability to integrate decisions made earlier."
     ],
     "topics": [
-      "A specific conversation, change, or decision you want to untangle.",
-      "Re-aligning with your values when work or life has drifted.",
-      "Checking your boundaries, capacity and next experiments."
+      "Reviewing what has shifted since we last worked together.",
+      "Naming new boundaries, capacities or constraints.",
+      "Designing experiments or agreements that fit current contexts.",
+      "Celebrating progress and deciding what closure or continuation looks like."
     ],
     "how": [
-      "Single 55–60 minute session, or a bundle of 3.",
-      "Online, focused, with a clear agreed aim at the start.",
-      "You can book ad-hoc, subject to availability."
+      "Three 55-minute sessions over six to eight weeks, online.",
+      "We revisit earlier notes to connect past and present learning.",
+      "Optional asynchronous check-ins between sessions if mutually agreed.",
+      "Bilingual coaching (English/Mandarin) remains available if helpful."
     ],
     "approach": [
-      "Same ICF-aligned stance: you lead, we partner.",
-      "We go straight to what matters; no scripted funnel.",
-      "You leave with 1–3 specific next steps or questions to keep exploring."
+      "We honour existing trust while re-contracting boundaries and goals.",
+      "We stay curious about what needs to be different this time.",
+      "We continue to coach—you remain responsible for decisions."
+    ],
+    "boundaries": [
+      "We do not skip consent or agreements even if we worked together before.",
+      "We do not provide therapy, consulting or crisis support.",
+      "We will name if another professional might now be a better fit.",
+      "You decide pace, scope and when to close again."
     ],
     "not": [
-      "Not a substitute for ongoing therapeutic or medical care.",
-      "Not 'on-call' 24/7 access.",
-      "Not performance management disguised as support."
+      "Not an open-ended retainer or on-call support.",
+      "Not a replacement for supervision, therapy or HR processes.",
+      "Not a promise that previous goals or methods will still apply."
     ],
-    "cta": "Use the contact form, choose 'Check-in', and note whether you prefer 1 or 3 sessions. We will confirm fit and practical details.",
-    "ctaButton": "Book a check-in conversation"
+    "notIncluded": [
+      "Emergency response outside agreed check-ins.",
+      "Deliverables for your organisation without a separate agreement."
+    ],
+    "reflection": [
+      "What has changed since we last worked together?",
+      "What support do I want this time that I did not ask for before?",
+      "How will I know this tune-up has served me?"
+    ],
+    "cta": "Mention ‘Returning client’ in your note so we can review history and confirm availability.",
+    "ctaButton": "Book a returning client tune-up"
   }
 }

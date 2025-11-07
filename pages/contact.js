@@ -1,6 +1,6 @@
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
-import FAQ from '@/components/ui/FAQ';
+import FAQSection from '@/components/Sections/FAQSection';
 import ContactForm from '@/components/Sections/ContactForm';
 import ICFNotice from '@/components/legal/ICFNotice';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -10,22 +10,10 @@ import nextI18NextConfig from '../next-i18next.config.js';
 
 function ContactPage() {
   const { t } = useTranslation('contact');
-  const { t: faqT } = useTranslation('faq');
 
   const introBullets = t('intro.bullets', { returnObjects: true });
   const processBullets = t('process.bullets', { returnObjects: true });
   const assuranceBullets = t('assurance.bullets', { returnObjects: true });
-
-  const contactFaqGroups = [
-    {
-      title: faqT('practical.title'),
-      items: faqT('practical.items', { returnObjects: true }).slice(0, 3),
-    },
-    {
-      title: faqT('safety.title'),
-      items: faqT('safety.items', { returnObjects: true }).slice(0, 3),
-    },
-  ];
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
@@ -81,7 +69,7 @@ function ContactPage() {
         <ContactForm />
       </section>
 
-      <FAQ title={t('faq.title')} intro={t('faq.intro')} groups={contactFaqGroups} />
+      <FAQSection categories={['contact']} limit={3} />
 
       <div className="px-6 pb-20">
         <ICFNotice id="icf" className="mx-auto max-w-4xl" />
