@@ -1,60 +1,76 @@
 {
   "seo": {
-    "title": "About | SustainSage",
-    "description": "Learn about SustainSage’s philosophy, founders, and safeguards. We offer bilingual, ICF-aligned coaching rooted in cultural humility and informed consent."
+    "title": "About SustainSage",
+    "description": "Learn how SustainSage blends ICF-aligned coaching, bilingual facilitation, and cross-cultural lived experience to support calm, client-led transitions."
   },
   "hero": {
-    "title": "Coaching with cultural humility",
-    "subtitle": "We created SustainSage so UK-based clients with Chinese heritage can access calm, ICF-aligned coaching that honours identity, language, and consent."
+    "title": "About SustainSage",
+    "subtitle": "We are an ICF-aligned, bilingual coaching practice shaped by UK and Taiwanese lived experience. We understand the pressure of real responsibilities and design coaching that respects consent, pace, and culture.",
+    "primaryCta": "Book an intro session",
+    "secondaryCta": "View services",
+    "primaryCtaAria": "Book an intro session with SustainSage",
+    "secondaryCtaAria": "View SustainSage services",
+    "imageAlt": "Two coaches collaborating in a calm workspace"
   },
-  "philosophy": {
-    "title": "Our philosophy",
-    "intro": "We blend coaching, facilitation, and design thinking so each partnership stays client-led and culturally aware.",
-    "principles": [
+  "story": {
+    "title": "Why we founded SustainSage",
+    "body": "We started SustainSage after seeing how many diaspora professionals were told to simply ‘push through’. Coaching should make room for the realities of immigration systems, caregiving, and workplace bias—not ignore them."
+  },
+  "approach": {
+    "title": "How we coach",
+    "body": "Our conversations stay non-directive and transparent. We map the work together, pause when red flags appear, and only continue when there is genuine consent.",
+    "items": [
       {
-        "title": "You lead the agenda",
-        "description": "We listen for what matters, reflect it back, and co-design experiments only when you are ready."
+        "title": "Client-led structure",
+        "description": "You define priorities and pace. We provide frameworks and experiments only when they serve your goals."
       },
       {
-        "title": "Language is a tool, not a barrier",
-        "description": "Sessions can flow in English, Traditional Chinese, Simplified Chinese, or a mix—whatever helps you think clearly."
+        "title": "Bilingual, cross-cultural lenses",
+        "description": "Sessions can flow in English, Traditional Chinese, Simplified Chinese, or a blend, making room for nuance."
       },
       {
-        "title": "Experiments build confidence",
-        "description": "Small, low-risk tests help you gather evidence for your decisions without promises or pressure."
+        "title": "Courage to say not a fit",
+        "description": "If coaching is not right, we pause and signpost other services rather than forcing a misaligned engagement."
       }
+    ]
+  },
+  "ethics": {
+    "title": "Ethics, confidentiality, and safeguarding",
+    "body": "We hold ourselves accountable to the ICF Code of Ethics and UK safeguarding expectations.",
+    "items": [
+      "Confidentiality is standard, with clear explanations of legal or safeguarding exceptions.",
+      "We outline scope, data handling, cancellation terms, and fees before any session begins.",
+      "When therapy, legal, immigration, medical, or financial support is needed, we pause coaching and refer or signpost options."
     ]
   },
   "founders": {
-    "title": "Meet the founders",
-    "intro": "We met through diaspora community projects and built SustainSage to bridge structured coaching with grounded cultural understanding.",
+    "title": "Founders",
+    "intro": "Two coaches who bridge design, facilitation, and community work across the UK and Taiwan.",
     "people": [
       {
         "name": "Hao-Cheng Tsai",
-        "role": "ICF coach & service designer",
-        "bio": "Holds space for systems thinking, stakeholder mapping, and experimentation so your ideas can land responsibly.",
-        "credentials": "ICF ACC candidate, MFA Service Experience Design, former social innovation facilitator."
+        "role": "ICF coach · Service designer",
+        "bio": "Brings systems thinking and civic design to help clients test ideas responsibly.",
+        "languages": "Languages: English, Mandarin, Taiwanese",
+        "focus": "Works with mid-career restarters, public-sector leaders, and cross-cultural teams.",
+        "image": "/images/founders/hao-cheng-tsai.svg"
       },
       {
         "name": "Yi-Ling Lai",
-        "role": "ICF coach & facilitator",
-        "bio": "Specialises in reflective dialogue, intercultural transitions, and gentle accountability for sustained change.",
-        "credentials": "ICF ACC, MSc Applied Positive Psychology, community learning designer across the UK and Taiwan."
+        "role": "ICF coach · Learning facilitator",
+        "bio": "Creates reflective, trauma-informed spaces for diaspora professionals balancing care and ambition.",
+        "languages": "Languages: English, Mandarin",
+        "focus": "Supports carers returning to work, community organisers, and early-career leaders.",
+        "image": "/images/founders/yi-ling-lai.svg"
       }
     ]
   },
-  "safeguards": {
-    "title": "Safeguards & boundaries",
-    "items": [
-      "Confidentiality is maintained except where law or safeguarding obligations require disclosure.",
-      "We clarify scope, fees, data handling, and cancellation policies before coaching begins.",
-      "When therapy, legal, immigration, medical, or financial advice is needed, we pause coaching and refer or signpost other services with your consent."
-    ]
-  },
   "cta": {
-    "title": "Curious about partnering with us?",
-    "body": "Let’s explore how SustainSage can support you, your community, or your organisation in a way that feels respectful and sustainable.",
-    "primaryCta": "Book a chemistry chat",
-    "secondaryCta": "Contact us"
+    "title": "Curious about working together?",
+    "body": "Tell us what you are navigating. We will suggest formats—or recommend other services—so you can make an informed choice.",
+    "primaryCta": "Book an intro session",
+    "secondaryCta": "Contact us",
+    "primaryAria": "Book an intro session with SustainSage",
+    "secondaryAria": "Contact SustainSage"
   }
 }
