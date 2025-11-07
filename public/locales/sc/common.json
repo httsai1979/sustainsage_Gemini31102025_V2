@@ -4,33 +4,33 @@
     "navAbout": "关于我们",
     "navServices": "服务",
     "navResources": "资源",
-    "navBlog": "部落格",
-    "navContact": "联络",
-    "openMenu": "开启导览",
-    "closeMenu": "关闭导览"
+    "navBlog": "博客",
+    "navContact": "联系",
+    "openMenu": "打开导航",
+    "closeMenu": "关闭导航"
   },
   "footer": {
-    "philosophy": "透过对话厘清下一步。",
+    "philosophy": "用沉稳的对话看清方向。",
     "sitemapTitle": "网站地图",
-    "contactTitle": "联络资讯",
+    "contactTitle": "联系方式",
     "copyright": "© {{year}} SustainSage Group Ltd. 版权所有。",
-    "privacyPolicy": "隐私权政策"
+    "privacyPolicy": "隐私政策"
   },
   "stickyCta": {
-    "title": "随时准备好时",
-    "subtitle": "预约 20 分钟初谈，看看教练是否适合你。",
-    "button": "预约初谈"
+    "title": "预约 20 分钟了解是否合适",
+    "subtitle": "用英中双语聊聊你的背景、语言偏好和合作边界，看看 SustainSage 是否合适。",
+    "button": "立即预约"
   },
   "icfNotice": {
     "ariaLabel": "教练伦理与合作范围",
-    "paragraph1": "我们遵循国际教练联盟 (ICF) 伦理守则。教练是一段合作、由来谈者主导的过程，用来支持你自主的学习与改变。这不是治疗、谘商、医疗、法律或财务建议；你仍对自己的选择与行动负责。",
-    "paragraph2": "除非法律要求或有危害风险，我们会保护你的保密性。开始之前会与你一起建立清楚的合作约定、目标与界线，并取得你对工作方式与资料处理的知情同意。"
+    "paragraph1": "我们遵循国际教练联盟 (ICF) 伦理守则。教练是一段合作、由来谈者主导的过程，用来支持你自主的学习与改变。这不是治疗、咨询、医疗、法律或财务建议；你仍对自己的选择与行动负责。",
+    "paragraph2": "除非法律要求或存在危害风险，我们会保护你的保密性。开始之前会与你一起建立清楚的合作约定、目标与界线，并取得你对工作方式与资料处理的知情同意。"
   },
   "errorPages": {
     "notFoundTitle": "找不到这个页面",
-    "notFoundSubtitle": "连结可能已过期或页面已移动，我们一起回到有用的页面吧。",
-    "serverErrorTitle": "系统发生状况",
-    "serverErrorSubtitle": "发生了非预期的错误，请稍后再试，或通知我们协助处理。",
-    "cta": "回到首页"
+    "notFoundSubtitle": "链接可能已过期或页面已移动，我们一起回到更有用的页面。",
+    "serverErrorTitle": "系统出现状况",
+    "serverErrorSubtitle": "发生了意外错误，请稍后再试，或告知我们协助处理。",
+    "cta": "返回首页"
   }
 }
