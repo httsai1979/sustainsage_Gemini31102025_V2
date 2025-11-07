@@ -117,16 +117,9 @@ function ServicesPage() {
   );
 }
 
-ServicesPage.layoutProps = (pageProps) => {
-  const locale = pageProps?._nextI18Next?.initialLocale;
-  const store = pageProps?._nextI18Next?.initialI18nStore?.[locale]?.services;
-
-  return {
-    title: store?.seo?.title ?? 'Services | SustainSage',
-    desc:
-      store?.seo?.description ??
-      'Bilingual coaching plans for UK transitions, returners, and mid-career experiments.',
-  };
+ServicesPage.layoutProps = {
+  title: 'Services | SustainSage',
+  desc: 'Bilingual coaching plans for UK transitions, returners, and mid-career experiments.',
 };
 
 export async function getStaticProps({ locale = 'en' }) {
