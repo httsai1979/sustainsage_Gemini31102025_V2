@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import {
   AcademicCapIcon,
   BriefcaseIcon,
@@ -73,7 +74,32 @@ export default function HomeForWhom() {
                 <Card hoverEffect className="flex h-full flex-col text-left">
                   <Icon className="h-12 w-12 text-primary" aria-hidden="true" />
                   <h3 className="h3 mt-6">{card.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{card.description}</p>
+                  {card.summary && (
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{card.summary}</p>
+                  )}
+                  {card.contextLines && card.contextLines.length > 0 && (
+                    <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-600">
+                      {card.contextLines.map((line) => (
+                        <li key={line} className="flex gap-2">
+                          <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  {card.conversationFocus && (
+                    <p className="mt-4 text-sm font-medium text-emerald-800">
+                      {card.conversationFocus}
+                    </p>
+                  )}
+                  {card.linkHref && card.linkLabel && (
+                    <Link
+                      href={card.linkHref}
+                      className="mt-4 inline-flex items-center text-sm font-semibold text-emerald-700 transition hover:text-emerald-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+                    >
+                      {card.linkLabel}
+                    </Link>
+                  )}
 
                   {audience && (audience.scenarios || audience.approach || audience.questions) ? (
                     <div className="mt-6 border-t border-emerald-100 pt-4">

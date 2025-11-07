@@ -6,35 +6,86 @@
   "hero": {
     "title": "Calm, client-led coaching for real-life transitions",
     "subtitle": "For professionals navigating change across cultures, careers and countries. A steady space to think clearly, choose next steps, and move at your pace.",
+    "note": "No sales script. Just 20 minutes to see whether this space serves you.",
     "primaryCta": "Book an intro session",
     "secondaryCta": "View services",
     "primaryCtaAria": "Book an intro session with SustainSage",
     "secondaryCtaAria": "View SustainSage services",
     "imageAlt": "Illustration of a coach and client planning next steps"
   },
+  "workingTogether": {
+    "title": "What working together looks like",
+    "intro": "Every conversation is co-created. We protect space so you decide pace, language, and depth while we bring steady reflection.",
+    "points": [
+      {
+        "title": "You lead, we partner",
+        "description": "You choose the topic each time. We listen, question, and mirror patterns so decisions come from your judgement, not our agenda."
+      },
+      {
+        "title": "Small, realistic experiments",
+        "description": "Sessions end with one or two actions you willingly choose—often tiny, evidence-gathering steps that fit UK life, visas, and capacity."
+      },
+      {
+        "title": "Ethical, confidential, calm",
+        "description": "We follow ICF ethics, name boundaries clearly, and keep conversations grounded. No guarantees, no pressure, always with consent."
+      }
+    ]
+  },
   "forWhom": {
     "title": "Who coaching is for",
-    "intro": "We work with people balancing cross-cultural lives, caregiving, and careers who want space to decide without pressure.",
+    "intro": "We support people juggling UK work, relocation, and caring responsibilities who want a thoughtful place to decide their own direction.",
     "items": [
       {
         "key": "midCareer",
-        "title": "Mid-career restarters",
-        "description": "Refresh direction after redundancy, burnout or a long pause—without tossing aside what you have built."
+        "title": "Mid-career returners",
+        "summary": "You are re-entering the UK market after a pause and want a grounded plan rather than urgent fixes.",
+        "contextLines": [
+          "Negotiating visa updates or skilled worker routes while explaining a CV gap.",
+          "Balancing care duties, pensions, and flexible work expectations across UK employers.",
+          "Weighing part-time, portfolio, or contract roles that respect energy and finances."
+        ],
+        "conversationFocus": "Topics you can bring: narrating your break, boundaries with recruiters, phased return experiments.",
+        "linkLabel": "See how the Transition Series works",
+        "linkHref": "/services#transition"
       },
       {
         "key": "newToUK",
-        "title": "Newcomers working abroad",
-        "description": "Bridge UK workplace expectations with your home-culture instincts so decisions feel honest."
+        "title": "Newcomers working in the UK",
+        "summary": "You are settling into the UK and want bilingual space to translate culture shocks into workable strategies.",
+        "contextLines": [
+          "Learning unwritten workplace norms while keeping home-culture values alive.",
+          "Building networks without feeling transactional, from meet-ups to LinkedIn outreach.",
+          "Navigating HR language, sponsorship, or probation expectations with confidence."
+        ],
+        "conversationFocus": "Topics you can bring: cross-cultural communication, boundary scripts, mapping realistic support networks.",
+        "linkLabel": "Explore the UK newcomer focus",
+        "linkHref": "/services#transition"
       },
       {
         "key": "graduates",
         "title": "Early-career explorers",
-        "description": "Test possibilities after graduation with low-risk experiments instead of all-or-nothing leaps."
+        "summary": "You want room to test possibilities after graduation or first roles without pretending to have it all figured out.",
+        "contextLines": [
+          "Comparing grad schemes, creative projects, or further study with UK cost-of-living in mind.",
+          "Debriefing interviews to refine stories that stay honest yet compelling.",
+          "Balancing family expectations, visas, or side jobs while choosing next moves."
+        ],
+        "conversationFocus": "Topics you can bring: decision frameworks, confidence wobbles, designing low-risk trials.",
+        "linkLabel": "View early-career coaching details",
+        "linkHref": "/services#early-career"
       },
       {
         "key": "parents",
         "title": "Carers and parents on pause",
-        "description": "Re-enter work or reshape routines with support that respects caregiving, energy and capacity."
+        "summary": "You are caring for family across borders and want work-life plans that honour the realities of UK support systems.",
+        "contextLines": [
+          "Coordinating childcare, eldercare, and NHS appointments while negotiating flexible work.",
+          "Rebuilding confidence after stepping back, including conversations about pay and progression.",
+          "Working out boundaries with partners, relatives, or managers when priorities shift."
+        ],
+        "conversationFocus": "Topics you can bring: advocating for flexibility, pacing return-to-work experiments, naming needs clearly.",
+        "linkLabel": "Look at the Sustain & Balance format",
+        "linkHref": "/services#leadership"
       }
     ]
   },
@@ -129,16 +180,35 @@
       }
     ]
   },
+  "miniCases": {
+    "title": "Mini case snapshots",
+    "intro": "Anonymous composites that show how small, client-chosen experiments can look in practice.",
+    "disclaimer": "Outcome owned and chosen by the client.",
+    "cards": [
+      {
+        "title": "Returning professional in her 40s",
+        "story": "Felt pressure to accept the first full-time role after relocating for her partner's job.\nWe mapped what financial stability actually required and rehearsed language for boundary-setting.\nShe chose to test a part-time contract and a local volunteering role before deciding on permanent posts."
+      },
+      {
+        "title": "Newcomer product manager",
+        "story": "Arrived in the UK on a partner visa and worried about starting 'too junior'.\nSessions focused on translating previous Asia-Pacific experience into UK hiring language and noticing impostor triggers.\nHe created a six-week networking experiment, including bilingual coffee chats and a blog post, before applying selectively."
+      },
+      {
+        "title": "Graduate navigating visa deadlines",
+        "story": "Held a graduate visa expiring in 8 months and felt scattered by conflicting advice.\nWe clarified decision criteria around sponsorship, wellbeing, and family expectations, then sized experiments.\nThey chose to approach three target employers with a clear ask and schedule rest days around interviews."
+      }
+    ]
+  },
   "servicesOverview": {
     "title": "Ways to work together",
     "intro": "Each format begins with an intro conversation to scope goals, languages, and boundaries together.",
     "cards": [
       {
-        "title": "Reset / Direction · 4 sessions",
-        "description": "Short, focused coaching to regain clarity around a single transition or decision point."
+        "title": "Transition Series · 6 sessions",
+        "description": "Hold structure through a specific UK life or career shift, paced so you can test ideas between conversations."
       },
       {
-        "title": "Sustain / Deepen · 8 sessions",
+        "title": "Sustain & Balance · 8 sessions",
         "description": "Longer partnerships for ongoing change, accountability, and reflective pauses across a season."
       },
       {
@@ -156,8 +226,12 @@
         "description": "Align on expectations, scope, and boundaries, and decide together whether coaching is the right fit."
       },
       {
+        "title": "Agreement",
+        "description": "Co-create coaching goals, format, fees, and safeguarding arrangements before any paid session begins."
+      },
+      {
         "title": "Coaching sessions",
-        "description": "4–6 sessions per cycle with reflective questions, cultural translation, and experiments that you choose."
+        "description": "40–60 minute conversations online or in-person, led by your agenda, with reflective questions and experiments you choose."
       },
       {
         "title": "Review",
