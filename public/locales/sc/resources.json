@@ -1,46 +1,57 @@
 {
+  "seo": {
+    "title": "资源｜SustainSage",
+    "description": "结合教练实践的反思提问、职业实验与文化适应工具，适合在会谈之间延伸使用。"
+  },
   "hero": {
     "title": "资源",
-    "subtitle": "轻量、可自我反思的工具。选择对你有帮助的，其他的可以暂放。"
+    "subtitle": "轻量却深度的反思工具，让你在会谈之间持续前进。"
   },
-  "curatedTitle": "我们在教练工作中整理的工具",
-  "usageNote": "每一份资源仅供个人反思与教练工作使用，不等同于治疗或专业建议。",
+  "curatedTitle": "与教练客户共同整理的资源",
+  "curatedIntro": "这些工具来自实际教练合作中的提问、清单与模板。有些可以立即提供，有些仍在试行阶段—欢迎告诉我们你最需要什么。",
+  "usageNote": "这些资源用于反思与设计实验，并非治疗、法律意见或其他专业服务的替代方案。",
   "items": {
-    "selfTalk": {
-      "title": "自我对话调频卡",
-      "summary": "用温柔提问，把苛刻的自我对话转换成实用又尊重自己的语句。",
-      "format": "格式：PDF",
-      "cta": "索取资源"
+    "reflectionQuestions": {
+      "title": "反思问题组",
+      "summary": "帮助你察觉文化转换、价值与决策节点的假设。",
+      "format": "格式：PDF 包",
+      "status": "可立即取得",
+      "cta": "索取题目包"
     },
-    "experimentLadder": {
-      "title": "行为实验阶梯",
-      "summary": "设计小而安全、由你掌控的实验。",
-      "format": "格式：PDF",
-      "cta": "索取资源"
+    "careerExperiments": {
+      "title": "职涯实验模板",
+      "summary": "一步步规划低风险实验，在做出重大决定前先测试。",
+      "format": "格式：工作表组合",
+      "status": "客户试行中",
+      "cta": "加入试行名单"
     },
-    "valuesMap": {
-      "title": "价值地图",
-      "summary": "厘清对你重要的事，并共同设计对应的行动。",
-      "format": "格式：PDF",
-      "cta": "索取资源"
+    "culturalChecklists": {
+      "title": "文化适应清单",
+      "summary": "引导你观察英国职场规范，同时保留原有优势。",
+      "format": "格式：核对表",
+      "status": "可立即取得",
+      "cta": "索取清单"
     },
-    "emotionTriangle": {
-      "title": "情绪三角图",
-      "summary": "观察感受、想法与行为之间的连结，不带自我责备。",
-      "format": "格式：投影片",
-      "cta": "索取资源"
+    "conversationGuides": {
+      "title": "对话演练指南",
+      "summary": "准备利害关系人更新、回馈对话与人脉经营的框架与脚本。",
+      "format": "格式：简报",
+      "status": "开发中",
+      "cta": "登记兴趣"
     },
-    "thoughtLog": {
-      "title": "思绪记录表",
-      "summary": "辨识惯性模式，选择不同的下一步。",
-      "format": "格式：表单",
-      "cta": "索取资源"
-    },
-    "beliefsExplorer": {
-      "title": "限制性信念探索",
-      "summary": "以富同理心的好奇心，松动僵化的故事。",
+    "selfAdvocacy": {
+      "title": "自我倡议工具包",
+      "summary": "提供请求资源、争取机会时的句型与节奏提示。",
       "format": "格式：文件",
-      "cta": "索取资源"
+      "status": "客户试行中",
+      "cta": "加入试行名单"
+    },
+    "reviewJournal": {
+      "title": "月度回顾手册",
+      "summary": "以温和的结构记录每月的亮点、学习与下阶段实验。",
+      "format": "格式：Notion / PDF",
+      "status": "可立即取得",
+      "cta": "索取手册"
     }
   }
 }

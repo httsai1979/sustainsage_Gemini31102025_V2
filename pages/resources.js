@@ -11,40 +11,40 @@ import nextI18NextConfig from '../next-i18next.config.js';
 
 const FALLBACK_RESOURCES = [
   {
-    id: 'self-talk-reframe',
+    id: 'reflection-questions',
     image: '/images/resources/values-worksheet.svg',
-    translationKey: 'items.selfTalk',
-    href: '/contact?topic=self-talk-reframe',
+    translationKey: 'items.reflectionQuestions',
+    href: '/contact?topic=reflection-questions',
   },
   {
-    id: 'experiment-ladder',
+    id: 'career-experiments',
     image: '/images/resources/culture-checklist.svg',
-    translationKey: 'items.experimentLadder',
-    href: '/contact?topic=experiment-ladder',
+    translationKey: 'items.careerExperiments',
+    href: '/contact?topic=career-experiments',
   },
   {
-    id: 'values-map',
-    image: '/images/resources/values-worksheet.svg',
-    translationKey: 'items.valuesMap',
-    href: '/contact?topic=values-map',
+    id: 'cultural-checklists',
+    image: '/images/resources/culture-checklist.svg',
+    translationKey: 'items.culturalChecklists',
+    href: '/contact?topic=cultural-checklists',
   },
   {
-    id: 'emotion-triangle',
-    image: '/images/resources/grounding-audio.svg',
-    translationKey: 'items.emotionTriangle',
-    href: '/contact?topic=emotion-triangle',
-  },
-  {
-    id: 'thought-log',
+    id: 'conversation-guides',
     image: '/images/resources/imposter-reading.svg',
-    translationKey: 'items.thoughtLog',
-    href: '/contact?topic=thought-log',
+    translationKey: 'items.conversationGuides',
+    href: '/contact?topic=conversation-guides',
   },
   {
-    id: 'beliefs-explorer',
-    image: '/images/resources/culture-checklist.svg',
-    translationKey: 'items.beliefsExplorer',
-    href: '/contact?topic=beliefs-explorer',
+    id: 'self-advocacy',
+    image: '/images/resources/grounding-audio.svg',
+    translationKey: 'items.selfAdvocacy',
+    href: '/contact?topic=self-advocacy-toolkit',
+  },
+  {
+    id: 'review-journal',
+    image: '/images/resources/values-worksheet.svg',
+    translationKey: 'items.reviewJournal',
+    href: '/contact?topic=review-journal',
   },
 ];
 
@@ -61,6 +61,11 @@ function ResourceCard({ resource }) {
               height={280}
               className="h-44 w-full object-cover"
             />
+            {resource.status && (
+              <span className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-emerald-800">
+                {resource.status}
+              </span>
+            )}
           </div>
           <h3 className="mt-5 text-lg font-semibold text-slate-900">{resource.title}</h3>
           <p className="mt-3 text-sm leading-6 text-slate-600">{resource.summary}</p>
@@ -81,13 +86,19 @@ function ResourceCard({ resource }) {
 
 function ResourcesPage() {
   const { t } = useTranslation('resources');
-  const resources = FALLBACK_RESOURCES.map((item) => ({
-    ...item,
-    title: t(`${item.translationKey}.title`),
-    summary: t(`${item.translationKey}.summary`),
-    formatLabel: t(`${item.translationKey}.format`),
-    cta: t(`${item.translationKey}.cta`),
-  }));
+  const resources = FALLBACK_RESOURCES.map((item) => {
+    const statusValue = t(`${item.translationKey}.status`);
+    const safeStatus = statusValue === `${item.translationKey}.status` ? '' : statusValue;
+
+    return {
+      ...item,
+      title: t(`${item.translationKey}.title`),
+      summary: t(`${item.translationKey}.summary`),
+      formatLabel: t(`${item.translationKey}.format`),
+      status: safeStatus,
+      cta: t(`${item.translationKey}.cta`),
+    };
+  });
 
   return (
     <>
@@ -105,6 +116,7 @@ function ResourcesPage() {
               {t('curatedTitle')}
             </h2>
           </Reveal>
+          <p className="mt-4 text-base leading-7 text-slate-700">{t('curatedIntro')}</p>
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {resources.map((resource) => (
               <ResourceCard key={resource.id} resource={resource} />
