@@ -1,6 +1,5 @@
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
-import MainLayout from '@/components/layout/MainLayout';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -84,12 +83,9 @@ function ServicesPage() {
   );
 }
 
-ServicesPage.getLayout = function getLayout(page) {
-  return (
-    <MainLayout title="Services | SustainSage" desc="ICF-aligned, client-led coaching formats.">
-      {page}
-    </MainLayout>
-  );
+ServicesPage.layoutProps = {
+  title: 'Services | SustainSage',
+  desc: 'ICF-aligned, client-led coaching formats.',
 };
 
 export async function getStaticProps({ locale = 'en' }) {

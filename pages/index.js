@@ -6,11 +6,25 @@ import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
 import { HoverLift, Reveal } from '@/components/ui/Motion';
 import { SITE_URL } from '@/lib/seo';
-import MainLayout from '@/components/layout/MainLayout';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 import nextI18NextConfig from '../next-i18next.config.js';
+
+const HOME_JSON_LD = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: SITE_URL,
+    name: 'SustainSage Coaching',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'SustainSage Group Ltd.',
+    url: SITE_URL,
+  },
+];
 
 function HomePage() {
   const { t } = useTranslation('home');
@@ -156,31 +170,10 @@ function HomePage() {
   );
 }
 
-HomePage.getLayout = function getLayout(page) {
-  const jsonLd = [
-    {
-      '@context': 'https://schema.org',
-      '@type': 'WebSite',
-      url: SITE_URL,
-      name: 'SustainSage Coaching',
-    },
-    {
-      '@context': 'https://schema.org',
-      '@type': 'Organization',
-      name: 'SustainSage Group Ltd.',
-      url: SITE_URL,
-    },
-  ];
-
-  return (
-    <MainLayout
-      title="SustainSage | Coaching"
-      desc="Calm, client-led coaching grounded in ICF ethics."
-      jsonLd={jsonLd}
-    >
-      {page}
-    </MainLayout>
-  );
+HomePage.layoutProps = {
+  title: 'SustainSage | Coaching',
+  desc: 'Calm, client-led coaching grounded in ICF ethics.',
+  jsonLd: HOME_JSON_LD,
 };
 
 export async function getStaticProps({ locale = 'en' }) {
