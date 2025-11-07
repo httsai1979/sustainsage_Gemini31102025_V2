@@ -1,102 +1,48 @@
 {
-  "general": {
-    "title": "Understanding coaching",
-    "items": [
-      {
-        "id": "what-is-coaching",
-        "question": "What does coaching mean here?",
-        "answer": "ICF-aligned coaching is a collaborative, non-directive conversation. You bring the topic, we partner through questions, reflection and structure so you decide your own next steps."
-      },
-      {
-        "id": "how-different-therapy",
-        "question": "How is this different from therapy or counselling?",
-        "answer": "Therapy and counselling diagnose and treat mental health concerns. Coaching focuses on future-oriented choices and experiments. We refer out if therapy or clinical care is what you need right now."
-      },
-      {
-        "id": "vs-consulting",
-        "question": "Do you give advice like consultants, recruiters or immigration advisers?",
-        "answer": "No. We may share information or signpost resources, but we do not replace legal, immigration, financial or recruitment expertise. Coaching keeps you in authorship."
-      },
-      {
-        "id": "who-leads",
-        "question": "Who leads the conversation?",
-        "answer": "You do. We check your focus at the start of each session, explore what success would feel like, and agree on next steps together."
-      }
-    ]
-  },
-  "coaching": {
-    "title": "Working together",
-    "items": [
-      {
-        "id": "intro-call",
-        "question": "What happens in the 20-minute intro call?",
-        "answer": "We ask about your context, name any boundaries or safeguarding concerns, share how we coach, and decide together whether to begin. It is not a sales pitch."
-      },
-      {
-        "id": "languages",
-        "question": "What languages can we use?",
-        "answer": "English, Traditional Chinese and Simplified Chinese. You can switch mid-session. We check for any translation needs or culturally specific references."
-      },
-      {
-        "id": "between-support",
-        "question": "Do you offer support between sessions?",
-        "answer": "Light touch only—brief emails or messages when useful. We do not provide on-call crisis response or extra sessions without consent."
-      },
-      {
-        "id": "ending",
-        "question": "How do we close a coaching series?",
-        "answer": "We review learning and next steps, confirm any signposting, and agree on whether to pause, close or schedule a check-in later."
-      }
-    ]
-  },
-  "practical": {
-    "title": "Practicalities",
-    "items": [
-      {
-        "id": "fees",
-        "question": "How do fees work?",
-        "answer": "We discuss fees during the intro call. Rates depend on package length, organisational sponsorship and currency. We aim for transparency, not pressure."
-      },
-      {
-        "id": "cancellation",
-        "question": "What is your cancellation policy?",
-        "answer": "Sessions can be rescheduled with 24 hours’ notice. Late cancellations count as used unless there is an emergency or safeguarding concern."
-      },
-      {
-        "id": "availability",
-        "question": "How quickly can we start?",
-        "answer": "Intro calls usually happen within two to three UK working days. Packages typically begin within two weeks, depending on time zones and our current capacity."
-      },
-      {
-        "id": "location",
-        "question": "Do you offer in-person coaching?",
-        "answer": "Mostly online. In-person sessions in the UK are possible when schedules and accessibility needs align."
-      }
-    ]
-  },
-  "safety": {
-    "title": "Safety, privacy and boundaries",
-    "items": [
-      {
-        "id": "confidentiality",
-        "question": "Is the conversation confidential?",
-        "answer": "Yes, within ICF ethics. We keep your information private except when law, safeguarding or risk of harm requires disclosure."
-      },
-      {
-        "id": "data-care",
-        "question": "How do you handle data?",
-        "answer": "We store only what we need to deliver coaching, use secure tools, and delete data if we do not work together unless law says otherwise."
-      },
-      {
-        "id": "safeguarding",
-        "question": "What if a safeguarding issue comes up?",
-        "answer": "We pause, check immediate safety, and may signpost or contact relevant services if there is risk of harm. We keep you informed at every step."
-      },
-      {
-        "id": "not-emergency",
-        "question": "Can I contact you in an emergency?",
-        "answer": "We are not an emergency or crisis service. If you are in immediate danger, contact local emergency support or trusted crisis lines first."
-      }
-    ]
-  }
+  "title": "Questions you might be holding",
+  "intro": "Short, honest answers. They do not replace a live conversation, but they help you sense whether our coaching is right for now.",
+  "items": [
+    {
+      "id": "what-is-coaching",
+      "category": "general",
+      "q": "What is coaching, and how is it different from therapy or consulting?",
+      "a": "Coaching is a collaborative, future-leaning conversation where you stay in charge of choices. We follow ICF ethics, ask reflective questions and co-design experiments. We do not diagnose, treat, or give directive advice like therapists, consultants or lawyers."
+    },
+    {
+      "id": "boundaries-therapy",
+      "category": "general",
+      "q": "What if I might need therapy instead?",
+      "a": "We notice this with you and can pause coaching to signpost qualified clinical or crisis services. Coaching is not a substitute for therapy, medical care, or emergency support."
+    },
+    {
+      "id": "services-which-plan",
+      "category": "services",
+      "q": "How do I choose a package?",
+      "a": "Match your situation to the three focuses: Transition, Confidence, or Experiments. Each page explains who it serves, what we cover and what is out of scope. If it is unclear, book the intro call and we will decide together."
+    },
+    {
+      "id": "about-background",
+      "category": "about",
+      "q": "What training and background do you bring?",
+      "a": "We are ICF-trained coaches with experience in social innovation, migration support and organisational change. Lived experience of moving countries, rebuilding careers and holding care roles shapes how we coach."
+    },
+    {
+      "id": "contact-booking",
+      "category": "contact",
+      "q": "How does booking work?",
+      "a": "Start with the 20-minute intro call. We explore your context, clarify boundaries, discuss fees transparently and you decide whether to continue. There is no pressure to commit on the call."
+    },
+    {
+      "id": "blog-how-to-use",
+      "category": "blog",
+      "q": "How should I use your articles?",
+      "a": "Treat them as prompts for reflection or conversation. They are not instructions, guarantees or a replacement for professional advice. Credit us if you share publicly."
+    },
+    {
+      "id": "resources-how-to-use",
+      "category": "resources",
+      "q": "How should I use your resources?",
+      "a": "Use them as tools you can adapt for self-reflection or team conversations. They do not replace therapy, legal, financial or immigration advice, and outcomes remain your responsibility."
+    }
+  ]
 }

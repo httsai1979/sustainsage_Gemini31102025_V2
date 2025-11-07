@@ -1,15 +1,16 @@
 {
   "seo": {
     "title": "Services | SustainSage",
-    "description": "Explore SustainSage coaching packages built for relocation, returning to work, settling in the UK and light-touch check-ins."
+    "description": "Explore SustainSage coaching packages for transitions, confidence and ethical experiments."
   },
   "hero": {
-    "title": "Coaching offers shaped by lived UK transitions",
-    "subtitle": "Pick the option that matches your context, then we tailor the details together."
+    "title": "Three coaching pathways, one ethical stance",
+    "subtitle": "Each package holds space for nuance, keeps you in charge and stays within ICF practice.",
+    "imageAlt": "Illustration of coaching pathways"
   },
   "overview": {
     "title": "What stays consistent",
-    "description": "Each package begins with a 20-minute intro call to confirm scope, consent and boundaries.",
+    "description": "Every package begins with a 20-minute intro call to confirm scope, consent and boundaries.",
     "bullets": [
       "ICF-aligned coaching with clear agreements and confidentiality.",
       "Sessions held online unless we agree otherwise.",
@@ -17,64 +18,32 @@
     ]
   },
   "packages": {
-    "title": "Our four core offers",
-    "description": "Choose the focus that feels closest to what you need right now.",
+    "title": "Choose the focus that fits",
+    "description": "Each card links to a detailed page with boundaries, reflection prompts and next steps.",
     "cards": [
       {
         "slug": "transition",
         "title": "Transition package",
-        "summary": "Six sessions to move through relocation or role change without burning out.",
-        "bullets": [
-          "Clarify what a good move looks like for you.",
-          "Map constraints across money, visas, family and wellbeing.",
-          "Design grounded experiments instead of one big leap."
-        ],
-        "cta": "Learn more",
-        "href": "/services/transition",
-        "image": "/images/services/transition.svg",
-        "imageAlt": "Boxes and a map ready for a thoughtful move"
+        "for": "For professionals navigating relocation or role change.",
+        "focus": "Clarify what a good move looks like and design grounded experiments.",
+        "format": "6 × 55–60 minute sessions over 3–4 months.",
+        "cta": "View details"
       },
       {
-        "slug": "returning",
-        "title": "Returning to work",
-        "summary": "Support after a break to rebuild story, confidence and realistic rhythms.",
-        "bullets": [
-          "Reframe your break without hiding it.",
-          "Prepare for conversations with employers and family.",
-          "Notice capacity, boundaries and pacing in real life."
-        ],
-        "cta": "Learn more",
-        "href": "/services/returning",
-        "image": "/images/services/returning.svg",
-        "imageAlt": "Home and work desk in balance"
+        "slug": "confidence",
+        "title": "Confidence & voice",
+        "for": "For leaders or collaborators who want to speak with steadiness.",
+        "focus": "Unpack narratives, practise consent-based conversations and rehearse real scenarios.",
+        "format": "5 × 55–60 minute sessions over 2–3 months.",
+        "cta": "View details"
       },
       {
-        "slug": "newToUk",
-        "title": "New to the UK",
-        "summary": "Context-aware coaching to decode norms and choose your stance.",
-        "bullets": [
-          "Name what feels unfamiliar or heavy right now.",
-          "Decide where to adapt, push back or opt out.",
-          "Plan job search or work strategies that protect dignity."
-        ],
-        "cta": "Learn more",
-        "href": "/services/new-to-uk",
-        "image": "/images/services/new-to-uk.svg",
-        "imageAlt": "Signpost with an abstract UK skyline"
-      },
-      {
-        "slug": "checkIn",
-        "title": "Steady check-ins",
-        "summary": "One or three sessions when you just need an ethical sounding board.",
-        "bullets": [
-          "Untangle one decision or conversation.",
-          "Realign with values and capacity.",
-          "Leave with 1–3 next steps to keep momentum."
-        ],
-        "cta": "Learn more",
-        "href": "/services/check-in",
-        "image": "/images/services/check-in.svg",
-        "imageAlt": "Notebook and tea cup ready for reflection"
+        "slug": "experiments",
+        "title": "Experiments & stewardship",
+        "for": "For people stewarding change that affects teams or communities.",
+        "focus": "Design ethical experiments, set decision gates and keep agency with stakeholders.",
+        "format": "4 × 70 minute sessions across 8–10 weeks.",
+        "cta": "View details"
       }
     ]
   },
@@ -88,8 +57,8 @@
     ]
   },
   "faq": {
-    "title": "More about working together",
-    "intro": "A few practical answers are below—there are more in our full FAQ."
+    "title": "Questions before you decide",
+    "intro": "These respond to practical and ethical considerations. You can read the full FAQ anytime."
   },
   "cta": {
     "title": "Need help choosing?",

@@ -1,100 +1,91 @@
 {
   "seo": {
-    "title": "SustainSage｜陪你穿越转变的教练空间",
-    "description": "与 ICF 对齐的教练服务，帮助你在英国搬迁、重返职场或生活微调时保持清晰与主导权。"
+    "title": "SustainSage｜陪你度过转变的教练对话",
+    "description": "ICF 取向教练，陪伴搬迁、自信与伦理实验的课题。清楚思考、在同意下行动，决定权一直在你手上。"
   },
   "hero": {
-    "title": "为英国迁移与细微变化而设的教练",
-    "subtitle": "短而稳定的对话，让你理清思路，在同意与觉察中行动。",
+    "title": "转变来了，你仍可以好好掌舵",
+    "subtitle": "我们提供短而稳的对话，容纳复杂情绪，不开空头承诺。",
     "primaryCta": "预约 20 分钟初谈",
     "secondaryCta": "查看服务",
-    "primaryCtaAria": "与 SustainSage 预约 20 分钟初谈",
-    "secondaryCtaAria": "探索 SustainSage 的教练服务",
-    "imageAlt": "两人带着地图与笔记并肩规划"
+    "primaryCtaAria": "预约 SustainSage 的 20 分钟初谈",
+    "secondaryCtaAria": "浏览 SustainSage 的教练服务",
+    "imageAlt": "两人拿着地图与笔记，一起规划未来"
   },
   "fit": {
-    "title": "什么时候特别适合",
-    "description": "当生活转向、你需要脚踏实地的伙伴而不是口号时，我们和你一起站在现场。",
+    "title": "什么时候适合找我们",
+    "description": "当生活正在移动，你想要踏实的伙伴，而不是鼓动式的答案。",
     "bullets": [
-      "搬到英国或在英国城市之间移动，想重建可持续的生活节奏。",
-      "照顾、疗养或进修后重返职场，还在摸索要如何开口。",
-      "对变化既期待又紧绷甚至失落，需要一个空间梳理。",
-      "夹在移民、家庭与工作的期待之间，不想牺牲健康与价值。"
+      "准备搬到或在英国境内移动，希望设计尊重健康与价值的节奏。",
+      "在照护、进修或动荡后回到工作，需要诚实又有弹性的说法。",
+      "同时扛着领导、移民或社群责任，希望守住自己的能量与主体。",
+      "对改变既期待又紧绷，想先有空间整理情绪，再决定下一步。"
     ]
   },
   "approach": {
-    "title": "对话的感觉",
-    "description": "结构轻、伦理清楚，由你掌舵，我们陪你聚焦。",
+    "title": "我们会怎么陪你",
+    "description": "结构保持轻盈、合乎伦理并由你主导，决定权掌握在你手中。",
     "bullets": [
-      "每次会谈都从你当下最重要的议题开始。",
-      "我们回映脉络、提出澄清问题，并一起设计小实验。",
-      "带走的一到三个下一步或反思，而不是必须照做的处方。",
-      "会后如有需要，只提供对你有用的轻量跟进。"
+      "每次会谈从此刻最重要的议题开始。",
+      "我们回顾模式、提出问题，一起设计小实验。",
+      "带走 1–3 个下一步或反思，而不是硬塞的指令。",
+      "会谈之间只在你提出需求时，提供轻量追踪。"
     ]
   },
   "services": {
-    "title": "选择眼前的重点",
-    "description": "这些方案来自客户最常见的过渡情境。",
+    "title": "选择与你贴近的焦点",
+    "description": "这三个方案回应客户最常遇到的转变。",
     "cards": [
       {
         "slug": "transition",
-        "title": "转变方案",
-        "description": "六次会谈，稳稳走过搬迁或职涯转折。",
-        "cta": "了解更多",
+        "title": "Transition 转换方案",
+        "description": "六次会谈，陪你在搬迁或角色变动中保持稳。",
+        "cta": "查看详情",
         "href": "/services/transition",
         "image": "/images/services/transition.svg",
-        "imageAlt": "纸箱与地图象征细致规划"
+        "imageAlt": "打包箱与地图，象征有计划的迁移"
       },
       {
-        "slug": "returning",
-        "title": "重返职场",
-        "description": "在空档后重新建立信心与生活节奏。",
-        "cta": "了解更多",
-        "href": "/services/returning",
-        "image": "/images/services/returning.svg",
-        "imageAlt": "房屋与办公桌并列"
+        "slug": "confidence",
+        "title": "Confidence & voice",
+        "description": "五次会谈，长出有底气又细腻的声音。",
+        "cta": "查看详情",
+        "href": "/services/confidence",
+        "image": "/images/services/confidence.svg",
+        "imageAlt": "麦克风与柔和的线条"
       },
       {
-        "slug": "newToUk",
-        "title": "初到英国",
-        "description": "情境敏感的教练，协助你理解规则并选择立场。",
-        "cta": "了解更多",
-        "href": "/services/new-to-uk",
-        "image": "/images/services/new-to-uk.svg",
-        "imageAlt": "路标与抽象伦敦天际线"
-      },
-      {
-        "slug": "checkIn",
-        "title": "定期 check-in",
-        "description": "需要一次梳理或轻量跟进，也有弹性安排。",
-        "cta": "了解更多",
-        "href": "/services/check-in",
-        "image": "/images/services/check-in.svg",
-        "imageAlt": "笔记本与茶杯的摆设"
+        "slug": "experiments",
+        "title": "Experiments & stewardship",
+        "description": "四次会谈，设计兼顾伦理的实验，照顾被影响的人。",
+        "cta": "查看详情",
+        "href": "/services/experiments",
+        "image": "/images/services/experiments.svg",
+        "imageAlt": "代表迭代的连结几何图形"
       }
     ]
   },
   "support": {
-    "title": "让我们踏实的原则",
-    "description": "ICF 伦理是底线，移民与照护经验让对话更贴近现实。",
+    "title": "我们的锚点",
+    "description": "ICF 伦理是基础，迁移与照护的亲身经验让我们保持真实。",
     "bullets": [
-      "非指令式合作：方向由你决定，我们一起建构框架。",
-      "看见权力、阶级、种族、健康与照护角色，但不贴标签。",
-      "实际行动与内在反思并重，两者都重要。",
-      "如果教练不是最适合的资源，我们会清楚说明并提供资讯。"
+      "非指导式合作：我们与您共创方向，而不是强行给答案。",
+      "看见权力、阶级、种族、健康与照护角色，并避免评断。",
+      "实务与反思并行，两者对可持续的改变都重要。",
+      "若教练不是最合适的支持，我们会透明转介其他资源。"
     ]
   },
   "faq": {
-    "title": "常见起步问题",
-    "intro": "先给你几个重点回答，需要更多细节时可以看完整 FAQ。",
-    "seeAll": "查看完整 FAQ"
+    "title": "先回答几个重点",
+    "intro": "这里先提供几个常见问题，需要时可以再看完整 FAQ。",
+    "seeAll": "阅读完整 FAQ"
   },
   "cta": {
-    "title": "想先聊聊吗？",
-    "body": "写下你正在经历的转变。我们会一起确认是否合适、节奏与下一步。",
+    "title": "想要一场踏实的对话吗？",
+    "body": "写下你正面对的转变。我们会一起确认合适度、步调与下一步。",
     "primaryCta": "预约 20 分钟初谈",
-    "secondaryCta": "联络我们",
-    "primaryAria": "与 SustainSage 预约 20 分钟初谈",
-    "secondaryAria": "前往联络页面"
+    "secondaryCta": "与我们联系",
+    "primaryAria": "预约 SustainSage 的 20 分钟初谈",
+    "secondaryAria": "打开联络页面"
   }
 }

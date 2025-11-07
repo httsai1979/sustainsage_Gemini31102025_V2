@@ -1,76 +1,67 @@
 {
   "seo": {
     "title": "SustainSage | Coaching for people moving through change",
-    "description": "ICF-aligned coaching for UK relocations, returns to work and quiet shifts. Think clearly, decide at your pace, keep agency."
+    "description": "ICF-aligned coaching for relocations, confidence and ethical experiments. Think clearly, act with consent, stay responsible."
   },
   "hero": {
-    "title": "Coaching for UK moves and quiet shifts",
-    "subtitle": "Short, steady conversations that help you think clearly and act with consent.",
+    "title": "Coaching for transitions you want to steward well",
+    "subtitle": "Short, steady conversations that hold complexity without promising quick fixes.",
     "primaryCta": "Book a 20-min intro call",
-    "secondaryCta": "See our services",
+    "secondaryCta": "Explore services",
     "primaryCtaAria": "Book a 20-minute intro call with SustainSage",
-    "secondaryCtaAria": "Explore SustainSage coaching services",
+    "secondaryCtaAria": "View SustainSage coaching services",
     "imageAlt": "Two people seated with maps and notebooks, planning together"
   },
   "fit": {
-    "title": "When this support fits",
+    "title": "When this support helps",
     "description": "Clients come to us when life is shifting and they want grounded partnership, not hype.",
     "bullets": [
-      "Relocating to or within the UK and needing space to design rhythms that work.",
-      "Re-entering paid work after care, illness or study and unsure how to speak about it.",
-      "Holding mixed feelings about change—relief, pressure, grief—and wanting room to process.",
-      "Balancing migration, family and professional expectations without losing health or values."
+      "Relocating to or within the UK and wanting space to design rhythms that respect your health and values.",
+      "Re-entering or reshaping work after care, study or upheaval and needing language that feels honest.",
+      "Balancing leadership, migration or community responsibilities while protecting energy and agency.",
+      "Holding mixed feelings about change—relief, pressure, grief—and needing time to process before acting."
     ]
   },
   "approach": {
-    "title": "How sessions feel",
-    "description": "We keep structure light, ethical and client-led so you stay in charge.",
+    "title": "How we work together",
+    "description": "We keep the structure light, ethical and client-led so you stay in charge of decisions.",
     "bullets": [
       "Every session begins with what matters most to you right now.",
-      "We reflect patterns, ask clarifying questions and design small experiments.",
+      "We reflect patterns, ask clarifying questions and co-design small experiments.",
       "You leave with 1–3 next steps or reflections, not a script to obey.",
-      "Between sessions we offer light check-ins only when it genuinely helps."
+      "Between sessions we offer light check-ins only when you request them."
     ]
   },
   "services": {
-    "title": "Choose a focus",
+    "title": "Choose your focus",
     "description": "Each package responds to the transitions our clients meet most often.",
     "cards": [
       {
         "slug": "transition",
         "title": "Transition package",
-        "description": "Six sessions to navigate relocation or role change with steadiness.",
-        "cta": "Learn more",
+        "description": "Six sessions to move through relocation or role change with steadiness.",
+        "cta": "View details",
         "href": "/services/transition",
         "image": "/images/services/transition.svg",
-        "imageAlt": "Boxes and a map representing a thoughtful move"
+        "imageAlt": "Boxes and a map ready for a thoughtful move"
       },
       {
-        "slug": "returning",
-        "title": "Returning to work",
-        "description": "Support after a break to rebuild confidence and rhythms.",
-        "cta": "Learn more",
-        "href": "/services/returning",
-        "image": "/images/services/returning.svg",
-        "imageAlt": "A home and desk side by side"
+        "slug": "confidence",
+        "title": "Confidence & voice",
+        "description": "Five sessions to strengthen your voice without losing nuance.",
+        "cta": "View details",
+        "href": "/services/confidence",
+        "image": "/images/services/confidence.svg",
+        "imageAlt": "A microphone with gentle waves"
       },
       {
-        "slug": "newToUk",
-        "title": "New to the UK",
-        "description": "Context-aware coaching to decode norms and choose your stance.",
-        "cta": "Learn more",
-        "href": "/services/new-to-uk",
-        "image": "/images/services/new-to-uk.svg",
-        "imageAlt": "Stylised UK skyline with a signpost"
-      },
-      {
-        "slug": "checkIn",
-        "title": "Steady check-ins",
-        "description": "One-off or light-touch sessions when you just need a sounding board.",
-        "cta": "Learn more",
-        "href": "/services/check-in",
-        "image": "/images/services/check-in.svg",
-        "imageAlt": "Notebook and tea cup arranged neatly"
+        "slug": "experiments",
+        "title": "Experiments & stewardship",
+        "description": "Four sessions to design ethical experiments when change affects others.",
+        "cta": "View details",
+        "href": "/services/experiments",
+        "image": "/images/services/experiments.svg",
+        "imageAlt": "Shapes connected with lines showing iteration"
       }
     ]
   },
@@ -85,8 +76,8 @@
     ]
   },
   "faq": {
-    "title": "Questions to start with",
-    "intro": "A few quick answers. You can explore the full FAQ whenever you need more detail.",
+    "title": "Questions you might be asking",
+    "intro": "A few short answers here. You can browse the full FAQ for more detail when you have time.",
     "seeAll": "Read the full FAQ"
   },
   "cta": {
