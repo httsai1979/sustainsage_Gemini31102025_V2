@@ -1,39 +1,50 @@
 {
   "seo": {
     "title": "Contact | SustainSage",
-    "description": "Book a calm, bilingual intro conversation with SustainSage. Share your needs and we will respond with options, consent boundaries, and next steps."
+    "description": "Book a calm, bilingual intro conversation with SustainSage. Share your context and we will respond with options, consent boundaries, and next steps."
   },
   "hero": {
     "title": "Contact & next steps",
-    "subtitle": "Tell us what you are navigating. We reply within two UK working days and only use your details to arrange coaching conversations.",
+    "subtitle": "Tell us what you are navigating. Share as much or as little detail as you wish; a few honest lines are enough.",
+    "note": "We usually reply within a few UK working days and only use your information to arrange coaching conversations.",
     "imageAlt": "Illustration of scheduling a coaching session"
   },
-  "intro": "You do not need a perfect story or long explanation. A few honest lines about where you are and what you hope for are enough.",
+  "intro": "You do not need a perfect story. Let us know what feels most pressing, and we will take it from there together.",
   "highlights": {
-    "title": "What to expect",
-    "intro": "A short overview before you send your note.",
+    "title": "Before you send your note",
+    "intro": "A quick overview of what happens after you reach out.",
     "items": [
       {
-        "title": "Timely response",
-        "description": "We reply within two UK working days with suggested times for a 20-minute intro call."
+        "title": "20-minute intro call",
+        "description": "We offer a short, no-pressure conversation to check fit, scope, and boundaries before any commitment."
       },
       {
-        "title": "Data stays private",
-        "description": "Your details are used only to arrange coaching and are deleted if we do not start working together."
+        "title": "Calm, confidential handling",
+        "description": "Your message is reviewed by an ICF coach. We only keep details needed for scheduling and delete anything else."
       },
       {
-        "title": "No hard sell",
-        "description": "If coaching is not right, we will suggest other services such as therapy, legal, immigration, or financial support."
+        "title": "Honest recommendations",
+        "description": "If coaching is not the right support, we will point you toward therapy, counselling, legal, immigration, or other services instead of selling."
       }
     ]
   },
   "form": {
     "title": "Send us a note",
-    "subtitle": "Please share as much or as little detail as feels comfortable.",
+    "subtitle": "The more context you share, the more we can respect your pace and boundaries in the intro call.",
     "name": "Name",
     "email": "Email",
-    "help": "How can we help?",
-    "helpHint": "It’s helpful to include context, but “I’m not sure yet” is also welcome.",
+    "help": "What would you like to talk about?",
+    "helpHint": "Short headlines are enough — e.g. relocation anxiety, return to work, visa planning, burnout recovery.",
+    "focusArea": "Preferred focus area (optional)",
+    "focusAreaPlaceholder": "Select a focus area",
+    "focusAreaOptions": [
+      { "value": "relocation", "label": "Relocation / working in the UK" },
+      { "value": "career", "label": "Career change / role shift" },
+      { "value": "return", "label": "Returning to work after a break" },
+      { "value": "confidence", "label": "Confidence / impostor stories" },
+      { "value": "other", "label": "Something else" }
+    ],
+    "focusHint": "Selecting an area helps us match you with the right coach, but it is fine to stay undecided.",
     "language": "Preferred language",
     "languagePlaceholder": "Select a language",
     "languageOptions": [
@@ -44,37 +55,71 @@
     ],
     "timezone": "Preferred time zone / time window",
     "timezonePlaceholder": "e.g. GMT+8 evenings, or UK lunchtime",
-    "consent": "I consent to SustainSage contacting me about coaching. I understand my details are used only for this purpose and handled with confidentiality, with legal or safeguarding exceptions.",
-    "privacyNote": "We store your information only for the purposes of contacting you about coaching and delete it if we do not begin working together, unless law requires otherwise.",
+    "consent": "I consent to SustainSage contacting me about coaching. I understand my details are used only for this purpose and handled confidentially, with legal or safeguarding exceptions.",
+    "privacyNote": "We store your information only to arrange coaching conversations and delete it if we do not begin working together, unless law requires otherwise.",
     "submit": "Send message",
     "status": {
       "submitting": "Sending…",
-      "success": "Thank you. We’ll reply within two UK working days.",
+      "success": "Thank you. We’ll reply within a few UK working days.",
       "error": "Something went wrong. Please try again or email contact@sustainsage.com.",
       "errorRequired": "Please complete the required fields and confirm consent."
     }
   },
-  "afterSubmit": [
-    "We usually reply within 2 working days with a link to book a free 20-minute intro call.",
-    "In that call, we check fit, clarify boundaries, fees and languages. You decide calmly whether to go ahead.",
-    "If coaching is not the right support, we will say so honestly."
-  ],
+  "nextSteps": {
+    "title": "After you send this",
+    "items": [
+      "We confirm receipt and share a booking link for a 20-minute intro call.",
+      "During the call we clarify expectations, boundaries, fees, and language preferences.",
+      "You decide calmly whether to start coaching, pause, or seek other support."
+    ]
+  },
   "consent": {
-    "label": "Consent & boundaries",
+    "label": "Consent & confidentiality",
     "points": [
       "Your details are used only to contact you about coaching.",
-      "Coaching is not therapy, counselling, medical, legal, immigration or financial advice.",
-      "We follow the ICF Code of Ethics, including confidentiality with legal and safety exceptions."
+      "Coaching is not therapy, counselling, medical, legal, immigration, or financial advice.",
+      "We follow the ICF Code of Ethics; confidentiality is broken only if law or safeguarding requires it."
+    ]
+  },
+  "faq": {
+    "title": "Questions we hear often",
+    "intro": "If your question is not covered here, feel free to mention it in your message.",
+    "items": [
+      {
+        "question": "Is the intro call free?",
+        "answer": "Yes. It is a complimentary space to explore fit. There is no obligation to book further sessions."
+      },
+      {
+        "question": "What if I am unsure about coaching?",
+        "answer": "You are welcome to start with questions only. We can share resources or suggestions even if you decide not to book."
+      },
+      {
+        "question": "How quickly will you reply?",
+        "answer": "We aim to respond within a few UK working days. If we are on leave, an autoresponder will let you know." 
+      },
+      {
+        "question": "What if I am in crisis?",
+        "answer": "Coaching cannot meet urgent or acute mental health needs. Please contact NHS 111, Samaritans (116 123), or your local emergency services for immediate support." 
+      }
+    ]
+  },
+  "icfSummary": {
+    "title": "Our ethical promise",
+    "intro": "Coaching with SustainSage is collaborative, consent-led, and bounded. Here is what that means for you:",
+    "points": [
+      "We co-create goals and pace; you can pause, slow, or stop at any point.",
+      "We signpost therapy, legal, immigration, or financial professionals when their expertise is required.",
+      "We honour confidentiality and the ICF Code of Ethics, breaking secrecy only when safety or law compels us."
     ]
   },
   "sidebar": {
-    "title": "What happens next",
-    "description": "After your message we will propose times for a 20-minute intro session to confirm fit and next steps.",
+    "title": "How we hold your message",
+    "description": "A coach — not an assistant — reads your note and responds personally.",
     "responseTitle": "Response time",
-    "responseCopy": "Expect a reply within two UK working days—often sooner.",
-    "privacyTitle": "Confidentiality",
-    "privacyCopy": "Your information remains private except where law or safeguarding requires disclosure.",
+    "responseCopy": "We aim to reply within a few UK working days. If we are away, an autoresponder lets you know.",
+    "privacyTitle": "Data handling",
+    "privacyCopy": "Information is stored securely and deleted if we do not start working together, unless law requires otherwise.",
     "nextTitle": "During the intro call",
-    "nextCopy": "We align on goals, boundaries, fees, and whether coaching or another service is the right next step."
+    "nextCopy": "We confirm goals, boundaries, and logistics together so you decide whether coaching is the right support."
   }
 }

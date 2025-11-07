@@ -15,14 +15,17 @@ function ContactPage() {
   const { t } = useTranslation('contact');
   const highlights = t('highlights.items', { returnObjects: true });
   const intro = t('intro');
-  const nextSteps = t('afterSubmit', { returnObjects: true });
+  const nextSteps = t('nextSteps.items', { returnObjects: true });
   const consentInfo = t('consent', { returnObjects: true });
+  const faqItems = t('faq.items', { returnObjects: true });
+  const icfSummary = t('icfSummary', { returnObjects: true });
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
       <Hero
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
+        note={t('hero.note')}
         image="/hero/contact.svg"
         imageAlt={t('hero.imageAlt', { defaultValue: 'Calendar illustration' })}
       />
@@ -59,7 +62,7 @@ function ContactPage() {
           <div className="grid gap-10 lg:grid-cols-2">
             <Reveal className="reveal-1">
               <section className="rounded-3xl border border-emerald-100 bg-white/90 p-6 text-left shadow-sm">
-                <h3 className="text-lg font-semibold text-emerald-900">{t('sidebar.title')}</h3>
+                <h3 className="text-lg font-semibold text-emerald-900">{t('nextSteps.title')}</h3>
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
                   {nextSteps.map((item) => (
                     <li key={item} className="flex gap-2">
@@ -86,6 +89,48 @@ function ContactPage() {
           </div>
         </div>
       </div>
+
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('faq.title')}</h2>
+          </Reveal>
+          <Reveal className="reveal-1">
+            <p className="mt-4 text-base leading-7 text-slate-600">{t('faq.intro')}</p>
+          </Reveal>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {faqItems.map((item, index) => (
+              <Reveal key={item.question} className={`reveal-${index + 2}`}>
+                <article className={CARD_BASE_CLASS}>
+                  <h3 className="text-lg font-semibold text-slate-900">{item.question}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.answer}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-emerald-950/90 py-16" id="icf">
+        <div className="mx-auto max-w-4xl px-6 text-emerald-50">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{icfSummary.title}</h2>
+          </Reveal>
+          <Reveal className="reveal-1">
+            <p className="mt-4 text-base leading-7 text-emerald-100">{icfSummary.intro}</p>
+          </Reveal>
+          <Reveal className="reveal-2">
+            <ul className="mt-6 space-y-3 text-sm leading-6 text-emerald-100">
+              {icfSummary.points.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
 
       <div className="px-6 pb-20">
         <ICFNotice className="mx-auto max-w-4xl" />
