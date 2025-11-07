@@ -30,7 +30,9 @@
     }
   ],
   "listTitle": "Latest reflections",
+  "intro": "These short reads help you pause, notice patterns and experiment gently between sessions.",
   "notice": "Our articles invite reflection and learning. They are not medical, legal, financial or immigration advice.",
+  "disclaimer": "This article offers reflections, not individual therapeutic, legal, immigration or financial advice.",
   "emptyState": "We are brewing new reflections. Check back soon or subscribe to our newsletter.",
   "fallbackNotice": "These pieces were written as reflective placeholders while we prepare new stories.",
   "articleCta": {

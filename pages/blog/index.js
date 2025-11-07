@@ -71,6 +71,10 @@ function BlogIndex({ posts = [], error = null }) {
   }, [activeFilter, basePosts]);
 
   const articleCta = t('articleCta', { returnObjects: true });
+  const intro = t('intro', { defaultValue: '' });
+  const notice = t('notice', {
+    defaultValue: 'Our articles invite reflection and learning. They are not professional advice.',
+  });
 
   return (
     <>
@@ -78,9 +82,15 @@ function BlogIndex({ posts = [], error = null }) {
 
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <p className="rounded-2xl border border-emerald-100 bg-emerald-50/70 px-4 py-3 text-sm leading-6 text-emerald-900">
-            {t('notice')}
-          </p>
+          {intro && (
+            <p className="text-base leading-7 text-slate-600">{intro}</p>
+          )}
+
+          {notice && (
+            <p className="mt-4 rounded-2xl border border-emerald-100 bg-emerald-50/70 px-4 py-3 text-sm leading-6 text-emerald-900">
+              {notice}
+            </p>
+          )}
 
           {error && (
             <p className="mt-6 rounded-2xl border border-red-100 bg-red-50 p-4 text-sm text-red-700">
