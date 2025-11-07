@@ -51,6 +51,7 @@ const WHO_ICONS = {
         strokeLinejoin="round"
         strokeWidth="1.5"
       />
+      <path d="M4.5 12h15" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
     </svg>
   ),
   returners: (
@@ -112,6 +113,7 @@ const PROCESS_ICONS = {
         strokeLinejoin="round"
         strokeWidth="1.5"
       />
+      <path d="M9 14h6" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
     </svg>
   ),
 };

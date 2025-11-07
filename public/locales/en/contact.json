@@ -33,20 +33,47 @@
     "focusArea": "Preferred focus area (optional)",
     "focusAreaPlaceholder": "Select a focus area",
     "focusAreaOptions": [
-      { "value": "relocation", "label": "Relocation / settling in the UK" },
-      { "value": "career", "label": "Career or role change" },
-      { "value": "return", "label": "Returning to work after a break" },
-      { "value": "leadership", "label": "Leadership / community stewardship" },
-      { "value": "other", "label": "Something else" }
+      {
+        "value": "relocation",
+        "label": "Relocation / settling in the UK"
+      },
+      {
+        "value": "career",
+        "label": "Career or role change"
+      },
+      {
+        "value": "return",
+        "label": "Returning to work after a break"
+      },
+      {
+        "value": "leadership",
+        "label": "Leadership / community stewardship"
+      },
+      {
+        "value": "other",
+        "label": "Something else"
+      }
     ],
     "focusHint": "Choose one if it helps — it is fine to stay uncertain.",
     "language": "Preferred language",
     "languagePlaceholder": "Select a language",
     "languageOptions": [
-      { "value": "EN", "label": "English" },
-      { "value": "TC", "label": "Traditional Chinese" },
-      { "value": "SC", "label": "Simplified Chinese" },
-      { "value": "MIX", "label": "Mix languages" }
+      {
+        "value": "EN",
+        "label": "English"
+      },
+      {
+        "value": "TC",
+        "label": "Traditional Chinese"
+      },
+      {
+        "value": "SC",
+        "label": "Simplified Chinese"
+      },
+      {
+        "value": "MIX",
+        "label": "Mix languages"
+      }
     ],
     "timezone": "Preferred time zone / time window",
     "timezonePlaceholder": "e.g. UK mornings, GMT+8 evenings, or flexible",

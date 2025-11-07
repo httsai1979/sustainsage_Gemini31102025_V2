@@ -81,7 +81,7 @@ function ServicesPage() {
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('packages.title')}</h2>
             </Reveal>
             <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-slate-600">{t('packages.subtitle')}</p>
+              <p className="mt-4 text-base leading-7 text-slate-600">{t('overview.subtitle')}</p>
             </Reveal>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
