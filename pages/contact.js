@@ -4,7 +4,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
 import ContactForm from '@/components/Sections/ContactForm';
-import { Reveal } from '@/components/ui/Motion';
+import { HoverLift, Reveal } from '@/components/ui/Motion';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -31,45 +31,10 @@ function ContactPage() {
 
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
-            <div className="space-y-8">
-              <div>
-                <Reveal>
-                  <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                    {t('expect.title')}
-                  </h2>
-                </Reveal>
-                <Reveal className="reveal-1">
-                  <p className="mt-4 text-base leading-7 text-slate-600">{t('expect.subtitle')}</p>
-                </Reveal>
-                <Reveal className="reveal-2">
-                  <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-                    {expectItems.map((item) => (
-                      <li key={item} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </Reveal>
-              </div>
-              <Reveal className="reveal-3">
-                <div className={`${CARD_BASE_CLASS} bg-emerald-50/70 text-left`}>
-                  <h3 className="text-sm font-semibold text-emerald-900">{t('expect.languageTitle')}</h3>
-                  <ul className="mt-3 space-y-2 text-sm leading-6 text-emerald-900">
-                    {languages.map((line) => (
-                      <li key={line} className="flex gap-2">
-                        <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            </div>
-
-            <div className="lg:[&>div]:mx-0 lg:[&>div]:max-w-none">
+          <div className="grid gap-10 lg:grid-cols-[1.4fr_0.9fr]">
+            <div className="space-y-6">
               <ContactForm />
-              <div className="mt-6 rounded-2xl border border-emerald-100 bg-emerald-50/70 p-5 text-sm leading-6 text-emerald-900">
+              <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-5 text-sm leading-6 text-emerald-900">
                 {noteLines.map((line, index) => (
                   <p key={line} className={index > 0 ? 'mt-3' : undefined}>
                     {line.includes('{privacyLink}') ? (
@@ -89,6 +54,41 @@ function ContactPage() {
                   </p>
                 ))}
               </div>
+            </div>
+
+            <div className="space-y-6">
+              <Reveal>
+                <HoverLift>
+                  <div className={`${CARD_BASE_CLASS} bg-white text-left`}>
+                    <h2 className="text-lg font-semibold text-slate-900">{t('expect.title')}</h2>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{t('expect.subtitle')}</p>
+                    <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-700">
+                      {expectItems.map((item) => (
+                        <li key={item} className="flex gap-2">
+                          <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </HoverLift>
+              </Reveal>
+
+              <Reveal className="reveal-1">
+                <HoverLift>
+                  <div className={`${CARD_BASE_CLASS} bg-emerald-50/70 text-left`}>
+                    <h3 className="text-sm font-semibold text-emerald-900">{t('expect.languageTitle')}</h3>
+                    <ul className="mt-3 space-y-2 text-sm leading-6 text-emerald-900">
+                      {languages.map((line) => (
+                        <li key={line} className="flex gap-2">
+                          <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </HoverLift>
+              </Reveal>
             </div>
           </div>
         </div>

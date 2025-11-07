@@ -5,24 +5,23 @@
   },
   "hero": {
     "title": "先打声招呼——没有压力。",
-    "subtitle": "用一场简短的初谈，确认彼此是否合适。",
-    "note": "通常会在三个英国工作日内回复。你的资料仅由教练团队保存。",
+    "subtitle": "短暂的初谈，确认彼此是否合适。",
+    "note": "通常会在三个英国工作日内回复，资料仅由教练团队保管。",
     "imageAlt": "安排教练对谈的插图"
   },
   "expect": {
-    "title": "初谈会怎么进行",
-    "subtitle": "过程以你的节奏与同意为核心。",
+    "title": "你会经历的流程",
+    "subtitle": "透明、无压力的下一步。",
     "items": [
-      "20 分钟了解你的脉络与问题。",
-      "你分享重点即可——条列或关键词都可以。",
-      "我们说明教练可能的样貌与适用界线。",
-      "没有义务、不推销，由你决定下一步。"
+      "三个英国工作日内回复，提供一到两个初谈时段。",
+      "初谈 20 分钟，用来确认合适度并厘清你的焦点。",
+      "要不要继续由你决定，没有推销话术。"
     ],
     "languageTitle": "语言与形式",
     "languages": [
-      "可用英文、繁体中文、简体中文进行对谈。",
-      "欢迎在讯息或会谈中自由切换语言。",
-      "预设为线上进行；若时间允许，可在英国面谈。"
+      "教练可使用英文、繁体中文、简体中文。",
+      "讯息与对谈中都可以依需要切换语言。",
+      "默认线上；若时间配合，可在英国安排面谈。"
     ]
   },
   "form": {
@@ -35,25 +34,52 @@
     "focusArea": "想聚焦的主题（可选）",
     "focusAreaPlaceholder": "选择主题",
     "focusAreaOptions": [
-      { "value": "relocation", "label": "搬迁／在英国工作" },
-      { "value": "career", "label": "职业或角色转变" },
-      { "value": "return", "label": "暂停后重返职场" },
-      { "value": "leadership", "label": "领导／社群工作" },
-      { "value": "other", "label": "其他" }
+      {
+        "value": "relocation",
+        "label": "搬迁／在英国工作"
+      },
+      {
+        "value": "career",
+        "label": "职业或角色转变"
+      },
+      {
+        "value": "return",
+        "label": "暂停后重返职场"
+      },
+      {
+        "value": "leadership",
+        "label": "领导／社群工作"
+      },
+      {
+        "value": "other",
+        "label": "其他"
+      }
     ],
     "focusHint": "如果还不确定，也可以留白。",
     "language": "偏好语言",
     "languagePlaceholder": "选择语言",
     "languageOptions": [
-      { "value": "EN", "label": "英文" },
-      { "value": "TC", "label": "繁体中文" },
-      { "value": "SC", "label": "简体中文" },
-      { "value": "MIX", "label": "混合语言" }
+      {
+        "value": "EN",
+        "label": "英文"
+      },
+      {
+        "value": "TC",
+        "label": "繁体中文"
+      },
+      {
+        "value": "SC",
+        "label": "简体中文"
+      },
+      {
+        "value": "MIX",
+        "label": "混合语言"
+      }
     ],
     "timezone": "偏好的时区／时段",
     "timezonePlaceholder": "例如：英国上午、GMT+8 晚上或弹性",
-    "consent": "我同意 SustainSage 就教练事宜联系我。资料仅用于此目的，除法律或安全义务外皆保密。",
-    "privacyNote": "若未开始合作，我们会删除你的资料，除非法律另有要求。",
+    "consent": "我同意 SustainSage 就教练服务与我联系，也理解这里不提供治疗、咨询、法律、医疗、财务或移民建议。",
+    "privacyNote": "我们仅为安排教练而保存你的资讯，若没有合作会删除，除非法律另有要求。",
     "submit": "发送讯息",
     "status": {
       "submitting": "传送中…",
@@ -64,9 +90,9 @@
   },
   "formNote": {
     "lines": [
-      "平均回复时间：约三个英国工作日。",
-      "我们可使用英文、繁体中文、简体中文——欢迎混用。",
-      "想了解保密与资料照护，请参阅 {privacyLink}。"
+      "一般回复时间：三个英国工作日内。",
+      "教练可用英文、繁体中文、简体中文—欢迎自由混用。",
+      "更多保密与资料照顾说明请见 {privacyLink}。"
     ],
     "privacyLabel": "隐私与伦理说明",
     "privacyHref": "/contact#icf"
