@@ -33,9 +33,8 @@ function HomePage() {
   const whySustainSage = t('whySustainSage.items', { returnObjects: true });
   const faqs = t('faqs', { returnObjects: true });
   const founders = t('founders.people', { returnObjects: true });
-  const whoWeHelpIntro = t('whoWeHelp.intro');
-  const howCoachingWorksIntro = t('howCoachingWorks.intro');
-  const whySustainSageIntro = t('whySustainSage.intro');
+  const audiencesIntro = t('audiencesIntro');
+  const processIntro = t('processIntro');
   const faqIntro = t('faqIntro');
 
   return (
@@ -69,15 +68,15 @@ function HomePage() {
               {t('whoWeHelp.title')}
             </h2>
           </Reveal>
-          {whoWeHelpIntro && (
+          {audiencesIntro && (
             <Reveal className="reveal-1">
               <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
-                {whoWeHelpIntro}
+                {audiencesIntro}
               </p>
             </Reveal>
           )}
-          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {whoWeHelp.map((item) => (
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {audiences.map((item) => (
               <HoverLift key={item.title} className="h-full">
                 <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
                   <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
@@ -96,10 +95,10 @@ function HomePage() {
               {t('howCoachingWorks.title')}
             </h2>
           </Reveal>
-          {howCoachingWorksIntro && (
+          {processIntro && (
             <Reveal className="reveal-1">
               <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
-                {howCoachingWorksIntro}
+                {processIntro}
               </p>
             </Reveal>
           )}
