@@ -10,44 +10,32 @@ import { useTranslation } from 'next-i18next';
 
 import nextI18NextConfig from '../next-i18next.config.js';
 
-const FALLBACK_RESOURCES = [
-  {
-    id: 'reflection-questions',
+const RESOURCE_META = {
+  'values-worksheet': {
     image: '/images/resources/values-worksheet.svg',
-    translationKey: 'items.reflectionQuestions',
-    href: '/contact?topic=reflection-questions',
+    href: '/contact?topic=values-worksheet',
   },
-  {
-    id: 'career-experiments',
+  'micro-experiments': {
     image: '/images/resources/culture-checklist.svg',
-    translationKey: 'items.careerExperiments',
-    href: '/contact?topic=career-experiments',
+    href: '/contact?topic=micro-experiments',
   },
-  {
-    id: 'cultural-checklists',
+  'culture-bridges': {
     image: '/images/resources/culture-checklist.svg',
-    translationKey: 'items.culturalChecklists',
-    href: '/contact?topic=cultural-checklists',
+    href: '/contact?topic=culture-bridge-checklist',
   },
-  {
-    id: 'conversation-guides',
+  'conversation-starters': {
     image: '/images/resources/imposter-reading.svg',
-    translationKey: 'items.conversationGuides',
-    href: '/contact?topic=conversation-guides',
+    href: '/contact?topic=conversation-starters',
   },
-  {
-    id: 'self-advocacy',
+  'grounding-audio': {
     image: '/images/resources/grounding-audio.svg',
-    translationKey: 'items.selfAdvocacy',
-    href: '/contact?topic=self-advocacy-toolkit',
+    href: '/contact?topic=grounding-audio',
   },
-  {
-    id: 'review-journal',
+  'review-journal': {
     image: '/images/resources/values-worksheet.svg',
-    translationKey: 'items.reviewJournal',
     href: '/contact?topic=review-journal',
   },
-];
+};
 
 function ResourceCard({ resource }) {
   return (
@@ -70,7 +58,7 @@ function ResourceCard({ resource }) {
           </div>
           <h3 className="mt-5 text-lg font-semibold text-slate-900">{resource.title}</h3>
           <p className="mt-3 text-sm leading-6 text-slate-600">{resource.summary}</p>
-          <p className="mt-3 text-xs uppercase tracking-wide text-emerald-700">{resource.formatLabel}</p>
+          <p className="mt-3 text-xs uppercase tracking-wide text-emerald-700">{resource.format}</p>
         </div>
         <div className="mt-6">
           <Link
@@ -87,43 +75,63 @@ function ResourceCard({ resource }) {
 
 function ResourcesPage() {
   const { t } = useTranslation('resources');
-  const resources = FALLBACK_RESOURCES.map((item) => {
-    const statusValue = t(`${item.translationKey}.status`);
-    const safeStatus = statusValue === `${item.translationKey}.status` ? '' : statusValue;
-
+  const tools = t('featured.tools', { returnObjects: true });
+  const disclaimerPoints = t('disclaimer.points', { returnObjects: true });
+  const resources = tools.map((tool) => {
+    const meta = RESOURCE_META[tool.id] || {};
     return {
-      ...item,
-      title: t(`${item.translationKey}.title`),
-      summary: t(`${item.translationKey}.summary`),
-      formatLabel: t(`${item.translationKey}.format`),
-      status: safeStatus,
-      cta: t(`${item.translationKey}.cta`),
+      ...tool,
+      image: meta.image || '/images/resources/values-worksheet.svg',
+      href: meta.href || '/contact',
     };
   });
 
   return (
     <>
-      <Hero
-        image="/hero/resources.svg"
-        align="left"
-        title={t('hero.title')}
-        subtitle={t('hero.subtitle')}
-      />
+      <Hero image="/hero/resources.svg" align="left" title={t('hero.title')} subtitle={t('hero.subtitle')} />
 
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('curatedTitle')}
+              {t('featured.title')}
             </h2>
           </Reveal>
-          <p className="mt-4 text-base leading-7 text-slate-700">{t('curatedIntro')}</p>
+          <p className="mt-4 text-base leading-7 text-slate-700">{t('featured.intro')}</p>
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {resources.map((resource) => (
               <ResourceCard key={resource.id} resource={resource} />
             ))}
           </div>
-          <p className="mt-10 text-sm text-slate-600">{t('usageNote')}</p>
+        </div>
+      </section>
+
+      <section className="bg-emerald-900 py-12 text-emerald-50">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{t('disclaimer.title')}</h2>
+          <p className="mt-4 text-base leading-7 text-emerald-100">{t('disclaimer.body')}</p>
+          <ul className="mt-6 space-y-3 text-left text-sm leading-6 text-emerald-100">
+            {disclaimerPoints.map((point) => (
+              <li key={point} className="rounded-2xl border border-emerald-500/30 bg-emerald-800/40 p-4">
+                {point}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <h2 className="text-3xl font-semibold tracking-tight text-slate-900">{t('cta.title')}</h2>
+          <p className="mt-4 text-base leading-7 text-slate-700">{t('cta.body')}</p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link href="/contact" className="btn-primary inline-flex items-center justify-center">
+              {t('cta.primaryCta')}
+            </Link>
+            <Link href="/contact" className="btn-secondary inline-flex items-center justify-center">
+              {t('cta.secondaryCta')}
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -135,11 +143,7 @@ function ResourcesPage() {
 }
 
 ResourcesPage.getLayout = function getLayout(page) {
-  return (
-    <MainLayout title="Resources | SustainSage" desc="Self-reflection tools you can use at your pace.">
-      {page}
-    </MainLayout>
-  );
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export async function getStaticProps({ locale = 'en' }) {

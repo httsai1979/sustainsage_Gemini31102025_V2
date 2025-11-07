@@ -1,41 +1,50 @@
 {
   "seo": {
-    "title": "联系｜SustainSage",
-    "description": "预约一场 20 分钟的英中双语对谈，了解教练合作是否合适。"
+    "title": "联系我们｜SustainSage",
+    "description": "预约一场沉稳的双语初谈。了解流程、确认同意，并分享我们如何在英国陪你面对转换。"
   },
   "hero": {
-    "title": "联系",
-    "subtitle": "欢迎分享你想讨论的主题，以及偏好的合作方式。"
+    "title": "写信给我们",
+    "subtitle": "告诉我们你正在经历的情况，以及最自在的语言。我们会提供选择，而不是施加压力。"
+  },
+  "expectations": {
+    "title": "流程说明",
+    "items": [
+      "我们会在两个英国工作日内回复，安排 20 分钟的相互了解。",
+      "初谈会确认目标、语言偏好、无障碍需求与你的同意。",
+      "若教练并非最佳选项，我们会建议其他资源，例如治疗、法律、移民、医疗或财务协助。"
+    ]
   },
   "form": {
-    "title": "写信给我们",
-    "subtitle": "你提供的信息会在法律与安全例外范围内保密。",
+    "title": "写下你的想法",
+    "subtitle": "除法律或安全需求外，你提供的资讯都会保密。",
     "name": "姓名",
     "email": "电子邮件",
-    "topicLabel": "我想了解…",
-    "topicPlaceholder": "请选择关注主题",
-    "message": "想一起探索的内容",
-    "consent": "我同意 SustainSage 与我联系，讨论初谈安排。我理解这不属于医疗、法律或财务建议。",
+    "topicLabel": "想了解的服务",
+    "topicPlaceholder": "请选择",
+    "message": "想一起探索的主题",
+    "consent": "我同意 SustainSage 就教练服务与我联系，并理解这里不提供治疗、法律、移民、医疗或财务建议。",
+    "privacyNote": "若未开始合作，我们会安全删除资料，除非法律要求保留。",
     "submit": "送出",
     "status": {
-      "submitting": "传送中…",
-      "success": "谢谢你，我们会在两个工作天内回复。",
-      "error": "发送时发生问题，请再试一次或直接发邮件给我们。",
-      "errorRequired": "请完成所有必填栏位并确认同意。"
+      "submitting": "寄出中…",
+      "success": "谢谢你，我们会在两个工作日内回复。",
+      "error": "寄送时发生问题，请再试一次或直接写信给我们。",
+      "errorRequired": "请完成必填栏位并勾选同意。"
     },
     "topics": [
-      { "value": "CAREER_TRANSITION", "label": "职业转换" },
-      { "value": "NEW_GRADUATE", "label": "应届毕业生" },
-      { "value": "NEW_IMMIGRANT", "label": "新移民适应" },
-      { "value": "OTHER", "label": "其他需求" }
+      { "value": "ONE_TO_ONE", "label": "一对一教练" },
+      { "value": "GROUP_CLINIC", "label": "小型共学诊所" },
+      { "value": "ORGANISATION", "label": "组织合作" },
+      { "value": "SOMETHING_ELSE", "label": "其他" }
     ]
   },
   "sidebar": {
-    "title": "接下来会怎么进行",
-    "description": "我们会邀请你安排 20 分钟初谈，了解情境并共同设计下一步。",
+    "title": "后续会发生什么",
+    "description": "我们会提供 20 分钟双语相互了解的时段，看看如何支持你。",
     "responseTitle": "回复时间",
-    "responseCopy": "一般在两个工作天内回复，通常会更快。",
+    "responseCopy": "通常会在两个英国工作日内回复，如有可能会更快。",
     "privacyTitle": "保密说明",
-    "privacyCopy": "除非涉及安全或法律需求，我们不会在未经同意的情况下分享你的资讯。"
+    "privacyCopy": "除法律或安全需求外，我们不会分享你的资讯。"
   }
 }

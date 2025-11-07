@@ -1,102 +1,52 @@
 {
   "seo": {
     "title": "博客｜SustainSage",
-    "description": "来自教练实践的短篇反思、提问与文化洞见，支持在英国职业转型的人。"
+    "description": "SustainSage 分享的反思文章与教练提问，涵盖职业转换、文化桥接与温和领导。"
   },
   "hero": {
-    "title": "教练视角的反思",
-    "subtitle": "短篇阅读与可实践的提问，依据 ICF 伦理与真实转变经验撰写。"
+    "title": "停一停，实验，再观察",
+    "subtitle": "短篇阅读搭配教练式提问，陪你深呼吸、觉察，并选择下一个小实验。"
   },
-  "listTitle": "最新观点",
-  "emptyState": "目前尚未发布文章，欢迎稍后再回来。",
-  "fallbackNotice": "以下文章由教练团队直接整理，供内容管理系统更新期间参考。",
-  "error": "暂时无法载入最新文章，以下为我们精选的内容。",
-  "errorDetail": "若情况持续，欢迎透过联络表单告诉我们。",
-  "backToList": "返回文章列表",
-  "missingBody": "本文内容仍在整理中，欢迎稍后再回来。",
-  "notFound": "找不到对应的文章。",
+  "filters": [
+    { "value": "all", "label": "全部主题" },
+    { "value": "career", "label": "职业转换" },
+    { "value": "culture", "label": "文化与归属" },
+    { "value": "leadership", "label": "领导与团队" },
+    { "value": "wellbeing", "label": "身心与节奏" }
+  ],
+  "listTitle": "最新反思",
+  "emptyState": "文章筹备中，欢迎稍后再来或订阅电子报。",
+  "fallbackNotice": "以下文章为我们准备新内容前的反思占位稿。",
   "post1": {
-    "slug": "career-change-coaching-perspective",
-    "category": "职业反思",
-    "title": "转职：看见失去与获得，做出踏实选择",
-    "excerpt": "当离开熟悉职位时，情绪与期待往往同时存在。",
-    "image": "/images/blog/career-change.svg",
-    "publishedDate": "2025-10-25",
+    "slug": "making-room-for-slow-transition",
+    "title": "为慢速转变留出空间",
+    "excerpt": "当你想顾及家人期待又想在英国调整职业，可以如何安排节奏？试试这些提问。",
+    "category": "career",
+    "image": "/images/blog/slow-transition.svg",
+    "publishedDate": "2024-02-11",
     "meta": {
-      "author": "作者：蔡浩丞",
-      "date": "2025 年 10 月 25 日",
-      "readingTime": "约 4 分钟阅读"
+      "date": "2024 年 2 月 11 日",
+      "readingTime": "约 5 分钟"
     },
-    "article": {
-      "paragraphs": [
-        "多数人在思考转职时先想到新的好处——新的职称、更多弹性或更有意义的工作。但任何改变，即使是正向的，也伴随某种失落。",
-        "可能失去的是熟悉的节奏、明确的身份、专业的安心感，甚至是稳定的收入。把这些感受说出来，就能减少过程中被情绪突袭的惊慌。"
-      ],
-      "quote": "教练空间让我们在没有评价的情况下，向结束的阶段好好致敬，再踏实地迎向下一步。",
-      "sections": [
-        {
-          "heading": "看见正在变动的部分",
-          "paragraphs": [
-            "在设定新计划前，先点名哪些关系、日常或成功指标正在改变。",
-            "这份觉察能在之后疑虑浮现时，带来同理与稳定。"
-          ]
-        },
-        {
-          "heading": "刻意设计新的节奏",
-          "paragraphs": [
-            "厘清失落后，我们设计新的习惯、对话与实验，支持自己走向新角色。",
-            "教练陪你在安全的场域中测试选项，并与价值观对齐。"
-          ]
-        }
-      ],
-      "outro": [
-        "问自己不只“我想得到什么？”也包括“我愿意放下什么？”与“我要如何标记这段转变？”"
-      ]
-    }
+    "prompts": [
+      "在做下一个决定前，故事里哪些部分需要被看见？",
+      "哪一个小实验能同时照顾现在的能量？"
+    ]
   },
   "post2": {
-    "slug": "uk-job-hunt-reading-between-the-lines",
-    "category": "跨文化",
-    "title": "读懂英国求职的字里行间",
-    "excerpt": "为初到英国的求职者整理不成文的期待。",
-    "image": "/images/blog/uk-job-hunt.svg",
-    "publishedDate": "2025-08-12",
+    "slug": "bridging-languages-at-work",
+    "title": "在职场搭起语言桥梁",
+    "excerpt": "如何运用双语教练提问，让英国职场规范与华人文化智慧相互对话、不再耗竭。",
+    "category": "culture",
+    "image": "/images/blog/bridging-languages.svg",
+    "publishedDate": "2024-03-19",
     "meta": {
-      "author": "作者：赖怡伶",
-      "date": "2025 年 8 月 12 日",
-      "readingTime": "约 5 分钟阅读"
+      "date": "2024 年 3 月 19 日",
+      "readingTime": "约 6 分钟"
     },
-    "article": {
-      "paragraphs": [
-        "移居英国除了语言与气候，求职礼仪也需要重新适应。许多新移民投递数十份履历仍无回音，往往是因为未被说出口的期待。",
-        "教练对话常从挫折开始，接着我们一起拆解雇主在文字与互动里的讯号。"
-      ],
-      "sections": [
-        {
-          "heading": "细读职缺描述",
-          "paragraphs": [
-            "像 self-starter 等词汇代表雇主期待看到主动行动的案例，而不只是列出职责。",
-            "将自己的故事连接到组织使命，也有助于在众多履历中被注意到。"
-          ]
-        },
-        {
-          "heading": "有意识地延伸对话",
-          "paragraphs": [
-            "面试后寄出简短的感谢信，在英国被视为专业的表现。",
-            "提及谈话中的亮点或分享相关资源，能展现专注与热忱。"
-          ],
-          "list": [
-            "总结对话中让你感到兴奋的重点。",
-            "连接自己的经验与组织的长期目标。",
-            "若适合，邀请面试官持续交流。"
-          ]
-        }
-      ],
-      "quote": "跨文化转变不是放弃原来的自己，而是扩展表达优势的方式。",
-      "outro": [
-        "熟悉这些讯号后，求职就不再像解谜，而是清楚分享自己的故事。",
-        "教练能提供演练与实验的空间，帮助你建立信心。"
-      ]
-    }
+    "prompts": [
+      "哪种语言能让你自在地表达疑惑而不用道歉？",
+      "你需要在哪里设下界线，让多语能力保持喜悦？"
+    ]
   }
 }
