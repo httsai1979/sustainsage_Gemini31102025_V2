@@ -8,7 +8,7 @@ function ExperimentsServicePage() {
     <ServiceDetailPage
       serviceKey="experiments"
       heroImage="/images/services/experiments.svg"
-      heroAlt="Illustration of shapes showing iterative experiments"
+      heroAlt="Ethical experiments and stewardship coaching"
     />
   );
 }

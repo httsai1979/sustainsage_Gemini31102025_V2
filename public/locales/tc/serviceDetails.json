@@ -9,6 +9,12 @@
     "notIncluded": "不包含",
     "reflection": "先想一想"
   },
+  "defaultCta": "預約 20 分鐘初談",
+  "missing": {
+    "title": "暫時無法顯示這項服務",
+    "description": "目前無法載入服務介紹。請回到服務總覽，或直接寫信給我們一起找合適的支持。",
+    "contact": "直接聯絡我們"
+  },
   "transition": {
     "slug": "transition",
     "title": "Transition 轉換方案",

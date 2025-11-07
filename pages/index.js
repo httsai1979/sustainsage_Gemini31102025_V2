@@ -30,7 +30,7 @@ function HomePage() {
         priority
       >
         <Link
-          href="/contact"
+          href="/contact?from=home-hero"
           className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
           aria-label={t('hero.primaryCtaAria')}
         >
@@ -126,14 +126,14 @@ function HomePage() {
           <p className="mt-4 text-base leading-7 text-slate-700">{t('cta.body')}</p>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
-              href="/contact"
+              href="/contact?from=home-cta"
               className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
               aria-label={t('cta.primaryAria')}
             >
               {t('cta.primaryCta')}
             </Link>
             <Link
-              href="/contact"
+              href="/contact?from=home-cta"
               className={`${BUTTON_BASE} bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
               aria-label={t('cta.secondaryAria')}
             >

@@ -23,7 +23,7 @@ function safeArray(value) {
 }
 
 function ListCard({ title, items }) {
-  if (!items || items.length === 0) {
+  if (!title || !items || items.length === 0) {
     return null;
   }
 
@@ -43,12 +43,17 @@ function ListCard({ title, items }) {
 }
 
 ListCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.string),
+};
+
+ListCard.defaultProps = {
+  title: undefined,
+  items: undefined,
 };
 
 function ReflectionCard({ title, items }) {
-  if (!items || items.length === 0) {
+  if (!title || !items || items.length === 0) {
     return null;
   }
 
@@ -68,14 +73,53 @@ function ReflectionCard({ title, items }) {
 }
 
 ReflectionCard.propTypes = {
-  title: PropTypes.string.isRequired,
-  items: PropTypes.arrayOf(PropTypes.string).isRequired,
+  title: PropTypes.string,
+  items: PropTypes.arrayOf(PropTypes.string),
+};
+
+ReflectionCard.defaultProps = {
+  title: undefined,
+  items: undefined,
 };
 
 export default function ServiceDetailPage({ serviceKey, heroImage, heroAlt }) {
   const { t } = useTranslation('serviceDetails');
   const sectionTitles = { ...FALLBACK_TITLES, ...t('sectionTitles', { returnObjects: true }) };
   const detail = t(serviceKey, { returnObjects: true }) || {};
+  const hasDetail = detail && Object.keys(detail).length > 0;
+
+  if (!hasDetail) {
+    const fallbackTitle = t('missing.title', { defaultValue: 'Service not available right now' });
+    const fallbackDescription = t('missing.description', {
+      defaultValue:
+        'We could not load this service detail. Please return to the overview or contact us to find the right support.',
+    });
+
+    return (
+      <MainLayout title="SustainSage coaching service" desc={fallbackDescription}>
+        <section className="bg-white py-20">
+          <div className="mx-auto max-w-3xl px-6 text-center">
+            <h1 className="text-3xl font-semibold tracking-tight text-slate-900">{fallbackTitle}</h1>
+            <p className="mt-4 text-base leading-7 text-slate-600">{fallbackDescription}</p>
+            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <Link
+                href="/services"
+                className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+              >
+                {t('backToOverview', { defaultValue: 'Back to all services' })}
+              </Link>
+              <Link
+                href="/contact"
+                className={`${BUTTON_BASE} bg-emerald-50 text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
+              >
+                {t('missing.contact', { defaultValue: 'Contact us directly' })}
+              </Link>
+            </div>
+          </div>
+        </section>
+      </MainLayout>
+    );
+  }
 
   const who = safeArray(detail.who);
   const topics = safeArray(detail.topics);
@@ -88,20 +132,22 @@ export default function ServiceDetailPage({ serviceKey, heroImage, heroAlt }) {
   const slug = detail.slug || serviceKey;
   const pageTitle = detail.title ? `${detail.title} | SustainSage` : 'SustainSage coaching service';
   const description = detail.tagline || detail.summary || '';
+  const heroSubtitle = detail.tagline || detail.summary || '';
+  const buttonLabel = detail.ctaButton || t('defaultCta', { defaultValue: 'Book a 20-min intro call' });
+
+  const hasCoreSections = who.length || topics.length || how.length || approach.length;
+  const hasBoundarySections = boundaries.length || notItems.length;
+  const hasReflection = reflection.length > 0;
+  const hasAdditionalCta = Boolean(detail.cta || detail.ctaButton);
 
   return (
     <MainLayout title={pageTitle} desc={description}>
-      <Hero
-        title={detail.title || sectionTitles.title}
-        subtitle={detail.tagline || detail.summary || ''}
-        image={heroImage}
-        imageAlt={heroAlt}
-      >
+      <Hero title={detail.title} subtitle={heroSubtitle} image={heroImage} imageAlt={heroAlt}>
         <Link
           href={`/contact?package=${slug}`}
           className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
         >
-          {detail.ctaButton || 'Book a 20-min intro call'}
+          {buttonLabel}
         </Link>
         <Link
           href="/services"
@@ -121,33 +167,39 @@ export default function ServiceDetailPage({ serviceKey, heroImage, heroAlt }) {
         </section>
       )}
 
-      <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-8 md:grid-cols-2">
-            <ListCard title={sectionTitles.who} items={who} />
-            <ListCard title={sectionTitles.topics} items={topics} />
-            <ListCard title={sectionTitles.how} items={how} />
-            <ListCard title={sectionTitles.approach} items={approach} />
+      {hasCoreSections && (
+        <section className="bg-emerald-950/5 py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid gap-8 md:grid-cols-2">
+              <ListCard title={sectionTitles.who} items={who} />
+              <ListCard title={sectionTitles.topics} items={topics} />
+              <ListCard title={sectionTitles.how} items={how} />
+              <ListCard title={sectionTitles.approach} items={approach} />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-8 md:grid-cols-2">
-            <ListCard title={sectionTitles.boundaries} items={boundaries} />
-            <ListCard title={sectionTitles.not} items={notItems} />
+      {hasBoundarySections && (
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            <div className="grid gap-8 md:grid-cols-2">
+              <ListCard title={sectionTitles.boundaries} items={boundaries} />
+              <ListCard title={sectionTitles.not} items={notItems} />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-6">
-          <ReflectionCard title={sectionTitles.reflection} items={reflection} />
-        </div>
-      </section>
+      {hasReflection && (
+        <section className="bg-emerald-950/5 py-16 sm:py-20">
+          <div className="mx-auto max-w-4xl px-6">
+            <ReflectionCard title={sectionTitles.reflection} items={reflection} />
+          </div>
+        </section>
+      )}
 
-      {(detail.cta || detail.ctaButton) && (
+      {hasAdditionalCta && (
         <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-4xl rounded-3xl border border-emerald-100 bg-emerald-50/70 px-8 py-12 text-center shadow-sm">
             {detail.cta && <p className="text-base leading-7 text-slate-700">{detail.cta}</p>}
@@ -155,7 +207,7 @@ export default function ServiceDetailPage({ serviceKey, heroImage, heroAlt }) {
               href={`/contact?package=${slug}`}
               className={`${BUTTON_BASE} mt-6 bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
             >
-              {detail.ctaButton || 'Book a 20-min intro call'}
+              {buttonLabel}
             </Link>
           </div>
         </section>

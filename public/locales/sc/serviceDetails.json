@@ -9,6 +9,12 @@
     "notIncluded": "不包含",
     "reflection": "先想一想"
   },
+  "defaultCta": "预约 20 分钟初谈",
+  "missing": {
+    "title": "暂时无法显示此服务",
+    "description": "目前无法载入服务说明。请返回服务总览，或直接联络我们一起寻找合适的支持。",
+    "contact": "直接联络我们"
+  },
   "transition": {
     "slug": "transition",
     "title": "Transition 转换方案",

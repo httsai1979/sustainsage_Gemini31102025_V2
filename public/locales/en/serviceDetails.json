@@ -9,6 +9,12 @@
     "notIncluded": "Not included",
     "reflection": "Questions to reflect on"
   },
+  "defaultCta": "Book a 20-min intro call",
+  "missing": {
+    "title": "Service not available right now",
+    "description": "We could not load this service detail. Please return to the overview or message us and we will help you find the right support.",
+    "contact": "Contact us directly"
+  },
   "transition": {
     "slug": "transition",
     "title": "Transition package",
