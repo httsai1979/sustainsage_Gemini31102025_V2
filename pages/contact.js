@@ -1,3 +1,4 @@
+import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
 import ContactForm from '@/components/Sections/ContactForm';
@@ -38,10 +39,16 @@ function ContactPage() {
   );
 }
 
-ContactPage.layoutProps = {
-  title: 'Contact | SustainSage',
-  desc: 'Get in touch—consent-led and clear.',
-  jsonLd: CONTACT_JSON_LD,
+ContactPage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout
+      title="Contact | SustainSage"
+      desc="Get in touch—consent-led and clear."
+      jsonLd={CONTACT_JSON_LD}
+    >
+      {page}
+    </MainLayout>
+  );
 };
 
 export async function getStaticProps({ locale = 'en' }) {
