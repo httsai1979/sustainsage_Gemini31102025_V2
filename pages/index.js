@@ -2,8 +2,8 @@ import Link from 'next/link';
 
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
-import FAQ from '@/components/ui/FAQ';
 import ServiceCard from '@/components/ui/ServiceCard';
+import HomeFaq from '@/components/Sections/HomeFaq';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -14,23 +14,11 @@ const BUTTON_BASE =
 
 function HomePage() {
   const { t } = useTranslation('home');
-  const { t: faqT } = useTranslation('faq');
 
   const fitBullets = t('fit.bullets', { returnObjects: true });
   const approachBullets = t('approach.bullets', { returnObjects: true });
   const supportBullets = t('support.bullets', { returnObjects: true });
   const serviceCards = t('services.cards', { returnObjects: true });
-
-  const homeFaqGroups = [
-    {
-      title: faqT('general.title'),
-      items: faqT('general.items', { returnObjects: true }).slice(0, 2),
-    },
-    {
-      title: faqT('coaching.title'),
-      items: faqT('coaching.items', { returnObjects: true }).slice(0, 2),
-    },
-  ];
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
@@ -97,7 +85,7 @@ function HomePage() {
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('services.title')}</h2>
             <p className="mt-4 text-base leading-7 text-slate-600">{t('services.description')}</p>
           </div>
-          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
             {serviceCards.map((card) => (
               <ServiceCard
                 key={card.slug}
@@ -130,7 +118,7 @@ function HomePage() {
         </div>
       </section>
 
-      <FAQ title={t('faq.title')} intro={t('faq.intro')} groups={homeFaqGroups} />
+      <HomeFaq />
 
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl rounded-3xl border border-emerald-100 bg-emerald-50/70 px-8 py-12 text-center shadow-sm">

@@ -1,26 +1,50 @@
 {
   "seo": {
     "title": "部落格｜SustainSage",
-    "description": "SustainSage 分享的反思文章與教練提問，涵蓋職涯轉換、文化橋接與溫和領導。"
+    "description": "SustainSage 的教練式反思與故事。閱讀雙語文章，陪你走過職涯轉換、文化橋接與溫柔領導。"
   },
   "hero": {
-    "title": "停一停，實驗，再觀察",
-    "subtitle": "短篇閱讀搭配教練式提問，陪你深呼吸、覺察，並選擇下一個小實驗。"
+    "title": "停一停，看看自己在哪裡",
+    "subtitle": "短篇文章與提問，邀請你呼吸、思考，並設計下一個實驗。"
   },
   "filters": [
-    { "value": "all", "label": "全部主題" },
-    { "value": "career", "label": "職涯轉換" },
-    { "value": "culture", "label": "文化與歸屬" },
-    { "value": "leadership", "label": "領導與團隊" },
-    { "value": "wellbeing", "label": "身心與步調" }
+    {
+      "value": "all",
+      "label": "全部"
+    },
+    {
+      "value": "career",
+      "label": "職涯轉換"
+    },
+    {
+      "value": "culture",
+      "label": "文化與歸屬"
+    },
+    {
+      "value": "leadership",
+      "label": "領導與團隊"
+    },
+    {
+      "value": "wellbeing",
+      "label": "步調與身心"
+    }
   ],
   "listTitle": "最新反思",
-  "emptyState": "文章籌備中，歡迎稍後再來或訂閱電子報。",
-  "fallbackNotice": "以下文章為我們準備新內容前的反思占位稿。",
+  "notice": "文章提供反思與學習，不等同於醫療、法律、財務或移民建議。",
+  "emptyState": "我們正在醞釀新的文章，歡迎稍後再回來或訂閱電子報。",
+  "fallbackNotice": "這些文章作為過渡期的反思，陪你在等待新內容時仍有東西可讀。",
+  "articleCta": {
+    "title": "想把這些想法變成對話嗎？",
+    "body": "教練提供保密空間，讓你把反思化成自己負責的選擇。",
+    "primary": "查看服務",
+    "primaryHref": "/services",
+    "secondary": "預約初談",
+    "secondaryHref": "/contact"
+  },
   "post1": {
     "slug": "making-room-for-slow-transition",
-    "title": "為慢速轉換留出空間",
-    "excerpt": "當你想顧及家人期待又想在英國調整職涯，可以如何安排節奏？試試這些提問。",
+    "title": "為緩慢的轉換保留空間",
+    "excerpt": "在設計英國的職涯轉換時，如何同時顧慮家庭期待？這些提問陪你找到自己的步調。",
     "category": "career",
     "image": "/images/blog/slow-transition.svg",
     "publishedDate": "2024-02-11",
@@ -29,14 +53,14 @@
       "readingTime": "約 5 分鐘"
     },
     "prompts": [
-      "在做下一個決定前，故事裡哪些部分需要被看見？",
-      "哪一個小實驗能同時照顧現在的能量？"
+      "在做下一個決定前，哪段故事需要先被看見？",
+      "此刻哪個小實驗對你的能量最尊重？"
     ]
   },
   "post2": {
     "slug": "bridging-languages-at-work",
-    "title": "在職場搭起語言橋梁",
-    "excerpt": "如何運用雙語教練提問，讓英國職場規範與華人文化智慧相互對話、不再耗竭。",
+    "title": "在工作中搭起語言橋梁",
+    "excerpt": "用雙語提問把英國職場規範與華人文化智慧對話，而不是硬要二選一。",
     "category": "culture",
     "image": "/images/blog/bridging-languages.svg",
     "publishedDate": "2024-03-19",
@@ -45,8 +69,13 @@
       "readingTime": "約 6 分鐘"
     },
     "prompts": [
-      "哪種語言能讓你自在地表達疑惑而不用道歉？",
-      "你需要在哪裡設下界線，讓多語能力保持喜悅？"
+      "什麼語言能讓你在表達疑慮時不必道歉？",
+      "在哪些場景需要界線，才能保留語言帶來的喜悅？"
     ]
-  }
+  },
+  "missingBody": "我們暫時無法載入這篇文章，歡迎稍後再試。",
+  "backToList": "回到文章列表",
+  "errorDetail": "目前無法開啟這篇文章，請稍後再嘗試或閱讀其他內容。",
+  "notFound": "找不到這篇文章，可能已下架或移動。",
+  "error": "目前無法載入最新文章，暫時顯示我們整理過的精選內容。"
 }

@@ -54,7 +54,8 @@
         "format": "Google 文档｜双语",
         "cta": "建立副本"
       }
-    ]
+    ],
+    "defaultCta": "打开资源"
   },
   "disclaimer": {
     "title": "使用时请照顾自己",

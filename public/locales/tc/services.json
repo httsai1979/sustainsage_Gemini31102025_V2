@@ -1,102 +1,71 @@
 {
   "seo": {
     "title": "服務｜SustainSage",
-    "description": "探索 SustainSage 為搬遷、重返職場、初到英國與輕量跟進設計的教練方案。"
+    "description": "了解 SustainSage 的三種教練方案：轉換、自信與實驗。"
   },
   "hero": {
-    "title": "源自真實英國轉換的教練方案",
-    "subtitle": "先挑一個最貼近你情境的方向，其餘細節會一起調整。"
+    "title": "三種教練路徑，同樣的倫理基礎",
+    "subtitle": "每個方案都容納複雜度、讓你掌舵，並遵循 ICF 的專業實務。",
+    "imageAlt": "教練服務路徑的插圖"
   },
   "overview": {
-    "title": "共同的基礎",
-    "description": "每個方案都從 20 分鐘初談開始，確認範圍、同意與界線。",
+    "title": "共同的元素",
+    "description": "所有方案都從 20 分鐘初談開始，確認範圍、同意與界線。",
     "bullets": [
-      "遵循 ICF 倫理，清楚約定並維持保密。",
-      "除非另有約定，會談皆以線上方式進行。",
-      "議題由你帶領，我們提供提問、結構與回映。"
+      "依循 ICF 倫理，訂定清楚的協議與保密原則。",
+      "除非另有約定，會談皆採線上進行。",
+      "議題由你主導；我們帶來提問、結構與反思。"
     ]
   },
   "packages": {
-    "title": "四個核心方案",
-    "description": "挑選現在最需要的支持。",
+    "title": "挑選最貼近你的焦點",
+    "description": "點開卡片可看到更完整的界線、反思提問與下一步。",
     "cards": [
       {
         "slug": "transition",
-        "title": "轉換方案",
-        "summary": "六次會談，協助你在搬遷或職涯轉換中不被耗盡。",
-        "bullets": [
-          "釐清對你而言「好的移動」長什麼樣。",
-          "把金錢、簽證、家庭與健康的限制都放進地圖。",
-          "設計踏實的小實驗，而不是一次押注。"
-        ],
-        "cta": "了解更多",
-        "href": "/services/transition",
-        "image": "/images/services/transition.svg",
-        "imageAlt": "紙箱與地圖象徵慎重的搬遷"
+        "title": "Transition 轉換方案",
+        "for": "適合正在面對搬遷或角色轉換的專業人士。",
+        "focus": "釐清對你而言的好轉換，並設計踏實的行動實驗。",
+        "format": "6 次 55–60 分鐘會談，約 3–4 個月完成。",
+        "cta": "查看詳情"
       },
       {
-        "slug": "returning",
-        "title": "重返職場",
-        "summary": "空檔之後重新建立敘事、自信與可行節奏。",
-        "bullets": [
-          "誠實講述休息的理由，不再迴避。",
-          "預備與雇主、家人談界線與期待。",
-          "辨識當下的容量、界線與步調。"
-        ],
-        "cta": "了解更多",
-        "href": "/services/returning",
-        "image": "/images/services/returning.svg",
-        "imageAlt": "家屋與書桌並列的畫面"
+        "slug": "confidence",
+        "title": "Confidence & voice",
+        "for": "適合想穩定說出自己聲音的領導者或合作夥伴。",
+        "focus": "拆解限制敘事、練習基於同意的對話與真實情境演練。",
+        "format": "5 次 55–60 分鐘會談，約 2–3 個月完成。",
+        "cta": "查看詳情"
       },
       {
-        "slug": "newToUk",
-        "title": "初到英國",
-        "summary": "情境敏感的教練，幫你解碼規則並選擇姿態。",
-        "bullets": [
-          "說出此刻覺得陌生或沉重的部分。",
-          "決定哪些要調整、堅持或直接放下。",
-          "設計維持尊嚴的求職與工作策略。"
-        ],
-        "cta": "了解更多",
-        "href": "/services/new-to-uk",
-        "image": "/images/services/new-to-uk.svg",
-        "imageAlt": "路標與抽象倫敦天際線"
-      },
-      {
-        "slug": "checkIn",
-        "title": "定期 check-in",
-        "summary": "只需一到三次對話，也能有倫理與結構的陪伴。",
-        "bullets": [
-          "釐清一個決策或重要對話。",
-          "回到自己的價值與可用資源。",
-          "帶走一到三個可行的下一步。"
-        ],
-        "cta": "了解更多",
-        "href": "/services/check-in",
-        "image": "/images/services/check-in.svg",
-        "imageAlt": "筆記本與茶杯的靜謐畫面"
+        "slug": "experiments",
+        "title": "Experiments & stewardship",
+        "for": "適合承擔團隊或社群變動責任的人。",
+        "focus": "設計有倫理的實驗，設定決策節點並守護利害關係人的主體。",
+        "format": "4 次 70 分鐘會談，約 8–10 週完成。",
+        "cta": "查看詳情"
       }
     ]
   },
   "process": {
-    "title": "合作怎麼開始",
-    "description": "保留彈性的同時，讓你始終掌握流程。",
+    "title": "開始的方式",
+    "description": "輕量的結構讓你掌握進度，同時保留彈性。",
     "bullets": [
-      "初談：確認需求、範圍與此刻是否適合教練。",
-      "共同約定：節奏、語言與會談間的支持方式。",
-      "定期回顧：必要時調整步調或在達標後好好結束。"
+      "初談：確認需求、範圍，以及現在是否適合進入教練。",
+      "共同協議：節奏、語言、會談間的聯繫方式。",
+      "定期回顧，必要時調整步調或在目標達成時收尾。"
     ]
   },
   "faq": {
-    "title": "更多合作細節",
-    "intro": "以下先回覆幾個常見問題，需要更完整的資訊請看 FAQ。"
+    "title": "決定前的常見問題",
+    "intro": "這裡先回應實務與倫理的考量，完整 FAQ 隨時可閱讀。"
   },
   "cta": {
-    "title": "還在猶豫選哪一個？",
-    "body": "告訴我們你現在的處境。我們會提出起步建議，或在需要時指向其他資源。",
+    "title": "還在猶豫選哪個？",
+    "body": "分享你目前的狀況，我們會一起討論起點，或轉介其他資源。",
     "primaryCta": "預約 20 分鐘初談",
-    "secondaryCta": "聯絡我們",
-    "primaryAria": "與 SustainSage 預約 20 分鐘初談",
+    "secondaryCta": "與我們聯絡",
+    "primaryAria": "預約 SustainSage 的 20 分鐘初談",
     "secondaryAria": "聯絡 SustainSage"
   }
 }

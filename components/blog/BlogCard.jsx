@@ -27,26 +27,26 @@ export default function BlogCard({ post }) {
   const publishedLabel = post.displayDate || formatPublishedDate(post.publishedDate);
 
   return (
-    <article className="group flex h-full flex-col rounded-3xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
+    <article className="group flex h-full flex-col rounded-3xl border border-emerald-100 bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
       {cover && (
         // eslint-disable-next-line @next/next/no-img-element
         <img src={cover} alt={post.title} className="mb-4 h-48 w-full rounded-2xl object-cover" />
       )}
 
       {post.category && (
-        <p className="text-xs font-semibold uppercase tracking-wide text-primary">{post.category}</p>
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{post.category}</p>
       )}
 
-      <h3 className="mt-2 text-xl font-semibold text-gray-900 group-hover:text-primary">
+      <h3 className="mt-2 text-xl font-semibold text-slate-900 transition group-hover:text-emerald-700">
         <Link href={`/blog/${post.slug}`}>{post.title}</Link>
       </h3>
 
-      {post.excerpt && <p className="mt-3 line-clamp-3 text-sm text-gray-600">{post.excerpt}</p>}
+      {post.excerpt && <p className="mt-3 line-clamp-3 text-sm leading-6 text-slate-600">{post.excerpt}</p>}
 
-      <div className="mt-auto pt-4 text-xs text-gray-500">
+      <div className="mt-auto pt-4 text-xs text-slate-500">
         {publishedLabel && <span>{publishedLabel}</span>}
         {post.readingTime && (
-          <span className="ml-2 inline-flex items-center before:mx-2 before:block before:h-1 before:w-1 before:rounded-full before:bg-gray-300">
+          <span className="ml-2 inline-flex items-center before:mx-2 before:block before:h-1 before:w-1 before:rounded-full before:bg-emerald-200">
             {post.readingTime}
           </span>
         )}

@@ -4,7 +4,9 @@ import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
+import FAQSection from '@/components/Sections/FAQSection';
 import { HoverLift, Reveal } from '@/components/ui/Motion';
+import { fetchResourceItems } from '@/lib/contentful';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -37,7 +39,26 @@ const RESOURCE_META = {
   },
 };
 
+function mapCmsResource(resource, fallbackCta) {
+  if (!resource) return null;
+  const href = resource.externalUrl || (resource.file?.fields?.file?.url ? `https:${resource.file.fields.file.url}` : null);
+  return {
+    id: resource.id,
+    title: resource.title,
+    summary: resource.summary,
+    format: resource.type || resource.category || '',
+    cta: resource.ctaText || fallbackCta,
+    image: resource.image || '/images/resources/values-worksheet.svg',
+    href: href || '/contact',
+    status: resource.status || null,
+  };
+}
+
 function ResourceCard({ resource }) {
+  const isExternal = typeof resource.href === 'string' && /^https?:\/\//.test(resource.href);
+  const ctaClassName =
+    'inline-flex items-center justify-center rounded-xl border border-emerald-200 px-4 py-2 text-sm font-semibold text-emerald-700 transition hover:border-emerald-300 hover:text-emerald-800';
+
   return (
     <HoverLift className="h-full">
       <article className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
@@ -58,26 +79,35 @@ function ResourceCard({ resource }) {
           </div>
           <h3 className="mt-5 text-lg font-semibold text-slate-900">{resource.title}</h3>
           <p className="mt-3 text-sm leading-6 text-slate-600">{resource.summary}</p>
-          <p className="mt-3 text-xs uppercase tracking-wide text-emerald-700">{resource.format}</p>
+          {resource.format && <p className="mt-3 text-xs uppercase tracking-wide text-emerald-700">{resource.format}</p>}
         </div>
         <div className="mt-6">
-          <Link
-            href={resource.href}
-            className="inline-flex items-center justify-center rounded-xl border border-emerald-200 px-4 py-2 text-sm font-semibold text-emerald-700 transition hover:border-emerald-300 hover:text-emerald-800"
-          >
-            {resource.cta}
-          </Link>
+          {isExternal ? (
+            <a href={resource.href} className={ctaClassName} target="_blank" rel="noreferrer">
+              {resource.cta}
+            </a>
+          ) : (
+            <Link href={resource.href || '/contact'} className={ctaClassName}>
+              {resource.cta}
+            </Link>
+          )}
         </div>
       </article>
     </HoverLift>
   );
 }
 
-function ResourcesPage() {
+function ResourcesPage({ cmsResources = [] }) {
   const { t } = useTranslation('resources');
   const tools = t('featured.tools', { returnObjects: true });
   const disclaimerPoints = t('disclaimer.points', { returnObjects: true });
-  const resources = tools.map((tool) => {
+  const defaultCta = t('featured.defaultCta', { defaultValue: 'Open resource' });
+
+  const cmsMapped = cmsResources
+    .map((item) => mapCmsResource(item, defaultCta))
+    .filter(Boolean);
+
+  const fallbackResources = tools.map((tool) => {
     const meta = RESOURCE_META[tool.id] || {};
     return {
       ...tool,
@@ -85,6 +115,8 @@ function ResourcesPage() {
       href: meta.href || '/contact',
     };
   });
+
+  const resources = cmsMapped.length > 0 ? cmsMapped : fallbackResources;
 
   return (
     <>
@@ -100,7 +132,7 @@ function ResourcesPage() {
           <p className="mt-4 text-base leading-7 text-slate-700">{t('featured.intro')}</p>
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {resources.map((resource) => (
-              <ResourceCard key={resource.id} resource={resource} />
+              <ResourceCard key={resource.id || resource.title} resource={resource} />
             ))}
           </div>
         </div>
@@ -135,6 +167,8 @@ function ResourcesPage() {
         </div>
       </section>
 
+      <FAQSection categories={['resources']} limit={3} />
+
       <div className="px-6 pb-16">
         <ICFNotice className="mx-auto max-w-4xl" />
       </div>
@@ -147,9 +181,17 @@ ResourcesPage.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps({ locale = 'en' }) {
+  let cmsResources = [];
+  try {
+    cmsResources = await fetchResourceItems();
+  } catch (error) {
+    cmsResources = [];
+  }
+
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'resources'], nextI18NextConfig)),
+      cmsResources,
+      ...(await serverSideTranslations(locale, ['common', 'resources', 'faq'], nextI18NextConfig)),
     },
   };
 }

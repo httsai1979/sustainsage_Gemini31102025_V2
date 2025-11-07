@@ -8,15 +8,39 @@
     "subtitle": "Short reads with coaching questions to help you pause, breathe, and choose your next experiment."
   },
   "filters": [
-    { "value": "all", "label": "All topics" },
-    { "value": "career", "label": "Career transitions" },
-    { "value": "culture", "label": "Culture & belonging" },
-    { "value": "leadership", "label": "Leadership & teams" },
-    { "value": "wellbeing", "label": "Wellbeing & pace" }
+    {
+      "value": "all",
+      "label": "All topics"
+    },
+    {
+      "value": "career",
+      "label": "Career transitions"
+    },
+    {
+      "value": "culture",
+      "label": "Culture & belonging"
+    },
+    {
+      "value": "leadership",
+      "label": "Leadership & teams"
+    },
+    {
+      "value": "wellbeing",
+      "label": "Wellbeing & pace"
+    }
   ],
   "listTitle": "Latest reflections",
+  "notice": "Our articles invite reflection and learning. They are not medical, legal, financial or immigration advice.",
   "emptyState": "We are brewing new reflections. Check back soon or subscribe to our newsletter.",
   "fallbackNotice": "These pieces were written as reflective placeholders while we prepare new stories.",
+  "articleCta": {
+    "title": "Ready to explore this in conversation?",
+    "body": "Coaching offers a confidential space to turn these reflections into choices you own.",
+    "primary": "Explore services",
+    "primaryHref": "/services",
+    "secondary": "Book an intro call",
+    "secondaryHref": "/contact"
+  },
   "post1": {
     "slug": "making-room-for-slow-transition",
     "title": "Making room for a slow transition",
@@ -48,5 +72,10 @@
       "What language helps you express doubt without apology?",
       "Where do you need a boundary so your multilingual skills stay joyful?"
     ]
-  }
+  },
+  "missingBody": "We could not load this article yet. Please check back soon.",
+  "backToList": "Back to all articles",
+  "errorDetail": "We could not load this article right now. Try another post or come back later.",
+  "notFound": "We could not find that article. It may have been archived.",
+  "error": "We could not load the latest posts just now. Showing our curated stories instead."
 }

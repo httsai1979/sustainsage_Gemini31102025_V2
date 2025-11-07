@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
+import FAQSection from '@/components/Sections/FAQSection';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -121,6 +122,8 @@ function AboutPage() {
         </div>
       </section>
 
+      <FAQSection categories={['about', 'general']} limit={3} />
+
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl rounded-3xl border border-emerald-100 bg-emerald-50/70 px-8 py-12 text-center shadow-sm">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('cta.title')}</h2>
@@ -150,7 +153,7 @@ function AboutPage() {
 export async function getStaticProps({ locale = 'en' }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'about'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common', 'about', 'faq'], nextI18NextConfig)),
     },
   };
 }
