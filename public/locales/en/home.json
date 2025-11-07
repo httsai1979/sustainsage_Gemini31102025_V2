@@ -1,0 +1,88 @@
+{
+  "hero": {
+    "title": "Calm, client-led coaching for real-life change",
+    "subtitle": "A steady, non-directive space to think clearly, choose next steps, and move at your pace—without hype.",
+    "primaryCta": "Book a 20-minute chat",
+    "secondaryCta": "See how it works"
+  },
+  "audiencesTitle": "Who we work with",
+  "audiences": [
+    {
+      "title": "Mid-career returners",
+      "description": "Co-create a realistic plan to re-enter work with confidence and care."
+    },
+    {
+      "title": "Newcomers to the UK",
+      "description": "Reflect on norms, choices and practical moves in context, without judgement."
+    },
+    {
+      "title": "Graduates",
+      "description": "Turn uncertainty into small, testable next steps you design and own."
+    },
+    {
+      "title": "Parents returning to work",
+      "description": "Rebuild rhythm with gentle structure, reflection and accountability."
+    }
+  ],
+  "processTitle": "How it works",
+  "process": [
+    {
+      "title": "Intro chat",
+      "description": "We clarify aims, boundaries and fit. You choose the topic; we agree how we'll work."
+    },
+    {
+      "title": "Focused sessions",
+      "description": "Typically 4–6 × 50–60 minutes. You lead; we partner to evoke awareness and options."
+    },
+    {
+      "title": "Review and next steps",
+      "description": "We reflect on learning, adjust the plan and agree what support you want next."
+    }
+  ],
+  "faqTitle": "Frequently asked questions",
+  "faqs": [
+    {
+      "question": "Is coaching the same as therapy or counselling?",
+      "answer": "No. Coaching is future-focused and client-led. We do not assess, diagnose or treat. If therapy seems more appropriate, we will signpost respectfully."
+    },
+    {
+      "question": "Do you give advice?",
+      "answer": "We are non-directive. We may offer observations or frameworks with your permission, but you decide what to do."
+    },
+    {
+      "question": "Is it confidential?",
+      "answer": "Yes, within legal and safeguarding limits. We explain confidentiality and data handling in our agreement."
+    },
+    {
+      "question": "How many sessions will I need?",
+      "answer": "Many people start with 4–6 sessions. We review together and you decide what is useful."
+    },
+    {
+      "question": "Can sessions be recorded?",
+      "answer": "Only with your explicit consent and for a clear purpose. Otherwise, we do not record."
+    },
+    {
+      "question": "Do you follow a code of ethics?",
+      "answer": "Yes. We work to the ICF Code of Ethics and core competencies."
+    }
+  ],
+  "founders": {
+    "title": "Who you'll meet",
+    "subtitle": "Co-founders who blend coaching, facilitation, and design so conversations stay ethical, grounded, and useful.",
+    "cta": "Meet the practice",
+    "people": [
+      {
+        "name": "Hao-Cheng Tsai",
+        "role": "ICF coach & service designer",
+        "bio": "Grounds sessions in systems thinking, cultural transitions, and realistic action design.",
+        "image": "/images/founders/hao-cheng-tsai.svg"
+      },
+      {
+        "name": "Yi-Ling Lai",
+        "role": "ICF coach & facilitator",
+        "bio": "Holds space with calm curiosity, focusing on career clarity, values, and confidence building.",
+        "image": "/images/founders/yi-ling-lai.svg"
+      }
+    ]
+  }
+}
