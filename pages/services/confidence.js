@@ -13,7 +13,7 @@ const CARD_BASE_CLASS =
   'rounded-2xl border border-emerald-100 bg-white/85 p-6 shadow-sm transition hover:shadow-md';
 
 const DETAIL_ICONS = {
-  voice: (
+  inner: (
     <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
       <path
         d="M15.5 4.5v15m-7-12H6.75A1.75 1.75 0 0 0 5 9.25v5.5A1.75 1.75 0 0 0 6.75 16.5H8.5"
@@ -26,7 +26,7 @@ const DETAIL_ICONS = {
       <path d="M9 8.25 15.5 4.5v15L9 15.75V8.25Z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
     </svg>
   ),
-  language: (
+  interactions: (
     <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
       <path
         d="M5.25 6h13.5A1.75 1.75 0 0 1 20.5 7.75v8.5A1.75 1.75 0 0 1 18.75 18H5.25A1.75 1.75 0 0 1 3.5 16.25v-8.5A1.75 1.75 0 0 1 5.25 6Z"
@@ -52,17 +52,17 @@ const DETAIL_ICONS = {
       />
     </svg>
   ),
-  practice: (
+  allyship: (
     <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
-      <path d="M5 19h14" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
       <path
-        d="M8 15.5 10 9l2 5 2-4 2 5.5"
+        d="M7.5 8.25a3.75 3.75 0 1 1 7.5 0 3.75 3.75 0 0 1-7.5 0Zm-2.25 9.75a6.75 6.75 0 0 1 13.5 0V20a1.5 1.5 0 0 1-1.5 1.5H6.75A1.5 1.5 0 0 1 5.25 20Z"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
       />
+      <path d="M8.5 14.5 12 17l3.5-2.5" fill="none" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
     </svg>
   ),
 };
@@ -70,7 +70,7 @@ const DETAIL_ICONS = {
 function DetailIcon({ type }) {
   return (
     <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100/70">
-      {DETAIL_ICONS[type] ?? DETAIL_ICONS.voice}
+      {DETAIL_ICONS[type] ?? DETAIL_ICONS.inner}
     </span>
   );
 }
@@ -78,9 +78,10 @@ function DetailIcon({ type }) {
 function ConfidenceServicePage() {
   const { t } = useTranslation('services');
   const forItems = t('details.confidence.for.items', { returnObjects: true });
-  const exploreCards = t('details.confidence.explore.cards', { returnObjects: true });
-  const structureLines = t('details.confidence.structure.points', { returnObjects: true });
-  const questions = t('details.confidence.questions.items', { returnObjects: true });
+  const focusCards = t('details.confidence.focus.cards', { returnObjects: true });
+  const packageItems = t('details.confidence.package.items', { returnObjects: true });
+  const sessionParagraphs = t('details.confidence.session.paragraphs', { returnObjects: true });
+  const prompts = t('details.confidence.prompts.items', { returnObjects: true });
   const boundaries = t('details.confidence.boundaries.items', { returnObjects: true });
 
   return (
@@ -120,15 +121,12 @@ function ConfidenceServicePage() {
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                {t('details.confidence.explore.title')}
+                {t('details.confidence.focus.title')}
               </h2>
-            </Reveal>
-            <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-emerald-900">{t('details.confidence.explore.subtitle')}</p>
             </Reveal>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {exploreCards.map((card, index) => (
+            {focusCards.map((card, index) => (
               <Reveal key={card.title} className={`reveal-${index + 2}`}>
                 <HoverLift>
                   <article className={`${CARD_BASE_CLASS} bg-white text-left`}>
@@ -147,15 +145,12 @@ function ConfidenceServicePage() {
         <div className="mx-auto max-w-4xl px-6">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('details.confidence.structure.title')}
+              {t('details.confidence.package.title')}
             </h2>
           </Reveal>
           <Reveal className="reveal-1">
-            <p className="mt-4 text-base leading-7 text-slate-600">{t('details.confidence.structure.subtitle')}</p>
-          </Reveal>
-          <Reveal className="reveal-2">
             <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-              {structureLines.map((line) => (
+              {packageItems.map((line) => (
                 <li key={line} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}>
                   {line}
                 </li>
@@ -165,18 +160,37 @@ function ConfidenceServicePage() {
         </div>
       </section>
 
-      <section className="bg-emerald-50/60 py-16 sm:py-20" id="reflective-questions">
+      <section className="bg-emerald-50/60 py-16 sm:py-20" id="session-experience">
         <div className="mx-auto max-w-4xl px-6">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('details.confidence.questions.title')}
+              {t('details.confidence.session.title')}
             </h2>
           </Reveal>
           <Reveal className="reveal-1">
-            <ul className="mt-6 space-y-3 text-sm leading-6 text-emerald-900">
-              {questions.map((question) => (
-                <li key={question} className={`${CARD_BASE_CLASS} bg-white text-left`}>
-                  {question}
+            <div className="mt-6 space-y-3 text-sm leading-6 text-emerald-900">
+              {sessionParagraphs.map((paragraph) => (
+                <div key={paragraph} className={`${CARD_BASE_CLASS} bg-white text-left`}>
+                  {paragraph}
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20" id="reflective-prompts">
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('details.confidence.prompts.title')}
+            </h2>
+          </Reveal>
+          <Reveal className="reveal-1">
+            <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
+              {prompts.map((prompt) => (
+                <li key={prompt} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}>
+                  {prompt}
                 </li>
               ))}
             </ul>
@@ -192,9 +206,6 @@ function ConfidenceServicePage() {
             </h2>
           </Reveal>
           <Reveal className="reveal-1">
-            <p className="mt-4 text-base leading-7 text-slate-600">{t('details.confidence.boundaries.subtitle')}</p>
-          </Reveal>
-          <Reveal className="reveal-2">
             <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
               {boundaries.map((item) => (
                 <li key={item} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}>
@@ -210,11 +221,13 @@ function ConfidenceServicePage() {
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t('details.confidence.cta.title')}</h2>
           <p className="mt-4 text-base leading-7 text-emerald-100">{t('details.confidence.cta.body')}</p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact" className="btn-primary" aria-label={t('details.confidence.cta.primaryAria')}>
-              {t('details.confidence.cta.primaryCta')}
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="mt-8 inline-flex items-center justify-center rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+            aria-label={t('details.confidence.cta.primaryAria')}
+          >
+            {t('details.confidence.cta.primaryCta')}
+          </Link>
         </div>
       </section>
 

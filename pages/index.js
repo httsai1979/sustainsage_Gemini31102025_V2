@@ -15,13 +15,13 @@ const CARD_BASE_CLASS =
   'rounded-2xl border border-emerald-100 bg-white/85 p-5 shadow-sm transition hover:shadow-md';
 
 const WHO_ICONS = {
-  globe: (
+  newcomers: (
     <svg viewBox="0 0 24 24" className="h-8 w-8 text-emerald-700" aria-hidden="true">
       <circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" strokeWidth="1.5" />
       <path d="M12 3.75c-2.5 3-2.5 13.5 0 16.5m0-16.5c2.5 3 2.5 13.5 0 16.5M3.75 12h16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
   ),
-  compass: (
+  changers: (
     <svg viewBox="0 0 24 24" className="h-8 w-8 text-emerald-700" aria-hidden="true">
       <path
         d="M12 3.75a8.25 8.25 0 1 1 0 16.5 8.25 8.25 0 0 1 0-16.5Zm3.2 4.1-2.63 5.69-5.69 2.63 2.63-5.69 5.69-2.63Z"
@@ -33,23 +33,79 @@ const WHO_ICONS = {
       />
     </svg>
   ),
-  bridge: (
+  parents: (
     <svg viewBox="0 0 24 24" className="h-8 w-8 text-emerald-700" aria-hidden="true">
       <path
-        d="M3 15h18m-15 0v4.5m12-4.5v4.5M6 9a6 6 0 0 1 12 0"
+        d="M12 4.5c2.9 0 5.25 2.35 5.25 5.25S14.9 15 12 15s-5.25-2.35-5.25-5.25S9.1 4.5 12 4.5Z"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
       />
-      <path d="M4.5 12h15" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
+      <path
+        d="M6.75 19.5c0-2.9 2.35-5.25 5.25-5.25s5.25 2.35 5.25 5.25"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
     </svg>
   ),
-  sprout: (
+  returners: (
     <svg viewBox="0 0 24 24" className="h-8 w-8 text-emerald-700" aria-hidden="true">
       <path
         d="M12 21V11.5C9 11 7.5 8.5 7.5 6c2.5 0 4 1.5 4.5 3.5.5-2 2-3.5 4.5-3.5 0 2.5-1.5 5-4.5 5.5V21"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+    </svg>
+  ),
+};
+
+const PROCESS_ICONS = {
+  intro: (
+    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
+      <path
+        d="M8 7h8m-8 4h4m-4 4h2"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path d="M5.5 5.5h13v13h-13z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    </svg>
+  ),
+  sessions: (
+    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
+      <path
+        d="M7 7.5h10m-10 4h10M7 16.5h5"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path d="M4.75 5.25h14.5v13.5H4.75z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+    </svg>
+  ),
+  review: (
+    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
+      <path
+        d="M8.5 8.5h7m-7 3h4m-4 3h3"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.5"
+      />
+      <path
+        d="M15.5 3.75h-7a4.75 4.75 0 0 0-4.75 4.75v7A4.75 4.75 0 0 0 8.5 20.25h7a4.75 4.75 0 0 0 4.75-4.75v-7A4.75 4.75 0 0 0 15.5 3.75Z"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
@@ -103,19 +159,32 @@ const FOCUS_ICONS = {
 
 function WhoIcon({ type }) {
   return (
-    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">{WHO_ICONS[type] ?? WHO_ICONS.globe}</span>
+    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
+      {WHO_ICONS[type] ?? WHO_ICONS.newcomers}
+    </span>
+  );
+}
+
+function ProcessIcon({ type }) {
+  return (
+    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100/70">
+      {PROCESS_ICONS[type] ?? PROCESS_ICONS.intro}
+    </span>
   );
 }
 
 function FocusIcon({ type }) {
   return (
-    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100/70">{FOCUS_ICONS[type] ?? FOCUS_ICONS.transition}</span>
+    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100/70">
+      {FOCUS_ICONS[type] ?? FOCUS_ICONS.transition}
+    </span>
   );
 }
 
 function HomePage() {
   const { t } = useTranslation('home');
-  const whoCards = t('whoWeHelp.cards', { returnObjects: true });
+  const whoCards = t('who.cards', { returnObjects: true });
+  const processSteps = t('process.steps', { returnObjects: true });
   const focusCards = t('focus.cards', { returnObjects: true });
 
   return (
@@ -135,14 +204,14 @@ function HomePage() {
         </Link>
       </Hero>
 
-      <section className="bg-white py-16 sm:py-20" id="who-we-help">
+      <section className="bg-white py-16 sm:py-20" id="who-we-work-with">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('whoWeHelp.title')}</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('who.title')}</h2>
             </Reveal>
             <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-slate-600">{t('whoWeHelp.subtitle')}</p>
+              <p className="mt-4 text-base leading-7 text-slate-600">{t('who.subtitle')}</p>
             </Reveal>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
@@ -153,7 +222,7 @@ function HomePage() {
                     <WhoIcon type={card.icon} />
                     <div>
                       <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-600">{card.need}</p>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">{card.body}</p>
                     </div>
                   </article>
                 </HoverLift>
@@ -163,14 +232,42 @@ function HomePage() {
         </div>
       </section>
 
-      <section className="bg-emerald-50/60 py-16 sm:py-20" id="focus">
+      <section className="bg-emerald-50/60 py-16 sm:py-20" id="how-it-works">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <Reveal>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('process.title')}</h2>
+            </Reveal>
+            <Reveal className="reveal-1">
+              <p className="mt-4 text-base leading-7 text-emerald-900">{t('process.subtitle')}</p>
+            </Reveal>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {processSteps.map((step, index) => (
+              <Reveal key={step.title} className={`reveal-${index + 2}`}>
+                <HoverLift>
+                  <article className={`${CARD_BASE_CLASS} flex h-full flex-col gap-4 bg-white text-left`}>
+                    <ProcessIcon type={step.icon} />
+                    <div>
+                      <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-slate-600">{step.body}</p>
+                    </div>
+                  </article>
+                </HoverLift>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20" id="focus">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('focus.title')}</h2>
             </Reveal>
             <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-emerald-900">{t('focus.subtitle')}</p>
+              <p className="mt-4 text-base leading-7 text-slate-600">{t('focus.subtitle')}</p>
             </Reveal>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -182,8 +279,7 @@ function HomePage() {
                       <FocusIcon type={card.icon} />
                       <div>
                         <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
-                        <p className="mt-2 text-sm leading-6 text-slate-600">{card.descriptionLine1}</p>
-                        <p className="mt-1 text-sm leading-6 text-slate-600">{card.descriptionLine2}</p>
+                        <p className="mt-2 text-sm leading-6 text-slate-600">{card.body}</p>
                       </div>
                     </div>
                     <div className="mt-6">

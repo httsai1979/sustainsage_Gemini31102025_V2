@@ -1,110 +1,73 @@
 {
   "seo": {
-    "title": "聯絡｜SustainSage",
-    "description": "預約一場平穩的雙語初談。分享你的情況，我們會回覆可能的合作方式、同意界線與下一步。"
+    "title": "聯絡我們｜SustainSage",
+    "description": "從一封信開始，分享你的情況，我們會提供初談時段、合作界線與下一步建議。"
   },
   "hero": {
-    "title": "先打招呼就好——沒有壓力。",
-    "subtitle": "短暫的初談，確認彼此是否合適。",
-    "note": "通常會在三個英國工作天內回覆，資料只由教練團隊保管。",
-    "imageAlt": "安排教練對談的插圖"
+    "title": "從對話開始",
+    "subtitle": "寫下你現在的位置，我們會一起確認教練對你是否有幫助。",
+    "imageAlt": "安排教練對話的插畫"
   },
   "expect": {
-    "title": "你會經歷的流程",
-    "subtitle": "透明、無壓力的下一步。",
+    "title": "接下來會發生什麼",
+    "subtitle": "簡單透明的流程。",
     "items": [
-      "三個英國工作天內回覆，提供一到兩個初談時段。",
-      "初談 20 分鐘，用來確認合適度並釐清你的焦點。",
-      "要不要繼續由你決定，沒有推銷話術。"
+      "2–3 個工作天內回覆，提供 1–2 個初談時段。",
+      "20 分鐘初談，釐清焦點、界線與是否合適。",
+      "是否展開方案由你決定，沒有推銷話術。"
     ],
     "languageTitle": "語言與形式",
     "languages": [
-      "教練可使用英文、繁體中文、簡體中文。",
-      "訊息與談話中都可以依需要切換語言。",
-      "預設為線上；若時間配合，可在英國安排面談。"
+      "教練對話可使用英文、繁體中文、簡體中文。",
+      "對話中可自由切換語言。",
+      "主要採線上方式；若時間合得來，可在英國面談。"
     ]
   },
   "form": {
-    "title": "寫下想和我們聊的事",
-    "subtitle": "提供一些脈絡，讓我們以合適的方式回覆。條列也可以。",
+    "title": "寫封信給我們",
+    "subtitle": "提供足夠的背景，好讓我們以尊重的方式回覆，也歡迎條列。",
     "name": "姓名",
     "email": "Email",
-    "help": "最近想釐清的轉換或決定？",
-    "helpHint": "例如：搬到英國、育嬰後重返職場、跨文化領導、倦怠徵兆。",
-    "focusArea": "想聚焦的主題（可選）",
+    "help": "此刻你在思考的轉換或課題是什麼？",
+    "helpHint": "例如：搬到英國、照顧後重返職場、跨文化領導、想預防再度過勞。",
+    "focusArea": "想討論的主題（選填）",
     "focusAreaPlaceholder": "選擇主題",
     "focusAreaOptions": [
-      {
-        "value": "relocation",
-        "label": "搬遷／在英國工作"
-      },
-      {
-        "value": "career",
-        "label": "職涯或角色轉換"
-      },
-      {
-        "value": "return",
-        "label": "暫停後重返職場"
-      },
-      {
-        "value": "leadership",
-        "label": "領導／社群工作"
-      },
-      {
-        "value": "other",
-        "label": "其他"
-      }
+      { "value": "relocation", "label": "搬遷／適應英國生活" },
+      { "value": "career", "label": "職涯或角色轉換" },
+      { "value": "return", "label": "暫停後重返工作" },
+      { "value": "leadership", "label": "領導／社群 steward" },
+      { "value": "other", "label": "其他" }
     ],
-    "focusHint": "如果還不確定，也可以留白。",
-    "language": "偏好語言",
+    "focusHint": "如果選項不合適，可以留白。",
+    "language": "偏好的語言",
     "languagePlaceholder": "選擇語言",
     "languageOptions": [
-      {
-        "value": "EN",
-        "label": "英文"
-      },
-      {
-        "value": "TC",
-        "label": "繁體中文"
-      },
-      {
-        "value": "SC",
-        "label": "簡體中文"
-      },
-      {
-        "value": "MIX",
-        "label": "混合語言"
-      }
+      { "value": "EN", "label": "英文" },
+      { "value": "TC", "label": "繁體中文" },
+      { "value": "SC", "label": "簡體中文" },
+      { "value": "MIX", "label": "視情況混用" }
     ],
     "timezone": "偏好的時區／時段",
-    "timezonePlaceholder": "例如：英國上午、GMT+8 晚上或彈性",
-    "consent": "我同意 SustainSage 就教練服務與我聯絡，也理解這個空間不提供治療、諮商、法律、醫療、財務或移民建議。",
-    "privacyNote": "我們僅為安排教練而保存你的資訊，若沒有合作會刪除，除非法律另有要求。",
+    "timezonePlaceholder": "例如：英國早上、GMT+8 晚上、或彈性",
+    "consent": "我同意 SustainSage 就教練事宜與我聯繫。",
+    "scopeAcknowledgement": "我理解這是教練詢問表，不提供治療、緊急協助、法律或移民建議。",
+    "privacyNote": "若未展開合作，我們會刪除你的資訊（除非法律另有要求）。",
     "submit": "送出訊息",
     "status": {
-      "submitting": "傳送中…",
-      "success": "收到，謝謝你。我們會在三個英國工作天內回覆。",
-      "error": "送出時發生問題，請再試一次或寫信至 contact@sustainsage.com。",
-      "errorRequired": "請完成必填欄位並勾選同意。"
+      "submitting": "寄出中…",
+      "success": "收到，會在三個英國工作天內回覆。",
+      "error": "發生問題，請再試一次或來信 contact@sustainsage.com。",
+      "errorRequired": "請填寫必填欄位並確認同意事項。"
     }
   },
   "formNote": {
     "lines": [
-      "一般回覆時間：三個英國工作天內。",
-      "教練可用英文、繁體中文、簡體中文—歡迎自由混用。",
-      "更多保密與資料照顧說明請見 {privacyLink}。"
+      "一般會在三個英國工作天內回覆。",
+      "英文、繁中、簡中皆可自由混用。",
+      "關於保密與資料使用細節，請見 {privacyLink}。"
     ],
     "privacyLabel": "隱私與倫理說明",
     "privacyHref": "/contact#icf"
-  },
-  "sidebar": {
-    "title": "我們如何處理你的訊息",
-    "description": "由教練本人閱讀並回覆，不交由助理處理。",
-    "responseTitle": "回覆時間",
-    "responseCopy": "通常三個英國工作天內回覆，若外出會啟動自動回覆。",
-    "privacyTitle": "資料保存",
-    "privacyCopy": "資料以安全方式保存，若未合作即刪除，除非法律要求。",
-    "nextTitle": "初談會談內容",
-    "nextCopy": "共同確認目標、界線、費用與流程，讓你判斷是否繼續。"
   }
 }

@@ -13,55 +13,35 @@ const CARD_BASE_CLASS =
   'rounded-2xl border border-emerald-100 bg-white/85 p-6 shadow-sm transition hover:shadow-md';
 
 const DETAIL_ICONS = {
-  compass: (
+  map: (
     <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
-      <path
-        d="M12 3.75a8.25 8.25 0 1 1 0 16.5 8.25 8.25 0 0 1 0-16.5Zm0 0-2.8 6.8 6.8-2.8-2.8 6.8"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
+      <path d="M4.5 6.75 9 4.5l6 2.25 4.5-2.25v12l-4.5 2.25-6-2.25-4.5 2.25v-12Z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+      <path d="M9 4.5v12.75m6-10.5v12.75" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
     </svg>
   ),
-  network: (
+  design: (
     <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
-      <path
-        d="M7.5 5.25a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm9 9a2.25 2.25 0 1 1 0 4.5 2.25 2.25 0 0 1 0-4.5Zm-12 4.5a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0Zm12-13.5a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <path d="M9.3 8.7 14.7 15.3m-5.4 0-3-1.8m8.4-6 3-1.8" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
+      <path d="M6.75 4.5h10.5A1.75 1.75 0 0 1 19 6.25v11.5A1.75 1.75 0 0 1 17.25 19H6.75A1.75 1.75 0 0 1 5 17.75V6.25A1.75 1.75 0 0 1 6.75 4.5Z" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+      <path d="M9 8h6m-6 3h4m-4 3h2" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
     </svg>
   ),
-  prototype: (
+  results: (
     <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
-      <path
-        d="M6.75 4.5h10.5A1.75 1.75 0 0 1 19 6.25v11.5A1.75 1.75 0 0 1 17.25 19H6.75A1.75 1.75 0 0 1 5 17.75V6.25A1.75 1.75 0 0 1 6.75 4.5Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <path d="M9 8h6v3H9zm0 5h6m-6 3h4" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
+      <path d="M5.25 6.75h13.5v10.5H5.25z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+      <path d="M7.5 14.5 10 12l2 2 3.5-3" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
     </svg>
   ),
-  reflection: (
+  decide: (
     <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
       <path
-        d="M9.75 7.5h4.5a3.75 3.75 0 1 1 0 7.5h-4.5a3.75 3.75 0 1 1 0-7.5Z"
+        d="M12 3.75 4.5 9l7.5 4.5L19.5 9 12 3.75Z"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
       />
-      <path d="M6 12h12m-10.5 7.5h9" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
+      <path d="M4.5 14.25 12 18.75l7.5-4.5" fill="none" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.5" />
     </svg>
   ),
 };
@@ -69,7 +49,7 @@ const DETAIL_ICONS = {
 function DetailIcon({ type }) {
   return (
     <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100/70">
-      {DETAIL_ICONS[type] ?? DETAIL_ICONS.compass}
+      {DETAIL_ICONS[type] ?? DETAIL_ICONS.map}
     </span>
   );
 }
@@ -77,9 +57,10 @@ function DetailIcon({ type }) {
 function ExperimentsServicePage() {
   const { t } = useTranslation('services');
   const forItems = t('details.experiments.for.items', { returnObjects: true });
-  const exploreCards = t('details.experiments.explore.cards', { returnObjects: true });
-  const structureLines = t('details.experiments.structure.points', { returnObjects: true });
-  const questions = t('details.experiments.questions.items', { returnObjects: true });
+  const focusCards = t('details.experiments.focus.cards', { returnObjects: true });
+  const packageItems = t('details.experiments.package.items', { returnObjects: true });
+  const sessionParagraphs = t('details.experiments.session.paragraphs', { returnObjects: true });
+  const prompts = t('details.experiments.prompts.items', { returnObjects: true });
   const boundaries = t('details.experiments.boundaries.items', { returnObjects: true });
 
   return (
@@ -119,15 +100,12 @@ function ExperimentsServicePage() {
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                {t('details.experiments.explore.title')}
+                {t('details.experiments.focus.title')}
               </h2>
-            </Reveal>
-            <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-emerald-900">{t('details.experiments.explore.subtitle')}</p>
             </Reveal>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {exploreCards.map((card, index) => (
+            {focusCards.map((card, index) => (
               <Reveal key={card.title} className={`reveal-${index + 2}`}>
                 <HoverLift>
                   <article className={`${CARD_BASE_CLASS} bg-white text-left`}>
@@ -146,15 +124,12 @@ function ExperimentsServicePage() {
         <div className="mx-auto max-w-4xl px-6">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('details.experiments.structure.title')}
+              {t('details.experiments.package.title')}
             </h2>
           </Reveal>
           <Reveal className="reveal-1">
-            <p className="mt-4 text-base leading-7 text-slate-600">{t('details.experiments.structure.subtitle')}</p>
-          </Reveal>
-          <Reveal className="reveal-2">
             <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-              {structureLines.map((line) => (
+              {packageItems.map((line) => (
                 <li key={line} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}>
                   {line}
                 </li>
@@ -164,18 +139,37 @@ function ExperimentsServicePage() {
         </div>
       </section>
 
-      <section className="bg-emerald-50/60 py-16 sm:py-20" id="reflective-questions">
+      <section className="bg-emerald-50/60 py-16 sm:py-20" id="session-experience">
         <div className="mx-auto max-w-4xl px-6">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('details.experiments.questions.title')}
+              {t('details.experiments.session.title')}
             </h2>
           </Reveal>
           <Reveal className="reveal-1">
-            <ul className="mt-6 space-y-3 text-sm leading-6 text-emerald-900">
-              {questions.map((question) => (
-                <li key={question} className={`${CARD_BASE_CLASS} bg-white text-left`}>
-                  {question}
+            <div className="mt-6 space-y-3 text-sm leading-6 text-emerald-900">
+              {sessionParagraphs.map((paragraph) => (
+                <div key={paragraph} className={`${CARD_BASE_CLASS} bg-white text-left`}>
+                  {paragraph}
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20" id="reflective-prompts">
+        <div className="mx-auto max-w-4xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('details.experiments.prompts.title')}
+            </h2>
+          </Reveal>
+          <Reveal className="reveal-1">
+            <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
+              {prompts.map((prompt) => (
+                <li key={prompt} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}>
+                  {prompt}
                 </li>
               ))}
             </ul>
@@ -191,9 +185,6 @@ function ExperimentsServicePage() {
             </h2>
           </Reveal>
           <Reveal className="reveal-1">
-            <p className="mt-4 text-base leading-7 text-slate-600">{t('details.experiments.boundaries.subtitle')}</p>
-          </Reveal>
-          <Reveal className="reveal-2">
             <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
               {boundaries.map((item) => (
                 <li key={item} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}>
@@ -209,11 +200,13 @@ function ExperimentsServicePage() {
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t('details.experiments.cta.title')}</h2>
           <p className="mt-4 text-base leading-7 text-emerald-100">{t('details.experiments.cta.body')}</p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact" className="btn-primary" aria-label={t('details.experiments.cta.primaryAria')}>
-              {t('details.experiments.cta.primaryCta')}
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="mt-8 inline-flex items-center justify-center rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+            aria-label={t('details.experiments.cta.primaryAria')}
+          >
+            {t('details.experiments.cta.primaryCta')}
+          </Link>
         </div>
       </section>
 

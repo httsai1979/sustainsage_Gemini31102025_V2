@@ -63,38 +63,29 @@ function ServiceIcon({ type }) {
 
 function ServicesPage() {
   const { t } = useTranslation('services');
-  const overviewCards = t('overview.cards', { returnObjects: true });
-  const nextSteps = t('nextSteps.items', { returnObjects: true });
+  const packageCards = t('packages.cards', { returnObjects: true });
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
       <Hero
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        note={t('hero.note')}
         image="/hero/services.svg"
         imageAlt={t('hero.imageAlt', { defaultValue: 'Abstract illustration of coaching services' })}
-      >
-        <Link href="/contact" className="btn-primary" aria-label={t('hero.primaryCtaAria')}>
-          {t('hero.primaryCta')}
-        </Link>
-        <Link href="#services-overview" className="btn-secondary" aria-label={t('hero.secondaryCtaAria')}>
-          {t('hero.secondaryCta')}
-        </Link>
-      </Hero>
+      />
 
       <section className="bg-white py-16 sm:py-20" id="services-overview">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('overview.title')}</h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('packages.title')}</h2>
             </Reveal>
             <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-slate-600">{t('overview.subtitle')}</p>
+              <p className="mt-4 text-base leading-7 text-slate-600">{t('packages.subtitle')}</p>
             </Reveal>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {overviewCards.map((card, index) => (
+            {packageCards.map((card, index) => (
               <Reveal key={card.title} className={`reveal-${index + 2}`}>
                 <HoverLift>
                   <article className={`${CARD_BASE_CLASS} flex h-full flex-col justify-between bg-white text-left`}>
@@ -124,33 +115,17 @@ function ServicesPage() {
         </div>
       </section>
 
-      <section className="bg-emerald-50/60 py-16 sm:py-20" id="next-steps">
-        <div className="mx-auto max-w-5xl px-6">
-          <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('nextSteps.title')}</h2>
-          </Reveal>
-          <Reveal className="reveal-1">
-            <p className="mt-4 text-base leading-7 text-emerald-900">{t('nextSteps.subtitle')}</p>
-          </Reveal>
-          <Reveal className="reveal-2">
-            <ul className="mt-8 grid gap-4 text-sm leading-6 text-slate-700 sm:grid-cols-2">
-              {nextSteps.map((item) => (
-                <li key={item} className={`${CARD_BASE_CLASS} bg-white text-left`}>{item}</li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-      </section>
-
       <section className="bg-slate-950 py-16 text-emerald-50">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t('cta.title')}</h2>
           <p className="mt-4 text-base leading-7 text-emerald-100">{t('cta.body')}</p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact" className="btn-primary" aria-label={t('cta.primaryAria')}>
-              {t('cta.primaryCta')}
-            </Link>
-          </div>
+          <Link
+            href="/contact"
+            className="mt-8 inline-flex items-center justify-center rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+            aria-label={t('cta.primaryAria')}
+          >
+            {t('cta.primaryCta')}
+          </Link>
         </div>
       </section>
 
