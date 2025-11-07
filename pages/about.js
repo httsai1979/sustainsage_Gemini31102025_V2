@@ -73,14 +73,13 @@ function AboutPage() {
   const clientPoints = t('clients.items', { returnObjects: true });
   const howCards = t('how.cards', { returnObjects: true });
   const coaches = t('coaches.cards', { returnObjects: true });
-  const notFit = t('notFit.items', { returnObjects: true });
+  const notNow = t('notNow.items', { returnObjects: true });
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
       <Hero
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        note={t('hero.note')}
         image="/hero/about.svg"
         imageAlt={t('hero.imageAlt', { defaultValue: 'Abstract illustration of a supportive coaching partnership' })}
       />
@@ -93,10 +92,7 @@ function AboutPage() {
             </h2>
           </Reveal>
           <Reveal className="reveal-1">
-            <p className="mt-4 text-base leading-7 text-slate-600">{t('clients.subtitle')}</p>
-          </Reveal>
-          <Reveal className="reveal-2">
-            <ul className="mt-8 grid gap-4 text-sm leading-6 text-slate-700 sm:grid-cols-2">
+            <ul className="mt-8 space-y-4 text-base leading-7 text-slate-700">
               {clientPoints.map((point) => (
                 <li key={point} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}>{point}</li>
               ))}
@@ -111,9 +107,6 @@ function AboutPage() {
             <Reveal>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('how.title')}</h2>
             </Reveal>
-            <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-emerald-900">{t('how.subtitle')}</p>
-            </Reveal>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {howCards.map((card, index) => (
@@ -123,14 +116,6 @@ function AboutPage() {
                     <HowIcon type={card.icon} />
                     <h3 className="mt-4 text-lg font-semibold text-slate-900">{card.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-slate-600">{card.body}</p>
-                    <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-600">
-                      {card.points.map((line) => (
-                        <li key={line} className="flex gap-2">
-                          <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                          <span>{line}</span>
-                        </li>
-                      ))}
-                    </ul>
                   </article>
                 </HoverLift>
               </Reveal>
@@ -160,7 +145,6 @@ function AboutPage() {
                       </div>
                       <div>
                         <h3 className="text-lg font-semibold text-slate-900">{coach.name}</h3>
-                        <p className="text-sm font-medium text-emerald-700">{coach.role}</p>
                       </div>
                     </div>
                     <p className="text-sm leading-6 text-slate-600">{coach.summary}</p>
@@ -180,14 +164,11 @@ function AboutPage() {
       <section className="bg-emerald-950/90 py-16">
         <div className="mx-auto max-w-4xl px-6 text-emerald-50">
           <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{t('notFit.title')}</h2>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{t('notNow.title')}</h2>
           </Reveal>
           <Reveal className="reveal-1">
-            <p className="mt-4 text-base leading-7 text-emerald-100">{t('notFit.subtitle')}</p>
-          </Reveal>
-          <Reveal className="reveal-2">
             <ul className="mt-6 space-y-3 text-sm leading-6 text-emerald-100">
-              {notFit.map((item) => (
+              {notNow.map((item) => (
                 <li key={item} className="rounded-2xl border border-emerald-400/30 bg-white/5 p-4 text-left">
                   {item}
                 </li>
@@ -205,7 +186,7 @@ function AboutPage() {
             <Link href="/contact" className="btn-primary" aria-label={t('cta.primaryAria')}>
               {t('cta.primaryCta')}
             </Link>
-            <Link href="/services" className="btn-secondary" aria-label={t('cta.secondaryAria')}>
+            <Link href="/contact" className="btn-secondary" aria-label={t('cta.secondaryAria')}>
               {t('cta.secondaryCta')}
             </Link>
           </div>

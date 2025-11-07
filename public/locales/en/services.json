@@ -1,317 +1,301 @@
 {
   "seo": {
     "title": "Services | SustainSage",
-    "description": "Explore SustainSage coaching focuses for UK relocation, confidence in the workplace, and career experiments."
+    "description": "Explore SustainSage coaching packages for UK relocation, workplace confidence and clarity experiments."
   },
   "hero": {
-    "title": "Choose the coaching focus that fits right now.",
-    "subtitle": "Each package begins with a consent-led intro call and adapts to your pace.",
-    "note": "Coaching is not therapy, counselling, legal, medical, financial, or immigration advice.",
-    "primaryCta": "Book intro call",
-    "secondaryCta": "Browse focus areas",
-    "primaryCtaAria": "Book a 20-minute intro call with SustainSage",
-    "secondaryCtaAria": "Skip to the coaching focus cards",
-    "imageAlt": "Cards showing different coaching focuses"
+    "title": "Coaching packages designed for real life transitions",
+    "subtitle": "Choose the support that fits what you need most right now.",
+    "imageAlt": "Illustration of three coaching pathways"
   },
-  "overview": {
-    "title": "Coaching focuses",
-    "subtitle": "Pick the doorway that matches your transition. We can always adjust after the intro call.",
+  "packages": {
+    "title": "Choose your package",
+    "subtitle": "Each pathway begins with a 20-minute intro call to confirm scope, pace and boundaries.",
     "cards": [
       {
         "icon": "transition",
         "title": "Transition coaching (6 sessions)",
-        "for": "For relocation, role changes, or returning to work after a pause.",
-        "focus": "We explore identity shifts, logistics, and support systems that travel with you.",
-        "format": "6 × 60-min sessions over 8–12 weeks, online with optional check-ins.",
+        "for": "For people relocating, changing roles or returning to work.",
+        "focus": "Orientation, realistic planning, sustainable pace.",
+        "format": "6 × 60-min sessions over 8–12 weeks, online.",
         "href": "/services/transition",
-        "cta": "Transition details",
-        "ariaLabel": "View the transition coaching package details"
+        "cta": "View details",
+        "ariaLabel": "View transition coaching details"
       },
       {
         "icon": "confidence",
-        "title": "Confidence & voice coaching",
-        "for": "For speaking up in UK workplaces without losing your tone or boundaries.",
-        "focus": "We practise language, presence, and agreements for meetings, interviews, and feedback.",
-        "format": "4 × 60-min sessions over 6–8 weeks with optional role-play recordings.",
+        "title": "Confidence & voice in UK workplaces",
+        "for": "For people navigating UK workplaces in a second language or new culture.",
+        "focus": "Speaking up, owning your authority, boundary-setting.",
+        "format": "4–6 × 60-min sessions, online.",
         "href": "/services/confidence",
-        "cta": "Confidence & voice details",
-        "ariaLabel": "View the confidence and voice coaching package details"
+        "cta": "View details",
+        "ariaLabel": "View confidence and voice coaching details"
       },
       {
         "icon": "experiments",
-        "title": "Clarity experiments package",
-        "for": "For sensing next career moves through small, low-risk tests.",
-        "focus": "We design experiments such as informational interviews or trial projects that honour your capacity.",
-        "format": "5 × 60-min sessions across 8–10 weeks plus light reflection notes.",
+        "title": "Clarity experiments for career decisions",
+        "for": "For people unsure about what’s next.",
+        "focus": "Design and run small tests instead of waiting for certainty.",
+        "format": "3–4 × 60-min sessions + simple experiments.",
         "href": "/services/experiments",
-        "cta": "Clarity experiments details",
-        "ariaLabel": "View the clarity experiments package details"
+        "cta": "View details",
+        "ariaLabel": "View clarity experiments coaching details"
       }
     ]
   },
-  "nextSteps": {
-    "title": "How we begin",
-    "subtitle": "A simple arc that keeps you informed and in charge.",
-    "items": [
-      "20-minute intro call to understand context, consent, and desired outcomes.",
-      "Written agreement summarising scope, fees, safeguarding, and language preferences.",
-      "We schedule sessions in advance while leaving space to flex around your energy and commitments.",
-      "You decide after each review whether to continue, pause, or close the coaching partnership."
-    ]
-  },
   "cta": {
-    "title": "Ready to co-design your coaching space?",
-    "body": "Share a snapshot of your transition and we will recommend next steps or signpost other support if coaching is not right now.",
-    "primaryCta": "Book intro call",
+    "title": "Not sure which option fits?",
+    "body": "Share a few lines about your context. We’ll explore together during the intro call.",
+    "primaryCta": "Book a 20-min intro call",
     "primaryAria": "Book a 20-minute intro call with SustainSage"
   },
   "details": {
     "transition": {
       "seo": {
         "title": "Transition coaching | SustainSage",
-        "description": "ICF-aligned coaching for relocation or role changes in the UK, centred on your pace and consent."
+        "description": "Steady, ICF-aligned coaching for relocation and role changes in the UK."
       },
       "hero": {
-        "title": "Transition coaching for relocation or role changes",
-        "subtitle": "Hold space for identity shifts, logistics, and the relationships that move with you.",
-        "cta": "Book intro call",
+        "title": "Transition coaching for relocation and role changes",
+        "subtitle": "Steady support to land, re-orient and choose next steps that fit your real life.",
+        "cta": "Book a 20-min intro call",
         "ctaAria": "Book a 20-minute intro call about transition coaching",
-        "imageAlt": "Abstract illustration of moving homes with support"
+        "imageAlt": "Illustration of a person navigating new paths"
       },
       "for": {
         "title": "Who this is for",
         "items": [
-          "You are relocating to or within the UK and want steadiness while paperwork, culture, and language shift.",
-          "You are stepping into a new role or sector and need space to integrate fresh expectations.",
-          "You are returning after parental leave, study, or a sabbatical and want rhythms that respect care and work.",
-          "You juggle responsibilities across countries and want to align decisions with your values."
+          "You’ve moved (or are moving) to the UK and feel stretched between systems, languages and roles.",
+          "You’re changing roles or sectors and want a grounded, values-led plan.",
+          "You’re returning after a break and don’t want to burn out proving yourself."
         ]
       },
-      "explore": {
+      "focus": {
         "title": "What we explore",
-        "subtitle": "A mix of reflection and practical design, always co-created.",
         "cards": [
           {
-            "icon": "identity",
-            "title": "Identity and belonging",
-            "body": "Name what stays, what changes, and how you want to introduce yourself in new spaces."
+            "icon": "context",
+            "title": "Your context",
+            "body": "Visas, money, care, networks, expectations—naming constraints without turning them into excuses."
           },
           {
-            "icon": "systems",
-            "title": "Practical systems",
-            "body": "Design routines, agreements, and boundaries that travel well between homes and teams."
+            "icon": "values",
+            "title": "Your values & identity",
+            "body": "What you want to protect, grow, or leave behind in this new chapter."
           },
           {
-            "icon": "support",
-            "title": "Support circles",
-            "body": "Map allies, resources, and care structures so you are not carrying everything alone."
+            "icon": "options",
+            "title": "Real options",
+            "body": "Roles, routes and rhythms that are actually available to you now."
           },
           {
             "icon": "experiments",
-            "title": "Experiments you choose",
-            "body": "Co-create small tests to try between sessions with clear check-ins and consent."
+            "title": "Experiments",
+            "body": "Small, reversible steps to test directions before committing."
           }
         ]
       },
-      "structure": {
-        "title": "Package structure",
-        "subtitle": "Six sessions with space to extend or pause after review.",
-        "points": [
-          "6 × 60-minute sessions over 8–12 weeks, online or hybrid as agreed.",
-          "Session 1 focuses on context mapping and defining what support looks like for you.",
-          "Sessions 2–5 dive into themes you choose, with light between-session notes when helpful.",
-          "Session 6 reviews learning, agreements, and optional next steps or signposts."
+      "package": {
+        "title": "How the package works",
+        "items": [
+          "6 × 60-min sessions over 8–12 weeks (online).",
+          "Light check-ins between sessions when helpful (email or short notes, not 24/7).",
+          "Shared notes after sessions to capture your insights and decisions."
         ]
       },
-      "questions": {
-        "title": "Sample reflective questions",
+      "session": {
+        "title": "What a session feels like",
+        "paragraphs": [
+          "Calm, curious and structured.",
+          "You bring what’s live; we listen, reflect patterns, ask questions and co-design next steps.",
+          "No judgment for “messy” realities."
+        ]
+      },
+      "prompts": {
+        "title": "Reflective prompts",
         "items": [
-          "What identities or responsibilities feel loud as you enter this transition?",
-          "Where do you want to hold firm, and where is there room to experiment?",
-          "Who needs to understand your boundaries for this move to feel sustainable?",
-          "What would a grounded first three months look and feel like?"
+          "What would “settled enough for now” look like three months from today?",
+          "Which expectations truly belong to you—and which belong to others, old systems or fear?",
+          "If you could try one small, low-risk move this month, what would you choose?"
         ]
       },
       "boundaries": {
-        "title": "Boundaries we uphold",
-        "subtitle": "Clarity keeps the partnership safe and useful.",
+        "title": "Boundaries & ethics",
         "items": [
-          "Coaching is not immigration, legal, medical, or financial advice.",
-          "We do not complete paperwork or make decisions on your behalf.",
-          "You choose the pace and depth of every conversation; we check consent before suggesting experiments.",
-          "If therapy or specialist support becomes necessary, we will pause coaching and signpost options."
+          "Not therapy, counselling, legal or immigration advice.",
+          "If specialist support seems needed, we’ll say so and invite you to consider it.",
+          "You keep responsibility and authorship; we hold process and partnership."
         ]
       },
       "cta": {
-        "title": "Start with a 20-minute intro call",
-        "body": "Share the move or role change you are navigating and we will map next steps together.",
-        "primaryCta": "Book intro call",
+        "title": "Ready for a gentle starting point?",
+        "body": "Tell us about your transition and we’ll map possible next steps together.",
+        "primaryCta": "Book a 20-min intro call",
         "primaryAria": "Book a 20-minute intro call about transition coaching"
       }
     },
     "confidence": {
       "seo": {
         "title": "Confidence & voice coaching | SustainSage",
-        "description": "Coaching for bilingual professionals to practise voice, boundaries, and presence in UK workplaces."
+        "description": "Coaching to speak up, set boundaries and stay yourself in UK workplaces."
       },
       "hero": {
-        "title": "Confidence and voice in the UK workplace",
-        "subtitle": "Practise language, presence, and consent-based boundaries without pretending to be someone else.",
-        "cta": "Book intro call",
+        "title": "Confidence & voice in UK workplaces",
+        "subtitle": "Coaching to speak up, set boundaries and stay yourself in a new culture.",
+        "cta": "Book a 20-min intro call",
         "ctaAria": "Book a 20-minute intro call about confidence coaching",
-        "imageAlt": "Abstract illustration of speaking with confidence"
+        "imageAlt": "Illustration of a person sharing ideas in a meeting"
       },
       "for": {
         "title": "Who this is for",
         "items": [
-          "You prepare for meetings or interviews in English and want to sound like yourself.",
-          "You are navigating feedback styles, power distances, or microaggressions at work.",
-          "You switch between languages daily and want tools to pause, translate, or set boundaries.",
-          "You lead teams or projects and want steadier language for advocating needs."
+          "You second-guess your English, accent or “right to speak” in meetings.",
+          "You avoid difficult conversations with managers, peers or clients.",
+          "You’re navigating cultural codes and want to stay respectful without disappearing."
         ]
       },
-      "explore": {
-        "title": "Focus topics",
-        "subtitle": "Coaching, not performance scripts.",
+      "focus": {
+        "title": "What we focus on",
         "cards": [
           {
-            "icon": "voice",
-            "title": "Voice and storytelling",
-            "body": "Experiment with ways of speaking that carry your tone, values, and cultural references."
+            "icon": "inner",
+            "title": "Inner stories",
+            "body": "Beliefs about “good enough English”, authority, failure and visibility."
           },
           {
-            "icon": "language",
-            "title": "Language flexibility",
-            "body": "Practise switching languages or asking for pauses so you can think and respond with clarity."
+            "icon": "interactions",
+            "title": "Everyday interactions",
+            "body": "Meetings, emails, feedback, saying no, asking for what you need."
           },
           {
             "icon": "boundaries",
-            "title": "Boundaries and consent",
-            "body": "Design phrases and agreements that protect your time, energy, and labour."
+            "title": "Boundaries",
+            "body": "How to protect time, energy and ethics without drama."
           },
           {
-            "icon": "practice",
-            "title": "Grounded rehearsal",
-            "body": "Role-play conversations, interviews, or presentations with compassionate feedback."
+            "icon": "allyship",
+            "title": "Allyship & support",
+            "body": "Building people and practices that help you show up."
           }
         ]
       },
-      "structure": {
-        "title": "Package structure",
-        "subtitle": "Four sessions with optional extensions once you feel momentum.",
-        "points": [
-          "4 × 60-minute sessions over 6–8 weeks with optional voice-note reflections between sessions.",
-          "Session 1 clarifies current scenarios, triggers, and desired shifts.",
-          "Sessions 2–3 focus on practising language, grounding, and agreements for real situations.",
-          "Session 4 reviews learning, captures personal scripts, and plans next experiments if useful."
+      "package": {
+        "title": "How the package works",
+        "items": [
+          "4–6 × 60-min sessions over 6–10 weeks, online.",
+          "Practical experiments between sessions (e.g. one clear ask, one small “no”, one brave email)."
         ]
       },
-      "questions": {
-        "title": "Sample reflective questions",
+      "session": {
+        "title": "What a session feels like",
+        "paragraphs": [
+          "Grounded, bilingual space where you can try language out loud.",
+          "We explore beliefs, rehearse conversations and agree on small experiments that feel possible now."
+        ]
+      },
+      "prompts": {
+        "title": "Reflective prompts",
         "items": [
-          "What conversations feel most draining or energising right now?",
-          "How do you know when your boundaries are respected or crossed?",
-          "What language helps you stay present when you feel you must translate yourself?",
-          "Where would feeling one notch more confident create the most impact?"
+          "Where are you already trusted more than you trust yourself?",
+          "If you could express one thing more directly this month, what would it be?",
+          "What does “respectful and clear” look like in your voice—not someone else’s?"
         ]
       },
       "boundaries": {
-        "title": "Boundaries we uphold",
-        "subtitle": "Support with clarity and care.",
+        "title": "Boundaries & ethics",
         "items": [
-          "We are not speech therapists, accent trainers, or legal advisors.",
-          "We do not give scripted answers; you co-create language that feels authentic.",
-          "You decide how far to role-play or share recordings; consent can be adjusted anytime.",
-          "If workplace harm or trauma requires specialist support, we will signpost appropriate services."
+          "Not presentation training or a promise of promotion.",
+          "No workplace legal judgments; we encourage HR or professional advice when needed.",
+          "We don’t guarantee outcomes—you stay in authorship."
         ]
       },
       "cta": {
-        "title": "Try a 20-minute intro call",
-        "body": "Tell us the conversations you want to feel steadier in and we will map coaching options together.",
-        "primaryCta": "Book intro call",
+        "title": "Curious to explore your voice?",
+        "body": "Share a few lines about the conversations you’re holding and we’ll co-design a gentle next step.",
+        "primaryCta": "Book a 20-min intro call",
         "primaryAria": "Book a 20-minute intro call about confidence coaching"
       }
     },
     "experiments": {
       "seo": {
         "title": "Clarity experiments coaching | SustainSage",
-        "description": "Coaching for people testing career directions through small experiments and reflective learning."
+        "description": "Short coaching series to test career possibilities through small experiments."
       },
       "hero": {
-        "title": "Clarity experiments for career decisions",
-        "subtitle": "Design small tests to sense what energises you before committing to a direction.",
-        "cta": "Book intro call",
+        "title": "Clarity through small experiments",
+        "subtitle": "A short coaching series to test possible paths instead of waiting for a perfect answer.",
+        "cta": "Book a 20-min intro call",
         "ctaAria": "Book a 20-minute intro call about clarity experiments",
-        "imageAlt": "Abstract illustration of exploring multiple paths"
+        "imageAlt": "Illustration of branching paths and lightbulbs"
       },
       "for": {
         "title": "Who this is for",
         "items": [
-          "You feel the pull to change direction but want data before leaping.",
-          "You have several ideas and need help prioritising without burning out.",
-          "You want accountability that respects rest, caregiving, or health considerations.",
-          "You prefer experiments over rigid five-year plans."
+          "You don’t hate your current path, but “this can’t be it forever”.",
+          "You’re stuck between multiple options and keep looping in your head.",
+          "You’re afraid of choosing “wrong” and wasting limited time/visa/money."
         ]
       },
-      "explore": {
+      "focus": {
         "title": "What we explore",
-        "subtitle": "Curiosity-led experiments grounded in your reality.",
         "cards": [
           {
-            "icon": "compass",
-            "title": "Criteria for decisions",
-            "body": "Define what a sustainable next step needs to include for you and your people."
+            "icon": "map",
+            "title": "Map your questions",
+            "body": "Separate real constraints from assumptions."
           },
           {
-            "icon": "network",
-            "title": "People and conversations",
-            "body": "Plan informational interviews, shadowing, or community chats that feel safe and useful."
+            "icon": "design",
+            "title": "Design tiny experiments",
+            "body": "Informational chats, small projects, volunteering, job try-outs, skill labs."
           },
           {
-            "icon": "prototype",
-            "title": "Trial projects",
-            "body": "Co-create small projects or volunteering experiments to test fit without overcommitting."
+            "icon": "results",
+            "title": "Read the results",
+            "body": "What energised you, what drained you, what you learned."
           },
           {
-            "icon": "reflection",
-            "title": "Learning loops",
-            "body": "Capture insights, feelings, and data so each experiment informs your next choice."
+            "icon": "decide",
+            "title": "Decide next slice",
+            "body": "A next 3–6 month direction, not “forever”."
           }
         ]
       },
-      "structure": {
-        "title": "Package structure",
-        "subtitle": "Five sessions with spacious time for experiments between meetings.",
-        "points": [
-          "5 × 60-minute sessions across 8–10 weeks with optional reflection prompts via email.",
-          "Session 1 surfaces hopes, constraints, and success criteria for this season.",
-          "Sessions 2–4 design, run, and review experiments you choose (e.g. informational interviews, trial projects, co-creation labs).",
-          "Session 5 harvests insights, maps decisions, and clarifies ongoing supports."
+      "package": {
+        "title": "How the package works",
+        "items": [
+          "3–4 × 60-min sessions over 4–6 weeks.",
+          "Each session ends with 1–2 concrete experiments you design and own."
         ]
       },
-      "questions": {
-        "title": "Sample reflective questions",
+      "session": {
+        "title": "What a session feels like",
+        "paragraphs": [
+          "Curious, spacious and practical.",
+          "We map what you’re noticing, design experiments that feel safe enough and review learning quickly."
+        ]
+      },
+      "prompts": {
+        "title": "Reflective prompts",
         "items": [
-          "What would make an experiment feel safe enough to try?",
-          "Which idea keeps nudging you even when you are busy?",
-          "How will you know if an opportunity is aligned with your values and capacity?",
-          "What support or boundaries do you need while testing options?"
+          "What do you already know you don’t want to repeat?",
+          "If you treated the next 3 months as a test, not a verdict, what becomes possible?",
+          "What would “a little more honest” look like in your work week?"
         ]
       },
       "boundaries": {
-        "title": "Boundaries we uphold",
-        "subtitle": "Experiments, not promises.",
+        "title": "Boundaries & ethics",
         "items": [
-          "We do not provide recruitment, visa, or legal services.",
-          "We do not make decisions for you or guarantee job offers.",
-          "Experiments are co-designed with your consent and can be adjusted or paused anytime.",
-          "If distress or trauma surfaces, we will pause and signpost therapeutic support."
+          "We won’t provide a “perfect calling” answer; you make the decisions.",
+          "We avoid financial or legal advice beyond the coaching scope.",
+          "Experiments stay within your consent and capacity; we adjust when needed."
         ]
       },
       "cta": {
-        "title": "Book an intro call to design your experiments",
-        "body": "Bring the questions you are holding. We will co-create a gentle plan or recommend other support.",
-        "primaryCta": "Book intro call",
+        "title": "Ready to test possibilities?",
+        "body": "Bring the questions you’re holding and we’ll sketch a light, respectful plan.",
+        "primaryCta": "Book a 20-min intro call",
         "primaryAria": "Book a 20-minute intro call about clarity experiments"
       }
     }
