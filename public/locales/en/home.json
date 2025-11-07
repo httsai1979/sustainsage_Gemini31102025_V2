@@ -17,20 +17,115 @@
     "intro": "We work with people balancing cross-cultural lives, caregiving, and careers who want space to decide without pressure.",
     "items": [
       {
+        "key": "midCareer",
         "title": "Mid-career restarters",
         "description": "Refresh direction after redundancy, burnout or a long pause—without tossing aside what you have built."
       },
       {
+        "key": "newToUK",
         "title": "Newcomers working abroad",
         "description": "Bridge UK workplace expectations with your home-culture instincts so decisions feel honest."
       },
       {
+        "key": "graduates",
         "title": "Early-career explorers",
         "description": "Test possibilities after graduation with low-risk experiments instead of all-or-nothing leaps."
       },
       {
+        "key": "parents",
         "title": "Carers and parents on pause",
         "description": "Re-enter work or reshape routines with support that respects caregiving, energy and capacity."
+      }
+    ]
+  },
+  "deepDive": {
+    "labels": {
+      "learnMore": "Learn more",
+      "close": "Hide details",
+      "scenarios": "Example scenarios",
+      "approach": "How we might work",
+      "questions": "Reflection prompts we may explore",
+      "storiesTitle": "Examples from recent coaching",
+      "storiesIntro": "Every client sets their own goals. These short stories are illustrations, not guarantees."
+    },
+    "audience": {
+      "midCareer": {
+        "label": "Mid-career returners",
+        "scenarios": [
+          "You have taken several years out for caring, health or relocation and feel unsure how to position your experience in the UK market.",
+          "You worry your skills or story look 'outdated' and want a grounded view of what is actually possible.",
+          "You want to return on your own terms rather than rushing back into the wrong role."
+        ],
+        "approach": [
+          "Clarify what a sustainable next chapter looks like for you in this season of life.",
+          "Map realistic role and sector options for your situation instead of generic 'dream job' talk.",
+          "Design small, low-risk experiments so you can test ideas without burning out."
+        ],
+        "questions": [
+          "If you paused the pressure to 'catch up', what would a kinder and wiser path look like?",
+          "Which parts of your past experience still feel alive and valuable now — and how might we bring them forward?"
+        ]
+      },
+      "newToUK": {
+        "label": "Newcomers to the UK",
+        "scenarios": [
+          "You are navigating UK hiring norms or workplace culture for the first time and want context without losing your own voice.",
+          "Visa timelines, family responsibilities or finances add urgency, and you need calm structure rather than hustle slogans.",
+          "You would like a space where bilingual thinking is welcomed so you can integrate experiences across cultures."
+        ],
+        "approach": [
+          "Name what stability looks like in the near term so decisions feel less binary.",
+          "Translate UK expectations into language that makes sense for you and your stakeholders.",
+          "Design conversations and boundaries that honour both home-culture values and local realities."
+        ],
+        "questions": [
+          "What would make the UK feel more like a place you can shape rather than just survive?",
+          "How do you want to describe your cross-border experience so it stays truthful and compelling?"
+        ]
+      },
+      "graduates": {
+        "label": "Recent graduates and early-career explorers",
+        "scenarios": [
+          "You are juggling internships, applications or portfolio building and want to choose next steps without burning bridges.",
+          "You sense pressure to pick one 'perfect' path and would like to experiment with a kinder frame.",
+          "You want support navigating family expectations, finances, or visas alongside work decisions."
+        ],
+        "approach": [
+          "Define what learning, stability and joy mean for you in this stage rather than copying peers.",
+          "Co-design low-risk experiments to test options and collect evidence for future choices.",
+          "Build language to talk about your strengths and boundaries in interviews or networking without exaggeration."
+        ],
+        "questions": [
+          "If you gave yourself permission to be 'in progress', what would you try first?",
+          "Which environments help you think clearly — and how can we seek more of those?"
+        ]
+      },
+      "parents": {
+        "label": "Parents and carers re-entering work",
+        "scenarios": [
+          "You are balancing care, health or community commitments and want work to fit real capacity.",
+          "You feel torn between conflicting advice from employers, family or peers and want a grounded plan.",
+          "You want to advocate for flexible arrangements or boundaries without feeling confrontational."
+        ],
+        "approach": [
+          "Clarify what a workable week looks like, including rest, care and paid work.",
+          "Develop language to request support or boundaries with employers and loved ones.",
+          "Experiment with phased returns or collaborative care plans so you can test and adjust."
+        ],
+        "questions": [
+          "What support structures would make this season more sustainable for everyone involved?",
+          "How can you describe your needs in a way that invites collaboration instead of guilt?"
+        ]
+      }
+    },
+    "stories": [
+      {
+        "title": "Relocating and starting again",
+        "text": "A professional moved to the UK and felt their CV had been reset. Across several sessions we clarified what 'good enough for now' meant, mapped realistic options, and designed two practical experiments. They chose their next step with more calm and ownership. This is an example, not a template or guarantee."
+      },
+      {
+        "title": "Returning after caring leave",
+        "text": "After years out for family care, a client used coaching to rebuild confidence and boundaries. Together we shaped a narrative they genuinely believed. They chose conversations and roles that matched their real capacity."
       }
     ]
   },
