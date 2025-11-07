@@ -8,144 +8,137 @@ import { useTranslation } from 'next-i18next';
 
 import nextI18NextConfig from '../next-i18next.config.js';
 
-function ServiceBlock({ service, labels }) {
-  if (!service) return null;
+const CARD_BASE_CLASS =
+  'rounded-2xl border border-emerald-100 bg-white/80 p-4 md:p-6 shadow-sm transition hover:shadow-md';
 
-  const { title, summary, for: audience = [], focus = [], format = [], languages, boundaries } = service;
-
+function PackageCard({ icon, title, description, details }) {
   return (
-    <article className="rounded-3xl border border-emerald-100 bg-white p-8 shadow-sm">
-      <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
-      <p className="mt-3 text-base leading-7 text-slate-600">{summary}</p>
-      <div className="mt-6 grid gap-6 md:grid-cols-2">
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{labels.for}</h4>
-          <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
-            {audience.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{labels.focus}</h4>
-          <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
-            {focus.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div className="mt-6 grid gap-6 md:grid-cols-2">
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{labels.format}</h4>
-          <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
-            {format.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="space-y-3 text-sm leading-6 text-slate-600">
-          {languages && (
-            <p>
-              <span className="font-semibold text-slate-900">{labels.languages}:</span> {languages}
-            </p>
-          )}
-          {boundaries && (
-            <p>
-              <span className="font-semibold text-slate-900">{labels.boundaries}:</span> {boundaries}
-            </p>
-          )}
-        </div>
-      </div>
+    <article className={`${CARD_BASE_CLASS} h-full`}>
+      <span className="text-3xl" aria-hidden="true">
+        {icon}
+      </span>
+      <h3 className="mt-4 text-lg font-semibold text-slate-900">{title}</h3>
+      <p className="mt-3 text-sm leading-6 text-slate-600">{description}</p>
+      <p className="mt-4 text-sm leading-6 text-slate-600">{details}</p>
     </article>
   );
 }
 
 function ServicesPage() {
   const { t } = useTranslation('services');
-  const labels = t('labels', { returnObjects: true });
-  const services = ['oneToOne', 'clinics', 'organisations']
-    .map((key) => ({ key, data: t(`${key}`, { returnObjects: true }) }))
-    .filter((entry) => entry.data && Object.keys(entry.data).length > 0);
-  const howSteps = t('howWeWork.steps', { returnObjects: true });
-  const pricingNotes = t('pricing.notes', { returnObjects: true });
+  const packages = t('individual.packages', { returnObjects: true });
+  const organisation = t('organisation', { returnObjects: true });
+  const practical = t('practical', { returnObjects: true });
+  const faqSnippet = t('faqSnippet.items', { returnObjects: true });
 
   return (
-    <>
-      <Hero image="/hero/services.svg" align="left" title={t('hero.title')} subtitle={t('hero.subtitle')}>
-        <Link href="/contact" className="btn-primary">
+    <MainLayout title={t('seo.title')} desc={t('seo.description')}>
+      <Hero
+        title={t('hero.title')}
+        subtitle={t('hero.subtitle')}
+        image="/hero/services.svg"
+        imageAlt={t('hero.imageAlt', { defaultValue: 'Coaching services illustration' })}
+      >
+        <Link href="/contact" className="btn-primary" aria-label={t('hero.primaryCtaAria')}>
           {t('hero.primaryCta')}
         </Link>
-        <Link href="/resources" className="btn-secondary">
+        <Link href="/contact" className="btn-secondary" aria-label={t('hero.secondaryCtaAria')}>
           {t('hero.secondaryCta')}
         </Link>
       </Hero>
 
-      <section className="py-12 sm:py-16">
+      <section className="bg-white py-16 sm:py-20" id="individual-services">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="space-y-12">
-            {services.map(({ key, data }) => (
-              <ServiceBlock key={key} service={data} labels={labels} />
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('individual.title')}
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">{t('individual.intro')}</p>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {packages.map((pkg, index) => (
+              <PackageCard
+                key={pkg.title}
+                icon={['🌱', '🌿', '🔎'][index % 3]}
+                title={pkg.title}
+                description={pkg.description}
+                details={pkg.details}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-emerald-50 py-12 sm:py-16">
+      <section className="bg-emerald-50/60 py-16 sm:py-20" id="organisation">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {t('howWeWork.title')}
+            {t('organisation.title')}
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate-700">{t('howWeWork.intro')}</p>
-          <ol className="mt-8 space-y-4 text-sm leading-6 text-slate-700">
-            {howSteps.map((step) => (
-              <li key={step} className="rounded-2xl border border-emerald-100 bg-white p-4">
-                {step}
-              </li>
+          <p className="mt-4 text-base leading-7 text-emerald-900">{organisation.intro}</p>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {organisation.points.map((point) => (
+              <article key={point} className={CARD_BASE_CLASS}>
+                <p className="text-sm leading-6 text-slate-600">{point}</p>
+              </article>
             ))}
-          </ol>
+          </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-6">
+      <section className="bg-white py-16 sm:py-20" id="practical-info">
+        <div className="mx-auto max-w-5xl px-6">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {t('pricing.title')}
+            {t('practical.title')}
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate-700">{t('pricing.intro')}</p>
-          <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-            {pricingNotes.map((note) => (
-              <li key={note}>{note}</li>
+          <p className="mt-4 text-base leading-7 text-slate-600">{practical.intro}</p>
+          <ul className="mt-6 space-y-4 text-sm leading-6 text-slate-600">
+            {practical.items.map((item) => (
+              <li key={item} className={CARD_BASE_CLASS}>
+                {item}
+              </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section className="bg-emerald-900 py-16 text-emerald-50">
-        <div className="mx-auto max-w-4xl px-6 text-center">
+      <section className="bg-emerald-50/60 py-16 sm:py-20" id="faq">
+        <div className="mx-auto max-w-5xl px-6">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            {t('faqSnippet.title')}
+          </h2>
+          <p className="mt-4 text-base leading-7 text-emerald-900">{t('faqSnippet.intro')}</p>
+          <dl className="mt-10 space-y-6">
+            {faqSnippet.map((item) => (
+              <div key={item.question} className={CARD_BASE_CLASS}>
+                <dt className="text-lg font-semibold text-slate-900">{item.question}</dt>
+                <dd className="mt-3 text-sm leading-6 text-slate-600">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
+
+      <section className="bg-slate-950 py-16 text-emerald-50">
+        <div className="mx-auto max-w-3xl px-6 text-center">
           <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t('cta.title')}</h2>
           <p className="mt-4 text-base leading-7 text-emerald-100">{t('cta.body')}</p>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact" className="btn-primary inline-flex items-center justify-center">
+            <Link href="/contact" className="btn-primary" aria-label={t('cta.primaryAria')}>
               {t('cta.primaryCta')}
             </Link>
-            <Link href="/contact" className="btn-secondary inline-flex items-center justify-center">
+            <Link href="/contact" className="btn-secondary" aria-label={t('cta.secondaryAria')}>
               {t('cta.secondaryCta')}
             </Link>
           </div>
         </div>
       </section>
 
-      <div className="px-6 pb-16">
+      <div className="px-6 pb-20">
         <ICFNotice className="mx-auto max-w-4xl" />
       </div>
-    </>
+    </MainLayout>
   );
 }
-
-ServicesPage.getLayout = function getLayout(page) {
-  return <MainLayout>{page}</MainLayout>;
-};
 
 export async function getStaticProps({ locale = 'en' }) {
   return {

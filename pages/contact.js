@@ -2,66 +2,56 @@ import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
 import ContactForm from '@/components/Sections/ContactForm';
-import { SITE_URL } from '@/lib/seo';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 import nextI18NextConfig from '../next-i18next.config.js';
 
-const CONTACT_JSON_LD = {
-  '@context': 'https://schema.org',
-  '@type': 'ContactPage',
-  url: `${SITE_URL}/contact`,
-  about: {
-    '@type': 'Organization',
-    name: 'SustainSage Group Ltd.',
-  },
-};
+const CARD_BASE_CLASS =
+  'rounded-2xl border border-emerald-100 bg-white/80 p-4 md:p-6 shadow-sm transition hover:shadow-md';
 
 function ContactPage() {
   const { t } = useTranslation('contact');
-  const expectations = t('expectations.items', { returnObjects: true });
+  const highlights = t('highlights.items', { returnObjects: true });
 
   return (
-    <>
+    <MainLayout title={t('seo.title')} desc={t('seo.description')}>
       <Hero
-        image="/hero/contact.svg"
-        align="left"
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
+        image="/hero/contact.svg"
+        imageAlt={t('hero.imageAlt', { defaultValue: 'Calendar illustration' })}
       />
-      <section className="bg-emerald-50 py-12 sm:py-16">
+
+      <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {t('expectations.title')}
-          </h2>
-          <ul className="mt-6 space-y-3 text-sm leading-6 text-emerald-900">
-            {expectations.map((item) => (
-              <li key={item} className="rounded-2xl border border-emerald-200 bg-white/70 p-4">
-                {item}
-              </li>
+          <div className="text-center">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('highlights.title')}
+            </h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">{t('highlights.intro')}</p>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            {highlights.map((item) => (
+              <article key={item.title} className={CARD_BASE_CLASS}>
+                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
+              </article>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
-      <div className="pb-12">
+      <div className="bg-emerald-50/60 py-16 sm:py-20">
         <ContactForm />
       </div>
-      <div className="px-6 pb-16">
+
+      <div className="px-6 pb-20">
         <ICFNotice className="mx-auto max-w-4xl" />
       </div>
-    </>
-  );
-}
-
-ContactPage.getLayout = function getLayout(page) {
-  return (
-    <MainLayout jsonLd={CONTACT_JSON_LD}>
-      {page}
     </MainLayout>
   );
-};
+}
 
 export async function getStaticProps({ locale = 'en' }) {
   return {

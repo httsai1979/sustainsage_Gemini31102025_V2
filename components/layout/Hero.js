@@ -1,63 +1,52 @@
 import Image from 'next/image';
 
-function classNames(...values) {
-  return values.filter(Boolean).join(' ');
-}
-
 export default function Hero({
   title,
   subtitle,
   eyebrow,
   children,
-  align = 'center',
   image = '/hero/default.svg',
-  imageAlt = 'Abstract gradient background',
-  overlay = 'dark',
+  imageAlt = 'Illustration representing the page topic',
   priority = false,
 }) {
-  const isLeftAligned = align === 'left';
-  const alignmentClasses = isLeftAligned ? 'items-start text-left' : 'items-center text-center';
-  const actionsAlignment = isLeftAligned ? 'justify-start' : 'justify-center';
-  const overlayClass = overlay === 'light' ? 'bg-white/35' : 'bg-slate-950/55';
-
   return (
-    <section className="relative isolate overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src={image}
-          alt={imageAlt}
-          fill
-          priority={priority}
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className={classNames('absolute inset-0', overlayClass)} aria-hidden="true" />
-      </div>
-
-      <div className="mx-auto w-full max-w-6xl px-6 py-24 sm:py-32">
-        <div className={classNames('flex max-w-3xl flex-col gap-5 text-white', alignmentClasses)}>
+    <section className="bg-emerald-950/5 py-16 sm:py-24">
+      <div className="mx-auto flex w-full max-w-6xl flex-col-reverse items-center gap-12 px-6 lg:flex-row lg:gap-16">
+        <div className="w-full max-w-2xl text-left">
           {eyebrow && (
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-200">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">
               {eyebrow}
             </p>
           )}
           {title && (
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-5xl">
+            <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
               {title}
             </h1>
           )}
           {subtitle && (
-            <p className="text-lg leading-8 text-emerald-50/90 sm:text-xl">
+            <p className="mt-6 text-lg leading-8 text-slate-700 sm:text-xl">
               {subtitle}
             </p>
           )}
+          {children && (
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              {children}
+            </div>
+          )}
         </div>
 
-        {children && (
-          <div className={classNames('mt-8 flex flex-wrap gap-3', actionsAlignment)}>
-            {children}
+        <div className="relative w-full max-w-md lg:max-w-lg">
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl border border-emerald-100 bg-white/70 shadow-sm">
+            <Image
+              src={image}
+              alt={imageAlt}
+              fill
+              priority={priority}
+              sizes="(min-width: 1024px) 480px, 100vw"
+              className="object-contain p-6 sm:p-10"
+            />
           </div>
-        )}
+        </div>
       </div>
     </section>
   );
