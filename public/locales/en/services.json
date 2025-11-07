@@ -1,87 +1,106 @@
 {
   "seo": {
     "title": "Services | SustainSage",
-    "description": "Bilingual coaching plans for UK newcomers, returners, graduates, and mid-career professionals."
+    "description": "Explore SustainSage coaching services: one-to-one coaching, small-group clinics, and organisational partnerships. Client-led, ICF-aligned, and clearly bounded."
   },
   "hero": {
-    "title": "Services",
-    "subtitle": "Structured yet flexible coaching plans that honour your pace, culture, and goals."
+    "title": "Services that meet you where you are",
+    "subtitle": "Choose the format that fits your transition. All offers are ICF-aligned, bilingual, and co-designed so you stay in consent.",
+    "primaryCta": "Book a chemistry chat",
+    "secondaryCta": "Explore resources"
   },
-  "plans": {
-    "title": "Coaching plans built around your context",
-    "intro": "Each plan provides a starting structure. We fine-tune cadence, language, and support once we understand your priorities.",
-    "fields": {
-      "audience": "Best for",
-      "format": "Format & rhythm",
-      "process": "How it works",
-      "outcomes": "You can expect"
-    },
-    "items": [
-      {
-        "title": "Landing in the UK coaching series",
-        "audience": "Internationally trained professionals and newcomers learning how UK workplaces operate.",
-        "format": "4–6 sessions over 8–12 weeks; 50-minute virtual sessions with optional bilingual summaries.",
-        "process": "We start with clarity on goals, support systems, and cultural questions, then alternate reflection and experiment design check-ins.",
-        "outcomes": "Map the norms you need to decode, rehearse key conversations, and test low-risk experiments to build confidence."
-      },
-      {
-        "title": "Mid-career recalibration",
-        "audience": "Mid-career leaders weighing role changes, portfolio careers, or postgraduate study.",
-        "format": "6 sessions across 3–4 months; remote conversations plus light asynchronous prompts between meetings.",
-        "process": "We combine values clarification, stakeholder mapping, and experiment ladders to evaluate options in your real context.",
-        "outcomes": "Define decision criteria, design small trials, and craft narratives for senior stakeholders or hiring panels."
-      },
-      {
-        "title": "Return-to-work runway",
-        "audience": "Professionals re-entering work after caregiving, health, or relocation pauses.",
-        "format": "5 sessions over 10–14 weeks; bilingual coaching with practical templates for routines and conversations.",
-        "process": "We begin with a gentle debrief of the pause, then co-design energy checkpoints, support requests, and experiments that rebuild momentum.",
-        "outcomes": "Tell a grounded return story, set sustainable routines, and create check-ins for the first 90 days back."
-      },
-      {
-        "title": "Graduate & early-career lab",
-        "audience": "Recent graduates or career shifters preparing for their first professional role in the UK.",
-        "format": "4 sessions across 8 weeks; remote coaching with optional peer practice activities.",
-        "process": "We blend reflective questions with scenario rehearsal around interviews, onboarding, and everyday workplace communication.",
-        "outcomes": "Name your strengths, design learning experiments, and set up accountability that keeps you moving without overwhelm."
-      }
-    ]
+  "labels": {
+    "for": "Who it’s for",
+    "focus": "Focus",
+    "format": "Format",
+    "languages": "Languages",
+    "boundaries": "Boundaries"
   },
-  "partnership": {
-    "title": "What we hold in every engagement",
-    "lead": "Regardless of the plan, you receive steady partnership that keeps ethics, pace, and context in view.",
-    "items": [
-      {
-        "title": "ICF-aligned ethics",
-        "description": "We work under the International Coaching Federation code, with informed consent, clear confidentiality boundaries, and supervision when needed."
-      },
-      {
-        "title": "Co-created experiments",
-        "description": "You lead the agenda. We co-design reflective practices and real-world experiments that you own, iterate, or decline."
-      },
-      {
-        "title": "Bilingual, culturally aware support",
-        "description": "Sessions can move between English and Mandarin. We stay mindful of both UK workplace norms and the nuances of Chinese-speaking cultures."
-      }
+  "oneToOne": {
+    "title": "1:1 Coaching",
+    "summary": "Dedicated space to explore goals, identity, and experiments without judgement.",
+    "for": [
+      "Professionals navigating relocation, career shifts, or integration into UK workplaces.",
+      "Leaders balancing multicultural teams or stakeholder expectations.",
+      "Individuals returning from a career break who want steady accountability."
     ],
+    "focus": [
+      "Clarifying values, strengths, and desired impact.",
+      "Designing experiments to test new roles, industries, or ways of working.",
+      "Building confidence in bilingual communication and boundary setting."
+    ],
+    "format": [
+      "4–6 session cycles, 50–60 minutes each.",
+      "Virtual sessions via secure video calls, with optional in-person intensives in London subject to availability.",
+      "Optional reflection prompts or voice-note check-ins between sessions (only with your consent)."
+    ],
+    "languages": "Available in English, Traditional Chinese, Simplified Chinese, or a blend.",
+    "boundaries": "Coaching is not therapy, legal, immigration, medical, or financial advice. We will signpost other professionals if that support is needed."
+  },
+  "clinics": {
+    "title": "Small-group coaching clinics",
+    "summary": "Gentle group spaces (4–6 people) for shared learning while keeping individual agency.",
+    "for": [
+      "Employee resource groups or community circles wanting culturally aware facilitation.",
+      "Teams preparing for change, such as restructures or international moves.",
+      "Universities or incubators supporting graduates and founders with reflective practice."
+    ],
+    "focus": [
+      "Creating peer support agreements and shared language for wellbeing.",
+      "Exploring complex transitions through coaching-style questions and exercises.",
+      "Designing experiments each participant can adapt to their own context."
+    ],
+    "format": [
+      "Series of 3–6 sessions, 75–90 minutes each.",
+      "Hosted online; on-site delivery in the UK available with travel costs covered.",
+      "Includes optional bilingual resources and summaries for participants."
+    ],
+    "languages": "Delivered in English, Traditional Chinese, Simplified Chinese, or bilingual formats.",
+    "boundaries": "Clinics remain coaching spaces, not training or therapy. Participation is always voluntary, and safeguarding protocols are agreed upfront."
+  },
+  "organisations": {
+    "title": "Support for organisations",
+    "summary": "Consultation-light partnerships to embed coaching practices across multicultural teams.",
+    "for": [
+      "People and culture teams wanting to offer bilingual coaching access.",
+      "Leaders planning responsible change or return-to-work pathways.",
+      "Non-profits and social enterprises supporting diaspora communities."
+    ],
+    "focus": [
+      "Scoping coaching programmes aligned with ICF ethics and organisational policies.",
+      "Designing reflective workshops for managers and team leads.",
+      "Developing referral pathways and safeguarding agreements."
+    ],
+    "format": [
+      "Discovery sessions to understand needs and consent requirements.",
+      "Co-created proposals outlining objectives, language mix, and evaluation rhythms.",
+      "Quarterly reviews to adjust or close the partnership responsibly."
+    ],
+    "languages": "Materials and delivery available in English, Traditional Chinese, and Simplified Chinese.",
+    "boundaries": "We do not replace internal HR, legal, or mental health services. We collaborate with your specialists to keep scope clear."
+  },
+  "howWeWork": {
+    "title": "How we work together",
+    "intro": "Every engagement begins with informed consent and clear agreements.",
+    "steps": [
+      "Chemistry chat to understand goals, language preferences, and accessibility needs.",
+      "Written agreement covering scope, confidentiality, fees, cancellation policy, and safeguarding exceptions.",
+      "Regular reviews to celebrate learning, adjust the plan, or conclude when the work is complete."
+    ]
+  },
+  "pricing": {
+    "title": "Pricing notes",
+    "intro": "We price transparently and offer sliding scales where possible.",
     "notes": [
-      "We regularly review usefulness, pause when required, and signpost therapy, legal, or medical professionals if that becomes more appropriate."
+      "Rates are quoted in GBP and shared after the chemistry chat based on the agreed scope.",
+      "Discounted places are reserved for community organisers, jobseekers, and self-funded individuals on lower incomes.",
+      "Invoices include clear payment timelines, data handling practices, and cancellation terms."
     ]
   },
-  "boundaries": {
-    "title": "Where coaching is not a fit",
-    "items": [
-      "Therapy, counselling, psychiatric care, or crisis intervention.",
-      "Immigration, legal, tax, or financial advice.",
-      "Guaranteed job placements or outcomes."
-    ]
-  },
-  "logistics": {
-    "title": "Practical details",
-    "items": [
-      "Sessions are online in UK time. We agree on scheduling windows that respect your other commitments.",
-      "Pricing is shared after the intro call once scope and organisational sponsorship (if any) are clear.",
-      "We keep light, client-owned session notes and store data in UK/EU compliant systems."
-    ]
+  "cta": {
+    "title": "Start with a conversation",
+    "body": "Share what you are navigating and we will suggest formats—or signpost alternatives—so you can choose the support that fits.",
+    "primaryCta": "Book a chemistry chat",
+    "secondaryCta": "Contact us"
   }
 }
