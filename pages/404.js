@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -27,17 +28,18 @@ function NotFoundPage() {
   );
 }
 
-NotFoundPage.layoutProps = (pageProps) => {
-  const i18n = pageProps?._nextI18Next;
+NotFoundPage.getLayout = function getLayout(page) {
+  const i18n = page.props?._nextI18Next;
   const locale = i18n?.initialLocale;
   const desc =
     (locale && i18n?.initialI18nStore?.[locale]?.common?.errorPages?.notFoundSubtitle) ||
     'The page you were looking for could not be found.';
 
-  return {
-    title: 'Page not found | SustainSage',
-    desc,
-  };
+  return (
+    <MainLayout title="Page not found | SustainSage" desc={desc}>
+      {page}
+    </MainLayout>
+  );
 };
 
 export async function getStaticProps({ locale = 'en' }) {

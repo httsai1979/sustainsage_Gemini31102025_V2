@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
 import { HoverLift, Reveal } from '@/components/ui/Motion';
@@ -133,9 +134,12 @@ function ResourcesPage() {
   );
 }
 
-ResourcesPage.layoutProps = {
-  title: 'Resources | SustainSage',
-  desc: 'Self-reflection tools you can use at your pace.',
+ResourcesPage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout title="Resources | SustainSage" desc="Self-reflection tools you can use at your pace.">
+      {page}
+    </MainLayout>
+  );
 };
 
 export async function getStaticProps({ locale = 'en' }) {

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -27,17 +28,18 @@ function ServerErrorPage() {
   );
 }
 
-ServerErrorPage.layoutProps = (pageProps) => {
-  const i18n = pageProps?._nextI18Next;
+ServerErrorPage.getLayout = function getLayout(page) {
+  const i18n = page.props?._nextI18Next;
   const locale = i18n?.initialLocale;
   const desc =
     (locale && i18n?.initialI18nStore?.[locale]?.common?.errorPages?.serverErrorSubtitle) ||
     'Something went wrong on our side. Please try again.';
 
-  return {
-    title: 'Something went wrong | SustainSage',
-    desc,
-  };
+  return (
+    <MainLayout title="Something went wrong | SustainSage" desc={desc}>
+      {page}
+    </MainLayout>
+  );
 };
 
 export async function getStaticProps({ locale = 'en' }) {
