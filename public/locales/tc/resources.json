@@ -1,57 +1,74 @@
 {
   "seo": {
-    "title": "資源｜SustainSage",
-    "description": "結合教練實務的反思題目、職涯實驗與文化適應工具，適合在會談之間延伸使用。"
+    "title": "資源工具｜SustainSage",
+    "description": "SustainSage 精選的教練式工作紙、提問與播放清單。以 ICF 倫理為底，邀請你在同意與自我照顧中調整使用。"
   },
   "hero": {
-    "title": "資源",
-    "subtitle": "輕量卻有深度的反思工具，讓你在會談之間持續前進。"
+    "title": "按照自己的節奏停下來看看",
+    "subtitle": "這些雙語資源陪你在會談之間持續實驗。沒有強迫下載或留下資料，只是提醒你在適合的時刻停一停。"
   },
-  "curatedTitle": "與教練客戶共同整理的資源",
-  "curatedIntro": "這些工具來自實際教練合作中的提問、清單與模板。有些可以立即提供，有些仍在試行階段—歡迎告訴我們你最需要什麼。",
-  "usageNote": "這些資源用於反思與設計實驗，並非治療、法律意見或其他專業服務的替代方案。",
-  "items": {
-    "reflectionQuestions": {
-      "title": "反思問題組",
-      "summary": "協助你察覺文化轉換、價值與決策節點的假設。",
-      "format": "格式：PDF 包",
-      "status": "可立即取得",
-      "cta": "索取題目包"
-    },
-    "careerExperiments": {
-      "title": "職涯實驗模板",
-      "summary": "一步步規劃低風險實驗，在做出重大決定前先測試。",
-      "format": "格式：工作表組合",
-      "status": "客戶試行中",
-      "cta": "加入試行名單"
-    },
-    "culturalChecklists": {
-      "title": "文化適應清單",
-      "summary": "引導你觀察英國職場規範，同時保留原有優勢。",
-      "format": "格式：核對表",
-      "status": "可立即取得",
-      "cta": "索取清單"
-    },
-    "conversationGuides": {
-      "title": "對話演練指南",
-      "summary": "準備利害關係人更新、回饋對話與人脈經營的框架與腳本。",
-      "format": "格式：簡報",
-      "status": "開發中",
-      "cta": "登記興趣"
-    },
-    "selfAdvocacy": {
-      "title": "自我倡議工具包",
-      "summary": "提供請求資源、爭取機會時的句型與節奏提示。",
-      "format": "格式：文件",
-      "status": "客戶試行中",
-      "cta": "加入試行名單"
-    },
-    "reviewJournal": {
-      "title": "月度回顧手冊",
-      "summary": "以溫和的結構紀錄每月的亮點、學習與下階段實驗。",
-      "format": "格式：Notion / PDF",
-      "status": "可立即取得",
-      "cta": "索取手冊"
-    }
+  "featured": {
+    "title": "推薦工具",
+    "intro": "每項資源都以 ICF 教練原則設計，讓你可以依真實情況調整。",
+    "tools": [
+      {
+        "id": "values-worksheet",
+        "title": "價值與定錨工作紙",
+        "summary": "引導你辨識在陌生職場中帶來穩定的價值與支持。",
+        "format": "PDF 工作紙｜雙語",
+        "cta": "下載工作紙",
+        "status": "已更新"
+      },
+      {
+        "id": "micro-experiments",
+        "title": "小步實驗規劃表",
+        "summary": "協助你設計低風險測試，清楚寫下同意、支持與學習指標。",
+        "format": "Notion 範本｜三語",
+        "cta": "複製範本"
+      },
+      {
+        "id": "culture-bridges",
+        "title": "文化轉譯檢核表",
+        "summary": "用提問串連英國職場規範與華人文化智慧，既不失自己也尊重他人。",
+        "format": "檢核表｜雙語",
+        "cta": "開啟檢核表"
+      },
+      {
+        "id": "conversation-starters",
+        "title": "教練式對話啟動卡",
+        "summary": "幫助你與夥伴、導師或社群展開反思對話的提問。",
+        "format": "提問卡｜雙語",
+        "cta": "查看提問"
+      },
+      {
+        "id": "grounding-audio",
+        "title": "過程中的安定練習音檔",
+        "summary": "短版雙語練習，讓你在重要對話前後重新整頓。",
+        "format": "音訊播放清單｜雙語",
+        "cta": "線上收聽"
+      },
+      {
+        "id": "review-journal",
+        "title": "學習回顧手札",
+        "summary": "輕量的紀錄工具，支持你在每次實驗後整理洞察並規劃下一步。",
+        "format": "Google 文件｜雙語",
+        "cta": "建立副本"
+      }
+    ]
+  },
+  "disclaimer": {
+    "title": "使用時請照顧自己",
+    "body": "這些工具是教練對話的延伸，不是治療、法律、移民、醫療或財務建議。請依自己的狀態調整，若感到負擔可隨時停下。",
+    "points": [
+      "你可以選擇要做或不做，沒有必交作業。",
+      "與他人一起使用時，請尊重彼此保密協議，只分享獲得同意的內容。",
+      "若過程中浮現強烈情緒，請尋求可信任的支持或專業協助。"
+    ]
+  },
+  "cta": {
+    "title": "想有人陪你一起走過嗎？",
+    "body": "歡迎預約相互了解，一起看看哪些資源適合你，或為團隊量身打造新工具。",
+    "primaryCta": "與教練聊聊",
+    "secondaryCta": "聯絡我們"
   }
 }

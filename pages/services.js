@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
@@ -6,53 +8,84 @@ import { useTranslation } from 'next-i18next';
 
 import nextI18NextConfig from '../next-i18next.config.js';
 
+function ServiceBlock({ service, labels }) {
+  if (!service) return null;
+
+  const { title, summary, for: audience = [], focus = [], format = [], languages, boundaries } = service;
+
+  return (
+    <article className="rounded-3xl border border-emerald-100 bg-white p-8 shadow-sm">
+      <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
+      <p className="mt-3 text-base leading-7 text-slate-600">{summary}</p>
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <div>
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{labels.for}</h4>
+          <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
+            {audience.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{labels.focus}</h4>
+          <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
+            {focus.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <div className="mt-6 grid gap-6 md:grid-cols-2">
+        <div>
+          <h4 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{labels.format}</h4>
+          <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
+            {format.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+        <div className="space-y-3 text-sm leading-6 text-slate-600">
+          {languages && (
+            <p>
+              <span className="font-semibold text-slate-900">{labels.languages}:</span> {languages}
+            </p>
+          )}
+          {boundaries && (
+            <p>
+              <span className="font-semibold text-slate-900">{labels.boundaries}:</span> {boundaries}
+            </p>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function ServicesPage() {
   const { t } = useTranslation('services');
-  const toArray = (value) => (Array.isArray(value) ? value : value ? [value] : []);
-  const plans = toArray(t('plans.items', { returnObjects: true }));
-  const partnershipItems = toArray(t('partnership.items', { returnObjects: true }));
-  const partnershipNotes = toArray(t('partnership.notes', { returnObjects: true }));
-  const boundaries = toArray(t('boundaries.items', { returnObjects: true }));
-  const logistics = toArray(t('logistics.items', { returnObjects: true }));
+  const labels = t('labels', { returnObjects: true });
+  const services = ['oneToOne', 'clinics', 'organisations']
+    .map((key) => ({ key, data: t(`${key}`, { returnObjects: true }) }))
+    .filter((entry) => entry.data && Object.keys(entry.data).length > 0);
+  const howSteps = t('howWeWork.steps', { returnObjects: true });
+  const pricingNotes = t('pricing.notes', { returnObjects: true });
 
   return (
     <>
-      <Hero
-        image="/hero/services.svg"
-        align="left"
-        title={t('hero.title')}
-        subtitle={t('hero.subtitle')}
-      />
+      <Hero image="/hero/services.svg" align="left" title={t('hero.title')} subtitle={t('hero.subtitle')}>
+        <Link href="/contact" className="btn-primary">
+          {t('hero.primaryCta')}
+        </Link>
+        <Link href="/resources" className="btn-secondary">
+          {t('hero.secondaryCta')}
+        </Link>
+      </Hero>
 
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {t('plans.title')}
-          </h2>
-          <p className="mt-4 text-base leading-7 text-slate-700">{t('plans.intro')}</p>
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            {plans.map((item) => (
-              <article key={item.title} className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                <dl className="mt-4 space-y-3 text-sm leading-6 text-slate-600">
-                  <div>
-                    <dt className="font-semibold text-slate-900">{t('plans.fields.audience')}</dt>
-                    <dd className="mt-1">{item.audience}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-semibold text-slate-900">{t('plans.fields.format')}</dt>
-                    <dd className="mt-1">{item.format}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-semibold text-slate-900">{t('plans.fields.process')}</dt>
-                    <dd className="mt-1">{item.process}</dd>
-                  </div>
-                  <div>
-                    <dt className="font-semibold text-slate-900">{t('plans.fields.outcomes')}</dt>
-                    <dd className="mt-1">{item.outcomes}</dd>
-                  </div>
-                </dl>
-              </article>
+          <div className="space-y-12">
+            {services.map(({ key, data }) => (
+              <ServiceBlock key={key} service={data} labels={labels} />
             ))}
           </div>
         </div>
@@ -61,53 +94,45 @@ function ServicesPage() {
       <section className="bg-emerald-50 py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {t('partnership.title')}
+            {t('howWeWork.title')}
           </h2>
-          <p className="mt-4 text-base leading-7 text-slate-700">{t('partnership.lead')}</p>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {partnershipItems.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-3xl border border-emerald-100 bg-white p-6 text-sm leading-6 text-slate-700 shadow-sm"
-              >
-                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-              </article>
+          <p className="mt-4 text-base leading-7 text-slate-700">{t('howWeWork.intro')}</p>
+          <ol className="mt-8 space-y-4 text-sm leading-6 text-slate-700">
+            {howSteps.map((step) => (
+              <li key={step} className="rounded-2xl border border-emerald-100 bg-white p-4">
+                {step}
+              </li>
             ))}
-          </div>
-          {partnershipNotes.length > 0 && (
-            <ul className="mt-8 space-y-3 text-sm leading-6 text-slate-700">
-              {partnershipNotes.map((note) => (
-                <li key={note}>{note}</li>
-              ))}
-            </ul>
-          )}
+          </ol>
         </div>
       </section>
 
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {t('boundaries.title')}
+            {t('pricing.title')}
           </h2>
+          <p className="mt-4 text-base leading-7 text-slate-700">{t('pricing.intro')}</p>
           <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-            {boundaries.map((item) => (
-              <li key={item}>{item}</li>
+            {pricingNotes.map((note) => (
+              <li key={note}>{note}</li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section className="bg-white py-12 sm:py-16">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {t('logistics.title')}
-          </h2>
-          <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-            {logistics.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
+      <section className="bg-emerald-900 py-16 text-emerald-50">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t('cta.title')}</h2>
+          <p className="mt-4 text-base leading-7 text-emerald-100">{t('cta.body')}</p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link href="/contact" className="btn-primary inline-flex items-center justify-center">
+              {t('cta.primaryCta')}
+            </Link>
+            <Link href="/contact" className="btn-secondary inline-flex items-center justify-center">
+              {t('cta.secondaryCta')}
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -119,11 +144,7 @@ function ServicesPage() {
 }
 
 ServicesPage.getLayout = function getLayout(page) {
-  return (
-    <MainLayout title="Services | SustainSage" desc="ICF-aligned, client-led coaching formats.">
-      {page}
-    </MainLayout>
-  );
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export async function getStaticProps({ locale = 'en' }) {

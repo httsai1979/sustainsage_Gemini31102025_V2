@@ -29,26 +29,40 @@ export default function HomeHero() {
           並傳入 "reveal-1" 等 class 來實現交錯動畫
         */}
         <Reveal>
+          {t('hero.eyebrow', { defaultValue: '' }) && (
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">
+              {t('hero.eyebrow')}
+            </p>
+          )}
+        </Reveal>
+
+        <Reveal className="reveal-1">
           <h1 className="h1">
             <span>{t('hero.title')}</span>
           </h1>
         </Reveal>
-        
-        <Reveal className="reveal-1">
+
+        <Reveal className="reveal-2">
           <p className="body-text text-text-secondary mt-6 text-xl">
             <span>{t('hero.subtitle')}</span>
           </p>
         </Reveal>
-        
-        <Reveal className="reveal-2">
-          {/*
-            將 <a href="#contact" data-page-link="contact">
-            轉換為 <Link href="/contact">
-          */}
-          <Link href="/contact" className="btn-primary mt-10 inline-block">
-            <span>{t('hero.cta')}</span>
-          </Link>
-        </Reveal>
+
+        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          <Reveal className="reveal-3">
+            <Link href="/contact" className="btn-primary inline-flex items-center justify-center">
+              <span>{t('hero.primaryCta')}</span>
+            </Link>
+          </Reveal>
+          <Reveal className="reveal-4">
+            <Link
+              href="#how-coaching-works"
+              className="btn-secondary inline-flex items-center justify-center"
+            >
+              <span>{t('hero.secondaryCta')}</span>
+            </Link>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

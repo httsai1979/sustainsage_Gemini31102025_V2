@@ -1,102 +1,52 @@
 {
   "seo": {
     "title": "部落格｜SustainSage",
-    "description": "以教練視角整理的短篇反思、提問與文化洞見，陪伴在英職涯轉換的人。"
+    "description": "SustainSage 分享的反思文章與教練提問，涵蓋職涯轉換、文化橋接與溫和領導。"
   },
   "hero": {
-    "title": "教練視角的反思",
-    "subtitle": "短篇閱讀與可實作的提問，根據 ICF 倫理與真實轉換經驗而寫。"
+    "title": "停一停，實驗，再觀察",
+    "subtitle": "短篇閱讀搭配教練式提問，陪你深呼吸、覺察，並選擇下一個小實驗。"
   },
-  "listTitle": "最新觀點",
-  "emptyState": "目前尚未發布文章，歡迎稍後再回來。",
-  "fallbackNotice": "以下文章由教練團隊直接整理，供內容管理系統更新期間參考。",
-  "error": "暫時無法載入最新文章，以下為我們精選的內容。",
-  "errorDetail": "若情況持續，歡迎透過聯絡表單告訴我們。",
-  "backToList": "返回文章列表",
-  "missingBody": "本文內容仍在整理中，歡迎稍後再回來。",
-  "notFound": "找不到對應的文章。",
+  "filters": [
+    { "value": "all", "label": "全部主題" },
+    { "value": "career", "label": "職涯轉換" },
+    { "value": "culture", "label": "文化與歸屬" },
+    { "value": "leadership", "label": "領導與團隊" },
+    { "value": "wellbeing", "label": "身心與步調" }
+  ],
+  "listTitle": "最新反思",
+  "emptyState": "文章籌備中，歡迎稍後再來或訂閱電子報。",
+  "fallbackNotice": "以下文章為我們準備新內容前的反思占位稿。",
   "post1": {
-    "slug": "career-change-coaching-perspective",
-    "category": "職涯反思",
-    "title": "轉職：看見失去與獲得，做出踏實選擇",
-    "excerpt": "當離開熟悉職位時，情緒與期待往往同時存在。",
-    "image": "/images/blog/career-change.svg",
-    "publishedDate": "2025-10-25",
+    "slug": "making-room-for-slow-transition",
+    "title": "為慢速轉換留出空間",
+    "excerpt": "當你想顧及家人期待又想在英國調整職涯，可以如何安排節奏？試試這些提問。",
+    "category": "career",
+    "image": "/images/blog/slow-transition.svg",
+    "publishedDate": "2024-02-11",
     "meta": {
-      "author": "作者：蔡浩丞",
-      "date": "2025 年 10 月 25 日",
-      "readingTime": "約 4 分鐘閱讀"
+      "date": "2024 年 2 月 11 日",
+      "readingTime": "約 5 分鐘"
     },
-    "article": {
-      "paragraphs": [
-        "多數人在思考轉職時先想到新的好處——新的職稱、更多彈性或更有意義的工作。但任何改變，即使是正向的，也伴隨某種失落。",
-        "可能失去的是熟悉的節奏、明確的身份、專業的安心感，甚至是穩定的收入。把這些感受說出來，就能減少過程中被情緒突襲的驚慌。"
-      ],
-      "quote": "教練空間讓我們在沒有評價的情況下，向結束的階段好好致敬，再踏實地迎向下一步。",
-      "sections": [
-        {
-          "heading": "看見正在變動的部分",
-          "paragraphs": [
-            "在設定新計畫前，先點名哪些關係、日常或成功指標正在改變。",
-            "這份覺察能在之後疑慮浮現時，帶來同理與穩定。"
-          ]
-        },
-        {
-          "heading": "刻意設計新的節奏",
-          "paragraphs": [
-            "釐清失落後，我們設計新的習慣、對話與實驗，支持自己走向新角色。",
-            "教練陪你在安全的場域中測試選項，並與價值觀對齊。"
-          ]
-        }
-      ],
-      "outro": [
-        "問自己不只「我想得到什麼？」也包括「我願意放下什麼？」與「我要如何標記這段轉換？」"
-      ]
-    }
+    "prompts": [
+      "在做下一個決定前，故事裡哪些部分需要被看見？",
+      "哪一個小實驗能同時照顧現在的能量？"
+    ]
   },
   "post2": {
-    "slug": "uk-job-hunt-reading-between-the-lines",
-    "category": "跨文化",
-    "title": "讀懂英國求職的字裡行間",
-    "excerpt": "為初到英國的求職者整理不成文的期待。",
-    "image": "/images/blog/uk-job-hunt.svg",
-    "publishedDate": "2025-08-12",
+    "slug": "bridging-languages-at-work",
+    "title": "在職場搭起語言橋梁",
+    "excerpt": "如何運用雙語教練提問，讓英國職場規範與華人文化智慧相互對話、不再耗竭。",
+    "category": "culture",
+    "image": "/images/blog/bridging-languages.svg",
+    "publishedDate": "2024-03-19",
     "meta": {
-      "author": "作者：賴怡伶",
-      "date": "2025 年 8 月 12 日",
-      "readingTime": "約 5 分鐘閱讀"
+      "date": "2024 年 3 月 19 日",
+      "readingTime": "約 6 分鐘"
     },
-    "article": {
-      "paragraphs": [
-        "移居英國除了語言與氣候，求職禮儀也需要重新適應。許多新移民投遞數十份履歷仍無回音，往往是因為未被說出口的期待。",
-        "教練對話常從挫折開始，接著我們一起拆解雇主在文字與互動裡的訊號。"
-      ],
-      "sections": [
-        {
-          "heading": "細讀職缺描述",
-          "paragraphs": [
-            "像 self-starter 等詞彙代表雇主期待看到主動行動的案例，而不只是列出職責。",
-            "將自己的故事連結到組織使命，也有助於在眾多履歷中被注意到。"
-          ]
-        },
-        {
-          "heading": "有意識地延伸對話",
-          "paragraphs": [
-            "面試後寄出簡短的感謝信，在英國被視為專業的表現。",
-            "提及談話中的亮點或分享相關資源，能展現專注與熱忱。"
-          ],
-          "list": [
-            "總結對談中讓你感到興奮的重點。",
-            "連結自己的經驗與組織的長期目標。",
-            "若適合，邀請面試官持續交流。"
-          ]
-        }
-      ],
-      "quote": "跨文化轉換不是放棄原來的自己，而是擴展表達優勢的方式。",
-      "outro": [
-        "熟悉這些訊號後，求職就不再像解謎，而是清楚分享自己的故事。",
-        "教練能提供演練與實驗的空間，幫助你建立信心。"
-      ]
-    }
+    "prompts": [
+      "哪種語言能讓你自在地表達疑惑而不用道歉？",
+      "你需要在哪裡設下界線，讓多語能力保持喜悅？"
+    ]
   }
 }

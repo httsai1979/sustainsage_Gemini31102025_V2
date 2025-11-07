@@ -1,41 +1,50 @@
 {
   "seo": {
     "title": "聯絡我們｜SustainSage",
-    "description": "預約一場 20 分鐘的中英雙語對談，確認教練合作是否適合你。"
+    "description": "預約一場沉穩的雙語初談。了解流程、確認同意，並分享我們如何在英國陪你面對轉換。"
   },
   "hero": {
-    "title": "聯絡我們",
-    "subtitle": "歡迎分享你想討論的主題，以及偏好的合作方式。"
+    "title": "寫信給我們",
+    "subtitle": "告訴我們你正在經歷的情況，以及最自在的語言。我們會提供選擇，而不是施加壓力。"
+  },
+  "expectations": {
+    "title": "流程說明",
+    "items": [
+      "我們會在兩個英國工作天內回覆，安排 20 分鐘的相互了解。",
+      "初談會確認目標、語言偏好、無障礙需求與你的同意。",
+      "若教練並非最佳選項，我們會建議其他資源，例如治療、法律、移民、醫療或財務協助。"
+    ]
   },
   "form": {
-    "title": "寫信給我們",
-    "subtitle": "你提供的資訊會在法律與安全例外範圍內保密。",
+    "title": "寫下你的想法",
+    "subtitle": "除法律或安全需求外，你提供的資訊都會保密。",
     "name": "姓名",
     "email": "電子郵件",
-    "topicLabel": "我想了解…",
-    "topicPlaceholder": "請選擇關注主題",
-    "message": "想一起探索的內容",
-    "consent": "我同意 SustainSage 與我聯繫，討論初談安排。我理解這不屬於醫療、法律或財務建議。",
+    "topicLabel": "想了解的服務",
+    "topicPlaceholder": "請選擇",
+    "message": "想一起探索的主題",
+    "consent": "我同意 SustainSage 就教練服務與我聯繫，並理解這裡不提供治療、法律、移民、醫療或財務建議。",
+    "privacyNote": "若未開始合作，我們會安全刪除資料，除非法律要求保留。",
     "submit": "送出",
     "status": {
-      "submitting": "傳送中…",
+      "submitting": "寄出中…",
       "success": "謝謝你，我們會在兩個工作天內回覆。",
-      "error": "傳送時發生問題，請再試一次或直接寄信給我們。",
-      "errorRequired": "請完成所有必填欄位並確認同意。"
+      "error": "寄送時發生問題，請再試一次或直接寫信給我們。",
+      "errorRequired": "請完成必填欄位並勾選同意。"
     },
     "topics": [
-      { "value": "CAREER_TRANSITION", "label": "職涯轉換" },
-      { "value": "NEW_GRADUATE", "label": "應屆畢業生" },
-      { "value": "NEW_IMMIGRANT", "label": "新移民適應" },
-      { "value": "OTHER", "label": "其他需求" }
+      { "value": "ONE_TO_ONE", "label": "一對一教練" },
+      { "value": "GROUP_CLINIC", "label": "小型共學診所" },
+      { "value": "ORGANISATION", "label": "組織合作" },
+      { "value": "SOMETHING_ELSE", "label": "其他" }
     ]
   },
   "sidebar": {
-    "title": "接下來會怎麼進行",
-    "description": "我們會邀請你安排 20 分鐘初談，了解情境並共同設計下一步。",
+    "title": "後續會發生什麼",
+    "description": "我們會提供 20 分鐘雙語相互了解的時段，看看如何支持你。",
     "responseTitle": "回覆時間",
-    "responseCopy": "一般在兩個工作天內回覆，通常會更快。",
+    "responseCopy": "通常會在兩個英國工作天內回覆，若可會更快。",
     "privacyTitle": "保密說明",
-    "privacyCopy": "除非涉及安全或法律需求，我們不會在未經同意的情況下分享你的資訊。"
+    "privacyCopy": "除法律或安全需求外，我們不會分享你的資訊。"
   }
 }

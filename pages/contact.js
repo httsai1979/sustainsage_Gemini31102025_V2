@@ -20,6 +20,7 @@ const CONTACT_JSON_LD = {
 
 function ContactPage() {
   const { t } = useTranslation('contact');
+  const expectations = t('expectations.items', { returnObjects: true });
 
   return (
     <>
@@ -29,6 +30,21 @@ function ContactPage() {
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
       />
+      <section className="bg-emerald-50 py-12 sm:py-16">
+        <div className="mx-auto max-w-4xl px-6">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            {t('expectations.title')}
+          </h2>
+          <ul className="mt-6 space-y-3 text-sm leading-6 text-emerald-900">
+            {expectations.map((item) => (
+              <li key={item} className="rounded-2xl border border-emerald-200 bg-white/70 p-4">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <div className="pb-12">
         <ContactForm />
       </div>
@@ -41,11 +57,7 @@ function ContactPage() {
 
 ContactPage.getLayout = function getLayout(page) {
   return (
-    <MainLayout
-      title="Contact | SustainSage"
-      desc="Get in touch—consent-led and clear."
-      jsonLd={CONTACT_JSON_LD}
-    >
+    <MainLayout jsonLd={CONTACT_JSON_LD}>
       {page}
     </MainLayout>
   );
