@@ -11,18 +11,17 @@
   },
   "expect": {
     "title": "What to expect",
-    "subtitle": "A brief call centred on your pace and consent.",
+    "subtitle": "Clear, pressure-free next steps.",
     "items": [
-      "20-minute call to understand your context and questions.",
-      "You share a snapshot — headlines or bullet points are fine.",
-      "We explain how coaching could look and what boundaries apply.",
-      "No obligation, no hard sell. You decide the next step."
+      "We reply within three UK working days with one or two intro call slots.",
+      "The intro call lasts 20 minutes to check mutual fit and clarify your focus.",
+      "You decide whether to continue. No pressure, no sales script."
     ],
     "languageTitle": "Languages & formats",
     "languages": [
       "Coaching available in English, Traditional Chinese, and Simplified Chinese.",
-      "You can switch languages mid-message or session when it helps you think.",
-      "Online sessions by default; in-person available in the UK when schedules align."
+      "Feel free to switch languages mid-message or session.",
+      "Online by default; in-person in the UK when schedules align."
     ]
   },
   "form": {
@@ -35,24 +34,51 @@
     "focusArea": "Preferred focus area (optional)",
     "focusAreaPlaceholder": "Select a focus area",
     "focusAreaOptions": [
-      { "value": "relocation", "label": "Relocation / settling in the UK" },
-      { "value": "career", "label": "Career or role change" },
-      { "value": "return", "label": "Returning to work after a break" },
-      { "value": "leadership", "label": "Leadership / community stewardship" },
-      { "value": "other", "label": "Something else" }
+      {
+        "value": "relocation",
+        "label": "Relocation / settling in the UK"
+      },
+      {
+        "value": "career",
+        "label": "Career or role change"
+      },
+      {
+        "value": "return",
+        "label": "Returning to work after a break"
+      },
+      {
+        "value": "leadership",
+        "label": "Leadership / community stewardship"
+      },
+      {
+        "value": "other",
+        "label": "Something else"
+      }
     ],
     "focusHint": "Choose one if it helps — it is fine to stay uncertain.",
     "language": "Preferred language",
     "languagePlaceholder": "Select a language",
     "languageOptions": [
-      { "value": "EN", "label": "English" },
-      { "value": "TC", "label": "Traditional Chinese" },
-      { "value": "SC", "label": "Simplified Chinese" },
-      { "value": "MIX", "label": "Mix languages" }
+      {
+        "value": "EN",
+        "label": "English"
+      },
+      {
+        "value": "TC",
+        "label": "Traditional Chinese"
+      },
+      {
+        "value": "SC",
+        "label": "Simplified Chinese"
+      },
+      {
+        "value": "MIX",
+        "label": "Mix languages"
+      }
     ],
     "timezone": "Preferred time zone / time window",
     "timezonePlaceholder": "e.g. UK mornings, GMT+8 evenings, or flexible",
-    "consent": "I consent to SustainSage contacting me about coaching. I understand my details are used only for this purpose and handled confidentially except for legal or safeguarding duties.",
+    "consent": "I consent to SustainSage contacting me about coaching. I understand this space is not therapy, counselling, legal, medical, financial, or immigration advice.",
     "privacyNote": "We store your information only to arrange coaching conversations and delete it if we do not work together, unless law requires otherwise.",
     "submit": "Send message",
     "status": {

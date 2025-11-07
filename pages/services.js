@@ -3,33 +3,33 @@ import Link from 'next/link';
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
-import { Reveal } from '@/components/ui/Motion';
+import { HoverLift, Reveal } from '@/components/ui/Motion';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 import nextI18NextConfig from '../next-i18next.config.js';
 
 const CARD_BASE_CLASS =
-  'rounded-2xl border border-emerald-100 bg-white/85 p-5 shadow-sm transition hover:shadow-md';
+  'rounded-2xl border border-emerald-100 bg-white/85 p-6 shadow-sm transition hover:shadow-md';
 
-const ICONS = {
-  pathway: (
-    <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-700" aria-hidden="true">
+const SERVICE_ICONS = {
+  transition: (
+    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
       <path
-        d="M4.5 18h5l1.5-4.5h2L15 9h4.5"
+        d="M5 12h5.5L8 6m11 12h-5.5L16 6"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
       />
-      <path d="M4.5 21h15" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
+      <path d="M4 19h16" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
     </svg>
   ),
-  compass: (
-    <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-700" aria-hidden="true">
+  confidence: (
+    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
       <path
-        d="M12 3.75a8.25 8.25 0 1 1 0 16.5 8.25 8.25 0 0 1 0-16.5Zm0 0v4.5m0 12v-4.5m0 0 4-4m-8 0 4 4"
+        d="M7 10.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5S14 15 11.5 15v3.75m0 0L9 21m2.5-3.25L14 21"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
@@ -38,41 +38,33 @@ const ICONS = {
       />
     </svg>
   ),
-  partnership: (
-    <svg viewBox="0 0 24 24" className="h-5 w-5 text-emerald-700" aria-hidden="true">
+  experiments: (
+    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
       <path
-        d="M8.25 7.5a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0Zm6.75 1.5a2.25 2.25 0 1 0 0-4.5"
+        d="M8.5 4.5h7M9 4.5v6.75l-3.5 6.5A2.5 2.5 0 0 0 7.75 21h8.5a2.5 2.5 0 0 0 2.25-3.25L15 11.25V4.5"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="1.5"
       />
-      <path
-        d="M5.25 18.75v-1.5a3.75 3.75 0 0 1 7.5 0v1.5m1.5 0v-1.5a3.75 3.75 0 0 1 3.75-3.75h.75"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
+      <path d="M9 14h6" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
     </svg>
   ),
 };
 
-function IconBadge({ type }) {
+function ServiceIcon({ type }) {
   return (
-    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-100" aria-hidden="true">
-      {ICONS[type] ?? ICONS.pathway}
+    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100/70">
+      {SERVICE_ICONS[type] ?? SERVICE_ICONS.transition}
     </span>
   );
 }
 
 function ServicesPage() {
   const { t } = useTranslation('services');
-  const packages = t('packages.cards', { returnObjects: true });
-  const howSteps = t('howItWorks.steps', { returnObjects: true });
-  const checklist = t('checklist.items', { returnObjects: true });
+  const overviewCards = t('overview.cards', { returnObjects: true });
+  const nextSteps = t('nextSteps.items', { returnObjects: true });
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
@@ -81,118 +73,69 @@ function ServicesPage() {
         subtitle={t('hero.subtitle')}
         note={t('hero.note')}
         image="/hero/services.svg"
-        imageAlt={t('hero.imageAlt', { defaultValue: 'Coaching services illustration' })}
+        imageAlt={t('hero.imageAlt', { defaultValue: 'Abstract illustration of coaching services' })}
       >
         <Link href="/contact" className="btn-primary" aria-label={t('hero.primaryCtaAria')}>
           {t('hero.primaryCta')}
         </Link>
-        <Link href="#packages" className="btn-secondary" aria-label={t('hero.secondaryCtaAria')}>
+        <Link href="#services-overview" className="btn-secondary" aria-label={t('hero.secondaryCtaAria')}>
           {t('hero.secondaryCta')}
         </Link>
       </Hero>
 
-      <section className="bg-white py-16 sm:py-20" id="packages">
+      <section className="bg-white py-16 sm:py-20" id="services-overview">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mx-auto max-w-3xl text-center">
             <Reveal>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                {t('packages.title')}
-              </h2>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('overview.title')}</h2>
             </Reveal>
             <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-slate-600">{t('packages.subtitle')}</p>
+              <p className="mt-4 text-base leading-7 text-slate-600">{t('overview.subtitle')}</p>
             </Reveal>
           </div>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {packages.map((pkg, index) => (
-              <Reveal key={pkg.title} className={`reveal-${index + 2}`}>
-                <article className={`${CARD_BASE_CLASS} h-full text-left`}>
-                  <IconBadge type={pkg.icon} />
-                  <h3 className="mt-4 text-lg font-semibold text-slate-900">{pkg.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{pkg.summary}</p>
-                  <div className="mt-4 space-y-4">
-                    <div>
-                      <p className="text-sm font-semibold text-emerald-900">{t('packages.labels.for')}</p>
-                      <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-600">
-                        {pkg.for.map((item) => (
-                          <li key={item} className="flex gap-2">
-                            <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
+            {overviewCards.map((card, index) => (
+              <Reveal key={card.title} className={`reveal-${index + 2}`}>
+                <HoverLift>
+                  <article className={`${CARD_BASE_CLASS} flex h-full flex-col justify-between bg-white text-left`}>
+                    <div className="flex flex-col gap-4">
+                      <ServiceIcon type={card.icon} />
+                      <div>
+                        <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
+                        <p className="mt-2 text-sm font-medium text-emerald-700">{card.for}</p>
+                        <p className="mt-2 text-sm leading-6 text-slate-600">{card.focus}</p>
+                        <p className="mt-2 text-sm leading-6 text-slate-600">{card.format}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-sm font-semibold text-emerald-900">{t('packages.labels.includes')}</p>
-                      <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-600">
-                        {pkg.includes.map((item) => (
-                          <li key={item} className="flex gap-2">
-                            <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="mt-6">
+                      <Link
+                        href={card.href}
+                        className="inline-flex items-center text-sm font-semibold text-emerald-700 transition hover:text-emerald-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+                        aria-label={card.ariaLabel}
+                      >
+                        {card.cta}
+                      </Link>
                     </div>
-                    <div>
-                      <p className="text-sm font-semibold text-emerald-900">{t('packages.labels.outcomes')}</p>
-                      <ul className="mt-2 space-y-2 text-sm leading-6 text-slate-600">
-                        {pkg.outcomes.map((item) => (
-                          <li key={item} className="flex gap-2">
-                            <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </article>
+                  </article>
+                </HoverLift>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-emerald-50/60 py-16 sm:py-20" id="services-how-it-works">
+      <section className="bg-emerald-50/60 py-16 sm:py-20" id="next-steps">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <Reveal>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                {t('howItWorks.title')}
-              </h2>
-            </Reveal>
-            <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-emerald-900">{t('howItWorks.subtitle')}</p>
-            </Reveal>
-          </div>
-          <ol className="mt-12 grid gap-6 md:grid-cols-4">
-            {howSteps.map((step, index) => (
-              <Reveal key={step.title} className={`reveal-${index + 2}`}>
-                <li className={`${CARD_BASE_CLASS} h-full bg-white text-left`}>
-                  <p className="text-sm font-semibold text-emerald-700">{`${index + 1}. ${step.title}`}</p>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{step.description}</p>
-                </li>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="bg-white py-16 sm:py-20" id="is-this-for-me">
-        <div className="mx-auto max-w-4xl px-6">
           <Reveal>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('checklist.title')}
-            </h2>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('nextSteps.title')}</h2>
           </Reveal>
           <Reveal className="reveal-1">
-            <p className="mt-4 text-base leading-7 text-slate-600">{t('checklist.subtitle')}</p>
+            <p className="mt-4 text-base leading-7 text-emerald-900">{t('nextSteps.subtitle')}</p>
           </Reveal>
           <Reveal className="reveal-2">
-            <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-              {checklist.map((item) => (
-                <li key={item} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}>
-                  {item}
-                </li>
+            <ul className="mt-8 grid gap-4 text-sm leading-6 text-slate-700 sm:grid-cols-2">
+              {nextSteps.map((item) => (
+                <li key={item} className={`${CARD_BASE_CLASS} bg-white text-left`}>{item}</li>
               ))}
             </ul>
           </Reveal>
