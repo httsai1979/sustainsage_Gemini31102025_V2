@@ -1,77 +1,68 @@
 {
   "seo": {
     "title": "About SustainSage",
-    "description": "Meet the coaches behind SustainSage and learn how our ICF-aligned practice supports people building a life in the UK with consent and care."
+    "description": "Meet the coaches behind SustainSage and see how our ICF-aligned practice supports people building a life in the UK with consent and care."
   },
   "hero": {
-    "title": "Thoughtful, ICF-aligned coaching for people building a life in the UK",
-    "subtitle": "We hold a calm, honest space so you can think clearly, not perform.",
-    "imageAlt": "Illustration of two people in a reflective conversation"
+    "title": "Coaches who hold space for careful change",
+    "subtitle": "We build calm, honest conversations so you can think without performance."
   },
-  "clients": {
-    "title": "What clients often bring",
-    "items": [
-      "\u201cI\u2019ve moved countries and I\u2019m not sure who I am at work anymore.\u201d",
-      "\u201cOn paper I\u2019m fine, but my days don\u2019t feel like they\u2019re mine.\u201d",
-      "\u201cI\u2019m juggling care, money, visas and expectations. I need to think.\u201d"
+  "mission": {
+    "title": "What guides us",
+    "description": "We design coaching that honours agency, community and care work.",
+    "bullets": [
+      "ICF-aligned ethics: confidentiality, clear agreements, informed consent.",
+      "Attention to migration, race, class, gender and health realities.",
+      "Partnership over prescriptions—we create room to notice and choose."
     ]
   },
-  "how": {
-    "title": "How we coach",
-    "cards": [
-      {
-        "icon": "clientLed",
-        "title": "Client-led",
-        "body": "You choose what matters. We follow your pace, not a script."
-      },
-      {
-        "icon": "reflective",
-        "title": "Reflective & practical",
-        "body": "We slow down your thinking, then turn insight into small experiments."
-      },
-      {
-        "icon": "ethics",
-        "title": "Ethics & care",
-        "body": "Working with ICF core competencies: confidentiality, respect, clear boundaries."
-      }
+  "roots": {
+    "title": "Where we come from",
+    "description": "SustainSage grew out of navigating cross-border careers and unpaid care ourselves.",
+    "bullets": [
+      "Years of coaching people moving between countries and roles.",
+      "Community building with migrants, carers and multilingual teams.",
+      "Practice that respects trauma awareness without claiming to be therapy."
     ]
   },
   "coaches": {
     "title": "Your coaches",
-    "subtitle": "Co-founders who have navigated cross-border careers and caregiving themselves.",
+    "subtitle": "Co-founders who have rebuilt life in new countries and roles more than once.",
     "cards": [
       {
         "name": "Hao-Cheng Tsai",
         "image": "/images/founders/hao-cheng-tsai.svg",
-        "summary": "Service designer and ICF coach supporting people translating values across systems and countries.",
-        "keywords": [
-          "Systems-aware",
-          "Gentle structure",
-          "Values-led"
-        ]
+        "summary": "Service designer and coach helping clients translate values across systems.",
+        "keywords": ["Systems-aware", "Gentle structure", "Values-led"]
       },
       {
         "name": "Yi-Ling Lai",
         "image": "/images/founders/yi-ling-lai.svg",
-        "summary": "Learning facilitator and ICF coach holding multilingual, care-centred spaces for returners and leaders.",
-        "keywords": [
-          "Care literacy",
-          "Language-flexible",
-          "Steady presence"
-        ]
+        "summary": "Learning facilitator and coach holding multilingual, care-centred spaces.",
+        "keywords": ["Care literacy", "Language-flexible", "Steady presence"]
       }
     ]
   },
-  "notNow": {
-    "title": "When coaching may not be right now",
-    "items": [
-      "You\u2019re in immediate crisis or at risk of harm.",
-      "You\u2019re seeking diagnosis, medical, legal or immigration advice.",
-      "You want someone to tell you exactly what to do."
+  "practice": {
+    "title": "How we work together",
+    "description": "A typical collaboration is paced, transparent and co-created.",
+    "bullets": [
+      "We begin with clear agreements on goals, boundaries and preferred rhythms.",
+      "Sessions mix reflection with practical planning that you choose.",
+      "We review regularly and close well, even if that means signposting elsewhere."
+    ]
+  },
+  "boundaries": {
+    "title": "What coaching is not",
+    "description": "Being honest about limits keeps you safe and informed.",
+    "bullets": [
+      "Not therapy, counselling, legal or immigration advice.",
+      "Not crisis response or safeguarding investigations.",
+      "Not performance management done on someone else\u2019s agenda."
     ]
   },
   "cta": {
-    "title": "Want to see if we\u2019re a fit?",
+    "title": "Curious whether we\u2019re a fit?",
     "body": "Share a snapshot of your context. We\u2019ll suggest next steps or signpost other support with no pressure.",
     "primaryCta": "Book a 20-min intro call",
     "secondaryCta": "Contact us",

@@ -4,24 +4,39 @@
     "description": "Start a calm coaching enquiry with SustainSage. Share your context and we’ll respond with intro call options, clear boundaries and next steps."
   },
   "hero": {
-    "title": "Start with a conversation",
-    "subtitle": "Share a few lines about where you are. We’ll see, together, whether coaching with us is useful.",
-    "imageAlt": "Illustration of scheduling a coaching session"
+    "title": "Begin with a grounded check-in",
+    "subtitle": "Tell us where you are right now. We will decide together whether coaching is useful."
   },
-  "expect": {
-    "title": "What happens next",
-    "subtitle": "A gentle outline of our intro process.",
-    "items": [
-      "We reply within 2–3 working days with 1–2 intro call slots.",
-      "A 20-min intro call to clarify focus, boundaries and whether we’re a fit.",
-      "You choose whether to start a package. No pressure, no sales script."
-    ],
-    "languageTitle": "Languages & formats",
-    "languages": [
-      "Coaching available in English, Traditional Chinese, and Simplified Chinese.",
-      "Feel free to switch languages mid-message or session.",
-      "Online by default; in-person in the UK when schedules align."
+  "intro": {
+    "title": "What to share",
+    "description": "A few bullet points are enough—we just need a sense of your context.",
+    "bullets": [
+      "The transition or decision that feels most alive.",
+      "Any time pressures, access needs or boundaries we should know.",
+      "Your preferred language and time zone for the intro call."
     ]
+  },
+  "process": {
+    "title": "What happens after you reach out",
+    "description": "We keep the process light, transparent and pressure-free.",
+    "bullets": [
+      "Reply within two to three UK working days with intro call options.",
+      "20-minute intro call to clarify focus, fit and safeguarding boundaries.",
+      "You choose whether to begin a package—no scripts, no upsell."
+    ]
+  },
+  "assurance": {
+    "title": "How we hold the space",
+    "description": "You can switch languages mid-message or mid-session—your pace matters.",
+    "bullets": [
+      "Coaching available in English, Traditional Chinese and Simplified Chinese.",
+      "Online by default; in-person in the UK when schedules align.",
+      "We store information only to arrange coaching unless law requires otherwise."
+    ]
+  },
+  "faq": {
+    "title": "Questions before you book",
+    "intro": "Here are a few quick answers. The full FAQ covers ethics, process and safety in more depth."
   },
   "form": {
     "title": "Send us a note",
@@ -33,47 +48,20 @@
     "focusArea": "Preferred focus area (optional)",
     "focusAreaPlaceholder": "Select a focus area",
     "focusAreaOptions": [
-      {
-        "value": "relocation",
-        "label": "Relocation / settling in the UK"
-      },
-      {
-        "value": "career",
-        "label": "Career or role change"
-      },
-      {
-        "value": "return",
-        "label": "Returning to work after a break"
-      },
-      {
-        "value": "leadership",
-        "label": "Leadership / community stewardship"
-      },
-      {
-        "value": "other",
-        "label": "Something else"
-      }
+      { "value": "transition", "label": "Transition package" },
+      { "value": "returning", "label": "Returning to work" },
+      { "value": "new-to-uk", "label": "New to the UK" },
+      { "value": "check-in", "label": "Steady check-ins" },
+      { "value": "other", "label": "Something else" }
     ],
-    "focusHint": "Choose one if it helps — it is fine to stay uncertain.",
+    "focusHint": "Choose the option that feels closest; it is fine to stay uncertain.",
     "language": "Preferred language",
     "languagePlaceholder": "Select a language",
     "languageOptions": [
-      {
-        "value": "EN",
-        "label": "English"
-      },
-      {
-        "value": "TC",
-        "label": "Traditional Chinese"
-      },
-      {
-        "value": "SC",
-        "label": "Simplified Chinese"
-      },
-      {
-        "value": "MIX",
-        "label": "Mix languages"
-      }
+      { "value": "EN", "label": "English" },
+      { "value": "TC", "label": "Traditional Chinese" },
+      { "value": "SC", "label": "Simplified Chinese" },
+      { "value": "MIX", "label": "Mix languages" }
     ],
     "timezone": "Preferred time zone / time window",
     "timezonePlaceholder": "e.g. UK mornings, GMT+8 evenings, or flexible",

@@ -36,9 +36,9 @@ function Section({ title, items }) {
   );
 }
 
-function TransitionServicePage() {
+function NewToUkServicePage() {
   const { t } = useTranslation('serviceDetails');
-  const detail = t('transition', { returnObjects: true });
+  const detail = t('newToUk', { returnObjects: true });
   const localizedSectionTitles = t('sectionTitles', { returnObjects: true });
   const sectionTitles = { ...FALLBACK_SECTION_TITLES, ...localizedSectionTitles };
 
@@ -55,8 +55,8 @@ function TransitionServicePage() {
       <Hero
         title={detail.title}
         subtitle={detail.subtitle}
-        image="/images/services/transition.svg"
-        imageAlt="Illustration of boxes and a map"
+        image="/images/services/new-to-uk.svg"
+        imageAlt="Illustration of a signpost and UK skyline"
       />
 
       {sections.map((section) => (
@@ -86,4 +86,4 @@ export async function getStaticProps({ locale = 'en' }) {
   };
 }
 
-export default TransitionServicePage;
+export default NewToUkServicePage;
