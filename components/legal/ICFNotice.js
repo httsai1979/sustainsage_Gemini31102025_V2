@@ -1,11 +1,12 @@
 import { useTranslation } from 'next-i18next';
 
-export default function ICFNotice({ className = '' }) {
+export default function ICFNotice({ className = '', id }) {
   const { t } = useTranslation('common');
 
   return (
     <aside
       className={`mt-10 rounded-2xl border border-neutral-200 bg-neutral-50 p-6 text-sm leading-relaxed text-neutral-700 shadow-sm ring-1 ring-neutral-100 ${className}`.trim()}
+      id={id}
       role="note"
       aria-label={t('icfNotice.ariaLabel')}
     >

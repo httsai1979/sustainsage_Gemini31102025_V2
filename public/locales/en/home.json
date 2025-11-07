@@ -1,52 +1,72 @@
 {
   "seo": {
-    "title": "SustainSage | Coaching for UK transitions",
-    "description": "ICF-aligned, bilingual coaching that keeps you in charge while navigating relocation, career shifts, or returning to work."
+    "title": "SustainSage | Calm, client-led coaching in the UK",
+    "description": "ICF-aligned coaching for people navigating relocation, career shifts and everyday transitions with consent and shared ownership."
   },
   "hero": {
-    "title": "Coaching that honours your pace in UK transitions.",
-    "subtitle": "Bilingual, ICF-aligned sessions co-created for relocation, career shifts, and everyday courage.",
-    "primaryCta": "Book intro call",
+    "title": "Calm, client-led coaching for real life transitions",
+    "subtitle": "Space to think clearly, choose small next steps, and move at your own pace in the UK.",
+    "primaryCta": "Book a 20-min intro call",
     "secondaryCta": "Explore services",
     "primaryCtaAria": "Book a 20-minute intro call with SustainSage",
-    "secondaryCtaAria": "View SustainSage coaching services",
+    "secondaryCtaAria": "Explore SustainSage coaching services",
     "imageAlt": "Abstract illustration of a calm conversation"
   },
-  "whoWeHelp": {
-    "title": "Who we partner with",
-    "subtitle": "Moments where coaching helps you stay grounded and in charge.",
+  "who": {
+    "title": "Who we work with",
+    "subtitle": "People holding complex UK transitions who want reflective space without giving up autonomy.",
     "cards": [
       {
-        "icon": "globe",
-        "title": "New to the UK workforce",
-        "need": "Finding your footing in new systems, policies, and unspoken norms."
+        "icon": "returners",
+        "title": "Returning after a break",
+        "body": "Rebuild rhythm and confidence without pretending nothing has changed."
       },
       {
-        "icon": "sprout",
-        "title": "Returning after a career pause",
-        "need": "Balancing care, confidence, and routines that protect your energy."
+        "icon": "newcomers",
+        "title": "New to the UK",
+        "body": "Make sense of culture, systems and choices without doing it alone."
       },
       {
-        "icon": "bridge",
-        "title": "Cross-cultural leaders and founders",
-        "need": "Bridging languages and expectations while guiding teams or communities."
+        "icon": "changers",
+        "title": "Changing roles or careers",
+        "body": "Test options through small, low-risk experiments."
       },
       {
-        "icon": "compass",
-        "title": "Students and early-career explorers",
-        "need": "Turning uncertainty into small experiments that honour your values."
+        "icon": "parents",
+        "title": "Caring and working",
+        "body": "Protect what matters while designing a sustainable work-life pattern."
+      }
+    ]
+  },
+  "process": {
+    "title": "How coaching with us works",
+    "subtitle": "Gentle structure that keeps you informed and in charge.",
+    "steps": [
+      {
+        "icon": "intro",
+        "title": "Intro call",
+        "body": "20 minutes to explore what you’re hoping for, clarify boundaries and see if we’re a fit."
+      },
+      {
+        "icon": "sessions",
+        "title": "Focused sessions",
+        "body": "Co-designed conversations with reflection, small experiments and plenty of breathing space."
+      },
+      {
+        "icon": "review",
+        "title": "Review & next steps",
+        "body": "We pause to harvest learning, adjust pace and decide together whether to continue, pause or close."
       }
     ]
   },
   "focus": {
     "title": "Choose your focus",
-    "subtitle": "Start with the conversation that matches your current transition.",
+    "subtitle": "Pick the conversation that matches what you need most right now.",
     "cards": [
       {
         "icon": "transition",
         "title": "Transition coaching",
-        "descriptionLine1": "Relocation or role changes with space for identity shifts and logistics.",
-        "descriptionLine2": "Design rhythms that travel with you across homes and teams.",
+        "body": "6-session support for relocation, role changes and returning to work with a realistic, values-led plan.",
         "href": "/services/transition",
         "linkLabel": "Transition coaching details",
         "ariaLabel": "View the transition coaching service details"
@@ -54,8 +74,7 @@
       {
         "icon": "confidence",
         "title": "Confidence & voice coaching",
-        "descriptionLine1": "Practise language, boundaries, and presence for UK workplace moments.",
-        "descriptionLine2": "Build confidence without pretending to be someone else.",
+        "body": "Coaching to speak up, set boundaries and navigate UK workplaces without losing yourself.",
         "href": "/services/confidence",
         "linkLabel": "Confidence & voice coaching details",
         "ariaLabel": "View the confidence and voice coaching service details"
@@ -63,8 +82,7 @@
       {
         "icon": "experiments",
         "title": "Clarity experiments",
-        "descriptionLine1": "For when the future feels fuzzy and you need data from lived trials.",
-        "descriptionLine2": "Co-create gentle tests before you commit to a direction.",
+        "body": "A short, focused package to test possible paths instead of overthinking them.",
         "href": "/services/experiments",
         "linkLabel": "Clarity experiments package",
         "ariaLabel": "View the clarity experiments service details"
@@ -77,28 +95,28 @@
     "items": [
       {
         "question": "What happens in the intro call?",
-        "answer": "We spend 20 minutes hearing your context, sharing scope and boundaries, and deciding together if coaching helps now."
+        "answer": "20 minutes to explore what you’re hoping for, clarify boundaries and see if we’re a fit."
       },
       {
-        "question": "Do you give advice or plans?",
-        "answer": "We offer questions, reflections, and experiments. You choose actions and remain the decision-maker."
+        "question": "Is this therapy or counselling?",
+        "answer": "No. We don’t diagnose or treat. If therapy seems more suitable, we’ll say so gently and clearly."
       },
       {
-        "question": "Can I switch languages mid-session?",
-        "answer": "Yes. You are welcome to move between English, 繁體中文, and 简体中文 whenever it supports your thinking."
+        "question": "Do you guarantee outcomes?",
+        "answer": "No guarantees. You lead; we offer structure, questions and accountability."
       },
       {
-        "question": "Is this therapy or legal guidance?",
-        "answer": "No. We provide coaching only and signpost other professionals when therapy, legal, medical, or immigration support is needed."
+        "question": "Is it okay if I’m not sure what I want yet?",
+        "answer": "Yes. “I only know it doesn’t feel right now” is a valid starting point."
       }
     ]
   },
   "cta": {
     "title": "Begin when you feel ready",
     "body": "Share the transition you are navigating. We will recommend next steps or signpost other support with no pressure.",
-    "primaryCta": "Book intro call",
+    "primaryCta": "Book a 20-min intro call",
     "secondaryCta": "Explore services",
     "primaryAria": "Book a 20-minute intro call with SustainSage",
-    "secondaryAria": "View SustainSage coaching services"
+    "secondaryAria": "Explore SustainSage coaching services"
   }
 }

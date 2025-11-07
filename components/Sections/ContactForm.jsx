@@ -15,6 +15,7 @@ export default function ContactForm() {
     language: '',
     timezone: '',
     consent: false,
+    scopeAcknowledgement: false,
   });
 
   const [status, setStatus] = useState(null);
@@ -40,7 +41,8 @@ export default function ContactForm() {
       formData.help &&
       formData.language &&
       formData.timezone &&
-      formData.consent;
+      formData.consent &&
+      formData.scopeAcknowledgement;
 
     if (!isValid) {
       setStatus('error');
@@ -62,6 +64,7 @@ export default function ContactForm() {
           focusArea: formData.focusArea,
           preferredTimeWindow: formData.timezone,
           consent: formData.consent,
+          scopeAcknowledgement: formData.scopeAcknowledgement,
         }),
       });
 
@@ -71,7 +74,16 @@ export default function ContactForm() {
 
       setStatus('success');
       setMessage(t('form.status.success'));
-      setFormData({ name: '', email: '', help: '', focusArea: '', language: '', timezone: '', consent: false });
+      setFormData({
+        name: '',
+        email: '',
+        help: '',
+        focusArea: '',
+        language: '',
+        timezone: '',
+        consent: false,
+        scopeAcknowledgement: false,
+      });
     } catch (error) {
       console.error('Contact form submission failed', error);
       setStatus('error');
@@ -224,6 +236,21 @@ export default function ContactForm() {
               />
               <label htmlFor="consent" className="text-sm leading-6 text-slate-700">
                 {t('form.consent')}
+              </label>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <input
+                id="scopeAcknowledgement"
+                name="scopeAcknowledgement"
+                type="checkbox"
+                required
+                checked={formData.scopeAcknowledgement}
+                onChange={handleChange}
+                className="mt-1 h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-600"
+              />
+              <label htmlFor="scopeAcknowledgement" className="text-sm leading-6 text-slate-700">
+                {t('form.scopeAcknowledgement')}
               </label>
             </div>
 

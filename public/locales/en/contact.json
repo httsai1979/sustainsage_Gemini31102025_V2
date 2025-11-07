@@ -1,21 +1,20 @@
 {
   "seo": {
     "title": "Contact | SustainSage",
-    "description": "Book a calm, bilingual intro conversation with SustainSage. Share your context and we will respond with options, consent boundaries, and next steps."
+    "description": "Start a calm coaching enquiry with SustainSage. Share your context and we’ll respond with intro call options, clear boundaries and next steps."
   },
   "hero": {
-    "title": "Say hello — no pressure.",
-    "subtitle": "A short intro call to see if we are a fit.",
-    "note": "We usually reply within three UK working days. Your details stay within our coaching team.",
+    "title": "Start with a conversation",
+    "subtitle": "Share a few lines about where you are. We’ll see, together, whether coaching with us is useful.",
     "imageAlt": "Illustration of scheduling a coaching session"
   },
   "expect": {
-    "title": "What to expect",
-    "subtitle": "Clear, pressure-free next steps.",
+    "title": "What happens next",
+    "subtitle": "A gentle outline of our intro process.",
     "items": [
-      "We reply within three UK working days with one or two intro call slots.",
-      "The intro call lasts 20 minutes to check mutual fit and clarify your focus.",
-      "You decide whether to continue. No pressure, no sales script."
+      "We reply within 2–3 working days with 1–2 intro call slots.",
+      "A 20-min intro call to clarify focus, boundaries and whether we’re a fit.",
+      "You choose whether to start a package. No pressure, no sales script."
     ],
     "languageTitle": "Languages & formats",
     "languages": [
@@ -78,7 +77,8 @@
     ],
     "timezone": "Preferred time zone / time window",
     "timezonePlaceholder": "e.g. UK mornings, GMT+8 evenings, or flexible",
-    "consent": "I consent to SustainSage contacting me about coaching. I understand this space is not therapy, counselling, legal, medical, financial, or immigration advice.",
+    "consent": "I consent to SustainSage contacting me about coaching.",
+    "scopeAcknowledgement": "I understand this form is for coaching enquiries, not therapy, crisis support, legal or immigration advice.",
     "privacyNote": "We store your information only to arrange coaching conversations and delete it if we do not work together, unless law requires otherwise.",
     "submit": "Send message",
     "status": {
@@ -96,15 +96,5 @@
     ],
     "privacyLabel": "our privacy & ethics notice",
     "privacyHref": "/contact#icf"
-  },
-  "sidebar": {
-    "title": "How we hold your message",
-    "description": "A coach reads your note directly and responds personally.",
-    "responseTitle": "Response time",
-    "responseCopy": "We aim to reply within three UK working days. If we are away, an autoresponder lets you know.",
-    "privacyTitle": "Data handling",
-    "privacyCopy": "Information is stored securely and deleted if we do not start working together, unless law requires otherwise.",
-    "nextTitle": "During the intro call",
-    "nextCopy": "We confirm goals, boundaries, fees, and logistics together so you decide if coaching suits you."
   }
 }

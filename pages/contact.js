@@ -24,7 +24,6 @@ function ContactPage() {
       <Hero
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
-        note={t('hero.note')}
         image="/hero/contact.svg"
         imageAlt={t('hero.imageAlt', { defaultValue: 'Calendar illustration' })}
       />
@@ -61,7 +60,9 @@ function ContactPage() {
                 <HoverLift>
                   <div className={`${CARD_BASE_CLASS} bg-white text-left`}>
                     <h2 className="text-lg font-semibold text-slate-900">{t('expect.title')}</h2>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">{t('expect.subtitle')}</p>
+                    {t('expect.subtitle') && (
+                      <p className="mt-3 text-sm leading-6 text-slate-600">{t('expect.subtitle')}</p>
+                    )}
                     <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-700">
                       {expectItems.map((item) => (
                         <li key={item} className="flex gap-2">
@@ -95,7 +96,7 @@ function ContactPage() {
       </section>
 
       <div className="px-6 pb-20">
-        <ICFNotice className="mx-auto max-w-4xl" />
+        <ICFNotice id="icf" className="mx-auto max-w-4xl" />
       </div>
     </MainLayout>
   );
