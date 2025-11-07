@@ -1,0 +1,36 @@
+{
+  "header": {
+    "navHome": "Home",
+    "navAbout": "About",
+    "navServices": "Services",
+    "navResources": "Resources",
+    "navBlog": "Blog",
+    "navContact": "Contact",
+    "openMenu": "Open navigation",
+    "closeMenu": "Close navigation"
+  },
+  "footer": {
+    "philosophy": "Clarity through conversation.",
+    "sitemapTitle": "Sitemap",
+    "contactTitle": "Contact details",
+    "copyright": "© {{year}} SustainSage Group Ltd. All rights reserved.",
+    "privacyPolicy": "Privacy policy"
+  },
+  "stickyCta": {
+    "title": "Ready when you are",
+    "subtitle": "Book a 20-minute intro chat to see if coaching is right for you.",
+    "button": "Schedule a chat"
+  },
+  "icfNotice": {
+    "ariaLabel": "Coaching ethics and scope",
+    "paragraph1": "We coach in line with the International Coaching Federation Code of Ethics. Coaching is a collaborative, client-led partnership that supports your self-directed learning and change. It is not therapy, counselling, medical, legal or financial advice. You remain responsible for your choices and actions.",
+    "paragraph2": "We maintain confidentiality except where required by law or where there is a risk of harm. We will establish clear agreements, goals and boundaries together before we begin, and we will obtain your informed consent for how we work and how your information is handled."
+  },
+  "errorPages": {
+    "notFoundTitle": "That page isn’t here",
+    "notFoundSubtitle": "The link may be outdated or the page has moved. Let’s head back to somewhere useful.",
+    "serverErrorTitle": "Something went wrong",
+    "serverErrorSubtitle": "An unexpected error occurred. Please try again soon or contact us if the issue continues.",
+    "cta": "Return home"
+  }
+}

@@ -1,0 +1,15 @@
+<svg width="320" height="320" viewBox="0 0 320 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Yi-Ling Lai portrait illustration</title>
+  <desc id="desc">Circular illustration with soft gradients and the initials YL</desc>
+  <defs>
+    <radialGradient id="ylGradient" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#F4ECFF" />
+      <stop offset="60%" stop-color="#E0D4FA" />
+      <stop offset="100%" stop-color="#C4BAF2" />
+    </radialGradient>
+  </defs>
+  <circle cx="160" cy="160" r="150" fill="url(#ylGradient)" />
+  <circle cx="160" cy="140" r="70" fill="#FFFFFF" opacity="0.75" />
+  <path d="M105 215 Q160 250 215 215" fill="none" stroke="#6957A1" stroke-width="10" stroke-linecap="round" />
+  <text x="160" y="185" text-anchor="middle" font-family="'Inter', 'Segoe UI', sans-serif" font-size="96" font-weight="700" fill="#56428E">YL</text>
+</svg>

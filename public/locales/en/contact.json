@@ -1,0 +1,37 @@
+{
+  "hero": {
+    "title": "Contact",
+    "subtitle": "Say hello. Share what you’d like help with and how you’d prefer to meet."
+  },
+  "form": {
+    "title": "Send us a note",
+    "subtitle": "Everything you share is confidential within legal and safeguarding limits.",
+    "name": "Full name",
+    "email": "Email address",
+    "topicLabel": "I’m interested in…",
+    "topicPlaceholder": "Select a focus",
+    "message": "What would you like to explore?",
+    "consent": "I consent to be contacted about scheduling an intro chat. I understand this is not medical, legal or financial advice.",
+    "submit": "Send",
+    "status": {
+      "submitting": "Sending…",
+      "success": "Thank you. We’ll respond within two working days.",
+      "error": "Something went wrong. Please try again or email us directly.",
+      "errorRequired": "Please complete all required fields and confirm consent."
+    },
+    "topics": [
+      { "value": "CAREER_TRANSITION", "label": "Career transition" },
+      { "value": "NEW_GRADUATE", "label": "Graduate support" },
+      { "value": "NEW_IMMIGRANT", "label": "New to the UK" },
+      { "value": "OTHER", "label": "Something else" }
+    ]
+  },
+  "sidebar": {
+    "title": "What happens next",
+    "description": "We’ll suggest a 20-minute chat to understand your context and co-design next steps.",
+    "responseTitle": "Response time",
+    "responseCopy": "You’ll hear from us within two working days, often sooner.",
+    "privacyTitle": "Confidentiality",
+    "privacyCopy": "We protect your information and only break confidentiality if safety or law requires it."
+  }
+}

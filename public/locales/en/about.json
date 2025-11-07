@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "title": "About us",
+    "subtitle": "ICF-aligned practice. Presence, curiosity and respect—for your pace, context and choices."
+  },
+  "intro": "We coach in a steady, human way—no pressure, no slogans. You set the topic; we partner to deepen awareness and support committed action in your real context.",
+  "commitments": {
+    "title": "What anchors our practice",
+    "items": [
+      "Ethical practice and clear agreements",
+      "Active listening and reflective questions",
+      "Gentle accountability and regular review"
+    ]
+  }
+}
