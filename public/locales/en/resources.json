@@ -1,46 +1,53 @@
 {
   "hero": {
     "title": "Resources",
-    "subtitle": "Light, reflective tools. Use what serves you; ignore what doesn’t."
+    "subtitle": "Light, reflective tools you can adapt between sessions."
   },
-  "curatedTitle": "Curated tools from our coaching practice",
-  "usageNote": "Each resource is for personal reflection and coaching use only. They are not therapy or professional advice.",
+  "curatedTitle": "Resources we curate with coaching clients",
+  "curatedIntro": "These tools capture the prompts, checklists, and templates we use in coaching. Some are ready to share now; others are in pilot—tell us what would help you next.",
+  "usageNote": "Resources support reflection and experiment design. They are not therapy, legal advice, or a substitute for specialist care.",
   "items": {
-    "selfTalk": {
-      "title": "Self-talk reframe cards",
-      "summary": "Gentle prompts to shift harsh self-talk into useful, self-honouring language.",
-      "format": "Format: PDF",
-      "cta": "Request this resource"
+    "reflectionQuestions": {
+      "title": "Reflection question sets",
+      "summary": "Short prompts to surface assumptions around culture shifts, values, and decision points.",
+      "format": "Format: PDF pack",
+      "status": "Available now",
+      "cta": "Request this pack"
     },
-    "experimentLadder": {
-      "title": "Behavioural experiment ladder",
-      "summary": "Plan small, safe tests that you design and own.",
-      "format": "Format: PDF",
-      "cta": "Request this resource"
+    "careerExperiments": {
+      "title": "Career experiment templates",
+      "summary": "Step-by-step worksheets for designing low-risk experiments before making big moves.",
+      "format": "Format: Worksheet bundle",
+      "status": "In pilot with clients",
+      "cta": "Join the pilot list"
     },
-    "valuesMap": {
-      "title": "Values map",
-      "summary": "Name what matters and co-design aligned actions.",
-      "format": "Format: PDF",
-      "cta": "Request this resource"
+    "culturalChecklists": {
+      "title": "Cultural acclimation checklists",
+      "summary": "Guides to observe UK workplace norms while honouring your existing strengths.",
+      "format": "Format: Checklist",
+      "status": "Available now",
+      "cta": "Request this checklist"
     },
-    "emotionTriangle": {
-      "title": "Emotion triangle",
-      "summary": "Notice links between feelings, thoughts and behaviours—without self-judgement.",
+    "conversationGuides": {
+      "title": "Conversation rehearsal guides",
+      "summary": "Scripts and framing tools for stakeholder updates, feedback conversations, and networking.",
       "format": "Format: Slides",
-      "cta": "Request this resource"
+      "status": "In development",
+      "cta": "Register your interest"
     },
-    "thoughtLog": {
-      "title": "Thought log",
-      "summary": "Spot patterns and choose different next steps.",
-      "format": "Format: Sheet",
-      "cta": "Request this resource"
-    },
-    "beliefsExplorer": {
-      "title": "Limiting beliefs explorer",
-      "summary": "Loosen rigid stories with compassionate curiosity.",
+    "selfAdvocacy": {
+      "title": "Self-advocacy toolkit",
+      "summary": "Language banks and pacing tips for asking for support, resources, or stretch opportunities.",
       "format": "Format: Doc",
-      "cta": "Request this resource"
+      "status": "In pilot with clients",
+      "cta": "Join the pilot list"
+    },
+    "reviewJournal": {
+      "title": "Monthly review journal",
+      "summary": "A gentle structure to capture wins, learnings, and next experiments across the month.",
+      "format": "Format: Notion / PDF",
+      "status": "Available now",
+      "cta": "Request this journal"
     }
   }
 }
