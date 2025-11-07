@@ -10,20 +10,32 @@
   },
   "overview": {
     "title": "What stays consistent",
-    "description": "Every package begins with a 20-minute intro call to confirm scope, consent and boundaries.",
+    "subtitle": "Coaching with us is a structured conversation and a place to design careful experiments. It is not therapy, consulting or emergency support.",
+    "description": "Every package begins with a 20-minute intro call so we can confirm scope, consent and boundaries together.",
     "bullets": [
       "ICF-aligned coaching with clear agreements and confidentiality.",
-      "Sessions held online unless we agree otherwise.",
+      "Sessions held online unless we mutually agree otherwise.",
       "You lead the agenda; we bring questions, structure and reflection."
-    ]
+    ],
+    "boundary": {
+      "title": "Clear boundaries we uphold",
+      "body": "You stay responsible for decisions and follow-up actions. We name when another professional or resource is a better fit.",
+      "bullets": [
+        "No immigration, legal, medical or financial advice.",
+        "We do not act on your behalf or guarantee outcomes.",
+        "We honour confidentiality within ICF ethics and safeguarding law."
+      ]
+    }
   },
   "packages": {
     "title": "Choose the focus that fits",
     "description": "Each card links to a detailed page with boundaries, reflection prompts and next steps.",
+    "cta": "View details",
     "cards": [
       {
         "slug": "transition",
         "title": "Transition package",
+        "summary": "A steadier container when relocation or role change feels like too many plates at once.",
         "for": "For professionals navigating relocation or role change.",
         "focus": "Clarify what a good move looks like and design grounded experiments.",
         "format": "6 × 55–60 minute sessions over 3–4 months.",
@@ -32,6 +44,7 @@
       {
         "slug": "confidence",
         "title": "Confidence & voice",
+        "summary": "Build a voice you trust without copying dominant styles or ignoring nuance.",
         "for": "For leaders or collaborators who want to speak with steadiness.",
         "focus": "Unpack narratives, practise consent-based conversations and rehearse real scenarios.",
         "format": "5 × 55–60 minute sessions over 2–3 months.",
@@ -40,6 +53,7 @@
       {
         "slug": "experiments",
         "title": "Experiments & stewardship",
+        "summary": "Design ethical tests when your choices ripple across people, data or community.",
         "for": "For people stewarding change that affects teams or communities.",
         "focus": "Design ethical experiments, set decision gates and keep agency with stakeholders.",
         "format": "4 × 70 minute sessions across 8–10 weeks.",
@@ -51,7 +65,7 @@
     "title": "How we begin",
     "description": "A light structure keeps you informed while leaving space to adapt.",
     "bullets": [
-      "Intro call: confirm needs, scope and whether coaching is right now.",
+      "Intro call: confirm needs, scope and whether coaching is right for now.",
       "Co-created agreement: cadence, language, between-session support.",
       "Regular reviews so we can adjust pace or close when goals are met."
     ]

@@ -8,7 +8,7 @@ function TransitionServicePage() {
     <ServiceDetailPage
       serviceKey="transition"
       heroImage="/images/services/transition.svg"
-      heroAlt="Illustration of boxes and a map"
+      heroAlt="Transition coaching for real-life changes"
     />
   );
 }

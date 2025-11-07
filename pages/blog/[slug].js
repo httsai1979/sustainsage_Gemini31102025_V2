@@ -103,13 +103,13 @@ function ArticleCta({ cta }) {
   );
 }
 
-function FallbackArticle({ fallbackData, t, notice }) {
+function FallbackArticle({ fallbackData, t, disclaimer }) {
   const nodes = buildFallbackNodes(fallbackData.article);
   const publishedLabel = fallbackData.meta?.date || formatPublishedDate(fallbackData.publishedDate);
 
   return (
     <article className="prose prose-slate mx-auto max-w-3xl px-6 py-16">
-      <ArticleNotice notice={notice} />
+      <ArticleNotice notice={disclaimer} />
       {fallbackData.category && (
         <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-emerald-700">{fallbackData.category}</p>
       )}
@@ -151,14 +151,14 @@ function FallbackArticle({ fallbackData, t, notice }) {
   );
 }
 
-function CmsArticle({ post, t, notice }) {
+function CmsArticle({ post, t, disclaimer }) {
   const cover =
     post.cover || (post.featuredImage?.fields?.file?.url ? `https:${post.featuredImage.fields.file.url}` : null);
   const publishedLabel = formatPublishedDate(post.publishedDate);
 
   return (
     <article className="prose prose-slate mx-auto max-w-3xl px-6 py-16">
-      <ArticleNotice notice={notice} />
+      <ArticleNotice notice={disclaimer} />
       {post.category && <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-emerald-700">{post.category}</p>}
       <h1>{post.title}</h1>
       {publishedLabel && <p className="text-sm text-slate-500">{publishedLabel}</p>}
@@ -183,7 +183,11 @@ function CmsArticle({ post, t, notice }) {
 function BlogPost({ post = null, error = null, fallbackKey = null }) {
   const { t } = useTranslation('blog');
   const fallbackData = fallbackKey ? t(fallbackKey, { returnObjects: true }) : null;
-  const notice = t('notice');
+  const articleDisclaimer = t('disclaimer', {
+    defaultValue: t('notice', {
+      defaultValue: 'These reflections are not therapeutic, legal or financial advice.',
+    }),
+  });
   const articleCta = t('articleCta', { returnObjects: true });
 
   if (error) {
@@ -203,7 +207,7 @@ function BlogPost({ post = null, error = null, fallbackKey = null }) {
   if (post) {
     return (
       <>
-        <CmsArticle post={post} t={t} notice={notice} />
+        <CmsArticle post={post} t={t} disclaimer={articleDisclaimer} />
         <ArticleCta cta={articleCta} />
         <div className="px-6 pb-16">
           <ICFNotice className="mx-auto max-w-4xl" />
@@ -215,7 +219,7 @@ function BlogPost({ post = null, error = null, fallbackKey = null }) {
   if (fallbackData) {
     return (
       <>
-        <FallbackArticle fallbackData={fallbackData} t={t} notice={notice} />
+        <FallbackArticle fallbackData={fallbackData} t={t} disclaimer={articleDisclaimer} />
         <ArticleCta cta={articleCta} />
         <div className="px-6 pb-16">
           <ICFNotice className="mx-auto max-w-4xl" />

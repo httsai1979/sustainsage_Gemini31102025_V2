@@ -12,7 +12,7 @@ export default function StickyCTA() {
           <p className="text-sm text-slate-700">{t('stickyCta.subtitle')}</p>
         </div>
         <Link
-          href="/contact"
+          href="/contact?from=home-sticky"
           className="inline-flex items-center justify-center rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
         >
           {t('stickyCta.button')}
