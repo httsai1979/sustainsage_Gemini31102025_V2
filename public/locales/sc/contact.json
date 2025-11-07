@@ -1,50 +1,66 @@
 {
   "seo": {
-    "title": "联系我们｜SustainSage",
-    "description": "预约一场沉稳的双语初谈。了解流程、确认同意，并分享我们如何在英国陪你面对转换。"
+    "title": "联系我们 | SustainSage",
+    "description": "预约一场平稳的双语认识通话，分享你的需求，我们将在两个英国工作日内回复下一步。"
   },
   "hero": {
-    "title": "写信给我们",
-    "subtitle": "告诉我们你正在经历的情况，以及最自在的语言。我们会提供选择，而不是施加压力。"
+    "title": "和我们聊聊下一步",
+    "subtitle": "告诉我们你目前的状况。资料仅用于安排教练对话，若未展开合作会删除。",
+    "imageAlt": "安排教练对话的插画"
   },
-  "expectations": {
-    "title": "流程说明",
+  "highlights": {
+    "title": "提交前先了解",
+    "intro": "几个重点让你放心。",
     "items": [
-      "我们会在两个英国工作日内回复，安排 20 分钟的相互了解。",
-      "初谈会确认目标、语言偏好、无障碍需求与你的同意。",
-      "若教练并非最佳选项，我们会建议其他资源，例如治疗、法律、移民、医疗或财务协助。"
+      {
+        "title": "两个工作日内回复",
+        "description": "我们会提供 20 分钟认识通话的时段建议，一起确认是否合适。"
+      },
+      {
+        "title": "资料安全",
+        "description": "联络资讯只用于安排教练，若未合作会删除，除非法律另有要求。"
+      },
+      {
+        "title": "不强推服务",
+        "description": "若教练并不适合，我们会建议心理治疗、法律、移民或财务等其他资源。"
+      }
     ]
   },
   "form": {
-    "title": "写下你的想法",
-    "subtitle": "除法律或安全需求外，你提供的资讯都会保密。",
+    "title": "写信给我们",
+    "subtitle": "愿意分享多少都可以。",
     "name": "姓名",
-    "email": "电子邮件",
-    "topicLabel": "想了解的服务",
-    "topicPlaceholder": "请选择",
-    "message": "想一起探索的主题",
-    "consent": "我同意 SustainSage 就教练服务与我联系，并理解这里不提供治疗、法律、移民、医疗或财务建议。",
-    "privacyNote": "若未开始合作，我们会安全删除资料，除非法律要求保留。",
-    "submit": "送出",
+    "email": "Email",
+    "help": "想讨论什么？",
+    "helpHint": "欢迎说明情境，也可以写“我还在厘清”。",
+    "language": "偏好的语言",
+    "languagePlaceholder": "请选择语言",
+    "languageOptions": [
+      { "value": "EN", "label": "英文" },
+      { "value": "TC", "label": "繁体中文" },
+      { "value": "SC", "label": "简体中文" },
+      { "value": "MIX", "label": "混合语言" }
+    ],
+    "timezone": "偏好的时区／时段",
+    "timezonePlaceholder": "例如：GMT+8 晚上，或英国中午",
+    "consent": "我同意 SustainSage 为了教练服务与我联系，并了解资料仅用于联络与预约。",
+    "privacyNote": "我们只在联络与合作所需期间保留资料；若没有开始合作，除法律要求外会删除。",
+    "submit": "送出讯息",
     "status": {
       "submitting": "寄出中…",
-      "success": "谢谢你，我们会在两个工作日内回复。",
-      "error": "寄送时发生问题，请再试一次或直接写信给我们。",
-      "errorRequired": "请完成必填栏位并勾选同意。"
-    },
-    "topics": [
-      { "value": "ONE_TO_ONE", "label": "一对一教练" },
-      { "value": "GROUP_CLINIC", "label": "小型共学诊所" },
-      { "value": "ORGANISATION", "label": "组织合作" },
-      { "value": "SOMETHING_ELSE", "label": "其他" }
-    ]
+      "success": "已收到，我们会在两个英国工作日内回复。",
+      "error": "发生错误，请再试一次或写信至 contact@sustainsage.com。",
+      "errorRequired": "请填写必填栏位并勾选同意。"
+    }
   },
   "sidebar": {
-    "title": "后续会发生什么",
-    "description": "我们会提供 20 分钟双语相互了解的时段，看看如何支持你。",
-    "responseTitle": "回复时间",
-    "responseCopy": "通常会在两个英国工作日内回复，如有可能会更快。",
-    "privacyTitle": "保密说明",
-    "privacyCopy": "除法律或安全需求外，我们不会分享你的资讯。"
+    "title": "接下来会发生什么",
+    "description": "我们会邀请你进行 20 分钟认识通话，确认方向与合作条件。",
+    "responseTitle": "回复速度",
+    "responseCopy": "一般会在两个英国工作日内回复，如有延迟会主动通知。",
+    "privacyTitle": "保密原则",
+    "privacyCopy": "除非法律或安全需求，我们不会在你同意前分享资料。",
+    "nextTitle": "认识通话内容",
+    "nextCopy": "会确认目标、界线、费用与时程，并讨论若教练不适合时的其他选择。"
   }
 }

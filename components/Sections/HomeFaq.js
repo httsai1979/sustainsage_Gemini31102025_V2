@@ -1,33 +1,8 @@
-import { useState } from 'react';
+import { Disclosure } from '@headlessui/react';
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/outline';
 import { useTranslation } from 'next-i18next';
 
 import Reveal from '../ui/Reveal';
-
-function FaqItem({ faq }) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="px-6 py-5">
-      <button
-        type="button"
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="flex w-full items-center justify-between text-left"
-        aria-expanded={isOpen}
-      >
-        <span className="text-base font-semibold text-slate-900">{faq.question}</span>
-        {isOpen ? (
-          <MinusSmallIcon className="h-6 w-6 text-emerald-600" aria-hidden="true" />
-        ) : (
-          <PlusSmallIcon className="h-6 w-6 text-emerald-600" aria-hidden="true" />
-        )}
-      </button>
-      {isOpen ? (
-        <div className="mt-3 text-sm leading-6 text-slate-600">{faq.answer}</div>
-      ) : null}
-    </div>
-  );
-}
 
 export default function HomeFaq() {
   const { t } = useTranslation('home');
@@ -44,9 +19,26 @@ export default function HomeFaq() {
             {t('faq.intro')}
           </p>
         </Reveal>
+
         <div className="mx-auto mt-12 max-w-3xl divide-y divide-slate-200 rounded-3xl border border-slate-200 bg-white">
-          {faqs.map((faq) => (
-            <FaqItem key={faq.question} faq={faq} />
+          {faqs.map((faq, index) => (
+            <Disclosure key={faq.question} as="div" className="px-6 py-5">
+              {({ open }) => (
+                <>
+                  <Disclosure.Button className="flex w-full items-center justify-between text-left">
+                    <span className="text-base font-semibold text-slate-900">{faq.question}</span>
+                    {open ? (
+                      <MinusSmallIcon className="h-6 w-6 text-emerald-600" aria-hidden="true" />
+                    ) : (
+                      <PlusSmallIcon className="h-6 w-6 text-emerald-600" aria-hidden="true" />
+                    )}
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="mt-3 text-sm leading-6 text-slate-600">
+                    {faq.answer}
+                  </Disclosure.Panel>
+                </>
+              )}
+            </Disclosure>
           ))}
         </div>
       </div>

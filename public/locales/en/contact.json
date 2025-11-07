@@ -1,50 +1,66 @@
 {
   "seo": {
     "title": "Contact | SustainSage",
-    "description": "Book a calm, bilingual intro conversation with SustainSage. Learn what to expect, review consent, and share how we can support your UK transition."
+    "description": "Book a calm, bilingual intro conversation with SustainSage. Share your needs and we will respond with options, consent boundaries, and next steps."
   },
   "hero": {
-    "title": "Get in touch",
-    "subtitle": "Share what you are navigating and the language you feel most at home in. We will respond with options, not pressure."
+    "title": "Contact & next steps",
+    "subtitle": "Tell us what you are navigating. We reply within two UK working days and only use your details to arrange coaching conversations.",
+    "imageAlt": "Illustration of scheduling a coaching session"
   },
-  "expectations": {
+  "highlights": {
     "title": "What to expect",
+    "intro": "A short overview before you send your note.",
     "items": [
-      "We respond within two UK working days to arrange a 20-minute chemistry chat.",
-      "During the chat we clarify goals, language preferences, accessibility needs, and consent.",
-      "If coaching is not the right fit, we will suggest other services such as therapy, legal, immigration, medical, or financial advice."
+      {
+        "title": "Timely response",
+        "description": "We reply within two UK working days with suggested times for a 20-minute intro call."
+      },
+      {
+        "title": "Data stays private",
+        "description": "Your details are used only to arrange coaching and are deleted if we do not start working together."
+      },
+      {
+        "title": "No hard sell",
+        "description": "If coaching is not right, we will suggest other services such as therapy, legal, immigration, or financial support."
+      }
     ]
   },
   "form": {
     "title": "Send us a note",
-    "subtitle": "Everything you share stays confidential except where law or safeguarding requires us to act.",
-    "name": "Full name",
-    "email": "Email address",
-    "topicLabel": "I’m interested in…",
-    "topicPlaceholder": "Select a focus",
-    "message": "What would you like to explore?",
-    "consent": "I consent to SustainSage contacting me about coaching. I understand this is not therapy, legal, immigration, medical, or financial advice.",
-    "privacyNote": "We store your details securely and delete them if we do not begin coaching, unless law requires otherwise.",
-    "submit": "Send",
+    "subtitle": "Please share as much or as little detail as feels comfortable.",
+    "name": "Name",
+    "email": "Email",
+    "help": "How can we help?",
+    "helpHint": "It’s helpful to include context, but “I’m not sure yet” is also welcome.",
+    "language": "Preferred language",
+    "languagePlaceholder": "Select a language",
+    "languageOptions": [
+      { "value": "EN", "label": "English" },
+      { "value": "TC", "label": "Traditional Chinese" },
+      { "value": "SC", "label": "Simplified Chinese" },
+      { "value": "MIX", "label": "Mix languages" }
+    ],
+    "timezone": "Preferred time zone / time window",
+    "timezonePlaceholder": "e.g. GMT+8 evenings, or UK lunchtime",
+    "consent": "I consent to SustainSage contacting me about coaching. I understand my details will only be used to arrange conversations and will be stored securely.",
+    "privacyNote": "We store your information only for the purposes of contacting you about coaching and delete it if we do not begin working together, unless law requires otherwise.",
+    "submit": "Send message",
     "status": {
       "submitting": "Sending…",
-      "success": "Thank you. We’ll respond within two working days.",
-      "error": "Something went wrong. Please try again or email us directly.",
-      "errorRequired": "Please complete all required fields and confirm consent."
-    },
-    "topics": [
-      { "value": "ONE_TO_ONE", "label": "1:1 coaching" },
-      { "value": "GROUP_CLINIC", "label": "Small-group clinic" },
-      { "value": "ORGANISATION", "label": "Organisation partnership" },
-      { "value": "SOMETHING_ELSE", "label": "Something else" }
-    ]
+      "success": "Thank you. We’ll reply within two UK working days.",
+      "error": "Something went wrong. Please try again or email contact@sustainsage.com.",
+      "errorRequired": "Please complete the required fields and confirm consent."
+    }
   },
   "sidebar": {
     "title": "What happens next",
-    "description": "We’ll suggest times for a 20-minute bilingual chemistry chat to see how we can support you.",
+    "description": "After your message we will propose times for a 20-minute intro session to confirm fit and next steps.",
     "responseTitle": "Response time",
     "responseCopy": "Expect a reply within two UK working days—often sooner.",
     "privacyTitle": "Confidentiality",
-    "privacyCopy": "We keep conversations private except when law or safeguarding obligations require disclosure."
+    "privacyCopy": "Your information remains private except where law or safeguarding requires disclosure.",
+    "nextTitle": "During the intro call",
+    "nextCopy": "We align on goals, boundaries, fees, and whether coaching or another service is the right next step."
   }
 }

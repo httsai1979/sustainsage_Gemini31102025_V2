@@ -1,60 +1,76 @@
 {
   "seo": {
-    "title": "關於我們｜SustainSage",
-    "description": "了解 SustainSage 的理念、共同創辦人與安全界線。我們提供中英雙語、對齊 ICF 的教練實踐，尊重文化差異與知情同意。"
+    "title": "關於 SustainSage",
+    "description": "了解 SustainSage 如何結合 ICF 倫理、雙語跨文化背景與穩定節奏，支援在真實壓力下前進的專業工作者。"
   },
   "hero": {
-    "title": "以文化敏感度陪你對話",
-    "subtitle": "SustainSage 為在英國生活、擁有華人背景的來訪者而生，讓你在沉穩、對齊 ICF 倫理的雙語教練裡，看見身份、語言與選擇。"
+    "title": "About SustainSage",
+    "subtitle": "我們是符合 ICF 倫理的雙語教練團隊，長期往返英國與台灣，深知現實責任與跨文化壓力。教練過程尊重節奏、語言選擇與知情同意。",
+    "primaryCta": "預約認識通話",
+    "secondaryCta": "查看服務",
+    "primaryCtaAria": "預約 SustainSage 認識通話",
+    "secondaryCtaAria": "查看 SustainSage 服務",
+    "imageAlt": "兩位教練在平穩空間中討論合作"
   },
-  "philosophy": {
-    "title": "我們的信念",
-    "intro": "結合教練、引導與設計思維，讓每段合作既由你主導，也照顧文化情境。",
-    "principles": [
+  "story": {
+    "title": "創立初衷",
+    "body": "我們在社群與職場中看見，許多旅英華人被告知「撐一下就好」。SustainSage 想打造一個能正視移民制度、照顧責任與職場偏見的教練空間，而不是要求你忽略現實。"
+  },
+  "approach": {
+    "title": "我們怎麼陪伴",
+    "body": "對話保持非指令、透明，會與你共同規劃節奏，遇到紅旗就一起暫停確認，確保每一步都有知情同意。",
+    "items": [
       {
-        "title": "你決定議題",
-        "description": "我們細聽、回饋，僅在你準備好時才共同設計實驗。"
+        "title": "以來談者為中心的結構",
+        "description": "由你決定重點與步伐，我們只在對你有幫助時提供框架或小實驗。"
       },
       {
-        "title": "語言是工具不是阻礙",
-        "description": "會談可使用英語、繁體中文、簡體中文，或依需要混合，支撐你清楚思考。"
+        "title": "雙語與跨文化視角",
+        "description": "會談可用英語、中文或混合語言進行，保留語感與文化細節。"
       },
       {
-        "title": "小步測試建立信心",
-        "description": "以低風險的行動累積證據，不以承諾或結果施壓。"
+        "title": "敢於說不適合",
+        "description": "若判斷教練不合適，我們會坦白說明並協助轉介，而不是硬撐。"
       }
+    ]
+  },
+  "ethics": {
+    "title": "倫理、保密與界線",
+    "body": "我們遵循 ICF 倫理並理解英國在地的法律與 safeguarding 要求。",
+    "items": [
+      "所有資訊皆保密，並清楚說明法律或安全需求下的例外情況。",
+      "在合作前說明範圍、資料處理、取消規定與費用。",
+      "若需要心理治療、法律、移民、醫療或財務專業，我們會暫停教練並協助轉介。"
     ]
   },
   "founders": {
-    "title": "認識共同創辦人",
-    "intro": "我們在離散社群專案中相遇，決定用教練結合文化理解，打造 SustainSage。",
+    "title": "創辦人",
+    "intro": "兩位在英國與台灣往返的教練／促進者，結合設計、社群與學習經驗。",
     "people": [
       {
-        "name": "蔡皓程",
-        "role": "ICF 教練／服務設計師",
-        "bio": "擅長系統思考、利害關係人整理與行動實驗，陪你讓想法落地。",
-        "credentials": "ICF ACC 候選人、服務體驗設計碩士、前社會創新引導者。"
+        "name": "蔡浩丞 Hao-Cheng",
+        "role": "ICF 教練・服務設計師",
+        "bio": "以系統思維與公民創新背景，陪你把想法落地成可測試的行動。",
+        "languages": "使用語言：英文、中文、台語",
+        "focus": "擅長協助中高年轉職者、公共與社福組織、跨文化團隊。",
+        "image": "/images/founders/hao-cheng-tsai.svg"
       },
       {
-        "name": "賴宜玲",
-        "role": "ICF 教練／引導者",
-        "bio": "專注反思對話、跨文化過渡與溫和的行動陪伴，支持持續改變。",
-        "credentials": "ICF ACC、應用正向心理學碩士，長期在英國與台灣進行社群學習設計。"
+        "name": "賴宜伶 Yi-Ling",
+        "role": "ICF 教練・學習設計者",
+        "bio": "以創傷知情與正向心理背景，陪伴旅外華人整合照顧與職涯。",
+        "languages": "使用語言：英文、中文",
+        "focus": "擅長支持照顧者回到職場、社群推動者與新手主管。",
+        "image": "/images/founders/yi-ling-lai.svg"
       }
     ]
   },
-  "safeguards": {
-    "title": "安全與界線",
-    "items": [
-      "除法律或安全需求外，我們維持保密。",
-      "會談前會確認合作範圍、費用、資料處理與取消政策。",
-      "若需要治療、法律、移民、醫療或財務等專業，我們會與你討論並協助轉介或指引資源。"
-    ]
-  },
   "cta": {
-    "title": "想看看如何合作嗎？",
-    "body": "讓我們一起討論 SustainSage 如何以尊重且永續的方式支持你、你的社群或組織。",
-    "primaryCta": "預約相互了解",
-    "secondaryCta": "聯絡我們"
+    "title": "想了解我們能怎麼幫忙？",
+    "body": "分享你目前的情況，我們會提出合適的合作方式，或建議其他資源，讓你可以做出有資訊的選擇。",
+    "primaryCta": "預約認識通話",
+    "secondaryCta": "聯絡我們",
+    "primaryAria": "預約 SustainSage 認識通話",
+    "secondaryAria": "聯絡 SustainSage"
   }
 }

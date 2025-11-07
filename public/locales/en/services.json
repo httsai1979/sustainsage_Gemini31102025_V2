@@ -1,106 +1,81 @@
 {
   "seo": {
     "title": "Services | SustainSage",
-    "description": "Explore SustainSage coaching services: one-to-one coaching, small-group clinics, and organisational partnerships. Client-led, ICF-aligned, and clearly bounded."
+    "description": "Explore coaching formats designed for real-life transitions. SustainSage offers bilingual, ICF-aligned coaching for individuals, organisations, and schools across cultures."
   },
   "hero": {
-    "title": "Services that meet you where you are",
-    "subtitle": "Choose the format that fits your transition. All offers are ICF-aligned, bilingual, and co-designed so you stay in consent.",
-    "primaryCta": "Book a chemistry chat",
-    "secondaryCta": "Explore resources"
+    "title": "Coaching formats that fit real life",
+    "subtitle": "Simple structures, clear boundaries, and bilingual support. We begin by understanding your needs, then choose a rhythm together.",
+    "primaryCta": "Book an intro session",
+    "secondaryCta": "Send an enquiry",
+    "primaryCtaAria": "Book an intro session with SustainSage",
+    "secondaryCtaAria": "Send an enquiry to SustainSage",
+    "imageAlt": "Illustration of coaching formats"
   },
-  "labels": {
-    "for": "Who it’s for",
-    "focus": "Focus",
-    "format": "Format",
-    "languages": "Languages",
-    "boundaries": "Boundaries"
-  },
-  "oneToOne": {
-    "title": "1:1 Coaching",
-    "summary": "Dedicated space to explore goals, identity, and experiments without judgement.",
-    "for": [
-      "Professionals navigating relocation, career shifts, or integration into UK workplaces.",
-      "Leaders balancing multicultural teams or stakeholder expectations.",
-      "Individuals returning from a career break who want steady accountability."
-    ],
-    "focus": [
-      "Clarifying values, strengths, and desired impact.",
-      "Designing experiments to test new roles, industries, or ways of working.",
-      "Building confidence in bilingual communication and boundary setting."
-    ],
-    "format": [
-      "4–6 session cycles, 50–60 minutes each.",
-      "Virtual sessions via secure video calls, with optional in-person intensives in London subject to availability.",
-      "Optional reflection prompts or voice-note check-ins between sessions (only with your consent)."
-    ],
-    "languages": "Available in English, Traditional Chinese, Simplified Chinese, or a blend.",
-    "boundaries": "Coaching is not therapy, legal, immigration, medical, or financial advice. We will signpost other professionals if that support is needed."
-  },
-  "clinics": {
-    "title": "Small-group coaching clinics",
-    "summary": "Gentle group spaces (4–6 people) for shared learning while keeping individual agency.",
-    "for": [
-      "Employee resource groups or community circles wanting culturally aware facilitation.",
-      "Teams preparing for change, such as restructures or international moves.",
-      "Universities or incubators supporting graduates and founders with reflective practice."
-    ],
-    "focus": [
-      "Creating peer support agreements and shared language for wellbeing.",
-      "Exploring complex transitions through coaching-style questions and exercises.",
-      "Designing experiments each participant can adapt to their own context."
-    ],
-    "format": [
-      "Series of 3–6 sessions, 75–90 minutes each.",
-      "Hosted online; on-site delivery in the UK available with travel costs covered.",
-      "Includes optional bilingual resources and summaries for participants."
-    ],
-    "languages": "Delivered in English, Traditional Chinese, Simplified Chinese, or bilingual formats.",
-    "boundaries": "Clinics remain coaching spaces, not training or therapy. Participation is always voluntary, and safeguarding protocols are agreed upfront."
-  },
-  "organisations": {
-    "title": "Support for organisations",
-    "summary": "Consultation-light partnerships to embed coaching practices across multicultural teams.",
-    "for": [
-      "People and culture teams wanting to offer bilingual coaching access.",
-      "Leaders planning responsible change or return-to-work pathways.",
-      "Non-profits and social enterprises supporting diaspora communities."
-    ],
-    "focus": [
-      "Scoping coaching programmes aligned with ICF ethics and organisational policies.",
-      "Designing reflective workshops for managers and team leads.",
-      "Developing referral pathways and safeguarding agreements."
-    ],
-    "format": [
-      "Discovery sessions to understand needs and consent requirements.",
-      "Co-created proposals outlining objectives, language mix, and evaluation rhythms.",
-      "Quarterly reviews to adjust or close the partnership responsibly."
-    ],
-    "languages": "Materials and delivery available in English, Traditional Chinese, and Simplified Chinese.",
-    "boundaries": "We do not replace internal HR, legal, or mental health services. We collaborate with your specialists to keep scope clear."
-  },
-  "howWeWork": {
-    "title": "How we work together",
-    "intro": "Every engagement begins with informed consent and clear agreements.",
-    "steps": [
-      "Chemistry chat to understand goals, language preferences, and accessibility needs.",
-      "Written agreement covering scope, confidentiality, fees, cancellation policy, and safeguarding exceptions.",
-      "Regular reviews to celebrate learning, adjust the plan, or conclude when the work is complete."
+  "individual": {
+    "title": "Individual coaching packages",
+    "intro": "Choose a format based on the depth of support you need. Every package includes check-ins to review pace and fit.",
+    "packages": [
+      {
+        "title": "Reset / Direction",
+        "description": "Four 55-minute sessions designed for decision points, career resets, or transition planning.",
+        "details": "Ideal when you want to regain clarity around one focus while keeping options open."
+      },
+      {
+        "title": "Sustain / Deepen",
+        "description": "Eight 55-minute sessions for longer-term adjustments, identity work, or embedding new rhythms.",
+        "details": "Includes optional reflection prompts or voice-note check-ins if they support your learning."
+      },
+      {
+        "title": "Single deep dive",
+        "description": "A 90-minute intensive session to map scenarios, prepare for a pivotal conversation, or stress-test boundaries.",
+        "details": "Comes with a written summary of options, agreements, and suggested next steps."
+      }
     ]
   },
-  "pricing": {
-    "title": "Pricing notes",
-    "intro": "We price transparently and offer sliding scales where possible.",
-    "notes": [
-      "Rates are quoted in GBP and shared after the chemistry chat based on the agreed scope.",
-      "Discounted places are reserved for community organisers, jobseekers, and self-funded individuals on lower incomes.",
-      "Invoices include clear payment timelines, data handling practices, and cancellation terms."
+  "organisation": {
+    "title": "Support for organisations & schools",
+    "intro": "We design bilingual coaching and reflective workshops that protect psychological safety and align with your policies.",
+    "points": [
+      "Co-create group coaching series or workshops that balance cultural nuance with clear ground rules.",
+      "Partner on ethical frameworks, referral pathways, and consent processes for your teams or students.",
+      "Provide bilingual summaries so stakeholders can continue the work between sessions without losing context."
+    ]
+  },
+  "practical": {
+    "title": "Practical information",
+    "intro": "Transparency helps you plan. We confirm all details in writing before work begins.",
+    "items": [
+      "Sessions can take place online or in-person within the UK when schedules allow.",
+      "Languages available: English, Traditional Chinese, Simplified Chinese, or a blend.",
+      "We operate primarily in UK time (GMT/BST) and can discuss alternatives for international clients.",
+      "Fees are shared after the intro call with clear scopes; sliding scales are available for community-led work."
+    ]
+  },
+  "faqSnippet": {
+    "title": "Good to know",
+    "intro": "A few common questions before we meet.",
+    "items": [
+      {
+        "question": "How soon can we start?",
+        "answer": "Intro calls are usually available within two UK working weeks. Coaching begins once agreements are signed."
+      },
+      {
+        "question": "Do you coach in mixed languages?",
+        "answer": "Yes. Many clients switch languages mid-session; we will check what feels most comfortable for you."
+      },
+      {
+        "question": "Will we receive documentation?",
+        "answer": "You will receive summaries of agreements, safeguarding boundaries, and optional reflection notes after sessions."
+      }
     ]
   },
   "cta": {
     "title": "Start with a conversation",
-    "body": "Share what you are navigating and we will suggest formats—or signpost alternatives—so you can choose the support that fits.",
-    "primaryCta": "Book a chemistry chat",
-    "secondaryCta": "Contact us"
+    "body": "Share what you are navigating and we will outline formats—or signpost other support—so you can choose confidently.",
+    "primaryCta": "Book an intro session",
+    "secondaryCta": "Send an enquiry",
+    "primaryAria": "Book an intro session with SustainSage",
+    "secondaryAria": "Send an enquiry to SustainSage"
   }
 }
