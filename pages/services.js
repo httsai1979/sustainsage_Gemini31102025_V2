@@ -7,10 +7,12 @@ import nextI18NextConfig from '../next-i18next.config.js';
 
 function ServicesPage() {
   const { t } = useTranslation('services');
-  const formats = t('formats.items', { returnObjects: true });
-  const commitments = t('commitments.items', { returnObjects: true });
-  const boundaries = t('boundaries.items', { returnObjects: true });
-  const practicalities = t('practicalities.items', { returnObjects: true });
+  const toArray = (value) => (Array.isArray(value) ? value : value ? [value] : []);
+  const plans = toArray(t('plans.items', { returnObjects: true }));
+  const partnershipItems = toArray(t('partnership.items', { returnObjects: true }));
+  const partnershipNotes = toArray(t('partnership.notes', { returnObjects: true }));
+  const boundaries = toArray(t('boundaries.items', { returnObjects: true }));
+  const logistics = toArray(t('logistics.items', { returnObjects: true }));
 
   return (
     <>
@@ -24,13 +26,31 @@ function ServicesPage() {
       <section className="py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {t('formats.title')}
+            {t('plans.title')}
           </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            {formats.map((item) => (
+          <p className="mt-4 text-base leading-7 text-slate-700">{t('plans.intro')}</p>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {plans.map((item) => (
               <article key={item.title} className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
                 <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
+                <dl className="mt-4 space-y-3 text-sm leading-6 text-slate-600">
+                  <div>
+                    <dt className="font-semibold text-slate-900">{t('plans.fields.audience')}</dt>
+                    <dd className="mt-1">{item.audience}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-slate-900">{t('plans.fields.format')}</dt>
+                    <dd className="mt-1">{item.format}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-slate-900">{t('plans.fields.process')}</dt>
+                    <dd className="mt-1">{item.process}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-slate-900">{t('plans.fields.outcomes')}</dt>
+                    <dd className="mt-1">{item.outcomes}</dd>
+                  </div>
+                </dl>
               </article>
             ))}
           </div>
@@ -40,13 +60,27 @@ function ServicesPage() {
       <section className="bg-emerald-50 py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {t('commitments.title')}
+            {t('partnership.title')}
           </h2>
-          <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-            {commitments.map((item) => (
-              <li key={item}>{item}</li>
+          <p className="mt-4 text-base leading-7 text-slate-700">{t('partnership.lead')}</p>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            {partnershipItems.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-3xl border border-emerald-100 bg-white p-6 text-sm leading-6 text-slate-700 shadow-sm"
+              >
+                <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
+              </article>
             ))}
-          </ul>
+          </div>
+          {partnershipNotes.length > 0 && (
+            <ul className="mt-8 space-y-3 text-sm leading-6 text-slate-700">
+              {partnershipNotes.map((note) => (
+                <li key={note}>{note}</li>
+              ))}
+            </ul>
+          )}
         </div>
       </section>
 
@@ -66,10 +100,10 @@ function ServicesPage() {
       <section className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-            {t('practicalities.title')}
+            {t('logistics.title')}
           </h2>
           <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-            {practicalities.map((item) => (
+            {logistics.map((item) => (
               <li key={item}>{item}</li>
             ))}
           </ul>
