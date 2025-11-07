@@ -28,10 +28,15 @@ const HOME_JSON_LD = [
 
 function HomePage() {
   const { t } = useTranslation('home');
-  const audiences = t('audiences', { returnObjects: true });
-  const process = t('process', { returnObjects: true });
+  const whoWeHelp = t('whoWeHelp.items', { returnObjects: true });
+  const howCoachingWorks = t('howCoachingWorks.items', { returnObjects: true });
+  const whySustainSage = t('whySustainSage.items', { returnObjects: true });
   const faqs = t('faqs', { returnObjects: true });
   const founders = t('founders.people', { returnObjects: true });
+  const whoWeHelpIntro = t('whoWeHelp.intro');
+  const howCoachingWorksIntro = t('howCoachingWorks.intro');
+  const whySustainSageIntro = t('whySustainSage.intro');
+  const faqIntro = t('faqIntro');
 
   return (
     <>
@@ -41,6 +46,7 @@ function HomePage() {
         align="left"
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
+        eyebrow={t('hero.eyebrow')}
       >
         <Link
           href="/contact"
@@ -49,7 +55,7 @@ function HomePage() {
           {t('hero.primaryCta')}
         </Link>
         <a
-          href="#how-it-works"
+          href="#how-coaching-works"
           className="rounded-xl border border-white/60 px-4 py-2 text-sm font-semibold text-white transition hover:border-white"
         >
           {t('hero.secondaryCta')}
@@ -60,11 +66,18 @@ function HomePage() {
         <div className="mx-auto max-w-6xl px-6">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('audiencesTitle')}
+              {t('whoWeHelp.title')}
             </h2>
           </Reveal>
-          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {audiences.map((item) => (
+          {whoWeHelpIntro && (
+            <Reveal className="reveal-1">
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
+                {whoWeHelpIntro}
+              </p>
+            </Reveal>
+          )}
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {whoWeHelp.map((item) => (
               <HoverLift key={item.title} className="h-full">
                 <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
                   <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
@@ -76,19 +89,53 @@ function HomePage() {
         </div>
       </section>
 
-      <section id="how-it-works" className="bg-emerald-50 py-12 sm:py-16">
+      <section id="how-coaching-works" className="bg-emerald-50 py-12 sm:py-16">
         <div className="mx-auto max-w-6xl px-6">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('processTitle')}
+              {t('howCoachingWorks.title')}
             </h2>
           </Reveal>
+          {howCoachingWorksIntro && (
+            <Reveal className="reveal-1">
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
+                {howCoachingWorksIntro}
+              </p>
+            </Reveal>
+          )}
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {process.map((step) => (
+            {howCoachingWorks.map((step) => (
               <HoverLift key={step.title} className="h-full">
                 <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
                   <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{step.description}</p>
+                </article>
+              </HoverLift>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('whySustainSage.title')}
+            </h2>
+          </Reveal>
+          {whySustainSageIntro && (
+            <Reveal className="reveal-1">
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
+                {whySustainSageIntro}
+              </p>
+            </Reveal>
+          )}
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {whySustainSage.map((item) => (
+              <HoverLift key={item.title} className="h-full">
+                <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
                 </article>
               </HoverLift>
             ))}
@@ -103,6 +150,13 @@ function HomePage() {
               {t('faqTitle')}
             </h2>
           </Reveal>
+          {faqIntro && (
+            <Reveal className="reveal-1">
+              <p className="mt-4 max-w-3xl text-sm leading-6 text-slate-600 sm:text-base">
+                {faqIntro}
+              </p>
+            </Reveal>
+          )}
           <div className="mt-6 space-y-4">
             {faqs.map((item) => (
               <details key={item.question} className="group rounded-3xl border border-emerald-100 bg-white p-5 shadow-sm">
@@ -172,7 +226,7 @@ function HomePage() {
 
 HomePage.layoutProps = {
   title: 'SustainSage | Coaching',
-  desc: 'Calm, client-led coaching grounded in ICF ethics.',
+  desc: 'Calm, bilingual coaching for UK transitions, aligned with ICF ethics.',
   jsonLd: HOME_JSON_LD,
 };
 
