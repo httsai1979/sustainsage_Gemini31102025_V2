@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
 const FIELD_CLASSNAME =
@@ -6,6 +7,7 @@ const FIELD_CLASSNAME =
 
 export default function ContactForm() {
   const { t } = useTranslation('contact');
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -21,6 +23,18 @@ export default function ContactForm() {
   const [status, setStatus] = useState(null);
   const [message, setMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const focusAreaOptions = t('form.focusAreaOptions', { returnObjects: true });
+
+  useEffect(() => {
+    const packageParam = router.query.package;
+    if (typeof packageParam === 'string') {
+      const isValid = focusAreaOptions.some((option) => option.value === packageParam);
+      if (isValid) {
+        setFormData((previous) => (previous.focusArea ? previous : { ...previous, focusArea: packageParam }));
+      }
+    }
+  }, [focusAreaOptions, router.query.package]);
 
   const handleChange = (event) => {
     const { name, type, value, checked } = event.target;
@@ -176,7 +190,7 @@ export default function ContactForm() {
                   className={FIELD_CLASSNAME}
                 >
                   <option value="">{t('form.focusAreaPlaceholder')}</option>
-                  {t('form.focusAreaOptions', { returnObjects: true }).map((option) => (
+                  {focusAreaOptions.map((option) => (
                     <option key={option.value} value={option.value}>
                       {option.label}
                     </option>

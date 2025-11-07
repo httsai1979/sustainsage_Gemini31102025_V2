@@ -1,303 +1,102 @@
 {
   "seo": {
     "title": "Services | SustainSage",
-    "description": "Explore SustainSage coaching packages for UK relocation, workplace confidence and clarity experiments."
+    "description": "Explore SustainSage coaching packages built for relocation, returning to work, settling in the UK and light-touch check-ins."
   },
   "hero": {
-    "title": "Coaching packages designed for real life transitions",
-    "subtitle": "Choose the support that fits what you need most right now.",
-    "imageAlt": "Illustration of three coaching pathways"
+    "title": "Coaching offers shaped by lived UK transitions",
+    "subtitle": "Pick the option that matches your context, then we tailor the details together."
+  },
+  "overview": {
+    "title": "What stays consistent",
+    "description": "Each package begins with a 20-minute intro call to confirm scope, consent and boundaries.",
+    "bullets": [
+      "ICF-aligned coaching with clear agreements and confidentiality.",
+      "Sessions held online unless we agree otherwise.",
+      "You lead the agenda; we bring questions, structure and reflection."
+    ]
   },
   "packages": {
-    "title": "Choose your package",
-    "subtitle": "Each pathway begins with a 20-minute intro call to confirm scope, pace and boundaries.",
+    "title": "Our four core offers",
+    "description": "Choose the focus that feels closest to what you need right now.",
     "cards": [
       {
-        "icon": "transition",
-        "title": "Transition coaching (6 sessions)",
-        "for": "For people relocating, changing roles or returning to work.",
-        "focus": "Orientation, realistic planning, sustainable pace.",
-        "format": "6 × 60-min sessions over 8–12 weeks, online.",
+        "slug": "transition",
+        "title": "Transition package",
+        "summary": "Six sessions to move through relocation or role change without burning out.",
+        "bullets": [
+          "Clarify what a good move looks like for you.",
+          "Map constraints across money, visas, family and wellbeing.",
+          "Design grounded experiments instead of one big leap."
+        ],
+        "cta": "Learn more",
         "href": "/services/transition",
-        "cta": "View details",
-        "ariaLabel": "View transition coaching details"
+        "image": "/images/services/transition.svg",
+        "imageAlt": "Boxes and a map ready for a thoughtful move"
       },
       {
-        "icon": "confidence",
-        "title": "Confidence & voice in UK workplaces",
-        "for": "For people navigating UK workplaces in a second language or new culture.",
-        "focus": "Speaking up, owning your authority, boundary-setting.",
-        "format": "4–6 × 60-min sessions, online.",
-        "href": "/services/confidence",
-        "cta": "View details",
-        "ariaLabel": "View confidence and voice coaching details"
+        "slug": "returning",
+        "title": "Returning to work",
+        "summary": "Support after a break to rebuild story, confidence and realistic rhythms.",
+        "bullets": [
+          "Reframe your break without hiding it.",
+          "Prepare for conversations with employers and family.",
+          "Notice capacity, boundaries and pacing in real life."
+        ],
+        "cta": "Learn more",
+        "href": "/services/returning",
+        "image": "/images/services/returning.svg",
+        "imageAlt": "Home and work desk in balance"
       },
       {
-        "icon": "experiments",
-        "title": "Clarity experiments for career decisions",
-        "for": "For people unsure about what’s next.",
-        "focus": "Design and run small tests instead of waiting for certainty.",
-        "format": "3–4 × 60-min sessions + simple experiments.",
-        "href": "/services/experiments",
-        "cta": "View details",
-        "ariaLabel": "View clarity experiments coaching details"
+        "slug": "newToUk",
+        "title": "New to the UK",
+        "summary": "Context-aware coaching to decode norms and choose your stance.",
+        "bullets": [
+          "Name what feels unfamiliar or heavy right now.",
+          "Decide where to adapt, push back or opt out.",
+          "Plan job search or work strategies that protect dignity."
+        ],
+        "cta": "Learn more",
+        "href": "/services/new-to-uk",
+        "image": "/images/services/new-to-uk.svg",
+        "imageAlt": "Signpost with an abstract UK skyline"
+      },
+      {
+        "slug": "checkIn",
+        "title": "Steady check-ins",
+        "summary": "One or three sessions when you just need an ethical sounding board.",
+        "bullets": [
+          "Untangle one decision or conversation.",
+          "Realign with values and capacity.",
+          "Leave with 1–3 next steps to keep momentum."
+        ],
+        "cta": "Learn more",
+        "href": "/services/check-in",
+        "image": "/images/services/check-in.svg",
+        "imageAlt": "Notebook and tea cup ready for reflection"
       }
     ]
   },
-  "cta": {
-    "title": "Not sure which option fits?",
-    "body": "Share a few lines about your context. We’ll explore together during the intro call.",
-    "primaryCta": "Book a 20-min intro call",
-    "primaryAria": "Book a 20-minute intro call with SustainSage"
+  "process": {
+    "title": "How we begin",
+    "description": "A light structure keeps you informed while leaving space to adapt.",
+    "bullets": [
+      "Intro call: confirm needs, scope and whether coaching is right now.",
+      "Co-created agreement: cadence, language, between-session support.",
+      "Regular reviews so we can adjust pace or close when goals are met."
+    ]
   },
-  "details": {
-    "transition": {
-      "seo": {
-        "title": "Transition coaching | SustainSage",
-        "description": "Steady, ICF-aligned coaching for relocation and role changes in the UK."
-      },
-      "hero": {
-        "title": "Transition coaching for relocation and role changes",
-        "subtitle": "Steady support to land, re-orient and choose next steps that fit your real life.",
-        "cta": "Book a 20-min intro call",
-        "ctaAria": "Book a 20-minute intro call about transition coaching",
-        "imageAlt": "Illustration of a person navigating new paths"
-      },
-      "for": {
-        "title": "Who this is for",
-        "items": [
-          "You’ve moved (or are moving) to the UK and feel stretched between systems, languages and roles.",
-          "You’re changing roles or sectors and want a grounded, values-led plan.",
-          "You’re returning after a break and don’t want to burn out proving yourself."
-        ]
-      },
-      "focus": {
-        "title": "What we explore",
-        "cards": [
-          {
-            "icon": "context",
-            "title": "Your context",
-            "body": "Visas, money, care, networks, expectations—naming constraints without turning them into excuses."
-          },
-          {
-            "icon": "values",
-            "title": "Your values & identity",
-            "body": "What you want to protect, grow, or leave behind in this new chapter."
-          },
-          {
-            "icon": "options",
-            "title": "Real options",
-            "body": "Roles, routes and rhythms that are actually available to you now."
-          },
-          {
-            "icon": "experiments",
-            "title": "Experiments",
-            "body": "Small, reversible steps to test directions before committing."
-          }
-        ]
-      },
-      "package": {
-        "title": "How the package works",
-        "items": [
-          "6 × 60-min sessions over 8–12 weeks (online).",
-          "Light check-ins between sessions when helpful (email or short notes, not 24/7).",
-          "Shared notes after sessions to capture your insights and decisions."
-        ]
-      },
-      "session": {
-        "title": "What a session feels like",
-        "paragraphs": [
-          "Calm, curious and structured.",
-          "You bring what’s live; we listen, reflect patterns, ask questions and co-design next steps.",
-          "No judgment for “messy” realities."
-        ]
-      },
-      "prompts": {
-        "title": "Reflective prompts",
-        "items": [
-          "What would “settled enough for now” look like three months from today?",
-          "Which expectations truly belong to you—and which belong to others, old systems or fear?",
-          "If you could try one small, low-risk move this month, what would you choose?"
-        ]
-      },
-      "boundaries": {
-        "title": "Boundaries & ethics",
-        "items": [
-          "Not therapy, counselling, legal or immigration advice.",
-          "If specialist support seems needed, we’ll say so and invite you to consider it.",
-          "You keep responsibility and authorship; we hold process and partnership."
-        ]
-      },
-      "cta": {
-        "title": "Ready for a gentle starting point?",
-        "body": "Tell us about your transition and we’ll map possible next steps together.",
-        "primaryCta": "Book a 20-min intro call",
-        "primaryAria": "Book a 20-minute intro call about transition coaching"
-      }
-    },
-    "confidence": {
-      "seo": {
-        "title": "Confidence & voice coaching | SustainSage",
-        "description": "Coaching to speak up, set boundaries and stay yourself in UK workplaces."
-      },
-      "hero": {
-        "title": "Confidence & voice in UK workplaces",
-        "subtitle": "Coaching to speak up, set boundaries and stay yourself in a new culture.",
-        "cta": "Book a 20-min intro call",
-        "ctaAria": "Book a 20-minute intro call about confidence coaching",
-        "imageAlt": "Illustration of a person sharing ideas in a meeting"
-      },
-      "for": {
-        "title": "Who this is for",
-        "items": [
-          "You second-guess your English, accent or “right to speak” in meetings.",
-          "You avoid difficult conversations with managers, peers or clients.",
-          "You’re navigating cultural codes and want to stay respectful without disappearing."
-        ]
-      },
-      "focus": {
-        "title": "What we focus on",
-        "cards": [
-          {
-            "icon": "inner",
-            "title": "Inner stories",
-            "body": "Beliefs about “good enough English”, authority, failure and visibility."
-          },
-          {
-            "icon": "interactions",
-            "title": "Everyday interactions",
-            "body": "Meetings, emails, feedback, saying no, asking for what you need."
-          },
-          {
-            "icon": "boundaries",
-            "title": "Boundaries",
-            "body": "How to protect time, energy and ethics without drama."
-          },
-          {
-            "icon": "allyship",
-            "title": "Allyship & support",
-            "body": "Building people and practices that help you show up."
-          }
-        ]
-      },
-      "package": {
-        "title": "How the package works",
-        "items": [
-          "4–6 × 60-min sessions over 6–10 weeks, online.",
-          "Practical experiments between sessions (e.g. one clear ask, one small “no”, one brave email)."
-        ]
-      },
-      "session": {
-        "title": "What a session feels like",
-        "paragraphs": [
-          "Grounded, bilingual space where you can try language out loud.",
-          "We explore beliefs, rehearse conversations and agree on small experiments that feel possible now."
-        ]
-      },
-      "prompts": {
-        "title": "Reflective prompts",
-        "items": [
-          "Where are you already trusted more than you trust yourself?",
-          "If you could express one thing more directly this month, what would it be?",
-          "What does “respectful and clear” look like in your voice—not someone else’s?"
-        ]
-      },
-      "boundaries": {
-        "title": "Boundaries & ethics",
-        "items": [
-          "Not presentation training or a promise of promotion.",
-          "No workplace legal judgments; we encourage HR or professional advice when needed.",
-          "We don’t guarantee outcomes—you stay in authorship."
-        ]
-      },
-      "cta": {
-        "title": "Curious to explore your voice?",
-        "body": "Share a few lines about the conversations you’re holding and we’ll co-design a gentle next step.",
-        "primaryCta": "Book a 20-min intro call",
-        "primaryAria": "Book a 20-minute intro call about confidence coaching"
-      }
-    },
-    "experiments": {
-      "seo": {
-        "title": "Clarity experiments coaching | SustainSage",
-        "description": "Short coaching series to test career possibilities through small experiments."
-      },
-      "hero": {
-        "title": "Clarity through small experiments",
-        "subtitle": "A short coaching series to test possible paths instead of waiting for a perfect answer.",
-        "cta": "Book a 20-min intro call",
-        "ctaAria": "Book a 20-minute intro call about clarity experiments",
-        "imageAlt": "Illustration of branching paths and lightbulbs"
-      },
-      "for": {
-        "title": "Who this is for",
-        "items": [
-          "You don’t hate your current path, but “this can’t be it forever”.",
-          "You’re stuck between multiple options and keep looping in your head.",
-          "You’re afraid of choosing “wrong” and wasting limited time/visa/money."
-        ]
-      },
-      "focus": {
-        "title": "What we explore",
-        "cards": [
-          {
-            "icon": "map",
-            "title": "Map your questions",
-            "body": "Separate real constraints from assumptions."
-          },
-          {
-            "icon": "design",
-            "title": "Design tiny experiments",
-            "body": "Informational chats, small projects, volunteering, job try-outs, skill labs."
-          },
-          {
-            "icon": "results",
-            "title": "Read the results",
-            "body": "What energised you, what drained you, what you learned."
-          },
-          {
-            "icon": "decide",
-            "title": "Decide next slice",
-            "body": "A next 3–6 month direction, not “forever”."
-          }
-        ]
-      },
-      "package": {
-        "title": "How the package works",
-        "items": [
-          "3–4 × 60-min sessions over 4–6 weeks.",
-          "Each session ends with 1–2 concrete experiments you design and own."
-        ]
-      },
-      "session": {
-        "title": "What a session feels like",
-        "paragraphs": [
-          "Curious, spacious and practical.",
-          "We map what you’re noticing, design experiments that feel safe enough and review learning quickly."
-        ]
-      },
-      "prompts": {
-        "title": "Reflective prompts",
-        "items": [
-          "What do you already know you don’t want to repeat?",
-          "If you treated the next 3 months as a test, not a verdict, what becomes possible?",
-          "What would “a little more honest” look like in your work week?"
-        ]
-      },
-      "boundaries": {
-        "title": "Boundaries & ethics",
-        "items": [
-          "We won’t provide a “perfect calling” answer; you make the decisions.",
-          "We avoid financial or legal advice beyond the coaching scope.",
-          "Experiments stay within your consent and capacity; we adjust when needed."
-        ]
-      },
-      "cta": {
-        "title": "Ready to test possibilities?",
-        "body": "Bring the questions you’re holding and we’ll sketch a light, respectful plan.",
-        "primaryCta": "Book a 20-min intro call",
-        "primaryAria": "Book a 20-minute intro call about clarity experiments"
-      }
-    }
+  "faq": {
+    "title": "More about working together",
+    "intro": "A few practical answers are below—there are more in our full FAQ."
+  },
+  "cta": {
+    "title": "Need help choosing?",
+    "body": "Share a few lines about what’s happening. We’ll suggest a starting point or signpost other support.",
+    "primaryCta": "Book a 20-min intro call",
+    "secondaryCta": "Contact us",
+    "primaryAria": "Book a 20-minute intro call with SustainSage",
+    "secondaryAria": "Contact SustainSage"
   }
 }

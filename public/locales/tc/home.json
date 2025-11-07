@@ -1,122 +1,100 @@
 {
   "seo": {
-    "title": "SustainSage｜穩定陪你面對英國生活轉換",
-    "description": "ICF 對齊的教練對話，陪你在搬遷、職涯轉換與生活節奏改變中，保有主導權與清晰度。"
+    "title": "SustainSage｜陪你穿越轉換的教練對話",
+    "description": "ICF 對齊的教練服務，陪伴你在英國搬遷、重返職場或生活微調中保持清晰與主動。"
   },
   "hero": {
-    "title": "以你為主的平穩教練對話，陪你走過真實生活的轉換",
-    "subtitle": "在英國留下能好好思考、決定下一個小步、維持自己步調的空間。",
+    "title": "為英國移動與安靜變化而設的教練",
+    "subtitle": "短而穩定的對話，幫你理出頭緒、在同意與自覺下行動。",
     "primaryCta": "預約 20 分鐘初談",
-    "secondaryCta": "探索服務",
-    "primaryCtaAria": "預約 SustainSage 20 分鐘初談",
-    "secondaryCtaAria": "查看 SustainSage 教練服務",
-    "imageAlt": "象徵平靜對話的抽象插畫"
+    "secondaryCta": "查看服務",
+    "primaryCtaAria": "與 SustainSage 預約 20 分鐘初談",
+    "secondaryCtaAria": "探索 SustainSage 的教練服務",
+    "imageAlt": "兩人帶著地圖與筆記並肩規劃"
   },
-  "who": {
-    "title": "我們常陪伴的人",
-    "subtitle": "面對複雜英國轉換、需要反思空間又想保有自主的人。",
-    "cards": [
-      {
-        "icon": "returners",
-        "title": "暫停後重返職場",
-        "body": "重整節奏與信心，不需假裝一切沒變。"
-      },
-      {
-        "icon": "newcomers",
-        "title": "剛抵達或移居英國",
-        "body": "理解文化、制度與選擇，不必獨自摸索。"
-      },
-      {
-        "icon": "changers",
-        "title": "轉職或換跑道",
-        "body": "透過小而低風險的實驗測試選項。"
-      },
-      {
-        "icon": "parents",
-        "title": "同時照顧與工作",
-        "body": "守住重要的事，打造可持續的生活樣貌。"
-      }
+  "fit": {
+    "title": "什麼情況特別適合",
+    "description": "當生活在轉向、你想要的是腳踏實地的陪伴而不是口號時，我們就在這裡。",
+    "bullets": [
+      "搬到英國或在英國城市間移動，想重新設計可持續的生活節奏。",
+      "照顧、療養或進修後回到職場，還在摸索要怎麼開口。",
+      "面對變動時同時感到鬆一口氣、壓力與失落，需要一個整理的空間。",
+      "夾在移民、家庭與工作的期待之間，不想在健康與價值觀上妥協。"
     ]
   },
-  "process": {
-    "title": "合作流程這樣走",
-    "subtitle": "有結構也保留彈性，你始終清楚並掌握節奏。",
-    "steps": [
-      {
-        "icon": "intro",
-        "title": "初談",
-        "body": "20 分鐘談談你所在的位置、確認界線，看看是否適合繼續。"
-      },
-      {
-        "icon": "sessions",
-        "title": "聚焦會談",
-        "body": "共同設計的對話，放慢反思、規劃小實驗，也留足呼吸空間。"
-      },
-      {
-        "icon": "review",
-        "title": "檢視與下一步",
-        "body": "定期整理學習、調整步調，再一起決定要延續、暫停或結束。"
-      }
+  "approach": {
+    "title": "對話的節奏",
+    "description": "結構輕、倫理清楚，由你領航，我們陪你把握焦點。",
+    "bullets": [
+      "每次會談都從你此刻最重要的議題出發。",
+      "我們回映脈絡、提問釐清，並一起設計小規模實驗。",
+      "帶走的是一到三個下一步或省思，而不是要照抄的處方。",
+      "會後如有需要，只提供輕量、對你有幫助的追蹤。"
     ]
   },
-  "focus": {
-    "title": "選擇你的焦點",
-    "subtitle": "挑選此刻最需要的對話入口。",
+  "services": {
+    "title": "選擇你當下的重點",
+    "description": "這些方案整理自客戶最常遇到的過渡情境。",
     "cards": [
       {
-        "icon": "transition",
-        "title": "轉換教練",
-        "body": "6 週期支持搬遷、角色變動與重返工作，陪你擬定務實且以價值為本的計畫。",
+        "slug": "transition",
+        "title": "轉換方案",
+        "description": "六次會談，穩穩走過搬遷或職涯轉換。",
+        "cta": "了解更多",
         "href": "/services/transition",
-        "linkLabel": "查看轉換教練細節",
-        "ariaLabel": "前往轉換教練服務頁"
+        "image": "/images/services/transition.svg",
+        "imageAlt": "紙箱與地圖象徵細膩規劃"
       },
       {
-        "icon": "confidence",
-        "title": "聲音與自信教練",
-        "body": "陪你在英國職場開口、設界線，又能保留真實的自己。",
-        "href": "/services/confidence",
-        "linkLabel": "查看聲音與自信教練細節",
-        "ariaLabel": "前往聲音與自信教練服務頁"
+        "slug": "returning",
+        "title": "重返職場",
+        "description": "在空窗後重新建立信心與生活節奏。",
+        "cta": "了解更多",
+        "href": "/services/returning",
+        "image": "/images/services/returning.svg",
+        "imageAlt": "房屋與辦公桌並列"
       },
       {
-        "icon": "experiments",
-        "title": "職涯小實驗",
-        "body": "短期、聚焦的方案，用實際測試取代過度腦補。",
-        "href": "/services/experiments",
-        "linkLabel": "查看小實驗方案",
-        "ariaLabel": "前往小實驗方案服務頁"
+        "slug": "newToUk",
+        "title": "初到英國",
+        "description": "情境敏感的教練，幫你解碼職場與生活規則。",
+        "cta": "了解更多",
+        "href": "/services/new-to-uk",
+        "image": "/images/services/new-to-uk.svg",
+        "imageAlt": "路標與抽象倫敦天際線"
+      },
+      {
+        "slug": "checkIn",
+        "title": "定期 check-in",
+        "description": "只想找人釐清一次或輕量跟進，也有彈性空間。",
+        "cta": "了解更多",
+        "href": "/services/check-in",
+        "image": "/images/services/check-in.svg",
+        "imageAlt": "筆記本與茶杯的擺設"
       }
+    ]
+  },
+  "support": {
+    "title": "讓我們踏實的做法",
+    "description": "ICF 倫理是底線，移民與照顧的親身經驗讓對話貼近現實。",
+    "bullets": [
+      "非指導式的合作：方向由你決定，我們一起形塑架構。",
+      "看見權力、階級、種族、健康與照顧角色，而不貼標籤。",
+      "實際行動與內在反思並重，兩者都重要。",
+      "若教練不是最適合的資源，我們會清楚轉介或提供其他資訊。"
     ]
   },
   "faq": {
-    "title": "常見提問",
-    "intro": "我們依 ICF 精神回應常見問題；若有更多疑問，初談時再一起釐清。",
-    "items": [
-      {
-        "question": "初談會做什麼？",
-        "answer": "20 分鐘了解你想要什麼、說明界線，一起確認是否適合合作。"
-      },
-      {
-        "question": "這是心理諮商或輔導嗎？",
-        "answer": "不是。我們不做診斷或治療，若需要治療會溫和明確地建議你找合適資源。"
-      },
-      {
-        "question": "會保證成果嗎？",
-        "answer": "不保證。主導權在你，我們提供結構、提問與陪伴記錄。"
-      },
-      {
-        "question": "我還不確定自己想要什麼可以嗎？",
-        "answer": "可以。「我只知道現在哪裡怪怪的」就是很好的起點。"
-      }
-    ]
+    "title": "常見的起步疑問",
+    "intro": "先給你幾個重點答案，需要更多細節時可以閱讀完整 FAQ。",
+    "seeAll": "查看完整 FAQ"
   },
   "cta": {
-    "title": "準備好就開始",
-    "body": "分享你正在面對的轉換。我們會提供下一步建議或其他資源，全程零壓力。",
+    "title": "想先聊聊嗎？",
+    "body": "寫下你正在經歷的轉換。我們會一起確認是否合適、步調與下一步。",
     "primaryCta": "預約 20 分鐘初談",
-    "secondaryCta": "探索服務",
-    "primaryAria": "預約 SustainSage 20 分鐘初談",
-    "secondaryAria": "查看 SustainSage 教練服務"
+    "secondaryCta": "聯絡我們",
+    "primaryAria": "與 SustainSage 預約 20 分鐘初談",
+    "secondaryAria": "前往聯絡頁"
   }
 }
