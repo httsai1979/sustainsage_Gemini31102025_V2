@@ -34,6 +34,36 @@
       }
     ]
   },
+  "stance": {
+    "title": "How we coach",
+    "points": [
+      "Client-led and non-directive: you set the focus, we bring presence, questions and reflection.",
+      "We work with you as a whole person in context — culture, family, money, identity — not just job titles.",
+      "We may offer observations or light suggestions, but you always choose what to accept or ignore."
+    ]
+  },
+  "agreements": {
+    "title": "Our agreements with you",
+    "items": [
+      "We clarify scope, goals, number of sessions and fees together before we start.",
+      "We follow the ICF Code of Ethics, including confidentiality with clear legal and safeguarding exceptions.",
+      "Coaching is not therapy, counselling, medical, legal, immigration or financial advice.",
+      "You remain responsible for decisions and actions; we commit to an honest, supportive process."
+    ]
+  },
+  "fit": {
+    "title": "Is this a good fit?",
+    "forLabel": "A good fit if",
+    "notForLabel": "Not a fit if",
+    "for": [
+      "You are navigating relocation, career shifts, parenthood transitions or identity questions in or around the UK.",
+      "You want a calmer, reflective space — not hype, pressure or quick-fix promises."
+    ],
+    "notFor": [
+      "You need crisis or trauma support, diagnosis or treatment — therapy or medical help is more appropriate.",
+      "You are looking for someone to tell you exactly what to do or guarantee specific outcomes."
+    ]
+  },
   "ethics": {
     "title": "Ethics, confidentiality, and safeguarding",
     "body": "We hold ourselves accountable to the ICF Code of Ethics and UK safeguarding expectations.",

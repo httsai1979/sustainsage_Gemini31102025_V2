@@ -2,6 +2,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
 import ContactForm from '@/components/Sections/ContactForm';
+import { Reveal } from '@/components/ui/Motion';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -13,6 +14,9 @@ const CARD_BASE_CLASS =
 function ContactPage() {
   const { t } = useTranslation('contact');
   const highlights = t('highlights.items', { returnObjects: true });
+  const intro = t('intro');
+  const nextSteps = t('afterSubmit', { returnObjects: true });
+  const consentInfo = t('consent', { returnObjects: true });
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
@@ -43,7 +47,44 @@ function ContactPage() {
       </section>
 
       <div className="bg-emerald-50/60 py-16 sm:py-20">
-        <ContactForm />
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <Reveal>
+            <p className="text-base leading-7 text-emerald-900">{intro}</p>
+          </Reveal>
+        </div>
+        <div className="mt-10">
+          <ContactForm />
+        </div>
+        <div className="mx-auto mt-16 max-w-5xl px-6">
+          <div className="grid gap-10 lg:grid-cols-2">
+            <Reveal className="reveal-1">
+              <section className="rounded-3xl border border-emerald-100 bg-white/90 p-6 text-left shadow-sm">
+                <h3 className="text-lg font-semibold text-emerald-900">{t('sidebar.title')}</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+                  {nextSteps.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </Reveal>
+            <Reveal className="reveal-2">
+              <section className="rounded-3xl border border-emerald-100 bg-white/90 p-6 text-left shadow-sm">
+                <h3 className="text-lg font-semibold text-emerald-900">{consentInfo.label}</h3>
+                <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+                  {consentInfo.points.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            </Reveal>
+          </div>
+        </div>
       </div>
 
       <div className="px-6 pb-20">
