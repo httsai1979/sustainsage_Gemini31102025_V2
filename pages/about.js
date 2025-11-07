@@ -13,33 +13,6 @@ import nextI18NextConfig from '../next-i18next.config.js';
 const CARD_BASE_CLASS =
   'rounded-2xl border border-emerald-100 bg-white/80 p-4 md:p-6 shadow-sm transition hover:shadow-md';
 
-function NarrativeSection({ title, body, items }) {
-  return (
-    <section className="bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-5xl px-6">
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{title}</h2>
-        <p className="mt-4 text-base leading-7 text-slate-600">{body}</p>
-        {items && (
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            {items.map((item) => (
-              <article key={item.title || item} className={CARD_BASE_CLASS}>
-                {item.title ? (
-                  <>
-                    <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.description}</p>
-                  </>
-                ) : (
-                  <p className="text-sm leading-6 text-slate-600">{item}</p>
-                )}
-              </article>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
-  );
-}
-
 function FoundersSection({ title, intro, people }) {
   return (
     <section className="bg-emerald-50/60 py-16 sm:py-20" id="founders">
@@ -73,19 +46,20 @@ function FoundersSection({ title, intro, people }) {
 
 function AboutPage() {
   const { t } = useTranslation('about');
-  const approachPrinciples = t('approach.items', { returnObjects: true });
-  const ethicsPoints = t('ethics.items', { returnObjects: true });
-  const founders = t('founders.people', { returnObjects: true });
-  const stancePoints = t('stance.points', { returnObjects: true });
+  const pillars = t('pillars.items', { returnObjects: true });
+  const storyParagraphs = t('story.paragraphs', { returnObjects: true });
   const agreements = t('agreements.items', { returnObjects: true });
   const fitFor = t('fit.for', { returnObjects: true });
   const fitNotFor = t('fit.notFor', { returnObjects: true });
+  const practicePoints = t('practice.points', { returnObjects: true });
+  const founders = t('founders.people', { returnObjects: true });
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
       <Hero
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
+        note={t('hero.note')}
         image="/hero/about.svg"
         imageAlt={t('hero.imageAlt', { defaultValue: 'Coaching team illustration' })}
       >
@@ -97,25 +71,45 @@ function AboutPage() {
         </Link>
       </Hero>
 
-      <NarrativeSection title={t('story.title')} body={t('story.body')} />
-      <NarrativeSection title={t('approach.title')} body={t('approach.body')} items={approachPrinciples} />
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <Reveal>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                {t('pillars.title')}
+              </h2>
+            </Reveal>
+            <Reveal className="reveal-1">
+              <p className="mt-4 text-base leading-7 text-slate-600">{t('pillars.intro')}</p>
+            </Reveal>
+          </div>
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {pillars.map((pillar, index) => (
+              <Reveal key={pillar.title} className={`reveal-${index + 2}`}>
+                <article className={`${CARD_BASE_CLASS} h-full text-left`}>
+                  <h3 className="text-lg font-semibold text-slate-900">{pillar.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{pillar.description}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="bg-emerald-50/60 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-6">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('stance.title')}
+              {t('story.title')}
             </h2>
           </Reveal>
-          <Reveal className="reveal-1">
-            <ul className="mt-6 space-y-4 text-base leading-7 text-emerald-900">
-              {stancePoints.map((point) => (
-                <li key={point} className="rounded-2xl bg-white/80 p-4 text-left shadow-sm">
-                  {point}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
+          <div className="mt-6 space-y-5 text-base leading-7 text-emerald-900">
+            {storyParagraphs.map((paragraph) => (
+              <Reveal key={paragraph} className="reveal-1">
+                <p>{paragraph}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -176,7 +170,49 @@ function AboutPage() {
         </div>
       </section>
 
-      <NarrativeSection title={t('ethics.title')} body={t('ethics.body')} items={ethicsPoints} />
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-5xl px-6">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {t('practice.title')}
+            </h2>
+          </Reveal>
+          <Reveal className="reveal-1">
+            <p className="mt-4 text-base leading-7 text-slate-600">{t('practice.intro')}</p>
+          </Reveal>
+          <Reveal className="reveal-2">
+            <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
+              {practicePoints.map((point) => (
+                <li key={point} className={`${CARD_BASE_CLASS} bg-white/90 text-left`}>
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="bg-emerald-950/90 py-16">
+        <div className="mx-auto max-w-4xl px-6 text-emerald-50">
+          <Reveal>
+            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+              {t('dataProtection.title')}
+            </h2>
+          </Reveal>
+          <Reveal className="reveal-1">
+            <p className="mt-4 text-base leading-7 text-emerald-100">{t('dataProtection.body')}</p>
+          </Reveal>
+          <Reveal className="reveal-2">
+            <Link
+              href={t('dataProtection.linkHref')}
+              className="mt-6 inline-flex items-center text-sm font-semibold text-emerald-200 underline-offset-4 transition hover:text-emerald-100"
+            >
+              {t('dataProtection.link')}
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
       <FoundersSection title={t('founders.title')} intro={t('founders.intro')} people={founders} />
 
       <section className="bg-slate-950 py-16 text-emerald-50">

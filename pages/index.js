@@ -44,12 +44,15 @@ function HomePage() {
   const founders = t('founders.people', { returnObjects: true });
   const deepDiveLabels = t('deepDive.labels', { returnObjects: true });
   const deepDiveStories = t('deepDive.stories', { returnObjects: true });
+  const workingTogetherPoints = t('workingTogether.points', { returnObjects: true });
+  const miniCaseCards = t('miniCases.cards', { returnObjects: true });
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
       <Hero
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
+        note={t('hero.note')}
         image="/hero/home.svg"
         imageAlt={t('hero.imageAlt', { defaultValue: 'Coaching illustration' })}
       >
@@ -61,7 +64,62 @@ function HomePage() {
         </Link>
       </Hero>
 
+      <section className="bg-white py-16 sm:py-20" id="working-together">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <Reveal>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                {t('workingTogether.title')}
+              </h2>
+            </Reveal>
+            <Reveal className="reveal-1">
+              <p className="mt-4 text-base leading-7 text-slate-600">{t('workingTogether.intro')}</p>
+            </Reveal>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {workingTogetherPoints.map((point, index) => (
+              <Reveal key={point.title} className={`reveal-${index + 2}`}>
+                <article className={`${CARD_BASE_CLASS} h-full text-left`}>
+                  <h3 className="text-lg font-semibold text-slate-900">{point.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{point.description}</p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <HomeForWhom />
+
+      <section className="bg-emerald-50/60 py-16 sm:py-20" id="mini-cases">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mx-auto max-w-3xl text-center">
+            <Reveal>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                {t('miniCases.title')}
+              </h2>
+            </Reveal>
+            <Reveal className="reveal-1">
+              <p className="mt-4 text-base leading-7 text-emerald-900">{t('miniCases.intro')}</p>
+            </Reveal>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {miniCaseCards.map((card, index) => (
+              <Reveal key={card.title} className={`reveal-${index + 2}`}>
+                <article className={`${CARD_BASE_CLASS} bg-white text-left`}>
+                  <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600 whitespace-pre-line">{card.story}</p>
+                  <p className="mt-4 text-xs font-medium uppercase tracking-wide text-emerald-700">
+                    {t('miniCases.disclaimer')}
+                  </p>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
 
       <section className="bg-emerald-50/60 py-16 sm:py-20" id="home-stories">
         <div className="mx-auto max-w-5xl px-6">
