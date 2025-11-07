@@ -119,7 +119,7 @@ function ServicesPage() {
 
 ServicesPage.layoutProps = {
   title: 'Services | SustainSage',
-  desc: 'Bilingual coaching plans for UK transitions, returners, and mid-career experiments.',
+  desc: 'ICF-aligned, client-led coaching formats.',
 };
 
 export async function getStaticProps({ locale = 'en' }) {

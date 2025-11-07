@@ -38,15 +38,10 @@ function ContactPage() {
   );
 }
 
-ContactPage.layoutProps = (pageProps) => {
-  const locale = pageProps?._nextI18Next?.initialLocale;
-  const store = pageProps?._nextI18Next?.initialI18nStore?.[locale]?.contact;
-
-  return {
-    title: store?.seo?.title ?? 'Contact | SustainSage',
-    desc: store?.seo?.description ?? 'Get in touch—consent-led and clear.',
-    jsonLd: CONTACT_JSON_LD,
-  };
+ContactPage.layoutProps = {
+  title: 'Contact | SustainSage',
+  desc: 'Get in touch—consent-led and clear.',
+  jsonLd: CONTACT_JSON_LD,
 };
 
 export async function getStaticProps({ locale = 'en' }) {

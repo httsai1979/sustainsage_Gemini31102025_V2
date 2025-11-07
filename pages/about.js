@@ -102,7 +102,7 @@ function AboutPage() {
 
 AboutPage.layoutProps = {
   title: 'About | SustainSage',
-  desc: 'Bilingual, ICF-aligned coaching practice grounded in ethics and cultural fluency.',
+  desc: 'ICF-aligned practice. Calm, practical, client-led.',
   jsonLd: ABOUT_JSON_LD,
 };
 
