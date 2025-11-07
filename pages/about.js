@@ -100,17 +100,10 @@ function AboutPage() {
   );
 }
 
-AboutPage.layoutProps = (pageProps) => {
-  const locale = pageProps?._nextI18Next?.initialLocale;
-  const store = pageProps?._nextI18Next?.initialI18nStore?.[locale]?.about;
-
-  return {
-    title: store?.seo?.title ?? 'About | SustainSage',
-    desc:
-      store?.seo?.description ??
-      'Bilingual, ICF-aligned coaching practice grounded in ethics and cultural fluency.',
-    jsonLd: ABOUT_JSON_LD,
-  };
+AboutPage.layoutProps = {
+  title: 'About | SustainSage',
+  desc: 'Bilingual, ICF-aligned coaching practice grounded in ethics and cultural fluency.',
+  jsonLd: ABOUT_JSON_LD,
 };
 
 export async function getStaticProps({ locale = 'en' }) {

@@ -133,16 +133,9 @@ function ResourcesPage() {
   );
 }
 
-ResourcesPage.layoutProps = (pageProps) => {
-  const locale = pageProps?._nextI18Next?.initialLocale;
-  const store = pageProps?._nextI18Next?.initialI18nStore?.[locale]?.resources;
-
-  return {
-    title: store?.seo?.title ?? 'Resources | SustainSage',
-    desc:
-      store?.seo?.description ??
-      'Coaching-informed, bilingual-friendly resources for reflection and career experiments.',
-  };
+ResourcesPage.layoutProps = {
+  title: 'Resources | SustainSage',
+  desc: 'Coaching-informed, bilingual-friendly resources for reflection and career experiments.',
 };
 
 export async function getStaticProps({ locale = 'en' }) {

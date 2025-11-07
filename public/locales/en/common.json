@@ -17,9 +17,9 @@
     "privacyPolicy": "Privacy policy"
   },
   "stickyCta": {
-    "title": "Book a 20-minute fit call",
-    "subtitle": "A calm bilingual check-in to explore your context, language preferences, and whether SustainSage is the right partner.",
-    "button": "Choose a time"
+    "title": "Ready for a small experiment?",
+    "subtitle": "Book a bilingual, ICF-aligned 20-minute chat to map the next step together.",
+    "button": "Schedule a chat"
   },
   "icfNotice": {
     "ariaLabel": "Coaching ethics and scope",

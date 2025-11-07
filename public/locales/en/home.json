@@ -5,71 +5,53 @@
   },
   "hero": {
     "eyebrow": "ICF-aligned coaching practice",
-    "title": "Calm, bilingual coaching for UK career transitions.",
-    "subtitle": "Grounded support for mid-career professionals, graduates, newcomers, and returners to design evidence-building experiments in English and Traditional Chinese.",
-    "primaryCta": "Book a 20-minute fit call",
-    "secondaryCta": "Learn how coaching works"
+    "title": "Bilingual coaching for UK-based transitions",
+    "subtitle": "ICF-aligned coaches fluent in English and Traditional Chinese, attuned to UK workplaces and Chinese cultural rhythms. We partner with mid-career professionals, returners, newcomers, and graduates to design small experiments that move you forward.",
+    "primaryCta": "Book a 20-minute chat",
+    "secondaryCta": "See how it works"
   },
-  "whoWeHelp": {
-    "title": "Who we help",
-    "intro": "We work with people navigating UK careers while honouring multilingual, multicultural identities. Each partnership balances reflection with practical steps you can test safely.",
-    "items": [
-      {
-        "title": "Mid-career professionals recalibrating in the UK",
-        "description": "Quiet the noise of transition, clarify what stays and what evolves, and plan sustainable moves that respect your experience."
-      },
-      {
-        "title": "Graduates and early-career starters",
-        "description": "Translate academic strengths into UK workplace experiments—from informational chats to low-risk pilots—that build direction."
-      },
-      {
-        "title": "UK newcomers and returners",
-        "description": "Decode British workplace expectations alongside Chinese cultural values, rebuilding confidence as you settle or re-enter."
-      }
-    ]
-  },
-  "howCoachingWorks": {
-    "title": "How coaching works",
-    "intro": "Our coaching follows the ICF Code of Ethics. You set the agenda, we co-design experiments, and we never promise outcomes we cannot control.",
-    "items": [
-      {
-        "title": "Begin with a bilingual fit call",
-        "description": "A 20-minute conversation to understand your context, language preferences, and what respectful support looks like."
-      },
-      {
-        "title": "50–60 minute sessions",
-        "description": "Held in English, Traditional Chinese, or both. We listen, question, and surface patterns that inform your next experiments."
-      },
-      {
-        "title": "Small experiments between sessions",
-        "description": "You choose practical steps to test. We reflect on what you learned, adjust the approach, and agree the rhythm you need next."
-      }
-    ]
-  },
-  "whySustainSage": {
-    "title": "Why SustainSage",
-    "intro": "Clients choose us when they need ethical coaching that bridges UK workplaces and Chinese cultural perspectives.",
-    "items": [
-      {
-        "title": "Bilingual space",
-        "description": "Switch between English and Traditional Chinese to express nuance, process emotions, and plan next steps."
-      },
-      {
-        "title": "Context on UK work and Chinese culture",
-        "description": "We draw on lived experience across UK organisations and Chinese communities to help you interpret norms without diluting your identity."
-      },
-      {
-        "title": "Ethics, privacy, and boundaries",
-        "description": "ICF-aligned agreements, confidentiality, and transparent scope keep coaching supportive without over-promising results."
-      }
-    ]
-  },
+  "audiencesTitle": "Who we support",
+  "audiencesIntro": "We coach people who are rebuilding direction in the UK while holding onto their own cultural wisdom. Each partnership blends reflective space with practical experiments you can test safely.",
+  "audiences": [
+    {
+      "title": "Mid-career professionals",
+      "description": "Pause the noise of relocation or role changes, clarify what a sustainable next chapter looks like, and prototype it step by step."
+    },
+    {
+      "title": "Returners after a career break",
+      "description": "Re-enter work with bilingual support that honours your pace, rebuilds confidence, and sets up routines you can test at home and in the office."
+    },
+    {
+      "title": "Newcomers to the UK",
+      "description": "Translate between British workplace norms and Chinese cultural expectations while choosing actions that fit your values."
+    },
+    {
+      "title": "Recent graduates",
+      "description": "Turn uncertainty into small experiments—from informational chats to role trials—that help you learn before you leap."
+    }
+  ],
+  "processTitle": "How it works",
+  "processIntro": "Our ICF-aligned approach keeps you in the lead. Sessions can flow in English, Traditional Chinese, or both, and each step focuses on small experiments that build evidence for your decisions.",
+  "process": [
+    {
+      "title": "Fit conversation",
+      "description": "A 20-minute bilingual chat to understand your context, language preferences, and what support feels respectful for you."
+    },
+    {
+      "title": "Coaching cycles",
+      "description": "4–6 sessions of 50–60 minutes where you choose the focus. We listen, reflect, and co-design experiments grounded in ICF competencies."
+    },
+    {
+      "title": "Review and sustain",
+      "description": "We harvest learning, adjust experiments, and plan what rhythm of support you want next—whether that’s continued coaching or self-led check-ins."
+    }
+  ],
   "faqTitle": "Frequently asked questions",
-  "faqIntro": "How we keep coaching ethical, culturally aware, and practical for the transitions you are navigating.",
+  "faqIntro": "Here’s how we keep coaching ethical, culturally aware, and practical for the transitions you’re navigating.",
   "faqs": [
     {
       "question": "What does ICF-aligned coaching look like here?",
-      "answer": "We follow the International Coaching Federation Code of Ethics: you stay in charge of the agenda, we design clear agreements, and every tool or observation is used with your permission."
+      "answer": "We work to the International Coaching Federation Code of Ethics: you stay in charge of the agenda, we design clear agreements, and every tool or observation is used with your permission."
     },
     {
       "question": "Which languages can we use?",
@@ -77,15 +59,15 @@
     },
     {
       "question": "Do you give advice?",
-      "answer": "We stay non-directive. When useful, we may offer reflections or frameworks; you decide how to adapt them into your experiments."
+      "answer": "We stay non-directive. When useful, we may offer reflections or frameworks, and you decide how to adapt them into your experiments."
     },
     {
       "question": "How many sessions will we plan?",
-      "answer": "Many clients begin with four to six sessions. We review progress frequently and you choose whether to extend, pause, or conclude."
+      "answer": "Many clients begin with 4–6 sessions. We review progress frequently and you choose whether to extend, pause, or conclude."
     },
     {
       "question": "Is coaching the same as therapy or counselling?",
-      "answer": "No. Coaching is forward-looking and does not diagnose or treat. If therapy seems more suitable, we will signpost other services respectfully."
+      "answer": "No. Coaching is forward-looking and doesn’t diagnose or treat. If therapy seems more suitable, we will signpost other services respectfully."
     },
     {
       "question": "What happens between sessions?",
@@ -95,7 +77,7 @@
   "founders": {
     "title": "Who you'll meet",
     "subtitle": "Co-founders who bridge UK and Chinese contexts with ICF-aligned coaching, facilitation, and design thinking.",
-    "cta": "Learn about SustainSage",
+    "cta": "Meet the practice",
     "people": [
       {
         "name": "Hao-Cheng Tsai",
