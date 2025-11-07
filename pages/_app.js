@@ -14,7 +14,11 @@ function MyApp({ Component, pageProps }) {
     <MainLayout {...resolvedLayoutProps}>{page}</MainLayout>
   ));
 
-  return getLayout(<Component {...pageProps} />);
+  const layoutProps = resolvedLayoutProps || {};
+  const page = <Component {...pageProps} />;
+  const content = Component.getLayout ? Component.getLayout(page, layoutProps) : page;
+
+  return <MainLayout {...layoutProps}>{content}</MainLayout>;
 }
 
 export default appWithTranslation(MyApp, nextI18NextConfig);
