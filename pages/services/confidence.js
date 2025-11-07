@@ -8,7 +8,7 @@ function ConfidenceServicePage() {
     <ServiceDetailPage
       serviceKey="confidence"
       heroImage="/images/services/confidence.svg"
-      heroAlt="Illustration of a microphone with gentle waves"
+      heroAlt="Coaching conversation to strengthen voice with care"
     />
   );
 }
