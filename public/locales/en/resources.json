@@ -1,57 +1,74 @@
 {
   "seo": {
     "title": "Resources | SustainSage",
-    "description": "Coaching-informed resources for reflection, cultural acclimation, and career experiments."
+    "description": "Coaching-informed worksheets, prompts, and playlists from SustainSage. Use them gently and adapt them with consent to your own context."
   },
   "hero": {
-    "title": "Resources",
-    "subtitle": "Light, reflective tools you can adapt between sessions."
+    "title": "Tools for reflection at your own pace",
+    "subtitle": "Curated bilingual resources to support your experiments between sessions. No email gate, no pressure—just invitations to pause and notice."
   },
-  "curatedTitle": "Resources we curate with coaching clients",
-  "curatedIntro": "These tools capture the prompts, checklists, and templates we use in coaching. Some are ready to share now; others are in pilot—tell us what would help you next.",
-  "usageNote": "Resources support reflection and experiment design. They are not therapy, legal advice, or a substitute for specialist care.",
-  "items": {
-    "reflectionQuestions": {
-      "title": "Reflection question sets",
-      "summary": "Short prompts to surface assumptions around culture shifts, values, and decision points.",
-      "format": "Format: PDF pack",
-      "status": "Available now",
-      "cta": "Request this pack"
-    },
-    "careerExperiments": {
-      "title": "Career experiment templates",
-      "summary": "Step-by-step worksheets for designing low-risk experiments before making big moves.",
-      "format": "Format: Worksheet bundle",
-      "status": "In pilot with clients",
-      "cta": "Join the pilot list"
-    },
-    "culturalChecklists": {
-      "title": "Cultural acclimation checklists",
-      "summary": "Guides to observe UK workplace norms while honouring your existing strengths.",
-      "format": "Format: Checklist",
-      "status": "Available now",
-      "cta": "Request this checklist"
-    },
-    "conversationGuides": {
-      "title": "Conversation rehearsal guides",
-      "summary": "Scripts and framing tools for stakeholder updates, feedback conversations, and networking.",
-      "format": "Format: Slides",
-      "status": "In development",
-      "cta": "Register your interest"
-    },
-    "selfAdvocacy": {
-      "title": "Self-advocacy toolkit",
-      "summary": "Language banks and pacing tips for asking for support, resources, or stretch opportunities.",
-      "format": "Format: Doc",
-      "status": "In pilot with clients",
-      "cta": "Join the pilot list"
-    },
-    "reviewJournal": {
-      "title": "Monthly review journal",
-      "summary": "A gentle structure to capture wins, learnings, and next experiments across the month.",
-      "format": "Format: Notion / PDF",
-      "status": "Available now",
-      "cta": "Request this journal"
-    }
+  "featured": {
+    "title": "Featured tools",
+    "intro": "Each resource is grounded in ICF-aligned coaching principles and designed to be adapted to your reality.",
+    "tools": [
+      {
+        "id": "values-worksheet",
+        "title": "Values and anchors worksheet",
+        "summary": "A guided reflection to map what steadies you when navigating unfamiliar workplaces.",
+        "format": "PDF worksheet · bilingual",
+        "cta": "Download the worksheet",
+        "status": "Updated"
+      },
+      {
+        "id": "micro-experiments",
+        "title": "Micro-experiment planner",
+        "summary": "Design low-risk tests with clear consent, support, and measures of learning.",
+        "format": "Notion template · trilingual",
+        "cta": "Copy the template"
+      },
+      {
+        "id": "culture-bridges",
+        "title": "Culture bridge checklist",
+        "summary": "Questions to translate expectations between UK norms and Chinese cultural wisdom without losing yourself.",
+        "format": "Checklist · bilingual",
+        "cta": "View the checklist"
+      },
+      {
+        "id": "conversation-starters",
+        "title": "Coaching conversation starters",
+        "summary": "Prompts to invite reflective dialogue with peers, mentors, or community partners.",
+        "format": "Card deck · bilingual",
+        "cta": "Open the prompts"
+      },
+      {
+        "id": "grounding-audio",
+        "title": "Grounding audio for in-between moments",
+        "summary": "Short bilingual practices to help you reset before or after courageous conversations.",
+        "format": "Audio playlist · bilingual",
+        "cta": "Listen online"
+      },
+      {
+        "id": "review-journal",
+        "title": "Learning review journal",
+        "summary": "A light-touch journal to capture insights after experiments and plan the next step.",
+        "format": "Google Doc · bilingual",
+        "cta": "Make a copy"
+      }
+    ]
+  },
+  "disclaimer": {
+    "title": "Use with care",
+    "body": "These tools complement coaching conversations; they do not replace therapy, legal, immigration, medical, or financial advice. Adapt them kindly and pause if something feels overwhelming.",
+    "points": [
+      "You choose what to complete and what to skip—there is no homework requirement.",
+      "Respect confidentiality when working with others and only share what you have consent to share.",
+      "If strong emotions surface, reach out to trusted support or professional services in your region."
+    ]
+  },
+  "cta": {
+    "title": "Want a guided walkthrough?",
+    "body": "Book a chemistry chat to explore how these tools can support your goals, or ask for a custom resource for your team.",
+    "primaryCta": "Talk with a coach",
+    "secondaryCta": "Contact us"
   }
 }

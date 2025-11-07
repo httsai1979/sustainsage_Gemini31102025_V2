@@ -1,21 +1,30 @@
 {
   "seo": {
     "title": "Contact | SustainSage",
-    "description": "Book a calm, bilingual intro conversation to explore coaching fit and practical next steps."
+    "description": "Book a calm, bilingual intro conversation with SustainSage. Learn what to expect, review consent, and share how we can support your UK transition."
   },
   "hero": {
-    "title": "Contact",
-    "subtitle": "Say hello. Share what you’d like help with and how you’d prefer to meet."
+    "title": "Get in touch",
+    "subtitle": "Share what you are navigating and the language you feel most at home in. We will respond with options, not pressure."
+  },
+  "expectations": {
+    "title": "What to expect",
+    "items": [
+      "We respond within two UK working days to arrange a 20-minute chemistry chat.",
+      "During the chat we clarify goals, language preferences, accessibility needs, and consent.",
+      "If coaching is not the right fit, we will suggest other services such as therapy, legal, immigration, medical, or financial advice."
+    ]
   },
   "form": {
     "title": "Send us a note",
-    "subtitle": "Everything you share is confidential within legal and safeguarding limits.",
+    "subtitle": "Everything you share stays confidential except where law or safeguarding requires us to act.",
     "name": "Full name",
     "email": "Email address",
     "topicLabel": "I’m interested in…",
     "topicPlaceholder": "Select a focus",
     "message": "What would you like to explore?",
-    "consent": "I consent to be contacted about scheduling an intro chat. I understand this is not medical, legal or financial advice.",
+    "consent": "I consent to SustainSage contacting me about coaching. I understand this is not therapy, legal, immigration, medical, or financial advice.",
+    "privacyNote": "We store your details securely and delete them if we do not begin coaching, unless law requires otherwise.",
     "submit": "Send",
     "status": {
       "submitting": "Sending…",
@@ -24,18 +33,18 @@
       "errorRequired": "Please complete all required fields and confirm consent."
     },
     "topics": [
-      { "value": "CAREER_TRANSITION", "label": "Career transition" },
-      { "value": "NEW_GRADUATE", "label": "Graduate support" },
-      { "value": "NEW_IMMIGRANT", "label": "New to the UK" },
-      { "value": "OTHER", "label": "Something else" }
+      { "value": "ONE_TO_ONE", "label": "1:1 coaching" },
+      { "value": "GROUP_CLINIC", "label": "Small-group clinic" },
+      { "value": "ORGANISATION", "label": "Organisation partnership" },
+      { "value": "SOMETHING_ELSE", "label": "Something else" }
     ]
   },
   "sidebar": {
     "title": "What happens next",
-    "description": "We’ll suggest a 20-minute chat to understand your context and co-design next steps.",
+    "description": "We’ll suggest times for a 20-minute bilingual chemistry chat to see how we can support you.",
     "responseTitle": "Response time",
-    "responseCopy": "You’ll hear from us within two working days, often sooner.",
+    "responseCopy": "Expect a reply within two UK working days—often sooner.",
     "privacyTitle": "Confidentiality",
-    "privacyCopy": "We protect your information and only break confidentiality if safety or law requires it."
+    "privacyCopy": "We keep conversations private except when law or safeguarding obligations require disclosure."
   }
 }

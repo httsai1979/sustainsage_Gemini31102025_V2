@@ -195,7 +195,9 @@ export default function ContactForm() {
                 </div>
               </div>
 
-              <div className="mt-10">
+              <div className="mt-6 text-xs text-slate-500">{t('form.privacyNote')}</div>
+
+              <div className="mt-8">
                 <button
                   type="submit"
                   disabled={isSubmitting}

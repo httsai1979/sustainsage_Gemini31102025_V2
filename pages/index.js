@@ -1,10 +1,14 @@
 import MainLayout from '@/components/layout/MainLayout';
 import ICFNotice from '@/components/legal/ICFNotice';
 import StickyCTA from '@/components/StickyCTA';
+import HomeFinalCta from '@/components/Sections/HomeFinalCta';
 import HomeFounderIntro from '@/components/Sections/HomeFounderIntro';
 import HomeForWhom from '@/components/Sections/HomeForWhom';
 import HomeHero from '@/components/Sections/HomeHero';
-import HomeServiceIntro from '@/components/Sections/HomeServiceIntro';
+import HomeHowItWorks from '@/components/Sections/HomeHowItWorks';
+import HomeICFBoundaries from '@/components/Sections/HomeICFBoundaries';
+import HomeFaq from '@/components/Sections/HomeFaq';
+import HomeWhySustainSage from '@/components/Sections/HomeWhySustainSage';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { SITE_URL } from '@/lib/seo';
@@ -30,8 +34,12 @@ function HomePage() {
     <>
       <HomeHero />
       <HomeForWhom />
-      <HomeServiceIntro />
+      <HomeHowItWorks />
+      <HomeWhySustainSage />
+      <HomeICFBoundaries />
       <HomeFounderIntro />
+      <HomeFaq />
+      <HomeFinalCta />
       <div className="px-6">
         <ICFNotice className="mx-auto max-w-4xl" />
       </div>
@@ -42,11 +50,7 @@ function HomePage() {
 
 HomePage.getLayout = function getLayout(page) {
   return (
-    <MainLayout
-      title="SustainSage | Coaching"
-      desc="Calm, bilingual coaching for UK transitions, aligned with ICF ethics."
-      jsonLd={HOME_JSON_LD}
-    >
+    <MainLayout jsonLd={HOME_JSON_LD}>
       {page}
     </MainLayout>
   );

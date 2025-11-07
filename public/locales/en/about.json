@@ -1,54 +1,60 @@
 {
   "seo": {
     "title": "About | SustainSage",
-    "description": "ICF-aligned, bilingual coaching rooted in UK workplaces and Chinese cultural insight."
+    "description": "Learn about SustainSage’s philosophy, founders, and safeguards. We offer bilingual, ICF-aligned coaching rooted in cultural humility and informed consent."
   },
   "hero": {
-    "title": "About SustainSage",
-    "subtitle": "ICF-aligned, bilingual coaching that honours your pace and context."
+    "title": "Coaching with cultural humility",
+    "subtitle": "We created SustainSage so UK-based clients with Chinese heritage can access calm, ICF-aligned coaching that honours identity, language, and consent."
   },
-  "brand": {
-    "title": "SustainSage in brief",
-    "lead": "SustainSage Group Ltd. is a UK-based coaching practice helping mid-career professionals, returners, and newcomers take steady, experiment-led steps.",
-    "paragraphs": [
-      "We partner with people who are navigating UK workplaces while holding multilingual or multicultural identities. Sessions can flow in English, Mandarin, or a mix—whichever helps you think clearly.",
-      "Our work is grounded in the International Coaching Federation (ICF) code of ethics, and we keep agreements and data handling transparent so you can focus on your decisions."
-    ],
-    "highlights": [
-      "ICF-aligned coaching rooted in calm, client-led partnership.",
-      "Bilingual English and Mandarin support with cultural context across the UK and Greater China.",
-      "Focus on mid-career shifts, return-to-work journeys, and newcomers rebuilding confidence."
-    ]
-  },
-  "practice": {
-    "title": "How we hold the coaching space",
-    "lead": "Every engagement is designed to stay practical, ethical, and responsive to your evolving goals.",
-    "pillars": [
+  "philosophy": {
+    "title": "Our philosophy",
+    "intro": "We blend coaching, facilitation, and design thinking so each partnership stays client-led and culturally aware.",
+    "principles": [
       {
-        "title": "Clear agreements and ethics",
-        "description": "We open with scope-setting, informed consent, and confidentiality boundaries that align with ICF guidance and UK privacy law."
+        "title": "You lead the agenda",
+        "description": "We listen for what matters, reflect it back, and co-design experiments only when you are ready."
       },
       {
-        "title": "Reflective experiments",
-        "description": "You bring the situations that matter. Together we surface insights and design small experiments that you can test safely in real life."
+        "title": "Language is a tool, not a barrier",
+        "description": "Sessions can flow in English, Traditional Chinese, Simplified Chinese, or a mix—whatever helps you think clearly."
       },
       {
-        "title": "Consistent review",
-        "description": "We pause frequently to review usefulness, adjust pacing, or signpost other services if therapy, legal, or clinical support would serve you better."
+        "title": "Experiments build confidence",
+        "description": "Small, low-risk tests help you gather evidence for your decisions without promises or pressure."
       }
     ]
   },
-  "coach": {
-    "title": "Meet the coach",
-    "lead": "H.T. Tsai (she/her) is the founder of SustainSage and a bilingual career and leadership coach based in London.",
-    "paragraphs": [
-      "HT trained with an ICF-accredited programme and continues to work with qualified supervision to keep the practice ethical and reflective.",
-      "Before coaching full-time, she led cross-functional teams in technology and social impact organisations across Taiwan and the UK, specialising in inclusive product delivery and change enablement."
-    ],
-    "highlights": [
-      "Partnership with mid-career professionals, returners, and global talent exploring the UK market.",
-      "Experience supporting East Asian diaspora professionals to translate strengths across cultures and communicate with senior stakeholders.",
-      "Research-led, experiment-focused approach that blends reflective questioning with practical templates you can adapt."
+  "founders": {
+    "title": "Meet the founders",
+    "intro": "We met through diaspora community projects and built SustainSage to bridge structured coaching with grounded cultural understanding.",
+    "people": [
+      {
+        "name": "Hao-Cheng Tsai",
+        "role": "ICF coach & service designer",
+        "bio": "Holds space for systems thinking, stakeholder mapping, and experimentation so your ideas can land responsibly.",
+        "credentials": "ICF ACC candidate, MFA Service Experience Design, former social innovation facilitator."
+      },
+      {
+        "name": "Yi-Ling Lai",
+        "role": "ICF coach & facilitator",
+        "bio": "Specialises in reflective dialogue, intercultural transitions, and gentle accountability for sustained change.",
+        "credentials": "ICF ACC, MSc Applied Positive Psychology, community learning designer across the UK and Taiwan."
+      }
     ]
+  },
+  "safeguards": {
+    "title": "Safeguards & boundaries",
+    "items": [
+      "Confidentiality is maintained except where law or safeguarding obligations require disclosure.",
+      "We clarify scope, fees, data handling, and cancellation policies before coaching begins.",
+      "When therapy, legal, immigration, medical, or financial advice is needed, we pause coaching and refer or signpost other services with your consent."
+    ]
+  },
+  "cta": {
+    "title": "Curious about partnering with us?",
+    "body": "Let’s explore how SustainSage can support you, your community, or your organisation in a way that feels respectful and sustainable.",
+    "primaryCta": "Book a chemistry chat",
+    "secondaryCta": "Contact us"
   }
 }

@@ -1,57 +1,74 @@
 {
   "seo": {
-    "title": "资源｜SustainSage",
-    "description": "结合教练实践的反思提问、职业实验与文化适应工具，适合在会谈之间延伸使用。"
+    "title": "资源工具｜SustainSage",
+    "description": "SustainSage 精选的教练式工作纸、提问与播放清单。以 ICF 伦理为底，邀请你在同意与自我照顾中调整使用。"
   },
   "hero": {
-    "title": "资源",
-    "subtitle": "轻量却深度的反思工具，让你在会谈之间持续前进。"
+    "title": "按自己的节奏停下来看看",
+    "subtitle": "这些双语资源陪你在会谈之间持续实验。无需留下资料，也没有下载门槛，只在适合的时刻轻轻提醒你暂停。"
   },
-  "curatedTitle": "与教练客户共同整理的资源",
-  "curatedIntro": "这些工具来自实际教练合作中的提问、清单与模板。有些可以立即提供，有些仍在试行阶段—欢迎告诉我们你最需要什么。",
-  "usageNote": "这些资源用于反思与设计实验，并非治疗、法律意见或其他专业服务的替代方案。",
-  "items": {
-    "reflectionQuestions": {
-      "title": "反思问题组",
-      "summary": "帮助你察觉文化转换、价值与决策节点的假设。",
-      "format": "格式：PDF 包",
-      "status": "可立即取得",
-      "cta": "索取题目包"
-    },
-    "careerExperiments": {
-      "title": "职涯实验模板",
-      "summary": "一步步规划低风险实验，在做出重大决定前先测试。",
-      "format": "格式：工作表组合",
-      "status": "客户试行中",
-      "cta": "加入试行名单"
-    },
-    "culturalChecklists": {
-      "title": "文化适应清单",
-      "summary": "引导你观察英国职场规范，同时保留原有优势。",
-      "format": "格式：核对表",
-      "status": "可立即取得",
-      "cta": "索取清单"
-    },
-    "conversationGuides": {
-      "title": "对话演练指南",
-      "summary": "准备利害关系人更新、回馈对话与人脉经营的框架与脚本。",
-      "format": "格式：简报",
-      "status": "开发中",
-      "cta": "登记兴趣"
-    },
-    "selfAdvocacy": {
-      "title": "自我倡议工具包",
-      "summary": "提供请求资源、争取机会时的句型与节奏提示。",
-      "format": "格式：文件",
-      "status": "客户试行中",
-      "cta": "加入试行名单"
-    },
-    "reviewJournal": {
-      "title": "月度回顾手册",
-      "summary": "以温和的结构记录每月的亮点、学习与下阶段实验。",
-      "format": "格式：Notion / PDF",
-      "status": "可立即取得",
-      "cta": "索取手册"
-    }
+  "featured": {
+    "title": "推荐工具",
+    "intro": "每项资源都以 ICF 教练原则设计，方便你依照真实情境调整。",
+    "tools": [
+      {
+        "id": "values-worksheet",
+        "title": "价值与定锚工作纸",
+        "summary": "引导你辨识在陌生职场中带来稳定的价值与支持。",
+        "format": "PDF 工作纸｜双语",
+        "cta": "下载工作纸",
+        "status": "已更新"
+      },
+      {
+        "id": "micro-experiments",
+        "title": "小步实验规划表",
+        "summary": "协助你设计低风险测试，清楚写下同意、支持与学习指标。",
+        "format": "Notion 模板｜三语",
+        "cta": "复制模板"
+      },
+      {
+        "id": "culture-bridges",
+        "title": "文化转译检核表",
+        "summary": "用提问串联英国职场规范与华人文化智慧，既不失自己也尊重他人。",
+        "format": "检核表｜双语",
+        "cta": "开启检核表"
+      },
+      {
+        "id": "conversation-starters",
+        "title": "教练式对话起始卡",
+        "summary": "帮助你与伙伴、导师或社群展开反思对话的提问。",
+        "format": "提问卡｜双语",
+        "cta": "查看提问"
+      },
+      {
+        "id": "grounding-audio",
+        "title": "过程中的安定练习音档",
+        "summary": "短版双语练习，帮助你在重要对话前后重新整顿。",
+        "format": "音讯播放清单｜双语",
+        "cta": "线上收听"
+      },
+      {
+        "id": "review-journal",
+        "title": "学习回顾手札",
+        "summary": "轻量的记录工具，支持你在每次实验后整理洞察并规划下一步。",
+        "format": "Google 文档｜双语",
+        "cta": "建立副本"
+      }
+    ]
+  },
+  "disclaimer": {
+    "title": "使用时请照顾自己",
+    "body": "这些工具是教练对话的延伸，不是治疗、法律、移民、医疗或财务建议。请依自己的状态调整，若感到负担可随时停下。",
+    "points": [
+      "你可以选择要做或不做，没有必交作业。",
+      "与他人一起使用时，请尊重彼此保密协议，只分享获得同意的内容。",
+      "若过程中浮现强烈情绪，请寻求可信任的支持或专业协助。"
+    ]
+  },
+  "cta": {
+    "title": "想要有人陪你一起走过吗？",
+    "body": "欢迎预约相互了解，一起看看哪些资源适合你，或为团队量身打造新工具。",
+    "primaryCta": "与教练聊聊",
+    "secondaryCta": "联络我们"
   }
 }
