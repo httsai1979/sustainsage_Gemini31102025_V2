@@ -1,23 +1,31 @@
-import Link from 'next/link';
-
-import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
-import ICFNotice from '@/components/legal/ICFNotice';
+import MainLayout from '@/components/layout/MainLayout';
+import FAQ from '@/components/ui/FAQ';
 import ContactForm from '@/components/Sections/ContactForm';
-import { HoverLift, Reveal } from '@/components/ui/Motion';
+import ICFNotice from '@/components/legal/ICFNotice';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 import nextI18NextConfig from '../next-i18next.config.js';
 
-const CARD_BASE_CLASS =
-  'rounded-2xl border border-emerald-100 bg-white/85 p-5 shadow-sm transition hover:shadow-md';
-
 function ContactPage() {
   const { t } = useTranslation('contact');
-  const expectItems = t('expect.items', { returnObjects: true });
-  const languages = t('expect.languages', { returnObjects: true });
-  const noteLines = t('formNote.lines', { returnObjects: true });
+  const { t: faqT } = useTranslation('faq');
+
+  const introBullets = t('intro.bullets', { returnObjects: true });
+  const processBullets = t('process.bullets', { returnObjects: true });
+  const assuranceBullets = t('assurance.bullets', { returnObjects: true });
+
+  const contactFaqGroups = [
+    {
+      title: faqT('practical.title'),
+      items: faqT('practical.items', { returnObjects: true }).slice(0, 3),
+    },
+    {
+      title: faqT('safety.title'),
+      items: faqT('safety.items', { returnObjects: true }).slice(0, 3),
+    },
+  ];
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
@@ -25,75 +33,55 @@ function ContactPage() {
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
         image="/hero/contact.svg"
-        imageAlt={t('hero.imageAlt', { defaultValue: 'Calendar illustration' })}
+        imageAlt={t('hero.imageAlt', { defaultValue: 'Illustration of a calendar and message' })}
       />
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="grid gap-10 lg:grid-cols-[1.4fr_0.9fr]">
-            <div className="space-y-6">
-              <ContactForm />
-              <div className="rounded-2xl border border-emerald-100 bg-emerald-50/70 p-5 text-sm leading-6 text-emerald-900">
-                {noteLines.map((line, index) => (
-                  <p key={line} className={index > 0 ? 'mt-3' : undefined}>
-                    {line.includes('{privacyLink}') ? (
-                      <>
-                        {line.split('{privacyLink}')[0]}
-                        <Link
-                          href={t('formNote.privacyHref')}
-                          className="font-semibold text-emerald-800 underline-offset-4 transition hover:text-emerald-900"
-                        >
-                          {t('formNote.privacyLabel')}
-                        </Link>
-                        {line.split('{privacyLink}')[1]}
-                      </>
-                    ) : (
-                      line
-                    )}
-                  </p>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-6">
-              <Reveal>
-                <HoverLift>
-                  <div className={`${CARD_BASE_CLASS} bg-white text-left`}>
-                    <h2 className="text-lg font-semibold text-slate-900">{t('expect.title')}</h2>
-                    {t('expect.subtitle') && (
-                      <p className="mt-3 text-sm leading-6 text-slate-600">{t('expect.subtitle')}</p>
-                    )}
-                    <ul className="mt-5 space-y-3 text-sm leading-6 text-slate-700">
-                      {expectItems.map((item) => (
-                        <li key={item} className="flex gap-2">
-                          <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </HoverLift>
-              </Reveal>
-
-              <Reveal className="reveal-1">
-                <HoverLift>
-                  <div className={`${CARD_BASE_CLASS} bg-emerald-50/70 text-left`}>
-                    <h3 className="text-sm font-semibold text-emerald-900">{t('expect.languageTitle')}</h3>
-                    <ul className="mt-3 space-y-2 text-sm leading-6 text-emerald-900">
-                      {languages.map((line) => (
-                        <li key={line} className="flex gap-2">
-                          <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                          <span>{line}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </HoverLift>
-              </Reveal>
-            </div>
+        <div className="mx-auto grid max-w-6xl gap-8 px-6 lg:grid-cols-3">
+          <div className="rounded-3xl border border-emerald-100 bg-emerald-50/70 p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-900">{t('intro.title')}</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-600">{t('intro.description')}</p>
+            <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
+              {introBullets.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-900">{t('process.title')}</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-600">{t('process.description')}</p>
+            <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
+              {processBullets.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
+            <h2 className="text-lg font-semibold text-slate-900">{t('assurance.title')}</h2>
+            <p className="mt-3 text-sm leading-6 text-slate-600">{t('assurance.description')}</p>
+            <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
+              {assuranceBullets.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
+
+      <section className="bg-emerald-950/5 py-16 sm:py-20">
+        <ContactForm />
+      </section>
+
+      <FAQ title={t('faq.title')} intro={t('faq.intro')} groups={contactFaqGroups} />
 
       <div className="px-6 pb-20">
         <ICFNotice id="icf" className="mx-auto max-w-4xl" />
@@ -105,7 +93,7 @@ function ContactPage() {
 export async function getStaticProps({ locale = 'en' }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'contact'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common', 'contact', 'faq'], nextI18NextConfig)),
     },
   };
 }

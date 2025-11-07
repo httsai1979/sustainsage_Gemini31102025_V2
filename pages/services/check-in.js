@@ -36,9 +36,9 @@ function Section({ title, items }) {
   );
 }
 
-function TransitionServicePage() {
+function CheckInServicePage() {
   const { t } = useTranslation('serviceDetails');
-  const detail = t('transition', { returnObjects: true });
+  const detail = t('checkIn', { returnObjects: true });
   const localizedSectionTitles = t('sectionTitles', { returnObjects: true });
   const sectionTitles = { ...FALLBACK_SECTION_TITLES, ...localizedSectionTitles };
 
@@ -55,8 +55,8 @@ function TransitionServicePage() {
       <Hero
         title={detail.title}
         subtitle={detail.subtitle}
-        image="/images/services/transition.svg"
-        imageAlt="Illustration of boxes and a map"
+        image="/images/services/check-in.svg"
+        imageAlt="Illustration of a notebook and tea cup"
       />
 
       {sections.map((section) => (
@@ -86,4 +86,4 @@ export async function getStaticProps({ locale = 'en' }) {
   };
 }
 
-export default TransitionServicePage;
+export default CheckInServicePage;
