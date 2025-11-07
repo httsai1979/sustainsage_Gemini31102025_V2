@@ -17,21 +17,105 @@
     "intro": "Choose a format based on the depth of support you need. Every package includes check-ins to review pace and fit.",
     "packages": [
       {
-        "title": "Reset / Direction",
-        "description": "Four 55-minute sessions designed for decision points, career resets, or transition planning.",
-        "details": "Ideal when you want to regain clarity around one focus while keeping options open."
+        "key": "reset3",
+        "title": "Reset – 3 sessions",
+        "description": "A short, steady container when you want clarity without a long contract.",
+        "details": "Suited to relocation pivots, returning to work or sense-checking a new direction."
       },
       {
-        "title": "Sustain / Deepen",
-        "description": "Eight 55-minute sessions for longer-term adjustments, identity work, or embedding new rhythms.",
-        "details": "Includes optional reflection prompts or voice-note check-ins if they support your learning."
+        "key": "transition6",
+        "title": "Transition – 6 sessions",
+        "description": "A medium-term partnership to stay grounded across several months of change.",
+        "details": "Useful when you are redesigning work, identity or boundaries while real life keeps moving."
       },
       {
-        "title": "Single deep dive",
-        "description": "A 90-minute intensive session to map scenarios, prepare for a pivotal conversation, or stress-test boundaries.",
-        "details": "Comes with a written summary of options, agreements, and suggested next steps."
+        "key": "sustain10",
+        "title": "Sustain – Ongoing partnership",
+        "description": "A longer rhythm for leaders or professionals who value reflective space over time.",
+        "details": "Designed for monthly or bespoke cadences with regular re-contracting to ensure usefulness."
+      },
+      {
+        "key": "single",
+        "title": "Single focus session",
+        "description": "A one-off 75–90 minute deep dive around a specific decision or event.",
+        "details": "Comes with a concise written summary you can revisit after the conversation."
       }
     ]
+  },
+  "packagesDetail": {
+    "reset3": {
+      "name": "Reset – 3 sessions",
+      "for": [
+        "You are at an early stage of a change — relocation, returning to work, or rethinking your role — and want clarity without a long commitment."
+      ],
+      "includes": [
+        "1 x clarity session to understand your context, values and immediate priorities.",
+        "2 x focused coaching sessions on themes you choose (for example: confidence, UK job search approach, rewriting your story, boundaries).",
+        "Simple reflection prompts you can use between sessions, only if they serve you."
+      ],
+      "outcomes": [
+        "A kinder, clearer picture of what 'good enough for now' looks like.",
+        "2–3 self-defined next steps that feel realistic in your current life.",
+        "A sense of whether further coaching would be useful — with no pressure."
+      ],
+      "not": [
+        "Not a guaranteed job, visa or promotion package.",
+        "Not an assessment, diagnosis or therapy process."
+      ]
+    },
+    "transition6": {
+      "name": "Transition – 6 sessions",
+      "for": [
+        "You are in the middle of a significant transition (career change, relocation, parental leave, identity shift) and want a thinking partner over several months."
+      ],
+      "includes": [
+        "1 x contracting session to shape focus, measures of 'useful', and boundaries.",
+        "4 x working sessions to explore patterns, test options and respond to real-life events.",
+        "1 x review session to integrate learning and design what comes next.",
+        "Light, agreed check-ins between sessions for accountability or reflection prompts (not 24/7 messaging)."
+      ],
+      "outcomes": [
+        "A story about your transition that feels honest and grounded.",
+        "Experiments and decisions that fit your energy, finances and responsibilities.",
+        "Tools to keep adjusting after the package ends."
+      ],
+      "not": [
+        "Not done 'to' you — you lead; we partner.",
+        "No outcome guarantees; we focus on awareness, alignment and doable action."
+      ]
+    },
+    "sustain10": {
+      "name": "Sustain – Ongoing partnership",
+      "for": [
+        "Leaders, founders or professionals who value a longer-term reflective space."
+      ],
+      "includes": [
+        "A agreed rhythm of sessions (for example monthly) with regular re-contracting.",
+        "Space to work on leadership, impact, wellbeing and complexity in a culturally aware way."
+      ],
+      "notes": [
+        "We review every few months to ensure coaching remains ethical, useful and not a dependency."
+      ]
+    },
+    "single": {
+      "name": "Single focus session",
+      "for": [
+        "You have one specific decision or event (for example a UK interview or review) and want a single deep dive."
+      ],
+      "includes": [
+        "One 75–90 minute session.",
+        "A short written summary of key insights and options that you choose from."
+      ]
+    }
+  },
+  "detailLabels": {
+    "view": "View details",
+    "close": "Hide details",
+    "for": "This can help if",
+    "includes": "What it includes",
+    "outcomes": "You may walk away with",
+    "not": "This is not",
+    "notes": "Notes"
   },
   "organisation": {
     "title": "Support for organisations & schools",

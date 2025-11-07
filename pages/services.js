@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import Link from 'next/link';
 
 import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
 import ICFNotice from '@/components/legal/ICFNotice';
+import { Reveal } from '@/components/ui/Motion';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
@@ -11,15 +13,77 @@ import nextI18NextConfig from '../next-i18next.config.js';
 const CARD_BASE_CLASS =
   'rounded-2xl border border-emerald-100 bg-white/80 p-4 md:p-6 shadow-sm transition hover:shadow-md';
 
-function PackageCard({ icon, title, description, details }) {
+function DetailList({ title, items }) {
+  if (!items || items.length === 0) {
+    return null;
+  }
+
   return (
-    <article className={`${CARD_BASE_CLASS} h-full`}>
+    <div className="mt-5">
+      <h4 className="text-sm font-semibold text-emerald-900">{title}</h4>
+      <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700">
+        {items.map((item) => (
+          <li key={item} className="flex gap-2">
+            <span
+              aria-hidden="true"
+              className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-500"
+            />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function PackageCard({ icon, pkg, detail, labels, isOpen, onToggle }) {
+  const contentId = `services-package-${pkg.key}`;
+
+  return (
+    <article className={`${CARD_BASE_CLASS} flex h-full flex-col`}>
       <span className="text-3xl" aria-hidden="true">
         {icon}
       </span>
-      <h3 className="mt-4 text-lg font-semibold text-slate-900">{title}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-600">{description}</p>
-      <p className="mt-4 text-sm leading-6 text-slate-600">{details}</p>
+      <h3 className="mt-4 text-lg font-semibold text-slate-900">{pkg.title}</h3>
+      <p className="mt-3 text-sm leading-6 text-slate-600">{pkg.description}</p>
+      <p className="mt-4 text-sm leading-6 text-slate-600">{pkg.details}</p>
+
+      {detail ? (
+        <div className="mt-6 border-t border-emerald-100 pt-4">
+          <button
+            type="button"
+            onClick={onToggle}
+            aria-expanded={isOpen}
+            aria-controls={contentId}
+            className="flex items-center gap-2 text-sm font-semibold text-emerald-700 transition hover:text-emerald-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+          >
+            <span>{isOpen ? labels.close : labels.view}</span>
+            <span
+              aria-hidden="true"
+              className={`inline-block transform text-base transition-transform duration-200 motion-reduce:transition-none ${
+                isOpen ? 'rotate-180' : ''
+              }`}
+            >
+              ▾
+            </span>
+          </button>
+
+          {isOpen && (
+            <Reveal className="reveal-1">
+              <div
+                id={contentId}
+                className="mt-4 rounded-2xl border border-emerald-100 bg-emerald-50/70 p-4 text-left shadow-sm"
+              >
+                <DetailList title={labels.for} items={detail.for} />
+                <DetailList title={labels.includes} items={detail.includes} />
+                <DetailList title={labels.outcomes} items={detail.outcomes} />
+                <DetailList title={labels.not} items={detail.not} />
+                <DetailList title={labels.notes} items={detail.notes} />
+              </div>
+            </Reveal>
+          )}
+        </div>
+      ) : null}
     </article>
   );
 }
@@ -27,9 +91,12 @@ function PackageCard({ icon, title, description, details }) {
 function ServicesPage() {
   const { t } = useTranslation('services');
   const packages = t('individual.packages', { returnObjects: true });
+  const packagesDetail = t('packagesDetail', { returnObjects: true });
+  const detailLabels = t('detailLabels', { returnObjects: true });
   const organisation = t('organisation', { returnObjects: true });
   const practical = t('practical', { returnObjects: true });
   const faqSnippet = t('faqSnippet.items', { returnObjects: true });
+  const [openKey, setOpenKey] = useState(null);
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
@@ -55,16 +122,24 @@ function ServicesPage() {
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">{t('individual.intro')}</p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {packages.map((pkg, index) => (
-              <PackageCard
-                key={pkg.title}
-                icon={['🌱', '🌿', '🔎'][index % 3]}
-                title={pkg.title}
-                description={pkg.description}
-                details={pkg.details}
-              />
-            ))}
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {packages.map((pkg, index) => {
+              const iconSet = ['🌱', '🧭', '🌿', '💡'];
+              const detail = packagesDetail[pkg.key];
+              const isOpen = openKey === pkg.key;
+
+              return (
+                <PackageCard
+                  key={pkg.title}
+                  icon={iconSet[index % iconSet.length]}
+                  pkg={pkg}
+                  detail={detail}
+                  labels={detailLabels}
+                  isOpen={isOpen}
+                  onToggle={() => setOpenKey((previous) => (previous === pkg.key ? null : pkg.key))}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
