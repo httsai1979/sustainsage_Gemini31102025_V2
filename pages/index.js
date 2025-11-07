@@ -26,15 +26,18 @@ const HOME_JSON_LD = [
   },
 ];
 
+const ensureArray = (value) => (Array.isArray(value) ? value : []);
+
 function HomePage() {
   const { t } = useTranslation('home');
-  const whoWeHelp = t('whoWeHelp.items', { returnObjects: true });
-  const howCoachingWorks = t('howCoachingWorks.items', { returnObjects: true });
-  const whySustainSage = t('whySustainSage.items', { returnObjects: true });
-  const faqs = t('faqs', { returnObjects: true });
-  const founders = t('founders.people', { returnObjects: true });
+  const audiences = ensureArray(t('audiences', { returnObjects: true }));
+  const process = ensureArray(t('process', { returnObjects: true }));
+  const whySustainSage = ensureArray(t('whySustainSage.items', { returnObjects: true }));
+  const faqs = ensureArray(t('faqs', { returnObjects: true }));
+  const founders = ensureArray(t('founders.people', { returnObjects: true }));
   const audiencesIntro = t('audiencesIntro');
   const processIntro = t('processIntro');
+  const whySustainSageIntro = t('whySustainSageIntro');
   const faqIntro = t('faqIntro');
 
   return (
@@ -65,7 +68,7 @@ function HomePage() {
         <div className="mx-auto max-w-6xl px-6">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('whoWeHelp.title')}
+              {t('audiencesTitle')}
             </h2>
           </Reveal>
           {audiencesIntro && (
@@ -92,7 +95,7 @@ function HomePage() {
         <div className="mx-auto max-w-6xl px-6">
           <Reveal>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-              {t('howCoachingWorks.title')}
+              {t('processTitle')}
             </h2>
           </Reveal>
           {processIntro && (
@@ -103,7 +106,7 @@ function HomePage() {
             </Reveal>
           )}
           <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {howCoachingWorks.map((step) => (
+            {process.map((step) => (
               <HoverLift key={step.title} className="h-full">
                 <article className="flex h-full flex-col rounded-3xl border border-emerald-100 bg-white p-6 shadow-sm">
                   <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3>
