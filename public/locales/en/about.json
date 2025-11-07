@@ -1,103 +1,106 @@
 {
   "seo": {
     "title": "About SustainSage",
-    "description": "Learn how SustainSage blends ICF-aligned coaching, bilingual facilitation, and cross-cultural lived experience to support calm, client-led transitions."
+    "description": "Understand how SustainSage grounds bilingual, ICF-aligned coaching in supervision, ethics, and UK-lived experience so clients stay in charge."
   },
   "hero": {
-    "title": "About SustainSage",
-    "subtitle": "We are an ICF-aligned, bilingual coaching practice shaped by UK and Taiwanese lived experience. We understand the pressure of real responsibilities and design coaching that respects consent, pace, and culture.",
+    "title": "Coaching that honours consent, pace, and context",
+    "subtitle": "We are an ICF-aligned, bilingual coaching partnership based in the UK. Every conversation is co-created with you — no scripts, no guarantees, just calm, accountable space.",
+    "note": "Coaching is not therapy, counselling, legal, financial, or immigration advice.",
     "primaryCta": "Book an intro session",
     "secondaryCta": "View services",
     "primaryCtaAria": "Book an intro session with SustainSage",
     "secondaryCtaAria": "View SustainSage services",
     "imageAlt": "Two coaches collaborating in a calm workspace"
   },
-  "story": {
-    "title": "Why we founded SustainSage",
-    "body": "We started SustainSage after seeing how many diaspora professionals were told to simply ‘push through’. Coaching should make room for the realities of immigration systems, caregiving, and workplace bias—not ignore them."
-  },
-  "approach": {
-    "title": "How we coach",
-    "body": "Our conversations stay non-directive and transparent. We map the work together, pause when red flags appear, and only continue when there is genuine consent.",
+  "pillars": {
+    "title": "What guides our coaching",
+    "intro": "These pillars shape every session before, during, and after we meet.",
     "items": [
       {
-        "title": "Client-led structure",
-        "description": "You define priorities and pace. We provide frameworks and experiments only when they serve your goals."
+        "title": "How we coach",
+        "description": "Non-directive, question-led conversations paced by you. We surface patterns, offer reflections, and pause for consent whenever depth shifts."
       },
       {
-        "title": "Bilingual, cross-cultural lenses",
-        "description": "Sessions can flow in English, Traditional Chinese, Simplified Chinese, or a blend, making room for nuance."
+        "title": "What you can expect",
+        "description": "Sessions start and end on time, with goals and boundaries agreed in advance. If we notice scope creep or red flags, we name them and re-contract together."
       },
       {
-        "title": "Courage to say not a fit",
-        "description": "If coaching is not right, we pause and signpost other services rather than forcing a misaligned engagement."
+        "title": "How we stay accountable",
+        "description": "We invest in supervision, continued professional development, and reflective practice so our work stays ethical, culturally aware, and responsive."
       }
     ]
   },
-  "stance": {
-    "title": "How we coach",
-    "points": [
-      "Client-led and non-directive: you set the focus, we bring presence, questions and reflection.",
-      "We work with you as a whole person in context — culture, family, money, identity — not just job titles.",
-      "We may offer observations or light suggestions, but you always choose what to accept or ignore."
+  "story": {
+    "title": "Why we built SustainSage",
+    "paragraphs": [
+      "Diaspora professionals told us they were tired of being pushed to ‘stay positive’ while juggling visas, families, or health. We created SustainSage to hold conversations where complexity is welcome.",
+      "Our practice is intentionally bilingual and culturally curious. We work in English, Traditional Chinese, or Simplified Chinese, and we encourage you to switch languages whenever it helps you think more clearly."
     ]
   },
   "agreements": {
-    "title": "Our agreements with you",
+    "title": "Before we begin, we will",
     "items": [
-      "We clarify scope, goals, number of sessions and fees together before we start.",
-      "We follow the ICF Code of Ethics, including confidentiality with clear legal and safeguarding exceptions.",
-      "Coaching is not therapy, counselling, medical, legal, immigration or financial advice.",
-      "You remain responsible for decisions and actions; we commit to an honest, supportive process."
+      "Clarify goals, success markers, fees, scheduling, cancellation, and safeguarding in writing.",
+      "Discuss confidentiality limits, data handling, and how we store notes within UK GDPR requirements.",
+      "Signpost therapy, legal, immigration, financial, or medical support if those needs arise. Coaching will pause or stop when another profession is more appropriate."
     ]
   },
   "fit": {
-    "title": "Is this a good fit?",
-    "forLabel": "A good fit if",
-    "notForLabel": "Not a fit if",
+    "title": "Is this space for you?",
+    "forLabel": "A good fit if you",
+    "notForLabel": "Not the right fit if you",
     "for": [
-      "You are navigating relocation, career shifts, parenthood transitions or identity questions in or around the UK.",
-      "You want a calmer, reflective space — not hype, pressure or quick-fix promises."
+      "Want room to organise thoughts, make sense of competing responsibilities, and define your own next steps.",
+      "Are ready to take responsibility for decisions and actions, even when you need accountability along the way.",
+      "Are navigating cultural transition in the UK — relocation, returning to work, role shifts, or leading across cultures."
     ],
     "notFor": [
-      "You need crisis or trauma support, diagnosis or treatment — therapy or medical help is more appropriate.",
-      "You are looking for someone to tell you exactly what to do or guarantee specific outcomes."
+      "Are in acute psychological crisis or need clinical, counselling, or psychiatric care.",
+      "Need professional answers in legal, immigration, medical, or financial matters.",
+      "Prefer someone else to decide for you or promise specific outcomes."
     ]
   },
-  "ethics": {
-    "title": "Ethics, confidentiality, and safeguarding",
-    "body": "We hold ourselves accountable to the ICF Code of Ethics and UK safeguarding expectations.",
-    "items": [
-      "Confidentiality is standard, with clear explanations of legal or safeguarding exceptions.",
-      "We outline scope, data handling, cancellation terms, and fees before any session begins.",
-      "When therapy, legal, immigration, medical, or financial support is needed, we pause coaching and refer or signpost options."
+  "practice": {
+    "title": "How sessions feel in practice",
+    "intro": "Clients often describe our coaching as calm, spacious, and structured enough to move ideas forward without pressure.",
+    "points": [
+      "We invite you to set the agenda each time and choose how deep to go. You can stop, slow down, or pause whenever needed.",
+      "We may offer frameworks or experiments, yet you always choose what to accept, adapt, or decline.",
+      "Reflection, not extraction: we focus on building your awareness and confidence rather than collecting data for us."
     ]
+  },
+  "dataProtection": {
+    "title": "How we protect your data & boundaries",
+    "body": "We follow the ICF Code of Ethics and UK data protection law. Notes are kept minimal and stored securely. Confidentiality is upheld except where legal obligations or safeguarding risks require disclosure, which we will discuss transparently.",
+    "link": "Read more in our ICF notice",
+    "linkHref": "/contact#icf"
   },
   "founders": {
-    "title": "Founders",
-    "intro": "Two coaches who bridge design, facilitation, and community work across the UK and Taiwan.",
+    "title": "Meet the founders",
+    "intro": "Two bilingual coaches integrating design, facilitation, and supervision to support UK-based transitions.",
     "people": [
       {
         "name": "Hao-Cheng Tsai",
         "role": "ICF coach · Service designer",
-        "bio": "Brings systems thinking and civic design to help clients test ideas responsibly.",
+        "bio": "Applies systems thinking and civic innovation experience so experiments stay practical and grounded.",
         "languages": "Languages: English, Mandarin, Taiwanese",
-        "focus": "Works with mid-career restarters, public-sector leaders, and cross-cultural teams.",
+        "focus": "Supports mid-career returners, public sector teams, and values-led organisations.",
         "image": "/images/founders/hao-cheng-tsai.svg"
       },
       {
         "name": "Yi-Ling Lai",
         "role": "ICF coach · Learning facilitator",
-        "bio": "Creates reflective, trauma-informed spaces for diaspora professionals balancing care and ambition.",
+        "bio": "Holds trauma-aware, culturally responsive spaces for carers, community builders, and early-career leaders.",
         "languages": "Languages: English, Mandarin",
-        "focus": "Supports carers returning to work, community organisers, and early-career leaders.",
+        "focus": "Works with caregivers returning to work, cross-cultural managers, and purpose-led founders.",
         "image": "/images/founders/yi-ling-lai.svg"
       }
     ]
   },
   "cta": {
-    "title": "Curious about working together?",
-    "body": "Tell us what you are navigating. We will suggest formats—or recommend other services—so you can make an informed choice.",
+    "title": "Ready to explore whether we fit?",
+    "body": "Share what you are navigating. We will outline coaching options or suggest alternatives so you can decide with confidence.",
     "primaryCta": "Book an intro session",
     "secondaryCta": "Contact us",
     "primaryAria": "Book an intro session with SustainSage",

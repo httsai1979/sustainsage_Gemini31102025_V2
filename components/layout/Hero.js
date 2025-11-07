@@ -4,6 +4,7 @@ export default function Hero({
   title,
   subtitle,
   eyebrow,
+  note,
   children,
   image = '/hero/default.svg',
   imageAlt = 'Illustration representing the page topic',
@@ -32,6 +33,9 @@ export default function Hero({
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               {children}
             </div>
+          )}
+          {note && (
+            <p className="mt-4 text-sm leading-6 text-slate-500">{note}</p>
           )}
         </div>
 

@@ -1,11 +1,12 @@
 {
   "seo": {
     "title": "Services | SustainSage",
-    "description": "Explore coaching formats designed for real-life transitions. SustainSage offers bilingual, ICF-aligned coaching for individuals, organisations, and schools across cultures."
+    "description": "Explore bilingual, ICF-aligned coaching formats designed for UK-based transitions. SustainSage supports individuals, teams, and communities with calm, ethical structures."
   },
   "hero": {
     "title": "Coaching formats that fit real life",
     "subtitle": "Simple structures, clear boundaries, and bilingual support. We begin by understanding your needs, then choose a rhythm together.",
+    "note": "Coaching is collaborative. We do not guarantee outcomes or replace therapy, legal, immigration, medical, or financial advice.",
     "primaryCta": "Book an intro session",
     "secondaryCta": "Send an enquiry",
     "primaryCtaAria": "Book an intro session with SustainSage",
@@ -14,97 +15,108 @@
   },
   "individual": {
     "title": "Individual coaching packages",
-    "intro": "Choose a format based on the depth of support you need. Every package includes check-ins to review pace and fit.",
+    "intro": "Each package begins with an intro call to confirm scope, language, and consent. Choose the container that matches your transition.",
     "packages": [
       {
-        "key": "reset3",
-        "title": "Reset – 3 sessions",
-        "description": "A short, steady container when you want clarity without a long contract.",
-        "details": "Suited to relocation pivots, returning to work or sense-checking a new direction."
+        "key": "transition",
+        "title": "Transition Series · 6 sessions",
+        "description": "Structured support through a defined life or work shift in the UK context.",
+        "details": "Ideal if you are navigating relocation, role changes, or returning to work and want steady reflection." 
       },
       {
-        "key": "transition6",
-        "title": "Transition – 6 sessions",
-        "description": "A medium-term partnership to stay grounded across several months of change.",
-        "details": "Useful when you are redesigning work, identity or boundaries while real life keeps moving."
+        "key": "early",
+        "title": "Early-career Exploration · 6 sessions",
+        "description": "A bilingual space to test options, rebuild confidence, and design experiments without pressure.",
+        "details": "Useful for graduates, newcomers, or career shifters balancing visas, family, or finances."
       },
       {
-        "key": "sustain10",
-        "title": "Sustain – Ongoing partnership",
-        "description": "A longer rhythm for leaders or professionals who value reflective space over time.",
-        "details": "Designed for monthly or bespoke cadences with regular re-contracting to ensure usefulness."
+        "key": "sustain",
+        "title": "Sustain & Balance · 8 sessions",
+        "description": "Longer partnerships for leaders, carers, or founders who want reflective accountability across a season.",
+        "details": "Suited to those balancing complex responsibilities who value ongoing check-ins." 
       },
       {
-        "key": "single",
-        "title": "Single focus session",
-        "description": "A one-off 75–90 minute deep dive around a specific decision or event.",
-        "details": "Comes with a concise written summary you can revisit after the conversation."
+        "key": "deepdive",
+        "title": "Single deep dive · 90 minutes",
+        "description": "One focused conversation to map options, prepare for a pivotal conversation, or clarify boundaries.",
+        "details": "Works well before interviews, negotiations, or when you need a structured thinking space." 
       }
     ]
   },
   "packagesDetail": {
-    "reset3": {
-      "name": "Reset – 3 sessions",
+    "transition": {
       "for": [
-        "You are at an early stage of a change — relocation, returning to work, or rethinking your role — and want clarity without a long commitment."
+        "You are mid-transition — relocation, visa change, returning after leave, or reshaping your role in the UK.",
+        "You want accountability that respects capacity, caregiving, and time zones.",
+        "You prefer experiments you choose, not homework assigned to you."
       ],
       "includes": [
-        "1 x clarity session to understand your context, values and immediate priorities.",
-        "2 x focused coaching sessions on themes you choose (for example: confidence, UK job search approach, rewriting your story, boundaries).",
-        "Simple reflection prompts you can use between sessions, only if they serve you."
+        "6 x 50-minute coaching sessions across 6–8 weeks, online or hybrid.",
+        "Optional light check-ins with consented boundaries (no constant messaging).",
+        "Session notes summarising key themes and chosen experiments when useful."
       ],
       "outcomes": [
-        "A kinder, clearer picture of what 'good enough for now' looks like.",
-        "2–3 self-defined next steps that feel realistic in your current life.",
-        "A sense of whether further coaching would be useful — with no pressure."
+        "A grounded story about your transition that you can share with stakeholders.",
+        "1–2 client-chosen experiments between sessions to gather evidence.",
+        "Clarity on what support you need next — whether coaching continues or not."
       ],
       "not": [
-        "Not a guaranteed job, visa or promotion package.",
-        "Not an assessment, diagnosis or therapy process."
-      ]
+        "No job, visa, or promotion guarantees.",
+        "Not a substitute for therapy, legal, immigration, medical, or financial advice."
+      ],
+      "anchorLabel": "Jump to the Transition Series details",
+      "anchorHref": "/services#transition"
     },
-    "transition6": {
-      "name": "Transition – 6 sessions",
+    "early": {
       "for": [
-        "You are in the middle of a significant transition (career change, relocation, parental leave, identity shift) and want a thinking partner over several months."
+        "You are balancing applications, networking, or portfolio-building in the UK.",
+        "You want to test ideas without overcommitting, including bilingual storytelling.",
+        "You are managing confidence dips or impostor feelings while making decisions."
       ],
       "includes": [
-        "1 x contracting session to shape focus, measures of 'useful', and boundaries.",
-        "4 x working sessions to explore patterns, test options and respond to real-life events.",
-        "1 x review session to integrate learning and design what comes next.",
-        "Light, agreed check-ins between sessions for accountability or reflection prompts (not 24/7 messaging)."
+        "6 x 45–50 minute sessions spaced to match your decision timeline.",
+        "Tools to debrief interviews, networking chats, or feedback in real time.",
+        "Language rehearsal for boundaries, introductions, or asking for sponsorship."
       ],
       "outcomes": [
-        "A story about your transition that feels honest and grounded.",
-        "Experiments and decisions that fit your energy, finances and responsibilities.",
-        "Tools to keep adjusting after the package ends."
+        "Sharper language for talking about your skills without over- or under-selling.",
+        "Experiments that fit your visa, finances, and wellbeing priorities.",
+        "A clearer view on next steps, including when to pause, continue, or seek other support."
       ],
       "not": [
-        "Not done 'to' you — you lead; we partner.",
-        "No outcome guarantees; we focus on awareness, alignment and doable action."
-      ]
+        "Not a CV writing or recruitment agency.",
+        "No template answers — you co-create language that feels authentic." 
+      ],
+      "anchorLabel": "See the Early-career Exploration outline",
+      "anchorHref": "/services#early-career"
     },
-    "sustain10": {
-      "name": "Sustain – Ongoing partnership",
+    "sustain": {
       "for": [
-        "Leaders, founders or professionals who value a longer-term reflective space."
+        "Leaders, founders, or caregivers who want a longer reflective rhythm.",
+        "Teams or partnerships needing bilingual coaching alongside community commitments."
       ],
       "includes": [
-        "A agreed rhythm of sessions (for example monthly) with regular re-contracting.",
-        "Space to work on leadership, impact, wellbeing and complexity in a culturally aware way."
+        "8 sessions across 3–4 months with regular reviews and re-contracting.",
+        "Focus on strategic decisions, wellbeing, and boundaries, including stakeholder language practice."
       ],
       "notes": [
-        "We review every few months to ensure coaching remains ethical, useful and not a dependency."
-      ]
+        "We review every few sessions to ensure coaching remains ethical, useful, and non-dependent.",
+        "Can include optional check-ins with co-founders or sponsors when agreed in advance."
+      ],
+      "anchorLabel": "View Sustain & Balance details",
+      "anchorHref": "/services#leadership"
     },
-    "single": {
-      "name": "Single focus session",
+    "deepdive": {
       "for": [
-        "You have one specific decision or event (for example a UK interview or review) and want a single deep dive."
+        "You need one focused space for a UK-specific decision, presentation, or negotiation.",
+        "You prefer a single conversation before deciding on a longer partnership."
       ],
       "includes": [
         "One 75–90 minute session.",
-        "A short written summary of key insights and options that you choose from."
+        "Curated reflection prompts or scripts to rehearse, if you choose them."
+      ],
+      "notes": [
+        "Can lead into a package later, but only if it still serves you."
       ]
     }
   },
@@ -114,26 +126,162 @@
     "for": "This can help if",
     "includes": "What it includes",
     "outcomes": "You may walk away with",
-    "not": "This is not",
+    "not": "We will not",
     "notes": "Notes"
   },
+  "anchorSections": [
+    {
+      "id": "transition",
+      "eyebrow": "Transition Series",
+      "title": "Transition Series · 6 sessions",
+      "intro": "A six-session arc to help you design and test your own way forward during UK-based life and career shifts.",
+      "labels": {
+        "suitable": "Suited to",
+        "conversation": "In our conversations we will",
+        "structure": "6-session rhythm",
+        "not": "We will not"
+      },
+      "suitable": [
+        "Professionals returning after leave or relocation and needing a steady plan.",
+        "People balancing visas, caregiving, or part-time work while making decisions.",
+        "Those wanting bilingual space to integrate cross-border experiences.",
+        "Clients who value accountability without pressure." 
+      ],
+      "conversation": [
+        "Check reality against expectations so decisions are grounded in current capacity.",
+        "Explore perspectives, cultural scripts, and options you may not have voiced aloud.",
+        "Design client-owned experiments with explicit consent on size and timing."
+      ],
+      "structure": [
+        "Session 1: Define success, boundaries, and what support looks like to you.",
+        "Session 2: Surface patterns and stabilisers in your current context.",
+        "Session 3: Explore possibilities and stakeholders, translating across cultures.",
+        "Session 4: Decide on 1–2 experiments and rehearse language or boundaries.",
+        "Session 5: Review experiments, adapt pace, and address emerging hurdles.",
+        "Session 6: Harvest learning, plan support, and decide whether to pause or continue."
+      ],
+      "not": [
+        "Guarantee specific job offers, visas, or salary outcomes.",
+        "Replace therapy, counselling, or other regulated professional services.",
+        "Provide ready-made answers without your input."
+      ],
+      "cta": "Explore if this format fits",
+      "ctaHref": "/contact?context=transition"
+    },
+    {
+      "id": "early-career",
+      "eyebrow": "Early-career Exploration",
+      "title": "Early-career Exploration · 6 sessions",
+      "intro": "For graduates, newcomers, and career shifters who want space to experiment thoughtfully while navigating UK systems.",
+      "labels": {
+        "suitable": "Suited to",
+        "conversation": "In sessions we will",
+        "structure": "6-session rhythm",
+        "not": "We will not"
+      },
+      "suitable": [
+        "Graduates on Graduate or Skilled Worker visas wanting sustainable plans.",
+        "Professionals exploring UK sectors, networking, or further study options.",
+        "Clients juggling family expectations, finances, or wellbeing alongside decisions." 
+      ],
+      "conversation": [
+        "Debrief interviews, applications, or networking without judgement.",
+        "Practise bilingual narratives that feel authentic and culturally aware.",
+        "Name confidence dips, impostor stories, and design doable experiments." 
+      ],
+      "structure": [
+        "Session 1: Map what you want to explore and how you will measure ‘useful’.",
+        "Session 2: Clarify values, strengths, and constraints in the UK context.",
+        "Session 3: Prototype possibilities and scripts for outreach or boundaries.",
+        "Session 4: Review evidence gathered, adjust experiments, and honour rest.",
+        "Session 5: Prepare decisions or conversations with stakeholders.",
+        "Session 6: Integrate learning, plan next support, and celebrate progress." 
+      ],
+      "not": [
+        "Write CVs, cover letters, or personal statements for you.",
+        "Guarantee sponsorship, offers, or academic acceptance.",
+        "Push hustle tactics that ignore wellbeing or consent." 
+      ],
+      "cta": "Explore if this format fits",
+      "ctaHref": "/contact?context=early-career"
+    },
+    {
+      "id": "leadership",
+      "eyebrow": "Sustain & Balance",
+      "title": "Sustain & Balance · 8 sessions",
+      "intro": "For leaders, carers, and founders who need a longer arc to integrate strategy, wellbeing, and community commitments.",
+      "labels": {
+        "suitable": "Suited to",
+        "conversation": "In sessions we will",
+        "structure": "8-session rhythm",
+        "not": "We will not"
+      },
+      "suitable": [
+        "Leaders balancing organisational responsibilities with personal transitions.",
+        "Caregivers or sandwich-generation professionals needing sustained reflection.",
+        "Founders or community builders working across cultures who want ethical challenge partners." 
+      ],
+      "conversation": [
+        "Examine impact, influence, and boundaries across stakeholders.",
+        "Design experiments that keep mission and wellbeing aligned.",
+        "Review decision-making rituals, delegation, and support systems." 
+      ],
+      "structure": [
+        "Session 1: Co-create agreements, rhythms, and safeguarding needs.",
+        "Sessions 2-3: Map current landscape, tensions, and desired influence.",
+        "Sessions 4-5: Prototype strategic and personal experiments; rehearse critical conversations.",
+        "Sessions 6-7: Review outcomes, adjust supports, and ensure accountability stays client-led.",
+        "Session 8: Integrate insights, decide future cadence, and confirm closure or renewal." 
+      ],
+      "not": [
+        "Offer consultancy, legal advice, or HR directives.",
+        "Replace organisational governance or supervision.",
+        "Promise constant availability or emergency response." 
+      ],
+      "cta": "Explore if this format fits",
+      "ctaHref": "/contact?context=leadership"
+    }
+  ],
   "organisation": {
     "title": "Support for organisations & schools",
     "intro": "We design bilingual coaching and reflective workshops that protect psychological safety and align with your policies.",
     "points": [
       "Co-create group coaching series or workshops that balance cultural nuance with clear ground rules.",
       "Partner on ethical frameworks, referral pathways, and consent processes for your teams or students.",
-      "Provide bilingual summaries so stakeholders can continue the work between sessions without losing context."
+      "Provide bilingual summaries so stakeholders can continue the work between sessions without losing context.",
+      "Signpost wellbeing, counselling, or legal resources when coaching is not the right fit." 
+    ]
+  },
+  "howItWorks": {
+    "title": "How coaching works",
+    "intro": "Four steady stages help us protect ethics, consent, and pacing.",
+    "steps": [
+      {
+        "title": "Intro call",
+        "description": "20 minutes to understand context, outline expectations, and see if coaching is appropriate."
+      },
+      {
+        "title": "Agreement",
+        "description": "We co-create contracts, boundaries, safeguarding plans, and fees before any paid session." 
+      },
+      {
+        "title": "Sessions",
+        "description": "40–60 minute conversations online (or in-person when possible). You lead the agenda; we bring reflection and cultural translation." 
+      },
+      {
+        "title": "Review",
+        "description": "We examine learning, celebrate experiments, and decide whether to continue, pause, or close — no pressure either way." 
+      }
     ]
   },
   "practical": {
     "title": "Practical information",
-    "intro": "Transparency helps you plan. We confirm all details in writing before work begins.",
+    "intro": "Transparency helps you plan. We confirm details in writing before work begins.",
     "items": [
-      "Sessions can take place online or in-person within the UK when schedules allow.",
+      "Sessions run online or in person across the UK when schedules allow.",
       "Languages available: English, Traditional Chinese, Simplified Chinese, or a blend.",
       "We operate primarily in UK time (GMT/BST) and can discuss alternatives for international clients.",
-      "Fees are shared after the intro call with clear scopes; sliding scales are available for community-led work."
+      "Fees are shared after the intro call with clear scopes; sliding scales exist for community-led work." 
     ]
   },
   "faqSnippet": {
@@ -142,15 +290,15 @@
     "items": [
       {
         "question": "How soon can we start?",
-        "answer": "Intro calls are usually available within two UK working weeks. Coaching begins once agreements are signed."
+        "answer": "Intro calls are usually available within two UK working weeks. Coaching begins once agreements are signed." 
       },
       {
         "question": "Do you coach in mixed languages?",
-        "answer": "Yes. Many clients switch languages mid-session; we will check what feels most comfortable for you."
+        "answer": "Yes. Many clients switch languages mid-session; we will check what feels most comfortable for you." 
       },
       {
         "question": "Will we receive documentation?",
-        "answer": "You will receive summaries of agreements, safeguarding boundaries, and optional reflection notes after sessions."
+        "answer": "You will receive summaries of agreements, safeguarding boundaries, and optional reflection notes after sessions." 
       }
     ]
   },

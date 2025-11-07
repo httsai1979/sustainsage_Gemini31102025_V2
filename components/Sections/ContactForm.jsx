@@ -11,6 +11,7 @@ export default function ContactForm() {
     name: '',
     email: '',
     help: '',
+    focusArea: '',
     language: '',
     timezone: '',
     consent: false,
@@ -33,7 +34,13 @@ export default function ContactForm() {
     setStatus(null);
     setMessage('');
 
-    const isValid = formData.name && formData.email && formData.help && formData.language && formData.timezone && formData.consent;
+    const isValid =
+      formData.name &&
+      formData.email &&
+      formData.help &&
+      formData.language &&
+      formData.timezone &&
+      formData.consent;
 
     if (!isValid) {
       setStatus('error');
@@ -52,6 +59,7 @@ export default function ContactForm() {
           email: formData.email,
           message: formData.help,
           preferredLanguage: formData.language,
+          focusArea: formData.focusArea,
           preferredTimeWindow: formData.timezone,
           consent: formData.consent,
         }),
@@ -63,7 +71,7 @@ export default function ContactForm() {
 
       setStatus('success');
       setMessage(t('form.status.success'));
-      setFormData({ name: '', email: '', help: '', language: '', timezone: '', consent: false });
+      setFormData({ name: '', email: '', help: '', focusArea: '', language: '', timezone: '', consent: false });
     } catch (error) {
       console.error('Contact form submission failed', error);
       setStatus('error');
@@ -144,6 +152,26 @@ export default function ContactForm() {
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label htmlFor="focusArea" className="block text-sm font-semibold leading-6 text-slate-900">
+                  {t('form.focusArea')}
+                </label>
+                <select
+                  id="focusArea"
+                  name="focusArea"
+                  value={formData.focusArea}
+                  onChange={handleChange}
+                  className={FIELD_CLASSNAME}
+                >
+                  <option value="">{t('form.focusAreaPlaceholder')}</option>
+                  {t('form.focusAreaOptions', { returnObjects: true }).map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </select>
+                <p className="mt-2 text-xs text-slate-500">{t('form.focusHint')}</p>
+              </div>
               <div>
                 <label htmlFor="language" className="block text-sm font-semibold leading-6 text-slate-900">
                   {t('form.language')}
