@@ -1,71 +1,86 @@
 {
   "seo": {
     "title": "聯絡我們｜SustainSage",
-    "description": "從一封信開始，分享你的情況，我們會提供初談時段、合作界線與下一步建議。"
+    "description": "開始與 SustainSage 的教練對話。分享你的情境，我們會提供初談時間、清楚界線與下一步。"
   },
   "hero": {
-    "title": "從對話開始",
-    "subtitle": "寫下你現在的位置，我們會一起確認教練對你是否有幫助。",
-    "imageAlt": "安排教練對話的插畫"
+    "title": "從踏實的對話開始",
+    "subtitle": "說說你現在在哪裡，我們會一起判斷教練是否合適。"
   },
-  "expect": {
-    "title": "接下來會發生什麼",
-    "subtitle": "簡單透明的流程。",
-    "items": [
-      "2–3 個工作天內回覆，提供 1–2 個初談時段。",
-      "20 分鐘初談，釐清焦點、界線與是否合適。",
-      "是否展開方案由你決定，沒有推銷話術。"
-    ],
-    "languageTitle": "語言與形式",
-    "languages": [
-      "教練對話可使用英文、繁體中文、簡體中文。",
-      "對話中可自由切換語言。",
-      "主要採線上方式；若時間合得來，可在英國面談。"
+  "intro": {
+    "title": "可以分享的重點",
+    "description": "幾個條列就夠，只要讓我們理解你的處境。",
+    "bullets": [
+      "此刻最在意的轉換或決定。",
+      "任何時間壓力、協助需求或界線。",
+      "希望使用的語言與初談方便的時區。"
     ]
   },
+  "process": {
+    "title": "送出表單後的流程",
+    "description": "流程輕巧透明，不會有推銷壓力。",
+    "bullets": [
+      "兩到三個英國工作天內回覆，提供初談時段。",
+      "20 分鐘初談，釐清焦點、合適度與安全界線。",
+      "是否開始方案由你決定，不會強迫成交。"
+    ]
+  },
+  "assurance": {
+    "title": "我們如何守護空間",
+    "description": "訊息與會談中都可以自由切換語言，步調由你掌握。",
+    "bullets": [
+      "可使用英語、繁體中文、簡體中文。",
+      "預設為線上會談，若時間配合可在英國面談。",
+      "資料僅用於安排教練，除法律要求外不另作他用。"
+    ]
+  },
+  "faq": {
+    "title": "預約前常見問題",
+    "intro": "先回覆幾個重點，完整 FAQ 會提供更多倫理、流程與安全資訊。"
+  },
   "form": {
-    "title": "寫封信給我們",
-    "subtitle": "提供足夠的背景，好讓我們以尊重的方式回覆，也歡迎條列。",
+    "title": "寫信給我們",
+    "subtitle": "提供足夠的背景，好讓我們用心回覆。歡迎條列。",
     "name": "姓名",
     "email": "Email",
-    "help": "此刻你在思考的轉換或課題是什麼？",
-    "helpHint": "例如：搬到英國、照顧後重返職場、跨文化領導、想預防再度過勞。",
-    "focusArea": "想討論的主題（選填）",
+    "help": "現在最想談的轉換或決策？",
+    "helpHint": "例如：搬到英國、產後重返職場、跨文化領導、倦怠風險。",
+    "focusArea": "想聚焦的主題（選填）",
     "focusAreaPlaceholder": "選擇主題",
     "focusAreaOptions": [
-      { "value": "relocation", "label": "搬遷／適應英國生活" },
-      { "value": "career", "label": "職涯或角色轉換" },
-      { "value": "return", "label": "暫停後重返工作" },
-      { "value": "leadership", "label": "領導／社群 steward" },
+      { "value": "transition", "label": "轉換方案" },
+      { "value": "returning", "label": "重返職場" },
+      { "value": "new-to-uk", "label": "初到英國" },
+      { "value": "check-in", "label": "定期 check-in" },
       { "value": "other", "label": "其他" }
     ],
-    "focusHint": "如果選項不合適，可以留白。",
-    "language": "偏好的語言",
+    "focusHint": "可先選最貼近的選項，沒有頭緒也沒關係。",
+    "language": "偏好語言",
     "languagePlaceholder": "選擇語言",
     "languageOptions": [
-      { "value": "EN", "label": "英文" },
+      { "value": "EN", "label": "English" },
       { "value": "TC", "label": "繁體中文" },
-      { "value": "SC", "label": "簡體中文" },
-      { "value": "MIX", "label": "視情況混用" }
+      { "value": "SC", "label": "简体中文" },
+      { "value": "MIX", "label": "語言混用" }
     ],
-    "timezone": "偏好的時區／時段",
-    "timezonePlaceholder": "例如：英國早上、GMT+8 晚上、或彈性",
-    "consent": "我同意 SustainSage 就教練事宜與我聯繫。",
-    "scopeAcknowledgement": "我理解這是教練詢問表，不提供治療、緊急協助、法律或移民建議。",
-    "privacyNote": "若未展開合作，我們會刪除你的資訊（除非法律另有要求）。",
+    "timezone": "方便的時區或時段",
+    "timezonePlaceholder": "例如：英國早上、GMT+8 晚上或彈性",
+    "consent": "我同意 SustainSage 為教練目的與我聯絡。",
+    "scopeAcknowledgement": "我了解此表單僅用於教練洽詢，非心理治療、緊急協助、法律或移民諮詢。",
+    "privacyNote": "若最終沒有合作，我們會刪除資料，除非法律另有要求。",
     "submit": "送出訊息",
     "status": {
-      "submitting": "寄出中…",
-      "success": "收到，會在三個英國工作天內回覆。",
-      "error": "發生問題，請再試一次或來信 contact@sustainsage.com。",
-      "errorRequired": "請填寫必填欄位並確認同意事項。"
+      "submitting": "傳送中…",
+      "success": "收到你的訊息，我們會在三個英國工作天內回覆。",
+      "error": "傳送失敗，請再試一次或來信 contact@sustainsage.com。",
+      "errorRequired": "請填寫必填欄位並勾選同意。"
     }
   },
   "formNote": {
     "lines": [
-      "一般會在三個英國工作天內回覆。",
-      "英文、繁中、簡中皆可自由混用。",
-      "關於保密與資料使用細節，請見 {privacyLink}。"
+      "一般回覆時間：約三個英國工作天內。",
+      "我們可使用 English、繁體中文、简体中文，歡迎自由切換。",
+      "更多保密與資料照顧說明請見 {privacyLink}。"
     ],
     "privacyLabel": "隱私與倫理說明",
     "privacyHref": "/contact#icf"

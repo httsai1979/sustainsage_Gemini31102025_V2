@@ -1,193 +1,36 @@
 import Link from 'next/link';
 
-import MainLayout from '@/components/layout/MainLayout';
 import Hero from '@/components/layout/Hero';
-import ICFNotice from '@/components/legal/ICFNotice';
-import StickyCTA from '@/components/StickyCTA';
-import HomeFaq from '@/components/Sections/HomeFaq';
-import { HoverLift, Reveal } from '@/components/ui/Motion';
+import MainLayout from '@/components/layout/MainLayout';
+import FAQ from '@/components/ui/FAQ';
+import ServiceCard from '@/components/ui/ServiceCard';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
 import nextI18NextConfig from '../next-i18next.config.js';
 
-const CARD_BASE_CLASS =
-  'rounded-2xl border border-emerald-100 bg-white/85 p-5 shadow-sm transition hover:shadow-md';
-
-const WHO_ICONS = {
-  newcomers: (
-    <svg viewBox="0 0 24 24" className="h-8 w-8 text-emerald-700" aria-hidden="true">
-      <circle cx="12" cy="12" r="8.25" fill="none" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M12 3.75c-2.5 3-2.5 13.5 0 16.5m0-16.5c2.5 3 2.5 13.5 0 16.5M3.75 12h16.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-  changers: (
-    <svg viewBox="0 0 24 24" className="h-8 w-8 text-emerald-700" aria-hidden="true">
-      <path
-        d="M12 3.75a8.25 8.25 0 1 1 0 16.5 8.25 8.25 0 0 1 0-16.5Zm3.2 4.1-2.63 5.69-5.69 2.63 2.63-5.69 5.69-2.63Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-    </svg>
-  ),
-  parents: (
-    <svg viewBox="0 0 24 24" className="h-8 w-8 text-emerald-700" aria-hidden="true">
-      <path
-        d="M12 4.5c2.9 0 5.25 2.35 5.25 5.25S14.9 15 12 15s-5.25-2.35-5.25-5.25S9.1 4.5 12 4.5Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M6.75 19.5c0-2.9 2.35-5.25 5.25-5.25s5.25 2.35 5.25 5.25"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <path d="M4.5 12h15" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
-    </svg>
-  ),
-  returners: (
-    <svg viewBox="0 0 24 24" className="h-8 w-8 text-emerald-700" aria-hidden="true">
-      <path
-        d="M12 21V11.5C9 11 7.5 8.5 7.5 6c2.5 0 4 1.5 4.5 3.5.5-2 2-3.5 4.5-3.5 0 2.5-1.5 5-4.5 5.5V21"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-    </svg>
-  ),
-};
-
-const PROCESS_ICONS = {
-  intro: (
-    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
-      <path
-        d="M8 7h8m-8 4h4m-4 4h2"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <path d="M5.5 5.5h13v13h-13z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-    </svg>
-  ),
-  sessions: (
-    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
-      <path
-        d="M7 7.5h10m-10 4h10M7 16.5h5"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <path d="M4.75 5.25h14.5v13.5H4.75z" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-    </svg>
-  ),
-  review: (
-    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
-      <path
-        d="M8.5 8.5h7m-7 3h4m-4 3h3"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <path
-        d="M15.5 3.75h-7a4.75 4.75 0 0 0-4.75 4.75v7A4.75 4.75 0 0 0 8.5 20.25h7a4.75 4.75 0 0 0 4.75-4.75v-7A4.75 4.75 0 0 0 15.5 3.75Z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <path d="M9 14h6" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
-    </svg>
-  ),
-};
-
-const FOCUS_ICONS = {
-  transition: (
-    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
-      <path
-        d="M5 12h5.5L8 6m11 12h-5.5L16 6"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <path d="M4 19h16" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
-    </svg>
-  ),
-  confidence: (
-    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
-      <path
-        d="M7 10.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5S14 15 11.5 15v3.75m0 0L9 21m2.5-3.25L14 21"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-    </svg>
-  ),
-  experiments: (
-    <svg viewBox="0 0 24 24" className="h-10 w-10 text-emerald-700" aria-hidden="true">
-      <path
-        d="M8.5 4.5h7M9 4.5v6.75l-3.5 6.5A2.5 2.5 0 0 0 7.75 21h8.5a2.5 2.5 0 0 0 2.25-3.25L15 11.25V4.5"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.5"
-      />
-      <path d="M9 14h6" stroke="currentColor" strokeLinecap="round" strokeWidth="1.5" />
-    </svg>
-  ),
-};
-
-function WhoIcon({ type }) {
-  return (
-    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
-      {WHO_ICONS[type] ?? WHO_ICONS.newcomers}
-    </span>
-  );
-}
-
-function ProcessIcon({ type }) {
-  return (
-    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100/70">
-      {PROCESS_ICONS[type] ?? PROCESS_ICONS.intro}
-    </span>
-  );
-}
-
-function FocusIcon({ type }) {
-  return (
-    <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100/70">
-      {FOCUS_ICONS[type] ?? FOCUS_ICONS.transition}
-    </span>
-  );
-}
+const BUTTON_BASE =
+  'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
 function HomePage() {
   const { t } = useTranslation('home');
-  const whoCards = t('who.cards', { returnObjects: true });
-  const processSteps = t('process.steps', { returnObjects: true });
-  const focusCards = t('focus.cards', { returnObjects: true });
+  const { t: faqT } = useTranslation('faq');
+
+  const fitBullets = t('fit.bullets', { returnObjects: true });
+  const approachBullets = t('approach.bullets', { returnObjects: true });
+  const supportBullets = t('support.bullets', { returnObjects: true });
+  const serviceCards = t('services.cards', { returnObjects: true });
+
+  const homeFaqGroups = [
+    {
+      title: faqT('general.title'),
+      items: faqT('general.items', { returnObjects: true }).slice(0, 2),
+    },
+    {
+      title: faqT('coaching.title'),
+      items: faqT('coaching.items', { returnObjects: true }).slice(0, 2),
+    },
+  ];
 
   return (
     <MainLayout title={t('seo.title')} desc={t('seo.description')}>
@@ -195,133 +38,122 @@ function HomePage() {
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
         image="/hero/home.svg"
-        imageAlt={t('hero.imageAlt', { defaultValue: 'Abstract illustration of a calm conversation' })}
+        imageAlt={t('hero.imageAlt', { defaultValue: 'Illustration of a reflective coaching conversation' })}
         priority
       >
-        <Link href="/contact" className="btn-primary" aria-label={t('hero.primaryCtaAria')}>
+        <Link
+          href="/contact"
+          className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+          aria-label={t('hero.primaryCtaAria')}
+        >
           {t('hero.primaryCta')}
         </Link>
-        <Link href="/services" className="btn-secondary" aria-label={t('hero.secondaryCtaAria')}>
+        <Link
+          href="/services"
+          className={`${BUTTON_BASE} bg-emerald-50 text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
+          aria-label={t('hero.secondaryCtaAria')}
+        >
           {t('hero.secondaryCta')}
         </Link>
       </Hero>
 
-      <section className="bg-white py-16 sm:py-20" id="who-we-work-with">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <Reveal>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('who.title')}</h2>
-            </Reveal>
-            <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-slate-600">{t('who.subtitle')}</p>
-            </Reveal>
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.1fr_1fr]">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('fit.title')}</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">{t('fit.description')}</p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {whoCards.map((card, index) => (
-              <Reveal key={card.title} className={`reveal-${index + 2}`}>
-                <HoverLift>
-                  <article className={`${CARD_BASE_CLASS} flex h-full flex-col gap-4 text-left`}>
-                    <WhoIcon type={card.icon} />
-                    <div>
-                      <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-600">{card.body}</p>
-                    </div>
-                  </article>
-                </HoverLift>
-              </Reveal>
+          <ul className="space-y-3 text-sm leading-6 text-slate-700">
+            {fitBullets.map((item) => (
+              <li key={item} className="flex gap-2">
+                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-emerald-950/5 py-16 sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.1fr_1fr]">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('approach.title')}</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">{t('approach.description')}</p>
+          </div>
+          <ul className="space-y-3 text-sm leading-6 text-slate-700">
+            {approachBullets.map((item) => (
+              <li key={item} className="flex gap-2">
+                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('services.title')}</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">{t('services.description')}</p>
+          </div>
+          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
+            {serviceCards.map((card) => (
+              <ServiceCard
+                key={card.slug}
+                title={card.title}
+                description={card.description}
+                href={card.href}
+                cta={card.cta}
+                imageSrc={card.image}
+                imageAlt={card.imageAlt}
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-emerald-50/60 py-16 sm:py-20" id="how-it-works">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <Reveal>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('process.title')}</h2>
-            </Reveal>
-            <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-emerald-900">{t('process.subtitle')}</p>
-            </Reveal>
+      <section className="bg-emerald-950/5 py-16 sm:py-20">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-[1.1fr_1fr]">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('support.title')}</h2>
+            <p className="mt-4 text-base leading-7 text-slate-600">{t('support.description')}</p>
           </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {processSteps.map((step, index) => (
-              <Reveal key={step.title} className={`reveal-${index + 2}`}>
-                <HoverLift>
-                  <article className={`${CARD_BASE_CLASS} flex h-full flex-col gap-4 bg-white text-left`}>
-                    <ProcessIcon type={step.icon} />
-                    <div>
-                      <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-slate-600">{step.body}</p>
-                    </div>
-                  </article>
-                </HoverLift>
-              </Reveal>
+          <ul className="space-y-3 text-sm leading-6 text-slate-700">
+            {supportBullets.map((item) => (
+              <li key={item} className="flex gap-2">
+                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+                <span>{item}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20" id="focus">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mx-auto max-w-3xl text-center">
-            <Reveal>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('focus.title')}</h2>
-            </Reveal>
-            <Reveal className="reveal-1">
-              <p className="mt-4 text-base leading-7 text-slate-600">{t('focus.subtitle')}</p>
-            </Reveal>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {focusCards.map((card, index) => (
-              <Reveal key={card.title} className={`reveal-${index + 2}`}>
-                <HoverLift>
-                  <article className={`${CARD_BASE_CLASS} flex h-full flex-col justify-between bg-white text-left`}>
-                    <div className="flex flex-col gap-4">
-                      <FocusIcon type={card.icon} />
-                      <div>
-                        <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
-                        <p className="mt-2 text-sm leading-6 text-slate-600">{card.body}</p>
-                      </div>
-                    </div>
-                    <div className="mt-6">
-                      <Link
-                        href={card.href}
-                        className="inline-flex items-center text-sm font-semibold text-emerald-700 transition hover:text-emerald-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
-                        aria-label={card.ariaLabel}
-                      >
-                        {card.linkLabel}
-                      </Link>
-                    </div>
-                  </article>
-                </HoverLift>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQ title={t('faq.title')} intro={t('faq.intro')} groups={homeFaqGroups} />
 
-      <HomeFaq />
-
-      <section className="bg-slate-950 py-16 text-emerald-50" id="home-cta">
-        <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">{t('cta.title')}</h2>
-          <p className="mt-4 text-base leading-7 text-emerald-100">{t('cta.body')}</p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/contact" className="btn-primary" aria-label={t('cta.primaryAria')}>
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl rounded-3xl border border-emerald-100 bg-emerald-50/70 px-8 py-12 text-center shadow-sm">
+          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('cta.title')}</h2>
+          <p className="mt-4 text-base leading-7 text-slate-700">{t('cta.body')}</p>
+          <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <Link
+              href="/contact"
+              className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+              aria-label={t('cta.primaryAria')}
+            >
               {t('cta.primaryCta')}
             </Link>
-            <Link href="/services" className="btn-secondary" aria-label={t('cta.secondaryAria')}>
+            <Link
+              href="/contact"
+              className={`${BUTTON_BASE} bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
+              aria-label={t('cta.secondaryAria')}
+            >
               {t('cta.secondaryCta')}
             </Link>
           </div>
         </div>
       </section>
-
-      <div className="px-6 pb-20">
-        <ICFNotice className="mx-auto max-w-4xl" />
-      </div>
-      <StickyCTA />
     </MainLayout>
   );
 }
@@ -329,7 +161,7 @@ function HomePage() {
 export async function getStaticProps({ locale = 'en' }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'home'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common', 'home', 'faq'], nextI18NextConfig)),
     },
   };
 }
