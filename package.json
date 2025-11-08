@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postbuild": "node scripts/generate-sitemap.js"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.1.5",
