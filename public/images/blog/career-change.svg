@@ -1,10 +1,3 @@
-<svg width="640" height="400" viewBox="0 0 640 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="640" height="400" rx="32" fill="#F2F8F4"/>
-  <path d="M128 256C128 180.548 188.548 120 264 120H320V88C320 78.0589 328.059 70 338 70H438C447.941 70 456 78.0589 456 88V188C456 197.941 447.941 206 438 206H338C328.059 206 320 197.941 320 188V156H264C218.817 156 182 192.817 182 238C182 283.183 218.817 320 264 320H356C365.941 320 374 328.059 374 338C374 347.941 365.941 356 356 356H264C188.548 356 128 295.452 128 220V256Z" fill="#4A6C56" fill-opacity="0.16"/>
-  <path d="M230 214C230 197.431 243.431 184 260 184H348C364.569 184 378 197.431 378 214V242C378 258.569 364.569 272 348 272H260C243.431 272 230 258.569 230 242V214Z" stroke="#4A6C56" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M284 236L308 214L332 236" stroke="#4A6C56" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M308 214V286" stroke="#4A6C56" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="470" cy="120" r="36" fill="#E3F1EA"/>
-  <path d="M470 104V136" stroke="#4A6C56" stroke-width="8" stroke-linecap="round"/>
-  <path d="M454 120H486" stroke="#4A6C56" stroke-width="8" stroke-linecap="round"/>
-</svg>
+version https://git-lfs.github.com/spec/v1
+oid sha256:29c934e812ac53ab1ffb215d9cac8303ba496a62d93b391b4e69c994187db6a4
+size 1419
