@@ -32,5 +32,8 @@
     "serverErrorTitle": "系統發生狀況",
     "serverErrorSubtitle": "發生了非預期的錯誤，請稍後再試，或通知我們協助處理。",
     "cta": "回到首頁"
+  },
+  "testimonials": {
+    "heading": "客戶回饋"
   }
 }

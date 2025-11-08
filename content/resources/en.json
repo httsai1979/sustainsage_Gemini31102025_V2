@@ -1,0 +1,5 @@
+[
+  { "id":"behaviour-ladder","title":"Behaviour Experiment Ladder","desc":"Design a small, safe test to learn by doing — this week.","href":"/resources/behaviour-ladder","img":"/images/resources/behaviour-ladder.jpg","alt":"Behaviour ladder","downloadable":true,"download":"/docs/behaviour-experiment-ladder.pdf" },
+  { "id":"selftalk-cards","title":"Self-talk Reframe Cards","desc":"Replace harsh scripts with kinder, more useful lines.","img":"/images/resources/selftalk.jpg","alt":"Self-talk cards","comingSoon":true },
+  { "id":"emotion-triangle","title":"Emotion Triangle","desc":"From feeling → need → next step; 5 minutes to clarity.","img":"/images/resources/emotion-triangle.jpg","alt":"Emotion triangle","comingSoon":true }
+]
