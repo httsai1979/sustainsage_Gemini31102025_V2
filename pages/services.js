@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import Hero from '@/components/layout/Hero';
-import MainLayout from '@/components/layout/MainLayout';
+import Head from 'next/head';
 import FAQSection from '@/components/Sections/FAQSection';
 import ICFNotice from '@/components/legal/ICFNotice';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -63,7 +63,11 @@ function ServicesPage() {
     : [];
 
   return (
-    <MainLayout title={t('seo.title')} desc={t('seo.description')}>
+    <>
+      <Head>
+        <title>{t('seo.title')}</title>
+        <meta name="description" content={t('seo.description')} />
+      </Head>
       <Hero
         title={t('hero.title')}
         subtitle={t('hero.subtitle')}
@@ -181,7 +185,7 @@ function ServicesPage() {
       <div className="px-6 pb-16">
         <ICFNotice className="mx-auto max-w-4xl" />
       </div>
-    </MainLayout>
+    </>
   );
 }
 

@@ -32,5 +32,8 @@
     "serverErrorTitle": "Something went wrong",
     "serverErrorSubtitle": "An unexpected error occurred. Please try again soon or contact us if the issue continues.",
     "cta": "Return home"
+  },
+  "testimonials": {
+    "heading": "What clients say"
   }
 }
