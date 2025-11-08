@@ -1,11 +1,3 @@
-<svg width="480" height="360" viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="480" height="360" rx="32" fill="#EEF2FF"/>
-  <circle cx="160" cy="180" r="64" fill="#C7D2FE"/>
-  <path d="M120 220C120 192 180 152 240 152C300 152 360 192 360 220" stroke="#4338CA" stroke-width="10" stroke-linecap="round"/>
-  <path d="M180 180C180 160 200 140 224 140" stroke="#6366F1" stroke-width="8" stroke-linecap="round"/>
-  <path d="M280 180C280 160 260 140 236 140" stroke="#6366F1" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="224" cy="140" r="14" fill="#312E81"/>
-  <circle cx="236" cy="140" r="14" fill="#312E81"/>
-  <path d="M176 248H304" stroke="#C7D2FE" stroke-width="14" stroke-linecap="round"/>
-  <path d="M208 268H272" stroke="#A5B4FC" stroke-width="10" stroke-linecap="round"/>
-</svg>
+version https://git-lfs.github.com/spec/v1
+oid sha256:005f57b3c602abfe5689195b2c41fb9c84823a67bfa98030d94a935cc1e3ecec
+size 994
