@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
 import { useRouter } from 'next/router';
-import Head from 'next/head';
 import { appWithTranslation } from 'next-i18next';
 
 import '@/styles/globals.css';
 
+import MainLayout from '@/components/layout/MainLayout';
 import CookieConsent, { getStoredConsent, storeConsent } from '@/components/CookieConsent';
 import { GA_MEASUREMENT_ID, hasGa, pageview } from '@/lib/ga';
-import { DEFAULT_SEO } from '@/lib/seo';
 
 import nextI18NextConfig from '../next-i18next.config.js';
 
@@ -44,12 +43,11 @@ function MyApp({ Component, pageProps }) {
     }
   };
 
+  const page = <Component {...pageProps} />;
+  const content = Component.getLayout ? Component.getLayout(page) : <MainLayout>{page}</MainLayout>;
+
   return (
     <>
-      <Head>
-        <title>{DEFAULT_SEO.defaultTitle}</title>
-        <meta name="description" content={DEFAULT_SEO.description} />
-      </Head>
       {hasGa && consent === 'granted' && (
         <>
           <Script
@@ -66,7 +64,7 @@ function MyApp({ Component, pageProps }) {
           </Script>
         </>
       )}
-      {Component.getLayout?.(<Component {...pageProps} />) ?? <Component {...pageProps} />}
+      {content}
       <CookieConsent consent={consent} onConsent={handleConsent} />
     </>
   );

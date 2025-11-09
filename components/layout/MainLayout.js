@@ -1,24 +1,28 @@
-import { createContext, useContext } from 'react';
+import Head from 'next/head';
 
-import SiteFooter from '@/components/site/SiteFooter';
-import SiteHeader from '@/components/site/SiteHeader';
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
 
-const LayoutContext = createContext(false);
+const DEFAULT_DESCRIPTION = 'Calm, practical coaching for people navigating transitions.';
 
-export default function MainLayout({ children }) {
-  const hasLayout = useContext(LayoutContext);
+export default function MainLayout({ children, title, desc }) {
+  const hasTitle = typeof title === 'string' && title.trim().length > 0;
+  const hasDescription = typeof desc === 'string' && desc.trim().length > 0;
 
-  if (hasLayout) {
-    return <>{children}</>;
-  }
+  const pageTitle = hasTitle ? `${title} | SustainSage` : 'SustainSage';
+  const description = hasDescription ? desc : DEFAULT_DESCRIPTION;
 
   return (
-    <LayoutContext.Provider value={true}>
-      <div className="flex min-h-screen flex-col bg-white text-slate-900">
-        <SiteHeader />
-        <main className="flex-1 pt-20 md:pt-24">{children}</main>
-        <SiteFooter />
+    <>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={description} />
+      </Head>
+      <div className="min-h-screen flex flex-col bg-sage-50">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </div>
-    </LayoutContext.Provider>
+    </>
   );
 }
