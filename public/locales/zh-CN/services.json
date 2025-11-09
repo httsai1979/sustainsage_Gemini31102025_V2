@@ -5,57 +5,670 @@
   },
   "hero": {
     "title": "一起共创适合你的教练路径",
-    "subtitle": "这些路径是起点，实际步调、语言与主题会依你的生活情境调整。"
+    "subtitle": "Each pathway is a starting point. We adapt pace, language, and focus once we understand your reality."
   },
   "pathways": {
-    "title": "选择一个起步方向",
-    "description": "三个常见需求，始终保持弹性并以你为主。",
-    "viewDetails": "查看详情",
+    "title": "Choose a pathway",
+    "description": "四條常見路徑，可依你的情境調整。",
+    "viewDetails": "View details",
     "cards": [
       {
-        "slug": "transition-relocation",
-        "title": "转变与搬迁",
-        "target": "适合跨文化生活或重新落脚的人。",
-        "scenario": "想在英国安稳下来，同时兼顾其他地方的责任。",
+        "slug": "transition",
+        "title": "Transition coaching",
+        "target": "For relocations, returns, and role changes.",
+        "scenario": "You want a steady partner while reshaping work, place, and support systems in the UK.",
         "topics": [
-          "盘点能随身带着走的支援系统与协议。",
-          "慢慢看见哀悼、归属与主导权，不急着解决。",
-          "用自己的节奏实验在新社群中扎根。"
+          "Map the realities of visas, finances, care, and capacity before leaping.",
+          "Design decisions that honour both new possibilities and current limits.",
+          "Experiment with CVs, conversations, or trial roles without burning out."
         ],
         "icon": "/images/services/transition.svg"
       },
       {
-        "slug": "return-to-work-clarity",
-        "title": "重返职涯与厘清方向",
-        "target": "适合重新投入有偿工作的照护者、父母或专业人士。",
-        "scenario": "在暂停或角色转换后，重新建立信心与节奏。",
+        "slug": "early-career",
+        "title": "Early-career coaching",
+        "target": "For 20–35-year-olds navigating uncertainty.",
+        "scenario": "You want space to test options and name what matters without pretending you “have it together.”",
         "topics": [
-          "厘清照护、职业与社群之间的优先顺序与容量。",
-          "松动对“够格”、“准备好”的既有叙事。",
-          "设计彼此同意的生活节奏与支持检视。"
+          "Translate family, financial, and personal expectations into doable steps.",
+          "Hold space for doubt while you build language for what you want.",
+          "Prototype side projects, conversations, or moves safely before deciding."
         ],
-        "icon": "/images/services/returning.svg"
+        "icon": "/images/services/early-career.svg"
       },
       {
-        "slug": "uk-workplace-confidence",
-        "title": "英国职场信心",
-        "target": "适合在英国文化中领导或协作的人。",
-        "scenario": "在不同口音、期待与潜规则间翻译自己的想法。",
+        "slug": "working-parents",
+        "title": "Working parent coaching",
+        "target": "For parents and caregivers rebuilding rhythms.",
+        "scenario": "You need breathing room to juggle care, work, and identity without stretching beyond capacity.",
         "topics": [
-          "练习提出需求、婉拒与设定界线的语言。",
-          "探索适合你的反馈节奏与倡议方式。",
-          "辨识能支援你的盟友与自我补给仪式。"
+          "Surface invisible labour and design boundaries you can actually hold.",
+          "Negotiate support at work and home without guilt-driven decisions.",
+          "Create sustainable self-care that fits into the week, not the wishlist."
         ],
-        "icon": "/images/services/experiments.svg"
+        "icon": "/images/services/working-parents.svg"
+      },
+      {
+        "slug": "leadership",
+        "title": "Leadership coaching",
+        "target": "For managers in complex, cross-cultural roles.",
+        "scenario": "You want a reflective partner while you lead across borders, expectations, and power lines.",
+        "topics": [
+          "Ground decisions in role clarity so you stop carrying what is not yours.",
+          "Design high-stakes conversations with cultural nuance and integrity.",
+          "Sustain your leadership without overwork as proof of value."
+        ],
+        "icon": "/images/services/leadership.svg"
       }
     ]
   },
   "cta": {
-    "title": "还不确定怎么开始？",
-    "body": "20 分钟认识谈能先了解你的情境，再一起调整最合适的做法。",
-    "primaryCta": "预约认识谈",
+    "title": "Not sure where to start?",
+    "body": "A 20-minute intro chat lets us hear your context and shape the right mix together.",
+    "primaryCta": "Book an intro chat",
     "primaryHref": "/contact",
-    "secondaryCta": "了解教练如何进行",
-    "secondaryHref": "/services/transition-relocation"
+    "secondaryCta": "Read how coaching works",
+    "secondaryHref": "/services/transition"
+  },
+  "transition": {
+    "seo": {
+      "title": "Transition coaching for relocation, return and role change | SustainSage",
+      "description": "Navigate UK relocation, return-to-work plans, and role changes with a calm, structured coaching partner."
+    },
+    "hero": {
+      "title": "Transition coaching for relocation, return and role change",
+      "subtitle": "A steady, structured space to navigate UK moves, career shifts and returns to work without burning out.",
+      "primaryCta": "Explore if this fits your transition",
+      "primaryHref": "/contact?topic=transition",
+      "secondaryCta": "Back to services",
+      "secondaryHref": "/services"
+    },
+    "structure": {
+      "isThisForYou": {
+        "title": "Is this for you?"
+      },
+      "howWeWork": {
+        "title": "How we’ll work together"
+      },
+      "journey": {
+        "title": "A typical journey"
+      },
+      "outcomes": {
+        "title": "What clients often leave with"
+      },
+      "boundaries": {
+        "title": "Boundaries & ethics"
+      },
+      "faq": {
+        "title": "Micro FAQ"
+      },
+      "cta": {}
+    },
+    "isThisForYou": {
+      "title": "Is this for you?",
+      "items": [
+        {
+          "summary": "Relocating to the UK with mixed pressures.",
+          "detail": "You feel pulled between “take anything quickly” and “hold out for the right fit.”"
+        },
+        {
+          "summary": "Returning after a pause.",
+          "detail": "You paused work for caregiving, study or health and want to re-enter in a way that honours your limits."
+        },
+        {
+          "summary": "Shifting roles or industries intentionally.",
+          "detail": "You are moving into something new and do not want to repeat old burnout patterns."
+        },
+        {
+          "summary": "Needing one calm thinking space.",
+          "detail": "People keep offering tips; you want one place to think clearly and decide what is yours."
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How we’ll work together",
+      "items": [
+        {
+          "summary": "You set the agenda.",
+          "detail": "We bring questions, structure and reflection while you choose focus each time."
+        },
+        {
+          "summary": "Map your real constraints.",
+          "detail": "We consider visa, finances, caring duties, language, health and networks before planning moves."
+        },
+        {
+          "summary": "Turn “shoulds” into choices.",
+          "detail": "We name what is non-negotiable for you right now and where you have agency."
+        },
+        {
+          "summary": "Design low-risk experiments.",
+          "detail": "We test CV stories, outreach, or trial roles that match your current capacity."
+        }
+      ]
+    },
+    "journey": {
+      "title": "A typical journey (6 sessions)",
+      "steps": [
+        {
+          "summary": "Session 1 · Mapping your reality.",
+          "detail": "責任、壓力來源、支援、內在雜訊—我們把真實狀況放在檯面上。"
+        },
+        {
+          "summary": "Session 2 · Clarifying viable directions.",
+          "detail": "針對當下的限制與資源，找出 2–3 個可行方向。"
+        },
+        {
+          "summary": "Session 3 · Designing small experiments.",
+          "detail": "一頁 CV、LinkedIn 調整、兩個安全對話、時程測試。"
+        },
+        {
+          "summary": "Session 4 · Reviewing what the experiments showed.",
+          "detail": "辨識順手與卡住之處，判斷阻力來自恐懼、資訊還是結構。"
+        },
+        {
+          "summary": "Session 5 · Building boundaries and support.",
+          "detail": "時間、家庭協調、自我照顧與外部資源配合。"
+        },
+        {
+          "summary": "Session 6 · Integrating the next quarter.",
+          "detail": "釐清接下來三個月要做／不做什麼，以及壓力來時怎麼重整。"
+        }
+      ]
+    },
+    "outcomes": {
+      "title": "What clients often leave with",
+      "items": [
+        {
+          "summary": "A grounded narrative.",
+          "detail": "A story they can use in CVs, interviews, or networking that feels 真實而不自賣."
+        },
+        {
+          "summary": "Fewer, clearer options.",
+          "detail": "1–3 viable directions rather than 10 abstract possibilities."
+        },
+        {
+          "summary": "Consent-based pacing.",
+          "detail": "A “small steps without over-pushing” rhythm they can sustain."
+        },
+        {
+          "summary": "Signals for when to seek other support.",
+          "detail": "Clearer judgement on when legal, financial, or therapeutic resources are needed."
+        }
+      ]
+    },
+    "boundaries": {
+      "title": "Boundaries & ethics",
+      "items": [
+        {
+          "summary": "No specialist substitutes.",
+          "detail": "We do not offer immigration, legal, tax or clinical advice."
+        },
+        {
+          "summary": "Naming other support when needed.",
+          "detail": "If therapy, legal or financial advice is appropriate we will say so clearly."
+        },
+        {
+          "summary": "ICF-aligned practice.",
+          "detail": "Confidentiality with clear limits, respect for your choices, no hidden agenda."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Micro FAQ",
+      "items": [
+        {
+          "question": "Can we talk about visas or immigration rules?",
+          "answer": "We can explore how rules impact your options, but we do not replace qualified legal advice. If this brings up questions, you can mention it in the intro call form."
+        },
+        {
+          "question": "What if I do not complete the “homework”?",
+          "answer": "We talk about what got in the way. Your pace is data, not a failure. If this brings up questions, you can mention it in the intro call form."
+        },
+        {
+          "question": "Is this only for big moves?",
+          "answer": "No. It is for any transition where you want a calmer, more intentional way through. If this brings up questions, you can mention it in the intro call form."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to talk through your transition?",
+      "body": "If you are unsure, the intro chat stays focused on your reality and whether this support fits.",
+      "primaryCta": "Explore if this fits your transition",
+      "primaryHref": "/contact?topic=transition",
+      "secondaryCta": "See all services",
+      "secondaryHref": "/services"
+    }
+  },
+  "earlyCareer": {
+    "seo": {
+      "title": "Early-career coaching for “I’m not sure yet” | SustainSage",
+      "description": "Explore options, build confidence, and make grounded decisions without pretending to have everything figured out."
+    },
+    "hero": {
+      "title": "Early-career coaching for “I’m not sure yet”",
+      "subtitle": "Space to test options, build confidence and make decisions without pretending to “have it all figured out”.",
+      "primaryCta": "Talk through your next step",
+      "primaryHref": "/contact?topic=early-career",
+      "secondaryCta": "Back to services",
+      "secondaryHref": "/services"
+    },
+    "isThisForYou": {
+      "title": "Is this for you?",
+      "items": [
+        {
+          "summary": "Navigating early career uncertainty.",
+          "detail": "You are 20–35, working or job-hunting, 常常覺得「我是不是走錯行？」。"
+        },
+        {
+          "summary": "Balancing expectations and your own values.",
+          "detail": "You feel torn between 家人期待、薪水、安全感和自己在乎的事。"
+        },
+        {
+          "summary": "Tired of passion vs practicality debates.",
+          "detail": "你被「要有熱情」和「要務實」兩邊拉扯，很累。"
+        },
+        {
+          "summary": "Wanting co-created guidance.",
+          "detail": "你不想被填鴨指導，只想有人陪你把「現實可行的小步驟」想清楚。"
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How we’ll work together",
+      "items": [
+        {
+          "summary": "No checklists of what you “should” do.",
+          "detail": "We stay curious and keep you in the driver’s seat."
+        },
+        {
+          "summary": "Slow down to hear your own voice.",
+          "detail": "We separate what is yours from what社群媒體 keeps shouting."
+        },
+        {
+          "summary": "Gather data about skills, limits and curiosity.",
+          "detail": "We整理你的技能、限制、好奇，找出可以被測試的方向。"
+        },
+        {
+          "summary": "Connect every session to real next steps.",
+          "detail": "每次談話都連回你下一步可以實際嘗試什麼，而不是只講道理。"
+        }
+      ]
+    },
+    "journey": {
+      "title": "A typical journey (4–6 sessions)",
+      "steps": [
+        {
+          "summary": "Session 1 · Mapping where you are.",
+          "detail": "工作 / 求職現況、壓力來自哪裡、你已經試過什麼。"
+        },
+        {
+          "summary": "Session 2 · Growing language for what matters.",
+          "detail": "說得出「我在乎什麼」而不是只說「不要什麼」。"
+        },
+        {
+          "summary": "Session 3 · Designing experiments.",
+          "detail": "side project、資訊訪談、短期課程、內部轉調探索。"
+        },
+        {
+          "summary": "Session 4 · Reading the data, not just emotions.",
+          "detail": "哪些實驗有火花？哪些只是別人說好？"
+        },
+        {
+          "summary": "Session 5 · Resetting boundaries.",
+          "detail": "與家人、主管、同儕的期待談判，而不是硬撐。"
+        },
+        {
+          "summary": "Session 6 · Planning the next season (if needed).",
+          "detail": "必要時整理 3–6 個月行動＋回頭檢視的方法。"
+        }
+      ]
+    },
+    "outcomes": {
+      "title": "What clients often leave with",
+      "items": [
+        {
+          "summary": "A braver self-story.",
+          "detail": "更誠實的自我敘事：可以對父母 / 朋友說得出口又不羞愧。"
+        },
+        {
+          "summary": "Actionable next steps.",
+          "detail": "一份真正可行的短期行動清單，而不是空洞的「追隨熱情」。"
+        },
+        {
+          "summary": "Healthier relationship with uncertainty.",
+          "detail": "對「迷惘本來就正常」的健康理解，少一點自責。"
+        }
+      ]
+    },
+    "boundaries": {
+      "title": "Boundaries & ethics",
+      "items": [
+        {
+          "summary": "No diagnoses or labels.",
+          "detail": "不做診斷、不貼病名。"
+        },
+        {
+          "summary": "Naming when therapy could help.",
+          "detail": "若有明顯情緒困擾／創傷議題，會鼓勵且協助你尋找合適心理專業。"
+        },
+        {
+          "summary": "You stay in charge.",
+          "detail": "完全以你為主，不會替你決定方向或推銷特定產業。"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Micro FAQ",
+      "items": [
+        {
+          "question": "I do not have a clear goal. Can I still come?",
+          "answer": "Yes. That is usually where we start. If this brings up questions, you can mention it in the intro call form."
+        },
+        {
+          "question": "Will this feel like being lectured?",
+          "answer": "不會。我們一起設計方式，你保有決定權。 If this brings up questions, you can mention it in the intro call form."
+        },
+        {
+          "question": "Can I book one session at a time?",
+          "answer": "可以，但多數人會選 3–6 次做比較完整的整理. If this brings up questions, you can mention it in the intro call form."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to try a small step?",
+      "body": "Bring the questions that feel messy. We will map options and see what is realistic together.",
+      "primaryCta": "Talk through your next step",
+      "primaryHref": "/contact?topic=early-career",
+      "secondaryCta": "See all services",
+      "secondaryHref": "/services"
+    }
+  },
+  "workingParents": {
+    "seo": {
+      "title": "Coaching for working parents and caregivers | SustainSage",
+      "description": "Rebuild rhythm, boundaries and identity while balancing work and care without pretending you have endless capacity."
+    },
+    "hero": {
+      "title": "Coaching for working parents and caregivers",
+      "subtitle": "Support to rebuild rhythm, boundaries and identity without pretending you have endless capacity.",
+      "primaryCta": "Protect space for you",
+      "primaryHref": "/contact?topic=working-parents",
+      "secondaryCta": "Back to services",
+      "secondaryHref": "/services"
+    },
+    "isThisForYou": {
+      "title": "Is this for you?",
+      "items": [
+        {
+          "summary": "Torn between care and work.",
+          "detail": "你在育兒、長照與工作之間拉扯，覺得「不管怎麼選都對不起誰」。"
+        },
+        {
+          "summary": "Returning before you feel “ready”.",
+          "detail": "回到職場後狀態還沒穩定，就被期待「回到以前的你」。"
+        },
+        {
+          "summary": "Your needs keep moving to the bottom.",
+          "detail": "想為自己保留一點空間，但每次都排在最後。"
+        },
+        {
+          "summary": "Looking for a non-judgemental space.",
+          "detail": "想要一個不批判你的空間，幫你看清楚實際限制和可以談的餘地。"
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How we’ll work together",
+      "items": [
+        {
+          "summary": "Start with your day, not theory.",
+          "detail": "我們從「你的一天」開始，看到真實節奏。"
+        },
+        {
+          "summary": "Map available and unavailable support.",
+          "detail": "一起盤點可用 / 不可用的時間、支援、制度、內疚感。"
+        },
+        {
+          "summary": "Surface negotiable spaces.",
+          "detail": "找出可談判的空間（工作安排、家務分工、自我期待）。"
+        },
+        {
+          "summary": "Coach, not judge.",
+          "detail": "用教練提問協助你做選擇，而不是教你當完美父母。"
+        }
+      ]
+    },
+    "journey": {
+      "title": "A typical journey (4–6 sessions)",
+      "steps": [
+        {
+          "summary": "Session 1 · Seeing the full load.",
+          "detail": "現在的負荷全圖：工作、家務、情緒勞動，全部攤開。"
+        },
+        {
+          "summary": "Session 2 · Naming priorities.",
+          "detail": "辨識真正優先順序：根據價值觀，而不是罪惡感。"
+        },
+        {
+          "summary": "Session 3 · Testing small adjustments.",
+          "detail": "設計小調整：會議時間、請求支援、分工實驗。"
+        },
+        {
+          "summary": "Session 4 · Meeting the inner voices.",
+          "detail": "處理內在聲音：失敗感、比較、要求做「超人」的文化。"
+        },
+        {
+          "summary": "Session 5 · Building sustainable rhythm.",
+          "detail": "建立可維持的節奏：每週 1–2 個你守得住的界線。"
+        },
+        {
+          "summary": "Session 6 · Reviewing supports.",
+          "detail": "檢視與調整：什麼有效？哪些需要更多支持或外部資源？"
+        }
+      ]
+    },
+    "outcomes": {
+      "title": "What clients often leave with",
+      "items": [
+        {
+          "summary": "Practical boundaries.",
+          "detail": "具體可以執行的界線，例如不再回所有非急訊息、明確下班時間。"
+        },
+        {
+          "summary": "New conversations at home.",
+          "detail": "和伴侶或家人的新對話方式，而不是悶著撐。"
+        },
+        {
+          "summary": "Sustainable self-care.",
+          "detail": "比較可持續的自我照顧，而不是偶爾爆買或爆睡。"
+        }
+      ]
+    },
+    "boundaries": {
+      "title": "Boundaries & ethics",
+      "items": [
+        {
+          "summary": "No judgement on care choices.",
+          "detail": "不批判教養選擇、不強迫某種價值。"
+        },
+        {
+          "summary": "You make family decisions.",
+          "detail": "不代替你做家庭決策，但幫你把思路整理清楚。"
+        },
+        {
+          "summary": "Flagging mental health needs.",
+          "detail": "若有明顯產後憂鬱／心理健康風險，會建議尋找專業協助，而非自己撐過去。"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Micro FAQ",
+      "items": [
+        {
+          "question": "我時間很亂，真的排得出教練？",
+          "answer": "可以一起討論最小可行安排；如果現在真的排不出，我們也會誠實說. If this brings up questions, you can mention it in the intro call form."
+        },
+        {
+          "question": "配偶 / 家人可以一起參與嗎？",
+          "answer": "可視情況協調，但主體仍是你的目標. If this brings up questions, you can mention it in the intro call form."
+        },
+        {
+          "question": "會不會被說「你要求太多」？",
+          "answer": "不會。我們討論現實與選擇，而不是評價你. If this brings up questions, you can mention it in the intro call form."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to protect space for you?",
+      "body": "Let us map what is non-negotiable and where support can grow.",
+      "primaryCta": "Protect space for you",
+      "primaryHref": "/contact?topic=working-parents",
+      "secondaryCta": "See all services",
+      "secondaryHref": "/services"
+    }
+  },
+  "leadership": {
+    "seo": {
+      "title": "Leadership coaching for complex, cross-cultural roles | SustainSage",
+      "description": "Partner with an ICF-aligned coach to navigate new scope, cross-border expectations, and cultural nuances without losing yourself."
+    },
+    "hero": {
+      "title": "Leadership coaching for complex, cross-cultural roles",
+      "subtitle": "A reflective partner for managers and professionals navigating new scope, cultures and expectations.",
+      "primaryCta": "Discuss your leadership context",
+      "primaryHref": "/contact?topic=leadership",
+      "secondaryCta": "Back to services",
+      "secondaryHref": "/services"
+    },
+    "isThisForYou": {
+      "title": "Is this for you?",
+      "items": [
+        {
+          "summary": "Stepping into bigger or cross-border roles.",
+          "detail": "You are leading in the UK or across countries with little formal support."
+        },
+        {
+          "summary": "Between team and leadership expectations.",
+          "detail": "在團隊與高層之間卡位：想好好對人，但也得交出結果。"
+        },
+        {
+          "summary": "Navigating cultural communication gaps.",
+          "detail": "搬到或管理英國／多國團隊，文化溝通讓你覺得說什麼都不對。"
+        },
+        {
+          "summary": "Looking for partnership, not “霸氣領導學”.",
+          "detail": "你不要模板式的權威技巧，只要一個能和你一起思考的人。"
+        }
+      ]
+    },
+    "howWeWork": {
+      "title": "How we’ll work together",
+      "items": [
+        {
+          "summary": "Start from real situations.",
+          "detail": "以實際會議、衝突、決策為起點，而不是抽象理論。"
+        },
+        {
+          "summary": "Separate role from self.",
+          "detail": "幫你看「角色 vs 自我」：哪些是職務要扛的，哪些不是。"
+        },
+        {
+          "summary": "Stay authentic across cultures.",
+          "detail": "探索你自己的領導風格，在文化差異中仍保有一致。"
+        },
+        {
+          "summary": "Coach as thinking partner.",
+          "detail": "對齊 ICF 精神：你是專家，我是思考拍檔，不替你管人。"
+        }
+      ]
+    },
+    "journey": {
+      "title": "A typical journey (6+ sessions)",
+      "steps": [
+        {
+          "summary": "Session 1 · Mapping the landscape.",
+          "detail": "情境盤點：組織、團隊、人際權力線。"
+        },
+        {
+          "summary": "Session 2 · Defining your leadership posture.",
+          "detail": "定義你要成為哪種領導者：可被實踐的，而不是海報標語。"
+        },
+        {
+          "summary": "Session 3 · Designing critical conversations.",
+          "detail": "關鍵對話設計：棘手回饋、一對一、一對多。"
+        },
+        {
+          "summary": "Session 4 · Decisions and boundaries.",
+          "detail": "決策與界線：什麼要說「不」、如何說。"
+        },
+        {
+          "summary": "Session 5 · Cross-cultural adjustments.",
+          "detail": "跨文化敏感度：在 UK / 多國團隊中實際可行的調整。"
+        },
+        {
+          "summary": "Session 6+ · Sustaining reflection.",
+          "detail": "長期維持：如何繼續反思，而不需要永遠依賴教練。"
+        }
+      ]
+    },
+    "outcomes": {
+      "title": "What clients often leave with",
+      "items": [
+        {
+          "summary": "Consistent leadership signals.",
+          "detail": "更穩定的一致作法：團隊知道你的原則是什麼。"
+        },
+        {
+          "summary": "Resolved, self-led challenges.",
+          "detail": "幾個實際被解開的難題（但歸功於你自己行動，我只是幫你對焦）。"
+        },
+        {
+          "summary": "Healthier pressure boundaries.",
+          "detail": "對壓力的更清晰界線，不再用過勞來證明價值。"
+        }
+      ]
+    },
+    "boundaries": {
+      "title": "Boundaries & ethics",
+      "items": [
+        {
+          "summary": "No internal politics or labels.",
+          "detail": "不參與內部政治、不替你對特定員工診斷標籤。"
+        },
+        {
+          "summary": "Not therapy.",
+          "detail": "不做心理治療；如有需要會建議尋找合適資源。"
+        },
+        {
+          "summary": "Strict confidentiality.",
+          "detail": "嚴格保密你的職場案例，在合法與風險界線內。"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Micro FAQ",
+      "items": [
+        {
+          "question": "Can my company sponsor this?",
+          "answer": "可以。我們會事先釐清三方關係與保密邊界. If this brings up questions, you can mention it in the intro call form."
+        },
+        {
+          "question": "How is this different from mentoring or consulting?",
+          "answer": "我們不給標準答案，而是幫你思考、試、調整屬於你的做法. If this brings up questions, you can mention it in the intro call form."
+        },
+        {
+          "question": "Is this suitable for a single session or longer work?",
+          "answer": "重大轉職 / 新職通常 6–9 次最有幫助，也可以先從 3 次開始. If this brings up questions, you can mention it in the intro call form."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Want a reflective partner in your context?",
+      "body": "Bring the decisions or conversations on your desk and we will make space to think them through.",
+      "primaryCta": "Discuss your leadership context",
+      "primaryHref": "/contact?topic=leadership",
+      "secondaryCta": "See all services",
+      "secondaryHref": "/services"
+    }
   }
 }
