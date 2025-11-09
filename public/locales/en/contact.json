@@ -34,6 +34,7 @@
   "form": {
     "title": "Send us a note",
     "subtitle": "Short bullet points are enough. You stay in control of what you disclose.",
+    "highlight": "Share as much or as little as you like.",
     "name": "Name",
     "nameHint": "Share the name and pronunciation you’d like us to use.",
     "email": "Email",

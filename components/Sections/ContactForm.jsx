@@ -29,6 +29,7 @@ export default function ContactForm() {
   const emailHint = t('form.emailHint');
   const languageHint = t('form.languageHint');
   const timezoneHint = t('form.timezoneHint');
+  const formHighlight = t('form.highlight');
 
   useEffect(() => {
     const focusParam = router.query.package ?? router.query.topic;
@@ -115,11 +116,17 @@ export default function ContactForm() {
     <div className="mx-auto max-w-5xl px-6">
       <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
         <div className="rounded-3xl bg-white/90 p-8 shadow-sm">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('form.title')}</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">
-            <strong className="block text-slate-900">Share as much as you like.</strong>
-            {t('form.subtitle')}
-          </p>
+          <div className="typography flex flex-col gap-4">
+            <h2>{t('form.title')}</h2>
+            {formHighlight && formHighlight !== 'form.highlight' ? (
+              <p>
+                <strong>{formHighlight}</strong>
+                {t('form.subtitle')}
+              </p>
+            ) : (
+              <p>{t('form.subtitle')}</p>
+            )}
+          </div>
 
           {status && (
             <div

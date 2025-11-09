@@ -67,17 +67,19 @@ export default function ContactPage() {
       </Head>
 
       <section className="bg-emerald-50/60 py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl space-y-6 px-6 text-center md:text-left">
-          <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero?.title}</h1>
-          {hero?.body ? <p className="text-base leading-7 text-slate-600">{hero.body}</p> : null}
+        <div className="mx-auto max-w-4xl px-6 text-center md:text-left">
+          <div className="typography flex flex-col gap-4">
+            <h1>{hero?.title}</h1>
+            {hero?.body ? <p>{hero.body}</p> : null}
+          </div>
         </div>
       </section>
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl space-y-8 px-6">
-          <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{journey?.title}</h2>
-            {journey?.intro ? <p className="text-base leading-7 text-slate-600">{journey.intro}</p> : null}
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="typography flex flex-col gap-4">
+            <h2>{journey?.title}</h2>
+            {journey?.intro ? <p>{journey.intro}</p> : null}
           </div>
           <div className="grid gap-6 md:grid-cols-3">
             {journey?.items?.map((item, index) => (
@@ -97,10 +99,10 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl space-y-8 px-6">
-          <div className="max-w-3xl space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{miniFaq?.title}</h2>
-            {miniFaq?.intro ? <p className="text-base leading-7 text-slate-600">{miniFaq.intro}</p> : null}
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="typography max-w-3xl flex flex-col gap-4">
+            <h2>{miniFaq?.title}</h2>
+            {miniFaq?.intro ? <p>{miniFaq.intro}</p> : null}
           </div>
           <div className="grid gap-6 md:grid-cols-2">
             {miniFaq?.items?.map((item) => (

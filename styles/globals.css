@@ -23,11 +23,76 @@
 /* 1.2 排版 - 字體家族 */
 body {
     /* 字體已在 tailwind.config.js 中設為 'font-sans' */
-    @apply font-sans; 
+    @apply font-sans;
     background-color: var(--color-bg);
     color: var(--color-text-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* 1.2.1 排版 - 全站標準文字系統 */
+.typography {
+    color: var(--color-text-primary);
+}
+
+.typography h1,
+.typography h2,
+.typography h3,
+.typography h4 {
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.typography h1 {
+    font-size: clamp(2rem, 2.5vw + 1.25rem, 3rem);
+    margin-top: 0;
+}
+
+.typography h2 {
+    font-size: clamp(1.5rem, 1.8vw + 1rem, 2.25rem);
+    margin-top: 2rem;
+}
+
+.typography h3 {
+    font-size: clamp(1.25rem, 1.2vw + 1rem, 1.75rem);
+    margin-top: 1.75rem;
+}
+
+.typography p {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+}
+
+.typography p + p {
+    margin-top: 0.5rem;
+}
+
+.typography ul:not([class]),
+.typography ol:not([class]) {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.typography li {
+    line-height: 1.7;
+}
+
+.typography strong {
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.typography p strong {
+    display: block;
+    margin-bottom: 0.25rem;
 }
 
 /* 語言切換輔助 (i18n)

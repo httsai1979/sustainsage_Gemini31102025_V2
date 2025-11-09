@@ -109,11 +109,11 @@ function Section({ title, description, note, children, background = 'white' }) {
   return (
     <section className={`${backgroundClass} py-16 sm:py-20`}>
       <div className="mx-auto max-w-6xl px-6">
-        {title ? (
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{title}</h2>
-        ) : null}
-        {description ? (
-          <p className="mt-4 text-sm leading-6 text-slate-700">{description}</p>
+        {title || description ? (
+          <div className="typography max-w-3xl flex flex-col gap-4">
+            {title ? <h2>{title}</h2> : null}
+            {description ? <p>{description}</p> : null}
+          </div>
         ) : null}
         {children}
         {note ? (

@@ -104,8 +104,8 @@ export default function Home({ testimonials }) {
   return (
     <MainLayout>
       <section className="mx-auto mt-12 grid max-w-6xl items-center gap-10 px-5 md:mt-20 md:grid-cols-[1.1fr_0.9fr] md:px-8">
-        <div className="space-y-6">
-          <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero.headline}</h1>
+        <div className="typography flex flex-col gap-6">
+          <h1>{hero.headline}</h1>
           {hero?.highlights?.length ? (
             <div className="flex flex-wrap gap-3">
               {hero.highlights.map((item) => (
@@ -113,7 +113,7 @@ export default function Home({ testimonials }) {
               ))}
             </div>
           ) : null}
-          <p className="text-base leading-7 text-slate-600">{hero.subheadline}</p>
+          <p>{hero.subheadline}</p>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact" className={BUTTON_PRIMARY}>
               {hero.primaryCta}
@@ -136,9 +136,9 @@ export default function Home({ testimonials }) {
       </section>
 
       <section className="mx-auto mt-16 max-w-6xl px-5 md:px-8">
-        <div className="max-w-3xl space-y-4">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{forWhom.title}</h2>
-          <p className="text-base leading-7 text-slate-600">{forWhom.intro}</p>
+        <div className="typography max-w-3xl flex flex-col gap-4">
+          <h2>{forWhom.title}</h2>
+          <p>{forWhom.intro}</p>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {forWhom.cards.map((card) => (
@@ -148,7 +148,9 @@ export default function Home({ testimonials }) {
       </section>
 
       <section className="mx-auto mt-16 max-w-5xl rounded-3xl border border-emerald-100 bg-emerald-50/70 px-6 py-12 md:px-10">
-        <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{recognise.title}</h2>
+        <div className="typography">
+          <h2>{recognise.title}</h2>
+        </div>
         <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
           {recognise.items.map((item) => (
             <li key={item} className="flex gap-2">
@@ -160,9 +162,9 @@ export default function Home({ testimonials }) {
       </section>
 
       <section className="mx-auto mt-16 max-w-6xl px-5 md:px-8">
-        <div className="max-w-3xl space-y-4">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{how.title}</h2>
-          {how?.intro ? <p className="text-base leading-7 text-slate-600">{how.intro}</p> : null}
+        <div className="typography max-w-3xl flex flex-col gap-4">
+          <h2>{how.title}</h2>
+          {how?.intro ? <p>{how.intro}</p> : null}
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {how.steps.map((step, index) => (
@@ -185,9 +187,9 @@ export default function Home({ testimonials }) {
       </section>
 
       <section className="mx-auto mt-16 max-w-6xl px-5 md:px-8">
-        <div className="max-w-3xl space-y-4">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{realLife.title}</h2>
-          <p className="text-base leading-7 text-slate-600">{realLife.intro}</p>
+        <div className="typography max-w-3xl flex flex-col gap-4">
+          <h2>{realLife.title}</h2>
+          <p>{realLife.intro}</p>
         </div>
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {realLife.items.map((item) => (
