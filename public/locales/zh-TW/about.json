@@ -7,6 +7,10 @@
     "title": "穩定同行、尊重脈絡的教練夥伴",
     "subtitle": "我們以沉穩的雙語對話陪你思考，不必表演或迎合。"
   },
+  "faqLink": {
+    "label": "還有疑問？前往 FAQ。",
+    "href": "/faq"
+  },
   "mission": {
     "title": "我們的指引",
     "description": "實務建立在同意、文化素養與彼此負責之上。",

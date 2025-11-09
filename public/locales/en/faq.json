@@ -1,48 +1,106 @@
 {
-  "title": "Questions you might be holding",
-  "intro": "Short, honest answers. They do not replace a live conversation, but they help you sense whether our coaching is right for now.",
-  "items": [
+  "hero": {
+    "seoTitle": "FAQ | SustainSage",
+    "seoDescription": "Clear answers about coaching scope, logistics, ethics, and organisational partnerships with SustainSage.",
+    "kicker": "Frequently asked questions",
+    "title": "Honest answers so you can decide what support fits now.",
+    "body": "We stay within ICF ethics: no promises, no pressure, and referrals when coaching is not the right container.",
+    "links": [
+      { "href": "/services/how-coaching-works", "label": "How coaching works" },
+      { "href": "/about", "label": "Meet our practice" },
+      { "href": "/contact", "label": "Book an intro chat" }
+    ]
+  },
+  "categories": [
     {
-      "id": "what-is-coaching",
-      "category": "general",
-      "q": "What is coaching, and how is it different from therapy or consulting?",
-      "a": "Coaching is a collaborative, future-leaning conversation where you stay in charge of choices. We follow ICF ethics, ask reflective questions and co-design experiments. We do not diagnose, treat, or give directive advice like therapists, consultants or lawyers."
+      "icon": "question",
+      "title": "About coaching",
+      "intro": "Scope, boundaries, and who tends to benefit from working with us.",
+      "items": [
+        {
+          "question": "What is coaching and how is it different from therapy or consulting?",
+          "answer": "Coaching is a collaborative, future-leaning conversation. You set the agenda, we ask reflective questions, and we co-design experiments. Therapy diagnoses or treats mental health needs, while consultants provide directive plans—those stay outside coaching."
+        },
+        {
+          "question": "What does it mean that your work is ICF-aligned?",
+          "answer": "We follow the International Coaching Federation Code of Ethics. That means informed consent, confidentiality with clear limits, data care, and regular check-ins on how our partnership is working for you."
+        },
+        {
+          "question": "Who usually benefits from coaching with you?",
+          "answer": "Clients are often navigating relocation, career rebuilds, care responsibilities, or cross-cultural leadership. They want space to think, experiment, and name boundaries without being told what to do."
+        },
+        {
+          "question": "When might coaching not be the right support?",
+          "answer": "If you need crisis intervention, clinical treatment, legal or financial advice, coaching is not sufficient. We can pause, signpost other professionals, or suggest resources that better match the support you need."
+        }
+      ]
     },
     {
-      "id": "boundaries-therapy",
-      "category": "general",
-      "q": "What if I might need therapy instead?",
-      "a": "We notice this with you and can pause coaching to signpost qualified clinical or crisis services. Coaching is not a substitute for therapy, medical care, or emergency support."
+      "icon": "clock",
+      "title": "Practicalities",
+      "intro": "What sessions look like, how often we meet, and how we handle logistics.",
+      "items": [
+        {
+          "question": "How many sessions do people usually book?",
+          "answer": "Individuals often start with six sessions over two to three months. Organisations may commission three or six-month programmes. You can pause or extend after each review."
+        },
+        {
+          "question": "What formats and languages do you offer?",
+          "answer": "Sessions run on Zoom by default. We coach in English and Mandarin, and you can switch languages in the moment if that helps you express nuance."
+        },
+        {
+          "question": "What are your fees?",
+          "answer": "Personal packages range from £420 to £1,200 depending on length. Organisation-sponsored coaching starts from £1,800 for a three-month engagement. Sliding scale options are discussed during the intro chat."
+        },
+        {
+          "question": "What is your cancellation policy?",
+          "answer": "You can reschedule with 24 hours’ notice. Late cancellations or no-shows count as a session so we can protect time for all clients."
+        }
+      ]
     },
     {
-      "id": "services-which-plan",
-      "category": "services",
-      "q": "How do I choose a package?",
-      "a": "Match your situation to the three focuses: Transition, Confidence, or Experiments. Each page explains who it serves, what we cover and what is out of scope. If it is unclear, book the intro call and we will decide together."
+      "icon": "shield",
+      "title": "Ethics & safety",
+      "intro": "How we hold confidentiality, handle risk, and care for your information.",
+      "items": [
+        {
+          "question": "How confidential are our sessions?",
+          "answer": "Sessions stay between us except when there is risk of harm or a legal duty to disclose. We agree on how notes are stored, who can access them, and when they are deleted."
+        },
+        {
+          "question": "What happens if mental health concerns show up?",
+          "answer": "We pause, name what we are noticing, and co-create a plan. That could involve referrals to therapists, crisis services, or other professionals alongside—or instead of—coaching."
+        },
+        {
+          "question": "Do you work with safeguarding or legal obligations?",
+          "answer": "Yes. We comply with UK safeguarding guidance and the ICF Code of Ethics. If a disclosure meets reporting thresholds, we inform you of the steps we must take and support you through the process."
+        }
+      ]
     },
     {
-      "id": "about-background",
-      "category": "about",
-      "q": "What training and background do you bring?",
-      "a": "We are ICF-trained coaches with experience in social innovation, migration support and organisational change. Lived experience of moving countries, rebuilding careers and holding care roles shapes how we coach."
-    },
-    {
-      "id": "contact-booking",
-      "category": "contact",
-      "q": "How does booking work?",
-      "a": "Start with the 20-minute intro call. We explore your context, clarify boundaries, discuss fees transparently and you decide whether to continue. There is no pressure to commit on the call."
-    },
-    {
-      "id": "blog-how-to-use",
-      "category": "blog",
-      "q": "How should I use your articles?",
-      "a": "Treat them as prompts for reflection or conversation. They are not instructions, guarantees or a replacement for professional advice. Credit us if you share publicly."
-    },
-    {
-      "id": "resources-how-to-use",
-      "category": "resources",
-      "q": "How should I use your resources?",
-      "a": "Use them as tools you can adapt for self-reflection or team conversations. They do not replace therapy, legal, financial or immigration advice, and outcomes remain your responsibility."
+      "icon": "safety",
+      "title": "For organisations",
+      "intro": "How we partner with employers, schools, and sponsors while protecting coachee autonomy.",
+      "items": [
+        {
+          "question": "How do you structure organisation-sponsored coaching?",
+          "answer": "We start with a three-way meeting to confirm goals, boundaries, and feedback loops. The coachee leads session agendas while sponsors receive high-level progress updates agreed in advance."
+        },
+        {
+          "question": "What information do sponsors receive?",
+          "answer": "Sponsors hear themes, not session detail. No personal stories are shared without written consent, and safeguarding or risk concerns are handled directly with the coachee first wherever possible."
+        },
+        {
+          "question": "Can you support teams across time zones?",
+          "answer": "Yes. We work with teams across Europe and Asia-Pacific using online sessions, shared notes, and agreed review points. Time zones are planned collaboratively during onboarding."
+        }
+      ]
     }
-  ]
+  ],
+  "cta": {
+    "title": "Still unsure?",
+    "body": "Share your context and we will confirm whether coaching, a referral, or another resource will serve you best. Your clarity matters more than filling a slot.",
+    "primary": "Book a call",
+    "secondary": "Explore coaching pathways"
+  }
 }

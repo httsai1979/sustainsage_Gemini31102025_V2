@@ -123,5 +123,10 @@
         "detail": "If we continue, we document session length, cadence, reviews and any limits so you stay in control."
       }
     ]
+  },
+  "faqLink": {
+    "text": "Prefer to read first? Our FAQ covers scope, logistics, and safety before you submit.",
+    "label": "More questions? See our FAQ.",
+    "href": "/faq"
   }
 }

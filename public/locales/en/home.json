@@ -1,59 +1,48 @@
 {
   "hero": {
     "headline": "Calm, client-led, ICF-aligned coaching for real transitions.",
-    "subheadline": "Whether you are relocating, returning to work, or navigating cultural differences, we create space to orient, decide, and move with consent.",
+    "subheadline": "Grounded space to regroup, experiment, and move forward on your terms.",
     "imageAlt": "Notebook, tea, and sunlight suggesting a calm coaching space.",
     "primaryCta": "Book a 20-minute intro chat",
-    "secondaryCta": "See coaching pathways"
+    "secondaryCta": "See coaching pathways",
+    "highlights": ["ICF-aligned coaching", "For internationals & returners"]
+  },
+  "faqLink": {
+    "label": "More questions? See our FAQ.",
+    "href": "/faq"
   },
   "forWhom": {
-    "title": "Who it’s for",
-    "description": "A glimpse of pathways shaped around the contexts we coach most often.",
-    "learnMore": "Learn more",
+    "title": "Who we work with",
+    "intro": "Four contexts we meet every week. Each link shows the service structure, boundaries, and fees.",
+    "linkLabel": "See how this works",
     "cards": [
       {
         "title": "Transition coaching",
-        "target": "For people settling into a new country or chapter.",
-        "scenario": "You are building a life in the UK while keeping commitments elsewhere.",
-        "questions": [
-          "What agreements help you feel rooted when obligations pull in different directions?",
-          "How do you honour grief, curiosity, and agency as you land?"
-        ],
+        "audience": "For people relocating or returning.",
+        "description": "Settle into the UK while honouring commitments elsewhere. Sessions help you map choices without rushing decisions.",
         "href": "/services/transition",
-        "icon": "/images/services/transition.svg"
+        "icon": "globe"
       },
       {
-        "title": "Early-career coaching",
-        "target": "For people figuring out their early career moves.",
-        "scenario": "You want honest space to test directions before committing.",
-        "questions": [
-          "Which options feel exciting, safe, or both?",
-          "How can you experiment without pretending you “have it all together”?"
-        ],
+        "title": "Early career clarity",
+        "audience": "For early professionals testing direction.",
+        "description": "Try options safely before you commit. We reality-check offers, mentors, and experiments you design.",
         "href": "/services/early-career",
-        "icon": "/images/services/early-career.svg"
+        "icon": "compass"
       },
       {
-        "title": "Working parent coaching",
-        "target": "For carers, parents, and professionals re-entering paid roles.",
-        "scenario": "You are rebuilding confidence after time away or a role change.",
-        "questions": [
-          "What rhythms sustain both your responsibilities and your growth?",
-          "Which stories about readiness or worthiness need reframing?"
-        ],
+        "title": "Working parent support",
+        "audience": "For parents and carers rebuilding rhythm.",
+        "description": "Re-enter work without losing the care agreements that matter. Expect honest planning, not hustle culture.",
         "href": "/services/working-parents",
-        "icon": "/images/services/working-parents.svg"
+        "icon": "balance"
       },
       {
-        "title": "Leadership coaching",
-        "target": "For leaders navigating cross-cultural communication.",
-        "scenario": "You are translating ideas across UK norms, accents, and expectations.",
-        "questions": [
-          "Where do you want more ease in speaking up or setting boundaries?",
-          "What support systems anchor you when feedback styles differ?"
-        ],
+        "title": "Cross-cultural leadership",
+        "audience": "For managers across borders and teams.",
+        "description": "Lead with clarity across cultures and expectations. We practise conversations and boundaries that protect your capacity.",
         "href": "/services/leadership",
-        "icon": "/images/services/leadership.svg"
+        "icon": "signal"
       }
     ]
   },
@@ -69,59 +58,45 @@
   },
   "how": {
     "title": "How coaching works",
+    "intro": "A simple rhythm that loops as your focus evolves.",
     "steps": [
       {
-        "title": "Co-create the focus",
-        "description": "Each session starts with what feels most present—no scripts, no rush to fix."
+        "title": "Arrive with what is real",
+        "summary": "We start with the situation you name—no scripts, no pressure to have it figured out."
       },
       {
-        "title": "Hold autonomy",
-        "description": "You choose directions and pace while we reflect patterns, options, and consent."
+        "title": "Explore options with consent",
+        "summary": "You test language, stories, and experiments while we hold structure and ask sharper questions."
       },
       {
-        "title": "Test small moves",
-        "description": "We design light experiments you can try between sessions and review what emerges."
-      },
-      {
-        "title": "Close with clarity",
-        "description": "We gather insights, name supports, and respect boundaries for next steps."
+        "title": "Design what happens next",
+        "summary": "We close each session with actions, supports, or referrals you choose to carry forward."
       }
     ],
-    "moreLinkLabel": "See the pathways in detail",
-    "moreLinkHref": "/services"
+    "ownership": "You are always in charge of pace and topic. Our role is to hold structure, flag boundaries, and ask better questions.",
+    "ctaLabel": "Read how coaching works in detail",
+    "ctaHref": "/services/how-coaching-works"
   },
-  "faq": {
-    "title": "Questions people often ask",
+  "realLife": {
+    "title": "In real life, this often sounds like…",
+    "intro": "Composite scenarios drawn from different clients so privacy stays protected.",
     "items": [
-      {
-        "question": "How is coaching different from therapy?",
-        "answer": "Coaching focuses on your present goals and future actions. We collaborate as equals and do not diagnose or treat mental health conditions. When therapy or other support is better suited, we name that together."
-      },
-      {
-        "question": "Is our conversation confidential?",
-        "answer": "Yes. Sessions stay between us unless the law requires disclosure or there is risk of harm. We agree on how notes are stored and when information may be shared before we begin."
-      },
-      {
-        "question": "What outcomes can I expect?",
-        "answer": "We do not promise specific results. Most clients leave sessions with clearer language, grounded decisions, and experiments they chose. You stay in charge of implementing what feels right."
-      },
-      {
-        "question": "Can we coach in more than one language?",
-        "answer": "Absolutely. We switch between English and Mandarin when it helps you express nuance. Cultural references and metaphors are welcome in the room."
-      },
-      {
-        "question": "How do I know if coaching is the right support?",
-        "answer": "The intro chat is a space to explore that question. We will clarify what you need, share how coaching fits, and suggest next steps—including other resources—if coaching is not appropriate."
-      },
-      {
-        "question": "What happens after the intro call?",
-        "answer": "If we decide to continue, we agree on session length, frequency, fees, and review points. Everything moves at a pace that respects your commitments."
-      }
+      { "quote": "\u201cI\u2019ve moved to the UK and feel I\u2019m starting from zero while my family still needs support back home.\u201d" },
+      { "quote": "\u201cI lead a small team and I\u2019m tired of being \u2018on\u2019 all the time for everyone else.\u201d" },
+      { "quote": "\u201cI\u2019m re-entering work after care leave and want a plan that respects both income and my capacity.\u201d" }
     ],
-    "footer": {
-      "text": "Ready to explore this more deeply?",
-      "linkLabel": "Browse coaching pathways",
-      "linkHref": "/services"
-    }
+    "disclaimer": "These are blended examples, not single-client testimonials. They show the types of topics we can explore together."
+  },
+  "faqSection": {
+    "title": "Before we meet",
+    "body": "You can self-check scope, logistics, and ethics any time.",
+    "bullets": [
+      "Understand how coaching differs from therapy or consulting.",
+      "See typical session rhythms, frequency, and fee ranges.",
+      "Know what happens if mental health or safeguarding needs appear."
+    ],
+    "summary": "Use the FAQ to get practical answers before you book. It helps you decide whether to start, pause, or request a referral.",
+    "ctaLabel": "Visit the FAQ",
+    "ctaHref": "/faq"
   }
 }

@@ -50,6 +50,7 @@ function ServicesPage() {
   const hero = t('hero', { returnObjects: true });
   const pathways = t('pathways', { returnObjects: true });
   const cta = t('cta', { returnObjects: true });
+  const faqLink = t('faqLink', { returnObjects: true });
 
   return (
     <MainLayout>
@@ -66,6 +67,12 @@ function ServicesPage() {
               <strong className="block text-slate-900">Choose what fits now.</strong>
               {hero.subtitle}
             </p>
+            {faqLink?.label ? (
+              <Link href={faqLink.href} className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline">
+                {faqLink.label}
+                <span aria-hidden>→</span>
+              </Link>
+            ) : null}
           </div>
           <div className="rounded-3xl border border-emerald-100 bg-white/80 p-6 text-sm leading-6 text-slate-700 md:w-80">
             <p>{pathways.description}</p>
