@@ -23,6 +23,16 @@ const nextConfig = {
     // 這一行是我們上次加的，保持不變
     dangerouslyAllowSVG: true,
   },
+
+  async redirects() {
+    return [
+      {
+        source: '/service',
+        destination: '/services',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

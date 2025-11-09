@@ -34,14 +34,14 @@
       "description": "Each link opens a detailed page with who it suits, session flow and boundaries.",
       "items": [
         {
-          "href": "/services/transition",
+          "href": "/services/transition-coaching",
           "title": "Transition package",
           "summary": "Stabilise the first 3–4 months of your return with structured reflection.",
           "icon": "/images/services/transition.svg",
           "cta": "Explore Transition"
         },
         {
-          "href": "/services/reset",
+          "href": "/services/reset-sprint",
           "title": "Reset package",
           "summary": "Short arc to rebuild routines if energy feels fragmented.",
           "icon": "/images/services/returning.svg",
@@ -96,14 +96,14 @@
       "title": "Packages we often recommend",
       "items": [
         {
-          "href": "/services/transition",
+          "href": "/services/transition-coaching",
           "title": "Transition package",
           "summary": "Hold space for the administrative and emotional weight of relocating.",
           "icon": "/images/services/transition.svg",
           "cta": "See Transition"
         },
         {
-          "href": "/services/reset",
+          "href": "/services/reset-sprint",
           "title": "Reset package",
           "summary": "If you are already here but overwhelmed, Reset helps you rebuild steady habits.",
           "icon": "/images/services/returning.svg",
@@ -157,14 +157,14 @@
       "title": "Packages we often recommend",
       "items": [
         {
-          "href": "/services/reset",
+          "href": "/services/reset-sprint",
           "title": "Reset package",
           "summary": "Short arc to rebuild your routine and energy after parental leave.",
           "icon": "/images/services/returning.svg",
           "cta": "See Reset"
         },
         {
-          "href": "/services/deepening",
+          "href": "/services/deepening-practice",
           "title": "Deepening package",
           "summary": "For leaders juggling care and influence who want longer-term support.",
           "icon": "/images/services/experiments.svg",

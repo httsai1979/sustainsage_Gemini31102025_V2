@@ -29,7 +29,7 @@
           "question": "如果我還沒有明確的目標呢？",
           "answer": "很常見。我們會從當下最重要的議題開始，在會談中共同聚焦。ICF 倫理要求我們讓你掌握議程，因此會定期確認清晰度與同意。",
           "links": [
-            { "href": "/services/transition", "label": "看看 Transition 方案" },
+            { "href": "/services/transition-coaching", "label": "看看 Transition 方案" },
             { "href": "/contact", "label": "預約初談" }
           ]
         },
@@ -50,7 +50,7 @@
           "question": "付款與取消怎麼進行？",
           "answer": "方案費用可一次付清或分兩次銀行轉帳。會談前 24 小時內可改期；逾時取消會算作一堂，以保障所有客戶的時間。",
           "links": [
-            { "href": "/services/reset", "label": "Reset 方案細節" },
+            { "href": "/services/reset-sprint", "label": "Reset 方案細節" },
             { "href": "/contact", "label": "討論付款方式" }
           ]
         },
@@ -65,7 +65,7 @@
           "question": "你會和企業或贊助者合作嗎？",
           "answer": "會。我們會建立三方協議，確保教練目標由你主導。贊助者僅在你同意下收到高層摘要，不會分享會談內容。",
           "links": [
-            { "href": "/services/deepening", "label": "領導者深度方案" },
+            { "href": "/services/deepening-practice", "label": "領導者深度方案" },
             { "href": "/contact", "label": "索取贊助簡報" }
           ]
         }
@@ -112,14 +112,14 @@
           "question": "多久會看到變化？",
           "answer": "多數客戶在兩到三次會談後感受到更清晰，因為實驗逐步累積。成果取決於你在會談之間選擇採取的行動。",
           "links": [
-            { "href": "/services/experiments", "label": "實驗導向教練" }
+            { "href": "/services/uk-workplace-confidence", "label": "實驗導向教練" }
           ]
         },
         {
           "question": "可以和其他支持並行嗎？",
           "answer": "當然。許多客戶會與治療、督導或同儕圈同時進行。我們會保持透明協調，調整作業讓它補位而不是互相干擾。",
           "links": [
-            { "href": "/services/check-in", "label": "輕量 Check-in" },
+            { "href": "/services/reset-sprint", "label": "輕量 Check-in" },
             { "href": "/contact", "label": "規劃你的支持組合" }
           ]
         }

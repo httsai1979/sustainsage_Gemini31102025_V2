@@ -29,7 +29,7 @@
           "question": "如果我还没有明确目标？",
           "answer": "很常见。我们从当下最重要的主题开始，在会谈里共同聚焦。ICF 伦理要求我们让你掌握议程，因此会定期确认清晰度与同意。",
           "links": [
-            { "href": "/services/transition", "label": "看看 Transition 方案" },
+            { "href": "/services/transition-coaching", "label": "看看 Transition 方案" },
             { "href": "/contact", "label": "预约初谈" }
           ]
         },
@@ -50,7 +50,7 @@
           "question": "付款与取消怎么安排？",
           "answer": "方案费用可一次付清或分两次转账。会谈前 24 小时内可改期；逾时取消会视同一堂，以保护所有客户的时间。",
           "links": [
-            { "href": "/services/reset", "label": "Reset 方案细节" },
+            { "href": "/services/reset-sprint", "label": "Reset 方案细节" },
             { "href": "/contact", "label": "讨论付款方式" }
           ]
         },
@@ -65,7 +65,7 @@
           "question": "你会和企业或赞助方合作吗？",
           "answer": "会。我们会订立三方协议，确保教练目标由你主导。赞助方只会在你同意下收到高层摘要，不会分享会谈内容。",
           "links": [
-            { "href": "/services/deepening", "label": "领导者深度方案" },
+            { "href": "/services/deepening-practice", "label": "领导者深度方案" },
             { "href": "/contact", "label": "索取赞助简报" }
           ]
         }
@@ -112,14 +112,14 @@
           "question": "多久会看到变化？",
           "answer": "多数客户在两到三次会谈后感到更清晰，因为实验逐渐累积。成果仍取决于你会谈之间选择采取的行动。",
           "links": [
-            { "href": "/services/experiments", "label": "实验导向教练" }
+            { "href": "/services/uk-workplace-confidence", "label": "实验导向教练" }
           ]
         },
         {
           "question": "可以和其他支持并行吗？",
           "answer": "当然。许多客户会搭配治疗、督导或同侪圈。我们会透明协调，并调整练习让它补位而不是互相冲突。",
           "links": [
-            { "href": "/services/check-in", "label": "轻量 Check-in" },
+            { "href": "/services/reset-sprint", "label": "轻量 Check-in" },
             { "href": "/contact", "label": "规划支持组合" }
           ]
         }

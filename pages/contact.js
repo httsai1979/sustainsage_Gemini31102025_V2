@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import ContactForm from '@/components/Sections/ContactForm';
 import ICFNotice from '@/components/legal/ICFNotice';
+import MainLayout from '@/components/layout/MainLayout';
 
 export default function ContactPage() {
   const { t } = useTranslation('contact');
@@ -14,7 +15,7 @@ export default function ContactPage() {
   const miniFaq = t('miniFaq', { returnObjects: true });
 
   return (
-    <>
+    <MainLayout>
       <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
@@ -61,7 +62,7 @@ export default function ContactPage() {
       <div className="px-6 pb-20">
         <ICFNotice id="icf" className="mx-auto max-w-4xl" />
       </div>
-    </>
+    </MainLayout>
   );
 }
 

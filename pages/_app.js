@@ -7,7 +7,6 @@ import { appWithTranslation } from 'next-i18next';
 import '@/styles/globals.css';
 
 import CookieConsent, { getStoredConsent, storeConsent } from '@/components/CookieConsent';
-import MainLayout from '@/components/layout/MainLayout';
 import { GA_MEASUREMENT_ID, hasGa, pageview } from '@/lib/ga';
 import { DEFAULT_SEO } from '@/lib/seo';
 
@@ -45,10 +44,6 @@ function MyApp({ Component, pageProps }) {
     }
   };
 
-  const getLayout = Component.getLayout ?? ((page) => page);
-  const page = getLayout(<Component {...pageProps} />);
-  const content = Component.getLayout ? page : <MainLayout>{page}</MainLayout>;
-
   return (
     <>
       <Head>
@@ -71,7 +66,7 @@ function MyApp({ Component, pageProps }) {
           </Script>
         </>
       )}
-      {content}
+      {Component.getLayout?.(<Component {...pageProps} />) ?? <Component {...pageProps} />}
       <CookieConsent consent={consent} onConsent={handleConsent} />
     </>
   );
