@@ -1,132 +1,109 @@
 {
   "seo": {
     "title": "联系我们 | SustainSage",
-    "description": "预约一场沉稳的认识谈，分享你的情境、了解教练的界线，一起评估是否合适。"
+    "description": "写下几行现况，我们会在 ICF 伦理框架下回覆，协助你厘清教练是否为下一步。"
   },
   "hero": {
-    "title": "20 分钟探索式对话，不是推销电话。",
-    "subtitle": "告诉我们你正在经历的转变，我们会一起确认教练是否适合，或建议其他方向。"
-  },
-  "preForm": {
-    "title": "填写前先看看",
+    "title": "用低压方式确认是否适合合作。",
+    "body": "告诉我们正在发生的变化，我们会以尊重又清楚的节奏回应。",
+    "bulletsTitle": "填表前先说明三件事：",
     "bullets": [
-      "简述你正面对的转变或决定，以及希望我们事先知道的重点。",
-      "这些资讯只会用来回复、安排认识谈，并遵守教练伦理所需的纪录。",
-      "除非法律要求，不会加入任何行销名单，也不会在未同意下分享你的资料。"
+      "我们会在三个英国工作天内回复。",
+      "流程从一通 20 分钟、无压力的初谈开始。",
+      "要不要继续预约，由你自己决定。"
+    ]
+  },
+  "journey": {
+    "title": "第一步会怎么进行",
+    "intro": "送出表单后，流程大致如下。",
+    "items": [
+      {
+        "summary": "先分享几行现况。",
+        "detail": "我们会在三个英国工作天内确认收到，并提供几个初谈时段。"
+      },
+      {
+        "summary": "安排 20 分钟初谈。",
+        "detail": "一起确认焦点、界线、费用与是否适合进行教练——没有话术，也不会被推销。"
+      },
+      {
+        "summary": "由你决定下一步。",
+        "detail": "若教练适合，我们会共同写下合作约定；若不适合，会提供其他资源或转介建议。"
+      }
     ]
   },
   "form": {
     "title": "写信给我们",
-    "subtitle": "几句重点就好，你随时掌握想透露的范围。",
-    "name": "姓名",
+    "subtitle": "写重点就好，你可以决定要透露多少。",
+    "name": "称呼",
+    "nameHint": "也可以附上发音，让我们正确称呼你。",
     "email": "Email",
-    "help": "最近想谈的转变或议题是什么？",
-    "helpHint": "例如：搬到英国、照护后重返职场、跨文化领导、还不确定下一步。",
-    "focusArea": "偏好的路径（选填）",
-    "focusAreaPlaceholder": "选择一个路径",
+    "emailHint": "只会用来回复教练相关讯息。",
+    "help": "目前想谈的主题或转折是什么？",
+    "helpHint": "例如：移居英国、育儿后重返职场、跨文化领导、对下一步感到不确定。",
+    "focusArea": "感兴趣的方案（选填）",
+    "focusAreaPlaceholder": "选择方案",
     "focusAreaOptions": [
-      {
-        "value": "transition",
-        "label": "Transition coaching"
-      },
-      {
-        "value": "early-career",
-        "label": "Early-career coaching"
-      },
-      {
-        "value": "working-parents",
-        "label": "Working parent coaching"
-      },
-      {
-        "value": "leadership",
-        "label": "Leadership coaching"
-      },
-      {
-        "value": "not-sure",
-        "label": "还不确定"
-      }
+      { "value": "transition", "label": "Transition 教练" },
+      { "value": "early-career", "label": "新鲜人／早期职涯" },
+      { "value": "working-parents", "label": "职场父母" },
+      { "value": "leadership", "label": "领导与影响力" },
+      { "value": "not-sure", "label": "还不确定" }
     ],
-    "focusHint": "选最接近的选项即可，不确定也没关系。",
-    "language": "想使用的语言",
+    "focusHint": "挑最接近的选项即可，也可以先保留弹性。",
+    "language": "偏好的语言",
     "languagePlaceholder": "选择语言",
     "languageOptions": [
-      {
-        "value": "en",
-        "label": "English"
-      },
-      {
-        "value": "zh-TW",
-        "label": "繁体中文"
-      },
-      {
-        "value": "zh-CN",
-        "label": "简体中文"
-      },
-      {
-        "value": "mix",
-        "label": "视情况混用"
-      }
+      { "value": "en", "label": "英语" },
+      { "value": "zh-TW", "label": "繁体中文" },
+      { "value": "zh-CN", "label": "简体中文" },
+      { "value": "mix", "label": "双语混合" }
     ],
-    "timezone": "方便的时区 / 时段",
-    "timezonePlaceholder": "例如：英国早上、GMT+8 晚上或弹性",
+    "languageHint": "告诉我们想用的语言或混合方式，过程中也能自由切换。",
+    "timezone": "偏好的时区／时间",
+    "timezonePlaceholder": "例如：英国早上、GMT+8 晚上或其他弹性时间",
+    "timezoneHint": "写下所在城市或时区，再补充大致可谈的时段。",
     "consent": "我同意 SustainSage 与我联系教练相关事宜。",
-    "scopeAcknowledgement": "我了解此表单仅供教练咨询，不提供治疗、危机支援、法律、财务或移民建议。",
-    "privacyNote": "除非法律要求，我们只为安排会谈而保存资料，若未合作将删除。",
-    "submit": "发送讯息",
+    "scopeAcknowledgement": "我了解此表单仅供教练询问，不提供治疗、危机支援、法律、财务或移民建议。",
+    "privacyNote": "资料仅用于安排教练对话，若未合作会在必要法律期限后删除。",
+    "submit": "送出讯息",
     "status": {
-      "submitting": "发送中…",
-      "success": "谢谢你，我们会在三个英国工作日内回复。",
-      "error": "似乎出了点状况，请再试一次或来信 contact@sustainsage.com。",
-      "errorRequired": "请完成必填栏位并确认同意。"
+      "submitting": "传送中…",
+      "success": "收到！我们会在三个英国工作天内回复。",
+      "error": "系统发生状况，请再试一次或写信到 contact@sustainsage.com。",
+      "errorRequired": "请填写必要栏位并勾选同意。"
     }
   },
   "sidebar": {
-    "title": "可以期待什么",
-    "description": "流程保持透明，你始终掌握决定权。",
+    "title": "流程会是这样",
+    "description": "整个过程以你的知情同意为中心。",
     "responseTitle": "回复时间",
-    "responseCopy": "通常会在三个英国工作日内回复，提供探索式对话的几个时段。",
-    "privacyTitle": "资料照顾",
-    "privacyCopy": "除非法规要求，资讯只在我们之间，不会加入行销名单。",
-    "nextTitle": "通话之后",
-    "nextCopy": "是否继续由你决定。我们会整理重点与界线，让你清楚掌握。"
+    "responseCopy": "通常会在三个英国工作天内回复，并附上初谈时段选项。",
+    "privacyTitle": "资料照护",
+    "privacyCopy": "除非法律要求，我们不会分享你的资讯，也不会加入行销名单。",
+    "nextTitle": "初谈之后",
+    "nextCopy": "是否继续合作由你决定，我们会把约定、界线与回顾节奏写清楚。"
   },
   "miniFaq": {
-    "title": "接下来会怎样？",
+    "title": "快速厘清三个问题",
+    "intro": "透明的界线，让决定更安心。",
     "items": [
       {
-        "question": "提交表单后会怎样？",
-        "answer": "我们会在三个英国工作日内提供几个时段。通话中会厘清焦点、界线，以及教练是否合适。"
+        "question": "你们会推销方案吗？",
+        "answer": "不会。初谈的目的在确认适配度，我们会坦诚分享观察，你可以自在决定是否继续，也会获得建议资源。"
       },
       {
-        "question": "可以使用哪些语言？",
-        "answer": "我们支援英语与华语，需要时可以在对话中自由切换。"
+        "question": "公司可以代付吗？",
+        "answer": "可以。雇主或学习发展部门确认预算后，我们会直接开立发票，并写下保密与回报范围。"
       },
       {
-        "question": "我还不确定教练是否适合，可以聊聊吗？",
-        "answer": "可以。认识谈就是为了探索合适性，如果不适合会一起讨论其他资源。"
-      }
-    ]
-  },
-  "afterReachOut": {
-    "title": "联系后会发生什么",
-    "items": [
-      {
-        "summary": "我们会在三个英国工作日内回复。",
-        "detail": "你会收到简短的电子邮件，包含认识谈时段与可先说明的重点。"
-      },
-      {
-        "summary": "认识谈是合作式的对话。",
-        "detail": "我们会一起确认焦点、界线、费用，以及教练是否适合，而不是推销。"
-      },
-      {
-        "summary": "下一步由你决定。",
-        "detail": "若继续合作，会把时长、节奏、检视点与界线写清楚，确保主导权在你。"
+        "question": "可以用中文或双语进行吗？",
+        "answer": "可以。会谈可使用中文、英文或双语混合，过程中也能依需要切换语言。"
       }
     ]
   },
   "faqLink": {
-    "text": "想先阅读？FAQ 梳理了范围、流程与安全界线，填表前可以先参考。",
-    "label": "还有疑问？前往 FAQ。",
+    "text": "还不确定吗？看看我们如何运作教练合作。",
+    "label": "阅读 FAQ",
     "href": "/faq"
   }
 }
