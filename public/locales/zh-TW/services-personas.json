@@ -1,0 +1,312 @@
+{
+  "careerReturners": {
+    "seo": {
+      "title": "重返職場教練 | SustainSage",
+      "description": "陪伴跨國搬遷、安親或留職停薪後再出發的專業人士，找回步調與信心。"
+    },
+    "hero": {
+      "title": "重返職場的教練支持",
+      "subtitle": "經歷過空檔也值得被看見，帶著你的節奏重新前進。",
+      "imageAlt": "象徵新篇章的插畫",
+      "primaryCta": "預約初談",
+      "secondaryCta": "返回服務"
+    },
+    "sections": {
+      "challenges": {
+        "title": "常見的情境",
+        "items": [
+          {
+            "title": "履歷上的空白",
+            "description": "不知道怎麼談這段空檔，既怕貶低經驗，也不想交代過多私人細節。"
+          },
+          {
+            "title": "信心起伏",
+            "description": "能力還在，但面試與拓展人脈時比預期更緊繃。"
+          },
+          {
+            "title": "優先順序改變",
+            "description": "想帶著目的回到職場，而不是抓住第一個出現的機會。"
+          },
+          {
+            "title": "現實與情緒一起來",
+            "description": "一邊找工作，一邊兼顧家庭照顧、健康需求或新城市的行政任務。"
+          }
+        ]
+      },
+      "support": {
+        "title": "教練如何幫助你",
+        "items": [
+          {
+            "title": "把空檔整合成故事",
+            "description": "釐清你學到什麼、現在的工作想怎麼做、以及如何用你覺得舒服的方式分享。"
+          },
+          {
+            "title": "練習踏實的對話",
+            "description": "預演面試、人脈交流或設界線的談話，讓你在場時能沉著又好奇。"
+          },
+          {
+            "title": "設計有餘裕的步調",
+            "description": "把復職拆成可實驗的步驟與約定，尊重你的容量與財務現實。"
+          }
+        ]
+      },
+      "vignette": {
+        "title": "案例速寫",
+        "body": "R 在亞洲帶領過多個團隊，因為搬遷與照護家人暫停工作。兩年後想回到顧問業，卻擔心空窗期會蓋過過往實績。教練讓她看見照護期間運用的能力，描繪自己想合作的公司樣貌，並練習一套誠實又自在的敘事。四次會談後，她選擇了一間願意把社群經驗視為領導力一部分的顧問公司。"
+      },
+      "packages": {
+        "title": "適合的方案",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "多數返職的客戶會選擇 " },
+            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "text", "value": "，梳理新篇章、練習關鍵對話，並設計符合節奏的回歸計畫。" }
+          ],
+          [
+            { "type": "text", "value": "如果要兼顧照顧責任，需要短期容器，可以參考 " },
+            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "text", "value": "，四次會談幫你穩住信心與日常節奏。" }
+          ],
+          [
+            { "type": "text", "value": "還在觀望？可以先閱讀 " },
+            { "type": "link", "href": "/services/how-coaching-works", "label": "教練流程" },
+            { "type": "text", "value": "，或預約初談一起確認目前的需要。" }
+          ]
+        ]
+      }
+    }
+  },
+  "newcomers": {
+    "seo": {
+      "title": "英國新移居者教練 | SustainSage",
+      "description": "針對剛抵達或正在落地的你，透過情境式教練把工作與生活節奏安穩下來，不用從零翻譯自己。"
+    },
+    "hero": {
+      "title": "給新到英國的你",
+      "subtitle": "理解職場、文化與期待，保留你的故事與選擇。",
+      "imageAlt": "象徵英國新移居者的插畫",
+      "primaryCta": "預約初談",
+      "secondaryCta": "返回服務"
+    },
+    "sections": {
+      "challenges": {
+        "title": "常見的情境",
+        "items": [
+          {
+            "title": "留下？離開？的拉扯",
+            "description": "一邊算簽證與時程，一邊確認這裡是否支撐你的目標與關係。"
+          },
+          {
+            "title": "語言與職場文化不合拍",
+            "description": "能力沒問題，但那些未明說的規則仍像沒讀到的考題。"
+          },
+          {
+            "title": "跨國照顧與牽掛",
+            "description": "一邊安頓自己，一邊協調家庭責任、匯款與時差。"
+          },
+          {
+            "title": "想歸屬，也想保留自己",
+            "description": "期待建立社群，同時守住讓你做出這個決定的那些特質。"
+          }
+        ]
+      },
+      "support": {
+        "title": "教練如何幫助你",
+        "items": [
+          {
+            "title": "不急著下決定也能說清楚",
+            "description": "一起盤點選項、界線與風險，讓選擇同時尊重簽證、價值與能量。"
+          },
+          {
+            "title": "把文化訊號翻成行動",
+            "description": "放慢職場互動、解讀回饋，規劃以同意為基礎的對話。"
+          },
+          {
+            "title": "跨國設計支持系統",
+            "description": "釐清誰在你身邊、可以怎麼求助，以及落地期間如何保持資源。"
+          }
+        ]
+      },
+      "vignette": {
+        "title": "案例速寫",
+        "body": "L 因配偶簽證從台北搬到倫敦。她過去帶領的團隊在家鄉很受重視，但在英國常被簡化成「英文很好的新人」。教練給她每週一個空間，說出重新開始的辛苦，練習跨文化的職場對話，並與遠在台灣的家人設計固定聯絡。三個月後，她談成更清楚的工作責任，也找到一個讓城市變得更可居的社群專案。"
+      },
+      "packages": {
+        "title": "適合的方案",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "多數新移居者會選擇 " },
+            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "text", "value": "，在抵達後的三到六個月內穩住腳步，同時保有主導權。" }
+          ],
+          [
+            { "type": "text", "value": "如果已經在這裡、但覺得耗竭，可以考慮 " },
+            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "text", "value": "，用短期容器重新定位、做出可持續的協議。" }
+          ],
+          [
+            { "type": "text", "value": "還不確定？看看 " },
+            { "type": "link", "href": "/faq", "label": "常見問題" },
+            { "type": "text", "value": "，或預約初談確認教練是否適合當下的你。" }
+          ]
+        ]
+      }
+    }
+  },
+  "parents": {
+    "seo": {
+      "title": "父母重返職場教練 | SustainSage",
+      "description": "協助父母在家庭與工作間建立可持續的協議，重新進入或調整角色。"
+    },
+    "hero": {
+      "title": "給重返工作的父母",
+      "subtitle": "照顧、抱負與休息都重要，讓我們一起排進日程。",
+      "imageAlt": "平衡照顧與工作的插畫",
+      "primaryCta": "預約初談",
+      "secondaryCta": "返回服務"
+    },
+    "sections": {
+      "challenges": {
+        "title": "常見的情境",
+        "items": [
+          {
+            "title": "多種行程同時運轉",
+            "description": "托嬰時間、伴侶班表、長者照顧與你的能量都要排進去。"
+          },
+          {
+            "title": "四面八方的愧疚",
+            "description": "不論選擇工作或家庭，都擔心自己欠了另一邊。"
+          },
+          {
+            "title": "身份在轉換",
+            "description": "希望同事看見你的專業，而不只記得「剛回來的父母」。"
+          },
+          {
+            "title": "界線被挑戰",
+            "description": "家人、主管或自己心裡的小聲音都可能提出建議與質疑。"
+          }
+        ]
+      },
+      "support": {
+        "title": "教練如何幫助你",
+        "items": [
+          {
+            "title": "和支持系統共同設計節奏",
+            "description": "盤點責任、重新協商約定，並規劃生活變動時如何調整。"
+          },
+          {
+            "title": "連回真正重要的事",
+            "description": "說出你的錨點——休息、陪伴、財務穩定——並選擇與之對齊的行動。"
+          },
+          {
+            "title": "練習有底氣的對話",
+            "description": "和主管、伴侶或家人練習設定界線，讓你能不必道歉就爭取所需。"
+          }
+        ]
+      },
+      "vignette": {
+        "title": "案例速寫",
+        "body": "D 結束育嬰假回到政策工作，卻發現每個會議都排在托育結束之後。教練讓她能誠實說出挫折、釐清界線，並準備與團隊的合作對話。最後她調整了行程、和伴侶共擬照顧輪班，也建立每週自我檢視的儀式，提早看見倦怠徵兆。"
+      },
+      "packages": {
+        "title": "適合的方案",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "許多父母會從 " },
+            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "text", "value": " 開始，四次會談重新建立日常與信心。" }
+          ],
+          [
+            { "type": "text", "value": "若是要大幅調整職涯或職務，適合選擇 " },
+            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "text", "value": "，六次會談深入探討可能性。" }
+          ],
+          [
+            { "type": "text", "value": "如果已經就位，想精進領導存在感，可以考慮 " },
+            { "type": "link", "href": "/services/deepening", "label": "Deepening 方案" },
+            { "type": "text", "value": "，或透過 " },
+            { "type": "link", "href": "/contact", "label": "聯絡頁" },
+            { "type": "text", "value": " 討論其他選擇。" }
+          ]
+        ]
+      }
+    }
+  },
+  "youngProfessionals": {
+    "seo": {
+      "title": "新銳專業人士教練 | SustainSage",
+      "description": "為初入職場或快速成長的你設計的教練：面對期待、培養自我帶領，保持腳步穩健。"
+    },
+    "hero": {
+      "title": "給新銳專業人士",
+      "subtitle": "成長為領導者，同時維持價值與資源。",
+      "imageAlt": "探索職涯選項的年輕專業者插畫",
+      "primaryCta": "預約初談",
+      "secondaryCta": "返回服務"
+    },
+    "sections": {
+      "challenges": {
+        "title": "常見的情境",
+        "items": [
+          {
+            "title": "第一次領導就拉滿",
+            "description": "升遷比預期快，想要支持卻又不想讓人覺得自己撐不住。"
+          },
+          {
+            "title": "左右溝通的協調",
+            "description": "一邊學工作，一邊面對不同利害關係人的期待。"
+          },
+          {
+            "title": "自我懷疑與比較",
+            "description": "懷疑自己是不是靠運氣坐在這個位置。"
+          },
+          {
+            "title": "生活後勤跟上來",
+            "description": "簽證、住房、家人期待或健康習慣都需要同時照顧。"
+          }
+        ]
+      },
+      "support": {
+        "title": "教練如何幫助你",
+        "items": [
+          {
+            "title": "說出你想實踐的領導",
+            "description": "釐清價值、不可退讓之處，以及在你的情境裡「做好」是什麼樣子。"
+          },
+          {
+            "title": "建立對話的勇氣",
+            "description": "規劃並預演回饋、界線或期望管理的談話，在好奇與尊重中溝通。"
+          },
+          {
+            "title": "維持步調不燃燒",
+            "description": "設計符合忙碌節奏又照顧身心的儀式與責任感。"
+          }
+        ]
+      },
+      "vignette": {
+        "title": "案例速寫",
+        "body": "M 參加金融科技業的新鮮人計畫，很快就成為各種急案的召集人。她想持續學習，但覺得自己快被燒乾。教練協助她釐清什麼讓她有活力，練習向資深主管請求明確優先順序，並建立每週保護休息時間的儀式。六個月後，她仍維持高品質輸出，沒有週日晚上的恐慌。"
+      },
+      "packages": {
+        "title": "適合的方案",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "許多年輕專業人士會先選擇 " },
+            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "text", "value": "，穩定日常並強化自我帶領。" }
+          ],
+          [
+            { "type": "text", "value": "要升任新職或準備升遷時，適合選擇 " },
+            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "text", "value": "，六次會談探索身份、期待與支持系統。" }
+          ],
+          [
+            { "type": "text", "value": "想持續深耕，可考慮 " },
+            { "type": "link", "href": "/services/deepening", "label": "Deepening 方案" },
+            { "type": "text", "value": "，在八次會談中扎實培養領導存在感。" }
+          ]
+        ]
+      }
+    }
+  }
+}

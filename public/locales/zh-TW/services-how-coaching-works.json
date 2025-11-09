@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "SustainSage 的教練如何進行 | SustainSage",
+    "description": "了解我們的 ICF 取向、倫理界線，以及如何評估教練是否適合你現在的階段。"
+  },
+  "hero": {
+    "title": "教練如何進行",
+    "subtitle": "ICF 對齊、由你主導。我們不開空頭支票，只提供誠實的陪伴與清楚界線。",
+    "imageAlt": "說明教練流程的插畫",
+    "primaryCta": "預約初談",
+    "secondaryCta": "查看所有服務"
+  },
+  "sections": {
+    "definition": {
+      "title": "我們說的「教練」是什麼",
+      "items": [
+        "非指令式、面向未來、由客戶主導。",
+        "我們一起處理你的思考、模式與選擇；決定與行動仍握在你手中。"
+      ]
+    },
+    "journey": {
+      "title": "常見流程",
+      "steps": [
+        {
+          "title": "免費 20 分鐘初談",
+          "description": "確認適配、期待與界線，決定要不要進入方案。沒有簽約壓力。"
+        },
+        {
+          "title": "訂定合作契約",
+          "description": "議題、頻率、次數、語言、費用，全都寫清楚。"
+        },
+        {
+          "title": "正式會談",
+          "description": "每次 50–60 分鐘，線上進行，搭配簡單反思提醒。焦點由你設定。"
+        },
+        {
+          "title": "會談之間",
+          "description": "若事前約定，可安排輕量 check-in。沒有驚喜作業或壓力。"
+        }
+      ]
+    },
+    "boundaries": {
+      "title": "我們不會做的事",
+      "items": [
+        "不診斷、不替你決定、不保證成果。",
+        "不提供法律、移民或醫療建議。",
+        "一旦出現風險徵兆，會提醒並鼓勵你尋求適切支援。"
+      ]
+    },
+    "ethics": {
+      "title": "我們如何守住倫理",
+      "items": [
+        "以 ICF 倫理守則為基礎。",
+        "保密但說明例外（法律／安全）。",
+        "在多語、多文化的情境下主動意識權力與系統壓力。"
+      ]
+    },
+    "selfCheck": {
+      "title": "現在適合做教練嗎？",
+      "description": "預約前的自我檢核。如果多數答案指向高度壓力或風險，請先聯絡治療或緊急資源。",
+      "items": [
+        "我是否正面臨需要專業處理的安全、法律或醫療風險？",
+        "我是否有餘裕在會談之間做一些反思或小幅實驗？",
+        "此刻是否更需要治療、督導或其他以療癒為主的資源？",
+        "我是否想要一個自己做決定的空間，而不是有人告訴我該怎麼做？"
+      ]
+    },
+  "packages": {
+    "title": "哪個方案適合？",
+    "description": "所有方案都遵守同樣的教練原則與界線。依你想要的結構與時間長短來選擇。",
+    "linkLabel": "了解更多 →",
+    "cards": [
+        {
+          "title": "Transition 教練——6 次會談",
+          "description": "在英國穩住搬遷或角色轉換。",
+          "href": "/services/transition-coaching"
+        },
+        {
+          "title": "Reset Sprint——3 次會談",
+          "description": "短期容器，暫停、梳理並決定下一步。",
+          "href": "/services/reset-sprint"
+        },
+        {
+          "title": "Deepening Practice——8 次會談",
+          "description": "為領導者與實務工作者提供長期深化的思考夥伴。",
+          "href": "/services/deepening-practice"
+        }
+      ]
+    },
+    "cta": {
+      "body": [
+        { "type": "text", "value": "準備試試看？初談是一起確認適配的時間，不會逼你做決定。" }
+      ],
+      "primaryCta": "預約初談",
+      "secondaryCta": "探索所有服務"
+    }
+  }
+}

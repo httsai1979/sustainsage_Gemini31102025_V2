@@ -1,93 +1,61 @@
 {
   "seo": {
-    "title": "Services | SustainSage",
-    "description": "Explore SustainSage coaching packages for transitions, confidence and ethical experiments."
+    "title": "教練服務",
+    "description": "瀏覽 SustainSage 為搬遷、重返職場與英國職場信心設計的教練路徑。"
   },
   "hero": {
-    "title": "Three coaching pathways, one steady partnership",
-    "subtitle": "Every package is grounded in ICF ethics. You hold authorship; we co-design experiments that respect your pace and context.",
-    "imageAlt": "Illustration of coaching pathways"
+    "title": "一起共創適合你的教練路徑",
+    "subtitle": "這些路徑是起點，實際步調、語言與主題會依你的生活情境調整。"
   },
-  "overview": {
-    "title": "How we work across all packages",
-    "subtitle": "Coaching with SustainSage is for thoughtful experimentation, not emergency support. We honour nuance, culture and capacity.",
-    "description": "We begin with a 20-minute intro call to confirm scope, consent, accessibility needs and whether coaching is right for now.",
-    "bullets": [
-      "ICF-aligned coaching with written agreements, confidentiality and clear pricing.",
-      "Sessions are held online unless we both plan otherwise in advance.",
-      "You choose the agenda each time; we bring structure, reflection and accountability.",
-      "We pause and signpost if therapy, legal or medical support would serve you better."
-    ],
-    "boundary": {
-      "title": "Boundaries we uphold",
-      "body": "You stay responsible for decisions and follow-up actions. We will name when another professional or resource is a better fit.",
-      "bullets": [
-        "No immigration, legal, financial or medical advice.",
-        "No promises of jobs, visas or guaranteed outcomes.",
-        "We do not act on your behalf or intervene in your organisation."
-      ]
-    }
-  },
-  "packages": {
-    "title": "Choose the pathway you need right now",
-    "description": "Each card opens a detailed page with who it serves, the step-by-step flow, boundaries and composite case studies.",
-    "cta": "Learn more",
+  "pathways": {
+    "title": "選擇一個起步方向",
+    "description": "三個常見需求，始終保持彈性並以你為主。",
+    "viewDetails": "查看詳情",
     "cards": [
       {
-        "slug": "transition",
-        "title": "Transition package",
-        "summary": "Six sessions when relocation or role change feels like carrying two lives at once.",
-        "for": "Steady change for people navigating new cities, roles or return-to-work",
-        "focus": "Clarify what a ‘good move’ means, design grounded experiments and close loose threads.",
-        "format": "6 × 55–60 min over 3–4 months",
+        "slug": "transition-relocation",
+        "title": "轉換與搬遷",
+        "target": "適合跨文化生活或重新落腳的人。",
+        "scenario": "想在英國安穩下來，同時兼顧其他地方的責任。",
+        "topics": [
+          "盤點能隨身帶著走的支援系統與協議。",
+          "慢慢看見哀悼、歸屬與主動權，不急著解決。",
+          "用自己的節奏實驗在新社群中紮根。"
+        ],
         "icon": "/images/services/transition.svg"
       },
       {
-        "slug": "reset",
-        "title": "Reset package",
-        "summary": "Four sessions to rebuild rhythms after depletion or an intense life season.",
-        "for": "Restore capacity for carers, returners and leaders emerging from burnout",
-        "focus": "Audit commitments, test gentle boundaries and document a sustainable baseline.",
-        "format": "4 × 55–60 min over 6–8 weeks",
+        "slug": "return-to-work-clarity",
+        "title": "重返職涯與釐清方向",
+        "target": "適合重新投入有酬工作的照顧者、父母或專業人士。",
+        "scenario": "在暫停或角色轉換後，重新建立信心與節奏。",
+        "topics": [
+          "釐清照顧、職涯與社群之間的優先順序與容量。",
+          "鬆動對「夠格」、「準備好」的既有敘事。",
+          "設計彼此同意的生活節奏與支持檢視。"
+        ],
         "icon": "/images/services/returning.svg"
       },
       {
-        "slug": "deepening",
-        "title": "Deepening package",
-        "summary": "Eight sessions to integrate leadership, equity and presence with more nuance.",
-        "for": "Longer arc for multicultural leaders, founders and space-holders",
-        "focus": "Explore power, practise difficult conversations and embed learning in daily work.",
-        "format": "8 × 60–70 min over 5–6 months",
+        "slug": "uk-workplace-confidence",
+        "title": "英國職場信心",
+        "target": "適合在英國文化中領導或協作的人。",
+        "scenario": "在不同口音、期待與潛規則間翻譯自己的想法。",
+        "topics": [
+          "練習提出需求、婉拒與設定界線的語言。",
+          "探索適合你的回饋節奏與倡議方式。",
+          "辨識能支援你的盟友與自我補給儀式。"
+        ],
         "icon": "/images/services/experiments.svg"
       }
-    ],
-    "learn": {
-      "title": "New to coaching?",
-      "summary": "Visit the explainer to see what happens in sessions, how we hold boundaries and how coaching differs from mentoring or therapy.",
-      "href": "/services/how-coaching-works",
-      "cta": "See how coaching works",
-      "icon": "/images/services/check-in.svg"
-    }
-  },
-  "process": {
-    "title": "How we begin",
-    "description": "A shared rhythm keeps you informed without overloading you with admin.",
-    "bullets": [
-      "Intro call: confirm the fit, accessibility needs and whether coaching is the right support.",
-      "Agreement: outline cadence, language preferences and between-session support.",
-      "Regular reviews: notice progress, adjust pace or close the engagement with intention."
     ]
   },
-  "faq": {
-    "title": "Questions before you decide",
-    "intro": "We gathered common questions about scope, ethics and logistics. Read the full FAQ for more context."
-  },
   "cta": {
-    "title": "Need help choosing?",
-    "body": "Share a few lines about what’s happening. We’ll suggest a starting point or signpost other support.",
-    "primaryCta": "Book a 20-min intro call",
-    "secondaryCta": "Contact us",
-    "primaryAria": "Book a 20-minute intro call with SustainSage",
-    "secondaryAria": "Contact SustainSage"
+    "title": "還不確定怎麼開始？",
+    "body": "20 分鐘認識談能先了解你的情境，再一起調整最合適的做法。",
+    "primaryCta": "預約認識談",
+    "primaryHref": "/contact",
+    "secondaryCta": "了解教練如何進行",
+    "secondaryHref": "/services/transition-relocation"
   }
 }

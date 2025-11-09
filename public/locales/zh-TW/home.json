@@ -1,91 +1,116 @@
 {
-  "seo": {
-    "title": "SustainSage｜陪你走過轉換的教練對話",
-    "description": "ICF 專業教練，陪伴你面對搬遷、自信與倫理實驗。清楚思考、同意才行動，決定始終在你手上。"
-  },
   "hero": {
-    "title": "當轉換來臨，你仍可以好好掌舵",
-    "subtitle": "我們提供短而穩的對話，容納複雜情緒，不製造速成承諾。",
-    "primaryCta": "預約 20 分鐘初談",
-    "secondaryCta": "查看服務",
-    "primaryCtaAria": "預約 SustainSage 的 20 分鐘初談",
-    "secondaryCtaAria": "瀏覽 SustainSage 的教練服務",
-    "imageAlt": "兩人手持地圖與筆記，一起規劃未來"
+    "headline": "沉穩、以你為主、符合 ICF 標準的教練陪你走過轉換。",
+    "subheadline": "無論是搬遷、重返職場，或面對跨文化的細膩差異，我們提供一個空間，陪你釐清方向、做出選擇、踏出合意的行動。",
+    "imageAlt": "桌上放著筆記本與茶杯，象徵沉穩的教練場域。",
+    "primaryCta": "預約 20 分鐘認識談",
+    "secondaryCta": "查看教練路徑"
   },
-  "fit": {
-    "title": "什麼時候值得找我們",
-    "description": "當生活正在變動，你想要踏實的陪伴，而不是灌雞湯。",
-    "bullets": [
-      "準備搬到或在英國境內移動，希望設計尊重健康與價值的節奏。",
-      "休息、照顧、進修或動盪之後回到工作，需要誠實而有餘裕的說法。",
-      "同時肩負領導、移民或社群責任，想保護自己的能量與主體。",
-      "對改變既期待又緊繃，想先有空間釐清情緒，再決定下一步。"
-    ]
-  },
-  "approach": {
-    "title": "我們怎麼和你合作",
-    "description": "結構保持輕盈、符合倫理並由你主導，決定權在你手上。",
-    "bullets": [
-      "每次會談都從此刻最重要的議題開始。",
-      "我們反映模式、提出提問，和你一起設計小實驗。",
-      "帶走 1–3 個下一步或反思，而不是硬塞的指令。",
-      "會談之間僅在你提出需求時，提供輕量追蹤。"
-    ]
-  },
-  "services": {
-    "title": "依照情境選擇焦點",
-    "description": "這三個方案回應客戶最常遇到的轉換。",
+  "forWhom": {
+    "title": "適合對象",
+    "description": "這些路徑源自我們最常陪伴的生活情境。",
+    "learnMore": "了解更多",
     "cards": [
       {
-        "slug": "transition",
-        "title": "Transition 轉換方案",
-        "description": "六次會談，陪你在搬遷或角色更動中守住穩定。",
-        "cta": "查看詳情",
-        "href": "/services/transition",
-        "image": "/images/services/transition.svg",
-        "imageAlt": "打包箱與地圖，象徵用心規劃的搬遷"
+        "title": "轉換與搬遷",
+        "target": "適合正在適應新國家或新階段的人。",
+        "scenario": "你一邊在英國扎根，一邊仍需顧及其他地方的承諾。",
+        "questions": [
+          "在多方拉扯之下，什麼協議能讓你感到安定？",
+          "落腳的同時，如何讓好奇、哀悼與主動權都有位置？"
+        ],
+        "href": "/services/transition-relocation",
+        "icon": "/images/services/transition.svg"
       },
       {
-        "slug": "confidence",
-        "title": "Confidence & voice",
-        "description": "五次會談，長出有底氣又細膩的聲音。",
-        "cta": "查看詳情",
-        "href": "/services/confidence",
-        "image": "/images/services/confidence.svg",
-        "imageAlt": "麥克風與柔和的線條"
+        "title": "重返職涯與釐清方向",
+        "target": "適合照顧者、父母或專業人士重新投入有酬工作。",
+        "scenario": "你在暫停或轉職後重建信心。",
+        "questions": [
+          "哪些生活節奏同時支持責任與成長？",
+          "關於準備好與值得與否的敘事，需要怎麼重新觀看？"
+        ],
+        "href": "/services/return-to-work-clarity",
+        "icon": "/images/services/returning.svg"
       },
       {
-        "slug": "experiments",
-        "title": "Experiments & stewardship",
-        "description": "四次會談，設計兼顧倫理的實驗，照顧受影響的人。",
-        "cta": "查看詳情",
-        "href": "/services/experiments",
-        "image": "/images/services/experiments.svg",
-        "imageAlt": "象徵迭代的連結幾何圖形"
+        "title": "英國職場信心",
+        "target": "適合在跨文化環境中領導或協作的人。",
+        "scenario": "你需要在英國的語氣、口音與期待之間翻譯自己的想法。",
+        "questions": [
+          "在哪些場景你想更自在地主張或設定界線？",
+          "當回饋風格不同，有哪些支撐系統能穩住你？"
+        ],
+        "href": "/services/uk-workplace-confidence",
+        "icon": "/images/services/experiments.svg"
       }
     ]
   },
-  "support": {
-    "title": "我們的錨點",
-    "description": "ICF 倫理是基礎，移動與照顧的親身經驗讓我們保持真實。",
-    "bullets": [
-      "非指導式合作：我們與你共創方向，而非強行給答案。",
-      "看見權力、階級、種族、健康與照顧角色，並避免評斷。",
-      "實務與反思並行，兩者對可持續的改變都重要。",
-      "若教練並非最佳支持，我們會透明轉介其他資源。"
+  "recognise": {
+    "title": "你也許有過這些感受",
+    "items": [
+      "搬到英國後，不確定職場要遵循哪些默契。",
+      "想重新工作，但也想守住對家人重要的照顧安排。",
+      "會多種語言，卻在快速或細膩的對話中遲疑。",
+      "同時要顧簽證、家族期待與自己的職涯規劃。",
+      "感覺到耗竭訊號，想在崩解前先做小型實驗。"
     ]
   },
-  "faq": {
-    "title": "你可能想先知道",
-    "intro": "這裡先提供幾個重點，完整的 FAQ 可在需要時慢慢閱讀。",
-    "seeAll": "閱讀完整 FAQ"
+  "how": {
+    "title": "教練如何進行",
+    "steps": [
+      {
+        "title": "共同決定焦點",
+        "description": "每次會談都從此刻最重要的議題開始，沒有制式腳本，也不急著解決。"
+      },
+      {
+        "title": "保留你的主導權",
+        "description": "你選擇方向與步調，我們一起映照模式、選項與合意。"
+      },
+      {
+        "title": "設計小步實驗",
+        "description": "我們共創輕量的練習，在會談之間測試並回顧收穫。"
+      },
+      {
+        "title": "帶著清晰收束",
+        "description": "整理洞見、標記需要的支援，並尊重後續行動的界線。"
+      }
+    ],
+    "moreLinkLabel": "進一步認識各路徑",
+    "moreLinkHref": "/services"
   },
-  "cta": {
-    "title": "想要一場踏實的對話嗎？",
-    "body": "寫下你正在面對的轉換。我們會一起確認合適度、步調與下一步。",
-    "primaryCta": "預約 20 分鐘初談",
-    "secondaryCta": "與我們聯絡",
-    "primaryAria": "預約 SustainSage 的 20 分鐘初談",
-    "secondaryAria": "開啟聯絡頁面"
+  "faq": {
+    "title": "常見提問",
+    "items": [
+      {
+        "question": "教練和心理治療有什麼不同？",
+        "answer": "教練聚焦於你當下的目標與未來行動，我們以對等關係合作，不做診斷或治療。如果評估後覺得其他資源更合適，我們會一同說明。"
+      },
+      {
+        "question": "會談內容會保密嗎？",
+        "answer": "會。除非法規要求揭露或出現危害風險，對話只在我們之間。開始前會確認紀錄保存方式與可能分享的情境。"
+      },
+      {
+        "question": "可以期待什麼結果？",
+        "answer": "我們不保證特定成果。多數來訪者帶著更清楚的語彙、自己選擇的行動實驗離開，你仍保有是否執行的決定權。"
+      },
+      {
+        "question": "可以混用不同語言嗎？",
+        "answer": "當然可以。我們會在英語與華語之間切換，讓你能表達細膩情緒與文化脈絡。"
+      },
+      {
+        "question": "怎麼判斷教練是不是適合我的支持？",
+        "answer": "認識談就是為這個目的而設。一起釐清你需要什麼、教練的角色在哪裡，若不適合，也會提供其他資源建議。"
+      },
+      {
+        "question": "初談後會發生什麼？",
+        "answer": "若決定繼續，我們會約定會談長度、頻率、費用與檢視節點，步調會配合你的實際承擔。"
+      }
+    ],
+    "footer": {
+      "text": "想更深入了解嗎？",
+      "linkLabel": "瀏覽教練路徑",
+      "linkHref": "/services"
+    }
   }
 }

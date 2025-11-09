@@ -1,91 +1,116 @@
 {
-  "seo": {
-    "title": "SustainSage | Coaching for people moving through change",
-    "description": "ICF-aligned coaching for relocations, confidence and ethical experiments. Think clearly, act with consent, stay responsible."
-  },
   "hero": {
-    "title": "Coaching for transitions you want to steward well",
-    "subtitle": "Short, steady conversations that hold complexity without promising quick fixes.",
-    "primaryCta": "Book a 20-min intro call",
-    "secondaryCta": "Explore services",
-    "primaryCtaAria": "Book a 20-minute intro call with SustainSage",
-    "secondaryCtaAria": "View SustainSage coaching services",
-    "imageAlt": "Two people seated with maps and notebooks, planning together"
+    "headline": "Calm, client-led, ICF-aligned coaching for real transitions.",
+    "subheadline": "Whether you are relocating, returning to work, or navigating cultural differences, we create space to orient, decide, and move with consent.",
+    "imageAlt": "Notebook, tea, and sunlight suggesting a calm coaching space.",
+    "primaryCta": "Book a 20-minute intro chat",
+    "secondaryCta": "See coaching pathways"
   },
-  "fit": {
-    "title": "When this support helps",
-    "description": "Clients come to us when life is shifting and they want grounded partnership, not hype.",
-    "bullets": [
-      "Relocating to or within the UK and wanting space to design rhythms that respect your health and values.",
-      "Re-entering or reshaping work after care, study or upheaval and needing language that feels honest.",
-      "Balancing leadership, migration or community responsibilities while protecting energy and agency.",
-      "Holding mixed feelings about change—relief, pressure, grief—and needing time to process before acting."
-    ]
-  },
-  "approach": {
-    "title": "How we work together",
-    "description": "We keep the structure light, ethical and client-led so you stay in charge of decisions.",
-    "bullets": [
-      "Every session begins with what matters most to you right now.",
-      "We reflect patterns, ask clarifying questions and co-design small experiments.",
-      "You leave with 1–3 next steps or reflections, not a script to obey.",
-      "Between sessions we offer light check-ins only when you request them."
-    ]
-  },
-  "services": {
-    "title": "Choose your focus",
-    "description": "Each package responds to the transitions our clients meet most often.",
+  "forWhom": {
+    "title": "Who it’s for",
+    "description": "A glimpse of pathways shaped around the contexts we coach most often.",
+    "learnMore": "Learn more",
     "cards": [
       {
-        "slug": "transition",
-        "title": "Transition package",
-        "description": "Six sessions to move through relocation or role change with steadiness.",
-        "cta": "View details",
-        "href": "/services/transition",
-        "image": "/images/services/transition.svg",
-        "imageAlt": "Boxes and a map ready for a thoughtful move"
+        "title": "Transition & relocation",
+        "target": "For people settling into a new country or chapter.",
+        "scenario": "You are building a life in the UK while keeping commitments elsewhere.",
+        "questions": [
+          "What agreements help you feel rooted when obligations pull in different directions?",
+          "How do you honour grief, curiosity, and agency as you land?"
+        ],
+        "href": "/services/transition-relocation",
+        "icon": "/images/services/transition.svg"
       },
       {
-        "slug": "confidence",
-        "title": "Confidence & voice",
-        "description": "Five sessions to strengthen your voice without losing nuance.",
-        "cta": "View details",
-        "href": "/services/confidence",
-        "image": "/images/services/confidence.svg",
-        "imageAlt": "A microphone with gentle waves"
+        "title": "Return-to-work & clarity",
+        "target": "For carers, parents, and professionals re-entering paid roles.",
+        "scenario": "You are rebuilding confidence after time away or a role change.",
+        "questions": [
+          "What rhythms sustain both your responsibilities and your growth?",
+          "Which stories about readiness or worthiness need reframing?"
+        ],
+        "href": "/services/return-to-work-clarity",
+        "icon": "/images/services/returning.svg"
       },
       {
-        "slug": "experiments",
-        "title": "Experiments & stewardship",
-        "description": "Four sessions to design ethical experiments when change affects others.",
-        "cta": "View details",
-        "href": "/services/experiments",
-        "image": "/images/services/experiments.svg",
-        "imageAlt": "Shapes connected with lines showing iteration"
+        "title": "UK workplace confidence",
+        "target": "For leaders navigating cross-cultural communication.",
+        "scenario": "You are translating ideas across UK norms, accents, and expectations.",
+        "questions": [
+          "Where do you want more ease in speaking up or setting boundaries?",
+          "What support systems anchor you when feedback styles differ?"
+        ],
+        "href": "/services/uk-workplace-confidence",
+        "icon": "/images/services/experiments.svg"
       }
     ]
   },
-  "support": {
-    "title": "What keeps us grounded",
-    "description": "ICF ethics guide our practice and lived migration experience keeps it real.",
-    "bullets": [
-      "Non-directive partnership: we co-create direction instead of prescribing.",
-      "We hold power, class, race, health and care roles in view without judgement.",
-      "Practical and reflective work sit together—both matter for sustainable change.",
-      "If coaching is not the right support, we signpost other services transparently."
+  "recognise": {
+    "title": "You might recognise this",
+    "items": [
+      "You moved to the UK and are unsure which workplace norms to follow.",
+      "You want to return to work without losing the care agreements that matter at home.",
+      "You speak multiple languages yet hesitate when conversations turn fast or nuanced.",
+      "You are balancing visas, family expectations, and your own leadership plans.",
+      "You sense burnout signals and want to experiment before things fracture."
     ]
   },
-  "faq": {
-    "title": "Questions you might be asking",
-    "intro": "A few short answers here. You can browse the full FAQ for more detail when you have time.",
-    "seeAll": "Read the full FAQ"
+  "how": {
+    "title": "How coaching works",
+    "steps": [
+      {
+        "title": "Co-create the focus",
+        "description": "Each session starts with what feels most present—no scripts, no rush to fix."
+      },
+      {
+        "title": "Hold autonomy",
+        "description": "You choose directions and pace while we reflect patterns, options, and consent."
+      },
+      {
+        "title": "Test small moves",
+        "description": "We design light experiments you can try between sessions and review what emerges."
+      },
+      {
+        "title": "Close with clarity",
+        "description": "We gather insights, name supports, and respect boundaries for next steps."
+      }
+    ],
+    "moreLinkLabel": "See the pathways in detail",
+    "moreLinkHref": "/services"
   },
-  "cta": {
-    "title": "Ready for a grounded conversation?",
-    "body": "Share a few lines about the change you are holding. We will confirm fit, pace and next steps together.",
-    "primaryCta": "Book a 20-min intro call",
-    "secondaryCta": "Message us",
-    "primaryAria": "Book a 20-minute intro call with SustainSage",
-    "secondaryAria": "Open the contact page"
+  "faq": {
+    "title": "Questions people often ask",
+    "items": [
+      {
+        "question": "How is coaching different from therapy?",
+        "answer": "Coaching focuses on your present goals and future actions. We collaborate as equals and do not diagnose or treat mental health conditions. When therapy or other support is better suited, we name that together."
+      },
+      {
+        "question": "Is our conversation confidential?",
+        "answer": "Yes. Sessions stay between us unless the law requires disclosure or there is risk of harm. We agree on how notes are stored and when information may be shared before we begin."
+      },
+      {
+        "question": "What outcomes can I expect?",
+        "answer": "We do not promise specific results. Most clients leave sessions with clearer language, grounded decisions, and experiments they chose. You stay in charge of implementing what feels right."
+      },
+      {
+        "question": "Can we coach in more than one language?",
+        "answer": "Absolutely. We switch between English and Mandarin when it helps you express nuance. Cultural references and metaphors are welcome in the room."
+      },
+      {
+        "question": "How do I know if coaching is the right support?",
+        "answer": "The intro chat is a space to explore that question. We will clarify what you need, share how coaching fits, and suggest next steps—including other resources—if coaching is not appropriate."
+      },
+      {
+        "question": "What happens after the intro call?",
+        "answer": "If we decide to continue, we agree on session length, frequency, fees, and review points. Everything moves at a pace that respects your commitments."
+      }
+    ],
+    "footer": {
+      "text": "Ready to explore this more deeply?",
+      "linkLabel": "Browse coaching pathways",
+      "linkHref": "/services"
+    }
   }
 }

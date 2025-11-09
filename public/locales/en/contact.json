@@ -1,71 +1,48 @@
 {
   "seo": {
     "title": "Contact | SustainSage",
-    "description": "Start a calm coaching enquiry with SustainSage. Share your context and we’ll respond with intro call options, clear boundaries and next steps."
+    "description": "Book a calm exploratory chat with SustainSage. Share your context, understand our boundaries, and decide whether coaching fits your reality."
   },
   "hero": {
-    "title": "Begin with a grounded check-in",
-    "subtitle": "Tell us where you are right now. We will decide together whether coaching is useful."
+    "title": "A 20-minute exploratory chat—not a sales call.",
+    "subtitle": "Tell us what is shifting in your life. We will clarify together whether coaching is the right kind of support." 
   },
-  "intro": {
-    "title": "What to share",
-    "description": "A few bullet points are enough—we just need a sense of your context.",
+  "preForm": {
+    "title": "Before you write",
     "bullets": [
-      "The transition, decision or experiment you are holding.",
-      "Any time pressures, access needs or boundaries we should respect.",
-      "Your preferred language and time zone for the intro call."
+      "Share the transition or decision you are navigating and anything that would help us prepare.",
+      "We use your information only to reply, schedule the chat, and keep records required by coaching ethics.",
+      "We will not add you to marketing lists or share your details without consent, unless law requires it." 
     ]
-  },
-  "process": {
-    "title": "What happens after you reach out",
-    "description": "We keep the process light, transparent and pressure-free.",
-    "bullets": [
-      "Reply within two to three UK working days with intro call options.",
-      "20-minute intro call to clarify focus, fit and safeguarding boundaries.",
-      "You choose whether to begin a package—no scripts, no upsell."
-    ]
-  },
-  "assurance": {
-    "title": "How we hold the space",
-    "description": "This form is for coaching enquiries only. If you need emergency or clinical support, please contact appropriate local services first.",
-    "bullets": [
-      "Coaching available in English, Traditional Chinese and Simplified Chinese.",
-      "Online by default; in-person in the UK when schedules align.",
-      "We store information only to arrange coaching unless law requires otherwise."
-    ]
-  },
-  "faq": {
-    "title": "Questions before you book",
-    "intro": "Here are a few quick answers. The full FAQ covers ethics, process and safety in more depth."
   },
   "form": {
     "title": "Send us a note",
-    "subtitle": "Share enough context so we can respond with care. Bullet points welcome.",
+    "subtitle": "Short bullet points are enough. You stay in control of what you disclose.",
     "name": "Name",
     "email": "Email",
     "help": "What transition or decision is on your mind?",
-    "helpHint": "Examples: relocating to the UK, leadership confidence, designing ethical experiments, burnout risk.",
-    "focusArea": "Preferred focus area (optional)",
-    "focusAreaPlaceholder": "Select a focus area",
+    "helpHint": "Examples: relocating to the UK, returning to work after caregiving, cross-cultural leadership, feeling unsure about next steps.",
+    "focusArea": "Preferred pathway (optional)",
+    "focusAreaPlaceholder": "Select a pathway",
     "focusAreaOptions": [
-      { "value": "transition", "label": "Transition package" },
-      { "value": "confidence", "label": "Confidence & voice" },
-      { "value": "experiments", "label": "Experiments & stewardship" },
-      { "value": "other", "label": "Something else" }
+      { "value": "transition-relocation", "label": "Transition & relocation" },
+      { "value": "return-to-work-clarity", "label": "Return-to-work & clarity" },
+      { "value": "uk-workplace-confidence", "label": "UK workplace confidence" },
+      { "value": "not-sure", "label": "Not sure yet" }
     ],
-    "focusHint": "Choose the option that feels closest; it is fine to stay uncertain.",
+    "focusHint": "Choose the option that feels closest—it is fine to stay uncertain.",
     "language": "Preferred language",
     "languagePlaceholder": "Select a language",
     "languageOptions": [
-      { "value": "EN", "label": "English" },
-      { "value": "TC", "label": "Traditional Chinese" },
-      { "value": "SC", "label": "Simplified Chinese" },
-      { "value": "MIX", "label": "Mix languages" }
+      { "value": "en", "label": "English" },
+      { "value": "zh-TW", "label": "Traditional Chinese" },
+      { "value": "zh-CN", "label": "Simplified Chinese" },
+      { "value": "mix", "label": "Mix languages" }
     ],
-    "timezone": "Preferred time zone / time window",
+    "timezone": "Preferred time zone / availability",
     "timezonePlaceholder": "e.g. UK mornings, GMT+8 evenings, or flexible",
     "consent": "I consent to SustainSage contacting me about coaching.",
-    "scopeAcknowledgement": "I understand this form is for coaching enquiries, not therapy, crisis support, legal, financial or immigration advice.",
+    "scopeAcknowledgement": "I understand this form is for coaching enquiries, not therapy, crisis support, legal, financial, or immigration advice.",
     "privacyNote": "We store your information only to arrange coaching conversations and delete it if we do not work together, unless law requires otherwise.",
     "submit": "Send message",
     "status": {
@@ -75,13 +52,31 @@
       "errorRequired": "Please complete the required fields and confirm consent."
     }
   },
-  "formNote": {
-    "lines": [
-      "Typical reply time: within three UK working days.",
-      "We can coach in English, 繁體中文, 简体中文 — feel free to write in any mix.",
-      "Read more about confidentiality and data care in {privacyLink}."
-    ],
-    "privacyLabel": "our privacy & ethics notice",
-    "privacyHref": "/contact#icf"
+  "sidebar": {
+    "title": "What to expect",
+    "description": "We keep the process transparent and centred on your consent.",
+    "responseTitle": "Reply time",
+    "responseCopy": "We usually reply within three UK working days with a few options for the exploratory chat.",
+    "privacyTitle": "Data care",
+    "privacyCopy": "Your details stay between us unless the law requires disclosure. No marketing lists or surprise emails.",
+    "nextTitle": "After the call",
+    "nextCopy": "You choose whether to continue coaching. We summarise agreements and boundaries so you stay in control."
+  },
+  "miniFaq": {
+    "title": "What happens next?",
+    "items": [
+      {
+        "question": "What happens after I submit this form?",
+        "answer": "We reply within three UK working days with a few time slots. During the call we clarify focus, boundaries, and whether coaching fits."
+      },
+      {
+        "question": "Which languages can we use?",
+        "answer": "We coach in English and Mandarin. You can switch languages mid-conversation if that helps express nuance."
+      },
+      {
+        "question": "I’m not sure if coaching is right for me—can we talk about that?",
+        "answer": "Absolutely. The intro chat is for exploring fit. We will suggest next steps or other resources if coaching isn’t the right support."
+      }
+    ]
   }
 }

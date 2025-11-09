@@ -1,87 +1,82 @@
 {
   "seo": {
-    "title": "聯絡我們｜SustainSage",
-    "description": "留下幾個重點，開始與 SustainSage 的教練洽詢。我們會回覆初談時段、說明界線並提供下一步建議。"
+    "title": "聯絡我們 | SustainSage",
+    "description": "預約一場沉穩的認識談，分享你的情境、了解教練的界線，一起評估是否合適。"
   },
   "hero": {
-    "title": "先一起確認現況",
-    "subtitle": "告訴我們你現在的狀態，我們會一起判斷教練是否適合。"
+    "title": "20 分鐘探索式對話，不是推銷電話。",
+    "subtitle": "告訴我們你正在經歷的轉變，我們會一起確認教練是否適合、或提供其他方向。"
   },
-  "intro": {
-    "title": "可以分享的內容",
-    "description": "幾個重點就足夠，讓我們理解你的情境。",
+  "preForm": {
+    "title": "在你動筆前",
     "bullets": [
-      "你正在面對的轉換、決策或實驗。",
-      "需要尊重的時間安排、無障礙需求或界線。",
-      "初談希望使用的語言與時區。"
+      "簡述你正在面對的轉換或決定，以及希望我們事先了解的資訊。",
+      "我們僅用這些資料回覆、安排認識談，並遵守教練倫理所需的紀錄。",
+      "除非法律要求，不會加入任何行銷名單或在未同意下分享你的資訊。"
     ]
-  },
-  "process": {
-    "title": "填寫之後會發生什麼",
-    "description": "流程保持輕盈透明，不會施壓你做決定。",
-    "bullets": [
-      "2–3 個英國工作天內回覆初談時段選項。",
-      "20 分鐘初談，用來釐清焦點、合適度與安全界線。",
-      "是否開始合作由你決定，沒有話術與推銷。"
-    ]
-  },
-  "assurance": {
-    "title": "這裡提供的支持",
-    "description": "此表單僅限教練洽詢。如果你需要緊急或臨床協助，請先聯絡當地的適切服務。",
-    "bullets": [
-      "可使用英文、繁體中文、簡體中文，過程中隨時可切換。",
-      "預設採線上會談；若在英國且時程合適，可討論面對面。",
-      "除了安排教練所需，我們不另存個資，除非法律另有要求。"
-    ]
-  },
-  "faq": {
-    "title": "預約前的常見問題",
-    "intro": "先在這裡回答幾個重點，完整 FAQ 有更多倫理、流程與安全資訊。"
   },
   "form": {
     "title": "寫信給我們",
-    "subtitle": "提供足夠資訊讓我們細緻回覆，條列式也可以。",
+    "subtitle": "幾個重點即可，你隨時掌控想透露的範圍。",
     "name": "姓名",
     "email": "Email",
-    "help": "你正在思考的轉換或決定是什麼？",
-    "helpHint": "例如：搬到英國、建立表達自信、設計有倫理的實驗、預防過勞。",
-    "focusArea": "想討論的主題（可選）",
-    "focusAreaPlaceholder": "選擇一個焦點",
+    "help": "最近想談的轉變或議題是什麼？",
+    "helpHint": "例如：搬到英國、照顧後重返職場、跨文化領導、還不確定下一步。",
+    "focusArea": "偏好的路徑（選填）",
+    "focusAreaPlaceholder": "選擇一個路徑",
     "focusAreaOptions": [
-      { "value": "transition", "label": "Transition 轉換方案" },
-      { "value": "confidence", "label": "Confidence & voice" },
-      { "value": "experiments", "label": "Experiments & stewardship" },
-      { "value": "other", "label": "其他或尚未確定" }
+      { "value": "transition-relocation", "label": "轉換與搬遷" },
+      { "value": "return-to-work-clarity", "label": "重返職涯與釐清方向" },
+      { "value": "uk-workplace-confidence", "label": "英國職場信心" },
+      { "value": "not-sure", "label": "還不確定" }
     ],
-    "focusHint": "選擇最接近的選項即可，也歡迎保持彈性。",
-    "language": "偏好的語言",
+    "focusHint": "選最接近的選項即可，不確定也沒關係。",
+    "language": "想使用的語言",
     "languagePlaceholder": "選擇語言",
     "languageOptions": [
-      { "value": "EN", "label": "English" },
-      { "value": "TC", "label": "繁體中文" },
-      { "value": "SC", "label": "簡體中文" },
-      { "value": "MIX", "label": "英中混用" }
+      { "value": "en", "label": "English" },
+      { "value": "zh-TW", "label": "繁體中文" },
+      { "value": "zh-CN", "label": "簡體中文" },
+      { "value": "mix", "label": "視情況混用" }
     ],
-    "timezone": "偏好的時區／時段",
-    "timezonePlaceholder": "例如：英國上午、GMT+8 晚上或可彈性安排",
-    "consent": "我同意 SustainSage 就教練洽詢與我聯絡。",
-    "scopeAcknowledgement": "我了解此表單僅用於教練洽詢，並非治療、緊急支援、法律、財務或移民建議。",
-    "privacyNote": "若未正式合作，我們會刪除資料；法律要求時除外。",
+    "timezone": "方便的時區 / 時段",
+    "timezonePlaceholder": "例如：英國早上、GMT+8 晚上或彈性",
+    "consent": "我同意 SustainSage 與我聯絡教練相關事宜。",
+    "scopeAcknowledgement": "我了解此表單僅供教練諮詢，不提供治療、危機支援、法律、財務或移民建議。",
+    "privacyNote": "除非法律要求，我們只為安排會談而保存資料，若未合作將刪除。",
     "submit": "送出訊息",
     "status": {
       "submitting": "傳送中…",
-      "success": "謝謝你！我們會在三個英國工作天內回覆。",
-      "error": "傳送時發生問題，請再試一次或寫信到 contact@sustainsage.com。",
-      "errorRequired": "請填寫必填欄位並勾選同意。"
+      "success": "謝謝你，我們會在三個英國工作天內回覆。",
+      "error": "似乎出了點狀況，請再試一次或來信 contact@sustainsage.com。",
+      "errorRequired": "請完成必填欄位並確認同意。"
     }
   },
-  "formNote": {
-    "lines": [
-      "一般回覆時間：約三個英國工作天內。",
-      "我們可使用 English、繁體中文、简体中文，歡迎自由混用。",
-      "更多關於保密與資料照護，請閱讀 {privacyLink}。"
-    ],
-    "privacyLabel": "隱私與倫理說明",
-    "privacyHref": "/contact#icf"
+  "sidebar": {
+    "title": "可以期待什麼",
+    "description": "流程保持透明，所有決定由你掌握。",
+    "responseTitle": "回覆時間",
+    "responseCopy": "通常在三個英國工作天內回覆，提供探索式對話的幾個時段。",
+    "privacyTitle": "資料照顧",
+    "privacyCopy": "除非法規要求，資訊只在我們之間，不會加入行銷名單。",
+    "nextTitle": "通話之後",
+    "nextCopy": "是否繼續由你決定。我們會整理重點與界線，確保你清楚掌握。"
+  },
+  "miniFaq": {
+    "title": "接下來會怎麼進行？",
+    "items": [
+      {
+        "question": "送出表單後會發生什麼？",
+        "answer": "我們會在三個英國工作天內提供幾個時段。通話中會釐清焦點、界線與教練是否合適。"
+      },
+      {
+        "question": "可以使用哪些語言？",
+        "answer": "我們支援英語與華語，必要時可在對話中自由切換。"
+      },
+      {
+        "question": "我還不確定教練是不是我要的，可以聊聊嗎？",
+        "answer": "可以。認識談就是為了探索合適性，若不適合會一起討論其他資源。"
+      }
+    ]
   }
 }

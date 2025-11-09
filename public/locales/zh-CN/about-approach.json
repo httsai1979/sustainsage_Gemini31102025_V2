@@ -1,0 +1,96 @@
+{
+  "seo": {
+    "title": "我们的教练取向 | SustainSage",
+    "description": "了解 SustainSage 教练如何落实 ICF 标准：核心原则、会谈体验、伦理界线与专业承诺。"
+  },
+  "hero": {
+    "title": "我们的教练取向",
+    "subtitle": "扎根 ICF 原则，敏感回应文化语境，让你保有节奏与选择。",
+    "primaryCta": "查看完整旅程",
+    "secondaryCta": "探索服务"
+  },
+  "sections": {
+    "grounding": {
+      "title": "我们的基础",
+      "description": "SustainSage 教练具备国际教练联盟（ICF）认证。我们把伦理与核心能力落实在日常，让你的主导权与脉络被看见。",
+      "items": [
+        {
+          "title": "把 ICF 伦理放进实践",
+          "description": "清楚订定合作、在约定范围内保密，并维持由你主导的伙伴关系，一切都遵循 ICF 核心能力。"
+        },
+        {
+          "title": "觉察创伤，但不做治疗",
+          "description": "我们理解压力如何影响神经系统，必要时会放慢或暂停；当治疗更合适时，会协助你转介。"
+        },
+        {
+          "title": "多语与交织视角",
+          "description": "会谈可在英文、中文或混合语之间切换。我们会主动点出权力关系，设计尊重文化、身份与可及性的做法。"
+        }
+      ]
+    },
+    "feel": {
+      "title": "会谈氛围",
+      "description": "会谈是协作与反思的空间。每次聚焦在你最在意的主题，一起调节步调、工具与责任分工。",
+      "items": [
+        "不急着推进——沉默、停顿都可以，我们不会逼出结论或突破。",
+        "结构与自由同行——焦点由你设定，我们提供框架、回馈与实验。",
+        "真诚好奇——常常确认「这对你有帮助吗？」并依你的回应调整。",
+        "踏实鼓励——没有鸡汤，诚实看见你的努力、处境与限制。"
+      ]
+    },
+    "ethics": {
+      "title": "伦理与界线",
+      "description": "清楚的界线让教练既安全又有成效。我们依照 ICF 伦理框架与「不造成伤害」的承诺行动。",
+      "items": [
+        {
+          "title": "只做教练，不做诊断",
+          "description": "我们不诊断、不处理创伤，也不提供法律、移民或医疗建议。"
+        },
+        {
+          "title": "写下每一项约定",
+          "description": "所有方案都会写明目标、流程、资料处理方式与费用。"
+        },
+        {
+          "title": "安全优先",
+          "description": "当议题超出教练范围，我们会暂停并指向合适资源。"
+        },
+        {
+          "title": "一起搞清楚流程",
+          "segments": [
+            { "type": "text", "value": "想了解全程如何进行？欢迎阅读我们的 " },
+            { "type": "link", "href": "/services/how-coaching-works", "label": "教练怎么运作" },
+            { "type": "text", "value": " 指南。" }
+          ]
+        }
+      ]
+    },
+    "standards": {
+      "title": "如何维持专业标准",
+      "description": "教练是一份专业，不是副业。我们投入时间与资源，对你、也对教练社群负责。",
+      "items": [
+        {
+          "title": "持续督导与进修",
+          "description": "定期与 ICF 认证督导会谈，每年投入训练，保持敏锐。"
+        },
+        {
+          "title": "反思实践",
+          "description": "每次会谈后都会回看主题、偏见与系统影响，持续学习。"
+        },
+        {
+          "title": "诚实转介",
+          "description": "当教练不再适合，我们会提前说明，并协助你连结其他支持，而不是硬要你完成方案。"
+        }
+      ],
+      "cta": {
+        "title": "下一步",
+        "segments": [
+          { "type": "text", "value": "想感受这种取向如何支持你？可以先浏览 " },
+          { "type": "link", "href": "/services", "label": "教练服务" },
+          { "type": "text", "value": "，或到 " },
+          { "type": "link", "href": "/services/how-coaching-works", "label": "教练怎么运作" },
+          { "type": "text", "value": " 指南预约初谈。" }
+        ]
+      }
+    }
+  }
+}
