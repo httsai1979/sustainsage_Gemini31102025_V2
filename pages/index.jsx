@@ -28,12 +28,16 @@ function ForWhomCard({ card, learnMoreLabel }) {
             <h3 className="mt-1 text-xl font-semibold text-slate-900">{card.title}</h3>
           </div>
         </div>
-        <p className="text-sm leading-6 text-slate-600">{card.scenario}</p>
+        <p className="text-sm leading-6 text-slate-600">
+          <strong className="block text-slate-900">{card.scenario}</strong>
+        </p>
         <ul className="space-y-2 text-sm leading-6 text-slate-700">
           {card.questions.map((question) => (
             <li key={question} className="flex gap-2">
               <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
-              <span>{question}</span>
+              <span>
+                <strong className="block text-slate-900">{question}</strong>
+              </span>
             </li>
           ))}
         </ul>
@@ -50,7 +54,10 @@ function HowStep({ step }) {
   return (
     <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
       <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-700">{step.description}</p>
+      <p className="mt-3 text-sm leading-6 text-slate-700">
+        <strong className="block text-slate-900">What we pay attention to.</strong>
+        {step.description}
+      </p>
     </div>
   );
 }
@@ -59,7 +66,10 @@ function FaqItem({ item }) {
   return (
     <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
       <h3 className="text-lg font-semibold text-slate-900">{item.question}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-700">{item.answer}</p>
+      <p className="mt-3 text-sm leading-6 text-slate-700">
+        <strong className="block text-slate-900">What this means for you.</strong>
+        {item.answer}
+      </p>
     </div>
   );
 }
@@ -78,7 +88,10 @@ export default function Home({ testimonials }) {
       <section className="mx-auto mt-12 grid max-w-6xl items-center gap-10 px-5 md:mt-20 md:grid-cols-2 md:px-8">
         <div className="space-y-6">
           <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero.headline}</h1>
-          <p className="text-base leading-7 text-slate-600">{hero.subheadline}</p>
+          <p className="text-base leading-7 text-slate-600">
+            <strong className="block text-slate-900">Calm, client-led support.</strong>
+            {hero.subheadline}
+          </p>
           <div className="flex flex-wrap gap-3">
             <Link href="/contact" className={BUTTON_PRIMARY}>
               {hero.primaryCta}
@@ -103,7 +116,10 @@ export default function Home({ testimonials }) {
       <section className="mx-auto mt-16 max-w-6xl px-5 md:px-8">
         <div className="max-w-3xl">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{forWhom.title}</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">{forWhom.description}</p>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            <strong className="block text-slate-900">Start with scenarios that fit.</strong>
+            {forWhom.description}
+          </p>
         </div>
         <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {forWhom.cards.map((card) => (

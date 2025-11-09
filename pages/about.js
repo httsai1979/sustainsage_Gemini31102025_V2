@@ -105,7 +105,10 @@ function AboutPage() {
         <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 md:flex-row md:items-center">
           <div className="space-y-4 md:flex-1">
             <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero.title}</h1>
-            <p className="text-base leading-7 text-slate-600">{hero.subtitle}</p>
+            <p className="text-base leading-7 text-slate-600">
+              <strong className="block text-slate-900">Meet your coach without hype.</strong>
+              {hero.subtitle}
+            </p>
           </div>
           <div className="rounded-3xl border border-emerald-100 bg-white/80 p-6 text-sm leading-6 text-slate-700 md:w-80">
             <p>{mission.description}</p>
@@ -123,7 +126,10 @@ function AboutPage() {
       <section className="bg-emerald-950/5 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{roots.title}</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">{roots.description}</p>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            <strong className="block text-slate-900">Where this practice comes from.</strong>
+            {roots.description}
+          </p>
           <BulletList items={roots.bullets} />
         </div>
       </section>
@@ -147,12 +153,18 @@ function AboutPage() {
         <div className="mx-auto grid max-w-6xl gap-12 px-6 lg:grid-cols-2">
           <div>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{practice.title}</h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">{practice.description}</p>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              <strong className="block text-slate-900">How sessions feel day to day.</strong>
+              {practice.description}
+            </p>
             <BulletList items={practice.bullets} />
           </div>
           <div>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{boundaries.title}</h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">{boundaries.description}</p>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              <strong className="block text-slate-900">Our lines stay clear.</strong>
+              {boundaries.description}
+            </p>
             <BulletList items={boundaries.bullets} />
           </div>
         </div>
@@ -162,7 +174,10 @@ function AboutPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-3xl">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{snapshots.title}</h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">{snapshots.intro}</p>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              <strong className="block text-slate-900">Composite stories to protect privacy.</strong>
+              {snapshots.intro}
+            </p>
           </div>
           <div className="mt-10 grid gap-8 md:grid-cols-3">
             {snapshots.cards.map((card, index) => (

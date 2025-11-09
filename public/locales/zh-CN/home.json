@@ -19,8 +19,19 @@
           "在多重拉扯之下，什么约定能让你感到安定？",
           "落地的同时，怎样让好奇、哀悼与主导权都被看见？"
         ],
-        "href": "/services/transition-relocation",
+        "href": "/services/transition",
         "icon": "/images/services/transition.svg"
+      },
+      {
+        "title": "Early-career coaching",
+        "target": "For people figuring out their early career moves.",
+        "scenario": "You want honest space to test directions before committing.",
+        "questions": [
+          "Which options feel exciting, safe, or both?",
+          "How can you experiment without pretending you “have it all together”?"
+        ],
+        "href": "/services/early-career",
+        "icon": "/images/services/early-career.svg"
       },
       {
         "title": "重返职涯与厘清方向",
@@ -30,8 +41,8 @@
           "怎样的生活节奏同时照顾责任与成长？",
           "关于“准备好了”或“够资格”的叙事，需要怎样重新理解？"
         ],
-        "href": "/services/return-to-work-clarity",
-        "icon": "/images/services/returning.svg"
+        "href": "/services/working-parents",
+        "icon": "/images/services/working-parents.svg"
       },
       {
         "title": "英国职场信心",
@@ -41,8 +52,8 @@
           "在哪些情境中你想更自在地主张或设定界限？",
           "当反馈方式不同，哪些支撑系统能稳住你？"
         ],
-        "href": "/services/uk-workplace-confidence",
-        "icon": "/images/services/experiments.svg"
+        "href": "/services/leadership",
+        "icon": "/images/services/leadership.svg"
       }
     ]
   },

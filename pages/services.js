@@ -19,12 +19,16 @@ function PathwayCard({ card, viewDetails }) {
             <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
           </div>
         </div>
-        <p className="text-sm leading-6 text-slate-600">{card.scenario}</p>
+        <p className="text-sm leading-6 text-slate-600">
+          <strong className="block text-slate-900">{card.scenario}</strong>
+        </p>
         <ul className="space-y-2 text-sm leading-6 text-slate-700">
           {card.topics.map((topic) => (
             <li key={topic} className="flex gap-2">
               <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
-              <span>{topic}</span>
+              <span>
+                <strong className="block text-slate-900">{topic}</strong>
+              </span>
             </li>
           ))}
         </ul>
@@ -58,7 +62,10 @@ function ServicesPage() {
         <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 md:flex-row md:items-center">
           <div className="space-y-4 md:flex-1">
             <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero.title}</h1>
-            <p className="text-base leading-7 text-slate-600">{hero.subtitle}</p>
+            <p className="text-base leading-7 text-slate-600">
+              <strong className="block text-slate-900">Choose what fits now.</strong>
+              {hero.subtitle}
+            </p>
           </div>
           <div className="rounded-3xl border border-emerald-100 bg-white/80 p-6 text-sm leading-6 text-slate-700 md:w-80">
             <p>{pathways.description}</p>
@@ -70,7 +77,10 @@ function ServicesPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="max-w-3xl">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{pathways.title}</h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">{pathways.description}</p>
+            <p className="mt-4 text-base leading-7 text-slate-600">
+              <strong className="block text-slate-900">Browse with clarity.</strong>
+              {pathways.description}
+            </p>
           </div>
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {pathways.cards.map((card) => (
@@ -83,7 +93,10 @@ function ServicesPage() {
       <section className="bg-emerald-950/5 py-16 sm:py-20">
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6 text-center">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{cta.title}</h2>
-          <p className="text-sm leading-6 text-slate-700">{cta.body}</p>
+          <p className="text-sm leading-6 text-slate-700">
+            <strong className="block text-slate-900">Start with a conversation.</strong>
+            {cta.body}
+          </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Link
               href={cta.primaryHref}
