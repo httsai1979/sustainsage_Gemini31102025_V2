@@ -7,6 +7,10 @@
     "title": "一起共創適合你的教練路徑",
     "subtitle": "Each pathway is a starting point. We adapt pace, language, and focus once we understand your reality."
   },
+  "faqLink": {
+    "label": "還有疑問？前往 FAQ。",
+    "href": "/faq"
+  },
   "pathways": {
     "title": "Choose a pathway",
     "description": "四條常見路徑，可依你的情境調整。",

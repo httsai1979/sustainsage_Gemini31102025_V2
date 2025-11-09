@@ -7,6 +7,10 @@
     "title": "Coaching pathways shaped with you",
     "subtitle": "Each pathway is a starting point. We adapt pace, language, and focus once we understand your reality."
   },
+  "faqLink": {
+    "label": "More questions? See our FAQ.",
+    "href": "/faq"
+  },
   "pathways": {
     "title": "Choose a pathway",
     "description": "Four pathways clients ask for most often. Each one flexes to match your context.",

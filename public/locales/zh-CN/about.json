@@ -7,6 +7,10 @@
     "title": "稳稳同行、尊重脉络的教练伙伴",
     "subtitle": "我们以沉稳的双语对话陪你思考，不必表演或迎合。"
   },
+  "faqLink": {
+    "label": "还有疑问？前往 FAQ。",
+    "href": "/faq"
+  },
   "mission": {
     "title": "我们的指引",
     "description": "实践建立在同意、文化素养与彼此负责之上。",

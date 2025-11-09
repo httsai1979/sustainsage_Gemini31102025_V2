@@ -4,43 +4,76 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
 
-import nextI18NextConfig from '../next-i18next.config.js';
+const ICON_CLASS = 'h-12 w-12 flex items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700';
 
-function Section({ title, items }) {
-  if (!items?.length) {
+const iconMap = {
+  question: (
+    <svg viewBox="0 0 24 24" fill="none" className={ICON_CLASS} aria-hidden>
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
+      <path
+        d="M9.75 9.75a2.25 2.25 0 114.5 0c0 1.5-2.25 2.25-2.25 2.25"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="12" cy="16.5" r="0.75" fill="currentColor" />
+    </svg>
+  ),
+  shield: (
+    <svg viewBox="0 0 24 24" fill="none" className={ICON_CLASS} aria-hidden>
+      <path
+        d="M12 4l7 3v5.5c0 4.142-3.134 7.5-7 7.5s-7-3.358-7-7.5V7l7-3z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinejoin="round"
+      />
+      <path d="M12 10.5v4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <circle cx="12" cy="16.5" r="0.75" fill="currentColor" />
+    </svg>
+  ),
+  safety: (
+    <svg viewBox="0 0 24 24" fill="none" className={ICON_CLASS} aria-hidden>
+      <path
+        d="M7 12.5a5 5 0 0110 0c0 3-2.5 5.5-5 7-2.5-1.5-5-4-5-7z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path d="M10.5 12.25l1.5 1.5 2.5-2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  clock: (
+    <svg viewBox="0 0 24 24" fill="none" className={ICON_CLASS} aria-hidden>
+      <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+};
+
+function Category({ category }) {
+  if (!category?.items?.length) {
     return null;
   }
 
   return (
-    <section className="border-b border-emerald-100 py-12 last:border-b-0">
-      <div className="mx-auto max-w-4xl px-5 md:px-0">
-        <h2 className="text-2xl font-semibold text-slate-900">{title}</h2>
-        <div className="mt-6 space-y-4">
-          {items.map((item) => (
-            <details
-              key={item.question}
-              className="group rounded-2xl border border-emerald-100 bg-white/95 p-5 text-slate-700 transition hover:border-emerald-200"
-            >
-              <summary className="cursor-pointer text-lg font-semibold text-slate-900 marker:content-none">
-                <span className="inline-flex items-center justify-between gap-4">{item.question}</span>
-              </summary>
-              <div className="mt-3 space-y-3 text-sm leading-6">
+    <section className="rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm">
+      <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
+        {iconMap[category.icon] ?? iconMap.question}
+        <div className="space-y-4">
+          <div>
+            <h2 className="text-xl font-semibold text-slate-900">{category.title}</h2>
+            {category.intro ? <p className="mt-2 text-sm leading-6 text-slate-600">{category.intro}</p> : null}
+          </div>
+          <div className="space-y-4">
+            {category.items.map((item) => (
+              <div key={item.question} className="space-y-2 rounded-2xl bg-emerald-50/60 p-5 text-sm leading-6 text-slate-700">
+                <h3 className="text-base font-semibold text-slate-900">{item.question}</h3>
                 <p>{item.answer}</p>
-                {item.links?.length ? (
-                  <ul className="flex flex-wrap gap-3 text-sm font-semibold text-emerald-700">
-                    {item.links.map((link) => (
-                      <li key={link.href}>
-                        <Link href={link.href} className="inline-flex items-center gap-1 hover:underline">
-                          {link.label}
-                          <span aria-hidden="true">→</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
               </div>
-            </details>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -48,14 +81,13 @@ function Section({ title, items }) {
 }
 
 export default function FAQPage() {
-  const { t } = useTranslation('faqPage');
-  const seo = t('seo', { returnObjects: true });
+  const { t } = useTranslation('faq');
   const hero = t('hero', { returnObjects: true });
-  const sections = t('sections', { returnObjects: true }) ?? [];
+  const categories = t('categories', { returnObjects: true }) ?? [];
   const cta = t('cta', { returnObjects: true });
 
   return (
-    <MainLayout title={seo?.title} desc={seo?.description}>
+    <MainLayout title={hero?.seoTitle} desc={hero?.seoDescription}>
       <div className="bg-emerald-950/5 py-16">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-0">
           {hero?.kicker ? (
@@ -74,7 +106,7 @@ export default function FAQPage() {
                   className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline"
                 >
                   {link.label}
-                  <span aria-hidden="true">→</span>
+                  <span aria-hidden>→</span>
                 </Link>
               ))}
             </div>
@@ -83,9 +115,9 @@ export default function FAQPage() {
       </div>
 
       <div className="bg-white py-16">
-        <div className="mx-auto max-w-5xl">
-          {sections.map((section) => (
-            <Section key={section.title} title={section.title} items={section.items} />
+        <div className="mx-auto max-w-5xl space-y-8 px-5 md:px-0">
+          {categories.map((category) => (
+            <Category key={category.title} category={category} />
           ))}
         </div>
       </div>
@@ -105,7 +137,7 @@ export default function FAQPage() {
               href="/services"
               className="inline-flex items-center justify-center rounded-full bg-emerald-50 px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-700"
             >
-              {cta?.secondary ?? 'Explore coaching packages'}
+              {cta?.secondary ?? 'Explore coaching pathways'}
             </Link>
           </div>
         </div>
@@ -114,10 +146,10 @@ export default function FAQPage() {
   );
 }
 
-export async function getStaticProps({ locale = 'en' }) {
+export async function getStaticProps({ locale }) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'faqPage'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common', 'faq'])),
     },
   };
 }
