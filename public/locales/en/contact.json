@@ -31,6 +31,25 @@
       }
     ]
   },
+  "suitability": {
+    "title": "Who this booking pathway serves",
+    "description": "The exploratory call is useful when you:",
+    "items": [
+      "Are weighing relocation, repatriation, or cross-border career decisions.",
+      "Want a structured, bilingual conversation without committing to a programme yet.",
+      "Value coaching that respects ICF ethics, cultural nuance, and your pace.",
+      "Would like help testing next steps before making long-term investments."
+    ]
+  },
+  "redirect": {
+    "title": "If coaching is not right, we will",
+    "description": "We stay honest about fit and keep you resourced by:",
+    "items": [
+      "Suggesting other professionals or community resources—therapy, legal, immigration, or peer support—when they serve you better.",
+      "Offering a brief summary of what we heard so you can brief future supporters with ease.",
+      "Leaving the decision entirely with you—no follow-up sales funnels or pressure to book."
+    ]
+  },
   "form": {
     "title": "Send us a note",
     "subtitle": "Short bullet points are enough. You stay in control of what you disclose.",
