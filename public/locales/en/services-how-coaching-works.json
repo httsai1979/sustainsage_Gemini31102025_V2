@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "How coaching works with SustainSage | SustainSage",
+    "description": "Understand our ICF-aligned coaching approach, boundaries, ethics, and how to decide if coaching fits your current needs."
+  },
+  "hero": {
+    "title": "How coaching works",
+    "subtitle": "ICF-aligned, client-led coaching. No promises we can’t keep—just honest partnership and clear boundaries.",
+    "imageAlt": "Illustration describing how coaching works",
+    "primaryCta": "Book an intro call",
+    "secondaryCta": "View all services"
+  },
+  "sections": {
+    "definition": {
+      "title": "What we mean by “coaching”",
+      "items": [
+        "Non-directive, future-oriented, client-led.",
+        "We work with your thinking, patterns, choices; you own decisions and action."
+      ]
+    },
+    "journey": {
+      "title": "How a typical journey flows",
+      "steps": [
+        {
+          "title": "Free 20-min intro",
+          "description": "Fit, expectations, boundaries, package / no package. No obligation to continue."
+        },
+        {
+          "title": "Contracting",
+          "description": "Topic, frequency, number of sessions, language, fees. We document what we agree."
+        },
+        {
+          "title": "Sessions",
+          "description": "50–60 mins, online, with simple reflection prompts. You set the focus each time."
+        },
+        {
+          "title": "Between sessions",
+          "description": "Optional light check-ins when agreed. No surprise homework or pressure."
+        }
+      ]
+    },
+    "boundaries": {
+      "title": "What we will not do",
+      "items": [
+        "No diagnosis, no making decisions for you, no guarantees of results.",
+        "No legal, immigration, or medical advice.",
+        "We name risk signals and encourage you to seek appropriate support when needed."
+      ]
+    },
+    "ethics": {
+      "title": "How we hold ethics",
+      "items": [
+        "Based on the ICF Code of Ethics.",
+        "Confidentiality with clear exceptions (legal / safety).",
+        "In multilingual, multicultural contexts we acknowledge power dynamics and systemic pressure."
+      ]
+    },
+    "selfCheck": {
+      "title": "Is coaching right for me now?",
+      "description": "A quick self-check before you book. If several answers point to high distress or risk, please reach out to therapeutic or crisis resources first.",
+      "items": [
+        "Am I dealing with immediate safety, legal, or medical risks that need specialised support?",
+        "Do I have the bandwidth to reflect and experiment between sessions, even in small ways?",
+        "Would I benefit more right now from therapy, supervision, or another resource focused on healing?",
+        "Do I want a space to make decisions I own, rather than someone telling me what to do?"
+      ]
+    },
+  "packages": {
+    "title": "Which package fits?",
+    "description": "Each package keeps the same coaching principles and boundaries. Choose based on how much structure and time you want.",
+    "linkLabel": "Learn more →",
+    "cards": [
+        {
+          "title": "Transition Coaching – 6 sessions",
+          "description": "Structured space to stabilise relocation or role change in the UK.",
+          "href": "/services/transition-coaching"
+        },
+        {
+          "title": "Reset Sprint – 3 sessions",
+          "description": "Short, focused container to pause, sort and choose next steps.",
+          "href": "/services/reset-sprint"
+        },
+        {
+          "title": "Deepening Practice – 8 sessions",
+          "description": "Longer-term partnership for leaders and practitioners refining their practice.",
+          "href": "/services/deepening-practice"
+        }
+      ]
+    },
+    "cta": {
+      "body": [
+        { "type": "text", "value": "Ready to explore? The intro call is a chance to sense fit together—no pressure to commit." }
+      ],
+      "primaryCta": "Book an intro call",
+      "secondaryCta": "Explore all services"
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "seo": {
+    "title": "SustainSage 的教练如何运作 | SustainSage",
+    "description": "了解我们的 ICF 取向、伦理界线，以及如何评估教练是否适合你此刻的需要。"
+  },
+  "hero": {
+    "title": "教练如何运作",
+    "subtitle": "对齐 ICF、由你主导。我们不画大饼，只提供诚实伙伴关系与清楚界线。",
+    "imageAlt": "说明教练流程的插画",
+    "primaryCta": "预约初谈",
+    "secondaryCta": "查看所有服务"
+  },
+  "sections": {
+    "definition": {
+      "title": "我们所说的“教练”",
+      "items": [
+        "非指令式、面向未来、由来访者主导。",
+        "我们一起梳理你的思考、模式与选择；决定与行动由你承担。"
+      ]
+    },
+    "journey": {
+      "title": "常见流程",
+      "steps": [
+        {
+          "title": "免费 20 分钟初谈",
+          "description": "确认适配、期待与界线，决定是否进入方案，没有签约压力。"
+        },
+        {
+          "title": "订立合作契约",
+          "description": "议题、频率、场次、语言、费用，全部白纸黑字。"
+        },
+        {
+          "title": "正式会谈",
+          "description": "每次 50–60 分钟，线上进行，搭配简单反思提醒。焦点由你决定。"
+        },
+        {
+          "title": "会谈之间",
+          "description": "若事前约定，可安排轻量 check-in。没有突袭作业或压力。"
+        }
+      ]
+    },
+    "boundaries": {
+      "title": "我们不会做的事",
+      "items": [
+        "不诊断、不替你决定、不保证成果。",
+        "不提供法律、移民或医疗建议。",
+        "出现风险讯号时，会提醒并鼓励你寻求合适支援。"
+      ]
+    },
+    "ethics": {
+      "title": "我们如何守住伦理",
+      "items": [
+        "以 ICF 伦理守则为基础。",
+        "保密但说明例外（法律／安全）。",
+        "在多语、多文化情境下，主动意识权力与系统压力。"
+      ]
+    },
+    "selfCheck": {
+      "title": "现在适合做教练吗？",
+      "description": "预约前的自我检测。如果多数答案指向高压力或风险，请先联系治疗或紧急资源。",
+      "items": [
+        "我是否正面临需要专业处理的安全、法律或医疗风险？",
+        "我是否有余裕在会谈之间做反思或小规模实验？",
+        "此刻是否更需要治疗、督导或其他以疗愈为主的资源？",
+        "我是否想要一个由我做决定的空间，而不是有人告诉我该怎么做？"
+      ]
+    },
+  "packages": {
+    "title": "哪种方案适合？",
+    "description": "所有方案都遵守同样的教练原则与界线，依照你想要的结构与时间选择。",
+    "linkLabel": "了解更多 →",
+    "cards": [
+        {
+          "title": "Transition 教练——6 次会谈",
+          "description": "在英国稳住搬迁或角色转换。",
+          "href": "/services/transition-coaching"
+        },
+        {
+          "title": "Reset Sprint——3 次会谈",
+          "description": "短期容器，暂停、梳理并决定下一步。",
+          "href": "/services/reset-sprint"
+        },
+        {
+          "title": "Deepening Practice——8 次会谈",
+          "description": "为领导者与实务工作者提供长期深化的思考伙伴。",
+          "href": "/services/deepening-practice"
+        }
+      ]
+    },
+    "cta": {
+      "body": [
+        { "type": "text", "value": "准备试试看？初谈是一起确认适配的时间，我们不会逼你做决定。" }
+      ],
+      "primaryCta": "预约初谈",
+      "secondaryCta": "探索所有服务"
+    }
+  }
+}
