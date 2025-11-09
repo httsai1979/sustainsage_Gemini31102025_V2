@@ -9,14 +9,36 @@ import MainLayout from '@/components/layout/MainLayout';
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
+function normaliseSummaryItems(items) {
+  if (!Array.isArray(items)) {
+    return [];
+  }
+
+  return items
+    .map((item) => {
+      if (!item) {
+        return null;
+      }
+
+      if (typeof item === 'string') {
+        return { summary: item };
+      }
+
+      return item;
+    })
+    .filter(Boolean);
+}
+
 function SummaryList({ items }) {
-  if (!Array.isArray(items) || items.length === 0) {
+  const normalisedItems = normaliseSummaryItems(items);
+
+  if (normalisedItems.length === 0) {
     return null;
   }
 
   return (
     <ul className="mt-8 space-y-4">
-      {items.map((item, index) => (
+      {normalisedItems.map((item, index) => (
         <li
           key={`${item.summary ?? index}-${index}`}
           className="flex gap-3 rounded-2xl border border-emerald-100 bg-white/95 p-5 shadow-sm"
@@ -38,59 +60,18 @@ function SummaryList({ items }) {
 
 SummaryList.propTypes = {
   items: PropTypes.arrayOf(
-    PropTypes.shape({
-      summary: PropTypes.string,
-      detail: PropTypes.string,
-    }),
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        summary: PropTypes.string,
+        detail: PropTypes.string,
+      }),
+    ]),
   ),
 };
 
 SummaryList.defaultProps = {
   items: undefined,
-};
-
-function StepsList({ steps }) {
-  if (!Array.isArray(steps) || steps.length === 0) {
-    return null;
-  }
-
-  return (
-    <ol className="mt-10 grid gap-6 md:grid-cols-2">
-      {steps.map((step, index) => (
-        <li
-          key={`${step.summary ?? index}-${index}`}
-          className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm"
-        >
-          <div className="flex items-start gap-3">
-            <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white">
-              {index + 1}
-            </span>
-            <div className="space-y-2">
-              {step.summary ? (
-                <strong className="block text-sm font-semibold text-slate-900">{step.summary}</strong>
-              ) : null}
-              {step.detail ? (
-                <p className="text-sm leading-6 text-slate-700">{step.detail}</p>
-              ) : null}
-            </div>
-          </div>
-        </li>
-      ))}
-    </ol>
-  );
-}
-
-StepsList.propTypes = {
-  steps: PropTypes.arrayOf(
-    PropTypes.shape({
-      summary: PropTypes.string,
-      detail: PropTypes.string,
-    }),
-  ),
-};
-
-StepsList.defaultProps = {
-  steps: undefined,
 };
 
 function FAQList({ items }) {
@@ -123,7 +104,7 @@ FAQList.defaultProps = {
   items: undefined,
 };
 
-function Section({ title, children, background = 'white' }) {
+function Section({ title, description, note, children, background = 'white' }) {
   const backgroundClass = background === 'tint' ? 'bg-emerald-950/5' : 'bg-white';
   return (
     <section className={`${backgroundClass} py-16 sm:py-20`}>
@@ -131,7 +112,13 @@ function Section({ title, children, background = 'white' }) {
         {title ? (
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{title}</h2>
         ) : null}
+        {description ? (
+          <p className="mt-4 text-sm leading-6 text-slate-700">{description}</p>
+        ) : null}
         {children}
+        {note ? (
+          <p className="mt-6 text-xs leading-5 text-slate-500">{note}</p>
+        ) : null}
       </div>
     </section>
   );
@@ -139,25 +126,30 @@ function Section({ title, children, background = 'white' }) {
 
 Section.propTypes = {
   title: PropTypes.string,
+  description: PropTypes.string,
+  note: PropTypes.string,
   children: PropTypes.node.isRequired,
   background: PropTypes.oneOf(['white', 'tint']),
 };
 
 Section.defaultProps = {
   title: undefined,
+  description: undefined,
+  note: undefined,
   background: 'white',
 };
 
 export default function StructuredServicePage({ serviceKey, image }) {
   const { t } = useTranslation('services');
-  const service = t(serviceKey, { returnObjects: true }) ?? {};
+  const serviceDetail = t('serviceDetail', { returnObjects: true }) ?? {};
+  const service = serviceDetail?.[serviceKey] ?? {};
 
   const seo = service.seo ?? {};
   const hero = service.hero ?? {};
-  const isThisForYou = service.isThisForYou ?? {};
+  const who = service.who ?? {};
+  const topics = service.topics ?? {};
   const howWeWork = service.howWeWork ?? {};
-  const journey = service.journey ?? {};
-  const outcomes = service.outcomes ?? {};
+  const expect = service.expect ?? {};
   const boundaries = service.boundaries ?? {};
   const faq = service.faq ?? {};
   const cta = service.cta ?? {};
@@ -193,27 +185,32 @@ export default function StructuredServicePage({ serviceKey, image }) {
         ) : null}
       </Hero>
 
-      <Section title={isThisForYou.title} background="white">
-        <SummaryList items={isThisForYou.items} />
+      <Section title={who.title} description={who.description} background="white">
+        <SummaryList items={who.items} />
       </Section>
 
-      <Section title={howWeWork.title} background="tint">
+      <Section title={topics.title} description={topics.description} background="tint">
+        <SummaryList items={topics.items} />
+      </Section>
+
+      <Section
+        title={howWeWork.title}
+        description={howWeWork.description}
+        note={howWeWork.note}
+        background="white"
+      >
         <SummaryList items={howWeWork.items} />
       </Section>
 
-      <Section title={journey.title} background="white">
-        <StepsList steps={journey.steps} />
+      <Section title={expect.title} description={expect.description} background="tint">
+        <SummaryList items={expect.items} />
       </Section>
 
-      <Section title={outcomes.title} background="tint">
-        <SummaryList items={outcomes.items} />
-      </Section>
-
-      <Section title={boundaries.title} background="white">
+      <Section title={boundaries.title} description={boundaries.description} background="white">
         <SummaryList items={boundaries.items} />
       </Section>
 
-      <Section title={faq.title} background="tint">
+      <Section title={faq.title} description={faq.description} note={faq.note} background="tint">
         <FAQList items={faq.items} />
       </Section>
 
