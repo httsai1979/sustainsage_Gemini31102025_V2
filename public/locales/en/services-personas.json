@@ -1,0 +1,312 @@
+{
+  "careerReturners": {
+    "seo": {
+      "title": "Coaching for career returners | SustainSage",
+      "description": "Support for experienced professionals re-entering work after relocation, sabbatical or care responsibilities."
+    },
+    "hero": {
+      "title": "Coaching for career returners",
+      "subtitle": "Rebuild momentum after a break without pretending the last chapter did not happen.",
+      "imageAlt": "Illustration symbolising a fresh chapter",
+      "primaryCta": "Book an intro call",
+      "secondaryCta": "Back to services"
+    },
+    "sections": {
+      "challenges": {
+        "title": "What tends to show up",
+        "items": [
+          {
+            "title": "Story gaps on your CV",
+            "description": "Wondering how to speak about a break without shrinking experience or oversharing personal reasons."
+          },
+          {
+            "title": "Confidence wobble",
+            "description": "Old strengths are still there, yet interviews or networking feel sharper than expected."
+          },
+          {
+            "title": "Changed priorities",
+            "description": "You want to re-enter with purpose, not slide into the first offer that arrives."
+          },
+          {
+            "title": "Logistics plus emotions",
+            "description": "Balancing job search tasks with family care, health needs, or new city admin."
+          }
+        ]
+      },
+      "support": {
+        "title": "How coaching can help",
+        "items": [
+          {
+            "title": "Integrate your break into a coherent narrative",
+            "description": "Clarify what you learned, how it shapes your work now, and how you choose to share it."
+          },
+          {
+            "title": "Practice grounded conversations",
+            "description": "Rehearse interviews, networking, or boundary-setting chats so you can show up steady and curious."
+          },
+          {
+            "title": "Design a humane pace",
+            "description": "Break the return into experiments and agreements that respect your capacity and financial realities."
+          }
+        ]
+      },
+      "vignette": {
+        "title": "A short vignette",
+        "body": "“R” had managed teams across Asia before pausing work to relocate and care for an elder. Two years later she wanted to re-enter consulting but worried the gap would eclipse her track record. Coaching helped her surface the skills she used while caregiving, map what kind of firm would respect her boundaries, and practice a narrative that felt honest. Within four sessions she chose a consultancy that welcomed her portfolio of community work as part of her leadership story."
+      },
+      "packages": {
+        "title": "Which package fits?",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "Most returners choose the " },
+            { "type": "link", "href": "/services/transition", "label": "Transition package" },
+            { "type": "text", "value": " to map their new chapter, practice conversations, and design a paced comeback." }
+          ],
+          [
+            { "type": "text", "value": "If you need a shorter container while juggling care, the " },
+            { "type": "link", "href": "/services/reset", "label": "Reset package" },
+            { "type": "text", "value": " holds four sessions to steady confidence and set sustainable rhythms." }
+          ],
+          [
+            { "type": "text", "value": "Not sure where to start? Explore the " },
+            { "type": "link", "href": "/services/how-coaching-works", "label": "coaching process" },
+            { "type": "text", "value": " or book a call to see if coaching matches your stage." }
+          ]
+        ]
+      }
+    }
+  },
+  "newcomers": {
+    "seo": {
+      "title": "Coaching for newcomers to the UK | SustainSage",
+      "description": "Scenario-based coaching for people settling into UK work and life rhythms without having to translate everything from scratch."
+    },
+    "hero": {
+      "title": "Coaching for newcomers to the UK",
+      "subtitle": "Make sense of work, culture, and expectations—without having to translate your whole story from scratch.",
+      "imageAlt": "Illustration representing newcomers to the UK",
+      "primaryCta": "Book an intro call",
+      "secondaryCta": "Back to services"
+    },
+    "sections": {
+      "challenges": {
+        "title": "What tends to show up",
+        "items": [
+          {
+            "title": "Push-pull of staying or leaving",
+            "description": "Constantly weighing visas, timelines, and whether remaining supports your goals and relationships."
+          },
+          {
+            "title": "Language and workplace mismatch",
+            "description": "You can do the job, yet unspoken rules still feel like an exam you never revised for."
+          },
+          {
+            "title": "Care across borders",
+            "description": "Coordinating family responsibilities, remittances, and time zones while you are still settling."
+          },
+          {
+            "title": "Belonging without erasing yourself",
+            "description": "Wanting community while keeping the parts of you that made the move possible."
+          }
+        ]
+      },
+      "support": {
+        "title": "How coaching can help",
+        "items": [
+          {
+            "title": "Name what you want without rushing decisions",
+            "description": "Map options, boundaries, and risks so your choices honour visas, values, and energy."
+          },
+          {
+            "title": "Translate cultural signals into action",
+            "description": "Slow down workplace dynamics, decode feedback, and plan consent-based conversations."
+          },
+          {
+            "title": "Design support systems across borders",
+            "description": "Clarify who is in your corner, what you can ask for, and how to stay resourced while settling in."
+          }
+        ]
+      },
+      "vignette": {
+        "title": "A short vignette",
+        "body": "“L” moved from Taipei to London on a partner visa. Her previous leadership role carried weight back home, yet in the UK she felt reduced to “the new one who speaks great English”. Coaching sessions gave her a weekly space to name the grief of starting over, rehearse cross-cultural conversations with her manager, and design check-ins with family in Taiwan so the distance felt less punishing. Within three months she negotiated clearer responsibilities and chose a community project that made the city feel more livable."
+      },
+      "packages": {
+        "title": "Which package fits?",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "Most newcomers start with the " },
+            { "type": "link", "href": "/services/transition", "label": "Transition package" },
+            { "type": "text", "value": " to land gently and keep agency during the first 3–6 months in the UK." }
+          ],
+          [
+            { "type": "text", "value": "If you are already here but feel depleted, the " },
+            { "type": "link", "href": "/services/reset", "label": "Reset package" },
+            { "type": "text", "value": " creates a short, contained space to reorient and make sustainable agreements." }
+          ],
+          [
+            { "type": "text", "value": "Still unsure? Browse the " },
+            { "type": "link", "href": "/faq", "label": "FAQ" },
+            { "type": "text", "value": " or book an intro call to see if coaching is the right container right now." }
+          ]
+        ]
+      }
+    }
+  },
+  "parents": {
+    "seo": {
+      "title": "Coaching for parents returning to work | SustainSage",
+      "description": "Support for parents designing sustainable agreements at home and work while re-entering or recalibrating roles."
+    },
+    "hero": {
+      "title": "Coaching for parents returning to work",
+      "subtitle": "Return to work in ways that honour care roles, ambition, and rest.",
+      "imageAlt": "Illustration of balancing caregiving and work",
+      "primaryCta": "Book an intro call",
+      "secondaryCta": "Back to services"
+    },
+    "sections": {
+      "challenges": {
+        "title": "What tends to show up",
+        "items": [
+          {
+            "title": "Multiple calendars to juggle",
+            "description": "Nursery schedules, partner shifts, elder care, and your energy levels all needing room."
+          },
+          {
+            "title": "Guilt from all directions",
+            "description": "Feeling like work takes from family or vice versa, no matter what choice you make."
+          },
+          {
+            "title": "Shifts in identity",
+            "description": "Wanting colleagues to see your expertise beyond the “new parent” label."
+          },
+          {
+            "title": "Boundaries questioned",
+            "description": "Well-meaning advice or assumptions from family, managers, or your own internal voice."
+          }
+        ]
+      },
+      "support": {
+        "title": "How coaching can help",
+        "items": [
+          {
+            "title": "Co-design rhythms with your support system",
+            "description": "Map responsibilities, renegotiate agreements, and plan how to revisit them when life shifts."
+          },
+          {
+            "title": "Stay connected to what matters",
+            "description": "Name your anchors—rest, presence, financial security—and choose actions aligned with them."
+          },
+          {
+            "title": "Build confidence in conversations",
+            "description": "Practice boundary-setting with managers, partners, or family so you can advocate without apology."
+          }
+        ]
+      },
+      "vignette": {
+        "title": "A short vignette",
+        "body": "“D” returned to her policy role after parental leave and found every meeting scheduled past nursery pick-up. Coaching offered space to explore the frustration without judgement, clarify her boundaries, and prepare a collaborative conversation with her team. She left with a revised schedule, a shared childcare rota at home, and a personal check-in ritual that keeps burnout signals visible."
+      },
+      "packages": {
+        "title": "Which package fits?",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "Many parents return with the " },
+            { "type": "link", "href": "/services/reset", "label": "Reset package" },
+            { "type": "text", "value": " to rebuild routines and confidence over four sessions." }
+          ],
+          [
+            { "type": "text", "value": "For bigger career pivots or role redesign, the " },
+            { "type": "link", "href": "/services/transition", "label": "Transition package" },
+            { "type": "text", "value": " offers deeper exploration across six sessions." }
+          ],
+          [
+            { "type": "text", "value": "If you are already settled but want to sharpen leadership presence, consider the " },
+            { "type": "link", "href": "/services/deepening", "label": "Deepening package" },
+            { "type": "text", "value": " or reach out via the " },
+            { "type": "link", "href": "/contact", "label": "contact page" },
+            { "type": "text", "value": " to talk through options." }
+          ]
+        ]
+      }
+    }
+  },
+  "youngProfessionals": {
+    "seo": {
+      "title": "Coaching for young professionals | SustainSage",
+      "description": "Coaching designed for early-career professionals navigating rapid growth, shifting expectations, and self-leadership."
+    },
+    "hero": {
+      "title": "Coaching for young professionals",
+      "subtitle": "Grow into leadership while staying values-led and resourced.",
+      "imageAlt": "Illustration of a young professional exploring options",
+      "primaryCta": "Book an intro call",
+      "secondaryCta": "Back to services"
+    },
+    "sections": {
+      "challenges": {
+        "title": "What tends to show up",
+        "items": [
+          {
+            "title": "First-time leadership stretch",
+            "description": "Being promoted faster than expected and wanting support without looking like you cannot handle it."
+          },
+          {
+            "title": "Managing up and across",
+            "description": "Navigating stakeholders with competing priorities while still learning the basics of your role."
+          },
+          {
+            "title": "Self-doubt and comparison",
+            "description": "Wondering if you earned your seat at the table or just happened to be there when the door opened."
+          },
+          {
+            "title": "Life logistics catching up",
+            "description": "Visa renewals, housing, family expectations, or health routines needing attention alongside work goals."
+          }
+        ]
+      },
+      "support": {
+        "title": "How coaching can help",
+        "items": [
+          {
+            "title": "Clarify the leadership you want to practice",
+            "description": "Articulate your values, non-negotiables, and what “good” looks like in your context."
+          },
+          {
+            "title": "Build conversational courage",
+            "description": "Plan and rehearse feedback, expectation-setting, or boundary conversations with curiosity and respect."
+          },
+          {
+            "title": "Sustain pace without burnout",
+            "description": "Design rituals and accountability that fit a busy schedule and honour your wellbeing."
+          }
+        ]
+      },
+      "vignette": {
+        "title": "A short vignette",
+        "body": "“M” entered a fintech graduate scheme and quickly became the go-to person for urgent projects. She wanted to keep learning yet felt close to burning out. In coaching she mapped what energized her, practiced requesting clearer priorities from senior leaders, and built weekly rituals that protected recovery time. Six months later she was still delivering strong results without the Sunday-night dread."
+      },
+      "packages": {
+        "title": "Which package fits?",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "Many young professionals start with the " },
+            { "type": "link", "href": "/services/reset", "label": "Reset package" },
+            { "type": "text", "value": " to stabilise routines and strengthen self-leadership." }
+          ],
+          [
+            { "type": "text", "value": "When stepping into a new role or planning a promotion, the " },
+            { "type": "link", "href": "/services/transition", "label": "Transition package" },
+            { "type": "text", "value": " offers six sessions to explore identity, expectations, and support systems." }
+          ],
+          [
+            { "type": "text", "value": "For ongoing development, consider the " },
+            { "type": "link", "href": "/services/deepening", "label": "Deepening package" },
+            { "type": "text", "value": " to strengthen leadership presence over eight sessions." }
+          ]
+        ]
+      }
+    }
+  }
+}
