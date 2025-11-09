@@ -116,6 +116,12 @@ export default function Home({ testimonials }) {
               How coaching works
             </Link>
           </div>
+          <p className="mt-3 text-sm text-emerald-700">
+            Questions?{' '}
+            <Link href="/faq" className="font-semibold hover:underline">
+              See FAQ
+            </Link>
+          </p>
         </div>
         <figure className="overflow-hidden rounded-3xl border border-emerald-100">
           <Image src="/images/hero/main.jpg" alt="Calm workspace" width={1600} height={900} priority />
