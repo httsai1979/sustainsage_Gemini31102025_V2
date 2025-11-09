@@ -13,40 +13,77 @@
       "提供务实、不夸张的小实验，尊重你的自主节奏。"
     ]
   },
-  "inPractice": {
-    "title": "实践合作会是什么样子",
-    "intro": "在实际对谈中，你会感受到：",
-    "bullets": [
-      "行动前会先放慢节奏，让思绪沉淀。",
-      "提出工具或框架前，会先询问并确认是否合适。",
-      "一开始就说明界线：我们不是治疗师、律师或移民顾问。",
-      "把费用、节奏与回顾节点写下来，保持透明。"
+  "practice": {
+    "title": "专业且懂文化差异的教练合作",
+    "intro": "每段合作都建立在清晰约定与文化敏感的实务之上。",
+    "sections": [
+      {
+        "title": "对齐 ICF 的教练实务",
+        "body": "我们以国际教练联盟（ICF）的伦理与能力标准设计合作。",
+        "bullets": [
+          "启动前即明确目标、角色、保密范围、节奏与资料保存方式。",
+          "会谈记录加密保存；除非你另有需求，录音会在 30 天内删除。",
+          "每月接受督导并共同评估风险，仅在安全受威胁时才例外透露资讯。",
+          "每 4–6 次会谈就回顾一次，确认合作仍聚焦你的优先要务。"
+        ]
+      },
+      {
+        "title": "双语并熟悉英国职场",
+        "body": "我们能在英文与中文之间自由切换，连接英国与华语职涯情境。",
+        "bullets": [
+          "会谈可使用英文、繁体中文、简体中文，让重要细节不被翻译遗漏。",
+          "熟悉英国就业文化、签证节点与公共服务资源对职涯决策的影响。",
+          "善用台湾、新加坡、香港与英国侨民社群的人脉，协助你拓展支援网络。"
+        ]
+      }
     ]
   },
-  "founders": {
-    "title": "创办人",
-    "intro": "我们是一群双语教练，曾在多个城市建立职涯，也陪伴新移民、使命组织与转职领导者走过转换。",
+  "coaches": {
+    "title": "教练伙伴",
+    "intro": "SustainSage 由横跨亚太与英国生活工作的双语教练共同带领。",
     "people": [
       {
         "name": "赖怡伶 Yi-Ling Lai (she/her)",
-        "role": "共同创办人 · ICF PCC 教练／服务设计师",
+        "title": "共同创办人 · ICF PCC 教练／服务设计师",
         "image": "/images/founders/yi-ling-lai.svg",
         "imageAlt": "赖怡伶的插画",
-        "bio": [
-          "拥有 15 年在台北、新加坡与英国科技／非营利领域的服务设计与教练经验。",
-          "擅长陪伴新移民、双语管理者与社会影响团队，在文化脉络中找出稳健可行的行动。",
-          "带领有色人种教练的同侪督导圈，并把创伤觉察与安全机制融入每次合作。"
+        "languagesLabel": "语言",
+        "languages": "英语／繁体中文／简体中文",
+        "locationLabel": "据点与跨文化背景",
+        "location": "常驻伦敦，曾在台北与新加坡带领服务设计与教练项目，熟悉跨国科技与非营利组织。",
+        "trainingLabel": "教练训练与认证",
+        "training": [
+          "ICF Professional Certified Coach (PCC)。",
+          "Co-Active Training Institute：Certified Professional Co-Active Coach (CPCC)。",
+          "Animas Centre for Coaching：创伤觉察教练实务课程。"
+        ],
+        "specialtiesLabel": "擅长主题",
+        "specialties": [
+          "重返职场与照护责任并行的职涯设计。",
+          "双语管理者与社群领袖的英国适应教练。",
+          "使命导向团队与社会创新者的实验与回顾。"
         ]
       },
       {
         "name": "蔡皓丞 Hao-Cheng Tsai (he/him)",
-        "role": "共同创办人 · 教练／策略引导者",
+        "title": "共同创办人 · 教练／策略引导者",
         "image": "/images/founders/hao-cheng-tsai.svg",
         "imageAlt": "蔡皓丞的插画",
-        "bio": [
-          "具备社会创新、公民科技与人道计划背景，足迹遍及台湾、东南亚与英国。",
-          "陪伴职涯转换者、NGO／科技领导人与重返职场的父母，把价值观转化为可执行的规划。",
-          "以自身移居经验支持客户建立人际网络、韧性与跨文化协作。"
+        "languagesLabel": "语言",
+        "languages": "英语／繁体中文／简体中文",
+        "locationLabel": "据点与跨文化背景",
+        "location": "往返台北与伦敦，长期陪伴公民科技、人道与创意团队在亚洲与英国合作。",
+        "trainingLabel": "教练训练与认证",
+        "training": [
+          "ICF Associate Certified Coach (ACC)。",
+          "Organisation & Relationship Systems Coaching (ORSC) Fundamentals 与 Intelligence。",
+          "Academy of Executive Coaching：团队教练实务文凭。"
+        ],
+        "specialtiesLabel": "擅长主题",
+        "specialties": [
+          "使命导向专业者的职涯转换与跨境移动规划。",
+          "重返职场父母与照护者的角色整合。",
+          "社会影响与公民科技组织的策略共创与引导。"
         ]
       }
     ]
