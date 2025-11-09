@@ -25,6 +25,10 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const focusAreaOptions = t('form.focusAreaOptions', { returnObjects: true });
+  const nameHint = t('form.nameHint');
+  const emailHint = t('form.emailHint');
+  const languageHint = t('form.languageHint');
+  const timezoneHint = t('form.timezoneHint');
 
   useEffect(() => {
     const focusParam = router.query.package ?? router.query.topic;
@@ -143,6 +147,9 @@ export default function ContactForm() {
                 onChange={handleChange}
                 className={FIELD_CLASSNAME}
               />
+              {nameHint && nameHint !== 'form.nameHint' ? (
+                <p className="mt-2 text-xs text-slate-500">{nameHint}</p>
+              ) : null}
             </div>
 
             <div>
@@ -159,6 +166,9 @@ export default function ContactForm() {
                 onChange={handleChange}
                 className={FIELD_CLASSNAME}
               />
+              {emailHint && emailHint !== 'form.emailHint' ? (
+                <p className="mt-2 text-xs text-slate-500">{emailHint}</p>
+              ) : null}
             </div>
 
             <div>
@@ -222,6 +232,9 @@ export default function ContactForm() {
                     </option>
                   ))}
                 </select>
+                {languageHint && languageHint !== 'form.languageHint' ? (
+                  <p className="mt-2 text-xs text-slate-500">{languageHint}</p>
+                ) : null}
               </div>
 
               <div>
@@ -238,6 +251,9 @@ export default function ContactForm() {
                   onChange={handleChange}
                   className={FIELD_CLASSNAME}
                 />
+                {timezoneHint && timezoneHint !== 'form.timezoneHint' ? (
+                  <p className="mt-2 text-xs text-slate-500">{timezoneHint}</p>
+                ) : null}
               </div>
             </div>
 
