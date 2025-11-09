@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Testimonials from '@/components/Testimonials';
+import MainLayout from '@/components/layout/MainLayout';
 import { loadJSON } from '@/lib/content';
 
 const BUTTON_PRIMARY =
@@ -73,7 +74,7 @@ export default function Home({ testimonials }) {
   const faq = t('faq', { returnObjects: true });
 
   return (
-    <>
+    <MainLayout>
       <section className="mx-auto mt-12 grid max-w-6xl items-center gap-10 px-5 md:mt-20 md:grid-cols-2 md:px-8">
         <div className="space-y-6">
           <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero.headline}</h1>
@@ -164,7 +165,7 @@ export default function Home({ testimonials }) {
       <section className="mx-auto mt-16 max-w-6xl px-5 md:px-8">
         <Testimonials items={testimonials} />
       </section>
-    </>
+    </MainLayout>
   );
 }
 

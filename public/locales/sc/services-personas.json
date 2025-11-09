@@ -59,12 +59,12 @@
         "paragraphs": [
           [
             { "type": "text", "value": "多数返职客户会选择 " },
-            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "link", "href": "/services/transition-coaching", "label": "Transition 方案" },
             { "type": "text", "value": "，梳理新篇章、练习关键对话，并规划合适的回归节奏。" }
           ],
           [
             { "type": "text", "value": "若需要短期容器同时照顾家庭，可考虑 " },
-            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "link", "href": "/services/reset-sprint", "label": "Reset 方案" },
             { "type": "text", "value": "，四次会谈稳住信心与日常。" }
           ],
           [
@@ -136,12 +136,12 @@
         "paragraphs": [
           [
             { "type": "text", "value": "多数新移居者会选择 " },
-            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "link", "href": "/services/transition-coaching", "label": "Transition 方案" },
             { "type": "text", "value": "，在抵达后的三到六个月里稳住脚步，同时保有自主。" }
           ],
           [
             { "type": "text", "value": "若已在英国但觉得疲惫，可考虑 " },
-            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "link", "href": "/services/reset-sprint", "label": "Reset 方案" },
             { "type": "text", "value": "，用短期容器重新定位、订出可持续的安排。" }
           ],
           [
@@ -213,17 +213,17 @@
         "paragraphs": [
           [
             { "type": "text", "value": "许多父母会从 " },
-            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "link", "href": "/services/reset-sprint", "label": "Reset 方案" },
             { "type": "text", "value": " 开始，四次会谈重建日常与信心。" }
           ],
           [
             { "type": "text", "value": "若要大幅调整职业或职责，适合选择 " },
-            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "link", "href": "/services/transition-coaching", "label": "Transition 方案" },
             { "type": "text", "value": "，六次会谈深入探索。" }
           ],
           [
             { "type": "text", "value": "若已上轨道但想强化领导存在感，可考虑 " },
-            { "type": "link", "href": "/services/deepening", "label": "Deepening 方案" },
+            { "type": "link", "href": "/services/deepening-practice", "label": "Deepening 方案" },
             { "type": "text", "value": "，或透过 " },
             { "type": "link", "href": "/contact", "label": "联系页面" },
             { "type": "text", "value": " 讨论其他选择。" }
@@ -292,17 +292,17 @@
         "paragraphs": [
           [
             { "type": "text", "value": "许多新锐专业人士会先选择 " },
-            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "link", "href": "/services/reset-sprint", "label": "Reset 方案" },
             { "type": "text", "value": "，稳定日常并强化自我带领。" }
           ],
           [
             { "type": "text", "value": "当准备升职或转换角色时，适合选择 " },
-            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "link", "href": "/services/transition-coaching", "label": "Transition 方案" },
             { "type": "text", "value": "，六次会谈探索身份、期待与支持系统。" }
           ],
           [
             { "type": "text", "value": "想持续深化，可考虑 " },
-            { "type": "link", "href": "/services/deepening", "label": "Deepening 方案" },
+            { "type": "link", "href": "/services/deepening-practice", "label": "Deepening 方案" },
             { "type": "text", "value": "，在八次会谈中稳固领导存在感。" }
           ]
         ]

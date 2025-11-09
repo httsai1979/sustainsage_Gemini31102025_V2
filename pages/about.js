@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import MainLayout from '@/components/layout/MainLayout';
+
 function BulletList({ items }) {
   return (
     <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
@@ -93,7 +95,7 @@ function AboutPage() {
   const seo = t('seo', { returnObjects: true });
 
   return (
-    <>
+    <MainLayout>
       <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
@@ -194,7 +196,7 @@ function AboutPage() {
           </Link>
         </div>
       </section>
-    </>
+    </MainLayout>
   );
 }
 

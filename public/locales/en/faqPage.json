@@ -29,7 +29,7 @@
           "question": "What if I don’t have a clear goal yet?",
           "answer": "That’s common. We begin with what feels most alive and co-create a working focus in session. ICF ethics require us to keep you in charge of the agenda, so we check clarity and consent regularly.",
           "links": [
-            { "href": "/services/transition", "label": "See the Transition package" },
+            { "href": "/services/transition-coaching", "label": "See the Transition package" },
             { "href": "/contact", "label": "Book an intro chat" }
           ]
         },
@@ -50,7 +50,7 @@
           "question": "How do payments and cancellations work?",
           "answer": "Packages are invoiced upfront or in two parts and payable by bank transfer. You can reschedule with 24 hours’ notice; late cancellations count as a session so we protect time for all clients.",
           "links": [
-            { "href": "/services/reset", "label": "Reset package details" },
+            { "href": "/services/reset-sprint", "label": "Reset package details" },
             { "href": "/contact", "label": "Discuss payment options" }
           ]
         },
@@ -65,7 +65,7 @@
           "question": "Do you work with employers or sponsors?",
           "answer": "Yes. We align expectations in a three-way agreement that keeps coaching goals client-led. Sponsors receive high-level progress updates only with your consent and no session detail is shared.",
           "links": [
-            { "href": "/services/deepening", "label": "Deepening for leaders" },
+            { "href": "/services/deepening-practice", "label": "Deepening for leaders" },
             { "href": "/contact", "label": "Request a sponsor brief" }
           ]
         }
@@ -112,14 +112,14 @@
           "question": "How soon will I see change?",
           "answer": "Most clients notice clarity after two to three sessions as experiments build. Coaching supports your practice between sessions, so results rely on the actions you choose to take.",
           "links": [
-            { "href": "/services/experiments", "label": "Experiments coaching" }
+            { "href": "/services/uk-workplace-confidence", "label": "Experiments coaching" }
           ]
         },
         {
           "question": "Can I combine coaching with other support?",
           "answer": "Absolutely. Many clients pair coaching with therapy, supervision or peer circles. We keep coordination transparent and adapt homework so it complements your other care.",
           "links": [
-            { "href": "/services/check-in", "label": "Light-touch check-ins" },
+            { "href": "/services/reset-sprint", "label": "Light-touch check-ins" },
             { "href": "/contact", "label": "Plan your support mix" }
           ]
         }

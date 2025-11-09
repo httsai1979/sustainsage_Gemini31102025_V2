@@ -4,6 +4,8 @@ import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import MainLayout from '@/components/layout/MainLayout';
+
 function PathwayCard({ card, viewDetails }) {
   return (
     <div className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
@@ -46,7 +48,7 @@ function ServicesPage() {
   const cta = t('cta', { returnObjects: true });
 
   return (
-    <>
+    <MainLayout>
       <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
@@ -98,7 +100,7 @@ function ServicesPage() {
           </div>
         </div>
       </section>
-    </>
+    </MainLayout>
   );
 }
 

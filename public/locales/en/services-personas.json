@@ -59,12 +59,12 @@
         "paragraphs": [
           [
             { "type": "text", "value": "Most returners choose the " },
-            { "type": "link", "href": "/services/transition", "label": "Transition package" },
+            { "type": "link", "href": "/services/transition-coaching", "label": "Transition package" },
             { "type": "text", "value": " to map their new chapter, practice conversations, and design a paced comeback." }
           ],
           [
             { "type": "text", "value": "If you need a shorter container while juggling care, the " },
-            { "type": "link", "href": "/services/reset", "label": "Reset package" },
+            { "type": "link", "href": "/services/reset-sprint", "label": "Reset package" },
             { "type": "text", "value": " holds four sessions to steady confidence and set sustainable rhythms." }
           ],
           [
@@ -136,12 +136,12 @@
         "paragraphs": [
           [
             { "type": "text", "value": "Most newcomers start with the " },
-            { "type": "link", "href": "/services/transition", "label": "Transition package" },
+            { "type": "link", "href": "/services/transition-coaching", "label": "Transition package" },
             { "type": "text", "value": " to land gently and keep agency during the first 3–6 months in the UK." }
           ],
           [
             { "type": "text", "value": "If you are already here but feel depleted, the " },
-            { "type": "link", "href": "/services/reset", "label": "Reset package" },
+            { "type": "link", "href": "/services/reset-sprint", "label": "Reset package" },
             { "type": "text", "value": " creates a short, contained space to reorient and make sustainable agreements." }
           ],
           [
@@ -213,17 +213,17 @@
         "paragraphs": [
           [
             { "type": "text", "value": "Many parents return with the " },
-            { "type": "link", "href": "/services/reset", "label": "Reset package" },
+            { "type": "link", "href": "/services/reset-sprint", "label": "Reset package" },
             { "type": "text", "value": " to rebuild routines and confidence over four sessions." }
           ],
           [
             { "type": "text", "value": "For bigger career pivots or role redesign, the " },
-            { "type": "link", "href": "/services/transition", "label": "Transition package" },
+            { "type": "link", "href": "/services/transition-coaching", "label": "Transition package" },
             { "type": "text", "value": " offers deeper exploration across six sessions." }
           ],
           [
             { "type": "text", "value": "If you are already settled but want to sharpen leadership presence, consider the " },
-            { "type": "link", "href": "/services/deepening", "label": "Deepening package" },
+            { "type": "link", "href": "/services/deepening-practice", "label": "Deepening package" },
             { "type": "text", "value": " or reach out via the " },
             { "type": "link", "href": "/contact", "label": "contact page" },
             { "type": "text", "value": " to talk through options." }
@@ -292,17 +292,17 @@
         "paragraphs": [
           [
             { "type": "text", "value": "Many young professionals start with the " },
-            { "type": "link", "href": "/services/reset", "label": "Reset package" },
+            { "type": "link", "href": "/services/reset-sprint", "label": "Reset package" },
             { "type": "text", "value": " to stabilise routines and strengthen self-leadership." }
           ],
           [
             { "type": "text", "value": "When stepping into a new role or planning a promotion, the " },
-            { "type": "link", "href": "/services/transition", "label": "Transition package" },
+            { "type": "link", "href": "/services/transition-coaching", "label": "Transition package" },
             { "type": "text", "value": " offers six sessions to explore identity, expectations, and support systems." }
           ],
           [
             { "type": "text", "value": "For ongoing development, consider the " },
-            { "type": "link", "href": "/services/deepening", "label": "Deepening package" },
+            { "type": "link", "href": "/services/deepening-practice", "label": "Deepening package" },
             { "type": "text", "value": " to strengthen leadership presence over eight sessions." }
           ]
         ]

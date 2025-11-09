@@ -3,6 +3,8 @@ import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import MainLayout from '@/components/layout/MainLayout';
+
 import i18nConfig from '../../next-i18next.config';
 
 const SERVICE_SLUGS = ['transition-relocation', 'return-to-work-clarity', 'uk-workplace-confidence'];
@@ -71,7 +73,7 @@ export default function ServiceDetailPage({ slug }) {
   const cta = t('cta', { returnObjects: true });
 
   return (
-    <>
+    <MainLayout>
       <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
@@ -151,7 +153,7 @@ export default function ServiceDetailPage({ slug }) {
           </Link>
         </div>
       </section>
-    </>
+    </MainLayout>
   );
 }
 
