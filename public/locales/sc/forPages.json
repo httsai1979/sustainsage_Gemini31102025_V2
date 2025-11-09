@@ -1,0 +1,193 @@
+{
+  "sectionTitles": {
+    "challenges": "You might be facing",
+    "topics": "You can bring these into coaching",
+    "partnership": "How we can collaborate",
+    "boundaries": "What this is not"
+  },
+  "midCareerReturners": {
+    "slug": "mid-career-returners",
+    "seo": {
+      "title": "Coaching for mid-career returners | SustainSage",
+      "description": "Support for professionals returning after a career break or relocation—regain momentum without ignoring capacity."
+    },
+    "hero": {
+      "title": "For mid-career returners",
+      "subtitle": "You’ve done this before, yet the landscape changed. Let’s rebuild momentum with care.",
+      "image": "/hero/services.svg",
+      "imageAlt": "Mid-career returners considering options"
+    },
+    "challenges": [
+      "You’re re-entering work after caregiving, illness or relocation and feel both eager and rusty.",
+      "Job descriptions and expectations look different from the last time you searched.",
+      "Your network shifted; you’re unsure who to update or how to ask for support.",
+      "Family logistics compete with the focus you want for your professional goals."
+    ],
+    "topics": [
+      "Designing a phased return that protects energy and finances.",
+      "Reframing your story so gaps feel honest, not apologetic.",
+      "Negotiating boundaries at home and work without guilt.",
+      "Testing small experiments before committing to a full-time leap."
+    ],
+    "partnership": {
+      "title": "Packages we often recommend",
+      "description": "Each link opens a detailed page with who it suits, session flow and boundaries.",
+      "items": [
+        {
+          "href": "/services/transition",
+          "title": "Transition package",
+          "summary": "Stabilise the first 3–4 months of your return with structured reflection.",
+          "icon": "/images/services/transition.svg",
+          "cta": "Explore Transition"
+        },
+        {
+          "href": "/services/reset",
+          "title": "Reset package",
+          "summary": "Short arc to rebuild routines if energy feels fragmented.",
+          "icon": "/images/services/returning.svg",
+          "cta": "Explore Reset"
+        }
+      ]
+    },
+    "boundaries": {
+      "title": "What this page is not promising",
+      "intro": "We stay within coaching and honest partnership.",
+      "items": [
+        "No guaranteed job offers or fast-tracked promotions.",
+        "No done-for-you CV writing or recruiter outreach.",
+        "No replacement for therapy if trauma or burnout needs clinical care."
+      ]
+    },
+    "case": {
+      "title": "Composite snapshot",
+      "summary": "After a 3-year care break, a programme manager used Transition to script conversations with a new employer, design childcare contingency plans and rehearse confidence for stakeholder meetings. They returned at 4 days per week with a reviewed workload agreement."
+    },
+    "cta": {
+      "body": "Curious how this could look for you? Book the intro call and we’ll explore pace, scope and readiness together.",
+      "primary": "Book intro call",
+      "secondary": "Compare services"
+    }
+  },
+  "newcomersToUk": {
+    "slug": "newcomers-to-uk",
+    "seo": {
+      "title": "Coaching for newcomers to the UK | SustainSage",
+      "description": "Navigate UK life and work transitions with culturally aware coaching—no assimilation pressure, just honest partnership."
+    },
+    "hero": {
+      "title": "For newcomers to the UK",
+      "subtitle": "You’re building a life here while honouring who you were before. Coaching can hold the nuance.",
+      "image": "/hero/services.svg",
+      "imageAlt": "Newcomers to the UK finding footing"
+    },
+    "challenges": [
+      "Visas, housing and bank accounts leave little space to feel settled.",
+      "Workplace norms and communication styles are still unfamiliar.",
+      "You’re translating yourself between languages or cultures all day.",
+      "Loved ones abroad expect quick success; you need steadier pace."
+    ],
+    "topics": [
+      "Mapping practical next steps alongside emotional processing.",
+      "Designing experiments to test networks, job search or community options.",
+      "Naming the grief, loneliness or frustration that polite conversations skip.",
+      "Advocating for fair treatment without burning bridges."
+    ],
+    "partnership": {
+      "title": "Packages we often recommend",
+      "items": [
+        {
+          "href": "/services/transition",
+          "title": "Transition package",
+          "summary": "Hold space for the administrative and emotional weight of relocating.",
+          "icon": "/images/services/transition.svg",
+          "cta": "See Transition"
+        },
+        {
+          "href": "/services/reset",
+          "title": "Reset package",
+          "summary": "If you are already here but overwhelmed, Reset helps you rebuild steady habits.",
+          "icon": "/images/services/returning.svg",
+          "cta": "See Reset"
+        }
+      ]
+    },
+    "boundaries": {
+      "title": "What this space is not",
+      "items": [
+        "Not immigration advice or legal representation.",
+        "Not job placement or landlord negotiation on your behalf.",
+        "Not therapy for trauma or acute mental health support."
+      ]
+    },
+    "case": {
+      "title": "Composite snapshot",
+      "summary": "A product designer moved from Taipei to Manchester. Through Transition we planned a values-based job search, translated accomplishments into UK-friendly language and created rituals to stay connected with family across time zones. They accepted an offer that matched their capacity and boundaries."
+    },
+    "cta": {
+      "body": "Bring your questions to an intro call—we’ll check scope, timing and whether coaching is the best next step.",
+      "primary": "Book intro call",
+      "secondary": "Compare services"
+    }
+  },
+  "parentsReturningToWork": {
+    "slug": "parents-returning-to-work",
+    "seo": {
+      "title": "Coaching for parents returning to work | SustainSage",
+      "description": "Navigate caregiving, workload and identity with coaching that respects your boundaries and pace."
+    },
+    "hero": {
+      "title": "For parents returning to work",
+      "subtitle": "You’re balancing care, career and a new sense of self. Coaching offers a steady thinking space.",
+      "image": "/hero/services.svg",
+      "imageAlt": "Parents balancing work and care"
+    },
+    "challenges": [
+      "Childcare logistics and backup plans keep shifting.",
+      "You’re negotiating flexible arrangements while doubting if it’s allowed.",
+      "Guilt, resentment and love show up in the same hour.",
+      "You want to lead well without pretending capacity is unlimited."
+    ],
+    "topics": [
+      "Setting consent-based boundaries with partners, managers and extended family.",
+      "Designing recovery time that fits nap schedules or school runs.",
+      "Advocating for flexibility without apologising for care roles.",
+      "Rebuilding confidence in your professional judgment after time away."
+    ],
+    "partnership": {
+      "title": "Packages we often recommend",
+      "items": [
+        {
+          "href": "/services/reset",
+          "title": "Reset package",
+          "summary": "Short arc to rebuild your routine and energy after parental leave.",
+          "icon": "/images/services/returning.svg",
+          "cta": "See Reset"
+        },
+        {
+          "href": "/services/deepening",
+          "title": "Deepening package",
+          "summary": "For leaders juggling care and influence who want longer-term support.",
+          "icon": "/images/services/experiments.svg",
+          "cta": "See Deepening"
+        }
+      ]
+    },
+    "boundaries": {
+      "title": "What we will not do",
+      "items": [
+        "Not guarantee specific childcare solutions or employer outcomes.",
+        "Not replace therapy, medical or financial advice.",
+        "Not pressure you into hustle narratives or perfect-parent myths."
+      ]
+    },
+    "case": {
+      "title": "Composite snapshot",
+      "summary": "A senior analyst returning after adoption leave felt torn between visibility and family needs. Through Reset then Deepening we mapped non-negotiables, rehearsed boundary conversations and designed shared calendars with their partner. Six months later they reported sustainable energy and clear agreements at work."
+    },
+    "cta": {
+      "body": "Let’s talk about what support would feel sustainable. Start with an intro call or review the service pathways.",
+      "primary": "Book intro call",
+      "secondary": "Compare services"
+    }
+  }
+}

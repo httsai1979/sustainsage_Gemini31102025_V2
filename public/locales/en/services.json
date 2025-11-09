@@ -4,75 +4,83 @@
     "description": "Explore SustainSage coaching packages for transitions, confidence and ethical experiments."
   },
   "hero": {
-    "title": "Three coaching pathways, one ethical stance",
-    "subtitle": "Each package holds space for nuance, keeps you in charge and stays within ICF practice.",
+    "title": "Three coaching pathways, one steady partnership",
+    "subtitle": "Every package is grounded in ICF ethics. You hold authorship; we co-design experiments that respect your pace and context.",
     "imageAlt": "Illustration of coaching pathways"
   },
   "overview": {
-    "title": "What stays consistent",
-    "subtitle": "Coaching with us is a structured conversation and a place to design careful experiments. It is not therapy, consulting or emergency support.",
-    "description": "Every package begins with a 20-minute intro call so we can confirm scope, consent and boundaries together.",
+    "title": "How we work across all packages",
+    "subtitle": "Coaching with SustainSage is for thoughtful experimentation, not emergency support. We honour nuance, culture and capacity.",
+    "description": "We begin with a 20-minute intro call to confirm scope, consent, accessibility needs and whether coaching is right for now.",
     "bullets": [
-      "ICF-aligned coaching with clear agreements and confidentiality.",
-      "Sessions held online unless we mutually agree otherwise.",
-      "You lead the agenda; we bring questions, structure and reflection."
+      "ICF-aligned coaching with written agreements, confidentiality and clear pricing.",
+      "Sessions are held online unless we both plan otherwise in advance.",
+      "You choose the agenda each time; we bring structure, reflection and accountability.",
+      "We pause and signpost if therapy, legal or medical support would serve you better."
     ],
     "boundary": {
-      "title": "Clear boundaries we uphold",
-      "body": "You stay responsible for decisions and follow-up actions. We name when another professional or resource is a better fit.",
+      "title": "Boundaries we uphold",
+      "body": "You stay responsible for decisions and follow-up actions. We will name when another professional or resource is a better fit.",
       "bullets": [
-        "No immigration, legal, medical or financial advice.",
-        "We do not act on your behalf or guarantee outcomes.",
-        "We honour confidentiality within ICF ethics and safeguarding law."
+        "No immigration, legal, financial or medical advice.",
+        "No promises of jobs, visas or guaranteed outcomes.",
+        "We do not act on your behalf or intervene in your organisation."
       ]
     }
   },
   "packages": {
-    "title": "Choose the focus that fits",
-    "description": "Each card links to a detailed page with boundaries, reflection prompts and next steps.",
-    "cta": "View details",
+    "title": "Choose the pathway you need right now",
+    "description": "Each card opens a detailed page with who it serves, the step-by-step flow, boundaries and composite case studies.",
+    "cta": "Learn more",
     "cards": [
       {
         "slug": "transition",
         "title": "Transition package",
-        "summary": "A steadier container when relocation or role change feels like too many plates at once.",
-        "for": "For professionals navigating relocation or role change.",
-        "focus": "Clarify what a good move looks like and design grounded experiments.",
-        "format": "6 × 55–60 minute sessions over 3–4 months.",
-        "cta": "View details"
+        "summary": "Six sessions when relocation or role change feels like carrying two lives at once.",
+        "for": "Steady change for people navigating new cities, roles or return-to-work",
+        "focus": "Clarify what a ‘good move’ means, design grounded experiments and close loose threads.",
+        "format": "6 × 55–60 min over 3–4 months",
+        "icon": "/images/services/transition.svg"
       },
       {
-        "slug": "confidence",
-        "title": "Confidence & voice",
-        "summary": "Build a voice you trust without copying dominant styles or ignoring nuance.",
-        "for": "For leaders or collaborators who want to speak with steadiness.",
-        "focus": "Unpack narratives, practise consent-based conversations and rehearse real scenarios.",
-        "format": "5 × 55–60 minute sessions over 2–3 months.",
-        "cta": "View details"
+        "slug": "reset",
+        "title": "Reset package",
+        "summary": "Four sessions to rebuild rhythms after depletion or an intense life season.",
+        "for": "Restore capacity for carers, returners and leaders emerging from burnout",
+        "focus": "Audit commitments, test gentle boundaries and document a sustainable baseline.",
+        "format": "4 × 55–60 min over 6–8 weeks",
+        "icon": "/images/services/returning.svg"
       },
       {
-        "slug": "experiments",
-        "title": "Experiments & stewardship",
-        "summary": "Design ethical tests when your choices ripple across people, data or community.",
-        "for": "For people stewarding change that affects teams or communities.",
-        "focus": "Design ethical experiments, set decision gates and keep agency with stakeholders.",
-        "format": "4 × 70 minute sessions across 8–10 weeks.",
-        "cta": "View details"
+        "slug": "deepening",
+        "title": "Deepening package",
+        "summary": "Eight sessions to integrate leadership, equity and presence with more nuance.",
+        "for": "Longer arc for multicultural leaders, founders and space-holders",
+        "focus": "Explore power, practise difficult conversations and embed learning in daily work.",
+        "format": "8 × 60–70 min over 5–6 months",
+        "icon": "/images/services/experiments.svg"
       }
-    ]
+    ],
+    "learn": {
+      "title": "New to coaching?",
+      "summary": "Visit the explainer to see what happens in sessions, how we hold boundaries and how coaching differs from mentoring or therapy.",
+      "href": "/services/how-coaching-works",
+      "cta": "See how coaching works",
+      "icon": "/images/services/check-in.svg"
+    }
   },
   "process": {
     "title": "How we begin",
-    "description": "A light structure keeps you informed while leaving space to adapt.",
+    "description": "A shared rhythm keeps you informed without overloading you with admin.",
     "bullets": [
-      "Intro call: confirm needs, scope and whether coaching is right for now.",
-      "Co-created agreement: cadence, language, between-session support.",
-      "Regular reviews so we can adjust pace or close when goals are met."
+      "Intro call: confirm the fit, accessibility needs and whether coaching is the right support.",
+      "Agreement: outline cadence, language preferences and between-session support.",
+      "Regular reviews: notice progress, adjust pace or close the engagement with intention."
     ]
   },
   "faq": {
     "title": "Questions before you decide",
-    "intro": "These respond to practical and ethical considerations. You can read the full FAQ anytime."
+    "intro": "We gathered common questions about scope, ethics and logistics. Read the full FAQ for more context."
   },
   "cta": {
     "title": "Need help choosing?",

@@ -18,52 +18,55 @@
   "transition": {
     "slug": "transition",
     "title": "Transition package",
-    "tagline": "Six sessions to move through relocation or role change without losing your footing.",
-    "summary": "We create a steady, private space for the push and pull of change. Together we map constraints, name emotions and design grounded experiments so you can act with consent.",
-    "who": [
-      "Professionals relocating to or within the UK who need time to design new rhythms.",
-      "People stepping into a new role, sector or organisation with mixed excitement and doubt.",
-      "Those juggling migration paperwork, family expectations and work commitments at once."
+    "tagline": "Six sessions to land gently in a new chapter.",
+    "summary": "Relocation, role change or returning after a pause can stretch logistics, identity and relationships. This container gives you structured time to choose what to carry forward and what to leave behind.",
+    "summaryPoints": [
+      "You set the agenda. We hold space for the feelings and admin that arrive in the same week.",
+      "We design grounded experiments so you can test decisions without burning bridges.",
+      "Sessions are online, confidential and culturally aware (English or Mandarin)."
     ],
-    "topics": [
-      "Clarifying what a ‘good move’ looks like in your context, not anyone else’s.",
-      "Making practical plans across housing, finances, care roles and wellbeing.",
-      "Holding space for grief, frustration and hope without rushing to fix them.",
-      "Turning big decisions into low-risk experiments you can test and adjust."
+    "suitable": {
+      "title": "Who this is for",
+      "bullets": [
+        "Mid-career professionals relocating to or within the UK while managing family expectations.",
+        "People stepping into a new organisation or sector with uneven support and invisible labour.",
+        "Returners navigating skill rustiness, care responsibilities and visa processes at once."
+      ]
+    },
+    "process": {
+      "title": "How the transition package flows",
+      "steps": [
+        "Intro call: we map your change landscape, boundaries and decision points.",
+        "Session 1–2: stabilise your footing—naming supports, stressors and capacity.",
+        "Session 3–4: design experiments and agreements that honour your constraints.",
+        "Session 5–6: review learning, close loops and script next steps with consent."
+      ]
+    },
+    "icf": {
+      "title": "Boundaries & ethics",
+      "intro": "This work follows ICF core competencies: partnership, confidentiality, consent and respect for your agency.",
+      "bullets": [
+        "Coaching only—we do not replace legal, immigration, financial or therapeutic professionals.",
+        "We discuss power, equity and safety without promising outcomes we cannot control.",
+        "If we notice you may benefit from other support, we will pause and signpost options."
+      ]
+    },
+    "casesTitle": "Composite coaching glimpses",
+    "cases": [
+      {
+        "title": "Visa-approved but untethered",
+        "body": "A project manager arrived in the UK ahead of their partner. We mapped the emotional load of distance, crafted scripts for negotiating flexible hours, and built a ‘weekend restoration’ ritual. By session six they had a relocation rhythm that protected their health." 
+      },
+      {
+        "title": "Promotion plus parenting",
+        "body": "A department lead returning from leave feared being seen as unreliable. We designed consent-based updates with their team, identified where to decline extra duties, and rehearsed asking for mentoring. They left with a plan that balanced visibility and sustainable pace." 
+      }
     ],
-    "how": [
-      "Six 55–60 minute sessions over three to four months, online via Zoom.",
-      "Light check-ins between sessions when you request them—no surprise extras.",
-      "Optional reflection notes after sessions so you can track decisions and learning.",
-      "Sessions available in English or Mandarin; we stay attentive to culture and class."
-    ],
-    "approach": [
-      "ICF-aligned, non-directive partnership where you lead the agenda.",
-      "We combine practical planning with emotional literacy and embodied pace.",
-      "We name structural realities—immigration, racism, caregiving—without blame."
-    ],
-    "boundaries": [
-      "This is coaching, not therapy or crisis intervention.",
-      "We do not provide immigration, legal, financial or medical advice.",
-      "You remain responsible for decisions, actions and communications.",
-      "We uphold confidentiality within ICF ethics and safeguarding law."
-    ],
-    "not": [
-      "No guaranteed job offers, housing or perfect relocation outcomes.",
-      "No done-for-you paperwork, applications or conversations.",
-      "No pressure to present a ‘success story’ for our marketing."
-    ],
-    "notIncluded": [
-      "Immigration consultancy, legal representation or financial planning.",
-      "Therapeutic treatment for trauma, burnout or mental health crises."
-    ],
-    "reflection": [
-      "What feels most unsettled or ‘in-between’ for me right now?",
-      "What would feeling steadier in three months look and sound like?",
-      "What am I ready to bring honestly into these conversations?"
-    ],
-    "cta": "If this sounds close to your situation, you are welcome to book an intro call and note ‘Transition’. We will confirm fit together before you commit.",
-    "ctaButton": "Book the intro call for Transition"
+    "cta": {
+      "body": "Curious whether Transition fits? Book an intro call and note ‘Transition’. We will confirm scope before you commit.",
+      "primary": "Book the intro call",
+      "secondary": "Compare packages"
+    }
   },
   "confidence": {
     "slug": "confidence",
@@ -114,6 +117,108 @@
     ],
     "cta": "Mention ‘Confidence & voice’ when you contact us. We will explore your context, boundaries and aims before confirming the series.",
     "ctaButton": "Start a Confidence & voice enquiry"
+  },
+  "reset": {
+    "slug": "reset",
+    "title": "Reset package",
+    "tagline": "Four sessions to rebuild steady habits after a season of depletion.",
+    "summary": "This is a short, structured reset when you feel foggy, overextended or unsure how to restart. We focus on capacity, consent and small experiments so you can move without overcommitting.",
+    "summaryPoints": [
+      "We work in plain language—naming the pressures and supports you already hold.",
+      "You leave each session with one gentle experiment, not an overwhelming plan.",
+      "Between sessions you can request a short written reflection to keep momentum."
+    ],
+    "suitable": {
+      "title": "Who this is for",
+      "bullets": [
+        "Professionals returning from burnout leave or an intense life season.",
+        "Parents or carers recalibrating energy after a child-care or elder-care sprint.",
+        "Community organisers who need a pause to renegotiate commitments and boundaries."
+      ]
+    },
+    "process": {
+      "title": "How the reset unfolds",
+      "steps": [
+        "Intro call: surface what feels heavy, what is non-negotiable and the support you have.",
+        "Session 1: audit energy leaks and identify a minimum viable routine.",
+        "Session 2–3: test new agreements, boundaries or rituals and review their impact.",
+        "Session 4: document what to keep, what to release and how you will notice drift."
+      ]
+    },
+    "icf": {
+      "title": "Boundaries & ethics",
+      "intro": "We uphold ICF ethics—confidentiality, informed consent and respect for your pace.",
+      "bullets": [
+        "We are not therapists or medical professionals; we help you notice patterns and choose actions.",
+        "We will flag red flags (e.g. acute distress, safety concerns) and suggest other care when needed.",
+        "You stay in charge of commitments—we coach, we do not enforce or track productivity."
+      ]
+    },
+    "casesTitle": "Composite coaching glimpses",
+    "cases": [
+      {
+        "title": "Reclaiming lunch breaks",
+        "body": "An HR partner who had worked through layoffs felt guilty taking breaks. We mapped their nervous-system cues, designed a two-hour no-meeting block, and rehearsed boundary scripts. Within a month they were eating and resting without apology."
+      }
+    ],
+    "cta": {
+      "body": "Ready for a gentler reset? Book the intro call and mention ‘Reset’. We will confirm scope and timing together.",
+      "primary": "Book the intro call",
+      "secondary": "Compare packages"
+    }
+  },
+  "deepening": {
+    "slug": "deepening",
+    "title": "Deepening package",
+    "tagline": "Eight sessions to deepen leadership presence and relational impact.",
+    "summary": "When you have initial stability but crave more nuance, Deepening offers a longer arc. We explore power, relationship patterns and legacy so you can lead with alignment across cultures and systems.",
+    "summaryPoints": [
+      "We map the systems you influence—teams, communities, stakeholders—and the stories you hold.",
+      "You practise conversations about power, feedback and conflict with real scenarios.",
+      "We build in pauses for integration so insights translate into daily practice."
+    ],
+    "suitable": {
+      "title": "Who this is for",
+      "bullets": [
+        "Leaders stewarding multicultural teams who want to align values and decisions.",
+        "Practitioners holding space for others (coaches, facilitators, community leads).",
+        "Founders balancing sustainability, justice and growth without burning out themselves."
+      ]
+    },
+    "process": {
+      "title": "How the deepening arc works",
+      "steps": [
+        "Intro call: explore your long-term aims, influences and non-negotiables.",
+        "Sessions 1–3: map leadership stories, identities and patterns that shape your presence.",
+        "Sessions 4–6: practise conversations, decisions and boundary-setting with real-life stakes.",
+        "Sessions 7–8: consolidate learning, agree ongoing supports and note future check-ins."
+      ]
+    },
+    "icf": {
+      "title": "Boundaries & ethics",
+      "intro": "We stay within ICF coaching—curious questions, reflective feedback and collaborative design.",
+      "bullets": [
+        "We do not provide consulting deliverables or intervene with your stakeholders.",
+        "We maintain confidentiality and only share themes externally with your written consent.",
+        "We honour cultural context and invite you to challenge us if something feels off."
+      ]
+    },
+    "casesTitle": "Composite coaching glimpses",
+    "cases": [
+      {
+        "title": "Making space for feedback",
+        "body": "A charity director felt defensive when staff raised equity concerns. Together we mapped their triggers, practised a three-step response, and set up a feedback council. They reported less dread and clearer next steps after tough conversations."
+      },
+      {
+        "title": "Leading across cultures",
+        "body": "A tech lead managing teams in Taipei and London struggled with conflicting expectations. We explored decision rights, co-created communication agreements and rehearsed bilingual framing. They left with meeting structures that respected both teams’ norms."
+      }
+    ],
+    "cta": {
+      "body": "Deepening is a longer commitment. Book an intro call and mention ‘Deepening’ so we can confirm fit and scheduling.",
+      "primary": "Book the intro call",
+      "secondary": "Compare packages"
+    }
   },
   "experiments": {
     "slug": "experiments",
