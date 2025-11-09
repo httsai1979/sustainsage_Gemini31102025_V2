@@ -1,0 +1,91 @@
+{
+  "seo": {
+    "title": "Early-career coaching to clarify direction | SustainSage",
+    "description": "ICF-aligned coaching for early professionals exploring direction, identity, and sustainable growth."
+  },
+  "hero": {
+    "title": "Shape your early career with clarity and agency.",
+    "subtitle": "You don’t need to have it all figured out. We create space to experiment, reflect, and decide what fits.",
+    "primaryCta": "Book a 20-minute intro call",
+    "primaryHref": "/contact?service=early-career-coaching",
+    "secondaryCta": "Back to services",
+    "secondaryHref": "/services"
+  },
+  "sections": {
+    "who": {
+      "title": "Who this is for",
+      "items": [
+        "You’re 0–7 years into your career and want clarity without losing curiosity.",
+        "You’re navigating family expectations, finances, or visas alongside career decisions.",
+        "You’re stepping into your first leadership, client-facing, or cross-border role.",
+        "You want a reflective partner beyond mentors or managers."
+      ]
+    },
+    "what": {
+      "title": "What we work on",
+      "items": [
+        "Naming values, strengths, and constraints in language employers understand.",
+        "Designing experiments across roles, projects, study, or entrepreneurship.",
+        "Practicing conversations about boundaries, feedback, and growth.",
+        "Building decision habits that blend exploration with stability."
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "description": "Coaching that grows with you as you test possibilities.",
+      "items": [
+        "Six 60-minute Zoom sessions across 3–4 months, timed with key milestones.",
+        "We co-design each session so you bring live wins, worries, and experiments.",
+        "Between-session touchpoints through notes or Loom when you need timely feedback.",
+        "We support clarity and courage, acknowledging you remain responsible for choices and results."
+      ]
+    },
+    "examples": {
+      "title": "Example scenarios",
+      "items": [
+        {
+          "title": "Choosing between graduate schemes",
+          "description": "We compared offers, clarified values, and rehearsed negotiation conversations around relocation and pay."
+        },
+        {
+          "title": "Launching a portfolio career",
+          "description": "An early-career designer prototyped freelance offers, strengthened client scripts, and balanced part-time employment."
+        },
+        {
+          "title": "Navigating first-time leadership",
+          "description": "We practiced feedback conversations, mapped stakeholder expectations, and designed rituals to prevent burnout."
+        }
+      ]
+    },
+    "expect": {
+      "title": "What you can expect",
+      "items": [
+        "Language to explain what you want and why it matters.",
+        "Experiments that help you learn quickly without reckless risk.",
+        "Increased confidence holding boundaries with managers, family, or clients.",
+        "Momentum grounded in curiosity rather than comparison."
+      ]
+    },
+    "ethics": {
+      "title": "Ethics & fit",
+      "items": [
+        "ICF-aligned coaching that respects your pace and psychological safety.",
+        "We collaborate with mentors or therapists only when you consent and boundaries are clear.",
+        "No pressure to pick a single path—our role is to widen options, not close them.",
+        "We highlight when specialised advice (legal, financial, mental health) will support you better."
+      ]
+    },
+    "cta": {
+      "title": "Ready to build your next step intentionally?",
+      "body": "Book an intro chat so we can hear your story and co-design the first experiment.",
+      "primary": {
+        "label": "Book an intro call",
+        "href": "/contact?service=early-career-coaching"
+      },
+      "secondary": {
+        "label": "See how coaching works",
+        "href": "/services/how-coaching-works"
+      }
+    }
+  }
+}

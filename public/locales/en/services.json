@@ -14,58 +14,70 @@
   },
   "pathways": {
     "title": "Choose a pathway",
-    "description": "Four pathways clients ask for most often. Each one flexes to match your context.",
-    "highlight": "Browse with clarity.",
+    "description": "Five ICF-aligned coaching pathways you can mix and match after our intro call.",
+    "highlight": "Start with the pathway that fits today.",
     "sidebar": "We meet you where you are—pace, language, and scope adjust after the intro call.",
     "viewDetails": "Learn more",
     "cards": [
       {
-        "slug": "transition",
+        "slug": "transition-coaching",
         "title": "Transition coaching",
-        "target": "For relocations, returns, and role changes.",
-        "scenario": "You want a steady partner while reshaping work, place, and support systems in the UK.",
-        "topics": [
-          "Map the realities of visas, finances, care, and capacity before leaping.",
-          "Design decisions that honour both new possibilities and current limits.",
-          "Experiment with CVs, conversations, or trial roles without burning out."
+        "target": "Stabilise cross-border moves.",
+        "audience": "For globally mobile professionals reworking work, place, and support systems.",
+        "benefits": [
+          "Map decisions across visas, finances, care, and capacity before committing.",
+          "Test career narratives and role options safely before you leap.",
+          "Hold sustainable routines while you land in the UK and stay connected elsewhere."
         ],
         "icon": "/images/services/transition.svg"
       },
       {
-        "slug": "early-career",
+        "slug": "mid-career-coaching",
+        "title": "Mid-career coaching",
+        "target": "Re-centre your next chapter.",
+        "audience": "For experienced professionals balancing impact, wellbeing, and evolving values.",
+        "benefits": [
+          "Untangle expectations from self, family, and stakeholders without losing momentum.",
+          "Design experiments to explore portfolio careers, leadership pivots, or sabbatical plans.",
+          "Build decision frameworks that keep meaning, money, and health in view."
+        ],
+        "icon": "/images/services/experiments.svg"
+      },
+      {
+        "slug": "uk-newcomer-coaching",
+        "title": "UK newcomer coaching",
+        "target": "Navigate UK workplace norms.",
+        "audience": "For newcomers translating international experience to UK organisations.",
+        "benefits": [
+          "Decode hiring and workplace language so your story lands across cultures.",
+          "Plan conversations with recruiters, managers, and networks that respect boundaries.",
+          "Establish support systems so you can thrive without overextending."
+        ],
+        "icon": "/images/services/new-to-uk.svg"
+      },
+      {
+        "slug": "returner-coaching",
+        "title": "Returner coaching",
+        "target": "Re-enter with steadiness.",
+        "audience": "For caregivers, students, or professionals returning after a pause.",
+        "benefits": [
+          "Rebuild confidence with updated narratives and realistic pacing.",
+          "Identify transferable strengths and boundaries before saying yes.",
+          "Co-design routines that protect energy while you rebuild momentum."
+        ],
+        "icon": "/images/services/returning.svg"
+      },
+      {
+        "slug": "early-career-coaching",
         "title": "Early-career coaching",
-        "target": "For 20–35-year-olds navigating uncertainty.",
-        "scenario": "You want space to test options and name what matters without pretending you “have it together.”",
-        "topics": [
-          "Translate family, financial, and personal expectations into doable steps.",
-          "Hold space for doubt while you build language for what you want.",
-          "Prototype side projects, conversations, or moves safely before deciding."
+        "target": "Shape your early chapter.",
+        "audience": "For early-career professionals testing direction without pretending certainty.",
+        "benefits": [
+          "Name values, constraints, and possibilities in language employers understand.",
+          "Prototype roles, side projects, or further study with reflective feedback.",
+          "Develop decision habits that balance experimentation and stability."
         ],
         "icon": "/images/services/early-career.svg"
-      },
-      {
-        "slug": "working-parents",
-        "title": "Working parent coaching",
-        "target": "For parents and caregivers rebuilding rhythms.",
-        "scenario": "You need breathing room to juggle care, work, and identity without stretching beyond capacity.",
-        "topics": [
-          "Surface invisible labour and design boundaries you can actually hold.",
-          "Negotiate support at work and home without guilt-driven decisions.",
-          "Create sustainable self-care that fits into the week, not the wishlist."
-        ],
-        "icon": "/images/services/working-parents.svg"
-      },
-      {
-        "slug": "leadership",
-        "title": "Leadership coaching",
-        "target": "For managers in complex, cross-cultural roles.",
-        "scenario": "You want a reflective partner while you lead across borders, expectations, and power lines.",
-        "topics": [
-          "Ground decisions in role clarity so you stop carrying what is not yours.",
-          "Design high-stakes conversations with cultural nuance and integrity.",
-          "Sustain your leadership without overwork as proof of value."
-        ],
-        "icon": "/images/services/leadership.svg"
       }
     ]
   },
@@ -76,7 +88,7 @@
     "primaryCta": "Book an intro chat",
     "primaryHref": "/contact",
     "secondaryCta": "Read how coaching works",
-    "secondaryHref": "/services/transition"
+    "secondaryHref": "/services/how-coaching-works"
   },
   "serviceDetail": {
     "transition": {
