@@ -5,11 +5,14 @@
   },
   "hero": {
     "title": "一起調整出屬於你的教練路徑",
-    "subtitle": "每一個 pathway 都只是起點。理解你的生活現況之後，我們會一起調整步調、語言與焦點。"
+    "subtitle": "每一條教練路徑都只是起點。理解你的生活現況之後，我們會一起調整步調、語言與焦點。",
+    "highlight": "先找出此刻最需要的支援。"
   },
   "pathways": {
-    "title": "選擇適合你的 pathway",
+    "title": "選擇適合你的教練路徑",
     "description": "四條最常被詢問的路徑，都會依你的情境彈性調整。",
+    "highlight": "先釐清想要的節奏與重點。",
+    "sidebar": "初談後會再調整步調、語言與範圍，確保方案符合你現在的狀態。",
     "viewDetails": "了解更多",
     "cards": [
       {
@@ -20,7 +23,7 @@
         "topics": [
           "在跳之前，先看清簽證、財務、照顧責任與精力現實。",
           "讓決策同時尊重新的可能與目前的限制。",
-          "測試 CV、對話或試驗性任務，而不是一次壓上全部。"
+          "測試履歷、對話或試驗性任務，而不是一次壓上全部。"
         ],
         "icon": "/images/services/transition.svg"
       },
@@ -32,7 +35,7 @@
         "topics": [
           "把家人、財務與個人期待轉化成可行的下一步。",
           "在保留疑惑的同時，長出描述渴望的語言。",
-          "安全地測試 side project、資訊訪談或轉換，而不是一次賭身家。"
+          "安全地測試副專案、資訊訪談或轉換，而不是一次賭身家。"
         ],
         "icon": "/images/services/early-career.svg"
       },
@@ -65,6 +68,7 @@
   "cta": {
     "title": "還不確定怎麼開始？",
     "body": "先約 20 分鐘的介紹通話，一起聽你的情境，再調整出合適的支持。",
+    "highlight": "先聊聊，看看是否對味。",
     "primaryCta": "預約初談",
     "primaryHref": "/contact",
     "secondaryCta": "了解教練怎麼進行",
@@ -77,7 +81,7 @@
         "description": "在英國搬遷、角色或產業轉換中，提供以你為中心、符合 ICF 準則的穩定陪伴。"
       },
       "hero": {
-        "title": "Support for relocation, role or sector change without losing yourself.",
+        "title": "搬遷、轉職或調整角色時，也能穩住自己的節奏。",
         "subtitle": "我們一起為你的轉換建立穩定結構，讓你能同時照顧英國與海外的承諾。",
         "primaryCta": "預約初談",
         "primaryHref": "/contact?topic=transition",
@@ -90,7 +94,7 @@
         "items": [
           {
             "summary": "剛抵達英國，牽掛還在其他地方。",
-            "detail": "你一邊處理 GP 登記、HMRC 帳號，一邊維持在台北、香港或新加坡的責任。"
+            "detail": "你一邊處理 GP（家庭醫師）登記、HMRC（稅務）帳號，一邊維持在台北、香港或新加坡的責任。"
           },
           {
             "summary": "搬遷同時換產業或職能。",
@@ -111,7 +115,7 @@
         "description": "我們會一起拆解這些很實際的拉扯。",
         "items": [
           {
-            "summary": "獵頭說你的 CV 太「在地」或太「資深」。",
+            "summary": "獵頭說你的履歷太「在地」或太「資深」。",
             "detail": "一起把故事翻成英國職場聽得懂、又不失真的語言。"
           },
           {
@@ -146,14 +150,14 @@
           },
           {
             "summary": "第 3–4 次：設計實驗。",
-            "detail": "調整英國版 CV、模擬對話、安排試探性的一週。"
+            "detail": "調整英國版履歷、模擬對話、安排試探性的一週。"
           },
           {
             "summary": "第 5–6 次：整合與規劃。",
             "detail": "回顧實驗收穫、設定界線、安排下個季度的節奏。"
           }
         ],
-        "note": "視需要可在兩次會談間用 email 或語音訊息做輕量跟進。"
+        "note": "視需要可在兩次會談間用電子郵件或語音訊息做輕量跟進。"
       },
       "expect": {
         "title": "你可能會有的變化",
@@ -236,7 +240,7 @@
         "description": "在英國或海外的求學、求職早期，用符合你步調的教練陪你探索方向。"
       },
       "hero": {
-        "title": "A grounded space for students and early-career professionals to test options.",
+        "title": "給學生與職涯初期工作者的穩定探索空間。",
         "subtitle": "不用假裝都想好了，也能一起實驗與調整下一步。",
         "primaryCta": "預約初談",
         "primaryHref": "/contact?topic=early-career",
@@ -387,7 +391,7 @@
         "description": "在跨國生活裡，把工作、照顧與休息重新編排，維持可持續的節奏。"
       },
       "hero": {
-        "title": "Space for working parents to plan sustainable rhythms.",
+        "title": "讓職場父母有空間規劃可持續的生活節奏。",
         "subtitle": "我們為工作與照顧都保留空間，幫你設計尊重精力的每一週。",
         "primaryCta": "預約初談",
         "primaryHref": "/contact?topic=working-parents",
@@ -483,7 +487,7 @@
           },
           {
             "summary": "更有底氣尋求外部支援。",
-            "detail": "辨識何時需要 HR 政策、醫療或社群資源介入。"
+            "detail": "辨識何時需要人資政策、醫療或社群資源介入。"
           }
         ]
       },
@@ -546,7 +550,7 @@
         "description": "與符合 ICF 準則的教練合作，在跨文化與高複雜度的領導中找到屬於你的節奏。"
       },
       "hero": {
-        "title": "Reflective coaching for leaders who want clarity without theatre.",
+        "title": "讓領導不必演戲，也能保持清晰與底氣。",
         "subtitle": "讓領導、影響力與界線都在真實對話中被看見。",
         "primaryCta": "預約初談",
         "primaryHref": "/contact?topic=leadership",
@@ -570,7 +574,7 @@
             "detail": "想保護團隊，同時又要維持與高層的信任。"
           },
           {
-            "summary": "感覺快要 burnout。",
+            "summary": "感覺快要倦怠。",
             "detail": "需要一個保密空間，在健康或關係出問題前測試界線。"
           }
         ]
@@ -622,7 +626,7 @@
             "detail": "設定需要再找教練或其他支持的指標。"
           }
         ],
-        "note": "可選擇在兩次會談間用 Loom 或文字回饋，協助你在當週整合學習。"
+        "note": "可選擇在兩次會談間用 Loom（錄影訊息）或文字回饋，協助你在當週整合學習。"
       },
       "expect": {
         "title": "你可能會有的變化",
@@ -652,7 +656,7 @@
         "items": [
           {
             "summary": "不介入辦公室政治或貼標籤。",
-            "detail": "不會替你診斷同事、也不幫你做 HR 決策。"
+            "detail": "不會替你診斷同事、也不幫你做人資決策。"
           },
           {
             "summary": "不是心理治療。",
