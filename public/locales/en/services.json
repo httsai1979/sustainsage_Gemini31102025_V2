@@ -1,7 +1,7 @@
 {
   "seo": {
     "title": "Coaching services",
-    "description": "Explore SustainSage coaching pathways designed for relocation, return-to-work clarity, and UK workplace confidence."
+    "description": "Explore SustainSage coaching pathways designed for relocation, early-career decisions, working parent rhythms, and cross-cultural leadership."
   },
   "hero": {
     "title": "Coaching pathways shaped with you",
@@ -10,7 +10,7 @@
   "pathways": {
     "title": "Choose a pathway",
     "description": "Four pathways clients ask for most often. Each one flexes to match your context.",
-    "viewDetails": "View details",
+    "viewDetails": "Learn more",
     "cards": [
       {
         "slug": "transition",
@@ -70,605 +70,634 @@
     "secondaryCta": "Read how coaching works",
     "secondaryHref": "/services/transition"
   },
-  "transition": {
-    "seo": {
-      "title": "Transition coaching for relocation, return and role change | SustainSage",
-      "description": "Navigate UK relocation, return-to-work plans, and role changes with a calm, structured coaching partner."
-    },
-    "hero": {
-      "title": "Transition coaching for relocation, return and role change",
-      "subtitle": "A steady, structured space to navigate UK moves, career shifts and returns to work without burning out.",
-      "primaryCta": "Explore if this fits your transition",
-      "primaryHref": "/contact?topic=transition",
-      "secondaryCta": "Back to services",
-      "secondaryHref": "/services"
-    },
-    "structure": {
-      "isThisForYou": {
-        "title": "Is this for you?"
+  "serviceDetail": {
+    "transition": {
+      "seo": {
+        "title": "Transition coaching for relocations and role shifts | SustainSage",
+        "description": "Navigate relocation, role or sector change with grounded, ICF-aligned coaching that keeps your agency central."
+      },
+      "hero": {
+        "title": "Support for relocation, role or sector change without losing yourself.",
+        "subtitle": "We build calm structure around your move so you can honour commitments in the UK and at home.",
+        "primaryCta": "Book an intro session",
+        "primaryHref": "/contact?topic=transition",
+        "secondaryCta": "Back to all services",
+        "secondaryHref": "/services"
+      },
+      "who": {
+        "title": "Who this is for",
+        "description": "Real-world contexts clients bring into this space.",
+        "items": [
+          {
+            "summary": "Newly arrived in the UK while keeping ties elsewhere.",
+            "detail": "You are registering with the GP, setting up HMRC accounts, and still carrying commitments in Taipei, Hong Kong, or Singapore."
+          },
+          {
+            "summary": "Switching sector or function as you relocate.",
+            "detail": "You are moving from corporate to charity, or from specialist to manager, and want support translating your track record."
+          },
+          {
+            "summary": "Coordinating a move with partner or family.",
+            "detail": "Two time zones, school calendars, or visa stages mean decisions need to be collaborative, not rushed."
+          },
+          {
+            "summary": "Returning after a career pause.",
+            "detail": "You paused for caregiving, study, or health and want to re-enter without repeating burnout patterns."
+          }
+        ]
+      },
+      "topics": {
+        "title": "Common topics we work on",
+        "description": "Specific, practical tensions we often unpack together.",
+        "items": [
+          {
+            "summary": "Recruiters say your CV sounds “too local” or “too senior” for UK roles.",
+            "detail": "We translate accomplishments into UK language without erasing context."
+          },
+          {
+            "summary": "Interviews stall before the final round.",
+            "detail": "We rehearse stories that connect your past impact with the realities of UK teams."
+          },
+          {
+            "summary": "You are renegotiating finances, savings, and risk as you relocate.",
+            "detail": "We map living costs, exchange rates, and shared budgets alongside your career aims."
+          },
+          {
+            "summary": "Family expects frequent travel back or quick decisions.",
+            "detail": "We design conversations that honour relationships while holding your boundaries."
+          },
+          {
+            "summary": "A voice keeps saying it is “too late” to start over.",
+            "detail": "We challenge the story, gather data, and plan experiments before you commit."
+          }
+        ]
       },
       "howWeWork": {
-        "title": "How we’ll work together"
+        "title": "How we work together",
+        "description": "Core package: six 55-minute sessions over eight to ten weeks, fully online via Zoom.",
+        "items": [
+          {
+            "summary": "Intro call (20 minutes, complimentary).",
+            "detail": "Map your transition, check chemistry, and decide whether to continue."
+          },
+          {
+            "summary": "Session 1–2 · Map realities.",
+            "detail": "Visas, finances, emotional load, dependants—we chart what is fixed and what is flexible."
+          },
+          {
+            "summary": "Session 3–4 · Co-design experiments.",
+            "detail": "Draft UK-focused CVs, rehearse conversations, or test trial weeks before committing."
+          },
+          {
+            "summary": "Session 5–6 · Integrate and plan.",
+            "detail": "Review what the experiments showed, set boundaries, and plan the next quarter."
+          }
+        ],
+        "note": "Between sessions you can request light check-ins via email or voice notes if helpful."
       },
-      "journey": {
-        "title": "A typical journey"
-      },
-      "outcomes": {
-        "title": "What clients often leave with"
+      "expect": {
+        "title": "What may shift for you",
+        "description": "No guaranteed outcomes—clients often describe these shifts.",
+        "items": [
+          {
+            "summary": "Clearer story for employers and networks.",
+            "detail": "Language that honours your past while showing UK relevance."
+          },
+          {
+            "summary": "A shortlist of viable options.",
+            "detail": "Two or three scenarios with next steps instead of endless hypotheticals."
+          },
+          {
+            "summary": "Pacing that respects capacity.",
+            "detail": "A week-by-week rhythm balancing admin, care, and exploration."
+          },
+          {
+            "summary": "Signals to bring in other professionals.",
+            "detail": "Knowing when to involve lawyers, therapists, or financial planners."
+          }
+        ]
       },
       "boundaries": {
-        "title": "Boundaries & ethics"
+        "title": "Boundaries & ethics",
+        "description": "ICF-aligned practice keeps your autonomy central.",
+        "items": [
+          {
+            "summary": "No legal, immigration, or tax advice.",
+            "detail": "We help you prepare questions but do not replace qualified specialists."
+          },
+          {
+            "summary": "You decide every action.",
+            "detail": "We invite reflection and experimentation; you hold the final say."
+          },
+          {
+            "summary": "Referrals when risks show up.",
+            "detail": "If mental health, safeguarding, or legal concerns arise we pause and point you to the right support."
+          },
+          {
+            "summary": "Confidentiality with clear limits.",
+            "detail": "We keep sessions private within the boundaries set by ICF ethics."
+          }
+        ]
       },
       "faq": {
-        "title": "Micro FAQ"
+        "title": "Questions people ask",
+        "description": "Transparent answers to common worries.",
+        "items": [
+          {
+            "question": "Can my partner join a session?",
+            "answer": "Yes, for specific decision points. The focus stays on your goals, and we agree on boundaries before inviting others."
+          },
+          {
+            "question": "What if relocation plans change mid-way?",
+            "answer": "We adapt. Sessions can pivot to staying put, renegotiating offers, or pausing until timing is right."
+          },
+          {
+            "question": "Do you work with employer-sponsored moves?",
+            "answer": "Yes. We clarify confidentiality and reporting lines so you can think freely even if the company pays."
+          },
+          {
+            "question": "Is one session enough?",
+            "answer": "You can book a single paid session, though most transition clients benefit from six to see experiments through."
+          }
+        ]
       },
-      "cta": {}
+      "cta": {
+        "title": "Ready to steady your transition?",
+        "body": "Book an intro session to explore whether this partnership fits your move.",
+        "primaryCta": "Book an intro session",
+        "primaryHref": "/contact?topic=transition",
+        "secondaryCta": "Back to all services",
+        "secondaryHref": "/services"
+      }
     },
-    "isThisForYou": {
-      "title": "Is this for you?",
-      "items": [
-        {
-          "summary": "Relocating to the UK with mixed pressures.",
-          "detail": "You feel pulled between “take anything quickly” and “hold out for the right fit.”"
-        },
-        {
-          "summary": "Returning after a pause.",
-          "detail": "You paused work for caregiving, study or health and want to re-enter in a way that honours your limits."
-        },
-        {
-          "summary": "Shifting roles or industries intentionally.",
-          "detail": "You are moving into something new and do not want to repeat old burnout patterns."
-        },
-        {
-          "summary": "Needing one calm thinking space.",
-          "detail": "People keep offering tips; you want one place to think clearly and decide what is yours."
-        }
-      ]
+    "earlyCareer": {
+      "seo": {
+        "title": "Early-career coaching for testing options | SustainSage",
+        "description": "Hold space to explore courses, internships, and first roles with grounded support that respects your pace."
+      },
+      "hero": {
+        "title": "A grounded space for students and early-career professionals to test options.",
+        "subtitle": "Experiment with directions without pretending you have it all figured out.",
+        "primaryCta": "Book an intro session",
+        "primaryHref": "/contact?topic=early-career",
+        "secondaryCta": "Back to all services",
+        "secondaryHref": "/services"
+      },
+      "who": {
+        "title": "Who this is for",
+        "description": "Moments when early-career clients ask for a thinking partner.",
+        "items": [
+          {
+            "summary": "Final-year students unsure about the course they chose.",
+            "detail": "You wonder if postgraduate study, switching programmes, or working first makes more sense."
+          },
+          {
+            "summary": "Graduates in their first or second role feeling stuck.",
+            "detail": "You are learning the job yet unsure whether to stay, pivot internally, or look elsewhere."
+          },
+          {
+            "summary": "International students balancing visas and expectations.",
+            "detail": "You juggle sponsor rules, family hopes, and your own sense of direction."
+          },
+          {
+            "summary": "Professionals exploring a second career before 35.",
+            "detail": "You built skills in one area and want to test creative or impact-driven paths without burning bridges."
+          }
+        ]
+      },
+      "topics": {
+        "title": "Common topics we work on",
+        "description": "Practical questions that show up in early-career coaching.",
+        "items": [
+          {
+            "summary": "Regretting a course or major choice.",
+            "detail": "We map transferable skills, debt or visa considerations, and realistic pivots."
+          },
+          {
+            "summary": "Internships that do not convert to offers.",
+            "detail": "We build feedback loops, networking scripts, and clearer asks."
+          },
+          {
+            "summary": "Managers say you need to be “more proactive” but no one explains how.",
+            "detail": "We translate vague feedback into doable actions and reflective questions."
+          },
+          {
+            "summary": "Deciding whether to stay in the UK or return home.",
+            "detail": "We weigh immigration timelines, financial commitments, and what “home” means right now."
+          }
+        ]
+      },
+      "howWeWork": {
+        "title": "How we work together",
+        "description": "Most clients choose a series of five 55-minute sessions across eight weeks, with optional add-ons for applications.",
+        "items": [
+          {
+            "summary": "Intro call to define success.",
+            "detail": "We clarify what would make coaching worthwhile before you commit."
+          },
+          {
+            "summary": "Session 1 · Map your reality.",
+            "detail": "We gather context: finances, mental load, visa timelines, family voices, and curiosities."
+          },
+          {
+            "summary": "Session 2–3 · Design experiments.",
+            "detail": "We outline informational interviews, side projects, or low-risk trials with timeframes."
+          },
+          {
+            "summary": "Session 4–5 · Review evidence and plan.",
+            "detail": "We interpret what you learned, adjust boundaries, and plan the next quarter."
+          }
+        ],
+        "note": "We meet on Zoom. Light check-ins between sessions keep momentum without pressure."
+      },
+      "expect": {
+        "title": "What may shift for you",
+        "description": "Clients describe feeling more resourced, not magically certain.",
+        "items": [
+          {
+            "summary": "Language for what matters.",
+            "detail": "You can explain priorities to yourself, family, and interviewers without apology."
+          },
+          {
+            "summary": "Ways to test ideas safely.",
+            "detail": "Small experiments replace the pressure to decide perfectly."
+          },
+          {
+            "summary": "A kinder relationship with uncertainty.",
+            "detail": "You notice doubt without letting it freeze every choice."
+          },
+          {
+            "summary": "Awareness of when to seek other help.",
+            "detail": "You can spot when mentorship, therapy, or training would serve you better."
+          }
+        ]
+      },
+      "boundaries": {
+        "title": "Boundaries & ethics",
+        "description": "We stay in the coaching lane while pointing to other resources when needed.",
+        "items": [
+          {
+            "summary": "No therapy or clinical advice.",
+            "detail": "We notice emotional patterns and will suggest mental health professionals if risk appears."
+          },
+          {
+            "summary": "No job placement promises.",
+            "detail": "We help you strategise and practise; you own applications and results."
+          },
+          {
+            "summary": "You choose pace and topics.",
+            "detail": "We will not push a timeline that ignores your obligations or energy."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Questions people ask",
+        "description": "Answering what early-career clients tend to worry about.",
+        "items": [
+          {
+            "question": "What if I have no clear goal yet?",
+            "answer": "That is common. We start by mapping what feels noisy, then identify experiments instead of forcing a big decision."
+          },
+          {
+            "question": "Can my parent or mentor join?",
+            "answer": "We keep sessions one-to-one so you can speak freely. You can choose what to share with others afterwards."
+          },
+          {
+            "question": "English is not my strongest language—will this work?",
+            "answer": "Yes. We can switch between English and Mandarin, slow down, or use written reflections when helpful."
+          },
+          {
+            "question": "Can we work session by session?",
+            "answer": "You may, though momentum usually builds across at least four sessions. We agree a plan that fits your budget."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Want to test your next move with support?",
+        "body": "Book an intro session so we can hear your context and see if this pathway fits.",
+        "primaryCta": "Book an intro session",
+        "primaryHref": "/contact?topic=early-career",
+        "secondaryCta": "Back to all services",
+        "secondaryHref": "/services"
+      }
     },
-    "howWeWork": {
-      "title": "How we’ll work together",
-      "items": [
-        {
-          "summary": "You set the agenda.",
-          "detail": "We bring questions, structure and reflection while you choose focus each time."
-        },
-        {
-          "summary": "Map your real constraints.",
-          "detail": "We consider visa, finances, caring duties, language, health and networks before planning moves."
-        },
-        {
-          "summary": "Turn “shoulds” into choices.",
-          "detail": "We name what is non-negotiable for you right now and where you have agency."
-        },
-        {
-          "summary": "Design low-risk experiments.",
-          "detail": "We test CV stories, outreach, or trial roles that match your current capacity."
-        }
-      ]
+    "workingParents": {
+      "seo": {
+        "title": "Coaching for working parents balancing care and careers | SustainSage",
+        "description": "Design sustainable rhythms for work, caregiving, and rest with an ICF-aligned coach who understands cross-border family life."
+      },
+      "hero": {
+        "title": "Space for working parents to plan sustainable rhythms.",
+        "subtitle": "We hold room for both care and work so you can design weeks that respect capacity.",
+        "primaryCta": "Book an intro session",
+        "primaryHref": "/contact?topic=working-parents",
+        "secondaryCta": "Back to all services",
+        "secondaryHref": "/services"
+      },
+      "who": {
+        "title": "Who this is for",
+        "description": "Situations where parents and caregivers seek a steadier rhythm.",
+        "items": [
+          {
+            "summary": "Returning from parental leave sooner than expected.",
+            "detail": "You are asked to perform as if nothing changed, yet your body and routines feel different."
+          },
+          {
+            "summary": "Coordinating childcare with erratic shifts or study timetables.",
+            "detail": "Nursery closures, sudden overtime, or exams keep derailing your plans."
+          },
+          {
+            "summary": "Sharing care across borders.",
+            "detail": "Grandparents or carers are overseas, so you are rebuilding support almost from scratch."
+          },
+          {
+            "summary": "Managing elder care alongside young children.",
+            "detail": "You are part of the sandwich generation and need a plan that will not burn everyone out."
+          }
+        ]
+      },
+      "topics": {
+        "title": "Common topics we work on",
+        "description": "Themes that show up repeatedly with working parents.",
+        "items": [
+          {
+            "summary": "Bedtime or nursery drop-offs clash with team meetings.",
+            "detail": "We design scripts to renegotiate expectations without guilt."
+          },
+          {
+            "summary": "You feel guilty when work or care gets more attention.",
+            "detail": "We explore values and boundaries so guilt becomes data rather than a verdict."
+          },
+          {
+            "summary": "Re-entering after a multi-year pause feels daunting.",
+            "detail": "We rebuild confidence, name transferable skills, and pace applications."
+          },
+          {
+            "summary": "You want time for rest or exercise but the week is already full.",
+            "detail": "We examine invisible labour and redistribute or remove tasks where possible."
+          }
+        ]
+      },
+      "howWeWork": {
+        "title": "How we work together",
+        "description": "Typical package: six 55-minute sessions across twelve weeks, with optional partner check-ins when agreed.",
+        "items": [
+          {
+            "summary": "Intro conversation to align aims.",
+            "detail": "We clarify what support you need and any household considerations."
+          },
+          {
+            "summary": "Session 1 · Surface the full load.",
+            "detail": "We map visible and invisible tasks, emotional labour, and support systems."
+          },
+          {
+            "summary": "Session 2–3 · Experiment with rhythms.",
+            "detail": "We design practical adjustments to schedules, delegation, and recovery."
+          },
+          {
+            "summary": "Session 4–5 · Strengthen agreements.",
+            "detail": "We prepare conversations with partners, managers, or schools so changes stick."
+          },
+          {
+            "summary": "Session 6 · Review signals and next season.",
+            "detail": "We consolidate what works, flag risks, and plan check-in rituals for the household."
+          }
+        ],
+        "note": "Sessions take place on Zoom. We can schedule within school hours or evenings UK time."
+      },
+      "expect": {
+        "title": "What may shift for you",
+        "description": "Parents describe feeling less alone and more intentional after this work.",
+        "items": [
+          {
+            "summary": "Visible, shared plans.",
+            "detail": "Calendars, budgets, and responsibilities live somewhere other than your head."
+          },
+          {
+            "summary": "Boundaries you can actually hold.",
+            "detail": "You know which requests to decline and how to explain the why."
+          },
+          {
+            "summary": "Recovery that fits real life.",
+            "detail": "Simple practices—short rests, exercise, help requests—that survive busy weeks."
+          },
+          {
+            "summary": "Confidence to ask for external support.",
+            "detail": "You recognise when to involve HR policies, healthcare providers, or community networks."
+          }
+        ]
+      },
+      "boundaries": {
+        "title": "Boundaries & ethics",
+        "description": "We coach within the ICF framework and respect your family’s autonomy.",
+        "items": [
+          {
+            "summary": "No medical or childcare prescriptions.",
+            "detail": "We explore options but do not replace health visitors, therapists, or safeguarding professionals."
+          },
+          {
+            "summary": "You choose who joins sessions.",
+            "detail": "Partners can join when it serves you; we set agreements together first."
+          },
+          {
+            "summary": "Confidentiality for your stories.",
+            "detail": "We keep discussions private except where safety laws require otherwise."
+          },
+          {
+            "summary": "We flag when other support is urgent.",
+            "detail": "If burnout, depression, or violence risk appears we pause and help you access specialised services."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Questions people ask",
+        "description": "Answers to concerns working parents mention most.",
+        "items": [
+          {
+            "question": "My schedule is chaotic—can coaching still work?",
+            "answer": "Yes. We co-create flexible scheduling or asynchronous check-ins. If it is not the right season, we will say so honestly."
+          },
+          {
+            "question": "Can we include my partner or co-parent?",
+            "answer": "We can invite them for specific sessions once boundaries are clear and consented to by everyone."
+          },
+          {
+            "question": "What if caring emergencies interrupt sessions?",
+            "answer": "Life happens. We reschedule within the package and design backup plans to reduce stress next time."
+          },
+          {
+            "question": "Will you tell me how to parent?",
+            "answer": "No. We focus on decision-making, boundaries, and support—not judging your parenting style."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Ready to create a rhythm that holds you too?",
+        "body": "Book an intro session to see whether this coaching fits your family’s season.",
+        "primaryCta": "Book an intro session",
+        "primaryHref": "/contact?topic=working-parents",
+        "secondaryCta": "Back to all services",
+        "secondaryHref": "/services"
+      }
     },
-    "journey": {
-      "title": "A typical journey (6 sessions)",
-      "steps": [
-        {
-          "summary": "Session 1 · Mapping your reality.",
-          "detail": "責任、壓力來源、支援、內在雜訊—我們把真實狀況放在檯面上。"
-        },
-        {
-          "summary": "Session 2 · Clarifying viable directions.",
-          "detail": "針對當下的限制與資源，找出 2–3 個可行方向。"
-        },
-        {
-          "summary": "Session 3 · Designing small experiments.",
-          "detail": "一頁 CV、LinkedIn 調整、兩個安全對話、時程測試。"
-        },
-        {
-          "summary": "Session 4 · Reviewing what the experiments showed.",
-          "detail": "辨識順手與卡住之處，判斷阻力來自恐懼、資訊還是結構。"
-        },
-        {
-          "summary": "Session 5 · Building boundaries and support.",
-          "detail": "時間、家庭協調、自我照顧與外部資源配合。"
-        },
-        {
-          "summary": "Session 6 · Integrating the next quarter.",
-          "detail": "釐清接下來三個月要做／不做什麼，以及壓力來時怎麼重整。"
-        }
-      ]
-    },
-    "outcomes": {
-      "title": "What clients often leave with",
-      "items": [
-        {
-          "summary": "A grounded narrative.",
-          "detail": "A story they can use in CVs, interviews, or networking that feels 真實而不自賣."
-        },
-        {
-          "summary": "Fewer, clearer options.",
-          "detail": "1–3 viable directions rather than 10 abstract possibilities."
-        },
-        {
-          "summary": "Consent-based pacing.",
-          "detail": "A “small steps without over-pushing” rhythm they can sustain."
-        },
-        {
-          "summary": "Signals for when to seek other support.",
-          "detail": "Clearer judgement on when legal, financial, or therapeutic resources are needed."
-        }
-      ]
-    },
-    "boundaries": {
-      "title": "Boundaries & ethics",
-      "items": [
-        {
-          "summary": "No specialist substitutes.",
-          "detail": "We do not offer immigration, legal, tax or clinical advice."
-        },
-        {
-          "summary": "Naming other support when needed.",
-          "detail": "If therapy, legal or financial advice is appropriate we will say so clearly."
-        },
-        {
-          "summary": "ICF-aligned practice.",
-          "detail": "Confidentiality with clear limits, respect for your choices, no hidden agenda."
-        }
-      ]
-    },
-    "faq": {
-      "title": "Micro FAQ",
-      "items": [
-        {
-          "question": "Can we talk about visas or immigration rules?",
-          "answer": "We can explore how rules impact your options, but we do not replace qualified legal advice. If this brings up questions, you can mention it in the intro call form."
-        },
-        {
-          "question": "What if I do not complete the “homework”?",
-          "answer": "We talk about what got in the way. Your pace is data, not a failure. If this brings up questions, you can mention it in the intro call form."
-        },
-        {
-          "question": "Is this only for big moves?",
-          "answer": "No. It is for any transition where you want a calmer, more intentional way through. If this brings up questions, you can mention it in the intro call form."
-        }
-      ]
-    },
-    "cta": {
-      "title": "Ready to talk through your transition?",
-      "body": "If you are unsure, the intro chat stays focused on your reality and whether this support fits.",
-      "primaryCta": "Explore if this fits your transition",
-      "primaryHref": "/contact?topic=transition",
-      "secondaryCta": "See all services",
-      "secondaryHref": "/services"
-    }
-  },
-  "earlyCareer": {
-    "seo": {
-      "title": "Early-career coaching for “I’m not sure yet” | SustainSage",
-      "description": "Explore options, build confidence, and make grounded decisions without pretending to have everything figured out."
-    },
-    "hero": {
-      "title": "Early-career coaching for “I’m not sure yet”",
-      "subtitle": "Space to test options, build confidence and make decisions without pretending to “have it all figured out”.",
-      "primaryCta": "Talk through your next step",
-      "primaryHref": "/contact?topic=early-career",
-      "secondaryCta": "Back to services",
-      "secondaryHref": "/services"
-    },
-    "isThisForYou": {
-      "title": "Is this for you?",
-      "items": [
-        {
-          "summary": "Navigating early career uncertainty.",
-          "detail": "You are 20–35, working or job-hunting, 常常覺得「我是不是走錯行？」。"
-        },
-        {
-          "summary": "Balancing expectations and your own values.",
-          "detail": "You feel torn between 家人期待、薪水、安全感和自己在乎的事。"
-        },
-        {
-          "summary": "Tired of passion vs practicality debates.",
-          "detail": "你被「要有熱情」和「要務實」兩邊拉扯，很累。"
-        },
-        {
-          "summary": "Wanting co-created guidance.",
-          "detail": "你不想被填鴨指導，只想有人陪你把「現實可行的小步驟」想清楚。"
-        }
-      ]
-    },
-    "howWeWork": {
-      "title": "How we’ll work together",
-      "items": [
-        {
-          "summary": "No checklists of what you “should” do.",
-          "detail": "We stay curious and keep you in the driver’s seat."
-        },
-        {
-          "summary": "Slow down to hear your own voice.",
-          "detail": "We separate what is yours from what社群媒體 keeps shouting."
-        },
-        {
-          "summary": "Gather data about skills, limits and curiosity.",
-          "detail": "We整理你的技能、限制、好奇，找出可以被測試的方向。"
-        },
-        {
-          "summary": "Connect every session to real next steps.",
-          "detail": "每次談話都連回你下一步可以實際嘗試什麼，而不是只講道理。"
-        }
-      ]
-    },
-    "journey": {
-      "title": "A typical journey (4–6 sessions)",
-      "steps": [
-        {
-          "summary": "Session 1 · Mapping where you are.",
-          "detail": "工作 / 求職現況、壓力來自哪裡、你已經試過什麼。"
-        },
-        {
-          "summary": "Session 2 · Growing language for what matters.",
-          "detail": "說得出「我在乎什麼」而不是只說「不要什麼」。"
-        },
-        {
-          "summary": "Session 3 · Designing experiments.",
-          "detail": "side project、資訊訪談、短期課程、內部轉調探索。"
-        },
-        {
-          "summary": "Session 4 · Reading the data, not just emotions.",
-          "detail": "哪些實驗有火花？哪些只是別人說好？"
-        },
-        {
-          "summary": "Session 5 · Resetting boundaries.",
-          "detail": "與家人、主管、同儕的期待談判，而不是硬撐。"
-        },
-        {
-          "summary": "Session 6 · Planning the next season (if needed).",
-          "detail": "必要時整理 3–6 個月行動＋回頭檢視的方法。"
-        }
-      ]
-    },
-    "outcomes": {
-      "title": "What clients often leave with",
-      "items": [
-        {
-          "summary": "A braver self-story.",
-          "detail": "更誠實的自我敘事：可以對父母 / 朋友說得出口又不羞愧。"
-        },
-        {
-          "summary": "Actionable next steps.",
-          "detail": "一份真正可行的短期行動清單，而不是空洞的「追隨熱情」。"
-        },
-        {
-          "summary": "Healthier relationship with uncertainty.",
-          "detail": "對「迷惘本來就正常」的健康理解，少一點自責。"
-        }
-      ]
-    },
-    "boundaries": {
-      "title": "Boundaries & ethics",
-      "items": [
-        {
-          "summary": "No diagnoses or labels.",
-          "detail": "不做診斷、不貼病名。"
-        },
-        {
-          "summary": "Naming when therapy could help.",
-          "detail": "若有明顯情緒困擾／創傷議題，會鼓勵且協助你尋找合適心理專業。"
-        },
-        {
-          "summary": "You stay in charge.",
-          "detail": "完全以你為主，不會替你決定方向或推銷特定產業。"
-        }
-      ]
-    },
-    "faq": {
-      "title": "Micro FAQ",
-      "items": [
-        {
-          "question": "I do not have a clear goal. Can I still come?",
-          "answer": "Yes. That is usually where we start. If this brings up questions, you can mention it in the intro call form."
-        },
-        {
-          "question": "Will this feel like being lectured?",
-          "answer": "不會。我們一起設計方式，你保有決定權。 If this brings up questions, you can mention it in the intro call form."
-        },
-        {
-          "question": "Can I book one session at a time?",
-          "answer": "可以，但多數人會選 3–6 次做比較完整的整理. If this brings up questions, you can mention it in the intro call form."
-        }
-      ]
-    },
-    "cta": {
-      "title": "Ready to try a small step?",
-      "body": "Bring the questions that feel messy. We will map options and see what is realistic together.",
-      "primaryCta": "Talk through your next step",
-      "primaryHref": "/contact?topic=early-career",
-      "secondaryCta": "See all services",
-      "secondaryHref": "/services"
-    }
-  },
-  "workingParents": {
-    "seo": {
-      "title": "Coaching for working parents and caregivers | SustainSage",
-      "description": "Rebuild rhythm, boundaries and identity while balancing work and care without pretending you have endless capacity."
-    },
-    "hero": {
-      "title": "Coaching for working parents and caregivers",
-      "subtitle": "Support to rebuild rhythm, boundaries and identity without pretending you have endless capacity.",
-      "primaryCta": "Protect space for you",
-      "primaryHref": "/contact?topic=working-parents",
-      "secondaryCta": "Back to services",
-      "secondaryHref": "/services"
-    },
-    "isThisForYou": {
-      "title": "Is this for you?",
-      "items": [
-        {
-          "summary": "Torn between care and work.",
-          "detail": "你在育兒、長照與工作之間拉扯，覺得「不管怎麼選都對不起誰」。"
-        },
-        {
-          "summary": "Returning before you feel “ready”.",
-          "detail": "回到職場後狀態還沒穩定，就被期待「回到以前的你」。"
-        },
-        {
-          "summary": "Your needs keep moving to the bottom.",
-          "detail": "想為自己保留一點空間，但每次都排在最後。"
-        },
-        {
-          "summary": "Looking for a non-judgemental space.",
-          "detail": "想要一個不批判你的空間，幫你看清楚實際限制和可以談的餘地。"
-        }
-      ]
-    },
-    "howWeWork": {
-      "title": "How we’ll work together",
-      "items": [
-        {
-          "summary": "Start with your day, not theory.",
-          "detail": "我們從「你的一天」開始，看到真實節奏。"
-        },
-        {
-          "summary": "Map available and unavailable support.",
-          "detail": "一起盤點可用 / 不可用的時間、支援、制度、內疚感。"
-        },
-        {
-          "summary": "Surface negotiable spaces.",
-          "detail": "找出可談判的空間（工作安排、家務分工、自我期待）。"
-        },
-        {
-          "summary": "Coach, not judge.",
-          "detail": "用教練提問協助你做選擇，而不是教你當完美父母。"
-        }
-      ]
-    },
-    "journey": {
-      "title": "A typical journey (4–6 sessions)",
-      "steps": [
-        {
-          "summary": "Session 1 · Seeing the full load.",
-          "detail": "現在的負荷全圖：工作、家務、情緒勞動，全部攤開。"
-        },
-        {
-          "summary": "Session 2 · Naming priorities.",
-          "detail": "辨識真正優先順序：根據價值觀，而不是罪惡感。"
-        },
-        {
-          "summary": "Session 3 · Testing small adjustments.",
-          "detail": "設計小調整：會議時間、請求支援、分工實驗。"
-        },
-        {
-          "summary": "Session 4 · Meeting the inner voices.",
-          "detail": "處理內在聲音：失敗感、比較、要求做「超人」的文化。"
-        },
-        {
-          "summary": "Session 5 · Building sustainable rhythm.",
-          "detail": "建立可維持的節奏：每週 1–2 個你守得住的界線。"
-        },
-        {
-          "summary": "Session 6 · Reviewing supports.",
-          "detail": "檢視與調整：什麼有效？哪些需要更多支持或外部資源？"
-        }
-      ]
-    },
-    "outcomes": {
-      "title": "What clients often leave with",
-      "items": [
-        {
-          "summary": "Practical boundaries.",
-          "detail": "具體可以執行的界線，例如不再回所有非急訊息、明確下班時間。"
-        },
-        {
-          "summary": "New conversations at home.",
-          "detail": "和伴侶或家人的新對話方式，而不是悶著撐。"
-        },
-        {
-          "summary": "Sustainable self-care.",
-          "detail": "比較可持續的自我照顧，而不是偶爾爆買或爆睡。"
-        }
-      ]
-    },
-    "boundaries": {
-      "title": "Boundaries & ethics",
-      "items": [
-        {
-          "summary": "No judgement on care choices.",
-          "detail": "不批判教養選擇、不強迫某種價值。"
-        },
-        {
-          "summary": "You make family decisions.",
-          "detail": "不代替你做家庭決策，但幫你把思路整理清楚。"
-        },
-        {
-          "summary": "Flagging mental health needs.",
-          "detail": "若有明顯產後憂鬱／心理健康風險，會建議尋找專業協助，而非自己撐過去。"
-        }
-      ]
-    },
-    "faq": {
-      "title": "Micro FAQ",
-      "items": [
-        {
-          "question": "我時間很亂，真的排得出教練？",
-          "answer": "可以一起討論最小可行安排；如果現在真的排不出，我們也會誠實說. If this brings up questions, you can mention it in the intro call form."
-        },
-        {
-          "question": "配偶 / 家人可以一起參與嗎？",
-          "answer": "可視情況協調，但主體仍是你的目標. If this brings up questions, you can mention it in the intro call form."
-        },
-        {
-          "question": "會不會被說「你要求太多」？",
-          "answer": "不會。我們討論現實與選擇，而不是評價你. If this brings up questions, you can mention it in the intro call form."
-        }
-      ]
-    },
-    "cta": {
-      "title": "Ready to protect space for you?",
-      "body": "Let us map what is non-negotiable and where support can grow.",
-      "primaryCta": "Protect space for you",
-      "primaryHref": "/contact?topic=working-parents",
-      "secondaryCta": "See all services",
-      "secondaryHref": "/services"
-    }
-  },
-  "leadership": {
-    "seo": {
-      "title": "Leadership coaching for complex, cross-cultural roles | SustainSage",
-      "description": "Partner with an ICF-aligned coach to navigate new scope, cross-border expectations, and cultural nuances without losing yourself."
-    },
-    "hero": {
-      "title": "Leadership coaching for complex, cross-cultural roles",
-      "subtitle": "A reflective partner for managers and professionals navigating new scope, cultures and expectations.",
-      "primaryCta": "Discuss your leadership context",
-      "primaryHref": "/contact?topic=leadership",
-      "secondaryCta": "Back to services",
-      "secondaryHref": "/services"
-    },
-    "isThisForYou": {
-      "title": "Is this for you?",
-      "items": [
-        {
-          "summary": "Stepping into bigger or cross-border roles.",
-          "detail": "You are leading in the UK or across countries with little formal support."
-        },
-        {
-          "summary": "Between team and leadership expectations.",
-          "detail": "在團隊與高層之間卡位：想好好對人，但也得交出結果。"
-        },
-        {
-          "summary": "Navigating cultural communication gaps.",
-          "detail": "搬到或管理英國／多國團隊，文化溝通讓你覺得說什麼都不對。"
-        },
-        {
-          "summary": "Looking for partnership, not “霸氣領導學”.",
-          "detail": "你不要模板式的權威技巧，只要一個能和你一起思考的人。"
-        }
-      ]
-    },
-    "howWeWork": {
-      "title": "How we’ll work together",
-      "items": [
-        {
-          "summary": "Start from real situations.",
-          "detail": "以實際會議、衝突、決策為起點，而不是抽象理論。"
-        },
-        {
-          "summary": "Separate role from self.",
-          "detail": "幫你看「角色 vs 自我」：哪些是職務要扛的，哪些不是。"
-        },
-        {
-          "summary": "Stay authentic across cultures.",
-          "detail": "探索你自己的領導風格，在文化差異中仍保有一致。"
-        },
-        {
-          "summary": "Coach as thinking partner.",
-          "detail": "對齊 ICF 精神：你是專家，我是思考拍檔，不替你管人。"
-        }
-      ]
-    },
-    "journey": {
-      "title": "A typical journey (6+ sessions)",
-      "steps": [
-        {
-          "summary": "Session 1 · Mapping the landscape.",
-          "detail": "情境盤點：組織、團隊、人際權力線。"
-        },
-        {
-          "summary": "Session 2 · Defining your leadership posture.",
-          "detail": "定義你要成為哪種領導者：可被實踐的，而不是海報標語。"
-        },
-        {
-          "summary": "Session 3 · Designing critical conversations.",
-          "detail": "關鍵對話設計：棘手回饋、一對一、一對多。"
-        },
-        {
-          "summary": "Session 4 · Decisions and boundaries.",
-          "detail": "決策與界線：什麼要說「不」、如何說。"
-        },
-        {
-          "summary": "Session 5 · Cross-cultural adjustments.",
-          "detail": "跨文化敏感度：在 UK / 多國團隊中實際可行的調整。"
-        },
-        {
-          "summary": "Session 6+ · Sustaining reflection.",
-          "detail": "長期維持：如何繼續反思，而不需要永遠依賴教練。"
-        }
-      ]
-    },
-    "outcomes": {
-      "title": "What clients often leave with",
-      "items": [
-        {
-          "summary": "Consistent leadership signals.",
-          "detail": "更穩定的一致作法：團隊知道你的原則是什麼。"
-        },
-        {
-          "summary": "Resolved, self-led challenges.",
-          "detail": "幾個實際被解開的難題（但歸功於你自己行動，我只是幫你對焦）。"
-        },
-        {
-          "summary": "Healthier pressure boundaries.",
-          "detail": "對壓力的更清晰界線，不再用過勞來證明價值。"
-        }
-      ]
-    },
-    "boundaries": {
-      "title": "Boundaries & ethics",
-      "items": [
-        {
-          "summary": "No internal politics or labels.",
-          "detail": "不參與內部政治、不替你對特定員工診斷標籤。"
-        },
-        {
-          "summary": "Not therapy.",
-          "detail": "不做心理治療；如有需要會建議尋找合適資源。"
-        },
-        {
-          "summary": "Strict confidentiality.",
-          "detail": "嚴格保密你的職場案例，在合法與風險界線內。"
-        }
-      ]
-    },
-    "faq": {
-      "title": "Micro FAQ",
-      "items": [
-        {
-          "question": "Can my company sponsor this?",
-          "answer": "可以。我們會事先釐清三方關係與保密邊界. If this brings up questions, you can mention it in the intro call form."
-        },
-        {
-          "question": "How is this different from mentoring or consulting?",
-          "answer": "我們不給標準答案，而是幫你思考、試、調整屬於你的做法. If this brings up questions, you can mention it in the intro call form."
-        },
-        {
-          "question": "Is this suitable for a single session or longer work?",
-          "answer": "重大轉職 / 新職通常 6–9 次最有幫助，也可以先從 3 次開始. If this brings up questions, you can mention it in the intro call form."
-        }
-      ]
-    },
-    "cta": {
-      "title": "Want a reflective partner in your context?",
-      "body": "Bring the decisions or conversations on your desk and we will make space to think them through.",
-      "primaryCta": "Discuss your leadership context",
-      "primaryHref": "/contact?topic=leadership",
-      "secondaryCta": "See all services",
-      "secondaryHref": "/services"
+    "leadership": {
+      "seo": {
+        "title": "Leadership coaching for cross-cultural teams | SustainSage",
+        "description": "Partner with an ICF-aligned coach to navigate influence, delegation, and wellbeing across cultures without performing a role that is not yours."
+      },
+      "hero": {
+        "title": "Reflective coaching for leaders who want clarity without theatre.",
+        "subtitle": "Think through cross-cultural leadership, influence, and boundaries with a grounded partner.",
+        "primaryCta": "Book an intro session",
+        "primaryHref": "/contact?topic=leadership",
+        "secondaryCta": "Back to all services",
+        "secondaryHref": "/services"
+      },
+      "who": {
+        "title": "Who this is for",
+        "description": "Leaders balancing complex expectations across cultures and teams.",
+        "items": [
+          {
+            "summary": "You lead a UK or Europe-based team from overseas.",
+            "detail": "Time zones, accents, and hybrid norms make every conversation strategic."
+          },
+          {
+            "summary": "You recently stepped into a bigger remit.",
+            "detail": "You are responsible for budgets, risk, and people dynamics with little onboarding."
+          },
+          {
+            "summary": "You hold tensions between senior stakeholders and your team.",
+            "detail": "You want to advocate for your people without burning bridges upward."
+          },
+          {
+            "summary": "You sense burnout approaching.",
+            "detail": "You need a confidential space to test boundaries before health or relationships crack."
+          }
+        ]
+      },
+      "topics": {
+        "title": "Common topics we work on",
+        "description": "Situations leaders bring into the room.",
+        "items": [
+          {
+            "summary": "Board updates feel like performance art.",
+            "detail": "We structure narratives that align with your values while meeting expectations."
+          },
+          {
+            "summary": "Delegation keeps bouncing back to you.",
+            "detail": "We design handovers, feedback loops, and boundaries that stick."
+          },
+          {
+            "summary": "You need to challenge bias or unfair policy.",
+            "detail": "We plan language that is direct, culturally aware, and still protects you."
+          },
+          {
+            "summary": "Your calendar leaves no space to think.",
+            "detail": "We create reflective habits and rituals so you stay ahead instead of firefighting."
+          }
+        ]
+      },
+      "howWeWork": {
+        "title": "How we work together",
+        "description": "Standard engagement: six 60-minute sessions across three months, extendable for longer-term partnerships.",
+        "items": [
+          {
+            "summary": "Intro chemistry call.",
+            "detail": "We clarify priorities, stakeholders, and confidentiality before starting."
+          },
+          {
+            "summary": "Session 1 · Map the landscape.",
+            "detail": "We identify power lines, culture codes, and decision rhythms shaping your role."
+          },
+          {
+            "summary": "Session 2–3 · Work on live cases.",
+            "detail": "We rehearse conversations, stress-test plans, and notice repeating patterns."
+          },
+          {
+            "summary": "Session 4–5 · Embed new practices.",
+            "detail": "We track experiments around delegation, communication, and wellbeing."
+          },
+          {
+            "summary": "Session 6 · Plan ongoing reflection.",
+            "detail": "We agree signals for when to revisit coaching or seek other support."
+          }
+        ],
+        "note": "Optional between-session reviews via Loom or written notes help you integrate learning in real time."
+      },
+      "expect": {
+        "title": "What may shift for you",
+        "description": "Leaders notice clearer thinking and grounded actions after working together.",
+        "items": [
+          {
+            "summary": "Sharper strategic narrative.",
+            "detail": "You communicate decisions with confidence and context."
+          },
+          {
+            "summary": "Healthier delegation loops.",
+            "detail": "You know who owns what, how to follow up, and when to step back."
+          },
+          {
+            "summary": "Boundaries that protect your energy.",
+            "detail": "You can say no to theatre and yes to what sustains impact."
+          },
+          {
+            "summary": "Trust in your authentic leadership.",
+            "detail": "You stop copying scripts that never suited you."
+          }
+        ]
+      },
+      "boundaries": {
+        "title": "Boundaries & ethics",
+        "description": "We respect organisational confidentiality while keeping coaching client-led.",
+        "items": [
+          {
+            "summary": "No office politics or diagnostics.",
+            "detail": "We do not label colleagues or make HR decisions for you."
+          },
+          {
+            "summary": "Not a substitute for therapy.",
+            "detail": "We notice emotional strain and signpost specialist care when needed."
+          },
+          {
+            "summary": "Clear agreements when employers sponsor.",
+            "detail": "We define reporting boundaries so you know what stays confidential."
+          },
+          {
+            "summary": "Ethical escalation when risk appears.",
+            "detail": "If we hear safeguarding or legal risk we will discuss next steps transparently."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Questions people ask",
+        "description": "Concerns senior leaders often raise before starting.",
+        "items": [
+          {
+            "question": "Can my employer fund this?",
+            "answer": "Often, yes. We agree tri-party boundaries in writing so you retain psychological safety."
+          },
+          {
+            "question": "Do you coach in both English and Mandarin?",
+            "answer": "Yes. We can switch languages mid-session to capture nuance and design scripts in either language."
+          },
+          {
+            "question": "What if I need support between sessions?",
+            "answer": "You can share urgent situations via secure notes. We will decide together whether to add a session or handle it asynchronously."
+          },
+          {
+            "question": "Will you tell me the “right” leadership style?",
+            "answer": "No. We experiment until you land on an approach that is effective and authentic for you."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Want a reflective partner for your leadership context?",
+        "body": "Book an intro session so we can understand your landscape and see whether the fit is right.",
+        "primaryCta": "Book an intro session",
+        "primaryHref": "/contact?topic=leadership",
+        "secondaryCta": "Back to all services",
+        "secondaryHref": "/services"
+      }
     }
   }
 }
