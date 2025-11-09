@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import Hero from '@/components/layout/Hero';
@@ -18,9 +19,14 @@ function PackageCard({ pkg, ctaLabel }) {
   return (
     <Link
       href={`/services/${pkg.slug}`}
-      className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/90 p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-700"
+      className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/95 p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-700"
     >
       <div className="space-y-4">
+        {pkg.icon && (
+          <div className="relative h-14 w-14 overflow-hidden rounded-xl bg-emerald-50">
+            <Image src={pkg.icon} alt="" fill sizes="56px" className="object-contain p-3" />
+          </div>
+        )}
         <div>
           <h3 className="text-xl font-semibold tracking-tight text-slate-900">{pkg.title}</h3>
           {pkg.summary && <p className="mt-2 text-sm leading-6 text-slate-600">{pkg.summary}</p>}
@@ -39,10 +45,39 @@ function PackageCard({ pkg, ctaLabel }) {
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{pkg.format}</p>
         )}
       </div>
-        <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700">
-          {pkg.cta || ctaLabel}
-          <span aria-hidden="true">→</span>
-        </span>
+      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700">
+        {pkg.cta || ctaLabel}
+        <span aria-hidden="true">→</span>
+      </span>
+    </Link>
+  );
+}
+
+function LearnMoreCard({ learn }) {
+  if (!learn?.href) {
+    return null;
+  }
+
+  return (
+    <Link
+      href={learn.href}
+      className="flex h-full flex-col justify-between rounded-3xl border border-dashed border-emerald-200 bg-white/70 p-6 text-left shadow-sm transition hover:-translate-y-1 hover:border-emerald-400 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-700"
+    >
+      <div className="space-y-4">
+        {learn.icon && (
+          <div className="relative h-14 w-14 overflow-hidden rounded-xl bg-emerald-100">
+            <Image src={learn.icon} alt="" fill sizes="56px" className="object-contain p-3" />
+          </div>
+        )}
+        <div>
+          <h3 className="text-xl font-semibold tracking-tight text-emerald-800">{learn.title}</h3>
+          {learn.summary && <p className="mt-2 text-sm leading-6 text-slate-600">{learn.summary}</p>}
+        </div>
+      </div>
+      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700">
+        {learn.cta}
+        <span aria-hidden="true">→</span>
+      </span>
     </Link>
   );
 }
@@ -53,6 +88,7 @@ function ServicesPage() {
   const packages = t('packages.cards', { returnObjects: true });
   const processBullets = t('process.bullets', { returnObjects: true });
   const packageCta = t('packages.cta', { defaultValue: 'View details' });
+  const learnCard = t('packages.learn', { returnObjects: true });
   const overviewSubtitle = t('overview.subtitle', {
     defaultValue: t('overview.description', { defaultValue: '' }),
   });
@@ -134,10 +170,11 @@ function ServicesPage() {
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('packages.title')}</h2>
             <p className="mt-4 text-base leading-7 text-slate-600">{t('packages.description')}</p>
           </div>
-          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-4">
             {packages.map((pkg) => (
               <PackageCard key={pkg.slug} pkg={pkg} ctaLabel={packageCta} />
             ))}
+            <LearnMoreCard learn={learnCard} />
           </div>
         </div>
       </section>
