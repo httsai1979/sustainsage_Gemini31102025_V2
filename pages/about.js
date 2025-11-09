@@ -100,16 +100,18 @@ export default function AboutPage() {
 
       <section className="bg-emerald-50/60 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-6">
-          {hero?.kicker ? (
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.kicker}</p>
-          ) : null}
-          <div className="typography mt-4 flex max-w-3xl flex-col gap-4">
-            <h1>{hero?.title}</h1>
-            {hero?.body ? <p>{hero.body}</p> : null}
+          <div className="max-w-3xl space-y-6">
+            {hero?.kicker ? (
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.kicker}</p>
+            ) : null}
+            <div className="typography flex flex-col gap-4">
+              <h1>{hero?.title}</h1>
+              {hero?.body ? <p>{hero.body}</p> : null}
+            </div>
           </div>
           {hero?.bullets?.length ? (
-            <div className="rounded-3xl border border-emerald-100 bg-white/90 p-6">
-              <h2 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{hero.bulletsTitle}</h2>
+            <div className="mt-12 max-w-3xl rounded-3xl border border-emerald-100 bg-white/90 p-6">
+              <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{hero.bulletsTitle}</p>
               <div className="mt-4">
                 <BulletList items={hero.bullets} />
               </div>
@@ -124,7 +126,7 @@ export default function AboutPage() {
             <h2>{practice?.title}</h2>
             {practice?.intro ? <p>{practice.intro}</p> : null}
           </div>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-6 md:grid-cols-2">
             {practice?.sections?.map((section) => (
               <div key={section.title} className="rounded-3xl border border-emerald-100 bg-emerald-50/60 p-6">
                 <h3 className="text-base font-semibold text-slate-900">{section.title}</h3>
@@ -175,7 +177,7 @@ export default function AboutPage() {
             <h2>{cta?.title}</h2>
             {cta?.body ? <p>{cta.body}</p> : null}
           </div>
-          <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href={cta?.primary?.href ?? '/services'}
               className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-emerald-700"
