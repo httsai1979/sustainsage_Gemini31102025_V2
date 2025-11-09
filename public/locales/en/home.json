@@ -12,37 +12,48 @@
     "learnMore": "Learn more",
     "cards": [
       {
-        "title": "Transition & relocation",
+        "title": "Transition coaching",
         "target": "For people settling into a new country or chapter.",
         "scenario": "You are building a life in the UK while keeping commitments elsewhere.",
         "questions": [
           "What agreements help you feel rooted when obligations pull in different directions?",
           "How do you honour grief, curiosity, and agency as you land?"
         ],
-        "href": "/services/transition-relocation",
+        "href": "/services/transition",
         "icon": "/images/services/transition.svg"
       },
       {
-        "title": "Return-to-work & clarity",
+        "title": "Early-career coaching",
+        "target": "For people figuring out their early career moves.",
+        "scenario": "You want honest space to test directions before committing.",
+        "questions": [
+          "Which options feel exciting, safe, or both?",
+          "How can you experiment without pretending you “have it all together”?"
+        ],
+        "href": "/services/early-career",
+        "icon": "/images/services/early-career.svg"
+      },
+      {
+        "title": "Working parent coaching",
         "target": "For carers, parents, and professionals re-entering paid roles.",
         "scenario": "You are rebuilding confidence after time away or a role change.",
         "questions": [
           "What rhythms sustain both your responsibilities and your growth?",
           "Which stories about readiness or worthiness need reframing?"
         ],
-        "href": "/services/return-to-work-clarity",
-        "icon": "/images/services/returning.svg"
+        "href": "/services/working-parents",
+        "icon": "/images/services/working-parents.svg"
       },
       {
-        "title": "UK workplace confidence",
+        "title": "Leadership coaching",
         "target": "For leaders navigating cross-cultural communication.",
         "scenario": "You are translating ideas across UK norms, accents, and expectations.",
         "questions": [
           "Where do you want more ease in speaking up or setting boundaries?",
           "What support systems anchor you when feedback styles differ?"
         ],
-        "href": "/services/uk-workplace-confidence",
-        "icon": "/images/services/experiments.svg"
+        "href": "/services/leadership",
+        "icon": "/images/services/leadership.svg"
       }
     ]
   },

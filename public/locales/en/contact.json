@@ -5,14 +5,14 @@
   },
   "hero": {
     "title": "A 20-minute exploratory chat—not a sales call.",
-    "subtitle": "Tell us what is shifting in your life. We will clarify together whether coaching is the right kind of support." 
+    "subtitle": "Tell us what is shifting in your life. We will clarify together whether coaching is the right kind of support."
   },
   "preForm": {
     "title": "Before you write",
     "bullets": [
       "Share the transition or decision you are navigating and anything that would help us prepare.",
       "We use your information only to reply, schedule the chat, and keep records required by coaching ethics.",
-      "We will not add you to marketing lists or share your details without consent, unless law requires it." 
+      "We will not add you to marketing lists or share your details without consent, unless law requires it."
     ]
   },
   "form": {
@@ -25,19 +25,47 @@
     "focusArea": "Preferred pathway (optional)",
     "focusAreaPlaceholder": "Select a pathway",
     "focusAreaOptions": [
-      { "value": "transition-relocation", "label": "Transition & relocation" },
-      { "value": "return-to-work-clarity", "label": "Return-to-work & clarity" },
-      { "value": "uk-workplace-confidence", "label": "UK workplace confidence" },
-      { "value": "not-sure", "label": "Not sure yet" }
+      {
+        "value": "transition",
+        "label": "Transition coaching"
+      },
+      {
+        "value": "early-career",
+        "label": "Early-career coaching"
+      },
+      {
+        "value": "working-parents",
+        "label": "Working parent coaching"
+      },
+      {
+        "value": "leadership",
+        "label": "Leadership coaching"
+      },
+      {
+        "value": "not-sure",
+        "label": "Not sure yet"
+      }
     ],
     "focusHint": "Choose the option that feels closest—it is fine to stay uncertain.",
     "language": "Preferred language",
     "languagePlaceholder": "Select a language",
     "languageOptions": [
-      { "value": "en", "label": "English" },
-      { "value": "zh-TW", "label": "Traditional Chinese" },
-      { "value": "zh-CN", "label": "Simplified Chinese" },
-      { "value": "mix", "label": "Mix languages" }
+      {
+        "value": "en",
+        "label": "English"
+      },
+      {
+        "value": "zh-TW",
+        "label": "Traditional Chinese"
+      },
+      {
+        "value": "zh-CN",
+        "label": "Simplified Chinese"
+      },
+      {
+        "value": "mix",
+        "label": "Mix languages"
+      }
     ],
     "timezone": "Preferred time zone / availability",
     "timezonePlaceholder": "e.g. UK mornings, GMT+8 evenings, or flexible",
@@ -67,15 +95,32 @@
     "items": [
       {
         "question": "What happens after I submit this form?",
-        "answer": "We reply within three UK working days with a few time slots. During the call we clarify focus, boundaries, and whether coaching fits."
+        "answer": "We reply within three UK working days with a few time slots. During the call we clarify focus, boundaries, and whether coaching fits. If this brings up questions, you can mention it in the intro call form."
       },
       {
         "question": "Which languages can we use?",
-        "answer": "We coach in English and Mandarin. You can switch languages mid-conversation if that helps express nuance."
+        "answer": "We coach in English and Mandarin. You can switch languages mid-conversation if that helps express nuance. If this brings up questions, you can mention it in the intro call form."
       },
       {
         "question": "I’m not sure if coaching is right for me—can we talk about that?",
-        "answer": "Absolutely. The intro chat is for exploring fit. We will suggest next steps or other resources if coaching isn’t the right support."
+        "answer": "Absolutely. The intro chat is for exploring fit. We will suggest next steps or other resources if coaching isn’t the right support. If this brings up questions, you can mention it in the intro call form."
+      }
+    ]
+  },
+  "afterReachOut": {
+    "title": "What to expect after you reach out",
+    "items": [
+      {
+        "summary": "We reply within three UK working days.",
+        "detail": "You will receive a short email with intro chat slots and space to share anything sensitive beforehand."
+      },
+      {
+        "summary": "The intro chat is collaborative.",
+        "detail": "We explore focus, boundaries, fees and whether coaching is the right support—not a sales pitch."
+      },
+      {
+        "summary": "You decide what happens next.",
+        "detail": "If we continue, we document session length, cadence, reviews and any limits so you stay in control."
       }
     ]
   }

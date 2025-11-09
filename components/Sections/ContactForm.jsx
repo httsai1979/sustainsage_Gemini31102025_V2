@@ -27,14 +27,14 @@ export default function ContactForm() {
   const focusAreaOptions = t('form.focusAreaOptions', { returnObjects: true });
 
   useEffect(() => {
-    const packageParam = router.query.package;
-    if (typeof packageParam === 'string') {
-      const isValid = focusAreaOptions.some((option) => option.value === packageParam);
+    const focusParam = router.query.package ?? router.query.topic;
+    if (typeof focusParam === 'string') {
+      const isValid = focusAreaOptions.some((option) => option.value === focusParam);
       if (isValid) {
-        setFormData((previous) => (previous.focusArea ? previous : { ...previous, focusArea: packageParam }));
+        setFormData((previous) => (previous.focusArea ? previous : { ...previous, focusArea: focusParam }));
       }
     }
-  }, [focusAreaOptions, router.query.package]);
+  }, [focusAreaOptions, router.query.package, router.query.topic]);
 
   const handleChange = (event) => {
     const { name, type, value, checked } = event.target;
@@ -112,7 +112,10 @@ export default function ContactForm() {
       <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr]">
         <div className="rounded-3xl bg-white/90 p-8 shadow-sm">
           <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{t('form.title')}</h2>
-          <p className="mt-4 text-base leading-7 text-slate-600">{t('form.subtitle')}</p>
+          <p className="mt-4 text-base leading-7 text-slate-600">
+            <strong className="block text-slate-900">Share as much as you like.</strong>
+            {t('form.subtitle')}
+          </p>
 
           {status && (
             <div

@@ -25,19 +25,47 @@
     "focusArea": "偏好的路径（选填）",
     "focusAreaPlaceholder": "选择一个路径",
     "focusAreaOptions": [
-      { "value": "transition-relocation", "label": "转变与搬迁" },
-      { "value": "return-to-work-clarity", "label": "重返职涯与厘清方向" },
-      { "value": "uk-workplace-confidence", "label": "英国职场信心" },
-      { "value": "not-sure", "label": "还不确定" }
+      {
+        "value": "transition",
+        "label": "Transition coaching"
+      },
+      {
+        "value": "early-career",
+        "label": "Early-career coaching"
+      },
+      {
+        "value": "working-parents",
+        "label": "Working parent coaching"
+      },
+      {
+        "value": "leadership",
+        "label": "Leadership coaching"
+      },
+      {
+        "value": "not-sure",
+        "label": "还不确定"
+      }
     ],
     "focusHint": "选最接近的选项即可，不确定也没关系。",
     "language": "想使用的语言",
     "languagePlaceholder": "选择语言",
     "languageOptions": [
-      { "value": "en", "label": "English" },
-      { "value": "zh-TW", "label": "繁体中文" },
-      { "value": "zh-CN", "label": "简体中文" },
-      { "value": "mix", "label": "视情况混用" }
+      {
+        "value": "en",
+        "label": "English"
+      },
+      {
+        "value": "zh-TW",
+        "label": "繁体中文"
+      },
+      {
+        "value": "zh-CN",
+        "label": "简体中文"
+      },
+      {
+        "value": "mix",
+        "label": "视情况混用"
+      }
     ],
     "timezone": "方便的时区 / 时段",
     "timezonePlaceholder": "例如：英国早上、GMT+8 晚上或弹性",
@@ -76,6 +104,23 @@
       {
         "question": "我还不确定教练是否适合，可以聊聊吗？",
         "answer": "可以。认识谈就是为了探索合适性，如果不适合会一起讨论其他资源。"
+      }
+    ]
+  },
+  "afterReachOut": {
+    "title": "聯絡後會發生什麼",
+    "items": [
+      {
+        "summary": "我們會在三個英國工作天內回覆。",
+        "detail": "你會收到簡短的 Email，包含認識談時段與可先說明的重點。"
+      },
+      {
+        "summary": "認識談是合作式的對話。",
+        "detail": "我們會一起確認焦點、界線、費用，以及教練是否適合，而不是推銷。"
+      },
+      {
+        "summary": "下一步由你決定。",
+        "detail": "若繼續合作，會把時長、節奏、檢視點與界線寫清楚，確保主導權在你。"
       }
     ]
   }
