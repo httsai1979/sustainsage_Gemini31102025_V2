@@ -10,58 +10,70 @@
   },
   "pathways": {
     "title": "选择适合你的教练路径",
-    "description": "四条最常被询问的路径，都会依你的情境弹性调整。",
-    "highlight": "先厘清想要的节奏与重点。",
+    "description": "五条符合 ICF 准则的教练路径，初谈后可按需求灵活调整。",
+    "highlight": "先选一条最贴近当下的路径。",
     "sidebar": "初谈后会再调整步调、语言与范围，确保方案符合你现在的状态。",
     "viewDetails": "了解更多",
     "cards": [
       {
-        "slug": "transition",
-        "title": "转变教练",
-        "target": "给搬迁、复职与角色转变的人。",
-        "scenario": "你想在重整工作、地点与支持系统时，有个稳定的思考伙伴。",
-        "topics": [
-          "在跨出去前，先看清签证、财务、照护责任与精力现实。",
-          "让决策同时尊重新的可能与目前的限制。",
-          "测试履历、对话或试验任务，而不是一次压上全部。"
+        "slug": "transition-coaching",
+        "title": "转换教练",
+        "target": "稳住跨境转换。",
+        "audience": "给在跨国移动中，同时重整工作、生活与支持系统的人。",
+        "benefits": [
+          "在承诺前先把签证、财务、照护责任与精力限制盘点清楚。",
+          "安全地测试职涯叙事与角色选项，不用一次押上全部。",
+          "一边落地英国、一边维系海外连结也能维持可持续的节奏。"
         ],
         "icon": "/images/services/transition.svg"
       },
       {
-        "slug": "early-career",
-        "title": "职业初期教练",
-        "target": "给 20–35 岁还在摸索方向的人。",
-        "scenario": "你想要一个可以试探选项、说出真正在乎什么的空间，而不是假装自己都想好了。",
-        "topics": [
-          "把家人、财务与个人期待转化成可行的下一步。",
-          "在保留疑惑的同时，长出描述渴望的语言。",
-          "安全地测试副项目、信息访谈或转换，而不是一次赌身家。"
+        "slug": "mid-career-coaching",
+        "title": "职业中段教练",
+        "target": "重新对焦下一个篇章。",
+        "audience": "给有经验、想兼顾影响力、健康与价值转变的专业人士。",
+        "benefits": [
+          "拆解自己、家人与利益相关者的期待，不用在压力下硬撑。",
+          "设计实验探索组合职涯、领导转向或休息计划。",
+          "建立同时看见意义、收入与健康的决策框架。"
+        ],
+        "icon": "/images/services/experiments.svg"
+      },
+      {
+        "slug": "uk-newcomer-coaching",
+        "title": "英国新职场教练",
+        "target": "理解英国职场语境。",
+        "audience": "给把国际经验转化到英国组织的新移民。",
+        "benefits": [
+          "翻译履历与职涯故事，让不同文化都听得懂。",
+          "规划和猎头、主管、社群对话时的界线与语言。",
+          "建立支持系统，在不过度消耗的前提下稳定成长。"
+        ],
+        "icon": "/images/services/new-to-uk.svg"
+      },
+      {
+        "slug": "returner-coaching",
+        "title": "复职教练",
+        "target": "安稳回到职场。",
+        "audience": "给照护者、进修者或休息后想重返工作的专业人士。",
+        "benefits": [
+          "用更新的叙事与现实步调找回信心。",
+          "辨识可转移的强项与界线，先想清楚再答应。",
+          "共同设计保护能量又能累积动能的生活节奏。"
+        ],
+        "icon": "/images/services/returning.svg"
+      },
+      {
+        "slug": "early-career-coaching",
+        "title": "职业早期教练",
+        "target": "长出属于你的开场。",
+        "audience": "给探索方向、不想假装“都想好了”的职业早期人。",
+        "benefits": [
+          "把价值观、限制与可能性整理成雇主听得懂的语言。",
+          "在回馈陪伴下试验角色、副项目或进修。",
+          "建立兼顾尝试与稳定的决策习惯。"
         ],
         "icon": "/images/services/early-career.svg"
-      },
-      {
-        "slug": "working-parents",
-        "title": "职场父母教练",
-        "target": "给在重建节奏的父母与照护者。",
-        "scenario": "你需要呼吸空间，同时兼顾照护、工作与身份感，不想再超载。",
-        "topics": [
-          "看见隐形劳务，设计真的守得住的界线。",
-          "在工作与家庭谈支持，而不是被罪恶感绑架。",
-          "把自我照顾放进每周节奏，而不是永远留在愿望清单。"
-        ],
-        "icon": "/images/services/working-parents.svg"
-      },
-      {
-        "slug": "leadership",
-        "title": "领导者教练",
-        "target": "给在复杂、跨文化情境中的管理者。",
-        "scenario": "你想要一个可以反思的伙伴，陪你在跨境、权力与期待之间带领团队。",
-        "topics": [
-          "以角色清晰为基础做决策，不再扛不属于你的责任。",
-          "设计具有文化敏感度的高风险对话。",
-          "维持你的领导能量，而不是用过劳证明价值。"
-        ],
-        "icon": "/images/services/leadership.svg"
       }
     ]
   },
@@ -72,7 +84,7 @@
     "primaryCta": "预约初谈",
     "primaryHref": "/contact",
     "secondaryCta": "了解教练怎么进行",
-    "secondaryHref": "/services/transition"
+    "secondaryHref": "/services/how-coaching-works"
   },
   "serviceDetail": {
     "transition": {

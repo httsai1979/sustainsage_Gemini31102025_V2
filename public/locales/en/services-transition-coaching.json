@@ -1,80 +1,91 @@
 {
   "seo": {
-    "title": "Transition Coaching – 6 sessions for relocation & role change | SustainSage",
-    "description": "A structured yet gentle coaching space to clarify your move to the UK, stabilise change, and shape work that fits real life."
+    "title": "Transition coaching for global moves | SustainSage",
+    "description": "ICF-aligned coaching to steady international relocations, role changes, and life transitions while you stay grounded."
   },
   "hero": {
-    "title": "Transition Coaching – 6 sessions",
-    "subtitle": "A structured yet gentle space to think clearly, stabilise your move, and shape work that fits your real life in the UK.",
-    "imageAlt": "Illustration representing transition coaching support",
-    "primaryCta": "Book an intro call",
-    "secondaryCta": "Back to services"
+    "title": "Steady your relocation or role shift without losing yourself.",
+    "subtitle": "We co-design structure around visas, careers, and community so you can move with clarity.",
+    "primaryCta": "Book a 20-minute intro call",
+    "primaryHref": "/contact?service=transition-coaching",
+    "secondaryCta": "Back to services",
+    "secondaryHref": "/services"
   },
   "sections": {
-    "fit": {
-      "title": "Is this for you?",
+    "who": {
+      "title": "Who this is for",
       "items": [
-        "You’ve recently moved (or are about to move) to the UK and feel pulled between practical tasks, cultural differences, and expectations from home.",
-        "You’re stepping into a new role or sector and want to design how you show up, rather than “winging it” until burnout.",
-        "You’re tired of advice that doesn’t get your context. You want a calm partner to think with, not someone to tell you who to be.",
-        "You’d like a clear frame: what to focus on in the next 3–6 months, without pretending everything can be fixed at once."
+        "You’re relocating to the UK while still managing responsibilities in another country.",
+        "You and a partner or family are negotiating different timelines, visas, or schooling.",
+        "You’re switching sector or function at the same time as moving.",
+        "You’re rebuilding routines after burnout or a difficult exit."
       ]
     },
-    "journey": {
-      "title": "What we do together (6 sessions)",
-      "description": "Each session builds on what you notice and need. You lead the agenda; we support with reflection, questions, and structure.",
-      "sessions": [
+    "what": {
+      "title": "What we work on",
+      "items": [
+        "Clarifying practical decisions across immigration, finances, care, and timelines.",
+        "Translating your experience and leadership story for UK recruiters and stakeholders.",
+        "Designing sustainable experiments to test roles, consulting, or hybrid setups.",
+        "Building support systems so you can integrate in the UK while honouring commitments elsewhere."
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "description": "A 3–4 month partnership paced to match your transition.",
+      "items": [
+        "Six 60-minute sessions over 12–16 weeks via Zoom, scheduled around your relocation timeline.",
+        "Each session is co-designed; we review learning and recalibrate priorities together.",
+        "Between-session support via secure notes or Loom updates when decisions need timely reflection.",
+        "We offer structure, questions, and resources without guarantees of specific job or visa outcomes."
+      ]
+    },
+    "examples": {
+      "title": "Example scenarios",
+      "items": [
         {
-          "number": 1,
-          "title": "Mapping your reality",
-          "description": "Clarify what has changed, what’s at stake, and what “good enough for now” looks like."
+          "title": "Coordinating a dual-location move",
+          "description": "We mapped decision windows for a Singapore–London relocation, aligned partner expectations, and rehearsed conversations with HR about visas and flexible working."
         },
         {
-          "number": 2,
-          "title": "Values & non-negotiables",
-          "description": "Identify what must stay true for you (health, care work, finances, identity)."
+          "title": "Switching sector while settling",
+          "description": "A corporate strategist moving into UK charity leadership translated achievements, planned informational interviews, and paced applications to avoid burnout."
         },
         {
-          "number": 3,
-          "title": "Options & small experiments",
-          "description": "Turn vague ideas (“better job”, “better balance”) into 2–3 testable moves."
-        },
-        {
-          "number": 4,
-          "title": "Boundaries & conversations",
-          "description": "Prepare key conversations (manager, partner, family, self) in a grounded way."
-        },
-        {
-          "number": 5,
-          "title": "Adjust & deepen",
-          "description": "Review experiments, refine your focus, and widen options if needed."
-        },
-        {
-          "number": 6,
-          "title": "Integrate & future-proof",
-          "description": "Capture what you’ve learned, decide what support you still want, and how you’ll notice if you’re drifting."
+          "title": "Rebuilding after a difficult exit",
+          "description": "We created rest and learning cycles after redundancy, structured finances, and designed pilot consulting offers before committing to full-time roles."
         }
       ]
     },
-    "ethics": {
-      "title": "How we work (ICF aligned)",
+    "expect": {
+      "title": "What you can expect",
       "items": [
-        "You lead the agenda. We bring questions, reflection and structure.",
-        "We do not diagnose, fix you, or promise outcomes.",
-        "If therapy, legal or immigration advice is more appropriate, we will name it and signpost where we can."
+        "Clearer priorities across personal, professional, and logistical commitments.",
+        "Language that explains your story with confidence in UK contexts.",
+        "Sustainable routines and boundaries that protect energy during change.",
+        "Increased agency to choose next steps instead of reacting to urgency."
       ]
     },
-    "example": {
-      "title": "A real-world example",
-      "body": "“A mid-30s professional moved to the UK with their partner. No local network, unsure whether to restart in the same industry. Over 6 sessions we mapped constraints, clarified financial & family needs, tested two role directions, and set boundaries with an employer who kept “stretching” expectations. They left with a concrete 3–6 month plan and language to explain their choices at home and at work.”",
-      "note": "Every coaching journey is different. The example above is anonymised and shared with permission to illustrate how we work."
+    "ethics": {
+      "title": "Ethics & fit",
+      "items": [
+        "ICF-trained coaching with confidentiality agreements that respect self-funded or sponsored work.",
+        "We signpost therapy, legal, or immigration specialists when they can support you better.",
+        "You set the pace and focus; we co-design without pressure or hustle scripts.",
+        "No commissions or hidden referrals—recommendations are transparent and client-led."
+      ]
     },
     "cta": {
-      "body": [
-        { "type": "text", "value": "Use the intro call to sense whether this frame feels useful. If not, we won’t convince you otherwise." }
-      ],
-      "primaryCta": "Book an intro call",
-      "secondaryCta": "Explore all services"
+      "title": "Ready to explore your next move with steadiness?",
+      "body": "Book an intro conversation so we can hear your context and confirm the fit.",
+      "primary": {
+        "label": "Book an intro call",
+        "href": "/contact?service=transition-coaching"
+      },
+      "secondary": {
+        "label": "See how coaching works",
+        "href": "/services/how-coaching-works"
+      }
     }
   }
 }

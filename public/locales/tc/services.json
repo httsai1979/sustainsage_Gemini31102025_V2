@@ -10,58 +10,70 @@
   },
   "pathways": {
     "title": "選擇適合你的教練路徑",
-    "description": "四條最常被詢問的路徑，都會依你的情境彈性調整。",
-    "highlight": "先釐清想要的節奏與重點。",
+    "description": "五條符合 ICF 準則的教練路徑，初談後可依需求混搭調整。",
+    "highlight": "先選一條最貼近當下的路徑。",
     "sidebar": "初談後會再調整步調、語言與範圍，確保方案符合你現在的狀態。",
     "viewDetails": "了解更多",
     "cards": [
       {
-        "slug": "transition",
+        "slug": "transition-coaching",
         "title": "轉換教練",
-        "target": "給搬遷、復職與角色轉換的人。",
-        "scenario": "你想在重整工作、地點與支援系統時，有個穩定的思考夥伴。",
-        "topics": [
-          "在跳之前，先看清簽證、財務、照顧責任與精力現實。",
-          "讓決策同時尊重新的可能與目前的限制。",
-          "測試履歷、對話或試驗性任務，而不是一次壓上全部。"
+        "target": "穩住跨境轉換。",
+        "audience": "給在跨國移動中，同步重整工作、生活與支援系統的人。",
+        "benefits": [
+          "在承諾前先把簽證、財務、照顧責任與精力限制盤點清楚。",
+          "安全地測試職涯敘事與角色選項，不用一次押上全部。",
+          "一邊落地英國、一邊維持海外連結也能保有可持續的節奏。"
         ],
         "icon": "/images/services/transition.svg"
       },
       {
-        "slug": "early-career",
-        "title": "職涯初期教練",
-        "target": "給 20–35 歲還在摸索方向的人。",
-        "scenario": "你想要一個可以試探選項、說出真正在乎什麼的空間，而不是假裝自己都想好了。",
-        "topics": [
-          "把家人、財務與個人期待轉化成可行的下一步。",
-          "在保留疑惑的同時，長出描述渴望的語言。",
-          "安全地測試副專案、資訊訪談或轉換，而不是一次賭身家。"
+        "slug": "mid-career-coaching",
+        "title": "職涯中段教練",
+        "target": "重新對焦下一個篇章。",
+        "audience": "給有經驗、想兼顧影響力、健康與價值轉變的專業人士。",
+        "benefits": [
+          "拆解自己、家人與利害關係人的期待，不用在壓力下硬撐。",
+          "設計實驗探索組合職涯、領導轉向或休息計畫。",
+          "建立同時看見意義、收入與健康的決策框架。"
+        ],
+        "icon": "/images/services/experiments.svg"
+      },
+      {
+        "slug": "uk-newcomer-coaching",
+        "title": "英國新職場教練",
+        "target": "理解英國職場語境。",
+        "audience": "給把國際經驗轉換到英國組織的新移民。",
+        "benefits": [
+          "翻譯履歷與職涯故事，讓不同文化都聽得懂。",
+          "規劃和獵頭、主管、社群對話時的界線與語言。",
+          "建立支援系統，在不過度消耗的前提下穩定成長。"
+        ],
+        "icon": "/images/services/new-to-uk.svg"
+      },
+      {
+        "slug": "returner-coaching",
+        "title": "復職教練",
+        "target": "安穩回到職場。",
+        "audience": "給照顧者、進修者或休息後想重返工作的專業人士。",
+        "benefits": [
+          "用更新的敘事與現實步調找回信心。",
+          "辨識可轉移的強項與界線，先想清楚再答應。",
+          "共同設計保護能量又能累積動能的生活節奏。"
+        ],
+        "icon": "/images/services/returning.svg"
+      },
+      {
+        "slug": "early-career-coaching",
+        "title": "職涯早期教練",
+        "target": "長出屬於你的開場。",
+        "audience": "給探索方向、不想假裝「都想好了」的職涯早期人。",
+        "benefits": [
+          "把價值觀、限制與可能性整理成雇主聽得懂的語言。",
+          "在回饋陪伴下試驗角色、副專案或進修。",
+          "建立兼顧嘗試與穩定的決策習慣。"
         ],
         "icon": "/images/services/early-career.svg"
-      },
-      {
-        "slug": "working-parents",
-        "title": "職場父母教練",
-        "target": "給在重建節奏的父母與照顧者。",
-        "scenario": "你需要呼吸空間，同時兼顧照顧、工作與身份感，不想再超載。",
-        "topics": [
-          "看見隱形勞務，設計真的守得住的界線。",
-          "在工作與家庭談支援，而不是被罪惡感綁架。",
-          "把自我照顧放進每週節奏，而不是永遠留在願望清單。"
-        ],
-        "icon": "/images/services/working-parents.svg"
-      },
-      {
-        "slug": "leadership",
-        "title": "領導者教練",
-        "target": "給在複雜、跨文化情境中的管理者。",
-        "scenario": "你想要一個可以反思的夥伴，陪你在跨境、權力與期待之間帶領團隊。",
-        "topics": [
-          "以角色清晰為基礎做決策，不再扛不屬於你的責任。",
-          "設計具有文化敏感度的高風險對話。",
-          "維持你的領導能量，而不是用過勞證明價值。"
-        ],
-        "icon": "/images/services/leadership.svg"
       }
     ]
   },
@@ -72,7 +84,7 @@
     "primaryCta": "預約初談",
     "primaryHref": "/contact",
     "secondaryCta": "了解教練怎麼進行",
-    "secondaryHref": "/services/transition"
+    "secondaryHref": "/services/how-coaching-works"
   },
   "serviceDetail": {
     "transition": {

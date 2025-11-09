@@ -15,23 +15,25 @@ function PathwayCard({ card, viewDetails }) {
             <Image src={card.icon} alt="" fill sizes="48px" className="object-contain p-3" />
           </div>
           <div className="space-y-1">
-            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.target}</p>
+            {card?.target ? (
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.target}</p>
+            ) : null}
             <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
           </div>
         </div>
-        <p className="text-sm leading-6 text-slate-600">
-          <strong className="block text-slate-900">{card.scenario}</strong>
-        </p>
-        <ul className="space-y-2 text-sm leading-6 text-slate-700">
-          {card.topics.map((topic) => (
-            <li key={topic} className="flex gap-2">
-              <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
-              <span>
-                <strong className="block text-slate-900">{topic}</strong>
-              </span>
-            </li>
-          ))}
-        </ul>
+        {card?.audience ? (
+          <p className="text-sm leading-6 text-slate-600">{card.audience}</p>
+        ) : null}
+        {Array.isArray(card?.benefits) && card.benefits.length > 0 ? (
+          <ul className="space-y-2 text-sm leading-6 text-slate-700">
+            {card.benefits.map((benefit) => (
+              <li key={benefit} className="flex gap-2">
+                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
       </div>
       <Link
         href={`/services/${card.slug}`}
