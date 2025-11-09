@@ -1,98 +1,84 @@
 {
   "seo": {
-    "title": "About SustainSage",
-    "description": "Meet the coaches behind SustainSage and understand the ethics, cultural care, and real-life impact of our practice."
+    "title": "About SustainSage | Coaching built on trust",
+    "description": "Meet the ICF-aligned, multicultural coaches behind SustainSage. Learn how we practise, who we support, and how we stay accountable."
   },
   "hero": {
-    "title": "Steady coaching partners who honour context",
-    "subtitle": "We hold calm, bilingual conversations so you can think clearly without performance."
-  },
-  "faqLink": {
-    "label": "More questions? See our FAQ.",
-    "href": "/faq"
-  },
-  "mission": {
-    "title": "What guides us",
-    "description": "Our practice is rooted in consent, cultural literacy, and accountability.",
+    "title": "Trust is built in how we practise",
+    "body": "We partner with people navigating relocation, career change, and mission-led work across cultures. Conversations stay bilingual, steady, and grounded.",
+    "bulletsTitle": "What guides every partnership",
     "bullets": [
-      "ICF-aligned ethics: confidentiality, informed consent, and transparent agreements.",
-      "Attention to migration, race, gender, class, and health realities in every session.",
-      "Partnership over prescriptions—we notice patterns with you and co-design next steps."
+      "Aligned with the ICF Code of Ethics from agreements to data care.",
+      "Lived experience relocating across Asia-Pacific, Europe, and the UK.",
+      "Practical, no-drama experiments that respect your agency."
     ]
   },
-  "roots": {
-    "title": "Where we come from",
-    "description": "SustainSage grew from relocating across continents, rebuilding careers, and supporting communities navigating change.",
+  "inPractice": {
+    "title": "In practice, this means",
+    "intro": "When we coach together, you can count on a calm, transparent rhythm.",
     "bullets": [
-      "Coaching leaders, migrants, and carers across Asia-Pacific, Europe, and the UK.",
-      "Backgrounds in service design, social innovation, and organisational learning.",
-      "Practice shaped by multilingual facilitation and trauma-aware safeguarding partnerships."
+      "We slow down before jumping into action so your thinking can settle.",
+      "We ask before offering tools or frameworks, checking what fits your context.",
+      "We name limits early—we are not therapists, lawyers, or immigration advisers.",
+      "We document fees, cadence, and review points so decisions stay transparent."
     ]
   },
-  "approach": {
-    "title": "Our approach",
-    "cards": [
+  "founders": {
+    "title": "Founders",
+    "intro": "SustainSage is led by bilingual coaches who have built careers across continents while supporting newcomers, mission-driven teams, and leaders in transition.",
+    "people": [
       {
-        "title": "ICF ethics in action",
-        "body": "We agree on boundaries, confidentiality, data handling, and review points before sessions begin."
+        "name": "Yi-Ling Lai 賴怡伶 (she/her)",
+        "role": "Co-founder · ICF PCC coach & service designer",
+        "image": "/images/founders/yi-ling-lai.svg",
+        "imageAlt": "Illustration of Yi-Ling Lai",
+        "bio": [
+          "ICF Professional Certified Coach and service designer with 15 years in Taipei, Singapore, and the UK tech/NGO sectors.",
+          "Helps new immigrants, bilingual managers, and social impact teams navigate cultural nuance with steady, values-led experiments.",
+          "Leads peer supervision circles for coaches of colour and integrates trauma-aware safeguarding training into every engagement."
+        ]
       },
       {
-        "title": "Non-directive partnership",
-        "body": "You choose the focus and pace. We reflect patterns, invite questions, and offer structure without prescribing."
-      },
-      {
-        "title": "Culturally responsive and practical",
-        "body": "We welcome multiple languages, identities, and systems. Conversations end with grounded experiments you consent to test."
+        "name": "Hao-Cheng Tsai 蔡皓丞 (he/him)",
+        "role": "Co-founder · Coach & strategy facilitator",
+        "image": "/images/founders/hao-cheng-tsai.svg",
+        "imageAlt": "Illustration of Hao-Cheng Tsai",
+        "bio": [
+          "Coach and facilitator with background in social innovation, civic tech, and humanitarian programmes across Taiwan, Southeast Asia, and the UK.",
+          "Works with career shifters, NGO/tech leaders, and returning parents to translate values into realistic action plans.",
+          "Draws on his own migration journey to support clients building networks, resilience, and cross-cultural collaboration."
+        ]
       }
     ]
   },
-  "practice": {
-    "title": "How coaching feels",
-    "description": "We balance structure with room to adapt so your lived reality stays central.",
-    "bullets": [
-      "We clarify boundaries, pace, language, and consent for information use together.",
-      "Sessions weave reflection with practical planning you choose.",
-      "We review progress regularly and close well, including signposting if coaching is no longer the right fit."
-    ]
-  },
-  "boundaries": {
-    "title": "Clear limits keep you safe",
-    "description": "Naming what we do not provide protects your agency and wellbeing.",
-    "bullets": [
-      "Coaching is not therapy, counselling, medical, legal, financial, or immigration advice.",
-      "We are not an emergency or crisis service, nor a safeguarding investigation team.",
-      "We do not act on behalf of employers or sponsors without your explicit consent."
-    ]
-  },
-  "snapshots": {
-    "title": "Real-world snapshots",
-    "intro": "Names and details are blended to protect privacy while showing what coaching can feel like.",
-    "supportLabel": "How we supported",
-    "resultLabel": "What shifted",
-    "cards": [
+  "ethics": {
+    "title": "Ethics & supervision",
+    "intro": "Accountability is built into our practice, so you always know what safeguards are in place.",
+    "items": [
       {
-        "title": "Relocation and belonging",
-        "context": "A professional who moved from Taipei to Manchester felt stretched between supporting family abroad and learning UK workplace norms.",
-        "support": "We mapped support networks, rehearsed boundary-setting scripts, and designed experiments for building local community at a humane pace.",
-        "result": "They left with language for naming capacity, clearer agreements with relatives, and steadier confidence in hybrid meetings."
+        "title": "ICF Code of Ethics",
+        "body": "Every agreement, data practice, and session structure follows the International Coaching Federation Code of Ethics. We revisit it whenever scope or needs shift."
       },
       {
-        "title": "Return-to-work clarity",
-        "context": "A parent re-entering paid work after caregiving wanted to honour both career hopes and new family rhythms.",
-        "support": "We explored values, noticed inherited narratives about productivity, and co-created weekly check-ins with their partner.",
-        "result": "They reported feeling more in charge of choices, with shared agreements and realistic markers of progress."
+        "title": "Regular supervision & peer reflection",
+        "body": "We meet monthly with senior supervisors and facilitate peer reflection with multilingual practitioners to surface blind spots early."
       },
       {
-        "title": "UK workplace confidence",
-        "context": "A manager from Singapore navigated fast UK feedback styles and worried about being perceived as quiet.",
-        "support": "We practised grounding techniques, prepared questions to invite clarity, and identified allies who value reflective pacing.",
-        "result": "They described greater ease in speaking up, plus practical experiments to keep learning without abandoning their voice."
+        "title": "When coaching isn't right",
+        "body": "If coaching is not the right support, we pause and collaborate on referrals—signposting mental health, legal, immigration, or community resources."
       }
     ]
   },
   "cta": {
-    "title": "See how this translates into concrete pathways",
-    "linkLabel": "Explore coaching pathways",
-    "linkHref": "/services"
+    "title": "Want to see how this translates into support?",
+    "body": "Explore concrete coaching pathways or read common questions before booking anything.",
+    "primary": {
+      "label": "See our services",
+      "href": "/services"
+    },
+    "secondary": {
+      "label": "Common questions (FAQ)",
+      "href": "/faq"
+    }
   }
 }

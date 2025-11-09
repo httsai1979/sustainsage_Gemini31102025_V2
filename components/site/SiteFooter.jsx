@@ -19,11 +19,12 @@ export default function SiteFooter() {
             </p>
             <ul className="mt-3 space-y-2 text-sm text-slate-600">
               <li><Link href="/">{t('header.navHome')}</Link></li>
-              <li><Link href="/about">{t('header.navAbout')}</Link></li>
               <li><Link href="/services">{t('header.navServices')}</Link></li>
               <li><Link href="/resources">{t('header.navResources')}</Link></li>
               <li><Link href="/blog">{t('header.navBlog')}</Link></li>
+              <li><Link href="/about">{t('header.navAbout')}</Link></li>
               <li><Link href="/contact">{t('header.navContact')}</Link></li>
+              <li><Link href="/faq">{t('header.navFaq')}</Link></li>
             </ul>
           </div>
           <div>

@@ -8,11 +8,12 @@ import i18nConfig from '../../next-i18next.config';
 
 const NAV_ITEMS = [
   { href: '/', label: 'header.navHome' },
-  { href: '/about', label: 'header.navAbout' },
   { href: '/services', label: 'header.navServices' },
   { href: '/resources', label: 'header.navResources' },
   { href: '/blog', label: 'header.navBlog' },
+  { href: '/about', label: 'header.navAbout' },
   { href: '/contact', label: 'header.navContact' },
+  { href: '/faq', label: 'header.navFaq' },
 ];
 
 const LOCALE_LABELS = {

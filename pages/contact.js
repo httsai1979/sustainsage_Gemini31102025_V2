@@ -7,35 +7,46 @@ import ContactForm from '@/components/Sections/ContactForm';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
 
-const ICON_CLASS = 'h-10 w-10 flex-shrink-0 rounded-xl bg-emerald-50 p-2 text-emerald-700';
+function BulletHighlights({ items, title }) {
+  if (!items?.length) {
+    return null;
+  }
 
-function EnvelopeIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className={ICON_CLASS} aria-hidden>
-      <rect x="3" y="5" width="18" height="14" rx="3" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M4 7l8 6 8-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
+    <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+      {title ? <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{title}</p> : null}
+      <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
+        {items.map((item) => (
+          <li key={item} className="flex gap-3">
+            <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
-function StepsIcon() {
+function JourneyCard({ item, index }) {
   return (
-    <svg viewBox="0 0 24 24" fill="none" className={ICON_CLASS} aria-hidden>
-      <path d="M6 17h5v-3h5v-3h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M3 7h6v3h5v3h5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-}
-
-function SummaryBullet({ item }) {
-  return (
-    <li className="flex gap-3 rounded-2xl border border-emerald-100 bg-white/95 p-5 shadow-sm">
-      <span aria-hidden="true" className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-500" />
-      <div className="space-y-1">
-        <strong className="block text-sm font-semibold text-slate-900">{item.summary}</strong>
-        {item.detail ? <p className="text-sm leading-6 text-slate-700">{item.detail}</p> : null}
+    <div className="flex flex-col gap-3 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+      <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-sm font-semibold text-emerald-700">
+        {index + 1}
       </div>
-    </li>
+      <div className="space-y-2 text-sm leading-6 text-slate-700">
+        <h3 className="text-base font-semibold text-slate-900">{item.summary}</h3>
+        {item.detail ? <p>{item.detail}</p> : null}
+      </div>
+    </div>
+  );
+}
+
+function FAQItem({ item }) {
+  return (
+    <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+      <h3 className="text-base font-semibold text-slate-900">{item.question}</h3>
+      <p className="mt-3 text-sm leading-6 text-slate-700">{item.answer}</p>
+    </div>
   );
 }
 
@@ -44,80 +55,56 @@ export default function ContactPage() {
 
   const seo = t('seo', { returnObjects: true });
   const hero = t('hero', { returnObjects: true });
-  const preForm = t('preForm', { returnObjects: true });
+  const journey = t('journey', { returnObjects: true });
   const miniFaq = t('miniFaq', { returnObjects: true });
-  const afterReachOut = t('afterReachOut', { returnObjects: true });
   const faqLink = t('faqLink', { returnObjects: true });
 
   return (
     <MainLayout>
       <Head>
-        <title>{seo.title}</title>
-        <meta name="description" content={seo.description} />
+        <title>{seo?.title}</title>
+        <meta name="description" content={seo?.description} />
       </Head>
 
-      <section className="bg-emerald-50/60 py-16">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 md:flex-row md:items-start">
-          <div className="space-y-4 md:flex-1">
-            <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero.title}</h1>
-            <p className="text-base leading-7 text-slate-600">
-              <strong className="block text-slate-900">Share what is shifting.</strong>
-              {hero.subtitle}
-            </p>
-          </div>
-          <div className="flex flex-col gap-4 rounded-3xl border border-emerald-100 bg-white/80 p-6 text-sm leading-6 text-slate-700 md:w-80">
-            <div className="flex items-center gap-3">
-              <EnvelopeIcon />
-              <h2 className="text-base font-semibold text-slate-900">{preForm.title}</h2>
-            </div>
-            <ul className="space-y-3">
-              {preForm.bullets.map((item) => (
-                <li key={item} className="flex gap-2">
-                  <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <section className="bg-emerald-50/60 py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl space-y-6 px-6 text-center md:text-left">
+          <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero?.title}</h1>
+          {hero?.body ? <p className="text-base leading-7 text-slate-600">{hero.body}</p> : null}
         </div>
       </section>
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{afterReachOut.title}</h2>
-              <p className="mt-4 text-sm leading-6 text-slate-600">
-                <strong className="block text-slate-900">Reduce the unknowns.</strong>
-                Know what happens after you press send.
-              </p>
-            </div>
-            <StepsIcon />
+        <div className="mx-auto max-w-5xl space-y-8 px-6">
+          <div className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{journey?.title}</h2>
+            {journey?.intro ? <p className="text-base leading-7 text-slate-600">{journey.intro}</p> : null}
           </div>
-          <ul className="mt-10 space-y-4">
-            {afterReachOut.items.map((item) => (
-              <SummaryBullet key={item.summary} item={item} />
+          <div className="grid gap-6 md:grid-cols-3">
+            {journey?.items?.map((item, index) => (
+              <JourneyCard key={item.summary} item={item} index={index} />
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
       <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <ContactForm />
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="mb-10">
+            <BulletHighlights items={hero?.bullets} title={hero?.bulletsTitle} />
+          </div>
+          <ContactForm />
+        </div>
       </section>
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{miniFaq.title}</h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
-            {miniFaq.items.map((item) => (
-              <div key={item.question} className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-                <h3 className="text-base font-semibold text-slate-900">{item.question}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-700">
-                  <strong className="block text-slate-900">Here is what to expect.</strong>
-                  {item.answer}
-                </p>
-              </div>
+        <div className="mx-auto max-w-5xl space-y-8 px-6">
+          <div className="max-w-3xl space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{miniFaq?.title}</h2>
+            {miniFaq?.intro ? <p className="text-base leading-7 text-slate-600">{miniFaq.intro}</p> : null}
+          </div>
+          <div className="grid gap-6 md:grid-cols-2">
+            {miniFaq?.items?.map((item) => (
+              <FAQItem key={item.question} item={item} />
             ))}
           </div>
         </div>
@@ -126,10 +113,10 @@ export default function ContactPage() {
       {faqLink?.label ? (
         <div className="bg-emerald-50/70 py-8">
           <div className="mx-auto flex max-w-4xl flex-col items-center gap-2 px-6 text-center text-sm leading-6 text-slate-700">
-            <p>{faqLink.text}</p>
+            <p>{faqLink?.text}</p>
             <Link href={faqLink.href} className="inline-flex items-center gap-2 font-semibold text-emerald-700 hover:underline">
               {faqLink.label}
-              <span aria-hidden>→</span>
+              <span aria-hidden="true">→</span>
             </Link>
           </div>
         </div>
