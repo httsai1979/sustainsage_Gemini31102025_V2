@@ -62,12 +62,14 @@ export default function AboutPage() {
       </Head>
 
       <section className="bg-emerald-50/60 py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl space-y-6 px-6">
+        <div className="mx-auto max-w-5xl px-6">
           {hero?.kicker ? (
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.kicker}</p>
           ) : null}
-          <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero?.title}</h1>
-          {hero?.body ? <p className="max-w-3xl text-base leading-7 text-slate-600">{hero.body}</p> : null}
+          <div className="typography mt-4 flex max-w-3xl flex-col gap-4">
+            <h1>{hero?.title}</h1>
+            {hero?.body ? <p>{hero.body}</p> : null}
+          </div>
           {hero?.bullets?.length ? (
             <div className="rounded-3xl border border-emerald-100 bg-white/90 p-6">
               <h2 className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{hero.bulletsTitle}</h2>
@@ -80,22 +82,22 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl space-y-6 px-6">
-          <div className="max-w-3xl space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{inPractice?.title}</h2>
-            {inPractice?.intro ? <p className="text-base leading-7 text-slate-600">{inPractice.intro}</p> : null}
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="typography max-w-3xl flex flex-col gap-4">
+            <h2>{inPractice?.title}</h2>
+            {inPractice?.intro ? <p>{inPractice.intro}</p> : null}
           </div>
           <BulletList items={inPractice?.bullets} />
         </div>
       </section>
 
       <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl space-y-10 px-6">
-          <div className="max-w-3xl space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{founders?.title}</h2>
-            {founders?.intro ? <p className="text-base leading-7 text-slate-600">{founders.intro}</p> : null}
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="typography max-w-3xl flex flex-col gap-4">
+            <h2>{founders?.title}</h2>
+            {founders?.intro ? <p>{founders.intro}</p> : null}
           </div>
-          <div className="grid gap-8 md:grid-cols-2">
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
             {founders?.people?.map((person) => (
               <FounderCard key={person.name} person={person} />
             ))}
@@ -104,12 +106,12 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl space-y-8 px-6">
-          <div className="max-w-3xl space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{ethics?.title}</h2>
-            {ethics?.intro ? <p className="text-base leading-7 text-slate-600">{ethics.intro}</p> : null}
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="typography max-w-3xl flex flex-col gap-4">
+            <h2>{ethics?.title}</h2>
+            {ethics?.intro ? <p>{ethics.intro}</p> : null}
           </div>
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
             {ethics?.items?.map((item) => (
               <div key={item.title} className="rounded-3xl border border-emerald-100 bg-emerald-50/60 p-6 text-sm leading-6 text-slate-700">
                 <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
@@ -121,9 +123,11 @@ export default function AboutPage() {
       </section>
 
       <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl space-y-6 px-6 text-center">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{cta?.title}</h2>
-          {cta?.body ? <p className="text-sm leading-6 text-slate-700">{cta.body}</p> : null}
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <div className="typography flex flex-col gap-4">
+            <h2>{cta?.title}</h2>
+            {cta?.body ? <p>{cta.body}</p> : null}
+          </div>
           <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href={cta?.primary?.href ?? '/services'}

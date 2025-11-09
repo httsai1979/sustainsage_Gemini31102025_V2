@@ -5,7 +5,8 @@
   },
   "hero": {
     "title": "Coaching pathways shaped with you",
-    "subtitle": "Each pathway is a starting point. We adapt pace, language, and focus once we understand your reality."
+    "subtitle": "Each pathway is a starting point. We adapt pace, language, and focus once we understand your reality.",
+    "highlight": "Choose what fits now."
   },
   "faqLink": {
     "label": "More questions? See our FAQ.",
@@ -14,6 +15,8 @@
   "pathways": {
     "title": "Choose a pathway",
     "description": "Four pathways clients ask for most often. Each one flexes to match your context.",
+    "highlight": "Browse with clarity.",
+    "sidebar": "We meet you where you are—pace, language, and scope adjust after the intro call.",
     "viewDetails": "Learn more",
     "cards": [
       {
@@ -69,6 +72,7 @@
   "cta": {
     "title": "Not sure where to start?",
     "body": "A 20-minute intro chat lets us hear your context and shape the right mix together.",
+    "highlight": "Start with a conversation.",
     "primaryCta": "Book an intro chat",
     "primaryHref": "/contact",
     "secondaryCta": "Read how coaching works",
