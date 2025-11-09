@@ -1,127 +1,102 @@
 {
   "hero": {
     "headline": "沉穩、以你為主、符合 ICF 標準的教練陪你走過轉換。",
-    "subheadline": "無論是搬遷、重返職場，或面對跨文化的細膩差異，我們提供一個空間，陪你釐清方向、做出選擇、踏出合意的行動。",
+    "subheadline": "提供穩定的空間，陪你整理思緒、做實驗，按自己的節奏前進。",
     "imageAlt": "桌上放著筆記本與茶杯，象徵沉穩的教練場域。",
     "primaryCta": "預約 20 分鐘認識談",
-    "secondaryCta": "查看教練路徑"
+    "secondaryCta": "查看教練路徑",
+    "highlights": ["符合 ICF 標準", "陪伴跨國移動與回流者"]
+  },
+  "faqLink": {
+    "label": "還有疑問？前往 FAQ。",
+    "href": "/faq"
   },
   "forWhom": {
-    "title": "適合對象",
-    "description": "這些路徑源自我們最常陪伴的生活情境。",
-    "learnMore": "了解更多",
+    "title": "我們常陪伴的對象",
+    "intro": "以下四種情境最常出現。每個連結都會說明服務結構、界線與費用。",
+    "linkLabel": "了解如何進行",
     "cards": [
       {
-        "title": "轉換與搬遷",
-        "target": "適合正在適應新國家或新階段的人。",
-        "scenario": "你一邊在英國扎根，一邊仍需顧及其他地方的承諾。",
-        "questions": [
-          "在多方拉扯之下，什麼協議能讓你感到安定？",
-          "落腳的同時，如何讓好奇、哀悼與主動權都有位置？"
-        ],
+        "title": "轉換與搬遷教練",
+        "audience": "適合正在搬遷或回流的人。",
+        "description": "在英國落腳，同時顧及原有承諾。我們協助你梳理選項，而不是急著做決定。",
         "href": "/services/transition",
-        "icon": "/images/services/transition.svg"
+        "icon": "globe"
       },
       {
-        "title": "Early-career coaching",
-        "target": "For people figuring out their early career moves.",
-        "scenario": "You want honest space to test directions before committing.",
-        "questions": [
-          "Which options feel exciting, safe, or both?",
-          "How can you experiment without pretending you “have it all together”?"
-        ],
+        "title": "早期職涯釐清",
+        "audience": "適合初入職場想探索方向的人。",
+        "description": "先安全地試水溫再承諾。我們一起檢視邀約、導師與你設計的實驗。",
         "href": "/services/early-career",
-        "icon": "/images/services/early-career.svg"
+        "icon": "compass"
       },
       {
-        "title": "重返職涯與釐清方向",
-        "target": "適合照顧者、父母或專業人士重新投入有酬工作。",
-        "scenario": "你在暫停或轉職後重建信心。",
-        "questions": [
-          "哪些生活節奏同時支持責任與成長？",
-          "關於準備好與值得與否的敘事，需要怎麼重新觀看？"
-        ],
+        "title": "照顧者與父母支持",
+        "audience": "適合重建生活節奏的父母與照顧者。",
+        "description": "重新投入工作又想守住照顧協議。我們著重誠實的規劃，而不是拼命文化。",
         "href": "/services/working-parents",
-        "icon": "/images/services/working-parents.svg"
+        "icon": "balance"
       },
       {
-        "title": "英國職場信心",
-        "target": "適合在跨文化環境中領導或協作的人。",
-        "scenario": "你需要在英國的語氣、口音與期待之間翻譯自己的想法。",
-        "questions": [
-          "在哪些場景你想更自在地主張或設定界線？",
-          "當回饋風格不同，有哪些支撐系統能穩住你？"
-        ],
+        "title": "跨文化領導教練",
+        "audience": "適合跨國協作與帶領團隊的管理者。",
+        "description": "在不同文化與期待中仍保持清晰。我們練習對話與界線，守住你的承載量。",
         "href": "/services/leadership",
-        "icon": "/images/services/leadership.svg"
+        "icon": "signal"
       }
     ]
   },
   "recognise": {
-    "title": "你也許有過這些感受",
+    "title": "你可能也熟悉這些情境",
     "items": [
       "搬到英國後，不確定職場要遵循哪些默契。",
-      "想重新工作，但也想守住對家人重要的照顧安排。",
+      "想重返職場，但也想守住重要的照顧安排。",
       "會多種語言，卻在快速或細膩的對話中遲疑。",
-      "同時要顧簽證、家族期待與自己的職涯規劃。",
+      "同時要顧簽證、家族期待與自己的領導計畫。",
       "感覺到耗竭訊號，想在崩解前先做小型實驗。"
     ]
   },
   "how": {
-    "title": "教練如何進行",
+    "title": "教練怎麼進行",
+    "intro": "隨著焦點調整而循環的簡單節奏。",
     "steps": [
       {
-        "title": "共同決定焦點",
-        "description": "每次會談都從此刻最重要的議題開始，沒有制式腳本，也不急著解決。"
+        "title": "從當下的真實開始",
+        "summary": "以你帶來的狀況為起點，沒有腳本，也不要求你立刻想清楚。"
       },
       {
-        "title": "保留你的主導權",
-        "description": "你選擇方向與步調，我們一起映照模式、選項與合意。"
+        "title": "在合意裡探索選項",
+        "summary": "你試著梳理語言、故事與實驗，我們負責守住結構並提出更好的問題。"
       },
       {
-        "title": "設計小步實驗",
-        "description": "我們共創輕量的練習，在會談之間測試並回顧收穫。"
-      },
-      {
-        "title": "帶著清晰收束",
-        "description": "整理洞見、標記需要的支援，並尊重後續行動的界線。"
+        "title": "設計接下來的行動",
+        "summary": "每次會談結束前，一起確認你要帶走的行動、資源或轉介。"
       }
     ],
-    "moreLinkLabel": "進一步認識各路徑",
-    "moreLinkHref": "/services"
+    "ownership": "步調與主題永遠由你決定。我們的角色是守住結構、提醒界線並提出更精準的提問。",
+    "ctaLabel": "延伸閱讀：教練如何運作",
+    "ctaHref": "/services/how-coaching-works"
   },
-  "faq": {
-    "title": "常見提問",
+  "realLife": {
+    "title": "真實生活裡可能會這樣說…",
+    "intro": "以下是綜合不同來訪者而成的案例，保護當事人隱私。",
     "items": [
-      {
-        "question": "教練和心理治療有什麼不同？",
-        "answer": "教練聚焦於你當下的目標與未來行動，我們以對等關係合作，不做診斷或治療。如果評估後覺得其他資源更合適，我們會一同說明。"
-      },
-      {
-        "question": "會談內容會保密嗎？",
-        "answer": "會。除非法規要求揭露或出現危害風險，對話只在我們之間。開始前會確認紀錄保存方式與可能分享的情境。"
-      },
-      {
-        "question": "可以期待什麼結果？",
-        "answer": "我們不保證特定成果。多數來訪者帶著更清楚的語彙、自己選擇的行動實驗離開，你仍保有是否執行的決定權。"
-      },
-      {
-        "question": "可以混用不同語言嗎？",
-        "answer": "當然可以。我們會在英語與華語之間切換，讓你能表達細膩情緒與文化脈絡。"
-      },
-      {
-        "question": "怎麼判斷教練是不是適合我的支持？",
-        "answer": "認識談就是為這個目的而設。一起釐清你需要什麼、教練的角色在哪裡，若不適合，也會提供其他資源建議。"
-      },
-      {
-        "question": "初談後會發生什麼？",
-        "answer": "若決定繼續，我們會約定會談長度、頻率、費用與檢視節點，步調會配合你的實際承擔。"
-      }
+      { "quote": "「我剛搬到英國，覺得自己又從零開始，同時還要支援家鄉的家人。」" },
+      { "quote": "「我帶領一個小團隊，卻總覺得自己必須隨時撐住所有人。」" },
+      { "quote": "「休息照顧家人後想重返工作，需要一份兼顧收入與負荷的計畫。」" }
     ],
-    "footer": {
-      "text": "想更深入了解嗎？",
-      "linkLabel": "瀏覽教練路徑",
-      "linkHref": "/services"
-    }
+    "disclaimer": "這些都是混合而成的情境，不是個別客戶的證言，用來說明我們可以一起探索的主題。"
+  },
+  "faqSection": {
+    "title": "預約前先看看",
+    "body": "FAQ 隨時讓你確認範圍、流程與倫理。",
+    "bullets": [
+      "了解教練與治療或顧問的差異。",
+      "看到常見的會談節奏、頻率與收費範圍。",
+      "知道若出現心理健康或風險時，我們會如何處理。"
+    ],
+    "summary": "先讀 FAQ，可以在預約前判斷要開始、暫緩或先尋找其他資源。",
+    "ctaLabel": "前往 FAQ",
+    "ctaHref": "/faq"
   }
 }

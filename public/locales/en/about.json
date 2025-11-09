@@ -7,6 +7,10 @@
     "title": "Steady coaching partners who honour context",
     "subtitle": "We hold calm, bilingual conversations so you can think clearly without performance."
   },
+  "faqLink": {
+    "label": "More questions? See our FAQ.",
+    "href": "/faq"
+  },
   "mission": {
     "title": "What guides us",
     "description": "Our practice is rooted in consent, cultural literacy, and accountability.",

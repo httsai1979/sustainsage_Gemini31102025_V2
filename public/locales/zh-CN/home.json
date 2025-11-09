@@ -1,127 +1,102 @@
 {
   "hero": {
-    "headline": "沉稳、以你为主、符合 ICF 标准的教练陪你走过转变。",
-    "subheadline": "无论是搬迁、重返职场，还是面对跨文化的细微差异，我们都会留出空间，和你一起厘清方向、做出选择、踏出合意的行动。",
-    "imageAlt": "桌上放着笔记本与茶杯，象征沉稳的教练空间。",
+    "headline": "沉稳、以你为主、符合 ICF 标准的教练陪你度过转变。",
+    "subheadline": "提供稳定的空间，陪你整理思路、做实验，并按自己的节奏前进。",
+    "imageAlt": "桌上放着笔记本与茶杯，象征沉稳的教练场域。",
     "primaryCta": "预约 20 分钟认识谈",
-    "secondaryCta": "查看教练路径"
+    "secondaryCta": "查看教练路径",
+    "highlights": ["符合 ICF 标准", "陪伴跨国移动与回流者"]
+  },
+  "faqLink": {
+    "label": "还有问题？前往 FAQ。",
+    "href": "/faq"
   },
   "forWhom": {
-    "title": "适合谁",
-    "description": "这些路径来自我们最常陪伴的生活情境。",
-    "learnMore": "了解更多",
+    "title": "我们常陪伴的对象",
+    "intro": "以下四种情境最常出现。每个链接都会说明服务结构、界线与费用。",
+    "linkLabel": "了解如何进行",
     "cards": [
       {
-        "title": "转变与搬迁",
-        "target": "适合正在适应新国家或新阶段的人。",
-        "scenario": "你一边在英国扎根，一边仍要顾及其他地方的承诺。",
-        "questions": [
-          "在多重拉扯之下，什么约定能让你感到安定？",
-          "落地的同时，怎样让好奇、哀悼与主导权都被看见？"
-        ],
+        "title": "转换与搬迁教练",
+        "audience": "适合正在搬迁或回流的人。",
+        "description": "在英国落脚，同时顾及原有承诺。我们协助你梳理选项，而不是催促你做决定。",
         "href": "/services/transition",
-        "icon": "/images/services/transition.svg"
+        "icon": "globe"
       },
       {
-        "title": "Early-career coaching",
-        "target": "For people figuring out their early career moves.",
-        "scenario": "You want honest space to test directions before committing.",
-        "questions": [
-          "Which options feel exciting, safe, or both?",
-          "How can you experiment without pretending you “have it all together”?"
-        ],
+        "title": "早期职涯厘清",
+        "audience": "适合初入职场想探索方向的人。",
+        "description": "先安全地试水再承诺。我们一起检视邀约、导师与你设计的实验。",
         "href": "/services/early-career",
-        "icon": "/images/services/early-career.svg"
+        "icon": "compass"
       },
       {
-        "title": "重返职涯与厘清方向",
-        "target": "适合照顾者、父母或专业人士重新投入有偿工作。",
-        "scenario": "你在停歇或转职之后重建信心。",
-        "questions": [
-          "怎样的生活节奏同时照顾责任与成长？",
-          "关于“准备好了”或“够资格”的叙事，需要怎样重新理解？"
-        ],
+        "title": "照顾者与父母支持",
+        "audience": "适合重建生活节奏的父母与照顾者。",
+        "description": "重新投入工作又想守住照顾协定。我们重视诚实的规划，而不是拼命文化。",
         "href": "/services/working-parents",
-        "icon": "/images/services/working-parents.svg"
+        "icon": "balance"
       },
       {
-        "title": "英国职场信心",
-        "target": "适合在跨文化环境中领导或协作的人。",
-        "scenario": "你需要在英国的语气、口音与期待之间翻译自己的想法。",
-        "questions": [
-          "在哪些情境中你想更自在地主张或设定界限？",
-          "当反馈方式不同，哪些支撑系统能稳住你？"
-        ],
+        "title": "跨文化领导教练",
+        "audience": "适合跨国协作与带领团队的管理者。",
+        "description": "在不同文化与期待中仍保持清晰。我们练习对话与界线，守住你的承载量。",
         "href": "/services/leadership",
-        "icon": "/images/services/leadership.svg"
+        "icon": "signal"
       }
     ]
   },
   "recognise": {
-    "title": "你可能会有这些感受",
+    "title": "你也许熟悉这些情境",
     "items": [
-      "搬到英国后，不确定职场需要遵循哪些默认规则。",
-      "想重新工作，也想保留对家人重要的照护安排。",
-      "会说多种语言，却在快速或细腻的对话里犹豫。",
-      "同时要处理签证、家族期待与自己的职业规划。",
-      "察觉到耗竭讯号，希望先做小型实验再决定。"
+      "搬到英国后，不确定职场要遵循哪些默契。",
+      "想重返职场，但也想守住重要的照顾安排。",
+      "会多种语言，却在快速或细腻的对话中迟疑。",
+      "同时要顾签证、家族期待与自己的领导计划。",
+      "感觉到耗竭讯号，想在崩解前先做小型实验。"
     ]
   },
   "how": {
     "title": "教练怎么进行",
+    "intro": "随着焦点调整而循环的简单节奏。",
     "steps": [
       {
-        "title": "共同决定焦点",
-        "description": "每次会谈都从此刻最重要的议题开始，没有模板，也不急着解决。"
+        "title": "从当下的真实开始",
+        "summary": "以你带来的状况为起点，没有脚本，也不要求你立刻想清楚。"
       },
       {
-        "title": "保留你的主导权",
-        "description": "方向与节奏由你决定，我们一起照见模式、选项与合意。"
+        "title": "在合意里探索选项",
+        "summary": "你尝试梳理语言、故事与实验，我们守住结构并提出更好的问题。"
       },
       {
-        "title": "设计小步实验",
-        "description": "我们共创轻量练习，在会谈之间尝试，并一起回顾收获。"
-      },
-      {
-        "title": "带着清晰收束",
-        "description": "整理洞见、标记所需支持，并尊重后续行动的界限。"
+        "title": "设计接下来的行动",
+        "summary": "每次会谈结束前，一起确认你要带走的行动、资源或转介。"
       }
     ],
-    "moreLinkLabel": "进一步了解各路径",
-    "moreLinkHref": "/services"
+    "ownership": "步调与主题永远由你决定。我们的角色是守住结构、提醒界线并提出更精准的提问。",
+    "ctaLabel": "延伸阅读：教练如何运作",
+    "ctaHref": "/services/how-coaching-works"
   },
-  "faq": {
-    "title": "常见问题",
+  "realLife": {
+    "title": "真实生活里常听见…",
+    "intro": "以下是混合不同来访者而成的案例，用来保护隐私。",
     "items": [
-      {
-        "question": "教练和心理治疗有什么不同？",
-        "answer": "教练聚焦在你当下的目标与未来的行动，我们以平等伙伴合作，不做诊断或治疗。如果评估后觉得其他资源更合适，我们会一起说明。"
-      },
-      {
-        "question": "会谈内容会保密吗？",
-        "answer": "会的。除非法规要求披露或出现危害风险，谈话只在我们之间。开始前会确认记录保存方式与可能分享的情况。"
-      },
-      {
-        "question": "可以期待什么结果？",
-        "answer": "我们不承诺特定成果。多数来访者会带着更清晰的语言、自己选择的行动实验离开，你仍保有是否执行的决定权。"
-      },
-      {
-        "question": "可以在不同语言之间切换吗？",
-        "answer": "当然可以。我们会在英语与华语之间切换，让你可以表达细腻的文化与情感。"
-      },
-      {
-        "question": "怎么判断教练是否适合我？",
-        "answer": "认识谈就是为此而设。我们会一起厘清你的需要、教练的角色，并在不适合时提供其他资源建议。"
-      },
-      {
-        "question": "初次通话后会怎样进行？",
-        "answer": "如果决定继续，我们会约定会谈时长、频率、费用与检视节点，步调会配合你的实际承诺。"
-      }
+      { "quote": "“我刚搬到英国，觉得自己又从零开始，同时还要支援家乡的家人。”" },
+      { "quote": "“我带领一个小团队，却总觉得自己必须随时撑住所有人。”" },
+      { "quote": "“休息照顾家人后想重返工作，需要一份兼顾收入与负荷的计划。”" }
     ],
-    "footer": {
-      "text": "想再多了解一些吗？",
-      "linkLabel": "浏览教练路径",
-      "linkHref": "/services"
-    }
+    "disclaimer": "这些都是综合情境，不是个别客户的推荐，用来说明我们可以一起探索的主题。"
+  },
+  "faqSection": {
+    "title": "预约前先看看",
+    "body": "FAQ 随时让你确认范围、流程与伦理。",
+    "bullets": [
+      "了解教练与治疗或顾问的差异。",
+      "看到常见的会谈节奏、频率与收费范围。",
+      "知道若出现心理健康或风险时，我们会如何处理。"
+    ],
+    "summary": "先读 FAQ，可以在预约前判断要开始、暂缓或先找其他资源。",
+    "ctaLabel": "前往 FAQ",
+    "ctaHref": "/faq"
   }
 }

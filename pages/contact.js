@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -46,6 +47,7 @@ export default function ContactPage() {
   const preForm = t('preForm', { returnObjects: true });
   const miniFaq = t('miniFaq', { returnObjects: true });
   const afterReachOut = t('afterReachOut', { returnObjects: true });
+  const faqLink = t('faqLink', { returnObjects: true });
 
   return (
     <MainLayout>
@@ -120,6 +122,18 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {faqLink?.label ? (
+        <div className="bg-emerald-50/70 py-8">
+          <div className="mx-auto flex max-w-4xl flex-col items-center gap-2 px-6 text-center text-sm leading-6 text-slate-700">
+            <p>{faqLink.text}</p>
+            <Link href={faqLink.href} className="inline-flex items-center gap-2 font-semibold text-emerald-700 hover:underline">
+              {faqLink.label}
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
+        </div>
+      ) : null}
 
       <div className="px-6 pb-20">
         <ICFNotice id="icf" className="mx-auto max-w-4xl" />
