@@ -7,7 +7,7 @@ import ContactForm from '@/components/Sections/ContactForm';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
 
-function BulletHighlights({ items, title }) {
+function BulletHighlights({ items, title, description }) {
   if (!items?.length) {
     return null;
   }
@@ -15,6 +15,7 @@ function BulletHighlights({ items, title }) {
   return (
     <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
       {title ? <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{title}</p> : null}
+      {description ? <p className="mt-2 text-sm leading-6 text-slate-700">{description}</p> : null}
       <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
         {items.map((item) => (
           <li key={item} className="flex gap-3">
@@ -58,6 +59,8 @@ export default function ContactPage() {
   const journey = t('journey', { returnObjects: true });
   const miniFaq = t('miniFaq', { returnObjects: true });
   const faqLink = t('faqLink', { returnObjects: true });
+  const suitability = t('suitability', { returnObjects: true });
+  const redirect = t('redirect', { returnObjects: true });
 
   return (
     <MainLayout>
@@ -75,7 +78,26 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
+      {suitability?.items?.length || redirect?.items?.length ? (
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-5xl px-6">
+            <div className="grid gap-6 md:grid-cols-2">
+              <BulletHighlights
+                items={suitability?.items}
+                title={suitability?.title}
+                description={suitability?.description}
+              />
+              <BulletHighlights
+                items={redirect?.items}
+                title={redirect?.title}
+                description={redirect?.description}
+              />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <section className="bg-emerald-950/5 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-6">
           <div className="typography flex flex-col gap-4">
             <h2>{journey?.title}</h2>
@@ -89,7 +111,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-emerald-950/5 py-16 sm:py-20">
+      <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-6">
           <div className="mb-10">
             <BulletHighlights items={hero?.bullets} title={hero?.bulletsTitle} />
@@ -98,7 +120,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
+      <section className="bg-emerald-950/5 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-6">
           <div className="typography max-w-3xl flex flex-col gap-4">
             <h2>{miniFaq?.title}</h2>
