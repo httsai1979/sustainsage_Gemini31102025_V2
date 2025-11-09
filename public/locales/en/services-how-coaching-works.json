@@ -1,98 +1,92 @@
 {
   "seo": {
-    "title": "How coaching works with SustainSage | SustainSage",
-    "description": "Understand our ICF-aligned coaching approach, boundaries, ethics, and how to decide if coaching fits your current needs."
+    "title": "How coaching works with SustainSage | ICF-aligned support",
+    "description": "Understand our ICF-aligned coaching partnership: session rhythm, collaboration style, and ethical boundaries."
   },
   "hero": {
     "title": "How coaching works",
-    "subtitle": "ICF-aligned, client-led coaching. No promises we can’t keep—just honest partnership and clear boundaries.",
-    "imageAlt": "Illustration describing how coaching works",
-    "primaryCta": "Book an intro call",
-    "secondaryCta": "View all services"
+    "subtitle": "What to expect before we start: structure, partnership, and the guardrails that keep coaching ethical.",
+    "primaryCta": "Book a 20-minute intro call",
+    "primaryHref": "/contact?from=how-coaching-works",
+    "secondaryCta": "Back to services",
+    "secondaryHref": "/services"
   },
   "sections": {
-    "definition": {
-      "title": "What we mean by “coaching”",
+    "who": {
+      "title": "Who this is for",
       "items": [
-        "Non-directive, future-oriented, client-led.",
-        "We work with your thinking, patterns, choices; you own decisions and action."
+        "You’re curious about coaching but want clarity on process before committing.",
+        "You need to align with a partner, HR, or sponsor on what coaching covers.",
+        "You’ve worked with mentors or therapists and wonder how coaching differs.",
+        "You value cultural nuance and want to confirm we can switch between English and Chinese."
       ]
     },
-    "journey": {
-      "title": "How a typical journey flows",
-      "steps": [
+    "what": {
+      "title": "What we work on",
+      "items": [
+        "Clarifying outcomes that matter to you—and how we will know progress when we see it.",
+        "Exploring perspectives, tools, and experiments that expand your options.",
+        "Designing accountability that feels supportive rather than surveillance.",
+        "Spotting systemic factors so you don’t blame yourself for structural issues."
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "description": "A partnership grounded in the International Coaching Federation (ICF) core competencies.",
+      "items": [
+        "Six 60-minute sessions over three to four months on Zoom, with flexibility to extend or pause.",
+        "We co-design each agenda; you bring context, we bring questions, frameworks, and reflection.",
+        "Between-session support via secure notes, Loom, or email check-ins when you request it.",
+        "Coaching is future-focused and client-led—we do not guarantee outcomes or replace legal, medical, or immigration advice."
+      ]
+    },
+    "examples": {
+      "title": "Example scenarios",
+      "description": "Composite snapshots based on real client journeys.",
+      "items": [
         {
-          "title": "Free 20-min intro",
-          "description": "Fit, expectations, boundaries, package / no package. No obligation to continue."
+          "title": "Navigating a cross-border promotion",
+          "description": "We balanced stakeholder expectations across three countries, rehearsed difficult conversations, and set boundaries for a sustainable travel rhythm."
         },
         {
-          "title": "Contracting",
-          "description": "Topic, frequency, number of sessions, language, fees. We document what we agree."
+          "title": "Designing a values-led pivot",
+          "description": "A senior contributor prototyped portfolio work, refined messaging, and agreed on financial guardrails with their partner before resigning."
         },
         {
-          "title": "Sessions",
-          "description": "50–60 mins, online, with simple reflection prompts. You set the focus each time."
-        },
-        {
-          "title": "Between sessions",
-          "description": "Optional light check-ins when agreed. No surprise homework or pressure."
+          "title": "Re-entering after a health break",
+          "description": "We created phased goals, coordinated with healthcare providers, and built scripts to discuss capacity without oversharing."
         }
       ]
     },
-    "boundaries": {
-      "title": "What we will not do",
+    "expect": {
+      "title": "What you can expect",
       "items": [
-        "No diagnosis, no making decisions for you, no guarantees of results.",
-        "No legal, immigration, or medical advice.",
-        "We name risk signals and encourage you to seek appropriate support when needed."
+        "Space to think and feel without judgement or forced positivity.",
+        "Clear agreements on confidentiality, boundaries, and how we will track progress.",
+        "Support naming systemic barriers alongside personal agency.",
+        "An honest partner who celebrates wins and challenges assumptions when needed."
       ]
     },
     "ethics": {
-      "title": "How we hold ethics",
+      "title": "Ethics & fit",
       "items": [
-        "Based on the ICF Code of Ethics.",
-        "Confidentiality with clear exceptions (legal / safety).",
-        "In multilingual, multicultural contexts we acknowledge power dynamics and systemic pressure."
-      ]
-    },
-    "selfCheck": {
-      "title": "Is coaching right for me now?",
-      "description": "A quick self-check before you book. If several answers point to high distress or risk, please reach out to therapeutic or crisis resources first.",
-      "items": [
-        "Am I dealing with immediate safety, legal, or medical risks that need specialised support?",
-        "Do I have the bandwidth to reflect and experiment between sessions, even in small ways?",
-        "Would I benefit more right now from therapy, supervision, or another resource focused on healing?",
-        "Do I want a space to make decisions I own, rather than someone telling me what to do?"
-      ]
-    },
-  "packages": {
-    "title": "Which package fits?",
-    "description": "Each package keeps the same coaching principles and boundaries. Choose based on how much structure and time you want.",
-    "linkLabel": "Learn more →",
-    "cards": [
-        {
-          "title": "Transition Coaching – 6 sessions",
-          "description": "Structured space to stabilise relocation or role change in the UK.",
-          "href": "/services/transition-coaching"
-        },
-        {
-          "title": "Reset Sprint – 3 sessions",
-          "description": "Short, focused container to pause, sort and choose next steps.",
-          "href": "/services/reset-sprint"
-        },
-        {
-          "title": "Deepening Practice – 8 sessions",
-          "description": "Longer-term partnership for leaders and practitioners refining their practice.",
-          "href": "/services/deepening-practice"
-        }
+        "We follow the ICF Code of Ethics, including informed consent and confidentiality.",
+        "We refer you to therapy, legal, immigration, or financial professionals when those services are more appropriate.",
+        "You always choose pace, language, and scope; we do not upsell or pressure extensions.",
+        "If the fit isn’t right, we say so and recommend alternatives when possible."
       ]
     },
     "cta": {
-      "body": [
-        { "type": "text", "value": "Ready to explore? The intro call is a chance to sense fit together—no pressure to commit." }
-      ],
-      "primaryCta": "Book an intro call",
-      "secondaryCta": "Explore all services"
+      "title": "Have more questions?",
+      "body": "Let’s talk through your context and decide together whether coaching is the right next step.",
+      "primary": {
+        "label": "Book an intro call",
+        "href": "/contact?from=how-coaching-works"
+      },
+      "secondary": {
+        "label": "Email us instead",
+        "href": "/contact"
+      }
     }
   }
 }
