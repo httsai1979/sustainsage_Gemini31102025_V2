@@ -92,7 +92,7 @@ export default function AboutPage() {
   const cta = t('cta', { returnObjects: true });
 
   return (
-    <MainLayout>
+    <>
       <Head>
         <title>{seo?.title}</title>
         <meta name="description" content={seo?.description} />
@@ -193,9 +193,13 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }
+
+AboutPage.getLayout = function getLayout(page) {
+  return <MainLayout>{page}</MainLayout>;
+};
 
 export async function getStaticProps({ locale }) {
   return {

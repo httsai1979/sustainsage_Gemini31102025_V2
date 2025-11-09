@@ -102,7 +102,7 @@ export default function Home({ testimonials }) {
   const faqLink = t('faqLink', { returnObjects: true });
 
   return (
-    <MainLayout>
+    <>
       <section className="mx-auto mt-12 grid max-w-6xl items-center gap-10 px-5 md:mt-20 md:grid-cols-[1.1fr_0.9fr] md:px-8">
         <div className="typography flex flex-col gap-6">
           <h1>{hero.headline}</h1>
@@ -226,9 +226,13 @@ export default function Home({ testimonials }) {
       <section className="mx-auto mt-16 max-w-6xl px-5 md:px-8">
         <Testimonials items={testimonials} />
       </section>
-    </MainLayout>
+    </>
   );
 }
+
+Home.getLayout = function getLayout(page) {
+  return <MainLayout>{page}</MainLayout>;
+};
 
 export async function getStaticProps({ locale }) {
   const testimonials = loadJSON('testimonials', locale);
