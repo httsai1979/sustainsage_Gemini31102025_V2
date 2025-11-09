@@ -1,0 +1,61 @@
+{
+  "seo": {
+    "title": "教练服务",
+    "description": "浏览 SustainSage 为搬迁、重返职场与英国职场信心设计的教练路径。"
+  },
+  "hero": {
+    "title": "一起共创适合你的教练路径",
+    "subtitle": "这些路径是起点，实际步调、语言与主题会依你的生活情境调整。"
+  },
+  "pathways": {
+    "title": "选择一个起步方向",
+    "description": "三个常见需求，始终保持弹性并以你为主。",
+    "viewDetails": "查看详情",
+    "cards": [
+      {
+        "slug": "transition-relocation",
+        "title": "转变与搬迁",
+        "target": "适合跨文化生活或重新落脚的人。",
+        "scenario": "想在英国安稳下来，同时兼顾其他地方的责任。",
+        "topics": [
+          "盘点能随身带着走的支援系统与协议。",
+          "慢慢看见哀悼、归属与主导权，不急着解决。",
+          "用自己的节奏实验在新社群中扎根。"
+        ],
+        "icon": "/images/services/transition.svg"
+      },
+      {
+        "slug": "return-to-work-clarity",
+        "title": "重返职涯与厘清方向",
+        "target": "适合重新投入有偿工作的照护者、父母或专业人士。",
+        "scenario": "在暂停或角色转换后，重新建立信心与节奏。",
+        "topics": [
+          "厘清照护、职业与社群之间的优先顺序与容量。",
+          "松动对“够格”、“准备好”的既有叙事。",
+          "设计彼此同意的生活节奏与支持检视。"
+        ],
+        "icon": "/images/services/returning.svg"
+      },
+      {
+        "slug": "uk-workplace-confidence",
+        "title": "英国职场信心",
+        "target": "适合在英国文化中领导或协作的人。",
+        "scenario": "在不同口音、期待与潜规则间翻译自己的想法。",
+        "topics": [
+          "练习提出需求、婉拒与设定界线的语言。",
+          "探索适合你的反馈节奏与倡议方式。",
+          "辨识能支援你的盟友与自我补给仪式。"
+        ],
+        "icon": "/images/services/experiments.svg"
+      }
+    ]
+  },
+  "cta": {
+    "title": "还不确定怎么开始？",
+    "body": "20 分钟认识谈能先了解你的情境，再一起调整最合适的做法。",
+    "primaryCta": "预约认识谈",
+    "primaryHref": "/contact",
+    "secondaryCta": "了解教练如何进行",
+    "secondaryHref": "/services/transition-relocation"
+  }
+}

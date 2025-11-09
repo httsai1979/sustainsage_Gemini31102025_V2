@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+
+import i18nConfig from '../../next-i18next.config';
 
 const NAV_ITEMS = [
   { href: '/', label: 'header.navHome' },
@@ -13,20 +15,25 @@ const NAV_ITEMS = [
   { href: '/contact', label: 'header.navContact' },
 ];
 
-const LOCALES = [
-  { code: 'en', label: 'EN' },
-  { code: 'zh-TW', label: '中文' },
-];
+const LOCALE_LABELS = {
+  en: 'EN',
+  'zh-TW': '繁體',
+  'zh-CN': '简体',
+};
 
-function LocaleSwitcher({ activeLocale, onChange, variant = 'desktop' }) {
+function LocaleSwitcher({ activeLocale, onChange, variant = 'desktop', localeOptions = [] }) {
   const baseClasses =
     variant === 'desktop'
       ? 'rounded-xl px-3 py-2 text-sm font-semibold transition-colors'
       : 'rounded-xl px-4 py-2 text-base font-semibold transition-colors';
 
+  if (localeOptions.length <= 1) {
+    return null;
+  }
+
   return (
     <div className={variant === 'desktop' ? 'hidden items-center gap-2 md:flex' : 'flex items-center gap-2'}>
-      {LOCALES.map((locale) => {
+      {localeOptions.map((locale) => {
         const isActive = locale.code === activeLocale;
         return (
           <button
@@ -54,6 +61,12 @@ export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const activeLocale = router.locale ?? router.defaultLocale ?? 'en';
+  const localeOptions = useMemo(() => {
+    const configuredLocales = i18nConfig?.i18n?.locales ?? [];
+    return configuredLocales
+      .filter((code) => LOCALE_LABELS[code])
+      .map((code) => ({ code, label: LOCALE_LABELS[code] }));
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 8);
@@ -101,7 +114,11 @@ export default function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-3 md:gap-4">
-          <LocaleSwitcher activeLocale={activeLocale} onChange={handleLocaleChange} />
+          <LocaleSwitcher
+            activeLocale={activeLocale}
+            onChange={handleLocaleChange}
+            localeOptions={localeOptions}
+          />
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-xl p-2 text-slate-700 md:hidden"
@@ -144,6 +161,7 @@ export default function SiteHeader() {
               activeLocale={activeLocale}
               onChange={handleLocaleChange}
               variant="mobile"
+              localeOptions={localeOptions}
             />
           </div>
         </div>

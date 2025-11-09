@@ -1,0 +1,312 @@
+{
+  "careerReturners": {
+    "seo": {
+      "title": "重返职场教练 | SustainSage",
+      "description": "陪伴跨国迁移、照护或停薪留职后重回职场的专业人士，找回节奏与信心。"
+    },
+    "hero": {
+      "title": "重返职场的教练支持",
+      "subtitle": "空档不是缺口，而是经验的一部分，让我们带着它一起前进。",
+      "imageAlt": "象征新篇章的插画",
+      "primaryCta": "预约初谈",
+      "secondaryCta": "返回服务"
+    },
+    "sections": {
+      "challenges": {
+        "title": "常见情境",
+        "items": [
+          {
+            "title": "履历的空白",
+            "description": "不知道该如何谈这段时间，既怕矮化自己，也不想透露过多隐私。"
+          },
+          {
+            "title": "信心摇摆",
+            "description": "能力还在，但面试或社交场合比想像中更消耗。"
+          },
+          {
+            "title": "优先顺序改变",
+            "description": "想带着目的回归，而不是接下第一个出现的机会。"
+          },
+          {
+            "title": "现实与情绪交织",
+            "description": "求职的同时，还要兼顾家庭照护、健康或新城市的行政事项。"
+          }
+        ]
+      },
+      "support": {
+        "title": "教练能带来什么",
+        "items": [
+          {
+            "title": "把空档整合成完整故事",
+            "description": "厘清你学到什么、现在的方向是什么，以及想用怎样的方式分享。"
+          },
+          {
+            "title": "练习踏实对话",
+            "description": "预演面试、人脉或设定界线的谈话，让你能够稳住、自带好奇。"
+          },
+          {
+            "title": "设计有余裕的节奏",
+            "description": "把回归拆成实验与协议，尊重你的精力与财务需求。"
+          }
+        ]
+      },
+      "vignette": {
+        "title": "案例速写",
+        "body": "R 曾在亚洲带领多个团队，为了搬家与照护长辈暂停工作。两年后想回到咨询业，却担心空档掩盖过往成绩。教练协助她看见照护时运用的能力，描绘理想合作公司的样貌，并练习一套真实又自如的叙事。四次会谈后，她选择了一家把社区经验视为领导力一部分的咨询公司。"
+      },
+      "packages": {
+        "title": "适合的方案",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "多数返职客户会选择 " },
+            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "text", "value": "，梳理新篇章、练习关键对话，并规划合适的回归节奏。" }
+          ],
+          [
+            { "type": "text", "value": "若需要短期容器同时照顾家庭，可考虑 " },
+            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "text", "value": "，四次会谈稳住信心与日常。" }
+          ],
+          [
+            { "type": "text", "value": "还在观望？先阅读 " },
+            { "type": "link", "href": "/services/how-coaching-works", "label": "教练流程" },
+            { "type": "text", "value": "，或预约初谈，一起确认现在的需要。" }
+          ]
+        ]
+      }
+    }
+  },
+  "newcomers": {
+    "seo": {
+      "title": "英国新移居者教练 | SustainSage",
+      "description": "为刚抵达或正要落地的你提供情境式教练，让工作与生活节奏安稳下来，不必重新翻译自己。"
+    },
+    "hero": {
+      "title": "给新到英国的你",
+      "subtitle": "理解工作、文化与期待，同时保留自己的故事与节奏。",
+      "imageAlt": "象征英国新移居者的插画",
+      "primaryCta": "预约初谈",
+      "secondaryCta": "返回服务"
+    },
+    "sections": {
+      "challenges": {
+        "title": "常见情境",
+        "items": [
+          {
+            "title": "留下还是离开的拉扯",
+            "description": "一边算签证与时间表，一边确认这里是否支撑你的目标与关系。"
+          },
+          {
+            "title": "语言与职场文化的错位",
+            "description": "能力足够，但那些不成文的规则仍像没复习过的考题。"
+          },
+          {
+            "title": "跨国照护与牵挂",
+            "description": "一面安顿自己，一面协调家庭责任、汇款与时差。"
+          },
+          {
+            "title": "想要归属又不想失去自己",
+            "description": "希望找到社群，同时保留让你敢于迁移的那部分自己。"
+          }
+        ]
+      },
+      "support": {
+        "title": "教练能带来什么",
+        "items": [
+          {
+            "title": "不急着决定也能说清需求",
+            "description": "一起盘点选项、界线与风险，让选择同时照顾签证、价值与能量。"
+          },
+          {
+            "title": "把文化讯号转成行动",
+            "description": "放慢职场互动、解读反馈，规划基于同意的对话。"
+          },
+          {
+            "title": "跨国设计支持系统",
+            "description": "搞清楚谁在你身边、能请求什么，以及落地时如何保持资源。"
+          }
+        ]
+      },
+      "vignette": {
+        "title": "案例速写",
+        "body": "L 持配偶签证从台北搬到伦敦。她过去在家乡的领导经验备受肯定，但在英国常被简化成“英文很好的人”。教练提供她每周一个空间，说出重新开始的心情，排练跨文化的职场对话，并与远在台湾的家人设计固定联络。三个月后，她谈成更清楚的工作职责，也找到一个让城市更宜居的社区专案。"
+      },
+      "packages": {
+        "title": "适合的方案",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "多数新移居者会选择 " },
+            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "text", "value": "，在抵达后的三到六个月里稳住脚步，同时保有自主。" }
+          ],
+          [
+            { "type": "text", "value": "若已在英国但觉得疲惫，可考虑 " },
+            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "text", "value": "，用短期容器重新定位、订出可持续的安排。" }
+          ],
+          [
+            { "type": "text", "value": "还拿不定主意？看看 " },
+            { "type": "link", "href": "/faq", "label": "常见问题" },
+            { "type": "text", "value": "，或预约初谈，确认教练是否是当下最合适的支持。" }
+          ]
+        ]
+      }
+    }
+  },
+  "parents": {
+    "seo": {
+      "title": "父母重返职场教练 | SustainSage",
+      "description": "协助父母在家庭与工作之间建立可持续的协议，重新进入或调整角色。"
+    },
+    "hero": {
+      "title": "给重返工作的父母",
+      "subtitle": "照护、抱负与休息都重要，让我们一起排进时间表。",
+      "imageAlt": "平衡照护与工作的插画",
+      "primaryCta": "预约初谈",
+      "secondaryCta": "返回服务"
+    },
+    "sections": {
+      "challenges": {
+        "title": "常见情境",
+        "items": [
+          {
+            "title": "多个日程同时运转",
+            "description": "托育、伴侣班表、长辈照护与你的能量都要安排。"
+          },
+          {
+            "title": "四面八方的愧疚",
+            "description": "不论选择哪一边，都担心自己亏待了另一边。"
+          },
+          {
+            "title": "身份的再定义",
+            "description": "希望同事看见你的专业，而不是只有“刚回来的父母”标签。"
+          },
+          {
+            "title": "界线被挑战",
+            "description": "家人、主管或内心声音都可能提出意见或质疑。"
+          }
+        ]
+      },
+      "support": {
+        "title": "教练能带来什么",
+        "items": [
+          {
+            "title": "和支持系统共创节奏",
+            "description": "盘点责任、重新协商协议，并规划生活改变时如何调整。"
+          },
+          {
+            "title": "守住真正重要的事",
+            "description": "说出你的锚点——休息、陪伴、财务安全——并选择与之对齐的行动。"
+          },
+          {
+            "title": "建立自信对话",
+            "description": "和主管、伴侣或家人练习设定界线，让你不用道歉就能争取所需。"
+          }
+        ]
+      },
+      "vignette": {
+        "title": "案例速写",
+        "body": "D 结束产假回到政策工作，却发现所有会议都排在托育结束之后。教练给她空间诚实说出挫折、厘清界线，并准备与团队共同调整。最终她争取到新的会议时段、与伴侣共拟照护轮班，也建立每周自我检查的仪式，提早看见倦怠征兆。"
+      },
+      "packages": {
+        "title": "适合的方案",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "许多父母会从 " },
+            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "text", "value": " 开始，四次会谈重建日常与信心。" }
+          ],
+          [
+            { "type": "text", "value": "若要大幅调整职业或职责，适合选择 " },
+            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "text", "value": "，六次会谈深入探索。" }
+          ],
+          [
+            { "type": "text", "value": "若已上轨道但想强化领导存在感，可考虑 " },
+            { "type": "link", "href": "/services/deepening", "label": "Deepening 方案" },
+            { "type": "text", "value": "，或透过 " },
+            { "type": "link", "href": "/contact", "label": "联系页面" },
+            { "type": "text", "value": " 讨论其他选择。" }
+          ]
+        ]
+      }
+    }
+  },
+  "youngProfessionals": {
+    "seo": {
+      "title": "新锐专业人士教练 | SustainSage",
+      "description": "为初入职场或高速成长的你设计的教练：面对期待、建立自我带领，保持稳健节奏。"
+    },
+    "hero": {
+      "title": "给新锐专业人士",
+      "subtitle": "成长为领导者，同时守住价值与资源。",
+      "imageAlt": "探索职涯选择的年轻专业者插画",
+      "primaryCta": "预约初谈",
+      "secondaryCta": "返回服务"
+    },
+    "sections": {
+      "challenges": {
+        "title": "常见情境",
+        "items": [
+          {
+            "title": "首次领导的拉伸",
+            "description": "晋升速度超出预期，想要支持又不想显得扛不住。"
+          },
+          {
+            "title": "横向与向上的沟通",
+            "description": "一边学习工作、一边协调不同利益相关者的期待。"
+          },
+          {
+            "title": "自我怀疑与比较",
+            "description": "怀疑自己是否真正配得上这张椅子。"
+          },
+          {
+            "title": "生活后勤跟进",
+            "description": "签证、住房、家人期待或健康习惯都需要同时照顾。"
+          }
+        ]
+      },
+      "support": {
+        "title": "教练能带来什么",
+        "items": [
+          {
+            "title": "说出你想实践的领导",
+            "description": "厘清价值、不可让步之处，以及在你的情境里“做好”是什么模样。"
+          },
+          {
+            "title": "建立对话勇气",
+            "description": "规划并预演反馈、界线或期待管理的谈话，在好奇与尊重中沟通。"
+          },
+          {
+            "title": "保持节奏不透支",
+            "description": "设计符合忙碌日程又照顾身心的仪式与责任。"
+          }
+        ]
+      },
+      "vignette": {
+        "title": "案例速写",
+        "body": "M 进入金融科技毕业生项目，很快就成了各类紧急项目的主力。她想持续学习，却感觉快被烧干。教练帮助她厘清什么让她充满能量，练习向资深主管争取更清晰的优先顺序，并建立每周保护恢复时间的仪式。六个月后，她依然交出好成绩，没有周日晚上的焦虑。"
+      },
+      "packages": {
+        "title": "适合的方案",
+        "paragraphs": [
+          [
+            { "type": "text", "value": "许多新锐专业人士会先选择 " },
+            { "type": "link", "href": "/services/reset", "label": "Reset 方案" },
+            { "type": "text", "value": "，稳定日常并强化自我带领。" }
+          ],
+          [
+            { "type": "text", "value": "当准备升职或转换角色时，适合选择 " },
+            { "type": "link", "href": "/services/transition", "label": "Transition 方案" },
+            { "type": "text", "value": "，六次会谈探索身份、期待与支持系统。" }
+          ],
+          [
+            { "type": "text", "value": "想持续深化，可考虑 " },
+            { "type": "link", "href": "/services/deepening", "label": "Deepening 方案" },
+            { "type": "text", "value": "，在八次会谈中稳固领导存在感。" }
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 /** @type {import('next-i18next').UserConfig} */
 module.exports = {
   i18n: {
-    locales: ['en', 'zh-TW'],
+    locales: ['en', 'zh-TW', 'zh-CN'],
     defaultLocale: 'en',
     localeDetection: false,
   },
