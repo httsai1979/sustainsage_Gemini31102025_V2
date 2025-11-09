@@ -1,115 +1,135 @@
 {
   "seo": {
-    "title": "FAQ | SustainSage",
-    "description": "Honest answers about coaching with SustainSage: how to start, ethics, practicalities and whether our support fits your situation."
+    "title": "常见问题 | SustainSage",
+    "description": "了解 SustainSage 教练的工作范围、实际安排、伦理界线与适配判断。"
   },
   "hero": {
-    "title": "Frequently asked questions",
-    "subtitle": "Clear, no-pressure answers. If something isn’t covered here, reach out—we’ll respond or signpost someone who can."
+    "kicker": "常见问题",
+    "title": "诚实回应，帮助你判断教练是否适合现在的你。",
+    "body": "所有回答都遵循 ICF 教练伦理：界线清楚、基于同意、尊重你的步调。想继续了解，可以阅读我们的取向或直接联络我们。",
+    "links": [
+      { "href": "/services/how-coaching-works", "label": "教练流程" },
+      { "href": "/about/approach", "label": "我们的取向" },
+      { "href": "/contact", "label": "联系我们" }
+    ]
   },
-  "groups": [
+  "sections": [
     {
-      "title": "Working with us",
+      "title": "教练与治疗的界线",
       "items": [
         {
-          "question": "How do we start?",
-          "answer": "Book the 20-minute intro call. We explore what’s happening, name boundaries and decide together if coaching is the right next step. There is no obligation to commit on the call."
-        },
-        {
-          "question": "How often will we meet?",
-          "answer": "Most packages meet every two to three weeks so you have time to experiment between sessions. We agree cadence, language and support preferences in writing before we begin."
-        },
-        {
-          "question": "How do we know the fit is right?",
-          "answer": "You can read the package pages and our guide to how coaching works. If anything still feels uncertain, bring it to the intro call—we welcome direct questions about style, scope or identity fit.",
+          "question": "我需要教练还是治疗？",
+          "answer": "教练聚焦目标、系统与行动实验。如果你正在处理创伤、急性心理健康需求或需要诊断，持证治疗师更合适。我们可以随时暂停并协助你连结临床资源。",
           "links": [
-            {
-              "href": "/services/how-coaching-works",
-              "label": "How coaching works"
-            },
-            {
-              "href": "/services",
-              "label": "Compare services"
-            }
+            { "href": "/services/how-coaching-works", "label": "教练流程" },
+            { "href": "/contact", "label": "询问范围" }
+          ]
+        },
+        {
+          "question": "如果我还没有明确目标？",
+          "answer": "很常见。我们从当下最重要的主题开始，在会谈里共同聚焦。ICF 伦理要求我们让你掌握议程，因此会定期确认清晰度与同意。",
+          "links": [
+            { "href": "/services/transition", "label": "看看 Transition 方案" },
+            { "href": "/contact", "label": "预约初谈" }
+          ]
+        },
+        {
+          "question": "可以谈签证、移民或法律问题吗？",
+          "answer": "可以讨论这些流程对领导与情绪的影响，并整理要问法律顾问的问题。但我们不提供法律或移民建议，若需要专家会直接说明。",
+          "links": [
+            { "href": "/services/for-newcomers-to-uk", "label": "新移居者支持" },
+            { "href": "/contact", "label": "分享你的情境" }
           ]
         }
       ]
     },
     {
-      "title": "Coaching boundaries & ethics",
+      "title": "实际操作",
       "items": [
         {
-          "question": "What codes do you follow?",
-          "answer": "We align with International Coaching Federation (ICF) ethics: confidentiality, informed consent, cultural humility and staying within coaching scope."
+          "question": "付款与取消怎么安排？",
+          "answer": "方案费用可一次付清或分两次转账。会谈前 24 小时内可改期；逾时取消会视同一堂，以保护所有客户的时间。",
+          "links": [
+            { "href": "/services/reset", "label": "Reset 方案细节" },
+            { "href": "/contact", "label": "讨论付款方式" }
+          ]
         },
         {
-          "question": "When will you signpost other professionals?",
-          "answer": "We pause coaching and refer on when trauma, acute mental health, legal, immigration or financial advice is needed. Your wellbeing matters more than keeping a client." 
+          "question": "会谈在哪里、如何进行？",
+          "answer": "默认使用 Zoom，若需要其他无障碍工具可提。会后提供共用笔记，方便追踪行动与约定。",
+          "links": [
+            { "href": "/services/how-coaching-works", "label": "会谈流程说明" }
+          ]
         },
         {
-          "question": "Will you share my story?",
-          "answer": "Only with your written consent. We use composite examples on our site so no single client is identifiable."
+          "question": "你会和企业或赞助方合作吗？",
+          "answer": "会。我们会订立三方协议，确保教练目标由你主导。赞助方只会在你同意下收到高层摘要，不会分享会谈内容。",
+          "links": [
+            { "href": "/services/deepening", "label": "领导者深度方案" },
+            { "href": "/contact", "label": "索取赞助简报" }
+          ]
         }
       ]
     },
     {
-      "title": "Practicalities",
+      "title": "伦理与隐私",
       "items": [
         {
-          "question": "What languages do you coach in?",
-          "answer": "English (UK) and Mandarin. We can switch mid-session if that helps you express nuance."
+          "question": "保密程度如何？",
+          "answer": "遵循 ICF 伦理守则与英国数据法规。除非有伤害风险或法律义务，内容都会保密。开始前会说明资料保存方式。",
+          "links": [
+            { "href": "/about/approach", "label": "了解我们的取向" }
+          ]
         },
         {
-          "question": "Where and when do sessions happen?",
-          "answer": "Sessions are online via Zoom. We are based in the UK (GMT/BST) and offer a mix of daytime and early-evening slots."
+          "question": "如何照顾跨文化、跨语言的安全感？",
+          "answer": "我们一起设定步调、语言切换与界线。你决定回馈与挑战的方式，若议题超出教练范围会立即提醒。",
+          "links": [
+            { "href": "/services/how-coaching-works", "label": "安全协议" },
+            { "href": "/contact", "label": "讨论可及性需求" }
+          ]
         },
         {
-          "question": "What about fees?",
-          "answer": "Packages are priced according to length and support level. We share the current fee range during the intro call and offer transparent invoices—no surprise add-ons."
-        },
-        {
-          "question": "Do you share session recordings?",
-          "answer": "Only if you request it and it supports your learning. Otherwise we keep notes private and lightweight."
+          "question": "你会记录会谈内容吗？",
+          "answer": "只保留聚焦目标与行动的简要加密笔记。除非法律要求保存，你可以随时查看或要求删除。",
+          "links": [
+            { "href": "/contact", "label": "索取笔记" }
+          ]
         }
       ]
     },
     {
-      "title": "Is this for me?",
+      "title": "适配与成果",
       "items": [
         {
-          "question": "I’m mid-career and returning after a break—can you help?",
-          "answer": "Yes. Transition or Reset often fits. Read the pages for mid-career returners or book the intro call to confirm.",
+          "question": "如果觉得不适合怎么办？",
+          "answer": "请直接告诉我们。会一起检视需要、调整结构或推荐其他资源。是否结束合作完全由你决定，我们会协助好好收尾。",
           "links": [
-            { "href": "/for/mid-career-returners", "label": "For mid-career returners" },
-            { "href": "/services/reset", "label": "Reset package" }
+            { "href": "/contact", "label": "随时反馈" }
           ]
         },
         {
-          "question": "I’m new to the UK and figuring out work and life here.",
-          "answer": "We understand relocation. The Transition package is designed for exactly this. Start with our newcomers page to see if the examples resonate.",
+          "question": "多久会看到变化？",
+          "answer": "多数客户在两到三次会谈后感到更清晰，因为实验逐渐累积。成果仍取决于你会谈之间选择采取的行动。",
           "links": [
-            { "href": "/for/newcomers-to-uk", "label": "For newcomers to the UK" },
-            { "href": "/services/transition", "label": "Transition package" }
+            { "href": "/services/experiments", "label": "实验导向教练" }
           ]
         },
         {
-          "question": "I’m a parent balancing care and leadership.",
-          "answer": "Reset offers a short recalibration; Deepening supports longer arcs. Visit the parents page for more context or message us about a custom cadence.",
+          "question": "可以和其他支持并行吗？",
+          "answer": "当然。许多客户会搭配治疗、督导或同侪圈。我们会透明协调，并调整练习让它补位而不是互相冲突。",
           "links": [
-            { "href": "/for/parents-returning-to-work", "label": "For parents returning to work" },
-            { "href": "/services/deepening", "label": "Deepening package" }
+            { "href": "/services/check-in", "label": "轻量 Check-in" },
+            { "href": "/contact", "label": "规划支持组合" }
           ]
-        },
-        {
-          "question": "I’m a recent graduate—am I in the right place?",
-          "answer": "Possibly. We focus on people with some professional experience or community leadership. If you’re just starting out, we may signpost mentoring or peer programmes."
         }
       ]
     }
   ],
   "cta": {
-    "body": "Still wondering about something specific? Send us a note or schedule the intro call—we’ll be transparent about whether coaching is the right fit.",
-    "primary": "Book intro call",
-    "secondary": "Contact us"
+    "title": "还是不确定？",
+    "body": "告诉我们你的处境，我们会坦诚说明教练、转介或其他资源哪一个更合适。比起填满名额，我们更重视你的清晰。",
+    "primary": "预约通话",
+    "secondary": "探索教练方案"
   }
 }

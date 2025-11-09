@@ -1,0 +1,96 @@
+{
+  "seo": {
+    "title": "Our coaching approach | SustainSage",
+    "description": "Understand the ICF-aligned principles, feel, ethics, and standards that ground SustainSage coaching sessions."
+  },
+  "hero": {
+    "title": "Our coaching approach",
+    "subtitle": "Grounded in ICF principles, held with cultural sensitivity, and paced so you stay in choice.",
+    "primaryCta": "See the full journey",
+    "secondaryCta": "Explore services"
+  },
+  "sections": {
+    "grounding": {
+      "title": "What grounds our practice",
+      "description": "SustainSage coaches are credentialed with the International Coaching Federation (ICF). We translate its ethics and core competencies into daily habits that protect your agency and context.",
+      "items": [
+        {
+          "title": "ICF Code of Ethics in practice",
+          "description": "We contract clearly, hold confidentiality with agreed limits, and keep the partnership client-led, as outlined by the ICF core competencies."
+        },
+        {
+          "title": "Trauma-aware, not trauma-therapy",
+          "description": "We recognise how nervous systems react under pressure, slowing down or pausing when needed, and we refer out when therapeutic care is the safer fit."
+        },
+        {
+          "title": "Multilingual and intersectional sensitivity",
+          "description": "Sessions can move between English, Mandarin, or mixed registers. We actively name power dynamics and design choices that respect culture, identities, and access."
+        }
+      ]
+    },
+    "feel": {
+      "title": "How sessions feel",
+      "description": "Expect a collaborative, reflective space. Each session begins with what matters most to you, and we co-create the pace, tools, and accountability that match your capacity.",
+      "items": [
+        "Unhurried conversations—silence and pacing are welcome, and we do not rush decisions or force breakthroughs.",
+        "Structure with freedom—you set the focus while we offer frameworks, reflections, and experiments to work with.",
+        "Genuine curiosity—we regularly ask “Does this actually serve you?” and adapt based on what you say.",
+        "Grounded encouragement—no toxic positivity, just honest acknowledgement of effort, context, and limits."
+      ]
+    },
+    "ethics": {
+      "title": "Ethics & boundaries",
+      "description": "Boundaries keep coaching purposeful and safe. We align every decision with the ICF ethical framework and our commitment to do no harm.",
+      "items": [
+        {
+          "title": "Coaching only",
+          "description": "We do not diagnose, treat trauma, or offer legal, immigration, or medical advice."
+        },
+        {
+          "title": "Clear agreements",
+          "description": "Every package includes written contracting on goals, logistics, data handling, and fees."
+        },
+        {
+          "title": "Safeguarding first",
+          "description": "If risks surface beyond coaching scope, we pause and point you to specialised resources."
+        },
+        {
+          "title": "Informed navigation",
+          "segments": [
+            { "type": "text", "value": "Review how we work end-to-end in our detailed guide to the process via the " },
+            { "type": "link", "href": "/services/how-coaching-works", "label": "How coaching works" },
+            { "type": "text", "value": " page." }
+          ]
+        }
+      ]
+    },
+    "standards": {
+      "title": "How we keep standards",
+      "description": "Coaching is a profession, not a side gig. We invest in the structures that keep our practice accountable to you and to the wider coaching community.",
+      "items": [
+        {
+          "title": "Ongoing supervision and CPD",
+          "description": "We meet regularly with ICF-accredited supervisors and invest in annual training to stay sharp."
+        },
+        {
+          "title": "Reflective practice",
+          "description": "We debrief themes, bias, and systemic impact after sessions to keep learning."
+        },
+        {
+          "title": "Honest referrals",
+          "description": "When coaching is not the right container, we name it early and connect you with alternative supports instead of holding you to a package."
+        }
+      ],
+      "cta": {
+        "title": "Next steps",
+        "segments": [
+          { "type": "text", "value": "Ready to sense how this approach could support you? Browse our " },
+          { "type": "link", "href": "/services", "label": "coaching services" },
+          { "type": "text", "value": " or schedule an intro call from the " },
+          { "type": "link", "href": "/services/how-coaching-works", "label": "How coaching works" },
+          { "type": "text", "value": " guide." }
+        ]
+      }
+    }
+  }
+}

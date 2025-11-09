@@ -1,0 +1,53 @@
+{
+  "seo": {
+    "title": "Reset Sprint – 3 sessions to pause and choose | SustainSage",
+    "description": "A short coaching sprint for when life is heavy but you still want a thoughtful partner to help you decide your next steps."
+  },
+  "hero": {
+    "title": "Reset Sprint – 3 sessions",
+    "subtitle": "For when life is “a bit much”, but you don’t want a 6-month programme.",
+    "imageAlt": "Illustration of pausing and choosing next steps",
+    "primaryCta": "Book an intro call",
+    "secondaryCta": "Back to services"
+  },
+  "sections": {
+    "fit": {
+      "title": "Is this for you?",
+      "items": [
+        "You’re not in crisis, but your current way of working or living feels unsustainable.",
+        "You’re circling the same questions in your head and would like a neutral, trained sounding board.",
+        "You want clarity on 1–2 key decisions in the next 4–8 weeks."
+      ]
+    },
+    "journey": {
+      "title": "What we do (3 sessions)",
+      "description": "The sprint is paced but spacious. You set the focus; we help you listen to yourself and test options within your real-world constraints.",
+      "steps": [
+        "Session 1 – Lay everything on the table.",
+        "Session 2 – Test options with honest constraints.",
+        "Session 3 – Commit to 1–3 realistic moves + how you’ll self-check."
+      ]
+    },
+    "outcomes": {
+      "title": "What you leave with",
+      "items": [
+        "A one-page summary of what matters now, what you’re saying yes/no to.",
+        "1–3 small, doable experiments instead of 20 open tabs in your head."
+      ]
+    },
+    "boundaries": {
+      "title": "What this is not",
+      "items": [
+        "Not crisis counselling or emergency support.",
+        "Not career coaching in a “fix your CV in 60 minutes” sense."
+      ]
+    },
+    "cta": {
+      "body": [
+        { "type": "text", "value": "Use the intro call to see whether a short sprint is the right container. If another type of support fits better, we’ll say so." }
+      ],
+      "primaryCta": "Book an intro call",
+      "secondaryCta": "Explore all services"
+    }
+  }
+}
