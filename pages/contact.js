@@ -63,7 +63,7 @@ export default function ContactPage() {
   const redirect = t('redirect', { returnObjects: true });
 
   return (
-    <MainLayout>
+    <>
       <Head>
         <title>{seo?.title}</title>
         <meta name="description" content={seo?.description} />
@@ -149,9 +149,13 @@ export default function ContactPage() {
       <div className="px-6 pb-20">
         <ICFNotice id="icf" className="mx-auto max-w-4xl" />
       </div>
-    </MainLayout>
+    </>
   );
 }
+
+ContactPage.getLayout = function getLayout(page) {
+  return <MainLayout>{page}</MainLayout>;
+};
 
 export async function getStaticProps({ locale }) {
   return {
