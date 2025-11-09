@@ -21,7 +21,6 @@ export default function SiteFooter() {
               <li><Link href="/">{t('header.navHome')}</Link></li>
               <li><Link href="/about">{t('header.navAbout')}</Link></li>
               <li><Link href="/services">{t('header.navServices')}</Link></li>
-              <li><Link href="/faq">{t('header.navFaq', { defaultValue: 'FAQ' })}</Link></li>
               <li><Link href="/resources">{t('header.navResources')}</Link></li>
               <li><Link href="/blog">{t('header.navBlog')}</Link></li>
               <li><Link href="/contact">{t('header.navContact')}</Link></li>

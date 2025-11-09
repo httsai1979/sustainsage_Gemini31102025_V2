@@ -1,11 +1,12 @@
 import Image from 'next/image';
 import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import MainLayout from '@/components/layout/MainLayout';
 import { getAllPosts, getPostRendered } from '@/lib/content';
 
 export default function BlogPost({ fm, html }) {
   return (
-    <>
+    <MainLayout>
       <Head>
         <title>{fm.title}</title>
         {fm.description && <meta name="description" content={fm.description} />}
@@ -19,7 +20,7 @@ export default function BlogPost({ fm, html }) {
         )}
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </article>
-    </>
+    </MainLayout>
   );
 }
 
