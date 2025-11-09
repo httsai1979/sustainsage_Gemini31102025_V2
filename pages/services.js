@@ -55,7 +55,7 @@ function ServicesPage() {
   const faqLink = t('faqLink', { returnObjects: true });
 
   return (
-    <MainLayout>
+    <>
       <Head>
         <title>{seo.title}</title>
         <meta name="description" content={seo.description} />
@@ -130,9 +130,13 @@ function ServicesPage() {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }
+
+ServicesPage.getLayout = function getLayout(page) {
+  return <MainLayout>{page}</MainLayout>;
+};
 
 export async function getStaticProps({ locale }) {
   return {
