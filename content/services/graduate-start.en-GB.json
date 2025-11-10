@@ -1,97 +1,39 @@
 {
   "pricing": {
     "packages": [
-      {
-        "name": "Launch support",
-        "duration": "Three 50-minute sessions during your first 90 days",
-        "scope": "Translate onboarding expectations into manageable experiments and rehearse early check-ins.",
-        "price_note": "£540 for the series"
-      },
-      {
-        "name": "Graduate accelerator",
-        "duration": "Five sessions across five months",
-        "scope": "Blend coaching and light mentoring with optional manager touchpoints tailored to your organisation.",
-        "price_note": "£1,050 for the full programme"
-      },
-      {
-        "name": "Ongoing partnership",
-        "duration": "Monthly 60-minute session with asynchronous support",
-        "scope": "Keep momentum after probation with voice-note check-ins and document reviews between sessions.",
-        "price_note": "£220 per month, pause with two weeks’ notice"
-      }
+      { "name": "4-session starter", "duration": "4×60–75min over ~6–8 weeks", "scope": "Decision scorecard, tiny tests, basic portfolio/CV review.", "price_note": "Student-friendly fees on request." },
+      { "name": "Single session", "duration": "60–75min", "scope": "One decision or interview prep with a clear action note.", "price_note": "Good for assessment centre or first interviews." }
     ],
     "policies": [
-      {
-        "title": "Preparation",
-        "body": "You receive written summaries within 24 hours so insights are easy to action between fast-paced weeks."
-      },
-      {
-        "title": "Manager involvement",
-        "body": "If an employer sponsors the programme we agree a light cadence for progress pulses that still protects confidentiality."
-      },
-      {
-        "title": "Payment options",
-        "body": "Payment plans are available at no additional cost for self-funded clients."
-      }
+      { "title": "Rescheduling", "body": "≥24h notice; otherwise counted as used." },
+      { "title": "No guarantees", "body": "We support experiments; outcomes depend on your effort and timing." }
     ]
   },
   "readiness": {
     "checklist": [
-      "You are navigating your first or second professional role and want steady accountability.",
-      "You are willing to examine habits that lead to overwork or second-guessing.",
-      "You can try small experiments between sessions even during busy project cycles.",
-      "You want to practise conversations before performance reviews or stakeholder meetings.",
-      "You are open to capturing wins so you can advocate for yourself with clarity."
+      "I can try a 2-week test between sessions.",
+      "I accept coaching is not therapy or medical advice.",
+      "I’ll draft my CV/portfolio and be open to iteration."
     ],
     "what_to_prepare": [
-      "Highlights and questions from onboarding, training or recent feedback.",
-      "Examples of situations where you felt unsure how to respond or follow up.",
-      "Any expectations from managers or mentors that you want to align on.",
-      "Ideas for routines or wellbeing rhythms you want to build outside of work."
+      "Latest CV or portfolio link",
+      "Two target roles or fields",
+      "Three questions that matter most to you"
     ]
   },
   "agreement": {
     "sections": [
-      {
-        "heading": "Confidentiality and ethics",
-        "body": "All conversations are confidential unless we explicitly agree to share updates with a sponsor or employer. We work to the ICF Code of Ethics and will signpost elsewhere if coaching is not the appropriate support."
-      },
-      {
-        "heading": "Scheduling and cadence",
-        "body": "Sessions are typically 60 minutes on Zoom. You can reschedule with 24 hours’ notice at no additional cost. Between sessions you can reach out by email or voice note for quick reflections or accountability."
-      },
-      {
-        "heading": "Fees and invoicing",
-        "body": "Invoices are issued at the start of the engagement with 14-day payment terms unless otherwise agreed. Employer sponsorship is welcomed — we align on confidentiality boundaries before any updates are shared."
-      },
-      {
-        "heading": "Support alongside work",
-        "body": "If your employer is funding the programme we set up light pulses they can rely on while keeping sessions confidential. You always control what is shared."
-      },
-      {
-        "heading": "Ending or pausing",
-        "body": "You can pause or end the engagement at any time. We will close with a short retrospective and note any open commitments. Unused sessions are refundable unless a discounted cohort or group rate has been applied."
-      }
+      { "heading": "Scope", "body": "Coaching helps you choose and act through questions, frameworks and small tests." },
+      { "heading": "Not therapy/medical", "body": "We do not treat or diagnose; we may signpost to support services." },
+      { "heading": "Confidentiality & limits", "body": "Sessions are confidential except where law/safety requires disclosure." },
+      { "heading": "Consent & boundaries", "body": "You can pause, decline or stop any activity." },
+      { "heading": "Cancellations & data", "body": "24h reschedule; minimal notes stored securely." }
     ]
   },
   "faq": {
     "items": [
-      {
-        "q": "Do you offer preparation before performance reviews?",
-        "a": "We rehearse conversations, co-write talking points and identify evidence to bring into the room with confidence."
-      },
-      {
-        "q": "Is there homework between sessions?",
-        "a": "We agree experiments together so they feel doable alongside your workload. Expect reflection prompts rather than heavy assignments."
-      },
-      {
-        "q": "How soon can we start?",
-        "a": "Intro chats are usually available within two weeks. Paid sessions start as soon as contracts and invoices are complete."
-      },
-      {
-        "q": "Do you work internationally?",
-        "a": "Most sessions happen online. We regularly support clients across the UK, Europe and Asia-Pacific time zones."
-      }
+      { "q": "Do you help with portfolios?", "a": "We can review and give structure suggestions but do not build them for you." },
+      { "q": "Internship or full-time?", "a": "We build a scorecard and test assumptions to help you decide." }
     ]
   }
 }
