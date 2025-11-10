@@ -8,6 +8,8 @@ import Icon from '@/components/common/Icon';
 import { getServiceCards } from '@/lib/services';
 
 function PathwayCard({ card, viewDetailsLabel }) {
+  const benefitIconName = card.benefitIcon || 'arrow';
+
   return (
     <div className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
       <div className="space-y-5">
@@ -30,7 +32,7 @@ function PathwayCard({ card, viewDetailsLabel }) {
             {card.benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
-                  <Icon name={card.benefitIcon ?? 'arrow'} className="h-6 w-6" />
+                  <Icon name={benefitIconName} className="h-6 w-6" />
                 </span>
                 <span>{benefit}</span>
               </li>
@@ -181,9 +183,14 @@ ServicesPage.propTypes = {
 };
 
 export async function getStaticProps({ locale }) {
+  const cards = getServiceCards().map((card) => ({
+    ...card,
+    benefitIcon: typeof card.benefitIcon === 'string' && card.benefitIcon.trim() ? card.benefitIcon.trim() : null,
+  }));
+
   return {
     props: {
-      cards: getServiceCards(),
+      cards,
       ...(await serverSideTranslations(locale, ['common', 'services'])),
     },
   };
