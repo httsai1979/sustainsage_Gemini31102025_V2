@@ -72,6 +72,7 @@ export default function ServicesPage({ cards }) {
   const cta = t('cta', { returnObjects: true });
   const faqLink = t('faqLink', { returnObjects: true });
   const boundariesLink = hero?.boundariesLink;
+  const visibleCards = Array.isArray(cards) ? cards.filter((card) => card && card.title) : [];
 
   return (
     <>
@@ -131,7 +132,7 @@ export default function ServicesPage({ cards }) {
             {pathways?.description ? <p>{pathways.description}</p> : null}
           </div>
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {cards.map((card) => (
+            {visibleCards.map((card) => (
               <PathwayCard key={card.slug} card={card} viewDetailsLabel={pathways?.viewDetails ?? 'View details'} />
             ))}
           </div>
