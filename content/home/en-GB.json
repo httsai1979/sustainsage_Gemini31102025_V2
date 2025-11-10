@@ -27,18 +27,21 @@
     "cards": [
       {
         "title": "Career transitions",
-        "description": "Make confident choices about your next role, location, or direction with a steady partner alongside you.",
-        "href": "/services/transition-coaching"
+        "description": "Relocate or shift roles with calm structure and clear next steps.",
+        "href": "/services/transition-coaching",
+        "icon": "compass"
       },
       {
         "title": "Mid-career coaching",
-        "description": "Reconnect with your strengths, reset boundaries, and design sustainable ways of working.",
-        "href": "/services/mid-career-coaching"
+        "description": "Re-align your direction with grounded support and refreshed boundaries.",
+        "href": "/services/mid-career-coaching",
+        "icon": "handshake"
       },
       {
         "title": "Reset sprint",
-        "description": "A focused series to regain momentum when you feel stuck or need to rebuild quickly after change.",
-        "href": "/services/reset-sprint"
+        "description": "Short, focused sessions to regain momentum after change or pause.",
+        "href": "/services/reset-sprint",
+        "icon": "clock"
       }
     ]
   },
@@ -46,9 +49,18 @@
     "title": "What you can expect",
     "description": "Coaching stays practical, bilingual, and paced so you can make steady moves.",
     "items": [
-      "Clear agreements about pace, goals, and what support looks like before we begin.",
-      "Bilingual sessions and materials so nuance is never lost between Mandarin and English.",
-      "Experiments that respect your energy, care responsibilities, and capacity for change."
+      {
+        "title": "Agree pace, goals, and support before we begin.",
+        "icon": "note"
+      },
+      {
+        "title": "Switch between Mandarin and English without losing nuance.",
+        "icon": "book"
+      },
+      {
+        "title": "Design experiments that respect energy, care, and capacity.",
+        "icon": "calendar"
+      }
     ]
   },
   "process": {

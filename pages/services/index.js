@@ -4,22 +4,34 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
+import Icon from '@/components/common/Icon';
 import { getServiceCards } from '@/lib/services';
 
 function PathwayCard({ card, viewDetailsLabel }) {
   return (
     <div className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-      <div className="space-y-4">
-        {card.eyebrow ? (
-          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.eyebrow}</p>
-        ) : null}
-        <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
-        {card.description ? <p className="text-sm leading-6 text-slate-600">{card.description}</p> : null}
+      <div className="space-y-5">
+        <div className="flex items-start gap-4">
+          {card.icon ? (
+            <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
+              <Icon name={card.icon} className="h-6 w-6" />
+            </span>
+          ) : null}
+          <div className="space-y-2">
+            {card.eyebrow ? (
+              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.eyebrow}</p>
+            ) : null}
+            <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
+            {card.description ? <p className="text-sm leading-6 text-slate-600">{card.description}</p> : null}
+          </div>
+        </div>
         {Array.isArray(card.benefits) && card.benefits.length > 0 ? (
-          <ul className="space-y-2 text-sm leading-6 text-slate-700">
+          <ul className="space-y-3 text-sm leading-6 text-slate-700">
             {card.benefits.map((benefit) => (
-              <li key={benefit} className="flex gap-2">
-                <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+              <li key={benefit} className="flex items-start gap-3">
+                <span className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+                  <Icon name={card.benefitIcon ?? 'arrow'} className="h-6 w-6" />
+                </span>
                 <span>{benefit}</span>
               </li>
             ))}
@@ -43,6 +55,8 @@ PathwayCard.propTypes = {
     eyebrow: PropTypes.string,
     title: PropTypes.string.isRequired,
     description: PropTypes.string,
+    icon: PropTypes.string,
+    benefitIcon: PropTypes.string,
     benefits: PropTypes.arrayOf(PropTypes.string),
   }).isRequired,
   viewDetailsLabel: PropTypes.string.isRequired,
@@ -159,6 +173,8 @@ ServicesPage.propTypes = {
       eyebrow: PropTypes.string,
       title: PropTypes.string.isRequired,
       description: PropTypes.string,
+      icon: PropTypes.string,
+      benefitIcon: PropTypes.string,
       benefits: PropTypes.arrayOf(PropTypes.string),
     })
   ).isRequired,
