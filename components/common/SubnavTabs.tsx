@@ -7,7 +7,9 @@ export function SubnavTabs({ base, tabs, active }) {
         {tabs.map((t) => (
           <li key={t.slug}>
             <Link
-              href={`${base}/${t.slug}`}
+              href={
+                t.href ?? (t.slug === 'overview' ? base : `${base}/${t.slug}`)
+              }
               className={`block py-3 ${
                 active === t.slug ? 'border-b-2 border-emerald-600 font-medium' : ''
               }`}
