@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
 import { loadJSON } from '@/lib/content';
+import { toSerializable } from '@/lib/toSerializable';
 
 function BulletHighlights({ block }) {
   if (!block?.items?.length) {
@@ -160,10 +161,10 @@ CoachingBoundariesPage.defaultProps = {
 export async function getStaticProps({ locale }) {
   const content = loadJSON('legal/coaching-boundaries', locale);
 
-  return {
+  return toSerializable({
     props: {
       content,
       ...(await serverSideTranslations(locale, ['common'])),
     },
-  };
+  });
 }

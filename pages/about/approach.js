@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
+import { toSerializable } from '@/lib/toSerializable';
 
 import nextI18NextConfig from '../../next-i18next.config.js';
 
@@ -164,9 +165,9 @@ export default function ApproachPage() {
 }
 
 export async function getStaticProps({ locale = 'en' }) {
-  return {
+  return toSerializable({
     props: {
       ...(await serverSideTranslations(locale, ['common', 'about-approach'], nextI18NextConfig)),
     },
-  };
+  });
 }

@@ -7,6 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ContactForm from '@/components/Sections/ContactForm';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
+import { toSerializable } from '@/lib/toSerializable';
 
 function BulletHighlights({ items, title, description }) {
   if (!items?.length) {
@@ -187,9 +188,9 @@ ContactPage.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps({ locale }) {
-  return {
+  return toSerializable({
     props: {
       ...(await serverSideTranslations(locale, ['common', 'contact'])),
     },
-  };
+  });
 }

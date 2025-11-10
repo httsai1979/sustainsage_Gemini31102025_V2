@@ -4,6 +4,7 @@ import Card from '@/components/ui/Card';
 import Tag from '@/components/ui/Tag';
 import MainLayout from '@/components/layout/MainLayout';
 import { getAllPosts } from '@/lib/content';
+import { toSerializable } from '@/lib/toSerializable';
 
 export default function BlogPage({ posts }) {
   return (
@@ -32,10 +33,10 @@ export default function BlogPage({ posts }) {
 
 export async function getStaticProps({ locale }) {
   const posts = getAllPosts(locale);
-  return {
+  return toSerializable({
     props: {
       posts,
       ...(await serverSideTranslations(locale, ['common'])),
     },
-  };
+  });
 }

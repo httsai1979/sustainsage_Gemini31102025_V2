@@ -6,8 +6,9 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Testimonials from '@/components/Testimonials';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
-import Icon from '@/components/common/Icon';
+import { getIconComponent } from '@/components/icons/map';
 import { loadJSON } from '@/lib/content';
+import { toSerializable } from '@/lib/toSerializable';
 
 const BUTTON_PRIMARY =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 bg-emerald-700 text-white hover:bg-emerald-800';
@@ -15,6 +16,8 @@ const BUTTON_SECONDARY =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100';
 
 function ServiceCard({ card }) {
+  const IconComponent = getIconComponent(card.icon);
+
   return (
     <Link
       href={card.href}
@@ -22,9 +25,9 @@ function ServiceCard({ card }) {
     >
       <div className="space-y-4">
         <div className="flex items-start gap-4">
-          {card.icon ? (
+          {IconComponent ? (
             <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
-              <Icon name={card.icon} className="h-6 w-6" />
+              <IconComponent className="h-6 w-6" />
             </span>
           ) : null}
           <div className="space-y-2">
@@ -64,15 +67,17 @@ function BulletList({ items }) {
     <ul className="mt-6 space-y-4">
       {items.map((item) => {
         const key = typeof item === 'string' ? item : item.title ?? item.description;
+        const iconKey = typeof item === 'string' ? null : item.icon;
+        const IconComponent = getIconComponent(iconKey);
 
         return (
           <li
             key={key}
             className="flex items-start gap-4 rounded-3xl border border-emerald-100 bg-white/95 p-5 shadow-sm"
           >
-            {item.icon ? (
+            {IconComponent ? (
               <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
-                <Icon name={item.icon} className="h-6 w-6" />
+                <IconComponent className="h-6 w-6" />
               </span>
             ) : (
               <span aria-hidden className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
@@ -360,11 +365,11 @@ export async function getStaticProps({ locale = 'en-GB' }) {
   const content = loadJSON('home', locale);
   const testimonials = loadJSON('testimonials', locale);
 
-  return {
+  return toSerializable({
     props: {
       content,
       testimonials,
       ...(await serverSideTranslations(locale, ['common', 'home', 'faq'])),
     },
-  };
+  });
 }

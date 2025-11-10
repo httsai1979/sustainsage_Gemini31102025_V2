@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import { getServiceData, getServiceSlugs } from '@/lib/services';
+import { toSerializable } from '@/lib/toSerializable';
 
 function Section({ title, description, tint = false, children }) {
   const backgroundClass = tint ? 'bg-emerald-950/5' : 'bg-white';
@@ -322,12 +323,12 @@ export async function getStaticProps({ params, locale }) {
   try {
     const service = getServiceData(params.slug);
 
-    return {
+    return toSerializable({
       props: {
         service,
         ...(await serverSideTranslations(locale, ['common'])),
       },
-    };
+    });
   } catch (error) {
     return {
       notFound: true,

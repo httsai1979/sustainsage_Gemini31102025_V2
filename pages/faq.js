@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
 import { loadJSON } from '@/lib/content';
+import { toSerializable } from '@/lib/toSerializable';
 
 const ICON_CLASS = 'h-12 w-12 flex items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700';
 
@@ -188,10 +189,10 @@ FAQPage.getLayout = function getLayout(page) {
 export async function getStaticProps({ locale = 'en-GB' }) {
   const content = loadJSON('faq', locale);
 
-  return {
+  return toSerializable({
     props: {
       content,
       ...(await serverSideTranslations(locale, ['common', 'faq'])),
     },
-  };
+  });
 }
