@@ -4,7 +4,6 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Hero from '@/components/layout/Hero';
-import MainLayout from '@/components/layout/MainLayout';
 
 import nextI18NextConfig from '../../next-i18next.config.js';
 
@@ -63,7 +62,7 @@ export default function ForCareerReturnersPage() {
   const packages = sections.packages ?? {};
 
   return (
-    <MainLayout>
+    <>
       <Head>
         <title>{seo?.title ?? 'Coaching for career returners'}</title>
         <meta
@@ -131,7 +130,7 @@ export default function ForCareerReturnersPage() {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }
 
