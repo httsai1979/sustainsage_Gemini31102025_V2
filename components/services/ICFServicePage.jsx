@@ -75,6 +75,54 @@ ExampleList.defaultProps = {
   items: undefined,
 };
 
+function renderCtaBody(body) {
+  if (!body) {
+    return null;
+  }
+
+  if (typeof body === 'string') {
+    return body;
+  }
+
+  if (Array.isArray(body)) {
+    const segments = body
+      .map((segment, index) => {
+        if (typeof segment === 'string') {
+          return <span key={index}>{segment}</span>;
+        }
+
+        if (segment?.type === 'link' && segment?.href && segment?.label) {
+          return (
+            <Link
+              key={`${segment.href}-${index}`}
+              href={segment.href}
+              className="text-emerald-700 underline decoration-emerald-700/40 hover:decoration-emerald-700"
+            >
+              {segment.label}
+            </Link>
+          );
+        }
+
+        const value = segment?.value;
+
+        if (typeof value === 'string' && value.length > 0) {
+          return <span key={index}>{value}</span>;
+        }
+
+        return null;
+      })
+      .filter(Boolean);
+
+    return segments.length > 0 ? segments : null;
+  }
+
+  if (typeof body === 'object' && typeof body?.value === 'string') {
+    return body.value;
+  }
+
+  return null;
+}
+
 export default function ICFServicePage({ namespace, image, imageAlt }) {
   const { t } = useTranslation(namespace);
   const seo = t('seo', { returnObjects: true }) ?? {};
@@ -91,6 +139,7 @@ export default function ICFServicePage({ namespace, image, imageAlt }) {
 
   const heroImage = image ?? hero.image ?? '/images/services/transition.svg';
   const heroImageAlt = imageAlt ?? hero.imageAlt ?? hero.title ?? 'Service illustration';
+  const ctaBody = renderCtaBody(cta?.body);
 
   return (
     <MainLayout>
@@ -201,9 +250,7 @@ export default function ICFServicePage({ namespace, image, imageAlt }) {
           {cta?.title ? (
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{cta.title}</h2>
           ) : null}
-          {cta?.body ? (
-            <p className="mt-4 text-base leading-7 text-slate-700">{cta.body}</p>
-          ) : null}
+          {ctaBody ? <p className="mt-4 text-base leading-7 text-slate-700">{ctaBody}</p> : null}
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             {cta?.primary?.label && cta?.primary?.href ? (
               <Link
