@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Hero from '@/components/layout/Hero';
+import { toSerializable } from '@/lib/toSerializable';
 
 import nextI18NextConfig from '../../next-i18next.config.js';
 
@@ -148,9 +149,9 @@ export default function ResetSprintPage() {
 }
 
 export async function getStaticProps({ locale = 'en' }) {
-  return {
+  return toSerializable({
     props: {
       ...(await serverSideTranslations(locale, ['common', 'services-reset-sprint'], nextI18NextConfig)),
     },
-  };
+  });
 }

@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
 import { loadJSON } from '@/lib/content';
+import { toSerializable } from '@/lib/toSerializable';
 
 function Eyebrow({ children }) {
   if (!children) return null;
@@ -302,10 +303,10 @@ export async function getStaticProps({ locale }) {
   const contentLocale = locale === 'en' ? 'en-GB' : locale;
   const copy = loadJSON('about', contentLocale);
 
-  return {
+  return toSerializable({
     props: {
       copy,
       ...(await serverSideTranslations(locale, ['common'])),
     },
-  };
+  });
 }

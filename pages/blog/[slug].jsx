@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import MainLayout from '@/components/layout/MainLayout';
 import { getAllPosts, getPostRendered } from '@/lib/content';
+import { toSerializable } from '@/lib/toSerializable';
 
 export default function BlogPost({ fm, html }) {
   return (
@@ -32,11 +33,11 @@ export async function getStaticPaths({ locales }) {
 
 export async function getStaticProps({ params, locale }) {
   const { frontmatter, html } = await getPostRendered(locale, params.slug);
-  return {
+  return toSerializable({
     props: {
       fm: frontmatter,
       html,
       ...(await serverSideTranslations(locale, ['common'])),
     },
-  };
+  });
 }
