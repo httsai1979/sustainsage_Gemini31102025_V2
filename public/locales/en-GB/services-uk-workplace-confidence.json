@@ -1,0 +1,67 @@
+{
+  "seo": {
+    "title": "UK workplace confidence coaching",
+    "description": "ICF-aligned coaching for leaders navigating UK communication norms, cross-cultural feedback, and self-advocacy."
+  },
+  "hero": {
+    "title": "Hold your voice while navigating UK workplace norms.",
+    "summary": "We slow things down so you can choose how to speak up, set boundaries, and stay resourced across cultures."
+  },
+  "isForYou": {
+    "title": "Is this for you?",
+    "items": [
+      "You work with UK teams and want to communicate without over-editing yourself.",
+      "You are managing up, across, or virtually and receive feedback that feels vague or abrupt.",
+      "You lead in more than one language and want space to process power dynamics safely.",
+      "You are building influence in new organisations while staying true to your values."
+    ]
+  },
+  "explore": {
+    "title": "What we explore together",
+    "items": [
+      "Where do you want more ease in advocating for yourself or your team?",
+      "What scripts help you invite clarity when feedback lands harshly or indirectly?",
+      "How do identity, race, or migration experiences shape what feels safe to say?",
+      "What practices keep your nervous system steady before, during, and after high-stakes conversations?",
+      "How might you build allyship and accountability without over-functioning?",
+      "What language communicates boundaries without losing warmth or firmness?"
+    ]
+  },
+  "format": {
+    "title": "Format & flow",
+    "bullets": [
+      "Recommend five or six 60-minute sessions across three months, with optional voice-note check-ins between calls.",
+      "We can review recordings or scripts you bring, focusing on reflection rather than performance.",
+      "Experiments may include rehearsal, journaling, or alternative communication channels you consent to try.",
+      "We close by integrating learning into sustainable rituals and naming future supports."
+    ]
+  },
+  "snapshot": {
+    "title": "Case snapshot",
+    "labels": {
+      "context": "Context",
+      "approach": "How we supported",
+      "outcome": "What changed"
+    },
+    "items": [
+      {
+        "context": "An engineering lead from Malaysia wanted to push back on scope creep without being labelled difficult.",
+        "approach": "We mapped power holders, practised boundary-setting phrases, and designed a cadence for debriefing emotions after challenging calls.",
+        "outcome": "They held firmer agreements, felt less drained after meetings, and received feedback recognising their clarity."
+      }
+    ]
+  },
+  "not": {
+    "title": "What this is not",
+    "items": [
+      "Not legal, HR, or immigration advice.",
+      "Not accent reduction or public speaking training—we focus on congruent leadership choices.",
+      "Not a shortcut around systemic issues—we name them and plan within your sphere of control."
+    ]
+  },
+  "cta": {
+    "body": "If this sounds close to your reality, you’re welcome to book a 20-minute intro chat.",
+    "linkLabel": "Book a 20-minute intro chat",
+    "linkHref": "/contact?package=uk-workplace-confidence"
+  }
+}

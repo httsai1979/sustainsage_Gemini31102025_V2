@@ -1,0 +1,102 @@
+{
+  "hero": {
+    "headline": "Calm, client-led, ICF-aligned coaching for real transitions.",
+    "subheadline": "Grounded space to regroup, experiment, and move forward on your terms.",
+    "imageAlt": "Notebook, tea, and sunlight suggesting a calm coaching space.",
+    "primaryCta": "Book a 20-minute intro chat",
+    "secondaryCta": "See coaching pathways",
+    "highlights": ["ICF-aligned coaching", "For internationals & returners"]
+  },
+  "faqLink": {
+    "label": "More questions? See our FAQ.",
+    "href": "/faq"
+  },
+  "forWhom": {
+    "title": "Who we work with",
+    "intro": "Four contexts we meet every week. Each link shows the service structure, boundaries, and fees.",
+    "linkLabel": "See how this works",
+    "cards": [
+      {
+        "title": "Transition coaching",
+        "audience": "For people relocating or returning.",
+        "description": "Settle into the UK while honouring commitments elsewhere. Sessions help you map choices without rushing decisions.",
+        "href": "/services/transition",
+        "icon": "globe"
+      },
+      {
+        "title": "Early career clarity",
+        "audience": "For early professionals testing direction.",
+        "description": "Try options safely before you commit. We reality-check offers, mentors, and experiments you design.",
+        "href": "/services/early-career",
+        "icon": "compass"
+      },
+      {
+        "title": "Working parent support",
+        "audience": "For parents and carers rebuilding rhythm.",
+        "description": "Re-enter work without losing the care agreements that matter. Expect honest planning, not hustle culture.",
+        "href": "/services/working-parents",
+        "icon": "balance"
+      },
+      {
+        "title": "Cross-cultural leadership",
+        "audience": "For managers across borders and teams.",
+        "description": "Lead with clarity across cultures and expectations. We practise conversations and boundaries that protect your capacity.",
+        "href": "/services/leadership",
+        "icon": "signal"
+      }
+    ]
+  },
+  "recognise": {
+    "title": "You might recognise this",
+    "items": [
+      "You moved to the UK and are unsure which workplace norms to follow.",
+      "You want to return to work without losing the care agreements that matter at home.",
+      "You speak multiple languages yet hesitate when conversations turn fast or nuanced.",
+      "You are balancing visas, family expectations, and your own leadership plans.",
+      "You sense burnout signals and want to experiment before things fracture."
+    ]
+  },
+  "how": {
+    "title": "How coaching works",
+    "intro": "A simple rhythm that loops as your focus evolves.",
+    "steps": [
+      {
+        "title": "Arrive with what is real",
+        "summary": "We start with the situation you name—no scripts, no pressure to have it figured out."
+      },
+      {
+        "title": "Explore options with consent",
+        "summary": "You test language, stories, and experiments while we hold structure and ask sharper questions."
+      },
+      {
+        "title": "Design what happens next",
+        "summary": "We close each session with actions, supports, or referrals you choose to carry forward."
+      }
+    ],
+    "ownership": "You are always in charge of pace and topic. Our role is to hold structure, flag boundaries, and ask better questions.",
+    "ctaLabel": "Read how coaching works in detail",
+    "ctaHref": "/services/how-coaching-works"
+  },
+  "realLife": {
+    "title": "In real life, this often sounds like…",
+    "intro": "Composite scenarios drawn from different clients so privacy stays protected.",
+    "items": [
+      { "quote": "\u201cI\u2019ve moved to the UK and feel I\u2019m starting from zero while my family still needs support back home.\u201d" },
+      { "quote": "\u201cI lead a small team and I\u2019m tired of being \u2018on\u2019 all the time for everyone else.\u201d" },
+      { "quote": "\u201cI\u2019m re-entering work after care leave and want a plan that respects both income and my capacity.\u201d" }
+    ],
+    "disclaimer": "These are blended examples, not single-client testimonials. They show the types of topics we can explore together."
+  },
+  "faqSection": {
+    "title": "Before we meet",
+    "body": "You can self-check scope, logistics, and ethics any time.",
+    "bullets": [
+      "Understand how coaching differs from therapy or consulting.",
+      "See typical session rhythms, frequency, and fee ranges.",
+      "Know what happens if mental health or safeguarding needs appear."
+    ],
+    "summary": "Use the FAQ to get practical answers before you book. It helps you decide whether to start, pause, or request a referral.",
+    "ctaLabel": "Visit the FAQ",
+    "ctaHref": "/faq"
+  }
+}
