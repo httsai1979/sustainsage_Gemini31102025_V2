@@ -6,7 +6,11 @@
   "hero": {
     "title": "一起調整出屬於你的教練路徑",
     "subtitle": "每一條教練路徑都只是起點。理解你的生活現況之後，我們會一起調整步調、語言與焦點。",
-    "highlight": "先找出此刻最需要的支援。"
+    "highlight": "先找出此刻最需要的支援。",
+    "boundariesLink": {
+      "label": "閱讀教練範圍與同意",
+      "href": "/legal/coaching-boundaries"
+    }
   },
   "pathways": {
     "title": "選擇適合你的教練路徑",

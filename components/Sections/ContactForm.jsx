@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
+import { Trans, useTranslation } from 'next-i18next';
 
 const FIELD_CLASSNAME =
   'block w-full rounded-xl border border-slate-200 px-3.5 py-2 text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500';
@@ -17,6 +18,7 @@ export default function ContactForm() {
     language: '',
     timezone: '',
     consent: false,
+    boundariesConsent: false,
     scopeAcknowledgement: false,
   });
 
@@ -61,6 +63,7 @@ export default function ContactForm() {
       formData.language &&
       formData.timezone &&
       formData.consent &&
+      formData.boundariesConsent &&
       formData.scopeAcknowledgement;
 
     if (!isValid) {
@@ -83,6 +86,7 @@ export default function ContactForm() {
           focusArea: formData.focusArea,
           preferredTimeWindow: formData.timezone,
           consent: formData.consent,
+          boundariesConsent: formData.boundariesConsent,
           scopeAcknowledgement: formData.scopeAcknowledgement,
         }),
       });
@@ -101,6 +105,7 @@ export default function ContactForm() {
         language: '',
         timezone: '',
         consent: false,
+        boundariesConsent: false,
         scopeAcknowledgement: false,
       });
     } catch (error) {
@@ -276,6 +281,32 @@ export default function ContactForm() {
               />
               <label htmlFor="consent" className="text-sm leading-6 text-slate-700">
                 {t('form.consent')}
+              </label>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <input
+                id="boundariesConsent"
+                name="boundariesConsent"
+                type="checkbox"
+                required
+                checked={formData.boundariesConsent}
+                onChange={handleChange}
+                className="mt-1 h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-600"
+              />
+              <label htmlFor="boundariesConsent" className="text-sm leading-6 text-slate-700">
+                <Trans
+                  t={t}
+                  i18nKey="form.boundariesConsent"
+                  components={{
+                    Link: (
+                      <Link
+                        href="/legal/coaching-boundaries"
+                        className="font-semibold text-emerald-700 underline-offset-2 hover:underline"
+                      />
+                    ),
+                  }}
+                />
               </label>
             </div>
 

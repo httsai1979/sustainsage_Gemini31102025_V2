@@ -16,7 +16,9 @@
     "contactTitle": "聯絡資訊",
     "copyright": "© {{year}} SustainSage Group Ltd. 版權所有。",
     "privacyPolicy": "隱私權政策",
-    "boundariesNotice": "教練著重於面向未來的支持，不能取代治療或其他專業建議。"
+    "boundariesTitle": "教練範圍與同意",
+    "boundariesNotice": "教練著重於面向未來的支持，不能取代治療或其他專業建議。",
+    "boundariesLink": "閱讀教練範圍與同意"
   },
   "stickyCta": {
     "title": "準備來個小實驗嗎？",

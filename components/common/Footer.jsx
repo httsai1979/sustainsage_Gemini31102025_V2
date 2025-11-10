@@ -12,9 +12,15 @@ export default function Footer() {
           <p className="text-lg font-semibold text-slate-900">SustainSage</p>
           <p className="mt-3 max-w-sm text-sm text-slate-600">{t('footer.philosophy')}</p>
           <p className="mt-4 text-xs font-medium uppercase tracking-wide text-emerald-700">
-            Coaching Boundaries
+            {t('footer.boundariesTitle')}
           </p>
-          <p className="mt-1 max-w-xs text-xs text-slate-500">{t('footer.boundariesNotice')}</p>
+          <div className="mt-1 space-y-1 text-xs">
+            <p className="max-w-xs text-slate-500">{t('footer.boundariesNotice')}</p>
+            <Link href="/legal/coaching-boundaries" className="inline-flex items-center gap-1 font-semibold text-emerald-700 hover:underline">
+              {t('footer.boundariesLink')}
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
         <div className="flex flex-1 flex-col gap-8 md:flex-row md:justify-end">
           <div>
