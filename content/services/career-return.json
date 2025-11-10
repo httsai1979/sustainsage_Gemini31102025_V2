@@ -18,12 +18,13 @@
     "order": 1,
     "eyebrow": "Career returners",
     "title": "Return-to-work clarity",
-    "description": "Map the first 90 days, renegotiate capacity and practice the language you will use to re-enter.",
+    "description": "Map your first 90 days with calm pacing and confident language.",
     "benefits": [
-      "Rebuild confidence after caregiving, study or health leave",
-      "Design paced experiments before you say yes to new work",
-      "Shape routines that honour energy, care and paid commitments"
-    ]
+      "Rebuild confidence after caregiving, study, or health leave.",
+      "Test paced experiments before you commit.",
+      "Set routines that protect energy and shared commitments."
+    ],
+    "icon": "calendar"
   },
   "key_points": {
     "title": "Who this serves",
