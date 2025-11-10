@@ -1,11 +1,13 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import ContactForm from '@/components/Sections/ContactForm';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
+import { loadJSON } from '@/lib/content';
 
 function BulletHighlights({ items, title, description }) {
   if (!items?.length) {
@@ -51,7 +53,7 @@ function FAQItem({ item }) {
   );
 }
 
-export default function ContactPage() {
+export default function ContactPage({ scopeHighlights }) {
   const { t } = useTranslation('contact');
 
   const seo = t('seo', { returnObjects: true });
@@ -61,6 +63,8 @@ export default function ContactPage() {
   const faqLink = t('faqLink', { returnObjects: true });
   const suitability = t('suitability', { returnObjects: true });
   const redirect = t('redirect', { returnObjects: true });
+  const whatYouGet = scopeHighlights?.whatYouGet ?? suitability;
+  const whatWeDontDo = scopeHighlights?.whatWeDontDo ?? redirect;
 
   return (
     <>
@@ -78,19 +82,19 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {suitability?.items?.length || redirect?.items?.length ? (
+      {whatYouGet?.items?.length || whatWeDontDo?.items?.length ? (
         <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-5xl px-6">
             <div className="grid gap-6 md:grid-cols-2">
               <BulletHighlights
-                items={suitability?.items}
-                title={suitability?.title}
-                description={suitability?.description}
+                items={whatYouGet?.items}
+                title={whatYouGet?.title}
+                description={whatYouGet?.description}
               />
               <BulletHighlights
-                items={redirect?.items}
-                title={redirect?.title}
-                description={redirect?.description}
+                items={whatWeDontDo?.items}
+                title={whatWeDontDo?.title}
+                description={whatWeDontDo?.description}
               />
             </div>
           </div>
@@ -153,13 +157,35 @@ export default function ContactPage() {
   );
 }
 
+ContactPage.propTypes = {
+  scopeHighlights: PropTypes.shape({
+    whatYouGet: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      items: PropTypes.arrayOf(PropTypes.string),
+    }),
+    whatWeDontDo: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      items: PropTypes.arrayOf(PropTypes.string),
+    }),
+  }),
+};
+
+ContactPage.defaultProps = {
+  scopeHighlights: null,
+};
+
 ContactPage.getLayout = function getLayout(page) {
   return <MainLayout>{page}</MainLayout>;
 };
 
 export async function getStaticProps({ locale }) {
+  const boundariesContent = loadJSON('legal/coaching-boundaries', locale);
+
   return {
     props: {
+      scopeHighlights: boundariesContent?.scope ?? null,
       ...(await serverSideTranslations(locale, ['common', 'contact'])),
     },
   };

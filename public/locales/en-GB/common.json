@@ -16,7 +16,9 @@
     "contactTitle": "Contact details",
     "copyright": "© {{year}} SustainSage Group Ltd. All rights reserved.",
     "privacyPolicy": "Privacy policy",
-    "boundariesNotice": "Coaching provides forward-looking support and does not replace therapy or specialist advice."
+    "boundariesTitle": "Coaching boundaries",
+    "boundariesNotice": "Coaching provides forward-looking support and does not replace therapy or specialist advice.",
+    "boundariesLink": "Read coaching boundaries"
   },
   "stickyCta": {
     "title": "Ready for a small experiment?",

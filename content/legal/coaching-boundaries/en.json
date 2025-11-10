@@ -1,0 +1,71 @@
+{
+  "title": "Coaching boundaries & consent",
+  "description": "Clear agreements keep coaching safe, ethical, and useful. Review what we promise, what stays outside scope, and how we handle data.",
+  "lastUpdated": "Updated 31 October 2025",
+  "scope": {
+    "whatYouGet": {
+      "title": "What you get",
+      "description": "When we coach together you can rely on:",
+      "items": [
+        "Confidential, client-led conversations held in English, Mandarin, or both.",
+        "Collaborative experiments, reflections, and tools tailored to your goals.",
+        "Honest signposting if another professional or resource would support you better.",
+        "Written summaries of agreements so you stay in control of next steps."
+      ]
+    },
+    "whatWeDontDo": {
+      "title": "What we don’t do",
+      "description": "To respect coaching ethics, we do not:",
+      "items": [
+        "Diagnose, treat, or provide therapy, counselling, medical, legal, or financial advice.",
+        "Complete immigration, tax, or legal paperwork on your behalf.",
+        "Guarantee job offers, promotions, or specific outcomes.",
+        "Work in situations where there is unmanaged risk of harm—we pause and refer instead."
+      ]
+    }
+  },
+  "sections": [
+    {
+      "title": "Informed consent & confidentiality",
+      "paragraphs": [
+        "Before we begin we agree the purpose of coaching, session cadence, fees, and how notes are stored. You can ask questions or change your mind at any time.",
+        "Sessions stay confidential except where law or safeguarding duties require disclosure. If that ever becomes relevant we will discuss the steps together."
+      ],
+      "items": [
+        {
+          "title": "Data care",
+          "description": "We keep minimal notes in encrypted storage, delete unused enquiries after 90 days, and review retention annually."
+        },
+        {
+          "title": "Sponsored coaching",
+          "description": "If an employer funds coaching we outline what is shared (usually scheduling and attendance only) and what stays between coach and client."
+        }
+      ]
+    },
+    {
+      "title": "Scope of support",
+      "paragraphs": [
+        "Coaching creates space to think, experiment, and design your own actions. It is future-focused and paced with your consent.",
+        "If clinical, legal, or crisis needs surface we will pause, name what we are noticing, and connect you with qualified specialists or community resources."
+      ],
+      "items": [
+        {
+          "title": "Referrals & signposting",
+          "description": "We maintain a network of therapists, legal professionals, and peer groups. We can share options; you choose who to contact."
+        },
+        {
+          "title": "Between-session contact",
+          "description": "Light check-ins by email or secure notes are available for accountability. Extensive support is scheduled as an additional session."
+        }
+      ]
+    },
+    {
+      "title": "Your choices",
+      "paragraphs": [
+        "You decide what to share, which experiments to run, and whether to continue. Coaching should feel collaborative, not pressured.",
+        "If these boundaries do not fit your needs, let us know. We will help you find a different service without judgement."
+      ],
+      "items": []
+    }
+  ]
+}

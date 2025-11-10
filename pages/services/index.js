@@ -55,6 +55,7 @@ export default function ServicesPage({ cards }) {
   const pathways = t('pathways', { returnObjects: true });
   const cta = t('cta', { returnObjects: true });
   const faqLink = t('faqLink', { returnObjects: true });
+  const boundariesLink = hero?.boundariesLink;
 
   return (
     <MainLayout title={seo?.title} desc={seo?.description}>
@@ -68,11 +69,27 @@ export default function ServicesPage({ cards }) {
               </p>
             ) : null}
             {hero?.subtitle ? <p>{hero.subtitle}</p> : null}
-            {faqLink?.label ? (
-              <Link href={faqLink.href} className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline">
-                {faqLink.label}
-                <span aria-hidden>→</span>
-              </Link>
+            {boundariesLink?.label || faqLink?.label ? (
+              <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
+                {boundariesLink?.label ? (
+                  <Link
+                    href={boundariesLink.href}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline"
+                  >
+                    {boundariesLink.label}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                ) : null}
+                {faqLink?.label ? (
+                  <Link
+                    href={faqLink.href}
+                    className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline"
+                  >
+                    {faqLink.label}
+                    <span aria-hidden="true">→</span>
+                  </Link>
+                ) : null}
+              </div>
             ) : null}
           </div>
           <div className="rounded-3xl border border-emerald-100 bg-white/80 p-6 text-sm leading-6 text-slate-700 md:w-80">

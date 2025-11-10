@@ -6,7 +6,11 @@
   "hero": {
     "title": "一起调整出属于你的教练路径",
     "subtitle": "每一条教练路径都只是起点。理解你的生活现况之后，我们会一起调整步调、语言与焦点。",
-    "highlight": "先找出此刻最需要的支持。"
+    "highlight": "先找出此刻最需要的支持。",
+    "boundariesLink": {
+      "label": "阅读教练范围与同意",
+      "href": "/legal/coaching-boundaries"
+    }
   },
   "pathways": {
     "title": "选择适合你的教练路径",

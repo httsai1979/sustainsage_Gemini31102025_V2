@@ -6,7 +6,11 @@
   "hero": {
     "title": "Coaching pathways shaped with you",
     "subtitle": "Each pathway is a starting point. We adapt pace, language, and focus once we understand your reality.",
-    "highlight": "Choose the starting point that fits right now."
+    "highlight": "Choose the starting point that fits right now.",
+    "boundariesLink": {
+      "label": "Read coaching boundaries",
+      "href": "/legal/coaching-boundaries"
+    }
   },
   "faqLink": {
     "label": "More questions? See our FAQ.",
