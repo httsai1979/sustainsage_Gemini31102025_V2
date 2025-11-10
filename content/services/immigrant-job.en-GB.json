@@ -1,0 +1,97 @@
+{
+  "pricing": {
+    "packages": [
+      {
+        "name": "Focused series",
+        "duration": "Three 60-minute sessions over six weeks",
+        "scope": "Clarify priorities for your UK job search and experiment with tailored outreach between sessions.",
+        "price_note": "£720 for the full series"
+      },
+      {
+        "name": "Season of change",
+        "duration": "Six 60-minute sessions across three months",
+        "scope": "Blend strategy, wellbeing and storytelling support while you navigate applications and relocation decisions.",
+        "price_note": "£1,440 for the full programme"
+      },
+      {
+        "name": "Ongoing partnership",
+        "duration": "Monthly 60-minute session with asynchronous support",
+        "scope": "Sustain momentum across time zones with voice-note check-ins and document reviews between meetings.",
+        "price_note": "£220 per month, pause with two weeks’ notice"
+      }
+    ],
+    "policies": [
+      {
+        "title": "Time zones",
+        "body": "We adapt session times to suit your location and care responsibilities so conversations stay supportive."
+      },
+      {
+        "title": "Document reviews",
+        "body": "Coaching time can include CV, cover letter or networking outreach reviews with feedback within two business days."
+      },
+      {
+        "title": "Payment options",
+        "body": "Payment plans are available and visa-related legal questions are signposted to trusted partners."
+      }
+    ]
+  },
+  "readiness": {
+    "checklist": [
+      "You are balancing a UK job search with relocation or visa logistics and want a steady partner.",
+      "You are willing to collect stories from across cultures and industries so your narrative feels authentic.",
+      "You can try experiments between sessions, from networking to wellbeing routines.",
+      "You want to co-create language that resonates across cultures and seniorities.",
+      "You are open to reflecting on both professional goals and the personal transitions surrounding them."
+    ],
+    "what_to_prepare": [
+      "Recent applications, CVs or LinkedIn profiles you would like feedback on.",
+      "Examples of roles or organisations you are targeting and why they appeal.",
+      "Questions about coordinating time zones, caregiving or other commitments alongside the search.",
+      "Stories that illustrate the strengths you want employers to notice."
+    ]
+  },
+  "agreement": {
+    "sections": [
+      {
+        "heading": "Confidentiality and ethics",
+        "body": "All conversations are confidential unless we explicitly agree to share updates with a sponsor or employer. We work to the ICF Code of Ethics and will signpost elsewhere if coaching is not the appropriate support."
+      },
+      {
+        "heading": "Scheduling and cadence",
+        "body": "Sessions are typically 60 minutes on Zoom. You can reschedule with 24 hours’ notice at no additional cost. Between sessions you can reach out by email or voice note for quick reflections or accountability."
+      },
+      {
+        "heading": "Fees and invoicing",
+        "body": "Invoices are issued at the start of the engagement with 14-day payment terms unless otherwise agreed. Employer sponsorship is welcomed — we align on confidentiality boundaries before any updates are shared."
+      },
+      {
+        "heading": "Coordinating across time zones",
+        "body": "We confirm preferred time zones and communication channels before the agreement is signed. If you travel during the engagement we adapt our schedule so sessions remain supportive."
+      },
+      {
+        "heading": "Ending or pausing",
+        "body": "You can pause or end the engagement at any time. We will close with a short retrospective and note any open commitments. Unused sessions are refundable unless a discounted cohort or group rate has been applied."
+      }
+    ]
+  },
+  "faq": {
+    "items": [
+      {
+        "q": "Can my employer or sponsor be involved?",
+        "a": "Yes. We agree what updates, if any, will be shared outside sessions. Sponsors only receive information you authorise."
+      },
+      {
+        "q": "Is there homework between sessions?",
+        "a": "We agree experiments that move your search forward and fit the constraints you are working with."
+      },
+      {
+        "q": "Can we review my CV or LinkedIn profile?",
+        "a": "Absolutely. Coaching time can include narrative and document reviews so that every application reflects your story."
+      },
+      {
+        "q": "Do you work internationally?",
+        "a": "Most sessions happen online. We regularly support clients across the UK, Europe and Asia-Pacific time zones."
+      }
+    ]
+  }
+}
