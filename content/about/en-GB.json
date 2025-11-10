@@ -1,0 +1,68 @@
+{
+  "seo": {
+    "title": "About SustainSage | Bilingual coaching grounded in ethics",
+    "description": "Meet the bilingual coaches behind SustainSage, the transitions we support, and the boundaries that keep every partnership safe."
+  },
+  "story": {
+    "eyebrow": "Story",
+    "title": "Coaching for complex transitions",
+    "paragraphs": [
+      "SustainSage is led by bilingual coaches who have moved between Taiwan, Singapore, and the UK. We know how disorienting relocation, career redesign, and mission-led work can feel.",
+      "Today we partner with people reshaping work, relocating, or guiding community-first teams. Sessions stay steady, bilingual, and grounded in practical experiments that respect your pace."
+    ],
+    "bullets": [
+      "ICF-aligned practice keeps agreements, data care, and supervision transparent.",
+      "Lived experience across Asia-Pacific and the UK keeps culture and policy context in view.",
+      "Practical, no-drama experiments that build momentum without burning you out."
+    ]
+  },
+  "approach": {
+    "eyebrow": "Approach",
+    "title": "Small experiments, steady partnership",
+    "paragraphs": [
+      "Every engagement begins with shared context, informed consent, and clarity on how we will work together."
+    ],
+    "bullets": [
+      "We agree goals, roles, confidentiality boundaries, cadence, and data retention before coaching starts.",
+      "Coaching flows between English, Traditional Chinese, and Simplified Chinese so nuance never gets lost.",
+      "Monthly supervision and reflective practice keep us accountable and surface blind spots early."
+    ]
+  },
+  "clients": {
+    "eyebrow": "Who we work with",
+    "title": "People designing change with care",
+    "paragraphs": [
+      "We coach individuals and teams who want bilingual, culturally aware support while they navigate transitions."
+    ],
+    "bullets": [
+      "Professionals relocating to or from the UK who bridge Mandarin- and English-speaking contexts.",
+      "Parents, carers, and returners rebuilding confidence after an extended break.",
+      "Mission-led teams, social innovators, and civic-tech organisations aligning strategy with capacity.",
+      "Leaders balancing wellbeing with performance across distributed or cross-cultural teams."
+    ]
+  },
+  "boundaries": {
+    "eyebrow": "Boundaries & consent",
+    "title": "Ethics that protect your agency",
+    "paragraphs": [
+      "Coaching stays future-focused and collaborative. We name scope, consent, and referrals upfront so you always know where support begins and ends."
+    ],
+    "bullets": [
+      "We follow the International Coaching Federation Code of Ethics, including informed consent and confidentiality.",
+      "If coaching is not the right support, we pause and signpost therapy, legal, immigration, or community resources.",
+      "We revisit agreements every few sessions to check progress, accessibility, and safeguarding needs."
+    ]
+  },
+  "callout": {
+    "title": "Ready to map your next step?",
+    "body": "Browse our coaching services or read the full coaching boundaries we uphold.",
+    "primary": {
+      "label": "See services",
+      "href": "/services"
+    },
+    "secondary": {
+      "label": "Read coaching boundaries",
+      "href": "/services/how-coaching-works"
+    }
+  }
+}
