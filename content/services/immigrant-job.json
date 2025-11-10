@@ -1,0 +1,112 @@
+{
+  "slug": "immigrant-job",
+  "title": "UK job search support for immigrants",
+  "hero": {
+    "eyebrow": "For internationally trained professionals",
+    "title": "Translate your story for UK recruiters without shrinking it",
+    "subtitle": "We make sense of the norms, write language that travels, and plan outreach you can sustain.",
+    "primaryCta": {
+      "label": "Schedule an intro chat",
+      "href": "/contact?topic=immigrant-job"
+    },
+    "secondaryCta": {
+      "label": "Browse our FAQ",
+      "href": "/faq"
+    }
+  },
+  "card": {
+    "order": 2,
+    "eyebrow": "New to the UK",
+    "title": "Immigrant job hunt",
+    "description": "Decode hiring signals, practise stakeholder language and stay steady through sponsorship logistics.",
+    "benefits": [
+      "Unpack CV, LinkedIn and cover letter expectations",
+      "Practise recruiter, networking and hiring manager scripts",
+      "Build routines that balance applications with wellbeing"
+    ]
+  },
+  "audience": {
+    "title": "Who we work with",
+    "description": "Professionals with global track records adapting to UK recruitment systems.",
+    "items": [
+      {
+        "title": "Skilled migrants navigating sponsorship",
+        "description": "You are balancing visa timelines, dependants and the pace of UK recruitment."
+      },
+      {
+        "title": "International graduates staying to work",
+        "description": "You need to translate internships, placements or overseas experience into language UK employers trust."
+      },
+      {
+        "title": "Partners relocating with families",
+        "description": "You are rebuilding professional identity while setting up new support systems at home."
+      }
+    ]
+  },
+  "process": {
+    "title": "Process & milestones",
+    "description": "We usually partner for eight to ten sessions across three months with optional co-working sprints.",
+    "steps": [
+      {
+        "title": "Map the hiring landscape",
+        "description": "We unpack sector norms, sponsorship realities and what evidence UK employers seek."
+      },
+      {
+        "title": "Build your narrative toolkit",
+        "description": "We co-write scripts, portfolio stories and Q&A to use with recruiters, hiring managers and networks."
+      },
+      {
+        "title": "Sustain the search",
+        "description": "We monitor energy, iterate weekly plans and celebrate momentum so you do not burn out."
+      }
+    ],
+    "note": "You can add document reviews or mock interviews between sessions when deadlines appear."
+  },
+  "boundaries": {
+    "title": "Boundaries & consent",
+    "description": "Support stays client-led and trauma-aware while we navigate systemic barriers together.",
+    "items": [
+      {
+        "title": "Anti-extraction approach",
+        "description": "We will never encourage you to work for free or accept unsafe conditions to “get your foot in”."
+      },
+      {
+        "title": "No false guarantees",
+        "description": "We focus on evidence-based strategy, not algorithm hacks or inflated promises."
+      },
+      {
+        "title": "Psychological safety first",
+        "description": "If bias or discrimination appears, we plan protective responses and signpost legal support when needed."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions immigrant professionals ask",
+    "items": [
+      {
+        "question": "Do you review CVs and LinkedIn profiles?",
+        "answer": "Yes. We co-create versions that respect your voice while aligning with UK conventions."
+      },
+      {
+        "question": "Will you introduce me directly to employers?",
+        "answer": "We do not broker jobs, but we help you design outreach and accountability for relationship building."
+      },
+      {
+        "question": "Can we switch languages during sessions?",
+        "answer": "We can coach in English and Mandarin and draft materials in whichever language serves you best."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Want a grounded partner for your UK job search?",
+    "description": "Let us hear your story and constraints so we can shape a coaching plan that respects them.",
+    "primary": {
+      "label": "Schedule an intro chat",
+      "href": "/contact?topic=immigrant-job"
+    },
+    "secondary": {
+      "label": "Read coaching approach",
+      "href": "/services/how-coaching-works"
+    }
+  }
+}
