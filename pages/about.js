@@ -6,7 +6,7 @@ import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
 import TeamGrid from '@/components/about/TeamGrid';
 import WhatIsCoaching from '@/components/about/WhatIsCoaching';
-import { loadJSON } from '@/lib/content';
+import { loadJSON } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
 function Eyebrow({ children }) {
@@ -165,7 +165,7 @@ Callout.defaultProps = {
   secondary: undefined,
 };
 
-export default function AboutPage({ copy, team, coaching }) {
+export default function AboutPage({ copy, team, coaching, showFallbackNotice }) {
   const {
     intro = {},
     key_points: keyPoints = {},
@@ -186,6 +186,9 @@ export default function AboutPage({ copy, team, coaching }) {
             <h1 className="scroll-mt-28 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{intro.title}</h1>
           ) : null}
           {intro.body ? <p className="text-base leading-7 text-slate-700">{intro.body}</p> : null}
+          {showFallbackNotice ? (
+            <p className="text-xs font-medium text-slate-500">暫用英文內容</p>
+          ) : null}
         </div>
       </section>
 
@@ -329,12 +332,14 @@ AboutPage.propTypes = {
   }),
   team: teamDataPropType,
   coaching: whatIsCoachingPropType,
+  showFallbackNotice: PropTypes.bool,
 };
 
 AboutPage.defaultProps = {
   copy: {},
   team: undefined,
   coaching: undefined,
+  showFallbackNotice: false,
 };
 
 AboutPage.getLayout = function getLayout(page) {
@@ -347,17 +352,25 @@ AboutPage.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps({ locale }) {
-  const contentLocale = locale === 'en' ? 'en-GB' : locale;
-  const copy = loadJSON('about', contentLocale);
-  const team = loadJSON('team', contentLocale);
+  const currentLocale = typeof locale === 'string' && locale.length > 0 ? locale : 'en-GB';
+  const copyResult = loadJSON('content/about/{locale}.json', currentLocale);
+  const teamResult = loadJSON('content/team/{locale}.json', currentLocale);
+
+  const copy = copyResult.data ?? {};
+  const team = teamResult.data ?? undefined;
   const whatIsCoaching = copy?.whatIsCoaching;
+  const showFallbackNotice = Boolean(
+    (copyResult.usedLocale && copyResult.usedLocale !== currentLocale) ||
+      (teamResult.usedLocale && teamResult.usedLocale !== currentLocale)
+  );
 
   return toSerializable({
     props: {
       copy,
       team,
       coaching: whatIsCoaching,
-      ...(await serverSideTranslations(locale, ['common'])),
+      showFallbackNotice,
+      ...(await serverSideTranslations(currentLocale, ['common'])),
     },
   });
 }
