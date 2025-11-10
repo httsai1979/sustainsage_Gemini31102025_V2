@@ -1,13 +1,6 @@
-export function toSerializable<T>(value: T): T {
-  return JSON.parse(
-    JSON.stringify(value, (_, nested) => {
-      if (nested === undefined) {
-        return null;
-      }
-
-      return nested;
-    })
+export const toSerializable = <T,>(obj: T): T =>
+  JSON.parse(
+    JSON.stringify(obj, (_k, v) => (v === undefined ? null : v))
   );
-}
 
 export default toSerializable;
