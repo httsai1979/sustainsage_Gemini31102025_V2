@@ -1,7 +1,7 @@
 import { createElement } from 'react';
-import type { ReactNode, SVGProps } from 'react';
+import type { ReactElement, ReactNode, SVGProps } from 'react';
 
-type IconComponent = (props: SVGProps<SVGSVGElement>) => JSX.Element;
+type IconComponent = (props: SVGProps<SVGSVGElement>) => ReactElement;
 
 type IconDefinitions = Record<string, IconComponent>;
 
