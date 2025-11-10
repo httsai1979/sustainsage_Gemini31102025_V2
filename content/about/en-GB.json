@@ -34,6 +34,26 @@
       }
     ]
   },
+  "whatIsCoaching": {
+    "eyebrow": "What is coaching",
+    "title": "What coaching looks like with SustainSage",
+    "description": "Coaching is a structured, future-focused partnership where you stay in charge of direction and pace.",
+    "scenarios": [
+      {
+        "title": "You are translating a new leadership role across cultures",
+        "description": "We clarify authority, decision rights, and relationship boundaries so you can lead confidently without erasing your own context."
+      },
+      {
+        "title": "You want accountability for change experiments",
+        "description": "Sessions map experiments, data care, and check-ins so shifts stay measurable, ethical, and sustainable."
+      },
+      {
+        "title": "You need space to process complex stakeholder dynamics",
+        "description": "We explore assumptions, power, and accessibility considerations, then co-design language you can bring back to the team."
+      }
+    ],
+    "disclaimer": "Coaching does not replace therapy, legal advice, or crisis response. We will pause and refer when specialised care is required."
+  },
   "boundaries": {
     "title": "Boundaries we uphold",
     "description": "These commitments protect your agency, safety, and consent.",

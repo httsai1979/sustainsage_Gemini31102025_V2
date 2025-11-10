@@ -4,6 +4,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
+import TeamGrid from '@/components/about/TeamGrid';
+import WhatIsCoaching from '@/components/about/WhatIsCoaching';
 import { loadJSON } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
 
@@ -163,14 +165,17 @@ Callout.defaultProps = {
   secondary: undefined,
 };
 
-export default function AboutPage({ copy }) {
+export default function AboutPage({ copy, team, coaching }) {
   const {
     intro = {},
     key_points: keyPoints = {},
     process = {},
     boundaries = {},
     callout = {},
+    whatIsCoaching: whatIsCoachingFromCopy = {},
   } = copy ?? {};
+
+  const whatIsCoaching = coaching ?? whatIsCoachingFromCopy;
 
   return (
     <>
@@ -183,6 +188,10 @@ export default function AboutPage({ copy }) {
           {intro.body ? <p className="text-base leading-7 text-slate-700">{intro.body}</p> : null}
         </div>
       </section>
+
+      <TeamGrid data={team} />
+
+      <WhatIsCoaching data={whatIsCoaching} />
 
       {keyPoints?.items?.length ? (
         <section className="bg-emerald-50/70 py-16 sm:py-20">
@@ -227,6 +236,39 @@ export default function AboutPage({ copy }) {
     </>
   );
 }
+
+const teamMemberPropType = PropTypes.shape({
+  name: PropTypes.string,
+  title: PropTypes.string,
+  bio: PropTypes.string,
+  languages: PropTypes.arrayOf(PropTypes.string),
+  location: PropTypes.string,
+  image: PropTypes.shape({
+    src: PropTypes.string,
+    alt: PropTypes.string,
+  }),
+});
+
+const teamDataPropType = PropTypes.shape({
+  eyebrow: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  members: PropTypes.arrayOf(teamMemberPropType),
+  people: PropTypes.arrayOf(teamMemberPropType),
+});
+
+const whatIsCoachingPropType = PropTypes.shape({
+  eyebrow: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+  scenarios: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+    })
+  ),
+  disclaimer: PropTypes.string,
+});
 
 AboutPage.propTypes = {
   copy: PropTypes.shape({
@@ -283,11 +325,16 @@ AboutPage.propTypes = {
         label: PropTypes.string,
       }),
     }),
+    whatIsCoaching: whatIsCoachingPropType,
   }),
+  team: teamDataPropType,
+  coaching: whatIsCoachingPropType,
 };
 
 AboutPage.defaultProps = {
   copy: {},
+  team: undefined,
+  coaching: undefined,
 };
 
 AboutPage.getLayout = function getLayout(page) {
@@ -302,10 +349,14 @@ AboutPage.getLayout = function getLayout(page) {
 export async function getStaticProps({ locale }) {
   const contentLocale = locale === 'en' ? 'en-GB' : locale;
   const copy = loadJSON('about', contentLocale);
+  const team = loadJSON('team', contentLocale);
+  const whatIsCoaching = copy?.whatIsCoaching;
 
   return toSerializable({
     props: {
       copy,
+      team,
+      coaching: whatIsCoaching,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   });
