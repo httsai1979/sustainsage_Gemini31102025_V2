@@ -21,6 +21,7 @@
     }
   },
   "services": {
+    "eyebrow": "Services",
     "title": "Choose the coaching focus that fits your moment",
     "description": "Each pathway blends practical planning with reflective space so you can make grounded, values-led decisions.",
     "cards": [
@@ -38,6 +39,51 @@
         "title": "Reset sprint",
         "description": "A focused series to regain momentum when you feel stuck or need to rebuild quickly after change.",
         "href": "/services/reset-sprint"
+      }
+    ]
+  },
+  "key_points": {
+    "title": "What you can expect",
+    "description": "Coaching stays practical, bilingual, and paced so you can make steady moves.",
+    "items": [
+      "Clear agreements about pace, goals, and what support looks like before we begin.",
+      "Bilingual sessions and materials so nuance is never lost between Mandarin and English.",
+      "Experiments that respect your energy, care responsibilities, and capacity for change."
+    ]
+  },
+  "process": {
+    "title": "How we work together",
+    "description": "A lightweight structure keeps momentum without overwhelming your schedule.",
+    "steps": [
+      {
+        "title": "Share context",
+        "description": "We map the transitions you are navigating, the stakeholders involved, and any immediate constraints."
+      },
+      {
+        "title": "Design experiments",
+        "description": "We co-create small, testable actions that help you practise language, decisions, and boundaries."
+      },
+      {
+        "title": "Review and recalibrate",
+        "description": "We check-in on outcomes, iterate your plan, and celebrate shifts without adding pressure."
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "Boundaries that keep coaching safe",
+    "description": "These agreements help you stay in charge of the process.",
+    "items": [
+      {
+        "question": "What happens to the information I share?",
+        "answer": "Notes stay between coach and client. We follow ICF-aligned confidentiality and data retention practices."
+      },
+      {
+        "question": "How do we handle sensitive topics?",
+        "answer": "We name triggers early, pause when something feels unsafe, and signpost therapy or legal support when needed."
+      },
+      {
+        "question": "Can we adjust cadence if life gets busy?",
+        "answer": "Yes. We co-design the rhythm of sessions and pause or slow down when capacity is stretched."
       }
     ]
   },

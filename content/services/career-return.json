@@ -25,20 +25,20 @@
       "Shape routines that honour energy, care and paid commitments"
     ]
   },
-  "audience": {
+  "key_points": {
     "title": "Who this serves",
     "description": "People navigating layered responsibilities while stepping back into paid roles.",
     "items": [
       {
-        "title": "Caregivers balancing unpaid and paid labour",
+        "title": "Caregivers balancing labour",
         "description": "You want to re-enter without erasing the care rhythms that still rely on you."
       },
       {
-        "title": "Professionals reskilling or pivoting",
-        "description": "You are translating new qualifications or refreshed skills into a different industry story."
+        "title": "Professionals reskilling",
+        "description": "You are translating refreshed skills into an industry story that makes sense."
       },
       {
-        "title": "Returners healing from burnout or health disruption",
+        "title": "Returners healing from burnout",
         "description": "You need gentle accountability so recovery is not traded for speed."
       }
     ]
@@ -67,16 +67,16 @@
     "description": "We work transparently so you stay in charge of pace and disclosure.",
     "items": [
       {
-        "title": "You choose what is shared",
-        "description": "We surface assumptions together and never pass information to employers without your consent."
+        "question": "Who controls what is shared?",
+        "answer": "You choose what information travels. We never pass details to employers without explicit consent."
       },
       {
-        "title": "Coaching, not therapy",
-        "description": "We watch for trauma triggers and will signpost specialist care if healing work is needed."
+        "question": "Is this therapy?",
+        "answer": "No. We watch for trauma triggers and signpost specialist care when healing work is needed."
       },
       {
-        "title": "Ethical pause when capacity is breached",
-        "description": "If work demands start to harm health, we co-create a safer action plan before proceeding."
+        "question": "What if work demands breach capacity?",
+        "answer": "We pause to co-create a safer action plan before continuing if commitments start to harm health."
       }
     ]
   },
