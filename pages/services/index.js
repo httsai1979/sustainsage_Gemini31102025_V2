@@ -4,19 +4,21 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import Icon from '@/components/common/Icon';
+import { getIconComponent } from '@/components/icons/map';
 import { getServiceCards } from '@/lib/services';
+import { toSerializable } from '@/lib/toSerializable';
 
 function PathwayCard({ card, viewDetailsLabel }) {
-  const benefitIconName = card.benefitIcon || 'arrow';
+  const IconComponent = getIconComponent(card.icon);
+  const BenefitIconComponent = getIconComponent(card.benefitIcon) ?? getIconComponent('arrow');
 
   return (
     <div className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
       <div className="space-y-5">
         <div className="flex items-start gap-4">
-          {card.icon ? (
+          {IconComponent ? (
             <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
-              <Icon name={card.icon} className="h-6 w-6" />
+              <IconComponent className="h-6 w-6" />
             </span>
           ) : null}
           <div className="space-y-2">
@@ -32,7 +34,7 @@ function PathwayCard({ card, viewDetailsLabel }) {
             {card.benefits.map((benefit) => (
               <li key={benefit} className="flex items-start gap-3">
                 <span className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
-                  <Icon name={benefitIconName} className="h-6 w-6" />
+                  {BenefitIconComponent ? <BenefitIconComponent className="h-6 w-6" /> : null}
                 </span>
                 <span>{benefit}</span>
               </li>
@@ -189,16 +191,12 @@ ServicesPage.propTypes = {
 };
 
 export async function getStaticProps({ locale }) {
-  const cards = getServiceCards().map((card) => ({
-    ...card,
-    icon: typeof card.icon === 'string' && card.icon.trim() ? card.icon.trim() : null,
-    benefitIcon: typeof card.benefitIcon === 'string' && card.benefitIcon.trim() ? card.benefitIcon.trim() : null,
-  }));
+  const cards = getServiceCards();
 
-  return {
+  return toSerializable({
     props: {
       cards,
       ...(await serverSideTranslations(locale, ['common', 'services'])),
     },
-  };
+  });
 }

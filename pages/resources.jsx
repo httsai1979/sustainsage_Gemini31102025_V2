@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Card from '@/components/ui/Card';
 import Tag from '@/components/ui/Tag';
 import { loadJSON } from '@/lib/content';
+import { toSerializable } from '@/lib/toSerializable';
 
 export default function ResourcesPage({ items }) {
   return (
@@ -35,10 +36,10 @@ export default function ResourcesPage({ items }) {
 
 export async function getStaticProps({ locale }) {
   const items = loadJSON('resources', locale);
-  return {
+  return toSerializable({
     props: {
       items,
       ...(await serverSideTranslations(locale, ['common'])),
     },
-  };
+  });
 }

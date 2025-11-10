@@ -98,9 +98,9 @@ export const getStaticProps: GetStaticProps<ServiceSubPageProps> = async ({ para
     const all = JSON.parse(raw) as Record<Sub, PricingData | ReadinessData | AgreementData | FaqData>;
     const data = all[subParam as Sub] ?? null;
 
-    return {
-      props: toSerializable({ slug: slugParam as Slug, sub: subParam as Sub, data }),
-    };
+    return toSerializable({
+      props: { slug: slugParam as Slug, sub: subParam as Sub, data },
+    });
   } catch (error) {
     return { notFound: true };
   }
