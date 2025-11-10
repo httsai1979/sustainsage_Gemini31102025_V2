@@ -1,0 +1,75 @@
+{
+  "seo": {
+    "title": "Resources | SustainSage",
+    "description": "Coaching-informed worksheets, prompts, and playlists from SustainSage. Use them gently and adapt them with consent to your own context."
+  },
+  "hero": {
+    "title": "Tools for reflection at your own pace",
+    "subtitle": "Curated bilingual resources to support your experiments between sessions. No email gate, no pressure—just invitations to pause and notice."
+  },
+  "featured": {
+    "title": "Featured tools",
+    "intro": "Each resource is grounded in ICF-aligned coaching principles and designed to be adapted to your reality.",
+    "tools": [
+      {
+        "id": "values-worksheet",
+        "title": "Values and anchors worksheet",
+        "summary": "A guided reflection to map what steadies you when navigating unfamiliar workplaces.",
+        "format": "PDF worksheet · bilingual",
+        "cta": "Download the worksheet",
+        "status": "Updated"
+      },
+      {
+        "id": "micro-experiments",
+        "title": "Micro-experiment planner",
+        "summary": "Design low-risk tests with clear consent, support, and measures of learning.",
+        "format": "Notion template · trilingual",
+        "cta": "Copy the template"
+      },
+      {
+        "id": "culture-bridges",
+        "title": "Culture bridge checklist",
+        "summary": "Questions to translate expectations between UK norms and Chinese cultural wisdom without losing yourself.",
+        "format": "Checklist · bilingual",
+        "cta": "View the checklist"
+      },
+      {
+        "id": "conversation-starters",
+        "title": "Coaching conversation starters",
+        "summary": "Prompts to invite reflective dialogue with peers, mentors, or community partners.",
+        "format": "Card deck · bilingual",
+        "cta": "Open the prompts"
+      },
+      {
+        "id": "grounding-audio",
+        "title": "Grounding audio for in-between moments",
+        "summary": "Short bilingual practices to help you reset before or after courageous conversations.",
+        "format": "Audio playlist · bilingual",
+        "cta": "Listen online"
+      },
+      {
+        "id": "review-journal",
+        "title": "Learning review journal",
+        "summary": "A light-touch journal to capture insights after experiments and plan the next step.",
+        "format": "Google Doc · bilingual",
+        "cta": "Make a copy"
+      }
+    ],
+    "defaultCta": "Open resource"
+  },
+  "disclaimer": {
+    "title": "Use with care",
+    "body": "These tools complement coaching conversations; they do not replace therapy, legal, immigration, medical, or financial advice. Adapt them kindly and pause if something feels overwhelming.",
+    "points": [
+      "You choose what to complete and what to skip—there is no homework requirement.",
+      "Respect confidentiality when working with others and only share what you have consent to share.",
+      "If strong emotions surface, reach out to trusted support or professional services in your region."
+    ]
+  },
+  "cta": {
+    "title": "Want a guided walkthrough?",
+    "body": "Book a chemistry chat to explore how these tools can support your goals, or ask for a custom resource for your team.",
+    "primaryCta": "Talk with a coach",
+    "secondaryCta": "Contact us"
+  }
+}

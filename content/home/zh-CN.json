@@ -1,0 +1,55 @@
+{
+  "seo": {
+    "title": "陪你穩步前行的職涯教練",
+    "description": "SustainSage 以 ICF 倫理為基礎，支持正在經歷轉職、搬遷或重返職場的人。"
+  },
+  "hero": {
+    "eyebrow": "以可持續方式應對變動",
+    "title": "在清晰與關懷中規劃下一步",
+    "description": "與教練一起釐清重點，在不耗盡自己的前提下設計未來的行動。",
+    "image": {
+      "src": "/images/hero/main.jpg",
+      "alt": "SustainSage 教練與來訪者交流的照片"
+    },
+    "primaryCta": {
+      "label": "預約首次會談",
+      "href": "/contact"
+    },
+    "secondaryCta": {
+      "label": "查看服務",
+      "href": "/services"
+    }
+  },
+  "services": {
+    "title": "為你的當下選擇合適的教練服務",
+    "description": "每個方案結合實際行動與深度對話，幫助你做出與價值一致的決定。",
+    "cards": [
+      {
+        "title": "職涯轉換",
+        "description": "在角色、地點或方向轉換時，獲得穩定的陪伴與決策支援。",
+        "href": "/services/transition-coaching"
+      },
+      {
+        "title": "中階職涯教練",
+        "description": "重新連結優勢、調整界線，打造可持續的工作節奏。",
+        "href": "/services/mid-career-coaching"
+      },
+      {
+        "title": "Reset Sprint",
+        "description": "當你感到停滯或需要在變化後快速重整時，以密集節奏找回動力。",
+        "href": "/services/reset-sprint"
+      }
+    ]
+  },
+  "faqTeaser": {
+    "title": "想知道教練流程如何進行？",
+    "body": "我們整理了關於節奏、收費、倫理與客製化設計的常見問題。",
+    "cta": {
+      "label": "閱讀常見問題",
+      "href": "/faq"
+    }
+  },
+  "testimonials": {
+    "title": "被處於轉折點的人們信任的夥伴"
+  }
+}

@@ -1,10 +1,11 @@
 /** @type {import('next-i18next').UserConfig} */
 module.exports = {
   i18n: {
-    locales: ['en', 'zh-TW', 'zh-CN'],
-    defaultLocale: 'en',
+    locales: ['en-GB', 'zh-TW', 'zh-CN'],
+    defaultLocale: 'en-GB',
     localeDetection: false,
   },
+  fallbackLng: 'en-GB',
   localePath:
     typeof window === 'undefined'
       ? require('path').resolve('./public/locales')

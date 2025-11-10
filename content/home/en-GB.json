@@ -1,0 +1,55 @@
+{
+  "seo": {
+    "title": "Career coaching for sustainable change",
+    "description": "SustainSage offers thoughtful coaching for people navigating transitions, relocations, and re-entry moments."
+  },
+  "hero": {
+    "eyebrow": "Navigate change sustainably",
+    "title": "Coaching to help you move forward with clarity",
+    "description": "Work with an ICF-aligned coach to map your next step without burning out or losing what matters to you.",
+    "image": {
+      "src": "/images/hero/main.jpg",
+      "alt": "Rashi Anand coaching a client in a bright room"
+    },
+    "primaryCta": {
+      "label": "Book an intro call",
+      "href": "/contact"
+    },
+    "secondaryCta": {
+      "label": "Browse services",
+      "href": "/services"
+    }
+  },
+  "services": {
+    "title": "Choose the coaching focus that fits your moment",
+    "description": "Each pathway blends practical planning with reflective space so you can make grounded, values-led decisions.",
+    "cards": [
+      {
+        "title": "Career transitions",
+        "description": "Make confident choices about your next role, location, or direction with a steady partner alongside you.",
+        "href": "/services/transition-coaching"
+      },
+      {
+        "title": "Mid-career coaching",
+        "description": "Reconnect with your strengths, reset boundaries, and design sustainable ways of working.",
+        "href": "/services/mid-career-coaching"
+      },
+      {
+        "title": "Reset sprint",
+        "description": "A focused series to regain momentum when you feel stuck or need to rebuild quickly after change.",
+        "href": "/services/reset-sprint"
+      }
+    ]
+  },
+  "faqTeaser": {
+    "title": "Questions about how coaching works?",
+    "body": "Read about session rhythms, pricing, ethics, and how we tailor support for individuals and organisations.",
+    "cta": {
+      "label": "Read the FAQs",
+      "href": "/faq"
+    }
+  },
+  "testimonials": {
+    "title": "Trusted by people navigating change"
+  }
+}
