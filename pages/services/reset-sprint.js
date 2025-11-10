@@ -4,7 +4,6 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Hero from '@/components/layout/Hero';
-import MainLayout from '@/components/layout/MainLayout';
 
 import nextI18NextConfig from '../../next-i18next.config.js';
 
@@ -55,7 +54,7 @@ export default function ResetSprintPage() {
   const cta = sections.cta ?? {};
 
   return (
-    <MainLayout>
+    <>
       <Head>
         <title>{seo?.title ?? 'Reset Sprint – 3 sessions to pause, sort and choose your next steps'}</title>
         <meta
@@ -144,7 +143,7 @@ export default function ResetSprintPage() {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }
 

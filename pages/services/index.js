@@ -1,9 +1,9 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import MainLayout from '@/components/layout/MainLayout';
 import Icon from '@/components/common/Icon';
 import { getServiceCards } from '@/lib/services';
 
@@ -74,7 +74,12 @@ export default function ServicesPage({ cards }) {
   const boundariesLink = hero?.boundariesLink;
 
   return (
-    <MainLayout title={seo?.title} desc={seo?.description}>
+    <>
+      <Head>
+        <title>{seo?.title}</title>
+        {seo?.description ? <meta name="description" content={seo?.description} /> : null}
+      </Head>
+
       <section className="bg-emerald-50/60 py-16">
         <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 md:flex-row md:items-center">
           <div className="typography flex flex-col gap-4 md:flex-1">
@@ -164,7 +169,7 @@ export default function ServicesPage({ cards }) {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }
 
