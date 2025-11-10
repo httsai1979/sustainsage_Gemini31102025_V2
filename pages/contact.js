@@ -1,13 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
-import { useTranslation } from 'next-i18next';
+import { useState } from 'react';
+import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import ContactForm from '@/components/Sections/ContactForm';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
-import { loadJSON } from '@/lib/content';
 
 function BulletHighlights({ items, title, description }) {
   if (!items?.length) {
@@ -53,18 +52,18 @@ function FAQItem({ item }) {
   );
 }
 
-export default function ContactPage({ scopeHighlights }) {
+export default function ContactPage() {
   const { t } = useTranslation('contact');
+  const [hasBoundaryConsent, setHasBoundaryConsent] = useState(false);
 
   const seo = t('seo', { returnObjects: true });
   const hero = t('hero', { returnObjects: true });
   const journey = t('journey', { returnObjects: true });
   const miniFaq = t('miniFaq', { returnObjects: true });
   const faqLink = t('faqLink', { returnObjects: true });
-  const suitability = t('suitability', { returnObjects: true });
-  const redirect = t('redirect', { returnObjects: true });
-  const whatYouGet = scopeHighlights?.whatYouGet ?? suitability;
-  const whatWeDontDo = scopeHighlights?.whatWeDontDo ?? redirect;
+  const whatYouGet = t('what_you_get', { returnObjects: true });
+  const whatWeDontDo = t('what_we_dont_do', { returnObjects: true });
+  const consent = t('consent', { returnObjects: true });
 
   return (
     <>
@@ -82,25 +81,6 @@ export default function ContactPage({ scopeHighlights }) {
         </div>
       </section>
 
-      {whatYouGet?.items?.length || whatWeDontDo?.items?.length ? (
-        <section className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-5xl px-6">
-            <div className="grid gap-6 md:grid-cols-2">
-              <BulletHighlights
-                items={whatYouGet?.items}
-                title={whatYouGet?.title}
-                description={whatYouGet?.description}
-              />
-              <BulletHighlights
-                items={whatWeDontDo?.items}
-                title={whatWeDontDo?.title}
-                description={whatWeDontDo?.description}
-              />
-            </div>
-          </div>
-        </section>
-      ) : null}
-
       <section className="bg-emerald-950/5 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-6">
           <div className="typography flex flex-col gap-4">
@@ -117,10 +97,55 @@ export default function ContactPage({ scopeHighlights }) {
 
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-6">
+          {whatYouGet?.items?.length || whatWeDontDo?.items?.length ? (
+            <div className="mb-10 space-y-8">
+              <div className="grid gap-6 md:grid-cols-2">
+                <BulletHighlights
+                  items={whatYouGet?.items}
+                  title={whatYouGet?.title}
+                  description={whatYouGet?.description}
+                />
+                <BulletHighlights
+                  items={whatWeDontDo?.items}
+                  title={whatWeDontDo?.title}
+                  description={whatWeDontDo?.description}
+                />
+              </div>
+              <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+                <div className="flex items-start gap-3">
+                  <input
+                    id="coaching-consent"
+                    name="coaching-consent"
+                    type="checkbox"
+                    checked={hasBoundaryConsent}
+                    onChange={(event) => setHasBoundaryConsent(event.target.checked)}
+                    className="mt-1 h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-600"
+                  />
+                  <label htmlFor="coaching-consent" className="text-sm leading-6 text-slate-700">
+                    <Trans
+                      t={t}
+                      i18nKey="consent.label"
+                      components={{
+                        Link: (
+                          <Link
+                            href="/legal/coaching-boundaries"
+                            className="font-semibold text-emerald-700 underline-offset-2 hover:underline"
+                          />
+                        ),
+                      }}
+                    />
+                  </label>
+                </div>
+                {consent?.helper ? (
+                  <p className="mt-3 text-xs leading-6 text-slate-500">{consent.helper}</p>
+                ) : null}
+              </div>
+            </div>
+          ) : null}
           <div className="mb-10">
             <BulletHighlights items={hero?.bullets} title={hero?.bulletsTitle} />
           </div>
-          <ContactForm />
+          <ContactForm hasBoundaryConsent={hasBoundaryConsent} />
         </div>
       </section>
 
@@ -157,35 +182,13 @@ export default function ContactPage({ scopeHighlights }) {
   );
 }
 
-ContactPage.propTypes = {
-  scopeHighlights: PropTypes.shape({
-    whatYouGet: PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-      items: PropTypes.arrayOf(PropTypes.string),
-    }),
-    whatWeDontDo: PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-      items: PropTypes.arrayOf(PropTypes.string),
-    }),
-  }),
-};
-
-ContactPage.defaultProps = {
-  scopeHighlights: null,
-};
-
 ContactPage.getLayout = function getLayout(page) {
   return <MainLayout>{page}</MainLayout>;
 };
 
 export async function getStaticProps({ locale }) {
-  const boundariesContent = loadJSON('legal/coaching-boundaries', locale);
-
   return {
     props: {
-      scopeHighlights: boundariesContent?.scope ?? null,
       ...(await serverSideTranslations(locale, ['common', 'contact'])),
     },
   };

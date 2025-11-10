@@ -1,12 +1,12 @@
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { Trans, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 
 const FIELD_CLASSNAME =
   'block w-full rounded-xl border border-slate-200 px-3.5 py-2 text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500';
 
-export default function ContactForm() {
+export default function ContactForm({ hasBoundaryConsent }) {
   const { t } = useTranslation('contact');
   const router = useRouter();
 
@@ -18,7 +18,7 @@ export default function ContactForm() {
     language: '',
     timezone: '',
     consent: false,
-    boundariesConsent: false,
+    boundariesConsent: hasBoundaryConsent,
     scopeAcknowledgement: false,
   });
 
@@ -32,6 +32,13 @@ export default function ContactForm() {
   const languageHint = t('form.languageHint');
   const timezoneHint = t('form.timezoneHint');
   const formHighlight = t('form.highlight');
+
+  useEffect(() => {
+    setFormData((previous) => ({
+      ...previous,
+      boundariesConsent: hasBoundaryConsent,
+    }));
+  }, [hasBoundaryConsent]);
 
   useEffect(() => {
     const focusParam = router.query.package ?? router.query.topic;
@@ -105,7 +112,7 @@ export default function ContactForm() {
         language: '',
         timezone: '',
         consent: false,
-        boundariesConsent: false,
+        boundariesConsent: hasBoundaryConsent,
         scopeAcknowledgement: false,
       });
     } catch (error) {
@@ -286,32 +293,6 @@ export default function ContactForm() {
 
             <div className="flex items-start gap-3">
               <input
-                id="boundariesConsent"
-                name="boundariesConsent"
-                type="checkbox"
-                required
-                checked={formData.boundariesConsent}
-                onChange={handleChange}
-                className="mt-1 h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-600"
-              />
-              <label htmlFor="boundariesConsent" className="text-sm leading-6 text-slate-700">
-                <Trans
-                  t={t}
-                  i18nKey="form.boundariesConsent"
-                  components={{
-                    Link: (
-                      <Link
-                        href="/legal/coaching-boundaries"
-                        className="font-semibold text-emerald-700 underline-offset-2 hover:underline"
-                      />
-                    ),
-                  }}
-                />
-              </label>
-            </div>
-
-            <div className="flex items-start gap-3">
-              <input
                 id="scopeAcknowledgement"
                 name="scopeAcknowledgement"
                 type="checkbox"
@@ -363,3 +344,11 @@ export default function ContactForm() {
     </div>
   );
 }
+
+ContactForm.propTypes = {
+  hasBoundaryConsent: PropTypes.bool,
+};
+
+ContactForm.defaultProps = {
+  hasBoundaryConsent: false,
+};
