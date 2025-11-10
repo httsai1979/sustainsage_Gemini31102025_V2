@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 
 import Hero from '@/components/layout/Hero';
-import MainLayout from '@/components/layout/MainLayout';
 
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
@@ -155,7 +154,7 @@ export default function StructuredServicePage({ serviceKey, image }) {
   const cta = service.cta ?? {};
 
   return (
-    <MainLayout>
+    <>
       <Head>
         <title>{seo.title ?? `${hero.title ?? 'Service'} | SustainSage`}</title>
         {seo.description ? <meta name="description" content={seo.description} /> : null}
@@ -240,7 +239,7 @@ export default function StructuredServicePage({ serviceKey, image }) {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }
 

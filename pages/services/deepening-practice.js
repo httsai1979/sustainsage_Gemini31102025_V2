@@ -4,7 +4,6 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Hero from '@/components/layout/Hero';
-import MainLayout from '@/components/layout/MainLayout';
 
 import nextI18NextConfig from '../../next-i18next.config.js';
 
@@ -48,7 +47,7 @@ export default function DeepeningPracticePage() {
   const cta = sections.cta ?? {};
 
   return (
-    <MainLayout>
+    <>
       <Head>
         <title>{seo?.title ?? 'Deepening Practice – 8 sessions for leaders & practitioners'}</title>
         <meta
@@ -117,7 +116,7 @@ export default function DeepeningPracticePage() {
           </div>
         </div>
       </section>
-    </MainLayout>
+    </>
   );
 }
 

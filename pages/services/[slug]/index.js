@@ -1,9 +1,9 @@
+import Head from 'next/head';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import FAQAccordion from '@/components/faq/FAQAccordion';
-import MainLayout from '@/components/layout/MainLayout';
 import { getServiceData, getServiceSlugs } from '@/lib/services';
 
 function Section({ title, description, tint = false, children }) {
@@ -180,7 +180,12 @@ export default function ServiceDetailPage({ service }) {
   const pageDescription = hero.subtitle ?? boundaries.description ?? '';
 
   return (
-    <MainLayout title={pageTitle} desc={pageDescription}>
+    <>
+      <Head>
+        <title>{pageTitle}</title>
+        {pageDescription ? <meta name="description" content={pageDescription} /> : null}
+      </Head>
+
       <section className="bg-emerald-50/60 py-16">
         <div className="mx-auto max-w-5xl px-6">
           {hero.eyebrow ? (
@@ -227,7 +232,7 @@ export default function ServiceDetailPage({ service }) {
       </Section>
 
       <CTASection cta={cta} />
-    </MainLayout>
+    </>
   );
 }
 
