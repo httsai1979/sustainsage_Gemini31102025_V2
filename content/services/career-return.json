@@ -1,0 +1,112 @@
+{
+  "slug": "career-return",
+  "title": "Career return coaching",
+  "hero": {
+    "eyebrow": "For people re-entering after a pause",
+    "title": "Return to paid work without abandoning your boundaries",
+    "subtitle": "We rebuild confidence, pace and routines so your comeback fits the season you are in.",
+    "primaryCta": {
+      "label": "Book an intro chat",
+      "href": "/contact?topic=career-return"
+    },
+    "secondaryCta": {
+      "label": "Email a question",
+      "href": "mailto:hello@sustainsage.com"
+    }
+  },
+  "card": {
+    "order": 1,
+    "eyebrow": "Career returners",
+    "title": "Return-to-work clarity",
+    "description": "Map the first 90 days, renegotiate capacity and practice the language you will use to re-enter.",
+    "benefits": [
+      "Rebuild confidence after caregiving, study or health leave",
+      "Design paced experiments before you say yes to new work",
+      "Shape routines that honour energy, care and paid commitments"
+    ]
+  },
+  "audience": {
+    "title": "Who this serves",
+    "description": "People navigating layered responsibilities while stepping back into paid roles.",
+    "items": [
+      {
+        "title": "Caregivers balancing unpaid and paid labour",
+        "description": "You want to re-enter without erasing the care rhythms that still rely on you."
+      },
+      {
+        "title": "Professionals reskilling or pivoting",
+        "description": "You are translating new qualifications or refreshed skills into a different industry story."
+      },
+      {
+        "title": "Returners healing from burnout or health disruption",
+        "description": "You need gentle accountability so recovery is not traded for speed."
+      }
+    ]
+  },
+  "process": {
+    "title": "How the process works",
+    "description": "A three to four month container with 60-minute sessions and light touch check-ins between calls.",
+    "steps": [
+      {
+        "title": "Orientation & consent",
+        "description": "We map responsibilities, non-negotiables and what support looks like to you."
+      },
+      {
+        "title": "Design paced experiments",
+        "description": "We test options, practise scripts and rehearse conversations you want to lead."
+      },
+      {
+        "title": "Embed routines that protect energy",
+        "description": "We build tracking rituals so you can sustain momentum without overextending."
+      }
+    ],
+    "note": "Optional asynchronous feedback through voice notes or docs helps you integrate between sessions."
+  },
+  "boundaries": {
+    "title": "Boundaries & consent",
+    "description": "We work transparently so you stay in charge of pace and disclosure.",
+    "items": [
+      {
+        "title": "You choose what is shared",
+        "description": "We surface assumptions together and never pass information to employers without your consent."
+      },
+      {
+        "title": "Coaching, not therapy",
+        "description": "We watch for trauma triggers and will signpost specialist care if healing work is needed."
+      },
+      {
+        "title": "Ethical pause when capacity is breached",
+        "description": "If work demands start to harm health, we co-create a safer action plan before proceeding."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions people ask",
+    "items": [
+      {
+        "question": "Can my employer pay for this programme?",
+        "answer": "Often yes. We establish confidentiality agreements before any sponsor involvement."
+      },
+      {
+        "question": "Do we work on CVs or interview prep?",
+        "answer": "We practise narratives, run mock conversations and review materials when it supports your goal."
+      },
+      {
+        "question": "What if I need a slower pace?",
+        "answer": "We can stretch the cadence or shift to lighter touch support during intense care seasons."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to return with steadiness?",
+    "description": "Book a short chemistry call so we can understand your timeline and the support you need right now.",
+    "primary": {
+      "label": "Book an intro chat",
+      "href": "/contact?topic=career-return"
+    },
+    "secondary": {
+      "label": "See how coaching works",
+      "href": "/services/how-coaching-works"
+    }
+  }
+}
