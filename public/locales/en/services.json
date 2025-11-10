@@ -1,85 +1,24 @@
 {
   "seo": {
     "title": "Coaching services",
-    "description": "Explore SustainSage coaching pathways designed for relocation, early-career decisions, working parent rhythms, and cross-cultural leadership."
+    "description": "Explore SustainSage coaching pathways that support career returners, internationally trained professionals building UK careers, and graduates starting their first roles."
   },
   "hero": {
     "title": "Coaching pathways shaped with you",
     "subtitle": "Each pathway is a starting point. We adapt pace, language, and focus once we understand your reality.",
-    "highlight": "Choose what fits now."
+    "highlight": "Choose the starting point that fits right now."
   },
   "faqLink": {
     "label": "More questions? See our FAQ.",
     "href": "/faq"
   },
   "pathways": {
-    "title": "Choose a pathway",
-    "description": "Five ICF-aligned coaching pathways you can mix and match after our intro call.",
-    "highlight": "Start with the pathway that fits today.",
-    "sidebar": "We meet you where you are—pace, language, and scope adjust after the intro call.",
+    "title": "Three ways we can work together",
+    "description": "Three focused coaching pathways that you can combine or adapt after our intro call.",
+    "highlight": "Each pathway flexes to your pace and capacity.",
+    "sidebar": "We keep sessions reflective, practical and trauma-aware. Pace, language and intensity change once we understand your context.",
     "viewDetails": "Learn more",
-    "cards": [
-      {
-        "slug": "transition-coaching",
-        "title": "Transition coaching",
-        "target": "Stabilise cross-border moves.",
-        "audience": "For globally mobile professionals reworking work, place, and support systems.",
-        "benefits": [
-          "Map decisions across visas, finances, care, and capacity before committing.",
-          "Test career narratives and role options safely before you leap.",
-          "Hold sustainable routines while you land in the UK and stay connected elsewhere."
-        ],
-        "icon": "/images/services/transition.svg"
-      },
-      {
-        "slug": "mid-career-coaching",
-        "title": "Mid-career coaching",
-        "target": "Re-centre your next chapter.",
-        "audience": "For experienced professionals balancing impact, wellbeing, and evolving values.",
-        "benefits": [
-          "Untangle expectations from self, family, and stakeholders without losing momentum.",
-          "Design experiments to explore portfolio careers, leadership pivots, or sabbatical plans.",
-          "Build decision frameworks that keep meaning, money, and health in view."
-        ],
-        "icon": "/images/services/experiments.svg"
-      },
-      {
-        "slug": "uk-newcomer-coaching",
-        "title": "UK newcomer coaching",
-        "target": "Navigate UK workplace norms.",
-        "audience": "For newcomers translating international experience to UK organisations.",
-        "benefits": [
-          "Decode hiring and workplace language so your story lands across cultures.",
-          "Plan conversations with recruiters, managers, and networks that respect boundaries.",
-          "Establish support systems so you can thrive without overextending."
-        ],
-        "icon": "/images/services/new-to-uk.svg"
-      },
-      {
-        "slug": "returner-coaching",
-        "title": "Returner coaching",
-        "target": "Re-enter with steadiness.",
-        "audience": "For caregivers, students, or professionals returning after a pause.",
-        "benefits": [
-          "Rebuild confidence with updated narratives and realistic pacing.",
-          "Identify transferable strengths and boundaries before saying yes.",
-          "Co-design routines that protect energy while you rebuild momentum."
-        ],
-        "icon": "/images/services/returning.svg"
-      },
-      {
-        "slug": "early-career-coaching",
-        "title": "Early-career coaching",
-        "target": "Shape your early chapter.",
-        "audience": "For early-career professionals testing direction without pretending certainty.",
-        "benefits": [
-          "Name values, constraints, and possibilities in language employers understand.",
-          "Prototype roles, side projects, or further study with reflective feedback.",
-          "Develop decision habits that balance experimentation and stability."
-        ],
-        "icon": "/images/services/early-career.svg"
-      }
-    ]
+    "cards": []
   },
   "cta": {
     "title": "Not sure where to start?",

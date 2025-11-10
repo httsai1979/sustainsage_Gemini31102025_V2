@@ -1,179 +1,323 @@
 import Link from 'next/link';
-import Head from 'next/head';
-import { useTranslation } from 'next-i18next';
+import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
+import { getServiceData, getServiceSlugs } from '@/lib/services';
 
-import i18nConfig from '../../next-i18next.config';
+function Section({ title, description, tint = false, children }) {
+  const backgroundClass = tint ? 'bg-emerald-950/5' : 'bg-white';
 
-const SERVICE_SLUGS = ['transition-relocation', 'return-to-work-clarity', 'uk-workplace-confidence'];
+  return (
+    <section className={`${backgroundClass} py-16 sm:py-20`}>
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="typography max-w-3xl flex flex-col gap-4">
+          {title ? <h2>{title}</h2> : null}
+          {description ? <p>{description}</p> : null}
+        </div>
+        {children}
+      </div>
+    </section>
+  );
+}
+
+Section.propTypes = {
+  title: PropTypes.string,
+  description: PropTypes.string,
+  tint: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+};
+
+Section.defaultProps = {
+  title: undefined,
+  description: undefined,
+  tint: false,
+};
 
 function BulletList({ items }) {
+  if (!Array.isArray(items) || items.length === 0) {
+    return null;
+  }
+
   return (
-    <ul className="space-y-3 text-sm leading-6 text-slate-700">
+    <ul className="mt-8 space-y-4">
       {items.map((item) => (
-        <li key={item} className="flex gap-2">
-          <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
-          <span>{item}</span>
+        <li key={item.title ?? item} className="flex gap-3 rounded-2xl border border-emerald-100 bg-white/95 p-5 shadow-sm">
+          <span aria-hidden="true" className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-500" />
+          <div className="space-y-1">
+            {typeof item === 'string' ? (
+              <span className="text-sm leading-6 text-slate-700">{item}</span>
+            ) : (
+              <>
+                {item.title ? <strong className="block text-sm font-semibold text-slate-900">{item.title}</strong> : null}
+                {item.description ? <p className="text-sm leading-6 text-slate-700">{item.description}</p> : null}
+              </>
+            )}
+          </div>
         </li>
       ))}
     </ul>
   );
 }
 
-function SnapshotCard({ snapshot, index, labels }) {
-  const icons = [
-    (
-      <svg key="icon-0" viewBox="0 0 24 24" fill="none" className="h-10 w-10 rounded-xl bg-emerald-50 p-2 text-emerald-700">
-        <path d="M12 4c4.418 0 8 3.134 8 7s-3.582 7-8 7-8-3.134-8-7 3.582-7 8-7z" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M9 20l3-5 3 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
-    (
-      <svg key="icon-1" viewBox="0 0 24 24" fill="none" className="h-10 w-10 rounded-xl bg-emerald-50 p-2 text-emerald-700">
-        <path d="M12 3l8 5v8l-8 5-8-5V8l8-5z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-        <path d="M4 8l8 5 8-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      </svg>
-    ),
-  ];
+BulletList.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+      }),
+    ])
+  ),
+};
+
+BulletList.defaultProps = {
+  items: undefined,
+};
+
+function StepList({ steps }) {
+  if (!Array.isArray(steps) || steps.length === 0) {
+    return null;
+  }
 
   return (
-    <div className="flex h-full flex-col gap-4 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-      {icons[index] ?? icons[0]}
-      <div className="space-y-3 text-sm leading-6 text-slate-700">
-        <div>
-          <p className="font-semibold text-emerald-800">{labels.context}</p>
-          <p>{snapshot.context}</p>
-        </div>
-        <div>
-          <p className="font-semibold text-emerald-800">{labels.approach}</p>
-          <p>{snapshot.approach}</p>
-        </div>
-        <div>
-          <p className="font-semibold text-emerald-800">{labels.outcome}</p>
-          <p>{snapshot.outcome}</p>
-        </div>
-      </div>
-    </div>
+    <ol className="mt-8 space-y-6">
+      {steps.map((step, index) => (
+        <li key={step.title ?? index} className="flex gap-4">
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-700 text-sm font-semibold text-white">
+            {index + 1}
+          </span>
+          <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+            {step.title ? <h3 className="text-base font-semibold text-slate-900">{step.title}</h3> : null}
+            {step.description ? <p className="mt-2 text-sm leading-6 text-slate-700">{step.description}</p> : null}
+          </div>
+        </li>
+      ))}
+    </ol>
   );
 }
 
-export default function ServiceDetailPage({ slug }) {
-  const namespace = `services-${slug}`;
-  const { t } = useTranslation(namespace);
+StepList.propTypes = {
+  steps: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+    })
+  ),
+};
 
-  const seo = t('seo', { returnObjects: true });
-  const hero = t('hero', { returnObjects: true });
-  const isForYou = t('isForYou', { returnObjects: true });
-  const explore = t('explore', { returnObjects: true });
-  const format = t('format', { returnObjects: true });
-  const snapshot = t('snapshot', { returnObjects: true });
-  const not = t('not', { returnObjects: true });
-  const cta = t('cta', { returnObjects: true });
+StepList.defaultProps = {
+  steps: undefined,
+};
+
+function CTASection({ cta }) {
+  if (!cta) {
+    return null;
+  }
 
   return (
-    <MainLayout>
-      <Head>
-        <title>{seo.title}</title>
-        <meta name="description" content={seo.description} />
-      </Head>
+    <section className="bg-emerald-950/5 py-16 sm:py-20">
+      <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6 text-center">
+        <div className="typography flex flex-col gap-4">
+          {cta.title ? <h2>{cta.title}</h2> : null}
+          {cta.description ? <p>{cta.description}</p> : null}
+        </div>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          {cta.primary?.href && cta.primary?.label ? (
+            <Link
+              href={cta.primary.href}
+              className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+            >
+              {cta.primary.label}
+            </Link>
+          ) : null}
+          {cta.secondary?.href && cta.secondary?.label ? (
+            <Link
+              href={cta.secondary.href}
+              className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+            >
+              {cta.secondary.label}
+            </Link>
+          ) : null}
+        </div>
+      </div>
+    </section>
+  );
+}
 
+CTASection.propTypes = {
+  cta: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    primary: PropTypes.shape({
+      label: PropTypes.string,
+      href: PropTypes.string,
+    }),
+    secondary: PropTypes.shape({
+      label: PropTypes.string,
+      href: PropTypes.string,
+    }),
+  }),
+};
+
+CTASection.defaultProps = {
+  cta: undefined,
+};
+
+export default function ServiceDetailPage({ service }) {
+  const { hero = {}, audience = {}, process = {}, boundaries = {}, faq = {}, cta = {}, title } = service;
+  const pageTitle = hero.title ?? title ?? 'Service';
+  const pageDescription = hero.subtitle ?? boundaries.description ?? '';
+
+  return (
+    <MainLayout title={pageTitle} desc={pageDescription}>
       <section className="bg-emerald-50/60 py-16">
         <div className="mx-auto max-w-5xl px-6">
-          <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero.title}</h1>
-          <p className="mt-4 text-base leading-7 text-slate-600">{hero.summary}</p>
-        </div>
-      </section>
-
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto grid max-w-6xl gap-12 px-6 md:grid-cols-2">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{isForYou.title}</h2>
-            <div className="mt-6">
-              <BulletList items={isForYou.items} />
-            </div>
-          </div>
-          <div>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{explore.title}</h2>
-            <div className="mt-6">
-              <BulletList items={explore.items} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{format.title}</h2>
-          <div className="mt-6">
-            <BulletList items={format.bullets} />
+          {hero.eyebrow ? (
+            <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.eyebrow}</p>
+          ) : null}
+          <h1 className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{pageTitle}</h1>
+          {hero.subtitle ? <p className="mt-4 text-base leading-7 text-slate-600">{hero.subtitle}</p> : null}
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            {hero.primaryCta?.href && hero.primaryCta?.label ? (
+              <Link
+                href={hero.primaryCta.href}
+                className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              >
+                {hero.primaryCta.label}
+              </Link>
+            ) : null}
+            {hero.secondaryCta?.href && hero.secondaryCta?.label ? (
+              <Link
+                href={hero.secondaryCta.href}
+                className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              >
+                {hero.secondaryCta.label}
+              </Link>
+            ) : null}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{snapshot.title}</h2>
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-            {snapshot.items.map((item, index) => (
-              <SnapshotCard
-                key={`${item.context}-${index}`}
-                snapshot={item}
-                index={index}
-                labels={{
-                  context: t('snapshot.labels.context', { defaultValue: 'Context' }),
-                  approach: t('snapshot.labels.approach', { defaultValue: 'How we supported' }),
-                  outcome: t('snapshot.labels.outcome', { defaultValue: 'What changed' }),
-                }}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <Section title={audience.title} description={audience.description}>
+        <BulletList items={audience.items} />
+      </Section>
 
-      <section className="bg-emerald-950/5 py-16">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{not.title}</h2>
-          <div className="mt-6">
-            <BulletList items={not.items} />
-          </div>
-        </div>
-      </section>
+      <Section title={process.title} description={process.description} tint>
+        <StepList steps={process.steps} />
+        {process.note ? <p className="mt-6 text-xs leading-5 text-slate-500">{process.note}</p> : null}
+      </Section>
 
-      <section className="bg-emerald-50/80 py-16">
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6 text-center">
-          <p className="text-base leading-7 text-slate-700">{cta.body}</p>
-          <Link
-            href={cta.linkHref}
-            className="inline-flex items-center gap-2 rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
-          >
-            {cta.linkLabel}
-            <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-      </section>
+      <Section title={boundaries.title} description={boundaries.description}>
+        <BulletList items={boundaries.items} />
+      </Section>
+
+      <Section title={faq.title} description={faq.description} tint>
+        <FAQAccordion items={faq.items} className="mt-8" />
+      </Section>
+
+      <CTASection cta={cta} />
     </MainLayout>
   );
 }
 
+ServiceDetailPage.propTypes = {
+  service: PropTypes.shape({
+    title: PropTypes.string,
+    hero: PropTypes.shape({
+      eyebrow: PropTypes.string,
+      title: PropTypes.string,
+      subtitle: PropTypes.string,
+      primaryCta: PropTypes.shape({
+        label: PropTypes.string,
+        href: PropTypes.string,
+      }),
+      secondaryCta: PropTypes.shape({
+        label: PropTypes.string,
+        href: PropTypes.string,
+      }),
+    }),
+    audience: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          description: PropTypes.string,
+        })
+      ),
+    }),
+    process: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      steps: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          description: PropTypes.string,
+        })
+      ),
+      note: PropTypes.string,
+    }),
+    boundaries: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          description: PropTypes.string,
+        })
+      ),
+    }),
+    faq: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          question: PropTypes.string,
+          answer: PropTypes.string,
+        })
+      ),
+    }),
+    cta: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+      primary: PropTypes.shape({
+        label: PropTypes.string,
+        href: PropTypes.string,
+      }),
+      secondary: PropTypes.shape({
+        label: PropTypes.string,
+        href: PropTypes.string,
+      }),
+    }),
+    slug: PropTypes.string,
+  }).isRequired,
+};
+
 export async function getStaticPaths() {
-  const locales = i18nConfig.i18n?.locales ?? ['en'];
-  const paths = SERVICE_SLUGS.flatMap((slug) => locales.map((locale) => ({ params: { slug }, locale })));
-  return { paths, fallback: false };
+  const slugs = getServiceSlugs();
+
+  return {
+    paths: slugs.map((slug) => ({ params: { slug } })),
+    fallback: false,
+  };
 }
 
 export async function getStaticProps({ params, locale }) {
-  const { slug } = params;
+  try {
+    const service = getServiceData(params.slug);
 
-  if (!SERVICE_SLUGS.includes(slug)) {
-    return { notFound: true };
+    return {
+      props: {
+        service,
+        ...(await serverSideTranslations(locale, ['common'])),
+      },
+    };
+  } catch (error) {
+    return {
+      notFound: true,
+    };
   }
-
-  return {
-    props: {
-      slug,
-      ...(await serverSideTranslations(locale, ['common', 'services', `services-${slug}`])),
-    },
-  };
 }

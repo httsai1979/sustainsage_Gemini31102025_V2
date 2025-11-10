@@ -1,0 +1,112 @@
+{
+  "slug": "graduate-start",
+  "title": "Graduate to first role coaching",
+  "hero": {
+    "eyebrow": "For final-year students and recent graduates",
+    "title": "Launch your career without pretending you have it all figured out",
+    "subtitle": "We help you explore options, speak confidently to employers and build habits that keep learning alive.",
+    "primaryCta": {
+      "label": "Book a discovery call",
+      "href": "/contact?topic=graduate-start"
+    },
+    "secondaryCta": {
+      "label": "Share with a parent or mentor",
+      "href": "mailto:hello@sustainsage.com?subject=Graduate%20coaching%20enquiry"
+    }
+  },
+  "card": {
+    "order": 3,
+    "eyebrow": "Graduates",
+    "title": "Graduate launch",
+    "description": "Explore direction, practise interviews and design routines that support your first role.",
+    "benefits": [
+      "Clarify values, strengths and constraints",
+      "Create decision experiments instead of forced choices",
+      "Learn reflective routines to stay grounded in new roles"
+    ]
+  },
+  "audience": {
+    "title": "Who it is for",
+    "description": "Graduates who want structured support while choosing or starting their first role.",
+    "items": [
+      {
+        "title": "Students approaching graduation",
+        "description": "You are juggling dissertations, applications and expectations from family or sponsors."
+      },
+      {
+        "title": "Graduates in their first 12 months",
+        "description": "You want to process what is happening at work and decide how to respond intentionally."
+      },
+      {
+        "title": "Career explorers",
+        "description": "You are testing multiple directions and want a reflective partner who will not force a single path."
+      }
+    ]
+  },
+  "process": {
+    "title": "Process",
+    "description": "A focused eight-session series with optional group drop-ins during recruitment seasons.",
+    "steps": [
+      {
+        "title": "Orientation & goal setting",
+        "description": "We map the expectations around you and define what progress will look like for this season."
+      },
+      {
+        "title": "Experiment & practice",
+        "description": "We prototype applications, networking conversations and decision scenarios so you can learn safely."
+      },
+      {
+        "title": "Landing & reflection",
+        "description": "We review offers, onboarding experiences and learning rhythms so you stay grounded."
+      }
+    ],
+    "note": "Parents or sponsors can fund the programme, but sessions remain confidential to the graduate."
+  },
+  "boundaries": {
+    "title": "Boundaries & consent",
+    "description": "We respect that early-career decisions are intertwined with family, finance and wellbeing.",
+    "items": [
+      {
+        "title": "Graduate leads the agenda",
+        "description": "We invite parents or sponsors into clear agreements but keep coaching conversations private."
+      },
+      {
+        "title": "No productivity shaming",
+        "description": "We design systems around neurodiversity, health and money realities without judgement."
+      },
+      {
+        "title": "Referrals when therapy is needed",
+        "description": "If anxiety or trauma becomes central, we pause coaching and connect you with clinical support."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions graduates raise",
+    "items": [
+      {
+        "question": "Can parents join part of a session?",
+        "answer": "We can set up joint check-ins to align on logistics while keeping coaching conversations confidential."
+      },
+      {
+        "question": "Do you help with assessment centres?",
+        "answer": "Yes. We rehearse group exercises, presentations and reflective questions relevant to your applications."
+      },
+      {
+        "question": "Is there support after I accept a job?",
+        "answer": "We offer optional monthly or quarterly check-ins as you settle into the role."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Want support choosing or starting well?",
+    "description": "Tell us where you are in the process and we will recommend a pace and structure that fits.",
+    "primary": {
+      "label": "Book a discovery call",
+      "href": "/contact?topic=graduate-start"
+    },
+    "secondary": {
+      "label": "Read coaching approach",
+      "href": "/services/how-coaching-works"
+    }
+  }
+}

@@ -1,30 +1,21 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import Head from 'next/head';
+import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
+import { getServiceCards } from '@/lib/services';
 
-function PathwayCard({ card, viewDetails }) {
+function PathwayCard({ card, viewDetailsLabel }) {
   return (
     <div className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
       <div className="space-y-4">
-        <div className="flex items-start gap-4">
-          <div className="relative h-12 w-12 overflow-hidden rounded-xl bg-emerald-50">
-            <Image src={card.icon} alt="" fill sizes="48px" className="object-contain p-3" />
-          </div>
-          <div className="space-y-1">
-            {card?.target ? (
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.target}</p>
-            ) : null}
-            <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
-          </div>
-        </div>
-        {card?.audience ? (
-          <p className="text-sm leading-6 text-slate-600">{card.audience}</p>
+        {card.eyebrow ? (
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.eyebrow}</p>
         ) : null}
-        {Array.isArray(card?.benefits) && card.benefits.length > 0 ? (
+        <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
+        {card.description ? <p className="text-sm leading-6 text-slate-600">{card.description}</p> : null}
+        {Array.isArray(card.benefits) && card.benefits.length > 0 ? (
           <ul className="space-y-2 text-sm leading-6 text-slate-700">
             {card.benefits.map((benefit) => (
               <li key={benefit} className="flex gap-2">
@@ -39,14 +30,25 @@ function PathwayCard({ card, viewDetails }) {
         href={`/services/${card.slug}`}
         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline"
       >
-        {viewDetails}
+        {viewDetailsLabel}
         <span aria-hidden="true">→</span>
       </Link>
     </div>
   );
 }
 
-function ServicesPage() {
+PathwayCard.propTypes = {
+  card: PropTypes.shape({
+    slug: PropTypes.string.isRequired,
+    eyebrow: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
+    benefits: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
+  viewDetailsLabel: PropTypes.string.isRequired,
+};
+
+export default function ServicesPage({ cards }) {
   const { t } = useTranslation('services');
   const seo = t('seo', { returnObjects: true });
   const hero = t('hero', { returnObjects: true });
@@ -55,16 +57,11 @@ function ServicesPage() {
   const faqLink = t('faqLink', { returnObjects: true });
 
   return (
-    <>
-      <Head>
-        <title>{seo.title}</title>
-        <meta name="description" content={seo.description} />
-      </Head>
-
+    <MainLayout title={seo?.title} desc={seo?.description}>
       <section className="bg-emerald-50/60 py-16">
         <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 md:flex-row md:items-center">
           <div className="typography flex flex-col gap-4 md:flex-1">
-            <h1>{hero.title}</h1>
+            <h1>{hero?.title}</h1>
             {hero?.highlight ? (
               <p>
                 <strong>{hero.highlight}</strong>
@@ -79,7 +76,7 @@ function ServicesPage() {
             ) : null}
           </div>
           <div className="rounded-3xl border border-emerald-100 bg-white/80 p-6 text-sm leading-6 text-slate-700 md:w-80">
-            <p>{pathways.sidebar ?? pathways.description}</p>
+            <p>{pathways?.sidebar ?? pathways?.description}</p>
           </div>
         </div>
       </section>
@@ -87,17 +84,17 @@ function ServicesPage() {
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-6">
           <div className="typography max-w-3xl flex flex-col gap-4">
-            <h2>{pathways.title}</h2>
+            <h2>{pathways?.title}</h2>
             {pathways?.highlight ? (
               <p>
                 <strong>{pathways.highlight}</strong>
               </p>
             ) : null}
-            <p>{pathways.description}</p>
+            {pathways?.description ? <p>{pathways.description}</p> : null}
           </div>
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {pathways.cards.map((card) => (
-              <PathwayCard key={card.slug} card={card} viewDetails={pathways.viewDetails} />
+            {cards.map((card) => (
+              <PathwayCard key={card.slug} card={card} viewDetailsLabel={pathways?.viewDetails ?? 'View details'} />
             ))}
           </div>
         </div>
@@ -106,44 +103,55 @@ function ServicesPage() {
       <section className="bg-emerald-950/5 py-16 sm:py-20">
         <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6 text-center">
           <div className="typography flex flex-col gap-4">
-            <h2>{cta.title}</h2>
+            <h2>{cta?.title}</h2>
             {cta?.highlight ? (
               <p>
                 <strong>{cta.highlight}</strong>
               </p>
             ) : null}
-            <p>{cta.body}</p>
+            {cta?.body ? <p>{cta.body}</p> : null}
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Link
-              href={cta.primaryHref}
-              className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
-            >
-              {cta.primaryCta}
-            </Link>
-            <Link
-              href={cta.secondaryHref}
-              className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
-            >
-              {cta.secondaryCta}
-            </Link>
+            {cta?.primaryHref && cta?.primaryCta ? (
+              <Link
+                href={cta.primaryHref}
+                className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              >
+                {cta.primaryCta}
+              </Link>
+            ) : null}
+            {cta?.secondaryHref && cta?.secondaryCta ? (
+              <Link
+                href={cta.secondaryHref}
+                className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              >
+                {cta.secondaryCta}
+              </Link>
+            ) : null}
           </div>
         </div>
       </section>
-    </>
+    </MainLayout>
   );
 }
 
-ServicesPage.getLayout = function getLayout(page) {
-  return <MainLayout>{page}</MainLayout>;
+ServicesPage.propTypes = {
+  cards: PropTypes.arrayOf(
+    PropTypes.shape({
+      slug: PropTypes.string.isRequired,
+      eyebrow: PropTypes.string,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string,
+      benefits: PropTypes.arrayOf(PropTypes.string),
+    })
+  ).isRequired,
 };
 
 export async function getStaticProps({ locale }) {
   return {
     props: {
+      cards: getServiceCards(),
       ...(await serverSideTranslations(locale, ['common', 'services'])),
     },
   };
 }
-
-export default ServicesPage;
