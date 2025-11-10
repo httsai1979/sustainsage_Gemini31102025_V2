@@ -1,0 +1,97 @@
+{
+  "pricing": {
+    "packages": [
+      {
+        "name": "Focused series",
+        "duration": "Three 60-minute sessions over six weeks",
+        "scope": "Clarify the outcome you need right now and test sustainable routines between sessions.",
+        "price_note": "£720 for the full series"
+      },
+      {
+        "name": "Season of change",
+        "duration": "Six 60-minute sessions across three months",
+        "scope": "Work through layered transitions with steady accountability and written reflections after every session.",
+        "price_note": "£1,440 for the full programme"
+      },
+      {
+        "name": "Ongoing partnership",
+        "duration": "Monthly 60-minute session with asynchronous support",
+        "scope": "Maintain momentum after your initial sprint with light check-ins and document reviews between meetings.",
+        "price_note": "£220 per month, cancel any time with two weeks’ notice"
+      }
+    ],
+    "policies": [
+      {
+        "title": "Session cadence",
+        "body": "Coaching flexes around interview rounds, onboarding or family milestones so your comeback stays sustainable."
+      },
+      {
+        "title": "Sponsorship",
+        "body": "Employer sponsorship and invoicing are available once confidentiality boundaries are agreed."
+      },
+      {
+        "title": "Payment options",
+        "body": "Self-funded clients can set up payment plans at no additional cost and reduced-fee places are reserved each quarter."
+      }
+    ]
+  },
+  "readiness": {
+    "checklist": [
+      "You can make space every fortnight to pause and reflect on your return to paid work.",
+      "You are ready to surface the assumptions that make re-entry feel fragile or rushed.",
+      "You have milestones in mind such as interviews, onboarding or renegotiating boundaries at home.",
+      "You are open to trying small experiments between sessions and capturing what you learn.",
+      "You want a space to rebuild confidence without abandoning the care roles you hold."
+    ],
+    "what_to_prepare": [
+      "Stories about the strengths you want to carry forward from your career break.",
+      "Contexts where boundaries or energy tend to slip so we can rebuild them together.",
+      "Any plans involving employers or sponsors so we can design confidentiality updates upfront.",
+      "Questions you want to rehearse for upcoming interviews or stakeholder conversations."
+    ]
+  },
+  "agreement": {
+    "sections": [
+      {
+        "heading": "Confidentiality and ethics",
+        "body": "All conversations are confidential unless we explicitly agree to share updates with a sponsor or employer. We work to the ICF Code of Ethics and will signpost elsewhere if coaching is not the appropriate support."
+      },
+      {
+        "heading": "Scheduling and cadence",
+        "body": "Sessions are typically 60 minutes on Zoom. You can reschedule with 24 hours’ notice at no additional cost. Between sessions you can reach out by email or voice note for quick reflections or accountability."
+      },
+      {
+        "heading": "Fees and invoicing",
+        "body": "Invoices are issued at the start of the engagement with 14-day payment terms unless otherwise agreed. Employer sponsorship is welcomed — we align on confidentiality boundaries before any updates are shared."
+      },
+      {
+        "heading": "Re-entry milestones",
+        "body": "We agree the milestones you want support with — for example interviews, first 90 days or rebuilding advocacy at home. When sponsors are involved we schedule optional triads to align expectations without compromising confidentiality."
+      },
+      {
+        "heading": "Ending or pausing",
+        "body": "You can pause or end the engagement at any time. We will close with a short retrospective and note any open commitments. Unused sessions are refundable unless a discounted cohort or group rate has been applied."
+      }
+    ]
+  },
+  "faq": {
+    "items": [
+      {
+        "q": "Can my employer or sponsor be involved?",
+        "a": "Yes. We agree what updates, if any, will be shared outside sessions. Sponsors only receive information you authorise."
+      },
+      {
+        "q": "What if I need to pause because of caring responsibilities?",
+        "a": "We design flexible cadences from the start. You can pause or spread out sessions — momentum matters more than speed."
+      },
+      {
+        "q": "How soon can we start?",
+        "a": "Intro chats are usually available within two weeks. Paid sessions start as soon as contracts and invoices are complete."
+      },
+      {
+        "q": "Do you work internationally?",
+        "a": "Most sessions happen online. We regularly support clients across the UK, Europe and Asia-Pacific time zones."
+      }
+    ]
+  }
+}
