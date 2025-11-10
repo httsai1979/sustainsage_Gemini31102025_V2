@@ -66,7 +66,7 @@ PathwayCard.propTypes = {
   viewDetailsLabel: PropTypes.string.isRequired,
 };
 
-export default function ServicesPage({ cards }) {
+export default function ServicesPage({ cards, showFallbackNotice }) {
   const { t } = useTranslation('services');
   const seo = t('seo', { returnObjects: true });
   const hero = t('hero', { returnObjects: true });
@@ -93,6 +93,9 @@ export default function ServicesPage({ cards }) {
               </p>
             ) : null}
             {hero?.subtitle ? <p>{hero.subtitle}</p> : null}
+            {showFallbackNotice ? (
+              <p className="text-xs font-medium text-slate-500">暫用英文內容</p>
+            ) : null}
             {boundariesLink?.label || faqLink?.label ? (
               <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
                 {boundariesLink?.label ? (
@@ -188,15 +191,22 @@ ServicesPage.propTypes = {
       benefits: PropTypes.arrayOf(PropTypes.string),
     })
   ).isRequired,
+  showFallbackNotice: PropTypes.bool,
+};
+
+ServicesPage.defaultProps = {
+  showFallbackNotice: false,
 };
 
 export async function getStaticProps({ locale }) {
-  const cards = getServiceCards();
+  const currentLocale = locale ?? 'en-GB';
+  const { cards, fallbackUsed } = getServiceCards(currentLocale);
 
   return toSerializable({
     props: {
       cards,
-      ...(await serverSideTranslations(locale, ['common', 'services'])),
+      showFallbackNotice: fallbackUsed,
+      ...(await serverSideTranslations(currentLocale, ['common', 'services'])),
     },
   });
 }

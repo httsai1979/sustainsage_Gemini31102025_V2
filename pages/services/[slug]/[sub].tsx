@@ -1,15 +1,11 @@
-import fs from 'fs';
-import path from 'path';
 import Link from 'next/link';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 
 import { toSerializable } from '@/lib/toSerializable';
+import { loadJSON } from '@/lib/loadContent';
 
 const SLUGS = ['career-return', 'immigrant-job', 'graduate-start'] as const;
 const SUBS = ['pricing', 'readiness', 'agreement', 'faq'] as const;
-
-const DEFAULT_LOCALE = 'en-GB';
-const SERVICES_DIR = path.join(process.cwd(), 'content', 'services');
 
 type Slug = (typeof SLUGS)[number];
 type Sub = (typeof SUBS)[number];
@@ -58,20 +54,8 @@ type ServiceSubPageProps = {
   slug: Slug;
   sub: Sub;
   data: PricingData | ReadinessData | AgreementData | FaqData | null;
+  showFallbackNotice?: boolean;
 };
-
-function resolveContentFile(slug: Slug, locale: string): string {
-  const attempts = [locale, DEFAULT_LOCALE];
-
-  for (const attempt of attempts) {
-    const candidate = path.join(SERVICES_DIR, `${slug}.${attempt}.json`);
-    if (fs.existsSync(candidate)) {
-      return candidate;
-    }
-  }
-
-  throw new Error(`Service content not found for slug: ${slug} and locale: ${locale}`);
-}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = SLUGS.flatMap((slug) => SUBS.map((sub) => ({ params: { slug, sub } })));
@@ -90,20 +74,24 @@ export const getStaticProps: GetStaticProps<ServiceSubPageProps> = async ({ para
     return { notFound: true };
   }
 
-  const lang = (locale as string) || DEFAULT_LOCALE;
+  const currentLocale = (typeof locale === 'string' && locale.length > 0 ? locale : 'en-GB') as string;
 
-  try {
-    const filePath = resolveContentFile(slugParam as Slug, lang);
-    const raw = fs.readFileSync(filePath, 'utf-8');
-    const all = JSON.parse(raw) as Record<Sub, PricingData | ReadinessData | AgreementData | FaqData>;
-    const data = all[subParam as Sub] ?? null;
+  const result = loadJSON<Record<Sub, PricingData | ReadinessData | AgreementData | FaqData>>(
+    `content/services/${slugParam}.{locale}.json`,
+    currentLocale
+  );
 
-    return toSerializable({
-      props: { slug: slugParam as Slug, sub: subParam as Sub, data },
-    });
-  } catch (error) {
+  if (!result.data) {
     return { notFound: true };
   }
+
+  const all = result.data;
+  const data = all[subParam as Sub] ?? null;
+  const showFallbackNotice = Boolean(result.usedLocale && result.usedLocale !== currentLocale);
+
+  return toSerializable({
+    props: { slug: slugParam as Slug, sub: subParam as Sub, data, showFallbackNotice },
+  });
 };
 
 const TITLE_MAP: Record<Sub, string> = {
@@ -113,7 +101,7 @@ const TITLE_MAP: Record<Sub, string> = {
   faq: 'FAQ',
 };
 
-export default function ServiceSubPage({ slug, sub, data }: ServiceSubPageProps) {
+export default function ServiceSubPage({ slug, sub, data, showFallbackNotice = false }: ServiceSubPageProps) {
   return (
     <main className="container mx-auto px-4 py-10">
       <nav className="mb-6">
@@ -123,6 +111,10 @@ export default function ServiceSubPage({ slug, sub, data }: ServiceSubPageProps)
       </nav>
 
       <h1 className="text-2xl font-semibold mb-4">{TITLE_MAP[sub]}</h1>
+
+      {showFallbackNotice ? (
+        <p className="mb-6 text-xs font-medium text-slate-500">暫用英文內容</p>
+      ) : null}
 
       {sub === 'pricing' && <Pricing data={data as PricingData} />}
       {sub === 'readiness' && <Readiness data={data as ReadinessData} />}

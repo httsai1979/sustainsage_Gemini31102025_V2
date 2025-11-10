@@ -167,7 +167,7 @@ CTASection.defaultProps = {
   cta: undefined,
 };
 
-export default function ServiceDetailPage({ service }) {
+export default function ServiceDetailPage({ service, showFallbackNotice }) {
   const {
     hero = {},
     key_points: keyPoints = {},
@@ -194,6 +194,9 @@ export default function ServiceDetailPage({ service }) {
           ) : null}
           <h1 className="scroll-mt-28 mt-3 text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{pageTitle}</h1>
           {hero.subtitle ? <p className="mt-4 text-base leading-7 text-slate-600">{hero.subtitle}</p> : null}
+          {showFallbackNotice ? (
+            <p className="mt-2 text-xs font-medium text-slate-500">暫用英文內容</p>
+          ) : null}
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             {hero.primaryCta?.href && hero.primaryCta?.label ? (
               <Link
@@ -308,6 +311,11 @@ ServiceDetailPage.propTypes = {
     }),
     slug: PropTypes.string,
   }).isRequired,
+  showFallbackNotice: PropTypes.bool,
+};
+
+ServiceDetailPage.defaultProps = {
+  showFallbackNotice: false,
 };
 
 export async function getStaticPaths() {
@@ -321,12 +329,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params, locale }) {
   try {
-    const service = getServiceData(params.slug);
+    const currentLocale = locale ?? 'en-GB';
+    const { service, isFallback } = getServiceData(params.slug, currentLocale);
 
     return toSerializable({
       props: {
         service,
-        ...(await serverSideTranslations(locale, ['common'])),
+        showFallbackNotice: isFallback,
+        ...(await serverSideTranslations(currentLocale, ['common'])),
       },
     });
   } catch (error) {
