@@ -1,0 +1,24 @@
+{
+  "name": "Partner-in-Residence",
+  "title": "Transition Support Coach",
+  "location": "Taipei · London",
+  "bio": [
+    "Our Partner-in-Residence supports spouses, carers, and loved ones who relocate alongside sustainability leaders.",
+    "They specialise in pacing big moves, negotiating shared care plans, and holding space for identity shifts.",
+    "Sessions weave multilingual coaching, practical planning, and restorative rituals for the whole household."
+  ],
+  "focus": [
+    "Rebuilding identity and networks after relocation",
+    "Designing shared agreements that balance caregiving and career transitions",
+    "Creating multilingual rituals that keep families grounded during rapid change"
+  ],
+  "credentials": [
+    "ICF Professional Certified Coach (PCC)",
+    "Somatics and trauma-informed facilitation training",
+    "Former community organiser across Taiwan and the UK"
+  ],
+  "cta": {
+    "label": "Book a partner consult",
+    "href": "/contact"
+  }
+}

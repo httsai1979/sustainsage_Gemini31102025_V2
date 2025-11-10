@@ -1,0 +1,24 @@
+{
+  "name": "James Ng",
+  "title": "Team Coach & Operations Partner",
+  "location": "Singapore · Remote",
+  "bio": [
+    "James builds trauma-sensitive coaching containers for bilingual product and operations teams navigating growth.",
+    "He brings a decade of experience leading analytics, people operations, and risk reviews across Southeast Asia.",
+    "Clients appreciate how he holds calm structure while translating technical context for non-technical leaders."
+  ],
+  "focus": [
+    "Coaching operations leads through cross-border scale-up", 
+    "Designing data care agreements between product, policy, and legal teams",
+    "Supporting managers who hold both people leadership and caregiving responsibilities"
+  ],
+  "credentials": [
+    "ICF Associate Certified Coach (ACC)",
+    "Certified Scrum Product Owner",
+    "Former Head of Operations at a climate-tech startup"
+  ],
+  "cta": {
+    "label": "Work with James",
+    "href": "/contact"
+  }
+}
