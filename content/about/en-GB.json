@@ -8,6 +8,51 @@
     "title": "Coaching for complex transitions",
     "body": "SustainSage is led by bilingual coaches who have moved between Taiwan, Singapore, and the UK. We keep coaching steady, culturally aware, and grounded in practical experiments."
   },
+  "approach": {
+    "eyebrow": "Our approach",
+    "title": "Experiments that respect pace and context",
+    "description": "Every partnership begins with informed consent, shared language, and clarity on how we will work together.",
+    "pillars": [
+      {
+        "title": "Context before action",
+        "description": "We map systems, constraints, and access needs before suggesting experiments."
+      },
+      {
+        "title": "Bilingual collaboration",
+        "description": "Sessions move between English, Traditional Chinese, and Simplified Chinese so nuance survives translation."
+      },
+      {
+        "title": "Reflective practice",
+        "description": "Monthly supervision and pause points keep bias, risk, and wellbeing in view."
+      }
+    ],
+    "cases": [
+      {
+        "title": "Founder aligning a cross-border team",
+        "context": "Series A founder scaling operations between Taipei and London with clashing expectations.",
+        "coaching_moves": "Co-created bilingual agreements, clarified decision rights, rehearsed feedback in both languages.",
+        "shift": "Meetings regained focus, with teammates reporting clearer ownership and calmer escalation paths.",
+        "tools_used": ["Stakeholder map", "Decision matrix", "ICF team coaching agreements"],
+        "disclaimer": "Details blended from multiple engagements to protect confidentiality."
+      },
+      {
+        "title": "Climate partnership renegotiating scope",
+        "context": "NGO and investor partnership needed to reset expectations after leadership changes.",
+        "coaching_moves": "Surfaced assumptions, rehearsed boundary language, and prototyped a revised shared roadmap.",
+        "shift": "Both parties recommitted with defined data-sharing cadence and clearer escalation checkpoints.",
+        "tools_used": ["Scenario ladder", "Values alignment canvas"],
+        "disclaimer": "Composite scenario respecting privacy of all clients."
+      },
+      {
+        "title": "Policy lead rebuilding stamina",
+        "context": "Public policy advisor juggling multilingual briefs and caregiver duties.",
+        "coaching_moves": "Mapped energy audits, simplified reporting rituals, and negotiated realistic stakeholder updates.",
+        "shift": "Client reported steadier workload and regained confidence presenting in both Mandarin and English.",
+        "tools_used": ["Energy inventory", "Boundary scripts"],
+        "disclaimer": "Case anonymised and blended to remove identifying details."
+      }
+    ]
+  },
   "key_points": {
     "title": "What guides our coaching",
     "items": [
@@ -40,19 +85,38 @@
     "description": "Coaching is a structured, future-focused partnership where you stay in charge of direction and pace.",
     "scenarios": [
       {
-        "title": "You are translating a new leadership role across cultures",
-        "description": "We clarify authority, decision rights, and relationship boundaries so you can lead confidently without erasing your own context."
+        "title": "Launching a role across cultures",
+        "description": "Clarify decision rights, agreements, and handoffs before expectations fracture."
       },
       {
-        "title": "You want accountability for change experiments",
-        "description": "Sessions map experiments, data care, and check-ins so shifts stay measurable, ethical, and sustainable."
+        "title": "Needing accountability for experiments",
+        "description": "Design lightweight trials, data care plans, and check-ins that keep momentum without burnout."
       },
       {
-        "title": "You need space to process complex stakeholder dynamics",
-        "description": "We explore assumptions, power, and accessibility considerations, then co-design language you can bring back to the team."
+        "title": "Untangling stakeholder dynamics",
+        "description": "Surface power dynamics, accessibility needs, and language you can safely bring back to the room."
       }
     ],
     "disclaimer": "Coaching does not replace therapy, legal advice, or crisis response. We will pause and refer when specialised care is required."
+  },
+  "ethics": {
+    "eyebrow": "Ethics & boundaries",
+    "title": "ICF-aligned boundaries that protect your data",
+    "summary": "We anchor every engagement in the International Coaching Federation (ICF) Code of Ethics and document how data is cared for from day one.",
+    "principles": [
+      "Set informed consent, confidentiality boundaries, and escalation paths before sessions begin.",
+      "Check accessibility, safeguarding, and wellbeing every few sessions to adjust support early.",
+      "Pause or refer when therapeutic, legal, or crisis support is more appropriate than coaching."
+    ],
+    "dataPractices": {
+      "title": "How we handle your data",
+      "items": [
+        "Store session notes in encrypted, access-controlled systems with time-bound retention.",
+        "Share summaries only with people named in the original agreement, never external parties without consent.",
+        "Delete recordings or artefacts immediately when they are no longer required for the coaching goal."
+      ]
+    },
+    "icfReference": "Review the ICF Code of Ethics to see the standards we commit to in every partnership."
   },
   "boundaries": {
     "title": "Boundaries we uphold",

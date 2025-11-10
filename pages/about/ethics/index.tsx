@@ -1,0 +1,100 @@
+import Link from 'next/link';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+import PageLayoutV2 from '@/components/layout/PageLayoutV2';
+import { getAboutSubnav } from '@/components/about/AboutSubnav';
+import { loadContent } from '@/lib/loadContent';
+import { toSerializable } from '@/lib/toSerializable';
+
+import nextI18NextConfig from '../../../../next-i18next.config.js';
+
+type EthicsProps = {
+  ethics: any;
+  usedLocale: string | null;
+  locale: string;
+};
+
+function Header({ ethics, showFallback }: { ethics: any; showFallback: boolean }) {
+  return (
+    <div className="space-y-4">
+      {ethics?.eyebrow ? (
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{ethics.eyebrow}</p>
+      ) : null}
+      <div className="space-y-3">
+        <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+          {ethics?.title ?? 'Ethics & boundaries'}
+        </h1>
+        {ethics?.summary ? (
+          <p className="max-w-3xl text-base leading-7 text-slate-700">{ethics.summary}</p>
+        ) : null}
+        {showFallback ? <p className="text-xs font-medium text-slate-500">暫用英文內容</p> : null}
+      </div>
+      {ethics?.icfReference ? (
+        <Link
+          href="https://coachingfederation.org/ethics/code-of-ethics"
+          className="inline-flex w-fit items-center justify-center rounded-full border border-emerald-200 bg-white px-5 py-3 text-sm font-semibold text-emerald-900 transition hover:border-emerald-300 hover:bg-emerald-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-900"
+        >
+          {ethics.icfReference}
+        </Link>
+      ) : null}
+    </div>
+  );
+}
+
+export default function EthicsPage({ ethics, usedLocale, locale }: EthicsProps) {
+  const showFallback = Boolean(usedLocale && usedLocale !== locale);
+  const principles = Array.isArray(ethics?.principles) ? ethics.principles : [];
+  const dataPractices = ethics?.dataPractices;
+
+  return (
+    <PageLayoutV2 header={<Header ethics={ethics} showFallback={showFallback} />} subnav={getAboutSubnav('ethics')}>
+      {principles.length ? (
+        <section>
+          <h2 className="text-xl font-semibold text-slate-900">Principles we hold in every engagement</h2>
+          <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+            {principles.map((item: string, index: number) => (
+              <li key={index} className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      {dataPractices?.items?.length ? (
+        <section className="mt-12">
+          <h2 className="text-xl font-semibold text-slate-900">{dataPractices.title ?? 'How we handle your data'}</h2>
+          <div className="mt-4 space-y-3 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm text-sm leading-6 text-slate-700">
+            {dataPractices.items.map((item: string, index: number) => (
+              <p key={index} className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
+                <span>{item}</span>
+              </p>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className="mt-12 rounded-3xl border border-emerald-100 bg-emerald-900 p-6 text-white">
+        <h2 className="text-xl font-semibold">When coaching is not the right support</h2>
+        <p className="mt-3 text-sm leading-6 text-emerald-100">
+          We pause and refer you to trusted therapeutic, legal, or crisis resources whenever the scope moves beyond ethical coaching boundaries.
+        </p>
+      </section>
+    </PageLayoutV2>
+  );
+}
+
+export async function getStaticProps({ locale = 'en-GB' }) {
+  const aboutContent = loadContent('content/about/{locale}.json', locale);
+
+  return toSerializable({
+    props: {
+      ethics: aboutContent.data?.ethics ?? null,
+      usedLocale: aboutContent.locale,
+      locale,
+      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+    },
+  });
+}

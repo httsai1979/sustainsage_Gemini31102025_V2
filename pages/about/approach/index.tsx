@@ -1,0 +1,104 @@
+import Link from 'next/link';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+import PageLayoutV2 from '@/components/layout/PageLayoutV2';
+import { getAboutSubnav } from '@/components/about/AboutSubnav';
+import { loadContent } from '@/lib/loadContent';
+import { toSerializable } from '@/lib/toSerializable';
+
+import nextI18NextConfig from '../../../../next-i18next.config.js';
+
+type ApproachProps = {
+  approach: any;
+  usedLocale: string | null;
+  locale: string;
+};
+
+function Header({ approach, showFallback }: { approach: any; showFallback: boolean }) {
+  return (
+    <div className="space-y-4">
+      {approach?.eyebrow ? (
+        <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{approach.eyebrow}</p>
+      ) : null}
+      <div className="space-y-3">
+        <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+          {approach?.title ?? 'Our approach'}
+        </h1>
+        {approach?.description ? (
+          <p className="max-w-2xl text-base leading-7 text-slate-700">{approach.description}</p>
+        ) : null}
+        {showFallback ? <p className="text-xs font-medium text-slate-500">暫用英文內容</p> : null}
+      </div>
+      <Link
+        href="/about/approach/cases"
+        className="inline-flex w-fit items-center justify-center rounded-full bg-emerald-900 px-5 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-900"
+      >
+        Browse coaching cases
+      </Link>
+    </div>
+  );
+}
+
+function PillarCard({ item }: { item: any }) {
+  return (
+    <article className="flex h-full flex-col gap-3 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+      {item?.title ? (
+        <h3 className="text-base font-semibold tracking-tight text-slate-900">{item.title}</h3>
+      ) : null}
+      {item?.description ? (
+        <p className="text-sm leading-6 text-slate-700">{item.description}</p>
+      ) : null}
+    </article>
+  );
+}
+
+export default function ApproachPage({ approach, usedLocale, locale }: ApproachProps) {
+  const showFallback = Boolean(usedLocale && usedLocale !== locale);
+  const pillars = Array.isArray(approach?.pillars) ? approach.pillars : [];
+
+  return (
+    <PageLayoutV2 header={<Header approach={approach} showFallback={showFallback} />} subnav={getAboutSubnav('approach')}>
+      {pillars.length ? (
+        <section>
+          <h2 className="text-xl font-semibold text-slate-900">How we structure coaching</h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            {pillars.map((pillar: any, index: number) => (
+              <PillarCard key={pillar?.title ?? index} item={pillar} />
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className="mt-12 space-y-4">
+        <h2 className="text-xl font-semibold text-slate-900">What to expect in partnership</h2>
+        <ul className="space-y-3 text-sm leading-6 text-slate-700">
+          <li className="flex gap-2">
+            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
+            <span>We align on scope, consent, and cadence before the first session.</span>
+          </li>
+          <li className="flex gap-2">
+            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
+            <span>Bilingual facilitation keeps cultural nuance intact as you test new experiments.</span>
+          </li>
+          <li className="flex gap-2">
+            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
+            <span>Regular reflection loops ensure agreements stay ethical, accessible, and useful.</span>
+          </li>
+        </ul>
+      </section>
+    </PageLayoutV2>
+  );
+}
+
+export async function getStaticProps({ locale = 'en-GB' }) {
+  const aboutContent = loadContent('content/about/{locale}.json', locale);
+
+  return toSerializable({
+    props: {
+      approach: aboutContent.data?.approach ?? null,
+      usedLocale: aboutContent.locale,
+      locale,
+      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+    },
+  });
+}
