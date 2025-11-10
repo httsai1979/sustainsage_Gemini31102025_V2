@@ -16,7 +16,9 @@
     "contactTitle": "联系方式",
     "copyright": "© {{year}} SustainSage Group Ltd. 版权所有。",
     "privacyPolicy": "隐私政策",
-    "boundariesNotice": "教练聚焦面向未来的支持，不能替代治疗或其他专业建议。"
+    "boundariesTitle": "教练范围与同意",
+    "boundariesNotice": "教练聚焦面向未来的支持，不能替代治疗或其他专业建议。",
+    "boundariesLink": "阅读教练范围与同意"
   },
   "stickyCta": {
     "title": "准备试个小实验吗？",

@@ -32,22 +32,23 @@
     ]
   },
   "suitability": {
-    "title": "Who this booking pathway serves",
-    "description": "The exploratory call is useful when you:",
+    "title": "What you get",
+    "description": "When we coach together you can rely on:",
     "items": [
-      "Are weighing relocation, repatriation, or cross-border career decisions.",
-      "Want a structured, bilingual conversation without committing to a programme yet.",
-      "Value coaching that respects ICF ethics, cultural nuance, and your pace.",
-      "Would like help testing next steps before making long-term investments."
+      "Confidential, client-led conversations held in English, Mandarin, or both.",
+      "Collaborative experiments, reflections, and tools tailored to your goals.",
+      "Honest signposting if another professional or resource would support you better.",
+      "Written summaries of agreements so you stay in control of next steps."
     ]
   },
   "redirect": {
-    "title": "If coaching is not right, we will",
-    "description": "We stay honest about fit and keep you resourced by:",
+    "title": "What we don’t do",
+    "description": "To respect coaching ethics, we do not:",
     "items": [
-      "Suggesting other professionals or community resources—therapy, legal, immigration, or peer support—when they serve you better.",
-      "Offering a brief summary of what we heard so you can brief future supporters with ease.",
-      "Leaving the decision entirely with you—no follow-up sales funnels or pressure to book."
+      "Diagnose, treat, or provide therapy, counselling, medical, legal, or financial advice.",
+      "Complete immigration, tax, or legal paperwork on your behalf.",
+      "Guarantee job offers, promotions, or specific outcomes.",
+      "Work in situations where there is unmanaged risk of harm—we pause and refer instead."
     ]
   },
   "form": {
@@ -83,6 +84,7 @@
     "timezonePlaceholder": "e.g. UK mornings, GMT+8 evenings, or flexible",
     "timezoneHint": "Include your city or time zone plus a rough window for calls.",
     "consent": "I consent to SustainSage contacting me about coaching.",
+    "boundariesConsent": "I have read and agree to the <0>coaching boundaries</0>.",
     "scopeAcknowledgement": "I understand this form is for coaching enquiries, not therapy, crisis support, legal, financial, or immigration advice.",
     "privacyNote": "We store your information only to arrange coaching conversations and delete it if we do not work together, unless law requires otherwise.",
     "submit": "Send message",

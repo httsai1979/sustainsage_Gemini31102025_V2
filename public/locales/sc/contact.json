@@ -64,6 +64,7 @@
     "timezonePlaceholder": "例如：英国早上、GMT+8 晚上或其他弹性时间",
     "timezoneHint": "写下所在城市或时区，再补充大致可谈的时段。",
     "consent": "我同意 SustainSage 与我联系教练相关事宜。",
+    "boundariesConsent": "我已阅读并同意<0>教练范围与同意</0>。",
     "scopeAcknowledgement": "我了解此表单仅供教练询问，不提供治疗、危机支援、法律、财务或移民建议。",
     "privacyNote": "资料仅用于安排教练对话，若未合作会在必要法律期限后删除。",
     "submit": "送出讯息",
