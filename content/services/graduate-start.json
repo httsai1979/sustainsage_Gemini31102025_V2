@@ -25,7 +25,7 @@
       "Learn reflective routines to stay grounded in new roles"
     ]
   },
-  "audience": {
+  "key_points": {
     "title": "Who it is for",
     "description": "Graduates who want structured support while choosing or starting their first role.",
     "items": [
@@ -67,16 +67,16 @@
     "description": "We respect that early-career decisions are intertwined with family, finance and wellbeing.",
     "items": [
       {
-        "title": "Graduate leads the agenda",
-        "description": "We invite parents or sponsors into clear agreements but keep coaching conversations private."
+        "question": "Who leads the agenda?",
+        "answer": "The graduate does. Sponsors can align on logistics, but coaching conversations stay private."
       },
       {
-        "title": "No productivity shaming",
-        "description": "We design systems around neurodiversity, health and money realities without judgement."
+        "question": "How do you treat productivity?",
+        "answer": "We design systems around neurodiversity, health and money realities without judgement or shaming."
       },
       {
-        "title": "Referrals when therapy is needed",
-        "description": "If anxiety or trauma becomes central, we pause coaching and connect you with clinical support."
+        "question": "What if anxiety becomes overwhelming?",
+        "answer": "We pause coaching and connect you with clinical or wellbeing support when therapy would serve you better."
       }
     ]
   },

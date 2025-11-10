@@ -13,7 +13,7 @@ function Section({ title, description, tint = false, children }) {
     <section className={`${backgroundClass} py-16 sm:py-20`}>
       <div className="mx-auto max-w-6xl px-6">
         <div className="typography max-w-3xl flex flex-col gap-4">
-          {title ? <h2>{title}</h2> : null}
+          {title ? <h2 className="scroll-mt-24">{title}</h2> : null}
           {description ? <p>{description}</p> : null}
         </div>
         {children}
@@ -121,7 +121,7 @@ function CTASection({ cta }) {
     <section className="bg-emerald-950/5 py-16 sm:py-20">
       <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6 text-center">
         <div className="typography flex flex-col gap-4">
-          {cta.title ? <h2>{cta.title}</h2> : null}
+          {cta.title ? <h2 className="scroll-mt-24">{cta.title}</h2> : null}
           {cta.description ? <p>{cta.description}</p> : null}
         </div>
         <div className="flex flex-col gap-3 sm:flex-row">
@@ -167,7 +167,15 @@ CTASection.defaultProps = {
 };
 
 export default function ServiceDetailPage({ service }) {
-  const { hero = {}, audience = {}, process = {}, boundaries = {}, faq = {}, cta = {}, title } = service;
+  const {
+    hero = {},
+    key_points: keyPoints = {},
+    process = {},
+    boundaries = {},
+    faq = {},
+    cta = {},
+    title,
+  } = service;
   const pageTitle = hero.title ?? title ?? 'Service';
   const pageDescription = hero.subtitle ?? boundaries.description ?? '';
 
@@ -178,7 +186,7 @@ export default function ServiceDetailPage({ service }) {
           {hero.eyebrow ? (
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.eyebrow}</p>
           ) : null}
-          <h1 className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{pageTitle}</h1>
+          <h1 className="scroll-mt-28 mt-3 text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{pageTitle}</h1>
           {hero.subtitle ? <p className="mt-4 text-base leading-7 text-slate-600">{hero.subtitle}</p> : null}
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             {hero.primaryCta?.href && hero.primaryCta?.label ? (
@@ -201,8 +209,8 @@ export default function ServiceDetailPage({ service }) {
         </div>
       </section>
 
-      <Section title={audience.title} description={audience.description}>
-        <BulletList items={audience.items} />
+      <Section title={keyPoints.title} description={keyPoints.description}>
+        <BulletList items={keyPoints.items} />
       </Section>
 
       <Section title={process.title} description={process.description} tint>
@@ -211,7 +219,7 @@ export default function ServiceDetailPage({ service }) {
       </Section>
 
       <Section title={boundaries.title} description={boundaries.description}>
-        <BulletList items={boundaries.items} />
+        <FAQAccordion items={boundaries.items} className="mt-8" />
       </Section>
 
       <Section title={faq.title} description={faq.description} tint>
@@ -239,7 +247,7 @@ ServiceDetailPage.propTypes = {
         href: PropTypes.string,
       }),
     }),
-    audience: PropTypes.shape({
+    key_points: PropTypes.shape({
       title: PropTypes.string,
       description: PropTypes.string,
       items: PropTypes.arrayOf(
@@ -265,8 +273,8 @@ ServiceDetailPage.propTypes = {
       description: PropTypes.string,
       items: PropTypes.arrayOf(
         PropTypes.shape({
-          title: PropTypes.string,
-          description: PropTypes.string,
+          question: PropTypes.string,
+          answer: PropTypes.string,
         })
       ),
     }),
