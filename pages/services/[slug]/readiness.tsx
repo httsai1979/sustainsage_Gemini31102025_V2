@@ -1,0 +1,61 @@
+import { createServiceSubpage } from '@/lib/serviceSubpagePage';
+
+const { Page, getStaticPaths, getStaticProps } = createServiceSubpage({
+  subSlug: 'readiness',
+  heading: (service) => service.readiness?.title ?? 'How to know if you are ready',
+  intro: (service) =>
+    service.readiness?.description ? (
+      <p className="text-base leading-7 text-slate-600">{service.readiness.description}</p>
+    ) : null,
+  renderContent: (service) => {
+    const checklist = Array.isArray(service.readiness?.checklist)
+      ? service.readiness?.checklist.filter(Boolean)
+      : [];
+    const prepare = Array.isArray(service.readiness?.what_to_prepare)
+      ? service.readiness?.what_to_prepare.filter(Boolean)
+      : [];
+
+    if (checklist.length === 0 && prepare.length === 0) {
+      return (
+        <p className="text-sm leading-6 text-slate-700">
+          We will publish readiness guidance soon. Meanwhile, feel free to reach out for a quick check-in call.
+        </p>
+      );
+    }
+
+    return (
+      <div className="grid gap-10 lg:grid-cols-2">
+        {checklist.length > 0 ? (
+          <div className="space-y-4 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+            <h3 className="text-base font-semibold text-slate-900">Checklist before starting</h3>
+            <ul className="space-y-3 text-sm leading-6 text-slate-700">
+              {checklist.map((item, index) => (
+                <li key={item ?? index} className="flex gap-3">
+                  <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+
+        {prepare.length > 0 ? (
+          <div className="space-y-4 rounded-3xl border border-emerald-100 bg-emerald-50/70 p-6 shadow-sm">
+            <h3 className="text-base font-semibold text-slate-900">Helpful to prepare</h3>
+            <ul className="space-y-3 text-sm leading-6 text-slate-700">
+              {prepare.map((item, index) => (
+                <li key={item ?? index} className="flex gap-3">
+                  <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
+      </div>
+    );
+  },
+});
+
+export { getStaticPaths, getStaticProps };
+export default Page;
