@@ -190,6 +190,7 @@ ServicesPage.propTypes = {
 export async function getStaticProps({ locale }) {
   const cards = getServiceCards().map((card) => ({
     ...card,
+    icon: typeof card.icon === 'string' && card.icon.trim() ? card.icon.trim() : null,
     benefitIcon: typeof card.benefitIcon === 'string' && card.benefitIcon.trim() ? card.benefitIcon.trim() : null,
   }));
 
