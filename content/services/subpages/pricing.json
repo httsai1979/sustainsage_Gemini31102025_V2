@@ -1,0 +1,83 @@
+{
+  "default": {
+    "title": "Pricing and packages",
+    "intro": "Programmes are scoped around the change you are working towards. Fees below cover preparation, session time and written reflections between conversations.",
+    "plans": [
+      {
+        "name": "Focused series",
+        "price": "£720",
+        "description": "Three 60-minute sessions delivered over six weeks.",
+        "highlights": [
+          "Clarify the outcome you need right now.",
+          "Build momentum with practical experiments between sessions.",
+          "Receive written summaries within 24 hours."
+        ]
+      },
+      {
+        "name": "Season of change",
+        "price": "£1,440",
+        "description": "Six 60-minute sessions across three months.",
+        "highlights": [
+          "Work through layered transitions with steady accountability.",
+          "Blend coaching conversations with light mentoring where useful.",
+          "Optional check-ins by voice note between sessions."
+        ]
+      },
+      {
+        "name": "Ongoing partnership",
+        "price": "£220 / month",
+        "description": "Flexible retainer with one 60-minute session and asynchronous support each month.",
+        "highlights": [
+          "Keep commitments visible after the initial sprint.",
+          "Access reviews of key documents or narratives within two business days.",
+          "Pause or restart with two weeks’ notice."
+        ]
+      }
+    ],
+    "notes": [
+      "Employer sponsorship and invoicing are available where confidentiality agreements are in place.",
+      "Payment plans can be set up at no additional cost for self-funded clients.",
+      "Reduced-fee places are reserved each quarter for people in between roles."
+    ]
+  },
+  "career-return": {
+    "intro": "Returners often pair coaching with caring and part-time schedules. We build in space for experimentation so your comeback is sustainable.",
+    "notes": [
+      "Session cadence flexes around interview rounds, onboarding or family milestones.",
+      "We can partner with your employer or sponsor once confidentiality is agreed."
+    ]
+  },
+  "graduate-start": {
+    "intro": "Graduates usually arrive with rapid change on the horizon. Packages focus on momentum and building helpful routines early on.",
+    "plans": [
+      {
+        "name": "Launch support",
+        "price": "£540",
+        "description": "Three 50-minute sessions during your first 90 days in role.",
+        "highlights": [
+          "Translate onboarding expectations into manageable experiments.",
+          "Practise key conversations before they happen.",
+          "Capture wins and learnings to share with stakeholders."
+        ]
+      },
+      {
+        "name": "Graduate accelerator",
+        "price": "£1,050",
+        "description": "Five sessions across five months with optional manager touchpoints.",
+        "highlights": [
+          "Strengthen rhythms that protect energy outside of work.",
+          "Build confidence with feedback loops tailored to your organisation.",
+          "Share progress updates that feel authentic to you."
+        ]
+      }
+    ]
+  },
+  "immigrant-job": {
+    "intro": "International clients often balance job searches with immigration logistics. Together we design support that accounts for those constraints.",
+    "notes": [
+      "We adapt session times across time zones and care responsibilities.",
+      "Documentation reviews can cover CVs, cover letters or networking outreach.",
+      "Visa-related questions are signposted to trusted legal partners."
+    ]
+  }
+}

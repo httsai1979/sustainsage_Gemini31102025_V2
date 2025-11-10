@@ -1,0 +1,51 @@
+{
+  "title": "Frequently asked questions",
+  "description": "People weigh up coaching alongside careers, family and relocation. These answers reflect what service clients ask most often.",
+  "titles": {
+    "career-return": "Career return coaching — FAQs",
+    "graduate-start": "Graduate coaching — FAQs",
+    "immigrant-job": "International job search coaching — FAQs"
+  },
+  "descriptions": {
+    "career-return": "Questions people re-entering paid work often want answered before we begin.",
+    "graduate-start": "Guidance for graduates settling into their first or second role.",
+    "immigrant-job": "Reassurance for internationally mobile professionals navigating the UK market."
+  },
+  "items": [
+    {
+      "slugs": ["career-return", "immigrant-job"],
+      "question": "Can my employer or sponsor be involved?",
+      "answer": "Yes. We agree what updates, if any, will be shared outside sessions. Sponsors only receive information you authorise."
+    },
+    {
+      "slugs": ["career-return"],
+      "question": "What if I need to pause because of caring responsibilities?",
+      "answer": "We design flexible cadences from the start. You can pause or spread out sessions — momentum matters more than speed."
+    },
+    {
+      "slugs": ["graduate-start"],
+      "question": "Do you offer preparation before performance reviews?",
+      "answer": "We rehearse conversations, co-write talking points and identify evidence to bring into the room with confidence."
+    },
+    {
+      "slugs": ["graduate-start", "immigrant-job"],
+      "question": "Is there homework between sessions?",
+      "answer": "We agree small experiments between sessions. They are always co-designed so they feel doable alongside your workload."
+    },
+    {
+      "slugs": ["immigrant-job"],
+      "question": "Can we review my CV or LinkedIn profile?",
+      "answer": "Yes. Coaching time can include narrative and document reviews so that every application reflects your story."
+    },
+    {
+      "slugs": ["default"],
+      "question": "How soon can we start?",
+      "answer": "Intro chats are usually available within two weeks. Paid sessions start as soon as contracts and invoices are complete."
+    },
+    {
+      "slugs": ["default"],
+      "question": "Do you work internationally?",
+      "answer": "Most sessions happen online. We regularly support clients across the UK, Europe and Asia-Pacific time zones."
+    }
+  ]
+}

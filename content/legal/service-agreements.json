@@ -1,0 +1,72 @@
+{
+  "default": {
+    "title": "Coaching agreement essentials",
+    "intro": "Every engagement starts with a plain-language agreement. It protects confidentiality, explains logistics and outlines the commitments we both make.",
+    "sections": [
+      {
+        "heading": "Confidentiality and ethics",
+        "paragraphs": [
+          "All conversations are confidential unless we explicitly agree to share updates with a sponsor or employer.",
+          "We work to the ICF Code of Ethics and will signpost elsewhere if coaching is not the appropriate support."
+        ]
+      },
+      {
+        "heading": "Scheduling and cadence",
+        "paragraphs": [
+          "Sessions are typically 60 minutes on Zoom. You can reschedule with 24 hours’ notice at no additional cost.",
+          "Between sessions you can reach out by email or voice note for quick reflections or accountability."
+        ]
+      },
+      {
+        "heading": "Fees and invoicing",
+        "paragraphs": [
+          "Invoices are issued at the start of the engagement with 14-day payment terms unless otherwise agreed.",
+          "Employer sponsorship is welcomed — we align on confidentiality boundaries before any updates are shared."
+        ]
+      },
+      {
+        "heading": "Ending or pausing",
+        "paragraphs": [
+          "You can pause or end the engagement at any time. We will close with a short retrospective and note any open commitments.",
+          "Unused sessions are refundable unless a discounted cohort or group rate has been applied."
+        ]
+      }
+    ],
+    "footer": "You will receive the full agreement to review and sign electronically before our first paid session."
+  },
+  "career-return": {
+    "intro": "Return-to-work engagements often involve employers or sponsors. We document what can and cannot be shared before coaching begins.",
+    "sections": [
+      {
+        "heading": "Re-entry milestones",
+        "paragraphs": [
+          "We agree the milestones you want support with — for example interviews, first 90 days or building advocacy at home.",
+          "When sponsors are involved we schedule optional triads to align expectations without compromising confidentiality."
+        ]
+      }
+    ]
+  },
+  "graduate-start": {
+    "sections": [
+      {
+        "heading": "Support alongside work",
+        "paragraphs": [
+          "If your employer is funding the programme we set up a light cadence for progress pulses they can rely on.",
+          "You always control what is shared. Sessions remain a confidential space for you to reflect and experiment."
+        ]
+      }
+    ]
+  },
+  "immigrant-job": {
+    "intro": "When immigration questions show up we integrate trusted partners for legal or relocation advice, keeping coaching focused on decision-making and wellbeing.",
+    "sections": [
+      {
+        "heading": "Coordinating across time zones",
+        "paragraphs": [
+          "We confirm preferred time zones and communication channels before the agreement is signed.",
+          "If you travel during the engagement we adapt our schedule so sessions remain supportive."
+        ]
+      }
+    ]
+  }
+}
