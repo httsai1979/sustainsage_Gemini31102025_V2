@@ -1,91 +1,12 @@
-import fs from 'fs';
-import path from 'path';
 import type { GetStaticPaths, GetStaticProps } from 'next';
-import type { ReactNode } from 'react';
+import type { ReactElement, ReactNode } from 'react';
 
 import { CaseCard } from '@/components/cases/CaseCard';
 import { StickyCTA } from '@/components/common/StickyCTA';
 import { SubnavTabs } from '@/components/common/SubnavTabs';
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
-import { loadJSON } from '@/lib/loadContent';
+import { SERVICE_SLUGS, type ServiceContent, type ServiceSlug } from '@/lib/serviceContentTypes';
 import { toSerializable } from '@/lib/toSerializable';
-
-export const SERVICE_SLUGS = ['career-return', 'immigrant-job', 'graduate-start'] as const;
-
-export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
-
-export type ServiceCaseItem = {
-  title?: string;
-  context?: string;
-  coaching_moves?: string;
-  shift?: string;
-  tools_used?: string[];
-  disclaimer?: string;
-};
-
-export type ServiceProcessStep = {
-  title?: string;
-  description?: string;
-};
-
-export type ServicePricingPackage = {
-  name?: string;
-  duration?: string;
-  scope?: string;
-  price_note?: string;
-};
-
-export type ServicePricingPolicy = {
-  title?: string;
-  body?: string;
-};
-
-export type ServiceContent = {
-  slug: ServiceSlug;
-  title?: string;
-  hero?: {
-    eyebrow?: string;
-    title?: string;
-    subtitle?: string;
-  };
-  pricing?: {
-    description?: string;
-    note?: string;
-    packages?: ServicePricingPackage[];
-    policies?: ServicePricingPolicy[];
-  };
-  readiness?: {
-    description?: string;
-    checklist?: string[];
-    what_to_prepare?: string[];
-  };
-  process?: {
-    title?: string;
-    description?: string;
-    steps?: ServiceProcessStep[];
-    note?: string;
-  };
-  agreement?: {
-    description?: string;
-    sections?: {
-      heading?: string;
-      body?: string;
-    }[];
-  };
-  faq?: {
-    title?: string;
-    description?: string;
-    items?: (
-      | { q?: string; a?: string }
-      | { question?: string; answer?: string }
-    )[];
-  };
-  cases?: {
-    title?: string;
-    description?: string;
-    items?: ServiceCaseItem[];
-  };
-};
 
 export type ServiceSubpageProps = {
   slug: ServiceSlug;
@@ -103,7 +24,7 @@ type CreateServiceSubpageOptions = {
 };
 
 type CreateServiceSubpageResult = {
-  Page: (props: ServiceSubpageProps) => JSX.Element;
+  Page: (props: ServiceSubpageProps) => ReactElement;
   getStaticPaths: GetStaticPaths;
   getStaticProps: GetStaticProps<ServiceSubpageProps>;
 };
@@ -114,10 +35,17 @@ export function createServiceSubpage({
   intro,
   renderContent,
 }: CreateServiceSubpageOptions): CreateServiceSubpageResult {
-  const getStaticPaths: GetStaticPaths = async () => ({
-    paths: SERVICE_SLUGS.map((slug) => ({ params: { slug } })),
-    fallback: false,
-  });
+  const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+    const allLocales = Array.isArray(locales) && locales.length > 0 ? locales : ['en-GB'];
+    const paths = allLocales.flatMap((locale) =>
+      SERVICE_SLUGS.map((slug) => ({
+        params: { slug },
+        locale,
+      }))
+    );
+
+    return { paths, fallback: false };
+  };
 
   const getStaticProps: GetStaticProps<ServiceSubpageProps> = async ({ params, locale }) => {
     const slugParam = params?.slug;
@@ -127,24 +55,14 @@ export function createServiceSubpage({
     }
 
     const requestedLocale = typeof locale === 'string' && locale.length > 0 ? locale : 'en-GB';
-    const result = loadJSON<Partial<ServiceContent>>(`content/services/${slugParam}.{locale}.json`, requestedLocale);
+    const { loadServiceContent } = await import('@/lib/server/serviceContent');
+    const contentResult = await loadServiceContent(slugParam as ServiceSlug, requestedLocale);
 
-    if (!result.data) {
+    if (!contentResult) {
       return { notFound: true };
     }
 
-    const basePath = path.join(process.cwd(), 'content', 'services', `${slugParam}.json`);
-    const baseData = fs.existsSync(basePath)
-      ? (JSON.parse(fs.readFileSync(basePath, 'utf-8')) as Partial<ServiceContent>)
-      : {};
-
-    const service: ServiceContent = {
-      slug: slugParam as ServiceSlug,
-      ...baseData,
-      ...result.data,
-    };
-
-    const showFallbackNotice = Boolean(result.usedLocale && result.usedLocale !== result.requestedLocale);
+    const { service, showFallbackNotice } = contentResult;
 
     return toSerializable({
       props: {

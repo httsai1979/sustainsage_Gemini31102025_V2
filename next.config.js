@@ -4,6 +4,35 @@ const { i18n } = require('./next-i18next.config.js');
 const nextConfig = {
   reactStrictMode: true,
   i18n,
+  webpack(config) {
+    config.resolve = config.resolve || {};
+    config.resolve.fallback = {
+      ...(config.resolve.fallback ?? {}),
+      fs: false,
+      path: false,
+    };
+
+    return config;
+  },
+
+  async exportPathMap(defaultMap) {
+    const map = { ...defaultMap };
+    const serviceSlugs = ['career-return', 'immigrant-job', 'graduate-start'];
+    const subpages = ['pricing', 'readiness', 'process', 'agreement', 'faq', 'cases'];
+
+    for (const slug of serviceSlugs) {
+      map[`/services/${slug}`] = { page: '/services/[slug]', query: { slug } };
+
+      for (const subpage of subpages) {
+        map[`/services/${slug}/${subpage}`] = {
+          page: `/services/[slug]/${subpage}`,
+          query: { slug },
+        };
+      }
+    }
+
+    return map;
+  },
 
   images: {
     // **!!! 錯誤修正 !!!**

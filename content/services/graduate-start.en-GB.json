@@ -60,28 +60,28 @@
     "description": "Stories merged from graduates and early-career professionals to keep individuals anonymous.",
     "items": [
       {
-        "title": "First role decision",
-        "context": "A final-year student held offers in two cities and felt pressure from family to choose stability over curiosity.",
-        "coaching_moves": "We clarified values, modelled cost-of-living scenarios and practised boundary conversations at home.",
-        "shift": "They selected a role aligned with learning goals and communicated the decision with confidence.",
-        "tools_used": ["Values canvas", "Decision matrix"],
-        "disclaimer": "Composite narrative blended across clients."
+        "title": "Too many choices, no criteria",
+        "context": "Three sectors look appealing but overwhelm decisions.",
+        "coaching_moves": "Built decision scorecard; set 2-week micro-test per sector.",
+        "shift": "Made next pick using data rather than mood.",
+        "tools_used": ["Decision Scorecard", "Experiment Log"],
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       },
       {
-        "title": "Settling into probation",
-        "context": "A graduate in a hybrid consultancy struggled to ask for feedback during the first 90 days.",
-        "coaching_moves": "We rehearsed feedback requests, co-designed weekly reflection prompts and mapped support allies.",
-        "shift": "They reported clearer expectations and calmer check-ins with their manager.",
-        "tools_used": ["Feedback scripts", "Weekly reflection tracker"],
-        "disclaimer": "Details anonymised across multiple graduates."
+        "title": "Interview stories flat",
+        "context": "Projects sound generic; feedback: 'lack of impact'.",
+        "coaching_moves": "Refined two STAR stories; rehearsed follow-ups; trimmed jargon.",
+        "shift": "Stories felt concrete and paced; fewer ramble moments.",
+        "tools_used": ["STAR Builder", "Interview Rehearsal"],
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       },
       {
-        "title": "Reframing rejection",
-        "context": "A STEM graduate experienced repeated final-round rejections and questioned their direction.",
-        "coaching_moves": "We analysed interview data, experimented with informational chats and rebuilt replenishing routines.",
-        "shift": "They regained momentum, secured supportive mentors and kept wellbeing front of mind.",
-        "tools_used": ["Interview debrief", "Energy rituals"],
-        "disclaimer": "Composite example to protect privacy."
+        "title": "Portfolio without context",
+        "context": "Screenshots with no 'why/so-what'.",
+        "coaching_moves": "Added problem-goal-result captions; linked constraints; ordered by learning.",
+        "shift": "Reviewers grasped thinking, not just visuals.",
+        "tools_used": ["Story Library", "Portfolio Map"],
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       }
     ]
   }
