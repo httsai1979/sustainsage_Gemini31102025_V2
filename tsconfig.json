@@ -13,6 +13,14 @@
     "module": "esnext",
     "esModuleInterop": true,
     "moduleResolution": "node",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "gray-matter": ["lib/vendor/gray-matter.js"],
+      "remark": ["lib/vendor/remark.js"],
+      "remark-html": ["lib/vendor/remark-html.js"],
+      "remark-gfm": ["lib/vendor/remark-gfm.js"]
+    },
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve"
