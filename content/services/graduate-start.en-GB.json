@@ -21,6 +21,25 @@
       "Three questions that matter most to you"
     ]
   },
+  "process": {
+    "title": "Process & pace",
+    "description": "A six to eight week sprint with optional monthly check-ins as you transition into your role.",
+    "steps": [
+      {
+        "title": "Clarify decisions & boundaries",
+        "description": "We map priorities, expectations and the stakeholders you want to align."
+      },
+      {
+        "title": "Prototype experiments",
+        "description": "We design small tests, build scripts and prepare materials that support your direction."
+      },
+      {
+        "title": "Review & reinforce",
+        "description": "We debrief experiments, capture learning and adjust routines to sustain momentum."
+      }
+    ],
+    "note": "Optional aftercare check-ins help you translate offers into confident starts."
+  },
   "agreement": {
     "sections": [
       { "heading": "Scope", "body": "Coaching helps you choose and act through questions, frameworks and small tests." },
@@ -34,6 +53,36 @@
     "items": [
       { "q": "Do you help with portfolios?", "a": "We can review and give structure suggestions but do not build them for you." },
       { "q": "Internship or full-time?", "a": "We build a scorecard and test assumptions to help you decide." }
+    ]
+  },
+  "cases": {
+    "title": "Composite coaching glimpses",
+    "description": "Stories merged from graduates and early-career professionals to keep individuals anonymous.",
+    "items": [
+      {
+        "title": "First role decision",
+        "context": "A final-year student held offers in two cities and felt pressure from family to choose stability over curiosity.",
+        "coaching_moves": "We clarified values, modelled cost-of-living scenarios and practised boundary conversations at home.",
+        "shift": "They selected a role aligned with learning goals and communicated the decision with confidence.",
+        "tools_used": ["Values canvas", "Decision matrix"],
+        "disclaimer": "Composite narrative blended across clients."
+      },
+      {
+        "title": "Settling into probation",
+        "context": "A graduate in a hybrid consultancy struggled to ask for feedback during the first 90 days.",
+        "coaching_moves": "We rehearsed feedback requests, co-designed weekly reflection prompts and mapped support allies.",
+        "shift": "They reported clearer expectations and calmer check-ins with their manager.",
+        "tools_used": ["Feedback scripts", "Weekly reflection tracker"],
+        "disclaimer": "Details anonymised across multiple graduates."
+      },
+      {
+        "title": "Reframing rejection",
+        "context": "A STEM graduate experienced repeated final-round rejections and questioned their direction.",
+        "coaching_moves": "We analysed interview data, experimented with informational chats and rebuilt replenishing routines.",
+        "shift": "They regained momentum, secured supportive mentors and kept wellbeing front of mind.",
+        "tools_used": ["Interview debrief", "Energy rituals"],
+        "disclaimer": "Composite example to protect privacy."
+      }
     ]
   }
 }
