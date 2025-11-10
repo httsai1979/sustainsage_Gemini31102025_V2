@@ -25,7 +25,7 @@
       "Build routines that balance applications with wellbeing"
     ]
   },
-  "audience": {
+  "key_points": {
     "title": "Who we work with",
     "description": "Professionals with global track records adapting to UK recruitment systems.",
     "items": [
@@ -67,16 +67,16 @@
     "description": "Support stays client-led and trauma-aware while we navigate systemic barriers together.",
     "items": [
       {
-        "title": "Anti-extraction approach",
-        "description": "We will never encourage you to work for free or accept unsafe conditions to “get your foot in”."
+        "question": "Will you suggest exploitative routes?",
+        "answer": "Never. We refuse unpaid trials or unsafe arrangements and help you push back on extraction."
       },
       {
-        "title": "No false guarantees",
-        "description": "We focus on evidence-based strategy, not algorithm hacks or inflated promises."
+        "question": "Do you promise fast sponsorship?",
+        "answer": "We focus on evidence-based strategy and transparent timelines, not algorithm hacks or false guarantees."
       },
       {
-        "title": "Psychological safety first",
-        "description": "If bias or discrimination appears, we plan protective responses and signpost legal support when needed."
+        "question": "How do you respond to bias?",
+        "answer": "If discrimination appears, we plan protective responses, document incidents, and signpost legal allies."
       }
     ]
   },

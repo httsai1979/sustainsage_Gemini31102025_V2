@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
 import { loadJSON } from '@/lib/content';
 
@@ -22,31 +23,30 @@ Eyebrow.defaultProps = {
   children: null,
 };
 
-function Paragraphs({ items }) {
-  if (!items?.length) return null;
-  return items.map((paragraph, index) => (
-    <p key={`${paragraph}-${index}`} className="text-base leading-7 text-slate-700">
-      {paragraph}
-    </p>
-  ));
-}
-
-Paragraphs.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string),
-};
-
-Paragraphs.defaultProps = {
-  items: undefined,
-};
-
 function BulletList({ items }) {
   if (!items?.length) return null;
   return (
-    <ul className="space-y-3 text-base leading-7 text-slate-700">
-      {items.map((item, index) => (
-        <li key={`${item}-${index}`} className="flex gap-3">
-          <span aria-hidden className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-600" />
-          <span>{item}</span>
+    <ul className="mt-6 space-y-4">
+      {items.map((item) => (
+        <li
+          key={item.title ?? item}
+          className="flex gap-3 rounded-3xl border border-emerald-100 bg-white/95 p-5 shadow-sm"
+        >
+          <span aria-hidden className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
+          <div className="space-y-1">
+            {typeof item === 'string' ? (
+              <span className="text-sm leading-6 text-slate-700">{item}</span>
+            ) : (
+              <>
+                {item.title ? (
+                  <span className="block text-sm font-semibold text-slate-900">{item.title}</span>
+                ) : null}
+                {item.description ? (
+                  <p className="text-sm leading-6 text-slate-700">{item.description}</p>
+                ) : null}
+              </>
+            )}
+          </div>
         </li>
       ))}
     </ul>
@@ -54,11 +54,54 @@ function BulletList({ items }) {
 }
 
 BulletList.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.string),
+  items: PropTypes.arrayOf(
+    PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.shape({
+        title: PropTypes.string,
+        description: PropTypes.string,
+      }),
+    ])
+  ),
 };
 
 BulletList.defaultProps = {
   items: undefined,
+};
+
+function StepList({ steps }) {
+  if (!steps?.length) return null;
+
+  return (
+    <ol className="mt-8 space-y-6">
+      {steps.map((step, index) => (
+        <li key={step.title ?? index} className="flex gap-4">
+          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-700 text-sm font-semibold text-white">
+            {index + 1}
+          </span>
+          <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+            {step.title ? <h3 className="text-base font-semibold text-slate-900">{step.title}</h3> : null}
+            {step.description ? (
+              <p className="mt-2 text-sm leading-6 text-slate-700">{step.description}</p>
+            ) : null}
+          </div>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+StepList.propTypes = {
+  steps: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+    })
+  ),
+};
+
+StepList.defaultProps = {
+  steps: undefined,
 };
 
 function Callout({ title, body, primary, secondary }) {
@@ -71,7 +114,7 @@ function Callout({ title, body, primary, secondary }) {
     <section className="bg-emerald-900 py-12 sm:py-16">
       <div className="mx-auto max-w-3xl px-6 text-white">
         {title ? (
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
+          <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
         ) : null}
         {body ? (
           <p className="mt-4 text-base leading-7 text-emerald-100">{body}</p>
@@ -120,55 +163,66 @@ Callout.defaultProps = {
 };
 
 export default function AboutPage({ copy }) {
-  const { story = {}, approach = {}, clients = {}, boundaries = {}, callout = {} } = copy ?? {};
+  const {
+    intro = {},
+    key_points: keyPoints = {},
+    process = {},
+    boundaries = {},
+    callout = {},
+  } = copy ?? {};
 
   return (
     <>
       <section className="bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-6 space-y-6">
-          <Eyebrow>{story.eyebrow}</Eyebrow>
-          {story.title ? (
-            <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{story.title}</h1>
+          <Eyebrow>{intro.eyebrow}</Eyebrow>
+          {intro.title ? (
+            <h1 className="scroll-mt-28 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{intro.title}</h1>
           ) : null}
-          <Paragraphs items={story.paragraphs} />
-          <BulletList items={story.bullets} />
+          {intro.body ? <p className="text-base leading-7 text-slate-700">{intro.body}</p> : null}
         </div>
       </section>
 
-      <section className="bg-emerald-50/70 py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-6 space-y-6">
-          <Eyebrow>{approach.eyebrow}</Eyebrow>
-          {approach.title ? (
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{approach.title}</h2>
-          ) : null}
-          <Paragraphs items={approach.paragraphs} />
-          <BulletList items={approach.bullets} />
-        </div>
-      </section>
+      {keyPoints?.items?.length ? (
+        <section className="bg-emerald-50/70 py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-6">
+            {keyPoints.title ? (
+              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{keyPoints.title}</h2>
+            ) : null}
+            <BulletList items={keyPoints.items} />
+          </div>
+        </section>
+      ) : null}
+
+      {process?.steps?.length ? (
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-6">
+            {process.title ? (
+              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{process.title}</h2>
+            ) : null}
+            {process.description ? (
+              <p className="mt-3 text-sm leading-6 text-slate-700">{process.description}</p>
+            ) : null}
+            <StepList steps={process.steps} />
+          </div>
+        </section>
+      ) : null}
 
       <Callout {...callout} />
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-6 space-y-6">
-          <Eyebrow>{clients.eyebrow}</Eyebrow>
-          {clients.title ? (
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{clients.title}</h2>
-          ) : null}
-          <Paragraphs items={clients.paragraphs} />
-          <BulletList items={clients.bullets} />
-        </div>
-      </section>
-
-      <section className="bg-emerald-50/70 py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-6 space-y-6">
-          <Eyebrow>{boundaries.eyebrow}</Eyebrow>
-          {boundaries.title ? (
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{boundaries.title}</h2>
-          ) : null}
-          <Paragraphs items={boundaries.paragraphs} />
-          <BulletList items={boundaries.bullets} />
-        </div>
-      </section>
+      {boundaries?.items?.length ? (
+        <section className="bg-emerald-50/70 py-16 sm:py-20">
+          <div className="mx-auto max-w-3xl px-6">
+            {boundaries.title ? (
+              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{boundaries.title}</h2>
+            ) : null}
+            {boundaries.description ? (
+              <p className="mt-3 text-sm leading-6 text-slate-700">{boundaries.description}</p>
+            ) : null}
+            <FAQAccordion items={boundaries.items} className="mt-6" />
+          </div>
+        </section>
+      ) : null}
     </>
   );
 }
@@ -179,29 +233,42 @@ AboutPage.propTypes = {
       title: PropTypes.string,
       description: PropTypes.string,
     }),
-    story: PropTypes.shape({
+    intro: PropTypes.shape({
       eyebrow: PropTypes.string,
       title: PropTypes.string,
-      paragraphs: PropTypes.arrayOf(PropTypes.string),
-      bullets: PropTypes.arrayOf(PropTypes.string),
+      body: PropTypes.string,
     }),
-    approach: PropTypes.shape({
-      eyebrow: PropTypes.string,
+    key_points: PropTypes.shape({
       title: PropTypes.string,
-      paragraphs: PropTypes.arrayOf(PropTypes.string),
-      bullets: PropTypes.arrayOf(PropTypes.string),
+      items: PropTypes.arrayOf(
+        PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.shape({
+            title: PropTypes.string,
+            description: PropTypes.string,
+          }),
+        ])
+      ),
     }),
-    clients: PropTypes.shape({
-      eyebrow: PropTypes.string,
+    process: PropTypes.shape({
       title: PropTypes.string,
-      paragraphs: PropTypes.arrayOf(PropTypes.string),
-      bullets: PropTypes.arrayOf(PropTypes.string),
+      description: PropTypes.string,
+      steps: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string,
+          description: PropTypes.string,
+        })
+      ),
     }),
     boundaries: PropTypes.shape({
-      eyebrow: PropTypes.string,
       title: PropTypes.string,
-      paragraphs: PropTypes.arrayOf(PropTypes.string),
-      bullets: PropTypes.arrayOf(PropTypes.string),
+      description: PropTypes.string,
+      items: PropTypes.arrayOf(
+        PropTypes.shape({
+          question: PropTypes.string,
+          answer: PropTypes.string,
+        })
+      ),
     }),
     callout: PropTypes.shape({
       title: PropTypes.string,
