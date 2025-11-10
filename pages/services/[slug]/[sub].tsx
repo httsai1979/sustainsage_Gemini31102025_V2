@@ -3,6 +3,8 @@ import path from 'path';
 import Link from 'next/link';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 
+import { toSerializable } from '@/lib/toSerializable';
+
 const SLUGS = ['career-return', 'immigrant-job', 'graduate-start'] as const;
 const SUBS = ['pricing', 'readiness', 'agreement', 'faq'] as const;
 
@@ -57,16 +59,6 @@ type ServiceSubPageProps = {
   sub: Sub;
   data: PricingData | ReadinessData | AgreementData | FaqData | null;
 };
-
-const toSerializable = <T,>(obj: T): T =>
-  JSON.parse(
-    JSON.stringify(obj, (_, value) => {
-      if (value === undefined) {
-        return null;
-      }
-      return value;
-    })
-  );
 
 function resolveContentFile(slug: Slug, locale: string): string {
   const attempts = [locale, DEFAULT_LOCALE];
