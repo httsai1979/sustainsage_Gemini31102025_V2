@@ -15,7 +15,8 @@
     "sitemapTitle": "Sitemap",
     "contactTitle": "Contact details",
     "copyright": "© {{year}} SustainSage Group Ltd. All rights reserved.",
-    "privacyPolicy": "Privacy policy"
+    "privacyPolicy": "Privacy policy",
+    "boundariesNotice": "Coaching provides forward-looking support and does not replace therapy or specialist advice."
   },
   "stickyCta": {
     "title": "Ready for a small experiment?",

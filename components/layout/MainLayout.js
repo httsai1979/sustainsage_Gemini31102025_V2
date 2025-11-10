@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import Header from '@/components/common/Header';
+import Footer from '@/components/common/Footer';
 
 const DEFAULT_DESCRIPTION = 'Calm, practical coaching for people navigating transitions.';
 
