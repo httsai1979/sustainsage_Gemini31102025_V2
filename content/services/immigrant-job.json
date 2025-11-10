@@ -18,12 +18,13 @@
     "order": 2,
     "eyebrow": "New to the UK",
     "title": "Immigrant job hunt",
-    "description": "Decode hiring signals, practise stakeholder language and stay steady through sponsorship logistics.",
+    "description": "Decode UK hiring signals while staying steady through sponsorship steps.",
     "benefits": [
-      "Unpack CV, LinkedIn and cover letter expectations",
-      "Practise recruiter, networking and hiring manager scripts",
-      "Build routines that balance applications with wellbeing"
-    ]
+      "Translate CV, LinkedIn, and cover letter expectations.",
+      "Practise recruiter, networking, and hiring scripts.",
+      "Balance applications with wellbeing routines."
+    ],
+    "icon": "mail"
   },
   "key_points": {
     "title": "Who we work with",

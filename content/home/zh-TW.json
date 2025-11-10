@@ -26,18 +26,21 @@
     "cards": [
       {
         "title": "職涯轉換教練",
-        "description": "在職涯方向、地點或角色轉換時，獲得穩定的陪伴與決策支持。",
-        "href": "/services/transition-coaching"
+        "description": "在轉換角色、地點或方向時，提供穩定的陪伴與行動提示。",
+        "href": "/services/transition-coaching",
+        "icon": "compass"
       },
       {
         "title": "中階職涯教練",
-        "description": "重新連結優勢、調整界線，打造可長可久的工作節奏。",
-        "href": "/services/mid-career-coaching"
+        "description": "重新連結優勢與界線，調出可持續的工作節奏。",
+        "href": "/services/mid-career-coaching",
+        "icon": "handshake"
       },
       {
         "title": "Reset Sprint",
-        "description": "當你感到停滯或需要在變動後迅速重整時，透過密集節奏找回動能。",
-        "href": "/services/reset-sprint"
+        "description": "在變動之後，以短期節奏重新啟動動能。",
+        "href": "/services/reset-sprint",
+        "icon": "clock"
       }
     ]
   },

@@ -18,12 +18,13 @@
     "order": 3,
     "eyebrow": "Graduates",
     "title": "Graduate launch",
-    "description": "Explore direction, practise interviews and design routines that support your first role.",
+    "description": "Launch your first role with clear direction, interview practice, and steady routines.",
     "benefits": [
-      "Clarify values, strengths and constraints",
-      "Create decision experiments instead of forced choices",
-      "Learn reflective routines to stay grounded in new roles"
-    ]
+      "Name your values, strengths, and constraints.",
+      "Create experiments before choosing a direction.",
+      "Build grounding routines for your first role."
+    ],
+    "icon": "book"
   },
   "key_points": {
     "title": "Who it is for",
