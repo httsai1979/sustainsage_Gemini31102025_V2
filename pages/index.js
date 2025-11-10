@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Testimonials from '@/components/Testimonials';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
+import Icon from '@/components/common/Icon';
 import { loadJSON } from '@/lib/content';
 
 const BUTTON_PRIMARY =
@@ -19,9 +20,20 @@ function ServiceCard({ card }) {
       href={card.href}
       className="group flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/95 p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
     >
-      <div className="space-y-3">
-        <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
-        <p className="text-sm leading-6 text-slate-700">{card.description}</p>
+      <div className="space-y-4">
+        <div className="flex items-start gap-4">
+          {card.icon ? (
+            <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
+              <Icon name={card.icon} className="h-6 w-6" />
+            </span>
+          ) : null}
+          <div className="space-y-2">
+            <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
+            {card.description ? (
+              <p className="text-sm leading-6 text-slate-700">{card.description}</p>
+            ) : null}
+          </div>
+        </div>
       </div>
       <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700">
         {card.linkLabel ?? 'Explore service'}
@@ -39,6 +51,7 @@ ServiceCard.propTypes = {
     description: PropTypes.string,
     href: PropTypes.string,
     linkLabel: PropTypes.string,
+    icon: PropTypes.string,
   }).isRequired,
 };
 
@@ -55,9 +68,15 @@ function BulletList({ items }) {
         return (
           <li
             key={key}
-            className="flex gap-3 rounded-3xl border border-emerald-100 bg-white/95 p-5 shadow-sm"
+            className="flex items-start gap-4 rounded-3xl border border-emerald-100 bg-white/95 p-5 shadow-sm"
           >
-            <span aria-hidden className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
+            {item.icon ? (
+              <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
+                <Icon name={item.icon} className="h-6 w-6" />
+              </span>
+            ) : (
+              <span aria-hidden className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
+            )}
             <div className="space-y-1">
               {typeof item === 'string' ? (
                 <span className="text-sm leading-6 text-slate-700">{item}</span>
@@ -86,6 +105,7 @@ BulletList.propTypes = {
       PropTypes.shape({
         title: PropTypes.string,
         description: PropTypes.string,
+        icon: PropTypes.string,
       }),
     ])
   ),
@@ -282,6 +302,7 @@ Home.propTypes = {
           PropTypes.shape({
             title: PropTypes.string,
             description: PropTypes.string,
+            icon: PropTypes.string,
           }),
         ])
       ),
