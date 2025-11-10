@@ -1,0 +1,76 @@
+{
+  "seo": {
+    "title": "How coaching works | SustainSage",
+    "description": "Understand how SustainSage coaching aligns with ICF standards, what happens in a session, and how it differs from mentoring or therapy."
+  },
+  "hero": {
+    "title": "What coaching with us actually looks like",
+    "subtitle": "We follow International Coaching Federation (ICF) ethics: you stay in authorship; we provide structure, reflection and consent-based experiments.",
+    "imageAlt": "Coach and client exploring possibilities"
+  },
+  "definition": {
+    "title": "Coaching, defined",
+    "paragraphs": [
+      "ICF describes coaching as a partnership that sparks clients’ thinking and creativity. In practice, it is a series of confidential conversations where you lead the agenda and we hold structure, questions and accountability.",
+      "We do not advise, diagnose or sell quick fixes. We co-design experiments so you can make informed choices that respect your context."
+    ]
+  },
+  "session": {
+    "title": "Inside a typical session",
+    "intro": "Sessions last 55–60 minutes (longer for Deepening). We work online unless otherwise agreed.",
+    "items": [
+      "We begin by naming what feels most alive or urgent today.",
+      "Together we map systems, emotions, assumptions and options.",
+      "We reflect themes back, celebrate wins and pause when discomfort needs tending.",
+      "You end with choices or experiments you consent to."
+    ]
+  },
+  "comparison": {
+    "title": "Coaching vs mentoring vs therapy",
+    "caption": "This overview helps you choose the right support. They can complement each other, and we will signpost alternatives when needed.",
+    "headers": ["Aspect", "Coaching", "Mentoring", "Therapy"],
+    "rows": [
+      {
+        "aspect": "Primary focus",
+        "coaching": "Future-oriented goals, behaviour and decision-making.",
+        "mentoring": "Passing on experience, advice and networks.",
+        "therapy": "Healing past or present mental health concerns."
+      },
+      {
+        "aspect": "Who leads the agenda",
+        "coaching": "You set the agenda; coach reflects and questions.",
+        "mentoring": "Mentor often suggests topics and solutions.",
+        "therapy": "Collaborative; therapist assesses and guides clinical care."
+      },
+      {
+        "aspect": "Scope & boundaries",
+        "coaching": "Non-directive, non-clinical. Stops when trauma or safety concerns surface.",
+        "mentoring": "Experience-based tips within agreed boundaries.",
+        "therapy": "Clinical diagnosis and treatment delivered by licensed professionals."
+      }
+    ]
+  },
+  "ethics": {
+    "title": "Boundaries and confidentiality",
+    "intro": "We honour ICF ethics and UK safeguarding law. It means:",
+    "items": [
+      "We keep conversations confidential unless there is risk of harm or legal obligation to disclose.",
+      "We obtain consent before sharing stories externally or inviting collaborators into a session.",
+      "We pause and signpost when issues require therapy, legal, medical or financial expertise."
+    ]
+  },
+  "expectations": {
+    "title": "What we ask of clients",
+    "bullets": [
+      "Arrive with something real to explore, even if it feels messy or incomplete.",
+      "Tell us when pace, language or cultural framing needs adjusting.",
+      "Protect time after sessions to integrate insights, celebrate wins or rest.",
+      "Let us know early if circumstances change so we can re-contract."
+    ]
+  },
+  "cta": {
+    "body": "If this way of working resonates, browse the packages or book the intro call so we can confirm fit together.",
+    "primary": "Compare packages",
+    "secondary": "Book a 20-min intro call"
+  }
+}

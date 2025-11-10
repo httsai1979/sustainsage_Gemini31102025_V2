@@ -1,8 +1,9 @@
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
+import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
+import { loadJSON } from '@/lib/content';
 
 const ICON_CLASS = 'h-12 w-12 flex items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700';
 
@@ -80,14 +81,27 @@ function Category({ category }) {
   );
 }
 
-export default function FAQPage() {
-  const { t } = useTranslation('faq');
-  const hero = t('hero', { returnObjects: true });
-  const categories = t('categories', { returnObjects: true }) ?? [];
-  const cta = t('cta', { returnObjects: true });
+Category.propTypes = {
+  category: PropTypes.shape({
+    icon: PropTypes.string,
+    title: PropTypes.string,
+    intro: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        question: PropTypes.string,
+        answer: PropTypes.string,
+      })
+    ),
+  }).isRequired,
+};
+
+export default function FAQPage({ content }) {
+  const hero = content?.hero ?? {};
+  const categories = content?.categories ?? [];
+  const cta = content?.cta ?? {};
 
   return (
-    <MainLayout title={hero?.seoTitle} desc={hero?.seoDescription}>
+    <>
       <div className="bg-emerald-950/5 py-16">
         <div className="mx-auto max-w-4xl px-5 text-center md:px-0">
           {hero?.kicker ? (
@@ -142,13 +156,41 @@ export default function FAQPage() {
           </div>
         </div>
       </div>
-    </MainLayout>
+    </>
   );
 }
 
-export async function getStaticProps({ locale }) {
+FAQPage.propTypes = {
+  content: PropTypes.shape({
+    hero: PropTypes.object,
+    categories: PropTypes.array,
+    cta: PropTypes.object,
+    seo: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+    }),
+  }),
+};
+
+FAQPage.defaultProps = {
+  content: {},
+};
+
+FAQPage.getLayout = function getLayout(page) {
+  const seo = page.props?.content?.seo ?? {};
+  return (
+    <MainLayout title={seo.title} desc={seo.description}>
+      {page}
+    </MainLayout>
+  );
+};
+
+export async function getStaticProps({ locale = 'en-GB' }) {
+  const content = loadJSON('faq', locale);
+
   return {
     props: {
+      content,
       ...(await serverSideTranslations(locale, ['common', 'faq'])),
     },
   };
