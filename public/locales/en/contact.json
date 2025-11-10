@@ -31,6 +31,26 @@
       }
     ]
   },
+  "what_you_get": {
+    "title": "What you get",
+    "description": "When we coach together you can rely on:",
+    "items": [
+      "Confidential, client-led conversations held in English, Mandarin, or both.",
+      "Collaborative experiments, reflections, and tools tailored to your goals.",
+      "Honest signposting if another professional or resource would support you better.",
+      "Written summaries of agreements so you stay in control of next steps."
+    ]
+  },
+  "what_we_dont_do": {
+    "title": "What we don’t do",
+    "description": "To respect coaching ethics, we do not:",
+    "items": [
+      "Diagnose, treat, or provide therapy, counselling, medical, legal, or financial advice.",
+      "Complete immigration, tax, or legal paperwork on your behalf.",
+      "Guarantee job offers, promotions, or specific outcomes.",
+      "Work in situations where there is unmanaged risk of harm—we pause and refer instead."
+    ]
+  },
   "suitability": {
     "title": "What you get",
     "description": "When we coach together you can rely on:",
@@ -50,6 +70,10 @@
       "Guarantee job offers, promotions, or specific outcomes.",
       "Work in situations where there is unmanaged risk of harm—we pause and refer instead."
     ]
+  },
+  "consent": {
+    "label": "I have reviewed the <0>Coaching Boundaries</0> and consent to contact SustainSage about coaching.",
+    "helper": "Check this to confirm the coaching scope and unlock the contact form."
   },
   "form": {
     "title": "Send us a note",
