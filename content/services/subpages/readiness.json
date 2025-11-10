@@ -1,0 +1,65 @@
+{
+  "default": {
+    "title": "Readiness checklist",
+    "intro": "Coaching works best when you can bring honest context and experiment between sessions. Use this checklist to sense whether now is a good moment to start.",
+    "sections": [
+      {
+        "title": "You will get the most value if",
+        "items": [
+          "You can make space every fortnight to pause and reflect.",
+          "You are willing to surface the assumptions that keep you stuck.",
+          "You have a goal, decision or transition that matters this season.",
+          "You are open to trying small experiments between sessions."
+        ]
+      },
+      {
+        "title": "What you can expect from us",
+        "items": [
+          "Provocative questions that bring clarity without judgement.",
+          "Tools and rituals to protect your energy while you grow.",
+          "Written notes within 24 hours so insights do not get lost.",
+          "Light accountability that keeps commitments visible."
+        ]
+      }
+    ],
+    "signals": [
+      "If you are in acute crisis, we will connect you with therapeutic support first.",
+      "When organisational sponsorship is involved, we agree confidentiality boundaries together.",
+      "Students and job seekers can request reduced-fee places if finances are a barrier."
+    ]
+  },
+  "career-return": {
+    "intro": "Come ready to talk about your values, the caregiving realities you hold and the professional identity you want to reclaim.",
+    "signals": [
+      "It is okay if you feel rusty — we use storytelling to rebuild confidence step by step.",
+      "Expect to experiment with boundaries that protect both your work and your care roles."
+    ]
+  },
+  "graduate-start": {
+    "sections": [
+      {
+        "title": "Bring questions like",
+        "items": [
+          "How do I translate feedback into next steps without overworking?",
+          "What rhythms will help me leave work at work?",
+          "How do I advocate for myself without feeling performative?"
+        ]
+      },
+      {
+        "title": "We will focus on",
+        "items": [
+          "Building repeatable weekly check-ins and reviews.",
+          "Naming your strengths so you can communicate them with clarity.",
+          "Practising conversations with managers or mentors before they happen."
+        ]
+      }
+    ]
+  },
+  "immigrant-job": {
+    "intro": "Readiness often looks like collecting stories from across cultures and industries. Bring the experiences that shaped you, not just your CV.",
+    "signals": [
+      "Expect time to co-create language that makes sense across cultures.",
+      "We will signpost to practical job search resources when coaching is not the right lever."
+    ]
+  }
+}
