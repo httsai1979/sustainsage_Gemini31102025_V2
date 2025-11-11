@@ -1,12 +1,29 @@
 {
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "pricing": {
     "packages": [
-      { "name": "6-session block", "duration": "6×60–75min over ~12 weeks", "scope": "CV translation to UK style, outreach scripts, interview rehearsal; async check-ins.", "price_note": "Fees on request; sliding scale available case-by-case." },
-      { "name": "Single session", "duration": "60–75min", "scope": "One focused topic (e.g., recruiter screening or CV bullet rewrite) with an action note.", "price_note": "Good for tactical needs." }
+      {
+        "name": "6-session block",
+        "duration": "6×60–75min over ~12 weeks",
+        "scope": "CV translation to UK style, outreach scripts, interview rehearsal; async check-ins.",
+        "price_note": "Fees on request; sliding scale available case-by-case."
+      },
+      {
+        "name": "Single session",
+        "duration": "60–75min",
+        "scope": "One focused topic (e.g., recruiter screening or CV bullet rewrite) with an action note.",
+        "price_note": "Good for tactical needs."
+      }
     ],
     "policies": [
-      { "title": "Rescheduling", "body": "≥24h notice; otherwise counted as used." },
-      { "title": "No guarantees", "body": "We co-design experiments; outcomes depend on market timing and your actions." }
+      {
+        "title": "Rescheduling",
+        "body": "≥24h notice; otherwise counted as used."
+      },
+      {
+        "title": "No guarantees",
+        "body": "We co-design experiments; outcomes depend on market timing and your actions."
+      }
     ]
   },
   "readiness": {
@@ -42,17 +59,38 @@
   },
   "agreement": {
     "sections": [
-      { "heading": "Scope", "body": "Coaching supports clarity and momentum for UK job search through questions and experiments." },
-      { "heading": "Not legal/immigration/medical", "body": "No legal or visa advice; we may signpost to professional services where appropriate." },
-      { "heading": "Confidentiality & limits", "body": "Sessions are confidential except where law/safety requires disclosure." },
-      { "heading": "Consent & boundaries", "body": "You may stop or decline any exercise at any time." },
-      { "heading": "Cancellations & data", "body": "24h reschedule; minimal notes stored securely." }
+      {
+        "heading": "Scope",
+        "body": "Coaching supports clarity and momentum for UK job search through questions and experiments."
+      },
+      {
+        "heading": "Not legal/immigration/medical",
+        "body": "No legal or visa advice; we may signpost to professional services where appropriate."
+      },
+      {
+        "heading": "Confidentiality & limits",
+        "body": "Sessions are confidential except where law/safety requires disclosure."
+      },
+      {
+        "heading": "Consent & boundaries",
+        "body": "You may stop or decline any exercise at any time."
+      },
+      {
+        "heading": "Cancellations & data",
+        "body": "24h reschedule; minimal notes stored securely."
+      }
     ]
   },
   "faq": {
     "items": [
-      { "q": "Do you advise on visas?", "a": "No. We do not provide immigration advice. We focus on job search strategy and practice." },
-      { "q": "Will you introduce me to companies?", "a": "We can co-design outreach but do not promise referrals. Your network building is part of the work." }
+      {
+        "q": "Do you advise on visas?",
+        "a": "No. We do not provide immigration advice. We focus on job search strategy and practice."
+      },
+      {
+        "q": "Will you introduce me to companies?",
+        "a": "We can co-design outreach but do not promise referrals. Your network building is part of the work."
+      }
     ]
   },
   "cases": {
@@ -64,7 +102,10 @@
         "context": "Non-UK degree; unsure how to address visa sponsorship early.",
         "coaching_moves": "Built a 2-line sponsorship script; prioritised target firms by policy; planned 10-day outreach.",
         "shift": "Fewer ghosted threads; clearer yes/no signals faster.",
-        "tools_used": ["Decision Scorecard", "Outreach Tracker"],
+        "tools_used": [
+          "Decision Scorecard",
+          "Outreach Tracker"
+        ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       },
       {
@@ -72,7 +113,10 @@
         "context": "Strong results abroad not mapping to UK bullets.",
         "coaching_moves": "Converted two projects to UK-style metrics; created proof links; rehearsed succinct framing.",
         "shift": "Hiring managers understood scope without over-explaining.",
-        "tools_used": ["CAR Bullets", "Portfolio Map"],
+        "tools_used": [
+          "CAR Bullets",
+          "Portfolio Map"
+        ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       },
       {
@@ -80,7 +124,10 @@
         "context": "Avoids phone screens due to accent worries.",
         "coaching_moves": "Practised slow-first phrasing; scripted clarifying questions; built pause habits.",
         "shift": "Entered calls with steadier pace and fewer rush-talk loops.",
-        "tools_used": ["Pacing Cues", "Question Bank"],
+        "tools_used": [
+          "Pacing Cues",
+          "Question Bank"
+        ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       }
     ]

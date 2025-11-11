@@ -1,4 +1,5 @@
 {
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "pricing": {
     "packages": [
       {
@@ -15,8 +16,14 @@
       }
     ],
     "policies": [
-      { "title": "Rescheduling", "body": "≥24h notice; otherwise counted as used." },
-      { "title": "No guarantees", "body": "We co-design experiments; outcomes depend on your context and actions." }
+      {
+        "title": "Rescheduling",
+        "body": "≥24h notice; otherwise counted as used."
+      },
+      {
+        "title": "No guarantees",
+        "body": "We co-design experiments; outcomes depend on your context and actions."
+      }
     ]
   },
   "readiness": {
@@ -52,17 +59,38 @@
   },
   "agreement": {
     "sections": [
-      { "heading": "Scope", "body": "Coaching supports clarity, decisions and self-leadership through questions and experiments." },
-      { "heading": "Not therapy/medical", "body": "We do not diagnose or treat; we may signpost to professional help when appropriate." },
-      { "heading": "Confidentiality & limits", "body": "We keep sessions confidential except where law/safety requires disclosure." },
-      { "heading": "Consent & boundaries", "body": "You can pause, decline, or stop any activity at any time." },
-      { "heading": "Cancellations & data", "body": "24h reschedule window; session notes kept minimal and securely." }
+      {
+        "heading": "Scope",
+        "body": "Coaching supports clarity, decisions and self-leadership through questions and experiments."
+      },
+      {
+        "heading": "Not therapy/medical",
+        "body": "We do not diagnose or treat; we may signpost to professional help when appropriate."
+      },
+      {
+        "heading": "Confidentiality & limits",
+        "body": "We keep sessions confidential except where law/safety requires disclosure."
+      },
+      {
+        "heading": "Consent & boundaries",
+        "body": "You can pause, decline, or stop any activity at any time."
+      },
+      {
+        "heading": "Cancellations & data",
+        "body": "24h reschedule window; session notes kept minimal and securely."
+      }
     ]
   },
   "faq": {
     "items": [
-      { "q": "How do we meet?", "a": "Online (video) by default; in-person by arrangement in London." },
-      { "q": "What if I’m not ready?", "a": "Start with a 20-minute chat; we’ll decide together with no obligation." }
+      {
+        "q": "How do we meet?",
+        "a": "Online (video) by default; in-person by arrangement in London."
+      },
+      {
+        "q": "What if I’m not ready?",
+        "a": "Start with a 20-minute chat; we’ll decide together with no obligation."
+      }
     ]
   },
   "cases": {
@@ -74,7 +102,11 @@
         "context": "UK job search after a 3-year break; unsure how to frame caregiving.",
         "coaching_moves": "Mapped a 30-min 'first day' simulation; rewrote 4 CV bullets with CAR; rehearsed boundary language.",
         "shift": "Clearer language for gaps; sent 2 outreach messages with less avoidance.",
-        "tools_used": ["Values Map", "Self-Talk Reframe", "Behavior Ladder"],
+        "tools_used": [
+          "Values Map",
+          "Self-Talk Reframe",
+          "Behavior Ladder"
+        ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       },
       {
@@ -82,7 +114,11 @@
         "context": "Returning after burnout leave; anxious about pace and expectations.",
         "coaching_moves": "Designed gentle energy audit; practised asking for support; set weekly review ritual.",
         "shift": "Communicated capacity cleanly; reported growing steadiness instead of bracing.",
-        "tools_used": ["Energy Audit", "Weekly Reflection", "Boundary Scripts"],
+        "tools_used": [
+          "Energy Audit",
+          "Weekly Reflection",
+          "Boundary Scripts"
+        ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       },
       {
@@ -90,7 +126,10 @@
         "context": "Certification during break; needs hybrid-role repositioning.",
         "coaching_moves": "Reframed experience stories; prototyped networking outreach; tested answers.",
         "shift": "Entered conversations confident about naming boundaries and new value.",
-        "tools_used": ["Story Library", "Interview Rehearsal"],
+        "tools_used": [
+          "Story Library",
+          "Interview Rehearsal"
+        ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       }
     ]

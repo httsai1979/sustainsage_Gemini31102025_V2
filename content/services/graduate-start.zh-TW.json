@@ -1,12 +1,29 @@
 {
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "pricing": {
     "packages": [
-      { "name": "四次起步方案", "duration": "4×60–75 分鐘，約 6–8 週", "scope": "決策評分表、小型測試、基礎履歷／作品集檢視。", "price_note": "學生友善費率，私訊提供。" },
-      { "name": "單次會談", "duration": "60–75 分鐘", "scope": "聚焦單一決策或面試準備，附行動重點。", "price_note": "適合校園徵才或第一輪面試前。" }
+      {
+        "name": "四次起步方案",
+        "duration": "4×60–75 分鐘，約 6–8 週",
+        "scope": "決策評分表、小型測試、基礎履歷／作品集檢視。",
+        "price_note": "學生友善費率，私訊提供。"
+      },
+      {
+        "name": "單次會談",
+        "duration": "60–75 分鐘",
+        "scope": "聚焦單一決策或面試準備，附行動重點。",
+        "price_note": "適合校園徵才或第一輪面試前。"
+      }
     ],
     "policies": [
-      { "title": "改期", "body": "需 ≥24 小時前通知；否則視同使用。" },
-      { "title": "不保證結果", "body": "我們支持你做實驗；結果取決於投入與時機。" }
+      {
+        "title": "改期",
+        "body": "需 ≥24 小時前通知；否則視同使用。"
+      },
+      {
+        "title": "不保證結果",
+        "body": "我們支持你做實驗；結果取決於投入與時機。"
+      }
     ]
   },
   "readiness": {
@@ -42,17 +59,38 @@
   },
   "agreement": {
     "sections": [
-      { "heading": "範疇", "body": "透過提問、框架與小測試，協助選擇與行動。" },
-      { "heading": "非治療／醫療", "body": "不進行診斷或治療；必要時轉介支援資源。" },
-      { "heading": "保密與例外", "body": "會談保密，除非法律／安全需要揭露。" },
-      { "heading": "同意與界線", "body": "任何時候可暫停、拒絕或停止任何練習。" },
-      { "heading": "改期與資料", "body": "24 小時改期；紀錄極簡並妥善保存。" }
+      {
+        "heading": "範疇",
+        "body": "透過提問、框架與小測試，協助選擇與行動。"
+      },
+      {
+        "heading": "非治療／醫療",
+        "body": "不進行診斷或治療；必要時轉介支援資源。"
+      },
+      {
+        "heading": "保密與例外",
+        "body": "會談保密，除非法律／安全需要揭露。"
+      },
+      {
+        "heading": "同意與界線",
+        "body": "任何時候可暫停、拒絕或停止任何練習。"
+      },
+      {
+        "heading": "改期與資料",
+        "body": "24 小時改期；紀錄極簡並妥善保存。"
+      }
     ]
   },
   "faq": {
     "items": [
-      { "q": "會協助作品集嗎？", "a": "可提供檢視與結構建議，但不代為製作。" },
-      { "q": "要先實習還是直接找正職？", "a": "我們會做評分表與假設測試，幫你做出適合的決定。" }
+      {
+        "q": "會協助作品集嗎？",
+        "a": "可提供檢視與結構建議，但不代為製作。"
+      },
+      {
+        "q": "要先實習還是直接找正職？",
+        "a": "我們會做評分表與假設測試，幫你做出適合的決定。"
+      }
     ]
   },
   "cases": {
@@ -64,7 +102,10 @@
         "context": "A final-year student held offers in two cities and felt pressure from family to choose stability over curiosity.",
         "coaching_moves": "We clarified values, modelled cost-of-living scenarios and practised boundary conversations at home.",
         "shift": "They selected a role aligned with learning goals and communicated the decision with confidence.",
-        "tools_used": ["Values canvas", "Decision matrix"],
+        "tools_used": [
+          "Values canvas",
+          "Decision matrix"
+        ],
         "disclaimer": "Composite narrative blended across clients."
       },
       {
@@ -72,7 +113,10 @@
         "context": "A graduate in a hybrid consultancy struggled to ask for feedback during the first 90 days.",
         "coaching_moves": "We rehearsed feedback requests, co-designed weekly reflection prompts and mapped support allies.",
         "shift": "They reported clearer expectations and calmer check-ins with their manager.",
-        "tools_used": ["Feedback scripts", "Weekly reflection tracker"],
+        "tools_used": [
+          "Feedback scripts",
+          "Weekly reflection tracker"
+        ],
         "disclaimer": "Details anonymised across multiple graduates."
       },
       {
@@ -80,7 +124,10 @@
         "context": "A STEM graduate experienced repeated final-round rejections and questioned their direction.",
         "coaching_moves": "We analysed interview data, experimented with informational chats and rebuilt replenishing routines.",
         "shift": "They regained momentum, secured supportive mentors and kept wellbeing front of mind.",
-        "tools_used": ["Interview debrief", "Energy rituals"],
+        "tools_used": [
+          "Interview debrief",
+          "Energy rituals"
+        ],
         "disclaimer": "Composite example to protect privacy."
       }
     ]

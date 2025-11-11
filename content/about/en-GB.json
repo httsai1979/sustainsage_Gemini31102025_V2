@@ -1,4 +1,5 @@
 {
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "seo": {
     "title": "About SustainSage | Bilingual coaching grounded in ethics",
     "description": "Meet the bilingual coaches behind SustainSage, the transitions we support, and the boundaries that keep every partnership safe."
@@ -32,7 +33,11 @@
         "context": "Series A founder scaling operations between Taipei and London with clashing expectations.",
         "coaching_moves": "Co-created bilingual agreements, clarified decision rights, rehearsed feedback in both languages.",
         "shift": "Meetings regained focus, with teammates reporting clearer ownership and calmer escalation paths.",
-        "tools_used": ["Stakeholder map", "Decision matrix", "ICF team coaching agreements"],
+        "tools_used": [
+          "Stakeholder map",
+          "Decision matrix",
+          "ICF team coaching agreements"
+        ],
         "disclaimer": "Details blended from multiple engagements to protect confidentiality."
       },
       {
@@ -40,7 +45,10 @@
         "context": "NGO and investor partnership needed to reset expectations after leadership changes.",
         "coaching_moves": "Surfaced assumptions, rehearsed boundary language, and prototyped a revised shared roadmap.",
         "shift": "Both parties recommitted with defined data-sharing cadence and clearer escalation checkpoints.",
-        "tools_used": ["Scenario ladder", "Values alignment canvas"],
+        "tools_used": [
+          "Scenario ladder",
+          "Values alignment canvas"
+        ],
         "disclaimer": "Composite scenario respecting privacy of all clients."
       },
       {
@@ -48,7 +56,10 @@
         "context": "Public policy advisor juggling multilingual briefs and caregiver duties.",
         "coaching_moves": "Mapped energy audits, simplified reporting rituals, and negotiated realistic stakeholder updates.",
         "shift": "Client reported steadier workload and regained confidence presenting in both Mandarin and English.",
-        "tools_used": ["Energy inventory", "Boundary scripts"],
+        "tools_used": [
+          "Energy inventory",
+          "Boundary scripts"
+        ],
         "disclaimer": "Case anonymised and blended to remove identifying details."
       }
     ]

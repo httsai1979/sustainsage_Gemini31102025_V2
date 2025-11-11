@@ -12,9 +12,19 @@ type EthicsProps = {
   ethics: any;
   usedLocale: string | null;
   locale: string;
+  fallbackNotice?: string | null;
 };
 
-function Header({ ethics, showFallback }: { ethics: any; showFallback: boolean }) {
+function Header({
+  ethics,
+  showFallback,
+  fallbackNotice,
+}: {
+  ethics: any;
+  showFallback: boolean;
+  fallbackNotice?: string | null;
+}) {
+  const notice = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
   return (
     <div className="space-y-4">
       {ethics?.eyebrow ? (
@@ -27,7 +37,7 @@ function Header({ ethics, showFallback }: { ethics: any; showFallback: boolean }
         {ethics?.summary ? (
           <p className="max-w-3xl text-base leading-7 text-slate-700">{ethics.summary}</p>
         ) : null}
-        {showFallback ? <p className="text-xs font-medium text-slate-500">暫用英文內容</p> : null}
+        {showFallback ? <p className="text-xs font-medium text-slate-500">{notice}</p> : null}
       </div>
       {ethics?.icfReference ? (
         <Link
@@ -41,13 +51,16 @@ function Header({ ethics, showFallback }: { ethics: any; showFallback: boolean }
   );
 }
 
-export default function EthicsPage({ ethics, usedLocale, locale }: EthicsProps) {
+export default function EthicsPage({ ethics, usedLocale, locale, fallbackNotice }: EthicsProps) {
   const showFallback = Boolean(usedLocale && usedLocale !== locale);
   const principles = Array.isArray(ethics?.principles) ? ethics.principles : [];
   const dataPractices = ethics?.dataPractices;
 
   return (
-    <PageLayoutV2 header={<Header ethics={ethics} showFallback={showFallback} />} subnav={getAboutSubnav('ethics')}>
+    <PageLayoutV2
+      header={<Header ethics={ethics} showFallback={showFallback} fallbackNotice={fallbackNotice} />}
+      subnav={getAboutSubnav('ethics')}
+    >
       {principles.length ? (
         <section>
           <h2 className="text-xl font-semibold text-slate-900">Principles we hold in every engagement</h2>
@@ -94,6 +107,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       ethics: aboutContent.data?.ethics ?? null,
       usedLocale: aboutContent.locale,
       locale,
+      fallbackNotice: aboutContent.data?.fallbackNotice ?? null,
       ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
     },
   });
