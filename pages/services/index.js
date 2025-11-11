@@ -4,49 +4,24 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { getIconComponent } from '@/components/icons/map';
-import { getServiceCards } from '@/lib/services';
+import { loadContent } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
 function PathwayCard({ card, viewDetailsLabel }) {
-  const IconComponent = getIconComponent(card.icon);
-  const BenefitIconComponent = getIconComponent(card.benefitIcon) ?? getIconComponent('arrow');
-
   return (
     <div className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-      <div className="space-y-5">
-        <div className="flex items-start gap-4">
-          {IconComponent ? (
-            <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
-              <IconComponent className="h-6 w-6" />
-            </span>
-          ) : null}
-          <div className="space-y-2">
-            {card.eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.eyebrow}</p>
-            ) : null}
-            <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
-            {card.description ? <p className="text-sm leading-6 text-slate-600">{card.description}</p> : null}
-          </div>
-        </div>
-        {Array.isArray(card.benefits) && card.benefits.length > 0 ? (
-          <ul className="space-y-3 text-sm leading-6 text-slate-700">
-            {card.benefits.map((benefit) => (
-              <li key={benefit} className="flex items-start gap-3">
-                <span className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
-                  {BenefitIconComponent ? <BenefitIconComponent className="h-6 w-6" /> : null}
-                </span>
-                <span>{benefit}</span>
-              </li>
-            ))}
-          </ul>
+      <div className="space-y-4">
+        {card.eyebrow ? (
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.eyebrow}</p>
         ) : null}
+        <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
+        {card.excerpt ? <p className="text-sm leading-6 text-slate-600">{card.excerpt}</p> : null}
       </div>
       <Link
         href={`/services/${card.slug}`}
         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline"
       >
-        {viewDetailsLabel}
+        {card.ctaLabel ?? viewDetailsLabel}
         <span aria-hidden="true">→</span>
       </Link>
     </div>
@@ -56,12 +31,10 @@ function PathwayCard({ card, viewDetailsLabel }) {
 PathwayCard.propTypes = {
   card: PropTypes.shape({
     slug: PropTypes.string.isRequired,
-    eyebrow: PropTypes.string,
     title: PropTypes.string.isRequired,
-    description: PropTypes.string,
-    icon: PropTypes.string,
-    benefitIcon: PropTypes.string,
-    benefits: PropTypes.arrayOf(PropTypes.string),
+    eyebrow: PropTypes.string,
+    excerpt: PropTypes.string,
+    ctaLabel: PropTypes.string,
   }).isRequired,
   viewDetailsLabel: PropTypes.string.isRequired,
 };
@@ -137,7 +110,7 @@ export default function ServicesPage({ cards, showFallbackNotice, fallbackNotice
             ) : null}
             {pathways?.description ? <p>{pathways.description}</p> : null}
           </div>
-          <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
             {visibleCards.map((card) => (
               <PathwayCard key={card.slug} card={card} viewDetailsLabel={pathways?.viewDetails ?? 'View details'} />
             ))}
@@ -184,12 +157,10 @@ ServicesPage.propTypes = {
   cards: PropTypes.arrayOf(
     PropTypes.shape({
       slug: PropTypes.string.isRequired,
-      eyebrow: PropTypes.string,
       title: PropTypes.string.isRequired,
-      description: PropTypes.string,
-      icon: PropTypes.string,
-      benefitIcon: PropTypes.string,
-      benefits: PropTypes.arrayOf(PropTypes.string),
+      eyebrow: PropTypes.string,
+      excerpt: PropTypes.string,
+      ctaLabel: PropTypes.string,
     })
   ).isRequired,
   showFallbackNotice: PropTypes.bool,
@@ -203,14 +174,30 @@ ServicesPage.defaultProps = {
 
 export async function getStaticProps({ locale }) {
   const currentLocale = locale ?? 'en-GB';
-  const { cards, fallbackUsed, fallbackNotice } = getServiceCards(currentLocale);
+  const { data, locale: usedLocale } = loadContent(`content/services/index.{locale}.json`, currentLocale, 'en-GB');
+  const isFallbackLocale = Boolean(usedLocale && usedLocale !== currentLocale);
+  const rawCards = Array.isArray(data?.pathways) && data.pathways.length > 0 ? data.pathways : data?.cards;
 
-  return toSerializable({
-    props: {
+  const cards = (Array.isArray(rawCards) ? rawCards : [])
+    .filter(Boolean)
+    .slice(0, 3)
+    .map((card) => ({
+      slug: card.slug,
+      title: card.title,
+      eyebrow: card.eyebrow,
+      excerpt: card.excerpt ?? card.description ?? '',
+      ctaLabel: card.ctaLabel ?? card.cta ?? card.buttonLabel ?? null,
+    }))
+    .filter((card) => card.slug && card.title);
+
+  const fallbackNotice = typeof data?.fallbackNotice === 'string' ? data.fallbackNotice : null;
+
+  return {
+    props: toSerializable({
       cards,
-      showFallbackNotice: fallbackUsed,
+      showFallbackNotice: isFallbackLocale,
       fallbackNotice,
       ...(await serverSideTranslations(currentLocale, ['common', 'services'])),
-    },
-  });
+    }),
+  };
 }
