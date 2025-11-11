@@ -12,9 +12,19 @@ type MemberPageProps = {
   member: any;
   usedLocale: string | null;
   locale: string;
+  fallbackNotice?: string | null;
 };
 
-function Header({ member, showFallback }: { member: any; showFallback: boolean }) {
+function Header({
+  member,
+  showFallback,
+  fallbackNotice,
+}: {
+  member: any;
+  showFallback: boolean;
+  fallbackNotice?: string | null;
+}) {
+  const notice = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
   return (
     <div className="space-y-3">
       <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">Team profile</p>
@@ -22,7 +32,7 @@ function Header({ member, showFallback }: { member: any; showFallback: boolean }
         <h1 className="text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{member?.name}</h1>
         {member?.title ? <p className="text-lg font-medium text-emerald-800">{member.title}</p> : null}
         {member?.location ? <p className="text-sm text-slate-500">{member.location}</p> : null}
-        {showFallback ? <p className="text-xs font-medium text-slate-500">暫用英文內容</p> : null}
+        {showFallback ? <p className="text-xs font-medium text-slate-500">{notice}</p> : null}
       </div>
       {member?.cta?.href && member?.cta?.label ? (
         <Link
@@ -36,14 +46,17 @@ function Header({ member, showFallback }: { member: any; showFallback: boolean }
   );
 }
 
-export default function TeamMemberPage({ member, usedLocale, locale }: MemberPageProps) {
+export default function TeamMemberPage({ member, usedLocale, locale, fallbackNotice }: MemberPageProps) {
   const showFallback = Boolean(usedLocale && usedLocale !== locale);
   const bio = Array.isArray(member?.bio) ? member.bio : [];
   const focus = Array.isArray(member?.focus) ? member.focus : [];
   const credentials = Array.isArray(member?.credentials) ? member.credentials : [];
 
   return (
-    <PageLayoutV2 header={<Header member={member} showFallback={showFallback} />} subnav={getAboutSubnav('team')}>
+    <PageLayoutV2
+      header={<Header member={member} showFallback={showFallback} fallbackNotice={fallbackNotice} />}
+      subnav={getAboutSubnav('team')}
+    >
       {bio.length ? (
         <section>
           <h2 className="text-xl font-semibold text-slate-900">How {member?.name?.split?.(' ')?.[0] ?? 'they'} coaches</h2>
@@ -109,6 +122,7 @@ export async function getStaticProps({ params, locale = 'en-GB' }) {
       member: memberContent.data,
       usedLocale: memberContent.locale,
       locale,
+      fallbackNotice: memberContent.data?.fallbackNotice ?? null,
       ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
     },
   });

@@ -12,9 +12,19 @@ type ApproachProps = {
   approach: any;
   usedLocale: string | null;
   locale: string;
+  fallbackNotice?: string | null;
 };
 
-function Header({ approach, showFallback }: { approach: any; showFallback: boolean }) {
+function Header({
+  approach,
+  showFallback,
+  fallbackNotice,
+}: {
+  approach: any;
+  showFallback: boolean;
+  fallbackNotice?: string | null;
+}) {
+  const notice = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
   return (
     <div className="space-y-4">
       {approach?.eyebrow ? (
@@ -27,7 +37,7 @@ function Header({ approach, showFallback }: { approach: any; showFallback: boole
         {approach?.description ? (
           <p className="max-w-2xl text-base leading-7 text-slate-700">{approach.description}</p>
         ) : null}
-        {showFallback ? <p className="text-xs font-medium text-slate-500">暫用英文內容</p> : null}
+        {showFallback ? <p className="text-xs font-medium text-slate-500">{notice}</p> : null}
       </div>
       <Link
         href="/about/approach/cases"
@@ -52,12 +62,15 @@ function PillarCard({ item }: { item: any }) {
   );
 }
 
-export default function ApproachPage({ approach, usedLocale, locale }: ApproachProps) {
+export default function ApproachPage({ approach, usedLocale, locale, fallbackNotice }: ApproachProps) {
   const showFallback = Boolean(usedLocale && usedLocale !== locale);
   const pillars = Array.isArray(approach?.pillars) ? approach.pillars : [];
 
   return (
-    <PageLayoutV2 header={<Header approach={approach} showFallback={showFallback} />} subnav={getAboutSubnav('approach')}>
+    <PageLayoutV2
+      header={<Header approach={approach} showFallback={showFallback} fallbackNotice={fallbackNotice} />}
+      subnav={getAboutSubnav('approach')}
+    >
       {pillars.length ? (
         <section>
           <h2 className="text-xl font-semibold text-slate-900">How we structure coaching</h2>
@@ -98,6 +111,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       approach: aboutContent.data?.approach ?? null,
       usedLocale: aboutContent.locale,
       locale,
+      fallbackNotice: aboutContent.data?.fallbackNotice ?? null,
       ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
     },
   });

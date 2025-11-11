@@ -16,9 +16,20 @@ type TeamPageProps = {
   whatIsCoaching: any;
   aboutLocale: string | null;
   locale: string;
+  teamFallbackNotice?: string | null;
+  aboutFallbackNotice?: string | null;
 };
 
-function Header({ team, showTeamFallback }: { team: any; showTeamFallback: boolean }) {
+function Header({
+  team,
+  showTeamFallback,
+  fallbackNotice,
+}: {
+  team: any;
+  showTeamFallback: boolean;
+  fallbackNotice?: string | null;
+}) {
+  const notice = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
   return (
     <div className="space-y-4">
       {team?.eyebrow ? (
@@ -31,9 +42,7 @@ function Header({ team, showTeamFallback }: { team: any; showTeamFallback: boole
         {team?.description ? (
           <p className="max-w-2xl text-base leading-7 text-slate-700">{team.description}</p>
         ) : null}
-        {showTeamFallback ? (
-          <p className="text-xs font-medium text-slate-500">暫用英文內容</p>
-        ) : null}
+        {showTeamFallback ? <p className="text-xs font-medium text-slate-500">{notice}</p> : null}
       </div>
       <div className="flex flex-col gap-3 pt-2 sm:flex-row">
         <Link
@@ -53,7 +62,15 @@ function Header({ team, showTeamFallback }: { team: any; showTeamFallback: boole
   );
 }
 
-export default function AboutTeamPage({ team, teamLocale, whatIsCoaching, aboutLocale, locale }: TeamPageProps) {
+export default function AboutTeamPage({
+  team,
+  teamLocale,
+  whatIsCoaching,
+  aboutLocale,
+  locale,
+  teamFallbackNotice,
+  aboutFallbackNotice,
+}: TeamPageProps) {
   const trimmedTeam = team
     ? {
         ...team,
@@ -62,14 +79,18 @@ export default function AboutTeamPage({ team, teamLocale, whatIsCoaching, aboutL
     : null;
   const showTeamFallback = Boolean(teamLocale && teamLocale !== locale);
   const showAboutFallback = Boolean(aboutLocale && aboutLocale !== locale);
+  const aboutNotice = aboutFallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return (
-    <PageLayoutV2 header={<Header team={team} showTeamFallback={showTeamFallback} />} subnav={getAboutSubnav('team')}>
+    <PageLayoutV2
+      header={<Header team={team} showTeamFallback={showTeamFallback} fallbackNotice={teamFallbackNotice} />}
+      subnav={getAboutSubnav('team')}
+    >
       {trimmedTeam ? <TeamGrid data={trimmedTeam} /> : null}
       {whatIsCoaching ? (
         <div className="mt-12">
           {showAboutFallback ? (
-            <p className="mb-3 text-xs font-medium text-slate-500">暫用英文內容</p>
+            <p className="mb-3 text-xs font-medium text-slate-500">{aboutNotice}</p>
           ) : null}
           <WhatIsCoaching data={whatIsCoaching} />
         </div>
@@ -89,6 +110,8 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       whatIsCoaching: aboutContent.data?.whatIsCoaching ?? null,
       aboutLocale: aboutContent.locale,
       locale,
+      teamFallbackNotice: teamContent.data?.fallbackNotice ?? null,
+      aboutFallbackNotice: aboutContent.data?.fallbackNotice ?? null,
       ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
     },
   });

@@ -1,4 +1,5 @@
 {
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "eyebrow": "團隊",
   "title": "認識 SustainSage 的雙語教練",
   "description": "我們結合督導經驗、政策素養與跨文化生活背景，陪你在轉變中保持穩健。",
@@ -8,21 +9,32 @@
       "title": "ICF PCC 教練／共同創辦人",
       "location": "台北 · 新加坡",
       "bio": "Maggie 以創傷敏感的方式設計教練陪伴，支持創業者、永續負責人與政策團隊在不確定中前進。",
-      "languages": ["英文", "繁體中文", "簡體中文"]
+      "languages": [
+        "英文",
+        "繁體中文",
+        "簡體中文"
+      ]
     },
     {
       "name": "陳思穎 Sarah Chen",
       "title": "職涯轉化教練",
       "location": "新加坡 · 倫敦",
       "bio": "Sarah 陪伴使命導向的專業人士跨領域移動，協助審視倫理風險並為改變排定穩健節奏。",
-      "languages": ["英文", "中文"]
+      "languages": [
+        "英文",
+        "中文"
+      ]
     },
     {
       "name": "吳柏任 Jonas Wu",
       "title": "系統與策略教練",
       "location": "倫敦 · 遠距",
       "bio": "Jonas 與跨國團隊合作，梳理治理、利害關係人溝通與資料照護，讓決策維持在共同脈絡中。",
-      "languages": ["英文", "中文", "閩南語"]
+      "languages": [
+        "英文",
+        "中文",
+        "閩南語"
+      ]
     }
   ]
 }

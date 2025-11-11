@@ -12,9 +12,11 @@ type CasesProps = {
   cases: any[];
   usedLocale: string | null;
   locale: string;
+  fallbackNotice?: string | null;
 };
 
-function Header({ showFallback }: { showFallback: boolean }) {
+function Header({ showFallback, fallbackNotice }: { showFallback: boolean; fallbackNotice?: string | null }) {
+  const notice = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
   return (
     <div className="space-y-3">
       <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">Case library</p>
@@ -24,16 +26,19 @@ function Header({ showFallback }: { showFallback: boolean }) {
       <p className="max-w-3xl text-base leading-7 text-slate-700">
         These anonymised cases illustrate how we hold multilingual teams, partner transitions, and ethical decision-making. Details are blended to protect confidentiality.
       </p>
-      {showFallback ? <p className="text-xs font-medium text-slate-500">暫用英文內容</p> : null}
+      {showFallback ? <p className="text-xs font-medium text-slate-500">{notice}</p> : null}
     </div>
   );
 }
 
-export default function ApproachCasesPage({ cases, usedLocale, locale }: CasesProps) {
+export default function ApproachCasesPage({ cases, usedLocale, locale, fallbackNotice }: CasesProps) {
   const showFallback = Boolean(usedLocale && usedLocale !== locale);
 
   return (
-    <PageLayoutV2 header={<Header showFallback={showFallback} />} subnav={getAboutSubnav('cases')}>
+    <PageLayoutV2
+      header={<Header showFallback={showFallback} fallbackNotice={fallbackNotice} />}
+      subnav={getAboutSubnav('cases')}
+    >
       <div className="grid gap-6 md:grid-cols-3">
         {cases?.map((item, index) => (
           <CaseCard key={item?.title ?? index} {...item} />
@@ -52,6 +57,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       cases,
       usedLocale: aboutContent.locale,
       locale,
+      fallbackNotice: aboutContent.data?.fallbackNotice ?? null,
       ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
     },
   });

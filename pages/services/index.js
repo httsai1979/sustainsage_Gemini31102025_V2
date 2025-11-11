@@ -66,7 +66,7 @@ PathwayCard.propTypes = {
   viewDetailsLabel: PropTypes.string.isRequired,
 };
 
-export default function ServicesPage({ cards, showFallbackNotice }) {
+export default function ServicesPage({ cards, showFallbackNotice, fallbackNotice }) {
   const { t } = useTranslation('services');
   const seo = t('seo', { returnObjects: true });
   const hero = t('hero', { returnObjects: true });
@@ -75,6 +75,7 @@ export default function ServicesPage({ cards, showFallbackNotice }) {
   const faqLink = t('faqLink', { returnObjects: true });
   const boundariesLink = hero?.boundariesLink;
   const visibleCards = Array.isArray(cards) ? cards.filter((card) => card && card.title) : [];
+  const fallbackMessage = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return (
     <>
@@ -94,7 +95,7 @@ export default function ServicesPage({ cards, showFallbackNotice }) {
             ) : null}
             {hero?.subtitle ? <p>{hero.subtitle}</p> : null}
             {showFallbackNotice ? (
-              <p className="text-xs font-medium text-slate-500">暫用英文內容</p>
+              <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
             ) : null}
             {boundariesLink?.label || faqLink?.label ? (
               <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
@@ -192,20 +193,23 @@ ServicesPage.propTypes = {
     })
   ).isRequired,
   showFallbackNotice: PropTypes.bool,
+  fallbackNotice: PropTypes.string,
 };
 
 ServicesPage.defaultProps = {
   showFallbackNotice: false,
+  fallbackNotice: null,
 };
 
 export async function getStaticProps({ locale }) {
   const currentLocale = locale ?? 'en-GB';
-  const { cards, fallbackUsed } = getServiceCards(currentLocale);
+  const { cards, fallbackUsed, fallbackNotice } = getServiceCards(currentLocale);
 
   return toSerializable({
     props: {
       cards,
       showFallbackNotice: fallbackUsed,
+      fallbackNotice,
       ...(await serverSideTranslations(currentLocale, ['common', 'services'])),
     },
   });

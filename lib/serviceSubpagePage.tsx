@@ -116,6 +116,8 @@ function ServiceSubpageLayout({
     ? service.cases?.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
     : [];
   const caseCards = cases.slice(0, 3);
+  const fallbackMessage =
+    service.fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return (
     <>
@@ -142,7 +144,7 @@ function ServiceSubpageLayout({
               {intro}
             </div>
             {showFallbackNotice ? (
-              <p className="text-xs font-medium text-slate-500">暫用英文內容</p>
+              <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
             ) : null}
           </section>
 
