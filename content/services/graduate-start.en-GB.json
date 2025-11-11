@@ -1,12 +1,29 @@
 {
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "pricing": {
     "packages": [
-      { "name": "4-session starter", "duration": "4×60–75min over ~6–8 weeks", "scope": "Decision scorecard, tiny tests, basic portfolio/CV review.", "price_note": "Student-friendly fees on request." },
-      { "name": "Single session", "duration": "60–75min", "scope": "One decision or interview prep with a clear action note.", "price_note": "Good for assessment centre or first interviews." }
+      {
+        "name": "4-session starter",
+        "duration": "4×60–75min over ~6–8 weeks",
+        "scope": "Decision scorecard, tiny tests, basic portfolio/CV review.",
+        "price_note": "Student-friendly fees on request."
+      },
+      {
+        "name": "Single session",
+        "duration": "60–75min",
+        "scope": "One decision or interview prep with a clear action note.",
+        "price_note": "Good for assessment centre or first interviews."
+      }
     ],
     "policies": [
-      { "title": "Rescheduling", "body": "≥24h notice; otherwise counted as used." },
-      { "title": "No guarantees", "body": "We support experiments; outcomes depend on your effort and timing." }
+      {
+        "title": "Rescheduling",
+        "body": "≥24h notice; otherwise counted as used."
+      },
+      {
+        "title": "No guarantees",
+        "body": "We support experiments; outcomes depend on your effort and timing."
+      }
     ]
   },
   "readiness": {
@@ -42,17 +59,38 @@
   },
   "agreement": {
     "sections": [
-      { "heading": "Scope", "body": "Coaching helps you choose and act through questions, frameworks and small tests." },
-      { "heading": "Not therapy/medical", "body": "We do not treat or diagnose; we may signpost to support services." },
-      { "heading": "Confidentiality & limits", "body": "Sessions are confidential except where law/safety requires disclosure." },
-      { "heading": "Consent & boundaries", "body": "You can pause, decline or stop any activity." },
-      { "heading": "Cancellations & data", "body": "24h reschedule; minimal notes stored securely." }
+      {
+        "heading": "Scope",
+        "body": "Coaching helps you choose and act through questions, frameworks and small tests."
+      },
+      {
+        "heading": "Not therapy/medical",
+        "body": "We do not treat or diagnose; we may signpost to support services."
+      },
+      {
+        "heading": "Confidentiality & limits",
+        "body": "Sessions are confidential except where law/safety requires disclosure."
+      },
+      {
+        "heading": "Consent & boundaries",
+        "body": "You can pause, decline or stop any activity."
+      },
+      {
+        "heading": "Cancellations & data",
+        "body": "24h reschedule; minimal notes stored securely."
+      }
     ]
   },
   "faq": {
     "items": [
-      { "q": "Do you help with portfolios?", "a": "We can review and give structure suggestions but do not build them for you." },
-      { "q": "Internship or full-time?", "a": "We build a scorecard and test assumptions to help you decide." }
+      {
+        "q": "Do you help with portfolios?",
+        "a": "We can review and give structure suggestions but do not build them for you."
+      },
+      {
+        "q": "Internship or full-time?",
+        "a": "We build a scorecard and test assumptions to help you decide."
+      }
     ]
   },
   "cases": {
@@ -64,7 +102,10 @@
         "context": "Three sectors look appealing but overwhelm decisions.",
         "coaching_moves": "Built decision scorecard; set 2-week micro-test per sector.",
         "shift": "Made next pick using data rather than mood.",
-        "tools_used": ["Decision Scorecard", "Experiment Log"],
+        "tools_used": [
+          "Decision Scorecard",
+          "Experiment Log"
+        ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       },
       {
@@ -72,7 +113,10 @@
         "context": "Projects sound generic; feedback: 'lack of impact'.",
         "coaching_moves": "Refined two STAR stories; rehearsed follow-ups; trimmed jargon.",
         "shift": "Stories felt concrete and paced; fewer ramble moments.",
-        "tools_used": ["STAR Builder", "Interview Rehearsal"],
+        "tools_used": [
+          "STAR Builder",
+          "Interview Rehearsal"
+        ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       },
       {
@@ -80,7 +124,10 @@
         "context": "Screenshots with no 'why/so-what'.",
         "coaching_moves": "Added problem-goal-result captions; linked constraints; ordered by learning.",
         "shift": "Reviewers grasped thinking, not just visuals.",
-        "tools_used": ["Story Library", "Portfolio Map"],
+        "tools_used": [
+          "Story Library",
+          "Portfolio Map"
+        ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised."
       }
     ]

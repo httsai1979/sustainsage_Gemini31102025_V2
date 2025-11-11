@@ -29,6 +29,7 @@ export type ServiceCase = {
 export type ServiceOverview = {
   slug: string;
   title?: string;
+  fallbackNotice?: string;
   hero?: ServiceHero;
   key_points?: {
     title?: string;
@@ -116,6 +117,8 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
     { slug: 'cases', label: 'Cases' },
   ];
 
+  const fallbackNotice = service.fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
+
   return (
     <PageLayoutV2
       header={
@@ -126,7 +129,9 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
               {hero.title ?? service.title ?? 'Service overview'}
             </h1>
             {hero.subtitle ? <p className="text-base leading-7 text-slate-600">{hero.subtitle}</p> : null}
-            {showFallbackNotice ? <p className="text-xs font-medium text-slate-500">暫用英文內容</p> : null}
+            {showFallbackNotice ? (
+              <p className="text-xs font-medium text-slate-500">{fallbackNotice}</p>
+            ) : null}
           </div>
           <div className="flex flex-col gap-3 sm:flex-row">
             {hero.primaryCta?.href && hero.primaryCta?.label ? (

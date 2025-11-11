@@ -1,4 +1,5 @@
 {
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "eyebrow": "Team",
   "title": "Meet the bilingual coaches behind SustainSage",
   "description": "We bring supervision-informed coaching, policy literacy, and multilingual lived experience to every partnership.",
@@ -8,21 +9,32 @@
       "title": "ICF PCC Coach & Co-founder",
       "location": "Taipei · Singapore",
       "bio": "Maggie designs trauma-informed coaching containers for founders, sustainability leaders, and policy teams navigating uncertainty.",
-      "languages": ["English", "Traditional Chinese", "Simplified Chinese"]
+      "languages": [
+        "English",
+        "Traditional Chinese",
+        "Simplified Chinese"
+      ]
     },
     {
       "name": "Sarah Chen",
       "title": "Career Transitions Coach",
       "location": "Singapore · London",
       "bio": "Sarah supports mission-driven professionals as they move between sectors, stewarding ethical risk assessments and pacing change experiments.",
-      "languages": ["English", "Mandarin"]
+      "languages": [
+        "English",
+        "Mandarin"
+      ]
     },
     {
       "name": "Jonas Wu",
       "title": "Systems & Strategy Coach",
       "location": "London · Remote",
       "bio": "Jonas partners with cross-border teams to align governance, stakeholder engagement, and data care so decisions stay grounded in shared context.",
-      "languages": ["English", "Mandarin", "Hokkien"]
+      "languages": [
+        "English",
+        "Mandarin",
+        "Hokkien"
+      ]
     }
   ]
 }

@@ -38,6 +38,7 @@ export type ServiceFaqItem = {
 export type ServiceContent = {
   slug: ServiceSlug;
   title?: string;
+  fallbackNotice?: string;
   hero?: {
     eyebrow?: string;
     title?: string;

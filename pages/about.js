@@ -176,6 +176,8 @@ export default function AboutPage({ copy, team, coaching, showFallbackNotice }) 
   } = copy ?? {};
 
   const whatIsCoaching = coaching ?? whatIsCoachingFromCopy;
+  const fallbackNotice = copy?.fallbackNotice ?? team?.fallbackNotice ??
+    'Temporarily showing English content while we complete this translation.';
 
   return (
     <>
@@ -187,7 +189,7 @@ export default function AboutPage({ copy, team, coaching, showFallbackNotice }) 
           ) : null}
           {intro.body ? <p className="text-base leading-7 text-slate-700">{intro.body}</p> : null}
           {showFallbackNotice ? (
-            <p className="text-xs font-medium text-slate-500">暫用英文內容</p>
+            <p className="text-xs font-medium text-slate-500">{fallbackNotice}</p>
           ) : null}
         </div>
       </section>
