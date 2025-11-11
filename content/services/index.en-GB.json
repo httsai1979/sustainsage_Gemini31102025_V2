@@ -1,0 +1,23 @@
+{
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "pathways": [
+    {
+      "slug": "career-return",
+      "title": "Return to work with steady support",
+      "excerpt": "Rebuild confidence and routines after a career pause with bilingual coaching paced to your capacity.",
+      "ctaLabel": "Explore career return coaching"
+    },
+    {
+      "slug": "immigrant-job",
+      "title": "Navigate UK job searches as a newcomer",
+      "excerpt": "Map job search steps, language, and cultural nuance so you can show up prepared and grounded in interviews.",
+      "ctaLabel": "See newcomer job coaching"
+    },
+    {
+      "slug": "graduate-start",
+      "title": "Launch your first role with clarity",
+      "excerpt": "Build momentum after graduation with structure for applications, networking, and sustainable routines.",
+      "ctaLabel": "Discover graduate start coaching"
+    }
+  ]
+}
