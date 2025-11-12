@@ -3,21 +3,32 @@
   "pathways": [
     {
       "slug": "career-return",
-      "title": "Return to work with steady support",
-      "excerpt": "Rebuild confidence and routines after a career pause with bilingual coaching paced to your capacity.",
-      "ctaLabel": "Explore career return coaching"
-    },
-    {
-      "slug": "immigrant-job",
-      "title": "Navigate UK job searches as a newcomer",
-      "excerpt": "Map job search steps, language, and cultural nuance so you can show up prepared and grounded in interviews.",
-      "ctaLabel": "See newcomer job coaching"
+      "title": "重返職場",
+      "teaser": "12 週回到節奏：友善結構、小實驗、清楚邊界。",
+      "cta_label": "查看方案"
     },
     {
       "slug": "graduate-start",
-      "title": "Launch your first role with clarity",
-      "excerpt": "Build momentum after graduation with structure for applications, networking, and sustainable routines.",
-      "ctaLabel": "Discover graduate start coaching"
+      "title": "畢業起步",
+      "teaser": "把清楚故事變成可被看見、可被驗證的行動。",
+      "cta_label": "查看方案"
+    },
+    {
+      "slug": "immigrant-job",
+      "title": "英國職場新起點",
+      "teaser": "將海外經驗轉成在地可信的證據點。",
+      "cta_label": "查看方案"
     }
-  ]
+  ],
+  "hero": {
+    "title": "先看案例，再談方法與結構。",
+    "subtitle": "三條穩定路徑。從你的情境出發，準備好再加上節奏與框架。"
+  },
+  "pathways_intro": "依照你的處境選擇路徑：",
+  "cta": {
+    "primary_label": "先試用免費工具",
+    "primary_href": "/#tools",
+    "secondary_label": "預約 20 分鐘對談",
+    "secondary_href": "/contact"
+  }
 }
