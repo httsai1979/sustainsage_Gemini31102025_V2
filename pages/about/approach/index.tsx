@@ -6,8 +6,6 @@ import { getAboutSubnav } from '@/components/about/AboutSubnav';
 import { loadContent } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
-import nextI18NextConfig from '../../../../next-i18next.config.js';
-
 type ApproachProps = {
   approach: any;
   usedLocale: string | null;
@@ -126,7 +124,7 @@ export default function ApproachPage({ approach, usedLocale, locale, fallbackNot
 }
 
 export async function getStaticProps({ locale = 'en-GB' }) {
-  const aboutContent = loadContent('content/about/{locale}.json', locale);
+  const aboutContent = loadContent<any>('content/about/{locale}.json', locale);
 
   return toSerializable({
     props: {
@@ -134,7 +132,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       usedLocale: aboutContent.locale,
       locale,
       fallbackNotice: aboutContent.data?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   });
 }

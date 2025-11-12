@@ -8,8 +8,6 @@ import { getAboutSubnav } from '@/components/about/AboutSubnav';
 import { loadContent } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
-import nextI18NextConfig from '../../../../next-i18next.config.js';
-
 type TeamPageProps = {
   team: any;
   teamLocale: string | null;
@@ -100,8 +98,8 @@ export default function AboutTeamPage({
 }
 
 export async function getStaticProps({ locale = 'en-GB' }) {
-  const teamContent = loadContent('content/team/{locale}.json', locale);
-  const aboutContent = loadContent('content/about/{locale}.json', locale);
+  const teamContent = loadContent<any>('content/team/{locale}.json', locale);
+  const aboutContent = loadContent<any>('content/about/{locale}.json', locale);
 
   return toSerializable({
     props: {
@@ -112,7 +110,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       locale,
       teamFallbackNotice: teamContent.data?.fallbackNotice ?? null,
       aboutFallbackNotice: aboutContent.data?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   });
 }
