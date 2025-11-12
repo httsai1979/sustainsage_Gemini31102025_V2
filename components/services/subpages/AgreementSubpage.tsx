@@ -1,6 +1,32 @@
 import { MicroCTA } from '@/components/common/MicroCTA';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
+const EXAMPLE_RE =
+  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|use cases|scenario|scenarios|who (it'?s )?for|before\/after)/i;
+
+const isExampleLike = (section: unknown): boolean => {
+  if (!section || typeof section !== 'object') {
+    return false;
+  }
+
+  const record = section as Record<string, unknown>;
+  const title = record.title ?? record.heading ?? record.label ?? '';
+  const lead = record.lead ?? record.summary ?? '';
+
+  return EXAMPLE_RE.test(String(title)) || EXAMPLE_RE.test(String(lead));
+};
+
+const orderSections = <T,>(items: T[]): T[] => {
+  if (!Array.isArray(items) || items.length === 0) {
+    return items;
+  }
+
+  const exampleSections = items.filter((item) => isExampleLike(item));
+  const remainingSections = items.filter((item) => !isExampleLike(item));
+
+  return [...exampleSections, ...remainingSections];
+};
+
 const { Page } = createServiceSubpage({
   subSlug: 'agreement',
   heading: (service) => service.agreement?.title ?? 'Coaching agreement & boundaries',
@@ -9,9 +35,11 @@ const { Page } = createServiceSubpage({
       <p className="text-base leading-7 text-slate-600">{service.agreement.description}</p>
     ) : null,
   renderContent: (service) => {
-    const sections = Array.isArray(service.agreement?.sections)
-      ? service.agreement?.sections.filter((section) => section && (section.heading || section.body))
-      : [];
+    const sections = orderSections(
+      Array.isArray(service.agreement?.sections)
+        ? service.agreement.sections.filter((section) => section && (section.heading || section.body))
+        : []
+    );
 
     const basePath = `/services/${service.slug}`;
     const microLinks = [
