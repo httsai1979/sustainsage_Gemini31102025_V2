@@ -6,7 +6,7 @@ import { StickyCTA } from '@/components/common/StickyCTA';
 import { SubnavTabs } from '@/components/common/SubnavTabs';
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { SERVICE_SLUGS, type ServiceContent, type ServiceSlug } from '@/lib/serviceContentTypes';
-import { toSerializable } from '@/lib/toSerializable';
+import { sanitizeProps } from '@/lib/toSerializable';
 
 export type ServiceSubpageProps = {
   slug: ServiceSlug;
@@ -64,13 +64,13 @@ export function createServiceSubpage({
 
     const { service, showFallbackNotice } = contentResult;
 
-    return toSerializable({
-      props: {
+    return {
+      props: sanitizeProps({
         slug: slugParam as ServiceSlug,
         service,
         showFallbackNotice,
-      },
-    });
+      }),
+    };
   };
 
   function Page({ service, showFallbackNotice }: ServiceSubpageProps) {
@@ -106,13 +106,13 @@ export function createServiceSubpageStaticProps(
 
     const { service, showFallbackNotice } = contentResult;
 
-    return toSerializable({
-      props: {
+    return {
+      props: sanitizeProps({
         slug,
         service,
         showFallbackNotice,
-      },
-    });
+      }),
+    };
   };
 }
 

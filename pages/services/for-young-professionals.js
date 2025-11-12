@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Hero from '@/components/layout/Hero';
-import { toSerializable } from '@/lib/toSerializable';
+import { sanitizeProps } from '@/lib/toSerializable';
 
 import nextI18NextConfig from '../../next-i18next.config.js';
 
@@ -135,9 +135,11 @@ export default function ForYoungProfessionalsPage() {
 }
 
 export async function getStaticProps({ locale = 'en' }) {
-  return toSerializable({
-    props: {
-      ...(await serverSideTranslations(locale, ['common', 'services-personas'], nextI18NextConfig)),
-    },
-  });
+  const props = {
+    ...(await serverSideTranslations(locale, ['common', 'services-personas'], nextI18NextConfig)),
+  };
+
+  return {
+    props: sanitizeProps(props),
+  };
 }

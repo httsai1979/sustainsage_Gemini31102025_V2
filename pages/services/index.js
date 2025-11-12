@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import { loadContent } from '@/lib/loadContent';
-import { toSerializable } from '@/lib/toSerializable';
+import { sanitizeProps } from '@/lib/toSerializable';
 
 function PathwayCard({ card, viewDetailsLabel }) {
   return (
@@ -192,12 +192,14 @@ export async function getStaticProps({ locale }) {
 
   const fallbackNotice = typeof data?.fallbackNotice === 'string' ? data.fallbackNotice : null;
 
+  const props = {
+    cards,
+    showFallbackNotice: isFallbackLocale,
+    fallbackNotice,
+    ...(await serverSideTranslations(currentLocale, ['common', 'services'])),
+  };
+
   return {
-    props: toSerializable({
-      cards,
-      showFallbackNotice: isFallbackLocale,
-      fallbackNotice,
-      ...(await serverSideTranslations(currentLocale, ['common', 'services'])),
-    }),
+    props: sanitizeProps(props),
   };
 }
