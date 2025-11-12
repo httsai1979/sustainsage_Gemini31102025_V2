@@ -132,6 +132,12 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
   const heroImage = image ?? hero.image ?? '/images/services/transition.svg';
   const heroImageAlt = imageAlt ?? hero.imageAlt ?? hero.title ?? 'Service illustration';
   const ctaBody = renderCtaBody(cta?.body);
+  const hasWhoContent = Boolean(
+    who?.title || who?.description || (Array.isArray(who?.items) && who.items.length > 0)
+  );
+  const hasWhatContent = Boolean(
+    what?.title || what?.description || (Array.isArray(what?.items) && what.items.length > 0)
+  );
 
   return (
     <MainLayout>
@@ -164,28 +170,49 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
         ) : null}
       </Hero>
 
+      {hasWhoContent ? (
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2">
+            <div>
+              {who?.title ? (
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{who.title}</h2>
+              ) : null}
+              {who?.description ? (
+                <p className="mt-4 text-base leading-7 text-slate-600">{who.description}</p>
+              ) : null}
+              <BulletList items={who?.items} />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2">
-          <div>
-            {who?.title ? (
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{who.title}</h2>
-            ) : null}
-            {who?.description ? (
-              <p className="mt-4 text-base leading-7 text-slate-600">{who.description}</p>
-            ) : null}
-            <BulletList items={who?.items} />
-          </div>
-          <div>
-            {what?.title ? (
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{what.title}</h2>
-            ) : null}
-            {what?.description ? (
-              <p className="mt-4 text-base leading-7 text-slate-600">{what.description}</p>
-            ) : null}
-            <BulletList items={what?.items} />
-          </div>
+        <div className="mx-auto max-w-6xl px-6">
+          {examples?.title ? (
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{examples.title}</h2>
+          ) : null}
+          {examples?.description ? (
+            <p className="mt-4 text-base leading-7 text-slate-600">{examples.description}</p>
+          ) : null}
+          <ExampleList items={examples?.items} />
         </div>
       </section>
+
+      {hasWhatContent ? (
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-2">
+            <div>
+              {what?.title ? (
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{what.title}</h2>
+              ) : null}
+              {what?.description ? (
+                <p className="mt-4 text-base leading-7 text-slate-600">{what.description}</p>
+              ) : null}
+              <BulletList items={what?.items} />
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="bg-emerald-950/5 py-16 sm:py-20">
         <div className="mx-auto max-w-5xl px-6">
@@ -199,18 +226,6 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
           {how?.note ? (
             <p className="mt-6 text-xs leading-5 text-slate-500">{how.note}</p>
           ) : null}
-        </div>
-      </section>
-
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          {examples?.title ? (
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{examples.title}</h2>
-          ) : null}
-          {examples?.description ? (
-            <p className="mt-4 text-base leading-7 text-slate-600">{examples.description}</p>
-          ) : null}
-          <ExampleList items={examples?.items} />
         </div>
       </section>
 
