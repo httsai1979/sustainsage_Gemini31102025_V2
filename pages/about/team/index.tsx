@@ -7,7 +7,7 @@ import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { getAboutSubnav } from '@/components/about/AboutSubnav';
 import { StickyCTA } from '@/components/common/StickyCTA';
 import { loadContent } from '@/lib/loadContent';
-import { toSerializable } from '@/lib/toSerializable';
+import { sanitizeProps } from '@/lib/toSerializable';
 
 type TeamPageProps = {
   team: any;
@@ -105,16 +105,18 @@ export async function getStaticProps({ locale = 'en-GB' }) {
   const teamContent = loadContent<any>('content/team/{locale}.json', locale);
   const aboutContent = loadContent<any>('content/about/{locale}.json', locale);
 
-  return toSerializable({
-    props: {
-      team: teamContent.data,
-      teamLocale: teamContent.locale,
-      whatIsCoaching: aboutContent.data?.whatIsCoaching ?? null,
-      aboutLocale: aboutContent.locale,
-      locale,
-      teamFallbackNotice: teamContent.data?.fallbackNotice ?? null,
-      aboutFallbackNotice: aboutContent.data?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  });
+  const props = {
+    team: teamContent.data,
+    teamLocale: teamContent.locale,
+    whatIsCoaching: aboutContent.data?.whatIsCoaching ?? null,
+    aboutLocale: aboutContent.locale,
+    locale,
+    teamFallbackNotice: teamContent.data?.fallbackNotice ?? null,
+    aboutFallbackNotice: aboutContent.data?.fallbackNotice ?? null,
+    ...(await serverSideTranslations(locale, ['common'])),
+  };
+
+  return {
+    props: sanitizeProps(props),
+  };
 }

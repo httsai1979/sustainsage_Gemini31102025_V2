@@ -5,7 +5,7 @@ import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { getAboutSubnav } from '@/components/about/AboutSubnav';
 import { StickyCTA } from '@/components/common/StickyCTA';
 import { loadContent } from '@/lib/loadContent';
-import { toSerializable } from '@/lib/toSerializable';
+import { sanitizeProps } from '@/lib/toSerializable';
 
 type ApproachProps = {
   approach: any;
@@ -130,13 +130,15 @@ export default function ApproachPage({ approach, usedLocale, locale, fallbackNot
 export async function getStaticProps({ locale = 'en-GB' }) {
   const aboutContent = loadContent<any>('content/about/{locale}.json', locale);
 
-  return toSerializable({
-    props: {
-      approach: aboutContent.data?.approach ?? null,
-      usedLocale: aboutContent.locale,
-      locale,
-      fallbackNotice: aboutContent.data?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  });
+  const props = {
+    approach: aboutContent.data?.approach ?? null,
+    usedLocale: aboutContent.locale,
+    locale,
+    fallbackNotice: aboutContent.data?.fallbackNotice ?? null,
+    ...(await serverSideTranslations(locale, ['common'])),
+  };
+
+  return {
+    props: sanitizeProps(props),
+  };
 }

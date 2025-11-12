@@ -5,7 +5,7 @@ import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { getAboutSubnav } from '@/components/about/AboutSubnav';
 import { StickyCTA } from '@/components/common/StickyCTA';
 import { loadContent } from '@/lib/loadContent';
-import { toSerializable } from '@/lib/toSerializable';
+import { sanitizeProps } from '@/lib/toSerializable';
 
 type CasesProps = {
   cases: any[];
@@ -54,13 +54,15 @@ export async function getStaticProps({ locale = 'en-GB' }) {
   const aboutContent = loadContent<any>('content/about/{locale}.json', locale);
   const cases = aboutContent.data?.approach?.cases ?? [];
 
-  return toSerializable({
-    props: {
-      cases,
-      usedLocale: aboutContent.locale,
-      locale,
-      fallbackNotice: aboutContent.data?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  });
+  const props = {
+    cases,
+    usedLocale: aboutContent.locale,
+    locale,
+    fallbackNotice: aboutContent.data?.fallbackNotice ?? null,
+    ...(await serverSideTranslations(locale, ['common'])),
+  };
+
+  return {
+    props: sanitizeProps(props),
+  };
 }
