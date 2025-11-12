@@ -13,19 +13,27 @@ type CaseCardProps = {
 export function CaseCard({ title, context, coaching_moves, shift, tools_used, disclaimer, href }: CaseCardProps) {
   const card = (
     <article className="rounded-2xl border bg-white p-5 transition hover:border-emerald-300 hover:shadow-sm">
-      <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-      <p className="mt-2 text-sm text-slate-700">
-        <b>Context:</b> {context}
-      </p>
-      <p className="mt-2 text-sm text-slate-700">
-        <b>In session:</b> {coaching_moves}
-      </p>
-      <p className="mt-2 text-sm text-slate-700">
-        <b>Shift:</b> {shift}
-      </p>
-      <p className="mt-2 text-xs text-slate-500">
-        <b>Tools:</b> {tools_used?.join?.(', ')}
-      </p>
+      {title ? <h3 className="text-lg font-semibold text-slate-900">{title}</h3> : null}
+      {context ? (
+        <p className="mt-2 text-sm text-slate-700">
+          <b>Context:</b> {context}
+        </p>
+      ) : null}
+      {coaching_moves ? (
+        <p className="mt-2 text-sm text-slate-700">
+          <b>In session:</b> {coaching_moves}
+        </p>
+      ) : null}
+      {shift ? (
+        <p className="mt-2 text-sm text-slate-700">
+          <b>Shift:</b> {shift}
+        </p>
+      ) : null}
+      {Array.isArray(tools_used) && tools_used.length > 0 ? (
+        <p className="mt-2 text-xs text-slate-500">
+          <b>Tools:</b> {tools_used.join(', ')}
+        </p>
+      ) : null}
       {disclaimer ? <p className="mt-3 text-xs text-slate-500">{disclaimer}</p> : null}
     </article>
   );

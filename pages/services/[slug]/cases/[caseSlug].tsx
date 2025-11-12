@@ -11,7 +11,7 @@ import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { loadContent } from '@/lib/loadContent';
 import type { ServiceContent, ServiceSlug } from '@/lib/serviceContentTypes';
 import { SERVICE_SLUGS } from '@/lib/serviceContentTypes';
-import { toSerializable } from '@/lib/toSerializable';
+import { sanitizeProps } from '@/lib/toSerializable';
 
 const CASES_SUBNAV_SLUG = 'cases';
 
@@ -98,16 +98,16 @@ export const getStaticProps: GetStaticProps<ServiceCaseDetailProps, ServiceCaseD
 
   const caseUsesFallback = Boolean(caseLocale && caseLocale !== requestedLocale);
 
-  return toSerializable({
-    props: {
+  return {
+    props: sanitizeProps({
       slug: slugParam as ServiceSlug,
       caseSlug: caseSlugParam,
       service: serviceResult.service,
       showFallbackNotice: serviceResult.showFallbackNotice,
       caseDetail,
       caseUsesFallback,
-    },
-  });
+    }),
+  };
 };
 
 export default function ServiceCaseDetailPage({

@@ -5,7 +5,7 @@ import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { getAboutSubnav } from '@/components/about/AboutSubnav';
 import { StickyCTA } from '@/components/common/StickyCTA';
 import { loadContent } from '@/lib/loadContent';
-import { toSerializable } from '@/lib/toSerializable';
+import { sanitizeProps } from '@/lib/toSerializable';
 
 type MemberPageProps = {
   member: any;
@@ -121,13 +121,15 @@ export async function getStaticProps({ params, locale = 'en-GB' }) {
     return { notFound: true };
   }
 
-  return toSerializable({
-    props: {
-      member: memberContent.data,
-      usedLocale: memberContent.locale,
-      locale,
-      fallbackNotice: memberContent.data?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale, ['common'])),
-    },
-  });
+  const props = {
+    member: memberContent.data,
+    usedLocale: memberContent.locale,
+    locale,
+    fallbackNotice: memberContent.data?.fallbackNotice ?? null,
+    ...(await serverSideTranslations(locale, ['common'])),
+  };
+
+  return {
+    props: sanitizeProps(props),
+  };
 }

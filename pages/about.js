@@ -7,7 +7,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import TeamGrid from '@/components/about/TeamGrid';
 import WhatIsCoaching from '@/components/about/WhatIsCoaching';
 import { loadContent } from '@/lib/loadContent';
-import { toSerializable } from '@/lib/toSerializable';
+import { sanitizeProps } from '@/lib/toSerializable';
 
 function Eyebrow({ children }) {
   if (!children) return null;
@@ -383,14 +383,16 @@ export async function getStaticProps({ locale }) {
     team?.fallbackNotice ??
     'Temporarily showing English content while we complete this translation.';
 
-  return toSerializable({
-    props: {
-      copy,
-      team,
-      coaching: whatIsCoaching,
-      showFallbackNotice,
-      fallbackNotice,
-      ...(await serverSideTranslations(currentLocale, ['common'])),
-    },
-  });
+  const props = {
+    copy,
+    team,
+    coaching: whatIsCoaching,
+    showFallbackNotice,
+    fallbackNotice,
+    ...(await serverSideTranslations(currentLocale, ['common'])),
+  };
+
+  return {
+    props: sanitizeProps(props),
+  };
 }
