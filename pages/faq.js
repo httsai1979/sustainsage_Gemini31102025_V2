@@ -96,10 +96,12 @@ Category.propTypes = {
   }).isRequired,
 };
 
-export default function FAQPage({ content }) {
+export default function FAQPage({ content, showFallbackNotice, fallbackNotice }) {
   const hero = content?.hero ?? {};
   const categories = content?.categories ?? [];
   const cta = content?.cta ?? {};
+  const fallbackMessage =
+    fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return (
     <>
@@ -111,6 +113,9 @@ export default function FAQPage({ content }) {
           <h1 className="mt-3 text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero?.title}</h1>
           {hero?.body ? (
             <p className="mt-4 text-base leading-7 text-slate-600">{hero.body}</p>
+          ) : null}
+          {showFallbackNotice ? (
+            <p className="mt-3 text-xs font-medium text-slate-500">{fallbackMessage}</p>
           ) : null}
           {hero?.links?.length ? (
             <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -171,10 +176,14 @@ FAQPage.propTypes = {
       description: PropTypes.string,
     }),
   }),
+  showFallbackNotice: PropTypes.bool,
+  fallbackNotice: PropTypes.string,
 };
 
 FAQPage.defaultProps = {
   content: {},
+  showFallbackNotice: false,
+  fallbackNotice: null,
 };
 
 FAQPage.getLayout = function getLayout(page) {
@@ -188,10 +197,18 @@ FAQPage.getLayout = function getLayout(page) {
 
 export async function getStaticProps({ locale = 'en-GB' }) {
   const content = loadJSON('faq', locale);
+  const fallbackNotice =
+    typeof content?.fallbackNotice === 'string' && content.fallbackNotice.length > 0
+      ? content.fallbackNotice
+      : null;
+  const isEnglishLocale = typeof locale === 'string' && locale.toLowerCase().startsWith('en');
+  const showFallbackNotice = !isEnglishLocale && Boolean(fallbackNotice);
 
   return toSerializable({
     props: {
       content,
+      showFallbackNotice,
+      fallbackNotice,
       ...(await serverSideTranslations(locale, ['common', 'faq'])),
     },
   });

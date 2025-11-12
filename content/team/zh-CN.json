@@ -1,39 +1,39 @@
 {
-  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
-  "eyebrow": "团队",
-  "title": "认识 SustainSage 的双语教练",
-  "description": "我们结合督导经验、政策素养与跨文化生活背景，陪你在转变中保持稳健。",
+  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。",
+  "eyebrow": "Team",
+  "title": "Meet the bilingual coaches behind SustainSage",
+  "description": "We bring supervision-informed coaching, policy literacy, and multilingual lived experience to every partnership.",
   "members": [
     {
-      "name": "林孟庭 Maggie Lin",
-      "title": "ICF PCC 教练／联合创办人",
-      "location": "台北 · 新加坡",
-      "bio": "Maggie 以创伤敏感的方式设计教练陪伴，支持创业者、永续负责人与政策团队在不确定中前进。",
+      "name": "Maggie Lin",
+      "title": "ICF PCC Coach & Co-founder",
+      "location": "Taipei · Singapore",
+      "bio": "Maggie designs trauma-informed coaching containers for founders, sustainability leaders, and policy teams navigating uncertainty.",
       "languages": [
-        "英语",
-        "繁体中文",
-        "简体中文"
+        "English",
+        "Traditional Chinese",
+        "Simplified Chinese"
       ]
     },
     {
-      "name": "陈思穎 Sarah Chen",
-      "title": "职涯转化教练",
-      "location": "新加坡 · 伦敦",
-      "bio": "Sarah 陪伴使命导向的专业人士跨领域移动，协助审视伦理风险并为改变排定稳健节奏。",
+      "name": "Sarah Chen",
+      "title": "Career Transitions Coach",
+      "location": "Singapore · London",
+      "bio": "Sarah supports mission-driven professionals as they move between sectors, stewarding ethical risk assessments and pacing change experiments.",
       "languages": [
-        "英语",
-        "中文"
+        "English",
+        "Mandarin"
       ]
     },
     {
-      "name": "吴柏任 Jonas Wu",
-      "title": "系统与策略教练",
-      "location": "伦敦 · 远距",
-      "bio": "Jonas 与跨国团队合作，梳理治理、利害关系人沟通与资料照护，让决策维持在共同脉络中。",
+      "name": "Jonas Wu",
+      "title": "Systems & Strategy Coach",
+      "location": "London · Remote",
+      "bio": "Jonas partners with cross-border teams to align governance, stakeholder engagement, and data care so decisions stay grounded in shared context.",
       "languages": [
-        "英语",
-        "中文",
-        "闽南语"
+        "English",
+        "Mandarin",
+        "Hokkien"
       ]
     }
   ]

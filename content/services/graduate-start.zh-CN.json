@@ -1,41 +1,41 @@
 {
-  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。",
   "pricing": {
     "packages": [
       {
-        "name": "四次起步方案",
-        "duration": "4×60–75 分钟，约 6–8 周",
-        "scope": "决策评分表、小型测试、基础简历/作品集审阅。",
-        "price_note": "学生友好费率，私信提供。"
+        "name": "4-session starter",
+        "duration": "4×60–75min over ~6–8 weeks",
+        "scope": "Decision scorecard, tiny tests, basic portfolio/CV review.",
+        "price_note": "Student-friendly fees on request."
       },
       {
-        "name": "单次会谈",
-        "duration": "60–75 分钟",
-        "scope": "聚焦单一决策或面试准备，附行动要点。",
-        "price_note": "适合校招或第一轮面试前。"
+        "name": "Single session",
+        "duration": "60–75min",
+        "scope": "One decision or interview prep with a clear action note.",
+        "price_note": "Good for assessment centre or first interviews."
       }
     ],
     "policies": [
       {
-        "title": "改期",
-        "body": "需 ≥24 小时前通知；否则视同使用。"
+        "title": "Rescheduling",
+        "body": "≥24h notice; otherwise counted as used."
       },
       {
-        "title": "不保证结果",
-        "body": "我们支持你做实验；结果取决于投入与时机。"
+        "title": "No guarantees",
+        "body": "We support experiments; outcomes depend on your effort and timing."
       }
     ]
   },
   "readiness": {
     "checklist": [
-      "我能在会谈间隔尝试 2 周的小测试。",
-      "我理解教练非治疗／医疗建议。",
-      "我会先整理简历／作品集并愿意反复调整。"
+      "I can try a 2-week test between sessions.",
+      "I accept coaching is not therapy or medical advice.",
+      "I’ll draft my CV/portfolio and be open to iteration."
     ],
     "what_to_prepare": [
-      "最新简历或作品集链接",
-      "两个目标岗位或领域",
-      "三个最在意的问题"
+      "Latest CV or portfolio link",
+      "Two target roles or fields",
+      "Three questions that matter most to you"
     ]
   },
   "process": {
@@ -60,36 +60,36 @@
   "agreement": {
     "sections": [
       {
-        "heading": "范畴",
-        "body": "通过提问、框架与小测试，协助选择与行动。"
+        "heading": "Scope",
+        "body": "Coaching helps you choose and act through questions, frameworks and small tests."
       },
       {
-        "heading": "非治疗／医疗",
-        "body": "不进行诊断或治疗；必要时转介支持资源。"
+        "heading": "Not therapy/medical",
+        "body": "We do not treat or diagnose; we may signpost to support services."
       },
       {
-        "heading": "保密与例外",
-        "body": "会谈保密，除非法律／安全需要披露。"
+        "heading": "Confidentiality & limits",
+        "body": "Sessions are confidential except where law/safety requires disclosure."
       },
       {
-        "heading": "同意与界限",
-        "body": "任何时候可暂停、拒绝或停止任何练习。"
+        "heading": "Consent & boundaries",
+        "body": "You can pause, decline or stop any activity."
       },
       {
-        "heading": "改期与资料",
-        "body": "24 小时改期；记录极简并妥善保存。"
+        "heading": "Cancellations & data",
+        "body": "24h reschedule; minimal notes stored securely."
       }
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "会协助作品集吗？",
-        "a": "可提供审阅与结构建议，但不代为制作。"
+        "q": "Do you help with portfolios?",
+        "a": "We can review and give structure suggestions but do not build them for you."
       },
       {
-        "q": "该先实习还是直接找全职？",
-        "a": "我们会做评分表与假设测试，帮助你做出合适的决定。"
+        "q": "Internship or full-time?",
+        "a": "We build a scorecard and test assumptions to help you decide."
       }
     ]
   },
@@ -98,39 +98,39 @@
     "description": "Stories merged from graduates and early-career professionals to keep individuals anonymous.",
     "items": [
       {
-        "title": "First role decision",
-        "context": "A final-year student held offers in two cities and felt pressure from family to choose stability over curiosity.",
-        "coaching_moves": "We clarified values, modelled cost-of-living scenarios and practised boundary conversations at home.",
-        "shift": "They selected a role aligned with learning goals and communicated the decision with confidence.",
+        "title": "Too many choices, no criteria",
+        "context": "Three sectors look appealing but overwhelm decisions.",
+        "coaching_moves": "Built decision scorecard; set 2-week micro-test per sector.",
+        "shift": "Made next pick using data rather than mood.",
         "tools_used": [
-          "Values canvas",
-          "Decision matrix"
+          "Decision Scorecard",
+          "Experiment Log"
         ],
-        "disclaimer": "Composite narrative blended across clients.",
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
         "slug": "too-many-choices-no-criteria"
       },
       {
-        "title": "Settling into probation",
-        "context": "A graduate in a hybrid consultancy struggled to ask for feedback during the first 90 days.",
-        "coaching_moves": "We rehearsed feedback requests, co-designed weekly reflection prompts and mapped support allies.",
-        "shift": "They reported clearer expectations and calmer check-ins with their manager.",
+        "title": "Interview stories flat",
+        "context": "Projects sound generic; feedback: 'lack of impact'.",
+        "coaching_moves": "Refined two STAR stories; rehearsed follow-ups; trimmed jargon.",
+        "shift": "Stories felt concrete and paced; fewer ramble moments.",
         "tools_used": [
-          "Feedback scripts",
-          "Weekly reflection tracker"
+          "STAR Builder",
+          "Interview Rehearsal"
         ],
-        "disclaimer": "Details anonymised across multiple graduates.",
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
         "slug": "interview-stories-flat"
       },
       {
-        "title": "Reframing rejection",
-        "context": "A STEM graduate experienced repeated final-round rejections and questioned their direction.",
-        "coaching_moves": "We analysed interview data, experimented with informational chats and rebuilt replenishing routines.",
-        "shift": "They regained momentum, secured supportive mentors and kept wellbeing front of mind.",
+        "title": "Portfolio without context",
+        "context": "Screenshots with no 'why/so-what'.",
+        "coaching_moves": "Added problem-goal-result captions; linked constraints; ordered by learning.",
+        "shift": "Reviewers grasped thinking, not just visuals.",
         "tools_used": [
-          "Interview debrief",
-          "Energy rituals"
+          "Story Library",
+          "Portfolio Map"
         ],
-        "disclaimer": "Composite example to protect privacy.",
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
         "slug": "portfolio-without-context"
       }
     ]

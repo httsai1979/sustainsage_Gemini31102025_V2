@@ -8,9 +8,18 @@
     "title": "Honest answers so you can decide what support fits now.",
     "body": "We stay within ICF ethics: no promises, no pressure, and referrals when coaching is not the right container.",
     "links": [
-      { "href": "/services/how-coaching-works", "label": "How coaching works" },
-      { "href": "/about", "label": "Meet our practice" },
-      { "href": "/contact", "label": "Book an intro chat" }
+      {
+        "href": "/services/how-coaching-works",
+        "label": "How coaching works"
+      },
+      {
+        "href": "/about",
+        "label": "Meet our practice"
+      },
+      {
+        "href": "/contact",
+        "label": "Book an intro chat"
+      }
     ]
   },
   "categories": [
@@ -104,5 +113,6 @@
     "body": "Share your context and we will confirm whether coaching, a referral, or another resource will serve you best. Your clarity matters more than filling a slot.",
     "primary": "Book a call",
     "secondary": "Explore coaching pathways"
-  }
+  },
+  "fallbackNotice": "Temporarily showing English content while we complete this translation."
 }

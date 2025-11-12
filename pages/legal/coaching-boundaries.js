@@ -86,9 +86,11 @@ Section.defaultProps = {
   section: null,
 };
 
-export default function CoachingBoundariesPage({ content }) {
+export default function CoachingBoundariesPage({ content, showFallbackNotice, fallbackNotice }) {
   const scope = content?.scope ?? {};
   const sections = Array.isArray(content?.sections) ? content.sections : [];
+  const fallbackMessage =
+    fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return (
     <MainLayout title={content?.title} desc={content?.description}>
@@ -97,6 +99,9 @@ export default function CoachingBoundariesPage({ content }) {
           <div className="typography flex flex-col gap-4">
             <h1>{content?.title}</h1>
             {content?.description ? <p>{content.description}</p> : null}
+            {showFallbackNotice ? (
+              <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+            ) : null}
             {content?.lastUpdated ? (
               <p className="text-sm font-medium uppercase tracking-wide text-emerald-800">{content.lastUpdated}</p>
             ) : null}
@@ -152,18 +157,30 @@ CoachingBoundariesPage.propTypes = {
       }),
     ),
   }),
+  showFallbackNotice: PropTypes.bool,
+  fallbackNotice: PropTypes.string,
 };
 
 CoachingBoundariesPage.defaultProps = {
   content: null,
+  showFallbackNotice: false,
+  fallbackNotice: null,
 };
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale = 'en-GB' }) {
   const content = loadJSON('legal/coaching-boundaries', locale);
+  const fallbackNotice =
+    typeof content?.fallbackNotice === 'string' && content.fallbackNotice.length > 0
+      ? content.fallbackNotice
+      : null;
+  const isEnglishLocale = typeof locale === 'string' && locale.toLowerCase().startsWith('en');
+  const showFallbackNotice = !isEnglishLocale && Boolean(fallbackNotice);
 
   return toSerializable({
     props: {
       content,
+      showFallbackNotice,
+      fallbackNotice,
       ...(await serverSideTranslations(locale, ['common'])),
     },
   });
