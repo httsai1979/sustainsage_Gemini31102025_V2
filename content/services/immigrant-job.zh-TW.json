@@ -3,26 +3,44 @@
   "pricing": {
     "packages": [
       {
-        "name": "6-session block",
-        "duration": "6×60–75min over ~12 weeks",
-        "scope": "CV translation to UK style, outreach scripts, interview rehearsal; async check-ins.",
-        "price_note": "Fees on request; sliding scale available case-by-case."
+        "name": "入門 — 3 次會談",
+        "duration": "3 × 50 分鐘／4–6 週內完成",
+        "scope": "每次會談之間 1 個小實驗；CV／LinkedIn 以英國常見格式快速校正。",
+        "price_note": "費用以 GBP 計價。"
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One focused topic (e.g., recruiter screening or CV bullet rewrite) with an action note.",
-        "price_note": "Good for tactical needs."
+        "name": "聚焦 — 6 次會談",
+        "duration": "6 × 50 分鐘／8–12 週",
+        "scope": "作品集／履歷重構，強化可見的證據點；面試演練聚焦清楚與適配。",
+        "price_note": "費用以 GBP 計價。"
+      },
+      {
+        "name": "延伸 — 12 次會談",
+        "duration": "12 × 50 分鐘／3–6 個月",
+        "scope": "深度練習文化適配與主管對話；客製練習題與節奏回顧。",
+        "price_note": "費用以 GBP 計價。"
       }
     ],
     "policies": [
       {
-        "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
+        "title": "改期",
+        "body": "需提前 24 小時；逾時視同使用一次會談。"
       },
       {
-        "title": "No guarantees",
-        "body": "We co-design experiments; outcomes depend on market timing and your actions."
+        "title": "頻率",
+        "body": "第一堂確立節奏；套組之間可暫停。"
+      },
+      {
+        "title": "保密",
+        "body": "預設保密；最少必要紀錄；可要求刪除。"
+      },
+      {
+        "title": "範圍",
+        "body": "教練而非治療；若有需要會提供轉介資訊。"
+      },
+      {
+        "title": "時差與費用",
+        "body": "線上時段以英國時間為主；帳款以 GBP 計價。"
       }
     ]
   },
