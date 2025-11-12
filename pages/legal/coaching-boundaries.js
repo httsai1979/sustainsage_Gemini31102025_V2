@@ -5,7 +5,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import { loadJSON } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
 
-function BulletHighlights({ block }) {
+function BulletHighlights({ block = null } = {}) {
   if (!block?.items?.length) {
     return null;
   }
@@ -36,11 +36,7 @@ BulletHighlights.propTypes = {
   }),
 };
 
-BulletHighlights.defaultProps = {
-  block: null,
-};
-
-function Section({ section }) {
+function Section({ section = null } = {}) {
   if (!section) return null;
 
   return (
@@ -82,18 +78,23 @@ Section.propTypes = {
   }),
 };
 
-Section.defaultProps = {
-  section: null,
-};
-
-export default function CoachingBoundariesPage({ content, showFallbackNotice, fallbackNotice }) {
+export default function CoachingBoundariesPage({
+  content = {},
+  showFallbackNotice = false,
+  fallbackNotice = null,
+} = {}) {
   const scope = content?.scope ?? {};
   const sections = Array.isArray(content?.sections) ? content.sections : [];
   const fallbackMessage =
     fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return (
-    <MainLayout title={content?.title} desc={content?.description}>
+    <MainLayout
+      seo={{
+        title: content?.title,
+        description: content?.description,
+      }}
+    >
       <section className="bg-emerald-50/60 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <div className="typography flex flex-col gap-4">
@@ -161,11 +162,6 @@ CoachingBoundariesPage.propTypes = {
   fallbackNotice: PropTypes.string,
 };
 
-CoachingBoundariesPage.defaultProps = {
-  content: null,
-  showFallbackNotice: false,
-  fallbackNotice: null,
-};
 
 export async function getStaticProps({ locale = 'en-GB' }) {
   const content = loadJSON('legal/coaching-boundaries', locale);

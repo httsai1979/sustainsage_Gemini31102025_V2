@@ -28,7 +28,7 @@ function normaliseSummaryItems(items) {
     .filter(Boolean);
 }
 
-function SummaryList({ items }) {
+function SummaryList({ items = [] } = {}) {
   const normalisedItems = normaliseSummaryItems(items);
 
   if (normalisedItems.length === 0) {
@@ -69,11 +69,7 @@ SummaryList.propTypes = {
   ),
 };
 
-SummaryList.defaultProps = {
-  items: undefined,
-};
-
-function FAQList({ items }) {
+function FAQList({ items = [] } = {}) {
   if (!Array.isArray(items) || items.length === 0) {
     return null;
   }
@@ -99,11 +95,7 @@ FAQList.propTypes = {
   ),
 };
 
-FAQList.defaultProps = {
-  items: undefined,
-};
-
-function Section({ title, description, note, children, background = 'white' }) {
+function Section({ title, description, note, children, background = 'white' } = {}) {
   const backgroundClass = background === 'tint' ? 'bg-emerald-950/5' : 'bg-white';
   return (
     <section className={`${backgroundClass} py-16 sm:py-20`}>
@@ -129,13 +121,6 @@ Section.propTypes = {
   note: PropTypes.string,
   children: PropTypes.node.isRequired,
   background: PropTypes.oneOf(['white', 'tint']),
-};
-
-Section.defaultProps = {
-  title: undefined,
-  description: undefined,
-  note: undefined,
-  background: 'white',
 };
 
 export default function StructuredServicePage({ serviceKey, image }) {

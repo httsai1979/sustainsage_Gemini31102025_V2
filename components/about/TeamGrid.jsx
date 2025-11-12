@@ -52,7 +52,7 @@ TeamCard.propTypes = {
   member: PropTypes.shape(memberShape).isRequired,
 };
 
-export default function TeamGrid({ data }) {
+export default function TeamGrid({ data = {} } = {}) {
   const list = data?.members ?? data?.people ?? [];
   if (!list.length) return null;
 
@@ -90,6 +90,3 @@ TeamGrid.propTypes = {
   }),
 };
 
-TeamGrid.defaultProps = {
-  data: undefined,
-};

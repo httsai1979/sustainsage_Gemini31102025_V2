@@ -23,7 +23,7 @@ ScenarioCard.propTypes = {
   item: PropTypes.shape(scenarioShape).isRequired,
 };
 
-export default function WhatIsCoaching({ data }) {
+export default function WhatIsCoaching({ data = {} } = {}) {
   const scenarios = data?.scenarios ?? [];
   const primaryCta = data?.cta ?? data?.primaryCta;
   const secondaryCta = data?.secondaryCta;
@@ -101,6 +101,3 @@ WhatIsCoaching.propTypes = {
   }),
 };
 
-WhatIsCoaching.defaultProps = {
-  data: undefined,
-};

@@ -1,31 +1,42 @@
-import Header from '@/components/common/Header';
-import Footer from '@/components/common/Footer';
-import SEO from '@/components/layout/SEO';
+import PropTypes from 'prop-types';
 import SkipLink from '@/components/common/SkipLink';
+import Header from './Header';
+import Footer from './Footer';
+import SEO from './SEO';
 
-const DEFAULT_DESCRIPTION =
-  'Calm, practical coaching for people navigating transitions, relocations, and re-entry moments.';
+const DEFAULT_SEO = {};
 
-export default function MainLayout({ children, title, desc, seo = {} }) {
-  const hasTitle = typeof title === 'string' && title.trim().length > 0;
-  const hasDescription = typeof desc === 'string' && desc.trim().length > 0;
+export default function MainLayout({ children, seo = DEFAULT_SEO } = {}) {
+  const normalizedSeo = typeof seo === 'object' && seo !== null ? seo : DEFAULT_SEO;
+  const { title, description, desc, noIndex, noindex, og, ogImage } = normalizedSeo;
 
-  const resolvedTitle = hasTitle ? title : seo.title;
-  const resolvedDescription = hasDescription
-    ? desc
-    : seo.desc ?? seo.description ?? DEFAULT_DESCRIPTION;
+  const openGraphImages = [];
+
+  if (og?.images && Array.isArray(og.images)) {
+    openGraphImages.push(...og.images.filter(Boolean));
+  }
+
+  if (ogImage) {
+    openGraphImages.push(ogImage);
+  }
+
+  const openGraph = og ? { ...og } : {};
+
+  if (openGraphImages.length > 0) {
+    openGraph.images = openGraphImages;
+  }
 
   const resolvedSeo = {
-    title: resolvedTitle,
-    desc: resolvedDescription,
-    og: seo.og ?? seo.openGraph,
-    noindex: seo.noindex,
+    title,
+    desc: description ?? desc,
+    noindex: typeof noIndex === 'boolean' ? noIndex : noindex,
+    og: openGraph,
   };
 
   return (
     <>
       <SEO {...resolvedSeo} />
-      <div className="min-h-screen flex flex-col bg-sage-50">
+      <div className="flex min-h-screen flex-col bg-sage-50">
         <SkipLink />
         <Header />
         <main id="content" className="flex-1 focus:outline-none">
@@ -36,3 +47,16 @@ export default function MainLayout({ children, title, desc, seo = {} }) {
     </>
   );
 }
+
+MainLayout.propTypes = {
+  children: PropTypes.node.isRequired,
+  seo: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    desc: PropTypes.string,
+    noIndex: PropTypes.bool,
+    noindex: PropTypes.bool,
+    og: PropTypes.object,
+    ogImage: PropTypes.string,
+  }),
+};

@@ -39,7 +39,11 @@ PathwayCard.propTypes = {
   viewDetailsLabel: PropTypes.string.isRequired,
 };
 
-export default function ServicesPage({ cards, showFallbackNotice, fallbackNotice }) {
+export default function ServicesPage({
+  cards = [],
+  showFallbackNotice = false,
+  fallbackNotice = null,
+} = {}) {
   const { t } = useTranslation('services');
   const seo = t('seo', { returnObjects: true });
   const hero = t('hero', { returnObjects: true });
@@ -167,10 +171,6 @@ ServicesPage.propTypes = {
   fallbackNotice: PropTypes.string,
 };
 
-ServicesPage.defaultProps = {
-  showFallbackNotice: false,
-  fallbackNotice: null,
-};
 
 export async function getStaticProps({ locale }) {
   const currentLocale = locale ?? 'en-GB';

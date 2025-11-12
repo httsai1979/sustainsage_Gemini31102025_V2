@@ -9,7 +9,7 @@ import MainLayout from '@/components/layout/MainLayout';
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
-function BulletList({ items }) {
+function BulletList({ items = [] } = {}) {
   if (!Array.isArray(items) || items.length === 0) {
     return null;
   }
@@ -37,11 +37,7 @@ BulletList.propTypes = {
   ),
 };
 
-BulletList.defaultProps = {
-  items: undefined,
-};
-
-function ExampleList({ items }) {
+function ExampleList({ items = [] } = {}) {
   if (!Array.isArray(items) || items.length === 0) {
     return null;
   }
@@ -69,10 +65,6 @@ ExampleList.propTypes = {
       description: PropTypes.string,
     }),
   ),
-};
-
-ExampleList.defaultProps = {
-  items: undefined,
 };
 
 function renderCtaBody(body) {
@@ -123,7 +115,7 @@ function renderCtaBody(body) {
   return null;
 }
 
-export default function ICFServicePage({ namespace, image, imageAlt }) {
+export default function ICFServicePage({ namespace, image = undefined, imageAlt = undefined } = {}) {
   const { t } = useTranslation(namespace);
   const seo = t('seo', { returnObjects: true }) ?? {};
   const hero = t('hero', { returnObjects: true }) ?? {};
@@ -281,7 +273,3 @@ ICFServicePage.propTypes = {
   imageAlt: PropTypes.string,
 };
 
-ICFServicePage.defaultProps = {
-  image: undefined,
-  imageAlt: undefined,
-};
