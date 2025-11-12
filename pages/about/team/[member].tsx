@@ -59,7 +59,9 @@ export default function TeamMemberPage({ member, usedLocale, locale, fallbackNot
       >
         {bio.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-slate-900">How {member?.name?.split?.(' ')?.[0] ?? 'they'} coaches</h2>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              How {member?.name?.split?.(' ')?.[0] ?? 'they'} coaches
+            </h2>
             <div className="mt-4 space-y-4 text-sm leading-6 text-slate-700">
               {bio.map((paragraph: string, index: number) => (
                 <p key={index}>{paragraph}</p>
@@ -70,7 +72,7 @@ export default function TeamMemberPage({ member, usedLocale, locale, fallbackNot
 
         {focus.length ? (
           <section className="mt-12">
-            <h2 className="text-xl font-semibold text-slate-900">Focus areas</h2>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">Focus areas</h2>
             <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
               {focus.map((item: string, index: number) => (
                 <li key={index} className="flex gap-2">
@@ -84,7 +86,7 @@ export default function TeamMemberPage({ member, usedLocale, locale, fallbackNot
 
         {credentials.length ? (
           <section className="mt-12">
-            <h2 className="text-xl font-semibold text-slate-900">Credentials & training</h2>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">Credentials & training</h2>
             <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
               {credentials.map((item: string, index: number) => (
                 <li key={index} className="flex gap-2">

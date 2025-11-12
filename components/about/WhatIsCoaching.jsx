@@ -5,9 +5,9 @@ function ScenarioCard({ item }) {
   const { title, description } = item ?? {};
 
   return (
-    <article className="flex h-full flex-col gap-3 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+    <article className="flex h-full flex-col gap-3 rounded-2xl border border-emerald-100 bg-white p-5">
       {title ? (
-        <h3 className="text-base font-semibold tracking-tight text-slate-900">{title}</h3>
+        <h3 className="text-lg font-semibold tracking-tight text-slate-900">{title}</h3>
       ) : null}
       {description ? <p className="text-sm leading-6 text-slate-700">{description}</p> : null}
     </article>
@@ -34,7 +34,7 @@ export default function WhatIsCoaching({ data }) {
 
   return (
     <section className="bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-7xl px-4 md:px-6">
         {data?.eyebrow ? (
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{data.eyebrow}</p>
         ) : null}

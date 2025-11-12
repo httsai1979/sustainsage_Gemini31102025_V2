@@ -63,7 +63,7 @@ export default function EthicsPage({ ethics, usedLocale, locale, fallbackNotice 
       >
         {principles.length ? (
           <section>
-            <h2 className="text-xl font-semibold text-slate-900">Principles we hold in every engagement</h2>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">Principles we hold in every engagement</h2>
             <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
               {principles.map((item: string, index: number) => (
                 <li key={index} className="flex gap-2">
@@ -83,8 +83,10 @@ export default function EthicsPage({ ethics, usedLocale, locale, fallbackNotice 
 
         {dataPractices?.items?.length ? (
           <section className="mt-12">
-            <h2 className="text-xl font-semibold text-slate-900">{dataPractices.title ?? 'How we handle your data'}</h2>
-            <div className="mt-4 space-y-3 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm text-sm leading-6 text-slate-700">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              {dataPractices.title ?? 'How we handle your data'}
+            </h2>
+            <div className="mt-4 space-y-3 rounded-2xl border border-emerald-100 bg-white p-5 text-sm leading-6 text-slate-700">
               {dataPractices.items.map((item: string, index: number) => (
                 <p key={index} className="flex gap-2">
                   <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
@@ -101,8 +103,8 @@ export default function EthicsPage({ ethics, usedLocale, locale, fallbackNotice 
           </section>
         ) : null}
 
-        <section className="mt-12 rounded-3xl border border-emerald-100 bg-emerald-900 p-6 text-white">
-          <h2 className="text-xl font-semibold">When coaching is not the right support</h2>
+        <section className="mt-12 rounded-2xl border border-emerald-800 bg-emerald-900 p-6 text-white">
+          <h2 className="text-2xl font-semibold tracking-tight">When coaching is not the right support</h2>
           <p className="mt-3 text-sm leading-6 text-emerald-100">
             We pause and refer you to trusted therapeutic, legal, or crisis resources whenever the scope moves beyond ethical coaching boundaries.
           </p>
