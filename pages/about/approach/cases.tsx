@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { CaseCard } from '@/components/cases/CaseCard';
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { getAboutSubnav } from '@/components/about/AboutSubnav';
+import { StickyCTA } from '@/components/common/StickyCTA';
 import { loadContent } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
@@ -33,16 +34,19 @@ export default function ApproachCasesPage({ cases, usedLocale, locale, fallbackN
   const showFallback = Boolean(usedLocale && usedLocale !== locale);
 
   return (
-    <PageLayoutV2
-      header={<Header showFallback={showFallback} fallbackNotice={fallbackNotice} />}
-      subnav={getAboutSubnav('cases')}
-    >
-      <div className="grid gap-6 md:grid-cols-3">
-        {cases?.map((item, index) => (
-          <CaseCard key={item?.title ?? index} {...item} />
-        ))}
-      </div>
-    </PageLayoutV2>
+    <>
+      <PageLayoutV2
+        header={<Header showFallback={showFallback} fallbackNotice={fallbackNotice} />}
+        subnav={getAboutSubnav('cases')}
+      >
+        <div className="grid gap-6 md:grid-cols-3">
+          {cases?.map((item, index) => (
+            <CaseCard key={item?.title ?? index} {...item} />
+          ))}
+        </div>
+      </PageLayoutV2>
+      <StickyCTA />
+    </>
   );
 }
 

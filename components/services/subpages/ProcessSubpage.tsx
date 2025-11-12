@@ -1,3 +1,4 @@
+import { MicroCTA } from '@/components/common/MicroCTA';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
 const { Page } = createServiceSubpage({
@@ -13,11 +14,24 @@ const { Page } = createServiceSubpage({
       : [];
     const note = service.process?.note;
 
+    const basePath = `/services/${service.slug}`;
+    const microLinks = [
+      { href: `${basePath}/cases`, label: 'Browse service cases' },
+      { href: `${basePath}/agreement`, label: 'Review the agreement' },
+    ];
+
     if (steps.length === 0 && !note) {
       return (
-        <p className="text-sm leading-6 text-slate-700">
-          We will publish a detailed process shortly. Contact us to explore what the container can look like for you.
-        </p>
+        <div className="space-y-6">
+          <p className="text-sm leading-6 text-slate-700">
+            We will publish a detailed process shortly. Contact us to explore what the container can look like for you.
+          </p>
+          <MicroCTA
+            title="See how the process translates into practice"
+            description="Review anonymised cases or revisit the coaching agreement to understand how we steward each stage."
+            links={microLinks}
+          />
+        </div>
       );
     }
 
@@ -42,6 +56,12 @@ const { Page } = createServiceSubpage({
         ) : null}
 
         {note ? <p className="text-xs font-medium text-slate-500">{note}</p> : null}
+
+        <MicroCTA
+          title="See how the process translates into practice"
+          description="Review anonymised cases or revisit the coaching agreement to understand how we steward each stage."
+          links={microLinks}
+        />
       </div>
     );
   },
