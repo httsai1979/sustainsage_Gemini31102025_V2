@@ -58,7 +58,8 @@ ServiceCard.propTypes = {
   }).isRequired,
 };
 
-function BulletList({ items = [] } = {}) {
+function BulletList(props) {
+  const { items = [] } = props || {};
   if (!Array.isArray(items) || items.length === 0) {
     return null;
   }
@@ -116,7 +117,8 @@ BulletList.propTypes = {
   ),
 };
 
-function StepList({ steps = [] } = {}) {
+function StepList(props) {
+  const { steps = [] } = props || {};
   if (!Array.isArray(steps) || steps.length === 0) {
     return null;
   }
@@ -149,12 +151,13 @@ StepList.propTypes = {
   ),
 };
 
-export default function Home({
-  content = {},
-  testimonials = [],
-  showFallbackNotice = false,
-  fallbackNotice = null,
-} = {}) {
+export default function Home(props) {
+  const {
+    content = {},
+    testimonials = [],
+    showFallbackNotice = false,
+    fallbackNotice = null,
+  } = props || {};
   const hero = content?.hero ?? {};
   const services = content?.services ?? {};
   const keyPoints = content?.key_points ?? {};

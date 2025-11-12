@@ -28,6 +28,7 @@ function LocaleToggle({ variant = 'desktop', onToggle }) {
 
 export default function Header() {
   const router = useRouter();
+  const { locale = 'en', asPath } = router;
   const [menuOpen, setMenuOpen] = useState(false);
 
   const isActive = (href) => {
@@ -40,10 +41,9 @@ export default function Header() {
   };
 
   const handleToggleLocale = () => {
-    const currentLocale = router.locale === 'zh-TW' ? 'zh-TW' : 'en';
-    const nextLocale = currentLocale === 'zh-TW' ? 'en' : 'zh-TW';
+    const nextLocale = locale === 'zh-TW' ? 'en' : 'zh-TW';
 
-    router.push(router.asPath, router.asPath, { locale: nextLocale });
+    router.push(asPath, asPath, { locale: nextLocale });
   };
 
   const handleNavClick = () => {
@@ -52,7 +52,7 @@ export default function Header() {
 
   return (
     <header className="border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
+      <div className="max-w-[1200px] mx-auto flex items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
           SustainSage
         </Link>
