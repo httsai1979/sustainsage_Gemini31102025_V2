@@ -107,24 +107,36 @@
         "context": "A fintech analyst on a Skilled Worker visa was overwhelmed by conflicting sponsorship advice from recruiters.",
         "coaching_moves": "We mapped visa requirements, scripted boundary-setting emails and built a weekly outreach cadence.",
         "shift": "They negotiated transparent sponsorship timelines and shortlisted employers aligned with their needs.",
-        "tools_used": ["Visa timeline map", "Outreach tracker"],
-        "disclaimer": "Composite case blending several clients to protect identities."
+        "tools_used": [
+          "Visa timeline map",
+          "Outreach tracker"
+        ],
+        "disclaimer": "Composite case blending several clients to protect identities.",
+        "slug": "securing-sponsorship-with-clarity"
       },
       {
         "title": "Translating overseas leadership",
         "context": "A senior project manager from Singapore felt UK interviews discounted their regional achievements.",
         "coaching_moves": "We co-created UK-relevant impact stories, practised bilingual interviews and rehearsed negotiation scripts.",
         "shift": "They reported feeling confident presenting cross-market expertise without minimising their background.",
-        "tools_used": ["Story library", "Mock interviews"],
-        "disclaimer": "Details blended across multiple professionals."
+        "tools_used": [
+          "Story library",
+          "Mock interviews"
+        ],
+        "disclaimer": "Details blended across multiple professionals.",
+        "slug": "translating-overseas-leadership"
       },
       {
         "title": "Partner rebuilding identity",
         "context": "A trailing spouse balancing caregiving and job search needed steady accountability while restarting a career.",
         "coaching_moves": "We designed micro-experiments, aligned family logistics and used voice-note check-ins during applications.",
         "shift": "They created a sustainable routine that preserved wellbeing and celebrated incremental wins.",
-        "tools_used": ["Experiment planner", "Accountability voice notes"],
-        "disclaimer": "Composite scenario anonymised for confidentiality."
+        "tools_used": [
+          "Experiment planner",
+          "Accountability voice notes"
+        ],
+        "disclaimer": "Composite scenario anonymised for confidentiality.",
+        "slug": "partner-rebuilding-identity"
       }
     ]
   },

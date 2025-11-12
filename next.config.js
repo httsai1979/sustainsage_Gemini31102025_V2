@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 /** @type {import('next').NextConfig} */
 const { i18n } = require('./next-i18next.config.js');
 
@@ -28,6 +31,28 @@ const nextConfig = {
           page: `/services/[slug]/${subpage}`,
           query: { slug },
         };
+      }
+
+      const baseContentPath = path.join(__dirname, 'content', 'services', `${slug}.json`);
+
+      if (fs.existsSync(baseContentPath)) {
+        try {
+          const serviceContent = JSON.parse(fs.readFileSync(baseContentPath, 'utf-8'));
+          const caseItems = Array.isArray(serviceContent?.cases?.items)
+            ? serviceContent.cases.items
+            : [];
+
+          for (const item of caseItems) {
+            if (item?.slug) {
+              map[`/services/${slug}/cases/${item.slug}`] = {
+                page: '/services/[slug]/cases/[caseSlug]',
+                query: { slug, caseSlug: item.slug },
+              };
+            }
+          }
+        } catch (error) {
+          console.warn(`Failed to load case paths for service ${slug}:`, error);
+        }
       }
     }
 

@@ -3,6 +3,7 @@ export const SERVICE_SLUGS = ['career-return', 'immigrant-job', 'graduate-start'
 export type ServiceSlug = (typeof SERVICE_SLUGS)[number];
 
 export type ServiceCaseItem = {
+  slug?: string;
   title?: string;
   context?: string;
   coaching_moves?: string;
