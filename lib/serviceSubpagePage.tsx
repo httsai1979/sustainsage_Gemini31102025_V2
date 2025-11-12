@@ -92,6 +92,30 @@ export function createServiceSubpage({
   return { Page, getStaticPaths, getStaticProps };
 }
 
+export function createServiceSubpageStaticProps(
+  slug: ServiceSlug
+): GetStaticProps<ServiceSubpageProps> {
+  return async ({ locale }) => {
+    const requestedLocale = typeof locale === 'string' && locale.length > 0 ? locale : 'en-GB';
+    const { loadServiceContent } = await import('@/lib/server/serviceContent');
+    const contentResult = await loadServiceContent(slug, requestedLocale);
+
+    if (!contentResult) {
+      return { notFound: true };
+    }
+
+    const { service, showFallbackNotice } = contentResult;
+
+    return toSerializable({
+      props: {
+        slug,
+        service,
+        showFallbackNotice,
+      },
+    });
+  };
+}
+
 type ServiceSubpageLayoutProps = {
   service: ServiceContent;
   heading: string;

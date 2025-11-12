@@ -1,6 +1,6 @@
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
-const { Page, getStaticPaths, getStaticProps } = createServiceSubpage({
+const { Page } = createServiceSubpage({
   subSlug: 'pricing',
   heading: (service) => service.pricing?.title ?? 'Pricing & packages',
   intro: (service) =>
@@ -64,5 +64,4 @@ const { Page, getStaticPaths, getStaticProps } = createServiceSubpage({
   },
 });
 
-export { getStaticPaths, getStaticProps };
 export default Page;
