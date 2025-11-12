@@ -9,12 +9,12 @@ import { toSerializable } from '@/lib/toSerializable';
 
 function PathwayCard({ card, viewDetailsLabel }) {
   return (
-    <div className="flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+    <div className="flex h-full flex-col justify-between rounded-2xl border border-emerald-100 bg-white p-5">
       <div className="space-y-4">
         {card.eyebrow ? (
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.eyebrow}</p>
         ) : null}
-        <h3 className="text-xl font-semibold text-slate-900">{card.title}</h3>
+        <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
         {card.excerpt ? <p className="text-sm leading-6 text-slate-600">{card.excerpt}</p> : null}
       </div>
       <Link
@@ -58,8 +58,8 @@ export default function ServicesPage({ cards, showFallbackNotice, fallbackNotice
       </Head>
 
       <section className="bg-emerald-50/60 py-16">
-        <div className="mx-auto flex max-w-5xl flex-col gap-8 px-6 md:flex-row md:items-center">
-          <div className="typography flex flex-col gap-4 md:flex-1">
+        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 md:flex-row md:items-center md:px-6">
+          <div className="typography flex flex-1 flex-col gap-4">
             <h1>{hero?.title}</h1>
             {hero?.highlight ? (
               <p>
@@ -93,15 +93,15 @@ export default function ServicesPage({ cards, showFallbackNotice, fallbackNotice
               </div>
             ) : null}
           </div>
-          <div className="rounded-3xl border border-emerald-100 bg-white/80 p-6 text-sm leading-6 text-slate-700 md:w-80">
+          <div className="rounded-2xl border border-emerald-100 bg-white/80 p-5 text-sm leading-6 text-slate-700 md:w-80">
             <p>{pathways?.sidebar ?? pathways?.description}</p>
           </div>
         </div>
       </section>
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="typography max-w-3xl flex flex-col gap-4">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="typography mx-auto flex max-w-3xl flex-col gap-4">
             <h2>{pathways?.title}</h2>
             {pathways?.highlight ? (
               <p>
@@ -119,7 +119,7 @@ export default function ServicesPage({ cards, showFallbackNotice, fallbackNotice
       </section>
 
       <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto flex max-w-4xl flex-col items-center gap-4 px-6 text-center">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 text-center md:px-6">
           <div className="typography flex flex-col gap-4">
             <h2>{cta?.title}</h2>
             {cta?.highlight ? (

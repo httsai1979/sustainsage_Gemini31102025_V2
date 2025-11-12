@@ -15,7 +15,7 @@ function BulletHighlights({ items, title, description }) {
   }
 
   return (
-    <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+    <div className="rounded-2xl border border-emerald-100 bg-white p-5">
       {title ? <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{title}</p> : null}
       {description ? <p className="mt-2 text-sm leading-6 text-slate-700">{description}</p> : null}
       <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
@@ -32,7 +32,7 @@ function BulletHighlights({ items, title, description }) {
 
 function JourneyCard({ item, index }) {
   return (
-    <div className="flex flex-col gap-3 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+    <div className="flex flex-col gap-3 rounded-2xl border border-emerald-100 bg-white p-5">
       <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-sm font-semibold text-emerald-700">
         {index + 1}
       </div>
@@ -46,8 +46,8 @@ function JourneyCard({ item, index }) {
 
 function FAQItem({ item }) {
   return (
-    <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-      <h3 className="text-base font-semibold text-slate-900">{item.question}</h3>
+    <div className="rounded-2xl border border-emerald-100 bg-white p-5">
+      <h3 className="text-lg font-semibold text-slate-900">{item.question}</h3>
       <p className="mt-3 text-sm leading-6 text-slate-700">{item.answer}</p>
     </div>
   );
@@ -74,8 +74,8 @@ export default function ContactPage() {
       </Head>
 
       <section className="bg-emerald-50/60 py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-6 text-center md:text-left">
-          <div className="typography flex flex-col gap-4">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="typography mx-auto flex max-w-3xl flex-col gap-4 text-center md:text-left">
             <h1>{hero?.title}</h1>
             {hero?.body ? <p>{hero.body}</p> : null}
           </div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
           <div className="typography flex flex-col gap-4">
             <h2>{journey?.title}</h2>
             {journey?.intro ? <p>{journey.intro}</p> : null}
@@ -97,7 +97,7 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-6">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
           {whatYouGet?.items?.length || whatWeDontDo?.items?.length ? (
             <div className="mb-10 space-y-8">
               <div className="grid gap-6 md:grid-cols-2">
@@ -112,7 +112,7 @@ export default function ContactPage() {
                   description={whatWeDontDo?.description}
                 />
               </div>
-              <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+              <div className="rounded-2xl border border-emerald-100 bg-white p-5">
                 <div className="flex items-start gap-3">
                   <input
                     id="coaching-consent"
@@ -151,8 +151,8 @@ export default function ContactPage() {
       </section>
 
       <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="typography max-w-3xl flex flex-col gap-4">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="typography mx-auto flex max-w-3xl flex-col gap-4">
             <h2>{miniFaq?.title}</h2>
             {miniFaq?.intro ? <p>{miniFaq.intro}</p> : null}
           </div>
@@ -166,7 +166,7 @@ export default function ContactPage() {
 
       {faqLink?.label ? (
         <div className="bg-emerald-50/70 py-8">
-          <div className="mx-auto flex max-w-4xl flex-col items-center gap-2 px-6 text-center text-sm leading-6 text-slate-700">
+          <div className="mx-auto flex max-w-7xl flex-col items-center gap-2 px-4 text-center text-sm leading-6 text-slate-700 md:px-6">
             <p>{faqLink?.text}</p>
             <Link href={faqLink.href} className="inline-flex items-center gap-2 font-semibold text-emerald-700 hover:underline">
               {faqLink.label}
@@ -176,8 +176,8 @@ export default function ContactPage() {
         </div>
       ) : null}
 
-      <div className="px-6 pb-20">
-        <ICFNotice id="icf" className="mx-auto max-w-4xl" />
+      <div className="px-4 pb-20 md:px-6">
+        <ICFNotice id="icf" className="mx-auto max-w-3xl" />
       </div>
     </>
   );

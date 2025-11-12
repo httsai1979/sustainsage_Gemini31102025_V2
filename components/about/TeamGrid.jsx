@@ -5,7 +5,7 @@ function TeamCard({ member }) {
   const { name, title, bio, languages, location, image } = member ?? {};
 
   return (
-    <article className="flex flex-col gap-4 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+    <article className="flex flex-col gap-4 rounded-2xl border border-emerald-100 bg-white p-5">
       <div className="flex items-start gap-4">
         {image?.src ? (
           <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full border border-emerald-100">
@@ -20,7 +20,7 @@ function TeamCard({ member }) {
         ) : null}
         <div>
           {name ? (
-            <h3 className="text-base font-semibold tracking-tight text-slate-900">{name}</h3>
+            <h3 className="text-lg font-semibold tracking-tight text-slate-900">{name}</h3>
           ) : null}
           {title ? <p className="text-sm font-medium text-emerald-700">{title}</p> : null}
           {location ? <p className="mt-1 text-xs text-slate-500">{location}</p> : null}
@@ -58,7 +58,7 @@ export default function TeamGrid({ data }) {
 
   return (
     <section className="bg-emerald-900 py-16 sm:py-20">
-      <div className="mx-auto max-w-5xl px-6 text-white">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 text-white">
         {data?.eyebrow ? (
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-200">{data.eyebrow}</p>
         ) : null}
