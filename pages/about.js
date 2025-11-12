@@ -360,7 +360,12 @@ AboutPage.defaultProps = {
 AboutPage.getLayout = function getLayout(page) {
   const seo = page.props?.copy?.seo ?? {};
   return (
-    <MainLayout title={seo.title} desc={seo.description}>
+    <MainLayout
+      seo={{
+        title: seo.title,
+        description: seo.description,
+      }}
+    >
       {page}
     </MainLayout>
   );

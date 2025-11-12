@@ -93,7 +93,12 @@ export default function CoachingBoundariesPage({ content, showFallbackNotice, fa
     fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return (
-    <MainLayout title={content?.title} desc={content?.description}>
+    <MainLayout
+      seo={{
+        title: content?.title,
+        description: content?.description,
+      }}
+    >
       <section className="bg-emerald-50/60 py-16 sm:py-20">
         <div className="mx-auto max-w-4xl px-6">
           <div className="typography flex flex-col gap-4">

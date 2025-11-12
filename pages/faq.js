@@ -189,7 +189,12 @@ FAQPage.defaultProps = {
 FAQPage.getLayout = function getLayout(page) {
   const seo = page.props?.content?.seo ?? {};
   return (
-    <MainLayout title={seo.title} desc={seo.description}>
+    <MainLayout
+      seo={{
+        title: seo.title,
+        description: seo.description,
+      }}
+    >
       {page}
     </MainLayout>
   );
