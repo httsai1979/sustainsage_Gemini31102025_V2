@@ -28,6 +28,18 @@
       }
     ],
     "cases": [
+      "Graduate → clearer story, 2 callbacks within one cycle.",
+      "Returner → 3-month ramp plan, part-time to full-time.",
+      "Switcher → portfolio reframing, first project in 6 weeks.",
+      {
+        "title": "Graduate → clearer story, 2 callbacks within one cycle."
+      },
+      {
+        "title": "Returner → 3-month ramp plan, part-time to full-time."
+      },
+      {
+        "title": "Switcher → portfolio reframing, first project in 6 weeks."
+      },
       {
         "title": "Graduate → clearer story, 2 callbacks within one cycle."
       },
@@ -104,6 +116,30 @@
     "title": "What coaching looks like with SustainSage",
     "description": "Coaching is a structured, future-focused partnership where you stay in charge of direction and pace.",
     "scenarios": [
+      "You’re returning to work after a break and want a kinder ramp back.",
+      "You’ve applied widely but struggle to turn interviews into offers.",
+      "You got an offer but aren’t sure it fits your real priorities.",
+      "You’re switching fields and feel you’re starting from zero.",
+      "You’re in the UK with overseas experience and need local proof points.",
+      "You lead a small team and want steadier 1:1 conversations.",
+      {
+        "title": "You’re returning to work after a break and want a kinder ramp back."
+      },
+      {
+        "title": "You’ve applied widely but struggle to turn interviews into offers."
+      },
+      {
+        "title": "You got an offer but aren’t sure it fits your real priorities."
+      },
+      {
+        "title": "You’re switching fields and feel you’re starting from zero."
+      },
+      {
+        "title": "You’re in the UK with overseas experience and need local proof points."
+      },
+      {
+        "title": "You lead a small team and want steadier 1:1 conversations."
+      },
       {
         "title": "You’re returning to work after a break and want a kinder ramp back."
       },
