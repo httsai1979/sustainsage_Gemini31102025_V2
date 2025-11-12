@@ -21,82 +21,50 @@
     }
   },
   "services": {
-    "eyebrow": "Services",
-    "title": "Choose the coaching focus that fits your moment",
-    "description": "Each pathway blends practical planning with reflective space so you can make grounded, values-led decisions.",
     "cards": [
       {
-        "title": "Career transitions",
-        "description": "Relocate or shift roles with calm structure and clear next steps.",
-        "href": "/services/transition-coaching",
-        "icon": "compass"
+        "slug": "career-return",
+        "title": "Returning to work",
+        "teaser": "A steady ramp back in 12 weeks—light structure, kind accountability.",
+        "cta_label": "See this pathway"
       },
       {
-        "title": "Mid-career coaching",
-        "description": "Re-align your direction with grounded support and refreshed boundaries.",
-        "href": "/services/mid-career-coaching",
-        "icon": "handshake"
+        "slug": "graduate-start",
+        "title": "Graduate start",
+        "teaser": "Turn scattered efforts into a clear story and small, testable steps.",
+        "cta_label": "See this pathway"
       },
       {
-        "title": "Reset sprint",
-        "description": "Short, focused sessions to regain momentum after change or pause.",
-        "href": "/services/reset-sprint",
-        "icon": "clock"
+        "slug": "immigrant-job",
+        "title": "New to the UK job market",
+        "teaser": "Translate overseas experience into local proof points you can show.",
+        "cta_label": "See this pathway"
       }
     ]
   },
   "key_points": {
-    "title": "What you can expect",
-    "description": "Coaching stays practical, bilingual, and paced so you can make steady moves.",
     "items": [
-      {
-        "title": "Agree pace, goals, and support before we begin.",
-        "icon": "note"
-      },
-      {
-        "title": "Switch between Mandarin and English without losing nuance.",
-        "icon": "book"
-      },
-      {
-        "title": "Design experiments that respect energy, care, and capacity.",
-        "icon": "calendar"
-      }
+      "Calm, practical sessions; no hype, no guarantees.",
+      "Try free tools first—keep what helps.",
+      "Weekly rhythm with small experiments between sessions.",
+      "Clear boundaries and confidentiality.",
+      "Simple pricing; pause anytime between blocks."
     ]
   },
   "process": {
-    "title": "How we work together",
-    "description": "A lightweight structure keeps momentum without overwhelming your schedule.",
     "steps": [
-      {
-        "title": "Share context",
-        "description": "We map the transitions you are navigating, the stakeholders involved, and any immediate constraints."
-      },
-      {
-        "title": "Design experiments",
-        "description": "We co-create small, testable actions that help you practise language, decisions, and boundaries."
-      },
-      {
-        "title": "Review and recalibrate",
-        "description": "We check-in on outcomes, iterate your plan, and celebrate shifts without adding pressure."
-      }
+      "Explore — what matters and why now",
+      "Try — a 20-min conversation",
+      "Align — goals, boundaries, cadence",
+      "Work — weekly sessions + short reviews"
     ]
   },
   "boundaries": {
-    "title": "Boundaries that keep coaching safe",
-    "description": "These agreements help you stay in charge of the process.",
     "items": [
-      {
-        "question": "What happens to the information I share?",
-        "answer": "Notes stay between coach and client. We follow ICF-aligned confidentiality and data retention practices."
-      },
-      {
-        "question": "How do we handle sensitive topics?",
-        "answer": "We name triggers early, pause when something feels unsafe, and signpost therapy or legal support when needed."
-      },
-      {
-        "question": "Can we adjust cadence if life gets busy?",
-        "answer": "Yes. We co-design the rhythm of sessions and pause or slow down when capacity is stretched."
-      }
+      "Coaching, not therapy—signposting if therapy is safer.",
+      "Time boundaries: start on time, end on time.",
+      "Minimal notes—deletion on request.",
+      "Your pace, our structure."
     ]
   },
   "faqTeaser": {
@@ -110,5 +78,11 @@
   "testimonials": {
     "title": "Trusted by people navigating change"
   },
-  "fallbackNotice": "Temporarily showing English content while we complete this translation."
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "cta": {
+    "primary_label": "Try free tools",
+    "primary_href": "/#tools",
+    "secondary_label": "Book a 20-min conversation",
+    "secondary_href": "/contact"
+  }
 }
