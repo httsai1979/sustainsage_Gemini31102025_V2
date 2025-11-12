@@ -107,24 +107,36 @@
         "context": "A final-year student held offers in two cities and felt pressure from family to choose stability over curiosity.",
         "coaching_moves": "We clarified values, modelled cost-of-living scenarios and practised boundary conversations at home.",
         "shift": "They selected a role aligned with learning goals and communicated the decision with confidence.",
-        "tools_used": ["Values canvas", "Decision matrix"],
-        "disclaimer": "Composite narrative blended across clients."
+        "tools_used": [
+          "Values canvas",
+          "Decision matrix"
+        ],
+        "disclaimer": "Composite narrative blended across clients.",
+        "slug": "too-many-choices-no-criteria"
       },
       {
         "title": "Settling into probation",
         "context": "A graduate in a hybrid consultancy struggled to ask for feedback during the first 90 days.",
         "coaching_moves": "We rehearsed feedback requests, co-designed weekly reflection prompts and mapped support allies.",
         "shift": "They reported clearer expectations and calmer check-ins with their manager.",
-        "tools_used": ["Feedback scripts", "Weekly reflection tracker"],
-        "disclaimer": "Details anonymised across multiple graduates."
+        "tools_used": [
+          "Feedback scripts",
+          "Weekly reflection tracker"
+        ],
+        "disclaimer": "Details anonymised across multiple graduates.",
+        "slug": "interview-stories-flat"
       },
       {
         "title": "Reframing rejection",
         "context": "A STEM graduate experienced repeated final-round rejections and questioned their direction.",
         "coaching_moves": "We analysed interview data, experimented with informational chats and rebuilt replenishing routines.",
         "shift": "They regained momentum, secured supportive mentors and kept wellbeing front of mind.",
-        "tools_used": ["Interview debrief", "Energy rituals"],
-        "disclaimer": "Composite example to protect privacy."
+        "tools_used": [
+          "Interview debrief",
+          "Energy rituals"
+        ],
+        "disclaimer": "Composite example to protect privacy.",
+        "slug": "portfolio-without-context"
       }
     ]
   },

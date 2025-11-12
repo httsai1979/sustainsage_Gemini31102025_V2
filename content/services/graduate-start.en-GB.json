@@ -106,7 +106,8 @@
           "Decision Scorecard",
           "Experiment Log"
         ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "slug": "too-many-choices-no-criteria"
       },
       {
         "title": "Interview stories flat",
@@ -117,7 +118,8 @@
           "STAR Builder",
           "Interview Rehearsal"
         ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "slug": "interview-stories-flat"
       },
       {
         "title": "Portfolio without context",
@@ -128,7 +130,8 @@
           "Story Library",
           "Portfolio Map"
         ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "slug": "portfolio-without-context"
       }
     ]
   }
