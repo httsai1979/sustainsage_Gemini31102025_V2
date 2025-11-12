@@ -21,50 +21,93 @@
     }
   },
   "services": {
+    "eyebrow": "Services",
+    "title": "Start with the pathway that matches your moment",
+    "description": "See example scenarios first so you can confirm fit before diving into process, pricing, or agreements.",
     "cards": [
       {
-        "slug": "career-return",
         "title": "Returning to work",
-        "teaser": "A steady ramp back in 12 weeks—light structure, kind accountability.",
-        "cta_label": "See this pathway"
+        "description": "A steady ramp back in 12 weeks—light structure, kind accountability.",
+        "href": "/services/career-return",
+        "linkLabel": "See this pathway"
       },
       {
-        "slug": "graduate-start",
         "title": "Graduate start",
-        "teaser": "Turn scattered efforts into a clear story and small, testable steps.",
-        "cta_label": "See this pathway"
+        "description": "Turn scattered efforts into a clear story and small, testable steps.",
+        "href": "/services/graduate-start",
+        "linkLabel": "See this pathway"
       },
       {
-        "slug": "immigrant-job",
         "title": "New to the UK job market",
-        "teaser": "Translate overseas experience into local proof points you can show.",
-        "cta_label": "See this pathway"
+        "description": "Translate overseas experience into local proof points you can show.",
+        "href": "/services/immigrant-job",
+        "linkLabel": "See this pathway"
       }
     ]
   },
   "key_points": {
+    "title": "What you will notice in early sessions",
+    "description": "Example-led conversations keep decisions grounded before we layer on more structure.",
     "items": [
-      "Calm, practical sessions; no hype, no guarantees.",
-      "Try free tools first—keep what helps.",
-      "Weekly rhythm with small experiments between sessions.",
-      "Clear boundaries and confidentiality.",
-      "Simple pricing; pause anytime between blocks."
+      {
+        "title": "Calm, practical sessions—no hype, no guarantees."
+      },
+      {
+        "title": "Try free tools first and keep what genuinely helps."
+      },
+      {
+        "title": "Weekly rhythm with small experiments between sessions."
+      },
+      {
+        "title": "Clear boundaries and confidentiality, explained up front."
+      },
+      {
+        "title": "Simple pricing with space to pause between blocks."
+      }
     ]
   },
   "process": {
+    "title": "How we will work once it feels like a fit",
+    "description": "We stay example-first while moving into agreements, cadence, and review points.",
     "steps": [
-      "Explore — what matters and why now",
-      "Try — a 20-min conversation",
-      "Align — goals, boundaries, cadence",
-      "Work — weekly sessions + short reviews"
+      {
+        "title": "Explore",
+        "description": "What matters, why now, and what a good outcome looks like for you."
+      },
+      {
+        "title": "Try",
+        "description": "A 20-minute conversation to sense chemistry, scope, and accessibility needs."
+      },
+      {
+        "title": "Align",
+        "description": "Goals, boundaries, and cadence before any paid work begins."
+      },
+      {
+        "title": "Work",
+        "description": "Weekly sessions plus short reviews and experiments between calls."
+      }
     ]
   },
   "boundaries": {
+    "title": "Boundaries we keep visible",
+    "description": "These agreements protect pace, wellbeing, and confidentiality.",
     "items": [
-      "Coaching, not therapy—signposting if therapy is safer.",
-      "Time boundaries: start on time, end on time.",
-      "Minimal notes—deletion on request.",
-      "Your pace, our structure."
+      {
+        "question": "Is this coaching or therapy?",
+        "answer": "Coaching, not therapy—we will signpost therapy when that is safer for you."
+      },
+      {
+        "question": "What are our time expectations?",
+        "answer": "We start and end on time so you can plan around sessions with confidence."
+      },
+      {
+        "question": "How do you handle notes and data?",
+        "answer": "We keep minimal notes and delete them on request within agreed retention windows."
+      },
+      {
+        "question": "Who sets the pace?",
+        "answer": "You set the pace; we provide structure and accountability without pressure."
+      }
     ]
   },
   "faqTeaser": {
