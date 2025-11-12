@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { getAboutSubnav } from '@/components/about/AboutSubnav';
+import { StickyCTA } from '@/components/common/StickyCTA';
 import { loadContent } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
@@ -65,61 +66,64 @@ export default function ApproachPage({ approach, usedLocale, locale, fallbackNot
   const pillars = Array.isArray(approach?.pillars) ? approach.pillars : [];
 
   return (
-    <PageLayoutV2
-      header={<Header approach={approach} showFallback={showFallback} fallbackNotice={fallbackNotice} />}
-      subnav={getAboutSubnav('approach')}
-    >
-      {pillars.length ? (
-        <section>
-          <h2 className="text-xl font-semibold text-slate-900">How we structure coaching</h2>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {pillars.map((pillar: any, index: number) => (
-              <PillarCard key={pillar?.title ?? index} item={pillar} />
-            ))}
-          </div>
-          <div className="mt-6 flex flex-col gap-2 text-sm font-semibold text-emerald-700 sm:flex-row">
-            <Link
-              href="/about/ethics"
-              className="inline-flex items-center gap-1 transition hover:text-emerald-900"
-            >
-              <span>Review our ethics commitments</span>
-              <span aria-hidden>→</span>
-            </Link>
-            <Link
-              href="/about/team"
-              className="inline-flex items-center gap-1 transition hover:text-emerald-900"
-            >
-              <span>Meet the coaching team</span>
+    <>
+      <PageLayoutV2
+        header={<Header approach={approach} showFallback={showFallback} fallbackNotice={fallbackNotice} />}
+        subnav={getAboutSubnav('approach')}
+      >
+        {pillars.length ? (
+          <section>
+            <h2 className="text-xl font-semibold text-slate-900">How we structure coaching</h2>
+            <div className="mt-6 grid gap-6 md:grid-cols-3">
+              {pillars.map((pillar: any, index: number) => (
+                <PillarCard key={pillar?.title ?? index} item={pillar} />
+              ))}
+            </div>
+            <div className="mt-6 flex flex-col gap-2 text-sm font-semibold text-emerald-700 sm:flex-row">
+              <Link
+                href="/about/ethics"
+                className="inline-flex items-center gap-1 transition hover:text-emerald-900"
+              >
+                <span>Review our ethics commitments</span>
+                <span aria-hidden>→</span>
+              </Link>
+              <Link
+                href="/about/team"
+                className="inline-flex items-center gap-1 transition hover:text-emerald-900"
+              >
+                <span>Meet the coaching team</span>
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
+          </section>
+        ) : null}
+
+        <section className="mt-12 space-y-4">
+          <h2 className="text-xl font-semibold text-slate-900">What to expect in partnership</h2>
+          <ul className="space-y-3 text-sm leading-6 text-slate-700">
+            <li className="flex gap-2">
+              <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
+              <span>We align on scope, consent, and cadence before the first session.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
+              <span>Bilingual facilitation keeps cultural nuance intact as you test new experiments.</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
+              <span>Regular reflection loops ensure agreements stay ethical, accessible, and useful.</span>
+            </li>
+          </ul>
+          <div className="pt-4 text-sm font-semibold text-emerald-700">
+            <Link href="/contact" className="inline-flex items-center gap-1 transition hover:text-emerald-900">
+              <span>Book a chemistry chat</span>
               <span aria-hidden>→</span>
             </Link>
           </div>
         </section>
-      ) : null}
-
-      <section className="mt-12 space-y-4">
-        <h2 className="text-xl font-semibold text-slate-900">What to expect in partnership</h2>
-        <ul className="space-y-3 text-sm leading-6 text-slate-700">
-          <li className="flex gap-2">
-            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
-            <span>We align on scope, consent, and cadence before the first session.</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
-            <span>Bilingual facilitation keeps cultural nuance intact as you test new experiments.</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
-            <span>Regular reflection loops ensure agreements stay ethical, accessible, and useful.</span>
-          </li>
-        </ul>
-        <div className="pt-4 text-sm font-semibold text-emerald-700">
-          <Link href="/contact" className="inline-flex items-center gap-1 transition hover:text-emerald-900">
-            <span>Book a chemistry chat</span>
-            <span aria-hidden>→</span>
-          </Link>
-        </div>
-      </section>
-    </PageLayoutV2>
+      </PageLayoutV2>
+      <StickyCTA />
+    </>
   );
 }
 
