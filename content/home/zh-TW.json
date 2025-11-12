@@ -1,58 +1,114 @@
 {
   "seo": {
-    "title": "陪你穩健前行的職涯教練",
-    "description": "SustainSage 以 ICF 倫理為基礎，陪伴正在面對轉職、移居或重返職場的專業人士。"
+    "title": "Career coaching for sustainable change",
+    "description": "SustainSage offers thoughtful coaching for people navigating transitions, relocations, and re-entry moments."
   },
   "hero": {
-    "eyebrow": "以可持續的方式面對轉變",
-    "title": "在清晰與關懷中設計你的下一步",
-    "description": "與教練一起梳理脈絡、釐清需求，在不過度耗竭的前提下規畫前行策略。",
+    "eyebrow": "Navigate change sustainably",
+    "title": "Coaching to help you move forward with clarity",
+    "description": "Work with an ICF-aligned coach to map your next step without burning out or losing what matters to you.",
     "image": {
       "src": "/images/hero/main.jpg",
-      "alt": "SustainSage 教練與來訪者討論的場景"
+      "alt": "Rashi Anand coaching a client in a bright room"
     },
     "primaryCta": {
-      "label": "預約初談",
+      "label": "Book an intro call",
       "href": "/contact"
     },
     "secondaryCta": {
-      "label": "了解服務",
+      "label": "Browse services",
       "href": "/services"
     }
   },
   "services": {
-    "title": "為當下處境挑選合適的教練服務",
-    "description": "每一個方案結合具體行動與深度反思，幫助你以價值為中心做出選擇。",
+    "eyebrow": "Services",
+    "title": "Choose the coaching focus that fits your moment",
+    "description": "Each pathway blends practical planning with reflective space so you can make grounded, values-led decisions.",
     "cards": [
       {
-        "title": "職涯轉換教練",
-        "description": "在轉換角色、地點或方向時，提供穩定的陪伴與行動提示。",
+        "title": "Career transitions",
+        "description": "Relocate or shift roles with calm structure and clear next steps.",
         "href": "/services/transition-coaching",
         "icon": "compass"
       },
       {
-        "title": "中階職涯教練",
-        "description": "重新連結優勢與界線，調出可持續的工作節奏。",
+        "title": "Mid-career coaching",
+        "description": "Re-align your direction with grounded support and refreshed boundaries.",
         "href": "/services/mid-career-coaching",
         "icon": "handshake"
       },
       {
-        "title": "Reset Sprint",
-        "description": "在變動之後，以短期節奏重新啟動動能。",
+        "title": "Reset sprint",
+        "description": "Short, focused sessions to regain momentum after change or pause.",
         "href": "/services/reset-sprint",
         "icon": "clock"
       }
     ]
   },
+  "key_points": {
+    "title": "What you can expect",
+    "description": "Coaching stays practical, bilingual, and paced so you can make steady moves.",
+    "items": [
+      {
+        "title": "Agree pace, goals, and support before we begin.",
+        "icon": "note"
+      },
+      {
+        "title": "Switch between Mandarin and English without losing nuance.",
+        "icon": "book"
+      },
+      {
+        "title": "Design experiments that respect energy, care, and capacity.",
+        "icon": "calendar"
+      }
+    ]
+  },
+  "process": {
+    "title": "How we work together",
+    "description": "A lightweight structure keeps momentum without overwhelming your schedule.",
+    "steps": [
+      {
+        "title": "Share context",
+        "description": "We map the transitions you are navigating, the stakeholders involved, and any immediate constraints."
+      },
+      {
+        "title": "Design experiments",
+        "description": "We co-create small, testable actions that help you practise language, decisions, and boundaries."
+      },
+      {
+        "title": "Review and recalibrate",
+        "description": "We check-in on outcomes, iterate your plan, and celebrate shifts without adding pressure."
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "Boundaries that keep coaching safe",
+    "description": "These agreements help you stay in charge of the process.",
+    "items": [
+      {
+        "question": "What happens to the information I share?",
+        "answer": "Notes stay between coach and client. We follow ICF-aligned confidentiality and data retention practices."
+      },
+      {
+        "question": "How do we handle sensitive topics?",
+        "answer": "We name triggers early, pause when something feels unsafe, and signpost therapy or legal support when needed."
+      },
+      {
+        "question": "Can we adjust cadence if life gets busy?",
+        "answer": "Yes. We co-design the rhythm of sessions and pause or slow down when capacity is stretched."
+      }
+    ]
+  },
   "faqTeaser": {
-    "title": "想更了解教練如何運作？",
-    "body": "我們整理了關於節奏、收費、倫理與客製化流程的常見問題。",
+    "title": "Questions about how coaching works?",
+    "body": "Read about session rhythms, pricing, ethics, and how we tailor support for individuals and organisations.",
     "cta": {
-      "label": "查看常見問題",
+      "label": "Read the FAQs",
       "href": "/faq"
     }
   },
   "testimonials": {
-    "title": "在轉折中被信任的教練夥伴"
-  }
+    "title": "Trusted by people navigating change"
+  },
+  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。"
 }
