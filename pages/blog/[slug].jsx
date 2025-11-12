@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import Head from 'next/head';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import MainLayout from '@/components/layout/MainLayout';
 import { getAllPosts, getPostRendered } from '@/lib/content';
@@ -7,23 +6,37 @@ import { toSerializable } from '@/lib/toSerializable';
 
 export default function BlogPost({ fm, html }) {
   return (
-    <MainLayout>
-      <Head>
-        <title>{fm.title}</title>
-        {fm.description && <meta name="description" content={fm.description} />}
-      </Head>
-      <article className="prose prose-slate mx-auto mt-10 max-w-3xl px-5 md:px-8">
-        <h1>{fm.title}</h1>
-        {fm.hero && (
-          <figure className="overflow-hidden rounded-xl border border-slate-200">
-            <Image src={fm.hero} alt={fm.alt || ''} width={1600} height={900} priority />
-          </figure>
-        )}
-        <div dangerouslySetInnerHTML={{ __html: html }} />
-      </article>
-    </MainLayout>
+    <article className="prose prose-slate mx-auto mt-10 max-w-3xl px-5 md:px-8">
+      <h1>{fm.title}</h1>
+      {fm.hero && (
+        <figure className="overflow-hidden rounded-xl border border-slate-200">
+          <Image src={fm.hero} alt={fm.alt || ''} width={1600} height={900} priority />
+        </figure>
+      )}
+      <div dangerouslySetInnerHTML={{ __html: html }} />
+    </article>
   );
 }
+
+BlogPost.getLayout = function getLayout(page) {
+  const frontmatter = page.props?.fm ?? {};
+  const { title, description, hero } = frontmatter;
+
+  return (
+    <MainLayout
+      seo={{
+        title,
+        description,
+        og: {
+          type: 'article',
+        },
+        ogImage: hero,
+      }}
+    >
+      {page}
+    </MainLayout>
+  );
+};
 
 export async function getStaticPaths({ locales }) {
   const slugs = getAllPosts('en').map((post) => post.slug);

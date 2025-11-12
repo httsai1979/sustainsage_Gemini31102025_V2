@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
 import Tag from '@/components/ui/Tag';
 import { loadJSON } from '@/lib/content';
@@ -33,6 +34,19 @@ export default function ResourcesPage({ items }) {
     </section>
   );
 }
+
+ResourcesPage.getLayout = function getLayout(page) {
+  return (
+    <MainLayout
+      seo={{
+        title: 'Resources',
+        description: 'Print-friendly A4 PDFs to support your coaching sessions or self-development.',
+      }}
+    >
+      {page}
+    </MainLayout>
+  );
+};
 
 export async function getStaticProps({ locale }) {
   const items = loadJSON('resources', locale);
