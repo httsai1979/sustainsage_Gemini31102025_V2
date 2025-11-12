@@ -33,7 +33,7 @@ function BulletList({ items }) {
       {items.map((item) => (
         <li
           key={item.title ?? item}
-          className="flex gap-3 rounded-3xl border border-emerald-100 bg-white/95 p-5 shadow-sm"
+          className="flex gap-3 rounded-2xl border border-emerald-100 bg-white p-5"
         >
           <span aria-hidden className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
           <div className="space-y-1">
@@ -82,8 +82,8 @@ function StepList({ steps }) {
           <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-700 text-sm font-semibold text-white">
             {index + 1}
           </span>
-          <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-            {step.title ? <h3 className="text-base font-semibold text-slate-900">{step.title}</h3> : null}
+          <div className="rounded-2xl border border-emerald-100 bg-white p-5">
+            {step.title ? <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3> : null}
             {step.description ? (
               <p className="mt-2 text-sm leading-6 text-slate-700">{step.description}</p>
             ) : null}
@@ -115,7 +115,7 @@ function Callout({ title, body, primary, secondary }) {
 
   return (
     <section className="bg-emerald-900 py-12 sm:py-16">
-      <div className="mx-auto max-w-3xl px-6 text-white">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 text-white">
         {title ? (
           <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
         ) : null}
@@ -185,15 +185,17 @@ export default function AboutPage({ copy, team, coaching, showFallbackNotice, fa
   return (
     <>
       <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-3xl px-6 space-y-6">
-          <Eyebrow>{intro.eyebrow}</Eyebrow>
-          {intro.title ? (
-            <h1 className="scroll-mt-28 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{intro.title}</h1>
-          ) : null}
-          {intro.body ? <p className="text-base leading-7 text-slate-700">{intro.body}</p> : null}
-          {showFallbackNotice ? (
-            <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
-          ) : null}
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <div className="mx-auto max-w-3xl space-y-6">
+            <Eyebrow>{intro.eyebrow}</Eyebrow>
+            {intro.title ? (
+              <h1 className="scroll-mt-28 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{intro.title}</h1>
+            ) : null}
+            {intro.body ? <p className="text-base leading-7 text-slate-700">{intro.body}</p> : null}
+            {showFallbackNotice ? (
+              <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+            ) : null}
+          </div>
         </div>
       </section>
 
@@ -203,25 +205,29 @@ export default function AboutPage({ copy, team, coaching, showFallbackNotice, fa
 
       {keyPoints?.items?.length ? (
         <section className="bg-emerald-50/70 py-16 sm:py-20">
-          <div className="mx-auto max-w-3xl px-6">
-            {keyPoints.title ? (
-              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{keyPoints.title}</h2>
-            ) : null}
-            <BulletList items={keyPoints.items} />
+          <div className="mx-auto max-w-7xl px-4 md:px-6">
+            <div className="mx-auto max-w-3xl">
+              {keyPoints.title ? (
+                <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{keyPoints.title}</h2>
+              ) : null}
+              <BulletList items={keyPoints.items} />
+            </div>
           </div>
         </section>
       ) : null}
 
       {process?.steps?.length ? (
         <section className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-3xl px-6">
-            {process.title ? (
-              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{process.title}</h2>
-            ) : null}
-            {process.description ? (
-              <p className="mt-3 text-sm leading-6 text-slate-700">{process.description}</p>
-            ) : null}
-            <StepList steps={process.steps} />
+          <div className="mx-auto max-w-7xl px-4 md:px-6">
+            <div className="mx-auto max-w-3xl">
+              {process.title ? (
+                <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{process.title}</h2>
+              ) : null}
+              {process.description ? (
+                <p className="mt-3 text-sm leading-6 text-slate-700">{process.description}</p>
+              ) : null}
+              <StepList steps={process.steps} />
+            </div>
           </div>
         </section>
       ) : null}
@@ -230,14 +236,16 @@ export default function AboutPage({ copy, team, coaching, showFallbackNotice, fa
 
       {boundaries?.items?.length ? (
         <section className="bg-emerald-50/70 py-16 sm:py-20">
-          <div className="mx-auto max-w-3xl px-6">
-            {boundaries.title ? (
-              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{boundaries.title}</h2>
-            ) : null}
-            {boundaries.description ? (
-              <p className="mt-3 text-sm leading-6 text-slate-700">{boundaries.description}</p>
-            ) : null}
-            <FAQAccordion items={boundaries.items} className="mt-6" />
+          <div className="mx-auto max-w-7xl px-4 md:px-6">
+            <div className="mx-auto max-w-3xl">
+              {boundaries.title ? (
+                <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{boundaries.title}</h2>
+              ) : null}
+              {boundaries.description ? (
+                <p className="mt-3 text-sm leading-6 text-slate-700">{boundaries.description}</p>
+              ) : null}
+              <FAQAccordion items={boundaries.items} className="mt-6" />
+            </div>
           </div>
         </section>
       ) : null}
