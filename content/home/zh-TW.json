@@ -21,81 +21,92 @@
     }
   },
   "services": {
-    "eyebrow": "Services",
-    "title": "Choose the coaching focus that fits your moment",
-    "description": "Each pathway blends practical planning with reflective space so you can make grounded, values-led decisions.",
+    "eyebrow": "服務",
+    "title": "先看哪些方案符合你的情境",
+    "description": "先用情境與範例確認是否合適，再進一步了解流程、定價與協議。",
     "cards": [
       {
-        "title": "Career transitions",
-        "description": "Relocate or shift roles with calm structure and clear next steps.",
-        "href": "/services/transition-coaching",
-        "icon": "compass"
+        "title": "重返職場",
+        "description": "12 週溫和回到節奏—輕量結構，友善督導。",
+        "href": "/services/career-return",
+        "linkLabel": "查看方案"
       },
       {
-        "title": "Mid-career coaching",
-        "description": "Re-align your direction with grounded support and refreshed boundaries.",
-        "href": "/services/mid-career-coaching",
-        "icon": "handshake"
+        "title": "畢業起步",
+        "description": "把分散努力轉成清楚敘事與可測的小步驟。",
+        "href": "/services/graduate-start",
+        "linkLabel": "查看方案"
       },
       {
-        "title": "Reset sprint",
-        "description": "Short, focused sessions to regain momentum after change or pause.",
-        "href": "/services/reset-sprint",
-        "icon": "clock"
+        "title": "英國職場新起點",
+        "description": "把海外經驗轉成在地可信的證據點。",
+        "href": "/services/immigrant-job",
+        "linkLabel": "查看方案"
       }
     ]
   },
   "key_points": {
-    "title": "What you can expect",
-    "description": "Coaching stays practical, bilingual, and paced so you can make steady moves.",
+    "title": "前期會談可以期待什麼",
+    "description": "用情境先確認需求，再逐步建立節奏與結構。",
     "items": [
       {
-        "title": "Agree pace, goals, and support before we begin.",
-        "icon": "note"
+        "title": "冷靜、實作導向；不誇大、不保證結果。"
       },
       {
-        "title": "Switch between Mandarin and English without losing nuance.",
-        "icon": "book"
+        "title": "先用免費工具，留下對你有用的。"
       },
       {
-        "title": "Design experiments that respect energy, care, and capacity.",
-        "icon": "calendar"
+        "title": "每週節奏；兩次會談間做小實驗。"
+      },
+      {
+        "title": "清楚邊界與保密，事前說明。"
+      },
+      {
+        "title": "簡單定價；套組之間可暫停。"
       }
     ]
   },
   "process": {
-    "title": "How we work together",
-    "description": "A lightweight structure keeps momentum without overwhelming your schedule.",
+    "title": "確認合適後會怎麼合作",
+    "description": "維持情境優先，同時把節奏、協議與回顧頻率說清楚。",
     "steps": [
       {
-        "title": "Share context",
-        "description": "We map the transitions you are navigating, the stakeholders involved, and any immediate constraints."
+        "title": "探索",
+        "description": "釐清現在重要的是什麼、為何是現在、期待的改變。"
       },
       {
-        "title": "Design experiments",
-        "description": "We co-create small, testable actions that help you practise language, decisions, and boundaries."
+        "title": "試談",
+        "description": "20 分鐘對談，確認節奏、需求與可及性。"
       },
       {
-        "title": "Review and recalibrate",
-        "description": "We check-in on outcomes, iterate your plan, and celebrate shifts without adding pressure."
+        "title": "對齊",
+        "description": "付費前先對齊目標、邊界與合作頻率。"
+      },
+      {
+        "title": "實作",
+        "description": "每週會談，兩次之間有短回顧與小實驗。"
       }
     ]
   },
   "boundaries": {
-    "title": "Boundaries that keep coaching safe",
-    "description": "These agreements help you stay in charge of the process.",
+    "title": "我們會守住的邊界",
+    "description": "這些約定讓節奏、身心安全與保密都在掌握中。",
     "items": [
       {
-        "question": "What happens to the information I share?",
-        "answer": "Notes stay between coach and client. We follow ICF-aligned confidentiality and data retention practices."
+        "question": "這是教練還是治療？",
+        "answer": "這裡是教練服務—若治療更安全，我們會協助轉介。"
       },
       {
-        "question": "How do we handle sensitive topics?",
-        "answer": "We name triggers early, pause when something feels unsafe, and signpost therapy or legal support when needed."
+        "question": "時間上有什麼約定？",
+        "answer": "準時開始、準時結束，讓你能安排其他行程。"
       },
       {
-        "question": "Can we adjust cadence if life gets busy?",
-        "answer": "Yes. We co-design the rhythm of sessions and pause or slow down when capacity is stretched."
+        "question": "會留下哪些紀錄？",
+        "answer": "只保留必要紀錄，如有需要可依約定刪除。"
+      },
+      {
+        "question": "合作節奏由誰決定？",
+        "answer": "節奏由你決定，我們守住結構與節拍。"
       }
     ]
   },
@@ -110,5 +121,11 @@
   "testimonials": {
     "title": "Trusted by people navigating change"
   },
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。"
+  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
+  "cta": {
+    "primary_label": "先試用免費工具",
+    "primary_href": "/#tools",
+    "secondary_label": "預約 20 分鐘對談",
+    "secondary_href": "/contact"
+  }
 }

@@ -22,80 +22,91 @@
   },
   "services": {
     "eyebrow": "Services",
-    "title": "Choose the coaching focus that fits your moment",
-    "description": "Each pathway blends practical planning with reflective space so you can make grounded, values-led decisions.",
+    "title": "Start with the pathway that matches your moment",
+    "description": "See example scenarios first so you can confirm fit before diving into process, pricing, or agreements.",
     "cards": [
       {
-        "title": "Career transitions",
-        "description": "Relocate or shift roles with calm structure and clear next steps.",
-        "href": "/services/transition-coaching",
-        "icon": "compass"
+        "title": "Returning to work",
+        "description": "A steady ramp back in 12 weeks—light structure, kind accountability.",
+        "href": "/services/career-return",
+        "linkLabel": "See this pathway"
       },
       {
-        "title": "Mid-career coaching",
-        "description": "Re-align your direction with grounded support and refreshed boundaries.",
-        "href": "/services/mid-career-coaching",
-        "icon": "handshake"
+        "title": "Graduate start",
+        "description": "Turn scattered efforts into a clear story and small, testable steps.",
+        "href": "/services/graduate-start",
+        "linkLabel": "See this pathway"
       },
       {
-        "title": "Reset sprint",
-        "description": "Short, focused sessions to regain momentum after change or pause.",
-        "href": "/services/reset-sprint",
-        "icon": "clock"
+        "title": "New to the UK job market",
+        "description": "Translate overseas experience into local proof points you can show.",
+        "href": "/services/immigrant-job",
+        "linkLabel": "See this pathway"
       }
     ]
   },
   "key_points": {
-    "title": "What you can expect",
-    "description": "Coaching stays practical, bilingual, and paced so you can make steady moves.",
+    "title": "What you will notice in early sessions",
+    "description": "Example-led conversations keep decisions grounded before we layer on more structure.",
     "items": [
       {
-        "title": "Agree pace, goals, and support before we begin.",
-        "icon": "note"
+        "title": "Calm, practical sessions—no hype, no guarantees."
       },
       {
-        "title": "Switch between Mandarin and English without losing nuance.",
-        "icon": "book"
+        "title": "Try free tools first and keep what genuinely helps."
       },
       {
-        "title": "Design experiments that respect energy, care, and capacity.",
-        "icon": "calendar"
+        "title": "Weekly rhythm with small experiments between sessions."
+      },
+      {
+        "title": "Clear boundaries and confidentiality, explained up front."
+      },
+      {
+        "title": "Simple pricing with space to pause between blocks."
       }
     ]
   },
   "process": {
-    "title": "How we work together",
-    "description": "A lightweight structure keeps momentum without overwhelming your schedule.",
+    "title": "How we will work once it feels like a fit",
+    "description": "We stay example-first while moving into agreements, cadence, and review points.",
     "steps": [
       {
-        "title": "Share context",
-        "description": "We map the transitions you are navigating, the stakeholders involved, and any immediate constraints."
+        "title": "Explore",
+        "description": "What matters, why now, and what a good outcome looks like for you."
       },
       {
-        "title": "Design experiments",
-        "description": "We co-create small, testable actions that help you practise language, decisions, and boundaries."
+        "title": "Try",
+        "description": "A 20-minute conversation to sense chemistry, scope, and accessibility needs."
       },
       {
-        "title": "Review and recalibrate",
-        "description": "We check-in on outcomes, iterate your plan, and celebrate shifts without adding pressure."
+        "title": "Align",
+        "description": "Goals, boundaries, and cadence before any paid work begins."
+      },
+      {
+        "title": "Work",
+        "description": "Weekly sessions plus short reviews and experiments between calls."
       }
     ]
   },
   "boundaries": {
-    "title": "Boundaries that keep coaching safe",
-    "description": "These agreements help you stay in charge of the process.",
+    "title": "Boundaries we keep visible",
+    "description": "These agreements protect pace, wellbeing, and confidentiality.",
     "items": [
       {
-        "question": "What happens to the information I share?",
-        "answer": "Notes stay between coach and client. We follow ICF-aligned confidentiality and data retention practices."
+        "question": "Is this coaching or therapy?",
+        "answer": "Coaching, not therapy—we will signpost therapy when that is safer for you."
       },
       {
-        "question": "How do we handle sensitive topics?",
-        "answer": "We name triggers early, pause when something feels unsafe, and signpost therapy or legal support when needed."
+        "question": "What are our time expectations?",
+        "answer": "We start and end on time so you can plan around sessions with confidence."
       },
       {
-        "question": "Can we adjust cadence if life gets busy?",
-        "answer": "Yes. We co-design the rhythm of sessions and pause or slow down when capacity is stretched."
+        "question": "How do you handle notes and data?",
+        "answer": "We keep minimal notes and delete them on request within agreed retention windows."
+      },
+      {
+        "question": "Who sets the pace?",
+        "answer": "You set the pace; we provide structure and accountability without pressure."
       }
     ]
   },
@@ -110,5 +121,11 @@
   "testimonials": {
     "title": "Trusted by people navigating change"
   },
-  "fallbackNotice": "Temporarily showing English content while we complete this translation."
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "cta": {
+    "primary_label": "Try free tools",
+    "primary_href": "/#tools",
+    "secondary_label": "Book a 20-min conversation",
+    "secondary_href": "/contact"
+  }
 }

@@ -3,26 +3,44 @@
   "pricing": {
     "packages": [
       {
-        "name": "6-session block",
-        "duration": "6×60–75min over ~12 weeks",
-        "scope": "CV translation to UK style, outreach scripts, interview rehearsal; async check-ins.",
-        "price_note": "Fees on request; sliding scale available case-by-case."
+        "name": "Starter — 3 sessions",
+        "duration": "3 × 50-min over 4–6 weeks",
+        "scope": "One micro-experiment between sessions; CV/LinkedIn quick pass for UK norms.",
+        "price_note": "Fees on request; invoiced in GBP."
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One focused topic (e.g., recruiter screening or CV bullet rewrite) with an action note.",
-        "price_note": "Good for tactical needs."
+        "name": "Focus — 6 sessions",
+        "duration": "6 × 50-min over 8–12 weeks",
+        "scope": "Portfolio/CV reframing with visible proof points; interview rehearsal for clarity and fit.",
+        "price_note": "Fees on request; invoiced in GBP."
+      },
+      {
+        "name": "Extended — 12 sessions",
+        "duration": "12 × 50-min over 3–6 months",
+        "scope": "Deep practice on culture fit and manager conversations; tailored projects with rhythm reviews.",
+        "price_note": "Fees on request; invoiced in GBP."
       }
     ],
     "policies": [
       {
         "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
+        "body": "24 hours’ notice; late changes count as used."
       },
       {
-        "title": "No guarantees",
-        "body": "We co-design experiments; outcomes depend on market timing and your actions."
+        "title": "Cadence",
+        "body": "Cadence agreed in the first session; pause allowed between blocks."
+      },
+      {
+        "title": "Confidentiality",
+        "body": "Confidential by default; minimal notes; deletion on request."
+      },
+      {
+        "title": "Scope",
+        "body": "Coaching, not therapy — signposting if therapy is safer."
+      },
+      {
+        "title": "Logistics",
+        "body": "UK hours (online); invoicing in GBP."
       }
     ]
   },
@@ -132,6 +150,25 @@
         ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
         "slug": "partner-rebuilding-identity"
+      }
+    ]
+  },
+  "key_points": {
+    "items": [
+      {
+        "title": "Translate overseas experience into UK-relevant examples and terms."
+      },
+      {
+        "title": "Weekly cadence; micro-experiments between sessions (info chats, trial tasks, volunteering taster)."
+      },
+      {
+        "title": "CV/LinkedIn adapted to UK norms; show recent proof points."
+      },
+      {
+        "title": "Interview rehearsal for culture/fit—clear stories without scripts or hacks."
+      },
+      {
+        "title": "Simple pricing; pause between blocks; confidentiality by default."
       }
     ]
   }
