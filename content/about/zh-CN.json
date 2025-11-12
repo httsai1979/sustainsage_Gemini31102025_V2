@@ -60,6 +60,14 @@
         "description": "我们探讨假设、权力与无障碍需求，并共同设计可以带回团队的语言与对话。"
       }
     ],
+    "cta": {
+      "label": "了解我们的合作方式",
+      "href": "/about/approach"
+    },
+    "secondaryCta": {
+      "label": "阅读教练伦理承诺",
+      "href": "/about/ethics"
+    },
     "disclaimer": "教练无法取代心理治疗、法律意见或紧急支援；若出现需要专门协助的状况，我们会暂停并提供转介。"
   },
   "boundaries": {

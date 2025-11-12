@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import Link from 'next/link';
 
 function ScenarioCard({ item }) {
   const { title, description } = item ?? {};
@@ -24,6 +25,11 @@ ScenarioCard.propTypes = {
 
 export default function WhatIsCoaching({ data }) {
   const scenarios = data?.scenarios ?? [];
+  const primaryCta = data?.cta ?? data?.primaryCta;
+  const secondaryCta = data?.secondaryCta;
+  const hasPrimaryCta = Boolean(primaryCta?.href && primaryCta?.label);
+  const hasSecondaryCta = Boolean(secondaryCta?.href && secondaryCta?.label);
+
   if (!scenarios.length) return null;
 
   return (
@@ -45,6 +51,26 @@ export default function WhatIsCoaching({ data }) {
             <ScenarioCard key={scenario.title ?? index} item={scenario} />
           ))}
         </div>
+        {(hasPrimaryCta || hasSecondaryCta) && (
+          <div className="mt-8 flex flex-col gap-3 text-sm font-semibold sm:flex-row">
+            {hasPrimaryCta ? (
+              <Link
+                href={primaryCta.href}
+                className="inline-flex items-center justify-center rounded-full bg-emerald-900 px-5 py-3 text-white shadow-sm transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-900"
+              >
+                {primaryCta.label}
+              </Link>
+            ) : null}
+            {hasSecondaryCta ? (
+              <Link
+                href={secondaryCta.href}
+                className="inline-flex items-center justify-center rounded-full border border-emerald-200 bg-white px-5 py-3 text-emerald-900 transition hover:border-emerald-300 hover:bg-emerald-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-900"
+              >
+                {secondaryCta.label}
+              </Link>
+            ) : null}
+          </div>
+        )}
         {data?.disclaimer ? (
           <p className="mt-8 text-xs leading-5 text-slate-500">{data.disclaimer}</p>
         ) : null}
@@ -60,6 +86,18 @@ WhatIsCoaching.propTypes = {
     description: PropTypes.string,
     scenarios: PropTypes.arrayOf(PropTypes.shape(scenarioShape)),
     disclaimer: PropTypes.string,
+    cta: PropTypes.shape({
+      label: PropTypes.string,
+      href: PropTypes.string,
+    }),
+    primaryCta: PropTypes.shape({
+      label: PropTypes.string,
+      href: PropTypes.string,
+    }),
+    secondaryCta: PropTypes.shape({
+      label: PropTypes.string,
+      href: PropTypes.string,
+    }),
   }),
 };
 

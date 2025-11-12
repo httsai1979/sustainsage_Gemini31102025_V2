@@ -60,6 +60,14 @@
         "description": "我們探討假設、權力與無障礙需求，並共同設計可以帶回團隊的語言與對話。"
       }
     ],
+    "cta": {
+      "label": "了解我們的合作方式",
+      "href": "/about/approach"
+    },
+    "secondaryCta": {
+      "label": "閱讀教練倫理承諾",
+      "href": "/about/ethics"
+    },
     "disclaimer": "教練無法取代心理治療、法律意見或緊急支援；若出現需要專業協助的情況，我們會暫停並提供轉介。"
   },
   "boundaries": {
