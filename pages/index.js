@@ -58,7 +58,7 @@ ServiceCard.propTypes = {
   }).isRequired,
 };
 
-function BulletList({ items }) {
+function BulletList({ items = [] } = {}) {
   if (!Array.isArray(items) || items.length === 0) {
     return null;
   }
@@ -116,11 +116,7 @@ BulletList.propTypes = {
   ),
 };
 
-BulletList.defaultProps = {
-  items: undefined,
-};
-
-function StepList({ steps }) {
+function StepList({ steps = [] } = {}) {
   if (!Array.isArray(steps) || steps.length === 0) {
     return null;
   }
@@ -153,11 +149,12 @@ StepList.propTypes = {
   ),
 };
 
-StepList.defaultProps = {
-  steps: undefined,
-};
-
-export default function Home({ content, testimonials, showFallbackNotice, fallbackNotice }) {
+export default function Home({
+  content = {},
+  testimonials = [],
+  showFallbackNotice = false,
+  fallbackNotice = null,
+} = {}) {
   const hero = content?.hero ?? {};
   const services = content?.services ?? {};
   const keyPoints = content?.key_points ?? {};
@@ -354,17 +351,16 @@ Home.propTypes = {
   fallbackNotice: PropTypes.string,
 };
 
-Home.defaultProps = {
-  content: {},
-  testimonials: [],
-  showFallbackNotice: false,
-  fallbackNotice: null,
-};
 
 Home.getLayout = function getLayout(page) {
   const seo = page.props?.content?.seo ?? {};
   return (
-    <MainLayout title={seo.title} desc={seo.description}>
+    <MainLayout
+      seo={{
+        title: seo.title,
+        description: seo.description,
+      }}
+    >
       {page}
     </MainLayout>
   );

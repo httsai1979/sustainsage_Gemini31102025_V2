@@ -54,7 +54,7 @@ FAQItem.propTypes = {
   onToggle: PropTypes.func.isRequired,
 };
 
-export default function FAQAccordion({ items, className }) {
+export default function FAQAccordion({ items = [], className = '' } = {}) {
   const [openIndex, setOpenIndex] = useState(null);
 
   if (!Array.isArray(items) || items.length === 0) {
@@ -80,7 +80,3 @@ FAQAccordion.propTypes = {
   className: PropTypes.string,
 };
 
-FAQAccordion.defaultProps = {
-  items: undefined,
-  className: undefined,
-};
