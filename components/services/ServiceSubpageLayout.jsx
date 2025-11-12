@@ -25,7 +25,7 @@ function resolveCta(service, override) {
   };
 }
 
-export default function ServiceSubpageLayout({ service, title, intro, children, cta }) {
+export default function ServiceSubpageLayout({ service, title, intro = undefined, children, cta = undefined } = {}) {
   const backHref = `/services/${service.slug}`;
   const resolvedCta = resolveCta(service, cta);
   const pageTitle = `${title} — ${service.title}`;
@@ -131,9 +131,4 @@ ServiceSubpageLayout.propTypes = {
     }),
     note: PropTypes.string,
   }),
-};
-
-ServiceSubpageLayout.defaultProps = {
-  intro: undefined,
-  cta: undefined,
 };

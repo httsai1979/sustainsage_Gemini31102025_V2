@@ -26,7 +26,7 @@ function safeArray(value) {
   return Array.isArray(value) ? value.filter(Boolean) : [];
 }
 
-function ListCard({ title, items }) {
+function ListCard({ title, items = [] } = {}) {
   if (!title || !items || items.length === 0) {
     return null;
   }
@@ -51,12 +51,7 @@ ListCard.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string),
 };
 
-ListCard.defaultProps = {
-  title: undefined,
-  items: undefined,
-};
-
-function ReflectionCard({ title, items }) {
+function ReflectionCard({ title, items = [] } = {}) {
   if (!title || !items || items.length === 0) {
     return null;
   }
@@ -81,12 +76,7 @@ ReflectionCard.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string),
 };
 
-ReflectionCard.defaultProps = {
-  title: undefined,
-  items: undefined,
-};
-
-function CaseCard({ title, body }) {
+function CaseCard({ title, body } = {}) {
   if (!title && !body) {
     return null;
   }
@@ -104,10 +94,6 @@ CaseCard.propTypes = {
   body: PropTypes.string,
 };
 
-CaseCard.defaultProps = {
-  title: undefined,
-  body: undefined,
-};
 
 export default function ServiceDetailPage({ serviceKey, heroImage, heroAlt }) {
   const { t } = useTranslation('serviceDetails');

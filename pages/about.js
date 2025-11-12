@@ -9,7 +9,7 @@ import WhatIsCoaching from '@/components/about/WhatIsCoaching';
 import { loadContent } from '@/lib/loadContent';
 import { sanitizeProps } from '@/lib/toSerializable';
 
-function Eyebrow({ children }) {
+function Eyebrow({ children = null } = {}) {
   if (!children) return null;
   return (
     <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
@@ -22,11 +22,7 @@ Eyebrow.propTypes = {
   children: PropTypes.node,
 };
 
-Eyebrow.defaultProps = {
-  children: null,
-};
-
-function BulletList({ items }) {
+function BulletList({ items = [] } = {}) {
   if (!items?.length) return null;
   return (
     <ul className="mt-6 space-y-4">
@@ -68,11 +64,7 @@ BulletList.propTypes = {
   ),
 };
 
-BulletList.defaultProps = {
-  items: undefined,
-};
-
-function StepList({ steps }) {
+function StepList({ steps = [] } = {}) {
   if (!steps?.length) return null;
 
   return (
@@ -103,11 +95,7 @@ StepList.propTypes = {
   ),
 };
 
-StepList.defaultProps = {
-  steps: undefined,
-};
-
-function Callout({ title, body, primary, secondary }) {
+function Callout({ title, body, primary, secondary } = {}) {
   if (!title && !body) return null;
 
   const hasPrimary = primary?.href && primary?.label;
@@ -158,14 +146,13 @@ Callout.propTypes = {
   }),
 };
 
-Callout.defaultProps = {
-  title: undefined,
-  body: undefined,
-  primary: undefined,
-  secondary: undefined,
-};
-
-export default function AboutPage({ copy, team, coaching, showFallbackNotice, fallbackNotice }) {
+export default function AboutPage({
+  copy = {},
+  team = undefined,
+  coaching = undefined,
+  showFallbackNotice = false,
+  fallbackNotice = undefined,
+} = {}) {
   const {
     intro = {},
     key_points: keyPoints = {},
@@ -349,13 +336,6 @@ AboutPage.propTypes = {
   fallbackNotice: PropTypes.string,
 };
 
-AboutPage.defaultProps = {
-  copy: {},
-  team: undefined,
-  coaching: undefined,
-  showFallbackNotice: false,
-  fallbackNotice: undefined,
-};
 
 AboutPage.getLayout = function getLayout(page) {
   const seo = page.props?.copy?.seo ?? {};

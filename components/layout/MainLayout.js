@@ -6,7 +6,7 @@ import SEO from './SEO';
 
 const DEFAULT_SEO = {};
 
-export default function MainLayout({ children, seo = DEFAULT_SEO }) {
+export default function MainLayout({ children, seo = DEFAULT_SEO } = {}) {
   const normalizedSeo = typeof seo === 'object' && seo !== null ? seo : DEFAULT_SEO;
   const { title, description, desc, noIndex, noindex, og, ogImage } = normalizedSeo;
 
@@ -59,8 +59,4 @@ MainLayout.propTypes = {
     og: PropTypes.object,
     ogImage: PropTypes.string,
   }),
-};
-
-MainLayout.defaultProps = {
-  seo: DEFAULT_SEO,
 };

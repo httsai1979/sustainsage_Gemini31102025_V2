@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 const FIELD_CLASSNAME =
   'block w-full rounded-xl border border-slate-200 px-3.5 py-2 text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500';
 
-export default function ContactForm({ hasBoundaryConsent }) {
+export default function ContactForm({ hasBoundaryConsent = false } = {}) {
   const { t } = useTranslation('contact');
   const router = useRouter();
 
@@ -349,6 +349,3 @@ ContactForm.propTypes = {
   hasBoundaryConsent: PropTypes.bool,
 };
 
-ContactForm.defaultProps = {
-  hasBoundaryConsent: false,
-};

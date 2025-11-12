@@ -96,7 +96,11 @@ Category.propTypes = {
   }).isRequired,
 };
 
-export default function FAQPage({ content, showFallbackNotice, fallbackNotice }) {
+export default function FAQPage({
+  content = {},
+  showFallbackNotice = false,
+  fallbackNotice = null,
+} = {}) {
   const hero = content?.hero ?? {};
   const categories = content?.categories ?? [];
   const cta = content?.cta ?? {};
@@ -180,11 +184,6 @@ FAQPage.propTypes = {
   fallbackNotice: PropTypes.string,
 };
 
-FAQPage.defaultProps = {
-  content: {},
-  showFallbackNotice: false,
-  fallbackNotice: null,
-};
 
 FAQPage.getLayout = function getLayout(page) {
   const seo = page.props?.content?.seo ?? {};

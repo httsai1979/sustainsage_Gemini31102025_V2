@@ -13,7 +13,7 @@ function safeArray(value) {
   return Array.isArray(value) ? value.filter(Boolean) : [];
 }
 
-function BulletList({ items }) {
+function BulletList({ items = [] } = {}) {
   if (!items || items.length === 0) {
     return null;
   }
@@ -34,11 +34,7 @@ BulletList.propTypes = {
   items: PropTypes.arrayOf(PropTypes.string),
 };
 
-BulletList.defaultProps = {
-  items: undefined,
-};
-
-function PackageRecommendation({ item }) {
+function PackageRecommendation({ item = undefined } = {}) {
   if (!item?.href) {
     return null;
   }
@@ -75,10 +71,6 @@ PackageRecommendation.propTypes = {
     icon: PropTypes.string,
     cta: PropTypes.string,
   }),
-};
-
-PackageRecommendation.defaultProps = {
-  item: undefined,
 };
 
 export default function ForAudiencePage({ pageKey }) {
