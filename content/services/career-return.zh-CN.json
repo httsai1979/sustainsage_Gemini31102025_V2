@@ -1,41 +1,41 @@
 {
-  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。",
   "pricing": {
     "packages": [
       {
-        "name": "六次方案",
-        "duration": "6×60–75 分钟，约 12 周",
-        "scope": "厘清、行动实验、回顾；含异步跟进。",
-        "price_note": "具体费用视情况提供；可讨论减免或公益名额。"
+        "name": "6-session block",
+        "duration": "6×60–75min over ~12 weeks",
+        "scope": "Clarity, experiments, review; async check-ins.",
+        "price_note": "Exact fees on request; pro bono/discounts available case-by-case."
       },
       {
-        "name": "单次会谈",
-        "duration": "60–75 分钟",
-        "scope": "聚焦单一主题；行动计划＋简短回馈。",
-        "price_note": "适合特定决策或面试前准备。"
+        "name": "Single session",
+        "duration": "60–75min",
+        "scope": "One focused topic; action plan + follow-up note.",
+        "price_note": "Best for a specific decision or interview prep."
       }
     ],
     "policies": [
       {
-        "title": "改期",
-        "body": "需 ≥24 小时前通知；否则视同使用。"
+        "title": "Rescheduling",
+        "body": "≥24h notice; otherwise counted as used."
       },
       {
-        "title": "不保证结果",
-        "body": "我们共同设计实验；结果取决于你的情境与行动。"
+        "title": "No guarantees",
+        "body": "We co-design experiments; outcomes depend on your context and actions."
       }
     ]
   },
   "readiness": {
     "checklist": [
-      "我每周能投入 60–90 分钟反思或行动实验。",
-      "我理解教练非治疗／医疗建议。",
-      "我愿意做小型测试并从结果学习。"
+      "I can commit 60–90min per week for reflection or experiments.",
+      "I accept that coaching is not therapy or medical advice.",
+      "I’m willing to run small tests and learn from results."
     ],
     "what_to_prepare": [
-      "最新简历／目标岗位",
-      "三个值得改善的工作情景",
-      "界限与限制（时间、精力、家庭）"
+      "Latest CV / role targets",
+      "Three work situations worth improving",
+      "Boundaries and constraints (time, energy, family)"
     ]
   },
   "process": {
@@ -60,36 +60,36 @@
   "agreement": {
     "sections": [
       {
-        "heading": "范畴",
-        "body": "通过提问与实验，支持厘清、决策与自我主导。"
+        "heading": "Scope",
+        "body": "Coaching supports clarity, decisions and self-leadership through questions and experiments."
       },
       {
-        "heading": "非治疗／医疗",
-        "body": "不进行诊断或治疗；必要时建议寻求专业协助。"
+        "heading": "Not therapy/medical",
+        "body": "We do not diagnose or treat; we may signpost to professional help when appropriate."
       },
       {
-        "heading": "保密与例外",
-        "body": "会谈内容保密，除非法律／安全需要披露。"
+        "heading": "Confidentiality & limits",
+        "body": "We keep sessions confidential except where law/safety requires disclosure."
       },
       {
-        "heading": "同意与界限",
-        "body": "任何时候都可暂停、拒绝或停止任何练习。"
+        "heading": "Consent & boundaries",
+        "body": "You can pause, decline, or stop any activity at any time."
       },
       {
-        "heading": "改期与资料",
-        "body": "24 小时改期；会谈记录尽量简化并妥善保存。"
+        "heading": "Cancellations & data",
+        "body": "24h reschedule window; session notes kept minimal and securely."
       }
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "如何进行会谈？",
-        "a": "默认在线视频；伦敦可视情况安排线下。"
+        "q": "How do we meet?",
+        "a": "Online (video) by default; in-person by arrangement in London."
       },
       {
-        "q": "如果我还没准备好？",
-        "a": "先约 20 分钟对谈；无义务，共同判断是否合适。"
+        "q": "What if I’m not ready?",
+        "a": "Start with a 20-minute chat; we’ll decide together with no obligation."
       }
     ]
   },
@@ -98,39 +98,41 @@
     "description": "Real situations blended from multiple returners so identities stay confidential.",
     "items": [
       {
-        "title": "Phased return while caregiving",
-        "context": "After two years supporting elders, a marketing manager was invited back full time but worried about care logistics.",
-        "coaching_moves": "We mapped non-negotiables, drafted boundary scripts and rehearsed a phased return proposal.",
-        "shift": "They secured a 4-day transition plan with regular wellbeing check-ins agreed with their director.",
+        "title": "Back after 3 years, worried about gaps",
+        "context": "UK job search after a 3-year break; unsure how to frame caregiving.",
+        "coaching_moves": "Mapped a 30-min 'first day' simulation; rewrote 4 CV bullets with CAR; rehearsed boundary language.",
+        "shift": "Clearer language for gaps; sent 2 outreach messages with less avoidance.",
         "tools_used": [
-          "Boundary scripts",
-          "Stakeholder mapping"
+          "Values Map",
+          "Self-Talk Reframe",
+          "Behavior Ladder"
         ],
-        "disclaimer": "Details blended from several clients to protect privacy.",
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
         "slug": "back-after-3-years-worried-about-gaps"
       },
       {
         "title": "Rebuilding confidence post-burnout",
-        "context": "A programme lead returning after burnout leave felt anxious about pace and expectations.",
-        "coaching_moves": "We designed a gentle energy audit, practised asking for support and set review rituals with their manager.",
-        "shift": "They communicated capacity clearly and reported feeling grounded rather than bracing for collapse.",
+        "context": "Returning after burnout leave; anxious about pace and expectations.",
+        "coaching_moves": "Designed gentle energy audit; practised asking for support; set weekly review ritual.",
+        "shift": "Communicated capacity cleanly; reported growing steadiness instead of bracing.",
         "tools_used": [
-          "Energy audit",
-          "Weekly reflection prompts"
+          "Energy Audit",
+          "Weekly Reflection",
+          "Boundary Scripts"
         ],
-        "disclaimer": "Composite narrative; identifying details changed.",
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
         "slug": "rebuilding-confidence-post-burnout"
       },
       {
         "title": "Translating new skills after study",
-        "context": "A parent completed a certification during their break and needed to reposition for hybrid roles.",
-        "coaching_moves": "We reframed experience stories, prototyped networking outreach and tested interview answers.",
-        "shift": "They entered conversations confident about naming boundaries and new value.",
+        "context": "Certification during break; needs hybrid-role repositioning.",
+        "coaching_moves": "Reframed experience stories; prototyped networking outreach; tested answers.",
+        "shift": "Entered conversations confident about naming boundaries and new value.",
         "tools_used": [
-          "Story library",
-          "Interview rehearsal"
+          "Story Library",
+          "Interview Rehearsal"
         ],
-        "disclaimer": "Composite example anonymised across clients.",
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
         "slug": "translating-new-skills-after-study"
       }
     ]

@@ -1,23 +1,23 @@
 {
-  "fallbackNotice": "暂时以英文内容呈现，完整翻译即将上线。",
+  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。",
   "pathways": [
     {
       "slug": "career-return",
-      "title": "在稳固支持下重返职场",
-      "excerpt": "在教练的陪伴中，以合适节奏重建自信与日常，让职业空窗后回到稳定状态。",
-      "ctaLabel": "了解重返职场教练服务"
+      "title": "Return to work with steady support",
+      "excerpt": "Rebuild confidence and routines after a career pause with bilingual coaching paced to your capacity.",
+      "ctaLabel": "Explore career return coaching"
     },
     {
       "slug": "immigrant-job",
-      "title": "以新移民身份规划英国求职",
-      "excerpt": "梳理求职流程、语言与文化细节，帮助你在面试与沟通中保持准备充分与稳健。",
-      "ctaLabel": "查看新移民求职教练服务"
+      "title": "Navigate UK job searches as a newcomer",
+      "excerpt": "Map job search steps, language, and cultural nuance so you can show up prepared and grounded in interviews.",
+      "ctaLabel": "See newcomer job coaching"
     },
     {
       "slug": "graduate-start",
-      "title": "清晰开启第一份工作",
-      "excerpt": "从毕业到职场的衔接期，搭建申请、拓展人脉与生活节奏的稳固结构。",
-      "ctaLabel": "探索应届毕业生教练服务"
+      "title": "Launch your first role with clarity",
+      "excerpt": "Build momentum after graduation with structure for applications, networking, and sustainable routines.",
+      "ctaLabel": "Discover graduate start coaching"
     }
   ]
 }

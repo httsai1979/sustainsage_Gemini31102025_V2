@@ -109,5 +109,6 @@
   },
   "testimonials": {
     "title": "Trusted by people navigating change"
-  }
+  },
+  "fallbackNotice": "Temporarily showing English content while we complete this translation."
 }

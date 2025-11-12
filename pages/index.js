@@ -157,13 +157,15 @@ StepList.defaultProps = {
   steps: undefined,
 };
 
-export default function Home({ content, testimonials }) {
+export default function Home({ content, testimonials, showFallbackNotice, fallbackNotice }) {
   const hero = content?.hero ?? {};
   const services = content?.services ?? {};
   const keyPoints = content?.key_points ?? {};
   const process = content?.process ?? {};
   const boundaries = content?.boundaries ?? {};
   const faqTeaser = content?.faqTeaser ?? {};
+  const fallbackMessage =
+    fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return (
     <>
@@ -174,6 +176,9 @@ export default function Home({ content, testimonials }) {
           ) : null}
           <h1 className="scroll-mt-28 text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero?.title}</h1>
           {hero?.description ? <p className="text-base leading-7 text-slate-700">{hero.description}</p> : null}
+          {showFallbackNotice ? (
+            <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+          ) : null}
           <div className="flex flex-wrap gap-3">
             {hero?.primaryCta?.href ? (
               <Link href={hero.primaryCta.href} className={BUTTON_PRIMARY}>
@@ -345,11 +350,15 @@ Home.propTypes = {
       attribution: PropTypes.string,
     })
   ),
+  showFallbackNotice: PropTypes.bool,
+  fallbackNotice: PropTypes.string,
 };
 
 Home.defaultProps = {
   content: {},
   testimonials: [],
+  showFallbackNotice: false,
+  fallbackNotice: null,
 };
 
 Home.getLayout = function getLayout(page) {
@@ -364,11 +373,19 @@ Home.getLayout = function getLayout(page) {
 export async function getStaticProps({ locale = 'en-GB' }) {
   const content = loadJSON('home', locale);
   const testimonials = loadJSON('testimonials', locale);
+  const fallbackNotice =
+    typeof content?.fallbackNotice === 'string' && content.fallbackNotice.length > 0
+      ? content.fallbackNotice
+      : null;
+  const isEnglishLocale = typeof locale === 'string' && locale.toLowerCase().startsWith('en');
+  const showFallbackNotice = !isEnglishLocale && Boolean(fallbackNotice);
 
   return toSerializable({
     props: {
       content,
       testimonials,
+      showFallbackNotice,
+      fallbackNotice,
       ...(await serverSideTranslations(locale, ['common', 'home', 'faq'])),
     },
   });
