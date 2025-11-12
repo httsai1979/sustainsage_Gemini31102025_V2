@@ -106,7 +106,8 @@
           "Decision Scorecard",
           "Outreach Tracker"
         ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "slug": "securing-sponsorship-with-clarity"
       },
       {
         "title": "Translating overseas wins",
@@ -117,7 +118,8 @@
           "CAR Bullets",
           "Portfolio Map"
         ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "slug": "translating-overseas-leadership"
       },
       {
         "title": "Accent & confidence",
@@ -128,7 +130,8 @@
           "Pacing Cues",
           "Question Bank"
         ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "slug": "partner-rebuilding-identity"
       }
     ]
   }

@@ -106,7 +106,8 @@
           "Visa timeline map",
           "Outreach tracker"
         ],
-        "disclaimer": "Composite case blending several clients to protect identities."
+        "disclaimer": "Composite case blending several clients to protect identities.",
+        "slug": "securing-sponsorship-with-clarity"
       },
       {
         "title": "Translating overseas leadership",
@@ -117,7 +118,8 @@
           "Story library",
           "Mock interviews"
         ],
-        "disclaimer": "Details blended across multiple professionals."
+        "disclaimer": "Details blended across multiple professionals.",
+        "slug": "translating-overseas-leadership"
       },
       {
         "title": "Partner rebuilding identity",
@@ -128,7 +130,8 @@
           "Experiment planner",
           "Accountability voice notes"
         ],
-        "disclaimer": "Composite scenario anonymised for confidentiality."
+        "disclaimer": "Composite scenario anonymised for confidentiality.",
+        "slug": "partner-rebuilding-identity"
       }
     ]
   }

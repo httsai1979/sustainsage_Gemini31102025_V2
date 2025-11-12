@@ -194,6 +194,7 @@ function ServiceSubpageLayout({
                     shift={item.shift}
                     tools_used={item.tools_used}
                     disclaimer={item.disclaimer}
+                    href={item.slug ? `${basePath}/cases/${item.slug}` : undefined}
                   />
                 ))}
               </div>

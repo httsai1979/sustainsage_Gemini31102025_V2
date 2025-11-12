@@ -107,7 +107,8 @@
           "Self-Talk Reframe",
           "Behavior Ladder"
         ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "slug": "back-after-3-years-worried-about-gaps"
       },
       {
         "title": "Rebuilding confidence post-burnout",
@@ -119,7 +120,8 @@
           "Weekly Reflection",
           "Boundary Scripts"
         ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "slug": "rebuilding-confidence-post-burnout"
       },
       {
         "title": "Translating new skills after study",
@@ -130,7 +132,8 @@
           "Story Library",
           "Interview Rehearsal"
         ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised."
+        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "slug": "translating-new-skills-after-study"
       }
     ]
   }

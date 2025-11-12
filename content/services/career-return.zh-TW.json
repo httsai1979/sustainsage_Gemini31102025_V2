@@ -106,7 +106,8 @@
           "Boundary scripts",
           "Stakeholder mapping"
         ],
-        "disclaimer": "Details blended from several clients to protect privacy."
+        "disclaimer": "Details blended from several clients to protect privacy.",
+        "slug": "back-after-3-years-worried-about-gaps"
       },
       {
         "title": "Rebuilding confidence post-burnout",
@@ -117,7 +118,8 @@
           "Energy audit",
           "Weekly reflection prompts"
         ],
-        "disclaimer": "Composite narrative; identifying details changed."
+        "disclaimer": "Composite narrative; identifying details changed.",
+        "slug": "rebuilding-confidence-post-burnout"
       },
       {
         "title": "Translating new skills after study",
@@ -128,7 +130,8 @@
           "Story library",
           "Interview rehearsal"
         ],
-        "disclaimer": "Composite example anonymised across clients."
+        "disclaimer": "Composite example anonymised across clients.",
+        "slug": "translating-new-skills-after-study"
       }
     ]
   }

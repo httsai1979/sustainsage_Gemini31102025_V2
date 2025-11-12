@@ -106,7 +106,8 @@
           "Values canvas",
           "Decision matrix"
         ],
-        "disclaimer": "Composite narrative blended across clients."
+        "disclaimer": "Composite narrative blended across clients.",
+        "slug": "too-many-choices-no-criteria"
       },
       {
         "title": "Settling into probation",
@@ -117,7 +118,8 @@
           "Feedback scripts",
           "Weekly reflection tracker"
         ],
-        "disclaimer": "Details anonymised across multiple graduates."
+        "disclaimer": "Details anonymised across multiple graduates.",
+        "slug": "interview-stories-flat"
       },
       {
         "title": "Reframing rejection",
@@ -128,7 +130,8 @@
           "Interview debrief",
           "Energy rituals"
         ],
-        "disclaimer": "Composite example to protect privacy."
+        "disclaimer": "Composite example to protect privacy.",
+        "slug": "portfolio-without-context"
       }
     ]
   }
