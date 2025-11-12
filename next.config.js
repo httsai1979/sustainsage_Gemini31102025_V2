@@ -82,7 +82,7 @@ const nextConfig = {
     return [
       {
         source: '/service',
-        destination: '/services',
+        destination: '/services/overview',
         permanent: true,
       },
     ];
