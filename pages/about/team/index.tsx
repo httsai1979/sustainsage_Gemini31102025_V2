@@ -5,6 +5,7 @@ import TeamGrid from '@/components/about/TeamGrid';
 import WhatIsCoaching from '@/components/about/WhatIsCoaching';
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { getAboutSubnav } from '@/components/about/AboutSubnav';
+import { StickyCTA } from '@/components/common/StickyCTA';
 import { loadContent } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
@@ -80,20 +81,23 @@ export default function AboutTeamPage({
   const aboutNotice = aboutFallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return (
-    <PageLayoutV2
-      header={<Header team={team} showTeamFallback={showTeamFallback} fallbackNotice={teamFallbackNotice} />}
-      subnav={getAboutSubnav('team')}
-    >
-      {trimmedTeam ? <TeamGrid data={trimmedTeam} /> : null}
-      {whatIsCoaching ? (
-        <div className="mt-12">
-          {showAboutFallback ? (
-            <p className="mb-3 text-xs font-medium text-slate-500">{aboutNotice}</p>
-          ) : null}
-          <WhatIsCoaching data={whatIsCoaching} />
-        </div>
-      ) : null}
-    </PageLayoutV2>
+    <>
+      <PageLayoutV2
+        header={<Header team={team} showTeamFallback={showTeamFallback} fallbackNotice={teamFallbackNotice} />}
+        subnav={getAboutSubnav('team')}
+      >
+        {trimmedTeam ? <TeamGrid data={trimmedTeam} /> : null}
+        {whatIsCoaching ? (
+          <div className="mt-12">
+            {showAboutFallback ? (
+              <p className="mb-3 text-xs font-medium text-slate-500">{aboutNotice}</p>
+            ) : null}
+            <WhatIsCoaching data={whatIsCoaching} />
+          </div>
+        ) : null}
+      </PageLayoutV2>
+      <StickyCTA />
+    </>
   );
 }
 

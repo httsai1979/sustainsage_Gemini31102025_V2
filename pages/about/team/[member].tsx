@@ -3,6 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { getAboutSubnav } from '@/components/about/AboutSubnav';
+import { StickyCTA } from '@/components/common/StickyCTA';
 import { loadContent } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
@@ -51,49 +52,52 @@ export default function TeamMemberPage({ member, usedLocale, locale, fallbackNot
   const credentials = Array.isArray(member?.credentials) ? member.credentials : [];
 
   return (
-    <PageLayoutV2
-      header={<Header member={member} showFallback={showFallback} fallbackNotice={fallbackNotice} />}
-      subnav={getAboutSubnav('team')}
-    >
-      {bio.length ? (
-        <section>
-          <h2 className="text-xl font-semibold text-slate-900">How {member?.name?.split?.(' ')?.[0] ?? 'they'} coaches</h2>
-          <div className="mt-4 space-y-4 text-sm leading-6 text-slate-700">
-            {bio.map((paragraph: string, index: number) => (
-              <p key={index}>{paragraph}</p>
-            ))}
-          </div>
-        </section>
-      ) : null}
+    <>
+      <PageLayoutV2
+        header={<Header member={member} showFallback={showFallback} fallbackNotice={fallbackNotice} />}
+        subnav={getAboutSubnav('team')}
+      >
+        {bio.length ? (
+          <section>
+            <h2 className="text-xl font-semibold text-slate-900">How {member?.name?.split?.(' ')?.[0] ?? 'they'} coaches</h2>
+            <div className="mt-4 space-y-4 text-sm leading-6 text-slate-700">
+              {bio.map((paragraph: string, index: number) => (
+                <p key={index}>{paragraph}</p>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
-      {focus.length ? (
-        <section className="mt-12">
-          <h2 className="text-xl font-semibold text-slate-900">Focus areas</h2>
-          <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
-            {focus.map((item: string, index: number) => (
-              <li key={index} className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
+        {focus.length ? (
+          <section className="mt-12">
+            <h2 className="text-xl font-semibold text-slate-900">Focus areas</h2>
+            <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
+              {focus.map((item: string, index: number) => (
+                <li key={index} className="flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
-      {credentials.length ? (
-        <section className="mt-12">
-          <h2 className="text-xl font-semibold text-slate-900">Credentials & training</h2>
-          <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
-            {credentials.map((item: string, index: number) => (
-              <li key={index} className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-    </PageLayoutV2>
+        {credentials.length ? (
+          <section className="mt-12">
+            <h2 className="text-xl font-semibold text-slate-900">Credentials & training</h2>
+            <ul className="mt-4 space-y-2 text-sm leading-6 text-slate-700">
+              {credentials.map((item: string, index: number) => (
+                <li key={index} className="flex gap-2">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
+      </PageLayoutV2>
+      <StickyCTA />
+    </>
   );
 }
 
