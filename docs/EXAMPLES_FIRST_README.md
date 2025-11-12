@@ -18,5 +18,6 @@ The following notes capture how each audited page surfaces example-like content 
 | Services overview (`/services`) | Yes – pathway cards lead the page, styled with the new CardShell; hero + CTA and any explanatory blocks follow. | PathwayCard root wrapped by CardShell; content fed from `content/services/index.{locale}.json`. |
 | Services – career-return (overview) | Yes – overview keeps example cards first; key points enriched as short, scannable bullets. | Added EN/TW key points; cases written only if `cases.items[]` is a string array. |
 | Services – graduate-start (overview) | Yes – overview keeps example cards first; key points enriched with short, scannable bullets. | Added EN/TW key points; cases written only if `cases.items[]` is a string array. |
+| Services – immigrant-job (overview) | Yes – overview keeps example cards first; key points highlight UK translation steps and micro-experiments. | Added EN/TW key points; cases written only if `cases.items[]` is a string array. |
 
 _No console errors or layout regressions were observed while navigating the listed routes under `npm run dev`._
