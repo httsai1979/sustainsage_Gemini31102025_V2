@@ -16,5 +16,6 @@ The following notes capture how each audited page surfaces example-like content 
 | Legal: Coaching boundaries (`/legal/coaching-boundaries`) | Sections are processed through the example-first helper; current titles are explanatory so the rendered order matches the source JSON. | Added ordering helper; no titles matched the regex, so nothing moved. |
 | ICF coaching (`/services/how-coaching-works`) | Updated template now renders the "Who this is for" block followed by "Examples" before the what/how sections. | Reordered `sections.who` and `sections.examples` ahead of `sections.what`/`sections.how`. |
 | Services overview (`/services`) | Yes – pathway cards lead the page, styled with the new CardShell; hero + CTA and any explanatory blocks follow. | PathwayCard root wrapped by CardShell; content fed from `content/services/index.{locale}.json`. |
+| Services – career-return (overview) | Yes – overview keeps example cards first; key points enriched as short, scannable bullets. | Added EN/TW key points; cases written only if `cases.items[]` is a string array. |
 
 _No console errors or layout regressions were observed while navigating the listed routes under `npm run dev`._
