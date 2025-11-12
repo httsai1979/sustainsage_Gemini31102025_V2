@@ -2,7 +2,7 @@ import { MicroCTA } from '@/components/common/MicroCTA';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
 const EXAMPLE_RE =
-  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|use case|scenario|scenarios|who (it'?s )?for|before\/after)/i;
+  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|use cases|scenario|scenarios|who (it'?s )?for|before\/after)/i;
 
 const isExampleLike = (section: unknown): boolean => {
   if (!section || typeof section !== 'object') {
