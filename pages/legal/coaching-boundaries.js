@@ -5,6 +5,31 @@ import MainLayout from '@/components/layout/MainLayout';
 import { loadJSON } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
 
+const EXAMPLE_RE =
+  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|use case|scenario|scenarios|who (it'?s )?for|before\/after)/i;
+
+const isExampleLike = (section) => {
+  if (!section || typeof section !== 'object') {
+    return false;
+  }
+
+  const title = section.title ?? section.heading ?? section.label ?? '';
+  const lead = section.lead ?? section.summary ?? '';
+
+  return EXAMPLE_RE.test(String(title)) || EXAMPLE_RE.test(String(lead));
+};
+
+const orderSections = (items) => {
+  if (!Array.isArray(items) || items.length === 0) {
+    return items ?? [];
+  }
+
+  const exampleSections = items.filter((item) => isExampleLike(item));
+  const remainingSections = items.filter((item) => !isExampleLike(item));
+
+  return [...exampleSections, ...remainingSections];
+};
+
 function BulletHighlights({ block = null } = {}) {
   if (!block?.items?.length) {
     return null;
@@ -84,7 +109,7 @@ export default function CoachingBoundariesPage({
   fallbackNotice = null,
 } = {}) {
   const scope = content?.scope ?? {};
-  const sections = Array.isArray(content?.sections) ? content.sections : [];
+  const sections = orderSections(Array.isArray(content?.sections) ? content.sections : []);
   const fallbackMessage =
     fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
