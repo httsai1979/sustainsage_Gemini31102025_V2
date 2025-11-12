@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://sustainsage.com/sitemap.xml
+
+Sitemap: https://www.sustainsage-group.com/sitemap.xml

@@ -12,7 +12,7 @@ export default function Hero({
 }) {
   return (
     <section className="bg-emerald-950/5 py-16 sm:py-24">
-      <div className="mx-auto flex w-full max-w-6xl flex-col-reverse items-center gap-12 px-6 lg:flex-row lg:gap-16">
+      <div className="max-w-[1200px] mx-auto flex w-full flex-col-reverse items-center gap-12 px-4 sm:px-6 lg:flex-row lg:gap-16 lg:px-8">
         <div className="w-full max-w-2xl text-left">
           {eyebrow && (
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700">
