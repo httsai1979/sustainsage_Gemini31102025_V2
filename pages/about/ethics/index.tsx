@@ -6,8 +6,6 @@ import { getAboutSubnav } from '@/components/about/AboutSubnav';
 import { loadContent } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
-import nextI18NextConfig from '../../../../next-i18next.config.js';
-
 type EthicsProps = {
   ethics: any;
   usedLocale: string | null;
@@ -72,6 +70,12 @@ export default function EthicsPage({ ethics, usedLocale, locale, fallbackNotice 
               </li>
             ))}
           </ul>
+          <div className="mt-6 text-sm font-semibold text-emerald-700">
+            <Link href="/about/approach" className="inline-flex items-center gap-1 transition hover:text-emerald-900">
+              <span>See how our coaching approach keeps boundaries in view</span>
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
         </section>
       ) : null}
 
@@ -86,6 +90,12 @@ export default function EthicsPage({ ethics, usedLocale, locale, fallbackNotice 
               </p>
             ))}
           </div>
+          <div className="mt-4 text-sm font-semibold text-emerald-700">
+            <Link href="/services/how-coaching-works" className="inline-flex items-center gap-1 transition hover:text-emerald-900">
+              <span>Read our detailed coaching agreement</span>
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
         </section>
       ) : null}
 
@@ -94,13 +104,22 @@ export default function EthicsPage({ ethics, usedLocale, locale, fallbackNotice 
         <p className="mt-3 text-sm leading-6 text-emerald-100">
           We pause and refer you to trusted therapeutic, legal, or crisis resources whenever the scope moves beyond ethical coaching boundaries.
         </p>
+        <div className="mt-4 text-sm font-semibold">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-1 text-white transition hover:text-emerald-200"
+          >
+            <span>Request a referral or safeguarding check-in</span>
+            <span aria-hidden>→</span>
+          </Link>
+        </div>
       </section>
     </PageLayoutV2>
   );
 }
 
 export async function getStaticProps({ locale = 'en-GB' }) {
-  const aboutContent = loadContent('content/about/{locale}.json', locale);
+  const aboutContent = loadContent<any>('content/about/{locale}.json', locale);
 
   return toSerializable({
     props: {
@@ -108,7 +127,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       usedLocale: aboutContent.locale,
       locale,
       fallbackNotice: aboutContent.data?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   });
 }

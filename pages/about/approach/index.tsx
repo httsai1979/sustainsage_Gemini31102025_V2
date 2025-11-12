@@ -6,8 +6,6 @@ import { getAboutSubnav } from '@/components/about/AboutSubnav';
 import { loadContent } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
-import nextI18NextConfig from '../../../../next-i18next.config.js';
-
 type ApproachProps = {
   approach: any;
   usedLocale: string | null;
@@ -79,6 +77,22 @@ export default function ApproachPage({ approach, usedLocale, locale, fallbackNot
               <PillarCard key={pillar?.title ?? index} item={pillar} />
             ))}
           </div>
+          <div className="mt-6 flex flex-col gap-2 text-sm font-semibold text-emerald-700 sm:flex-row">
+            <Link
+              href="/about/ethics"
+              className="inline-flex items-center gap-1 transition hover:text-emerald-900"
+            >
+              <span>Review our ethics commitments</span>
+              <span aria-hidden>→</span>
+            </Link>
+            <Link
+              href="/about/team"
+              className="inline-flex items-center gap-1 transition hover:text-emerald-900"
+            >
+              <span>Meet the coaching team</span>
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
         </section>
       ) : null}
 
@@ -98,13 +112,19 @@ export default function ApproachPage({ approach, usedLocale, locale, fallbackNot
             <span>Regular reflection loops ensure agreements stay ethical, accessible, and useful.</span>
           </li>
         </ul>
+        <div className="pt-4 text-sm font-semibold text-emerald-700">
+          <Link href="/contact" className="inline-flex items-center gap-1 transition hover:text-emerald-900">
+            <span>Book a chemistry chat</span>
+            <span aria-hidden>→</span>
+          </Link>
+        </div>
       </section>
     </PageLayoutV2>
   );
 }
 
 export async function getStaticProps({ locale = 'en-GB' }) {
-  const aboutContent = loadContent('content/about/{locale}.json', locale);
+  const aboutContent = loadContent<any>('content/about/{locale}.json', locale);
 
   return toSerializable({
     props: {
@@ -112,7 +132,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       usedLocale: aboutContent.locale,
       locale,
       fallbackNotice: aboutContent.data?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   });
 }

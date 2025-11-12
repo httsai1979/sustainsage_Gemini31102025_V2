@@ -108,6 +108,14 @@
         "description": "Surface power dynamics, accessibility needs, and language you can safely bring back to the room."
       }
     ],
+    "cta": {
+      "label": "Explore our coaching approach",
+      "href": "/about/approach"
+    },
+    "secondaryCta": {
+      "label": "Read our ethics commitments",
+      "href": "/about/ethics"
+    },
     "disclaimer": "Coaching does not replace therapy, legal advice, or crisis response. We will pause and refer when specialised care is required."
   },
   "ethics": {

@@ -6,8 +6,6 @@ import { getAboutSubnav } from '@/components/about/AboutSubnav';
 import { loadContent } from '@/lib/loadContent';
 import { toSerializable } from '@/lib/toSerializable';
 
-import nextI18NextConfig from '../../../../next-i18next.config.js';
-
 type MemberPageProps = {
   member: any;
   usedLocale: string | null;
@@ -111,7 +109,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params, locale = 'en-GB' }) {
   const { member: memberSlug } = params ?? {};
-  const memberContent = loadContent(`content/team/${memberSlug}/{locale}.json`, locale);
+  const memberContent = loadContent<any>(`content/team/${memberSlug}/{locale}.json`, locale);
 
   if (!memberContent.data) {
     return { notFound: true };
@@ -123,7 +121,7 @@ export async function getStaticProps({ params, locale = 'en-GB' }) {
       usedLocale: memberContent.locale,
       locale,
       fallbackNotice: memberContent.data?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale, ['common'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common'])),
     },
   });
 }
