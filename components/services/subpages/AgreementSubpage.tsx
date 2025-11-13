@@ -1,31 +1,7 @@
 import { MicroCTA } from '@/components/common/MicroCTA';
+import SectionContainer from '@/components/sections/SectionContainer';
+import { orderSections } from '@/lib/content/normalize';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
-
-const EXAMPLE_RE =
-  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|use cases|scenario|scenarios|who (it'?s )?for|before\/after)/i;
-
-const isExampleLike = (section: unknown): boolean => {
-  if (!section || typeof section !== 'object') {
-    return false;
-  }
-
-  const record = section as Record<string, unknown>;
-  const title = record.title ?? record.heading ?? record.label ?? '';
-  const lead = record.lead ?? record.summary ?? '';
-
-  return EXAMPLE_RE.test(String(title)) || EXAMPLE_RE.test(String(lead));
-};
-
-const orderSections = <T,>(items: T[]): T[] => {
-  if (!Array.isArray(items) || items.length === 0) {
-    return items;
-  }
-
-  const exampleSections = items.filter((item) => isExampleLike(item));
-  const remainingSections = items.filter((item) => !isExampleLike(item));
-
-  return [...exampleSections, ...remainingSections];
-};
 
 const { Page } = createServiceSubpage({
   subSlug: 'agreement',
@@ -37,7 +13,14 @@ const { Page } = createServiceSubpage({
   renderContent: (service) => {
     const sections = orderSections(
       Array.isArray(service.agreement?.sections)
-        ? service.agreement.sections.filter((section) => section && (section.heading || section.body))
+        ? service.agreement.sections.filter((section) =>
+            section &&
+            (section.heading ||
+              section.title ||
+              section.label ||
+              section.body ||
+              (Array.isArray(section.paragraphs) && section.paragraphs.length > 0))
+          )
         : []
     );
 
@@ -65,15 +48,27 @@ const { Page } = createServiceSubpage({
     return (
       <div className="space-y-10">
         <div className="space-y-6">
-          {sections.map((section, index) => (
-            <article
-              key={section.heading ?? index}
-              className="space-y-3 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm"
-            >
-              {section.heading ? <h3 className="text-base font-semibold text-slate-900">{section.heading}</h3> : null}
-              {section.body ? <p className="text-sm leading-6 text-slate-700">{section.body}</p> : null}
-            </article>
-          ))}
+          {sections.map((section, index) => {
+            const title = section.heading ?? section.title ?? section.label;
+            const bodyText = section.body ?? section.description ?? null;
+            const paragraphs = Array.isArray(section.paragraphs)
+              ? section.paragraphs.filter(Boolean)
+              : bodyText
+              ? [bodyText]
+              : [];
+
+            return (
+              <SectionContainer key={title ?? index} title={title}>
+                {paragraphs.length > 0 ? (
+                  <div className="space-y-3 text-sm leading-6 text-slate-700">
+                    {paragraphs.map((text, paragraphIndex) => (
+                      <p key={paragraphIndex}>{text}</p>
+                    ))}
+                  </div>
+                ) : null}
+              </SectionContainer>
+            );
+          })}
         </div>
 
         <MicroCTA

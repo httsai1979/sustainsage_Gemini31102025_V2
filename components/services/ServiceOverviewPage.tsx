@@ -3,6 +3,7 @@ import Link from 'next/link';
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { SubnavTabs } from '@/components/common/SubnavTabs';
 import { CaseCard } from '@/components/cases/CaseCard';
+import SectionContainer from '@/components/sections/SectionContainer';
 
 export type ServiceHero = {
   eyebrow?: string;
@@ -155,33 +156,11 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
       }
       subnav={<SubnavTabs base={`/services/${service.slug}`} tabs={subnavTabs} active="overview" />}
     >
-      <div className="space-y-16">
-        {service.key_points?.title || service.key_points?.description || keyCards.length > 0 ? (
-          <section>
-            {service.key_points?.title ? (
-              <h2 className="text-2xl font-semibold text-slate-900">{service.key_points.title}</h2>
-            ) : null}
-            {service.key_points?.description ? (
-              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-700">{service.key_points.description}</p>
-            ) : null}
-            {keyCards.length > 0 ? (
-              <div className="mt-8 grid gap-6 md:grid-cols-3">
-                {keyCards.map((item) => (
-                  <KeyCard key={item.title ?? item.description} title={item.title} description={item.description} />
-                ))}
-              </div>
-            ) : null}
-          </section>
-        ) : null}
-
+      <div className="space-y-12">
         {service.cases?.title || service.cases?.description || cases.length > 0 ? (
-          <section>
-            {service.cases?.title ? <h2 className="text-2xl font-semibold text-slate-900">{service.cases.title}</h2> : null}
-            {service.cases?.description ? (
-              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-700">{service.cases.description}</p>
-            ) : null}
+          <SectionContainer title={service.cases?.title} lead={service.cases?.description}>
             {cases.length > 0 ? (
-              <div className="mt-8 grid gap-6 md:grid-cols-3">
+              <div className="grid gap-6 md:grid-cols-3">
                 {cases.map((item) => (
                   <CaseCard
                     key={item.title ?? item.context ?? item.shift}
@@ -195,7 +174,19 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
                 ))}
               </div>
             ) : null}
-          </section>
+          </SectionContainer>
+        ) : null}
+
+        {service.key_points?.title || service.key_points?.description || keyCards.length > 0 ? (
+          <SectionContainer title={service.key_points?.title} lead={service.key_points?.description}>
+            {keyCards.length > 0 ? (
+              <div className="grid gap-6 md:grid-cols-3">
+                {keyCards.map((item) => (
+                  <KeyCard key={item.title ?? item.description} title={item.title} description={item.description} />
+                ))}
+              </div>
+            ) : null}
+          </SectionContainer>
         ) : null}
 
         <OverviewCTA cta={service.cta} />
