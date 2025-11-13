@@ -1,20 +1,32 @@
-import Image from 'next/image';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import MainLayout from '@/components/layout/MainLayout';
+import Container from '@/components/ui/Container';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
+import Section from '@/components/ui/Section';
 import { getAllPosts, getPostRendered } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
 
 export default function BlogPost({ fm, html }) {
   return (
-    <article className="prose prose-slate mx-auto mt-10 max-w-3xl px-5 md:px-8">
-      <h1>{fm.title}</h1>
-      {fm.hero && (
-        <figure className="overflow-hidden rounded-xl border border-slate-200">
-          <Image src={fm.hero} alt={fm.alt || ''} width={1600} height={900} priority />
-        </figure>
-      )}
-      <div dangerouslySetInnerHTML={{ __html: html }} />
-    </article>
+    <Section>
+      <Container>
+        <article className="prose prose-slate mx-auto max-w-3xl">
+          <h1>{fm.title}</h1>
+          {fm.hero ? (
+            <ResponsiveImage
+              src={fm.hero}
+              alt={fm.alt || fm.title || ''}
+              width={1600}
+              height={900}
+              className="my-6"
+              priority
+            />
+          ) : null}
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+        </article>
+      </Container>
+    </Section>
   );
 }
 

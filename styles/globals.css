@@ -21,13 +21,60 @@
 }
 
 /* 1.2 排版 - 字體家族 */
+html,
+body {
+    height: 100%;
+}
+
 body {
     /* 字體已在 tailwind.config.js 中設為 'font-sans' */
     @apply font-sans;
+    background: #F5F5F7;
     background-color: var(--color-bg);
+    color: #1D1D1F;
     color: var(--color-text-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+/* 全站容器與段落間距 */
+.ssg-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+    .ssg-container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .ssg-container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.ssg-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.ssg-stack > * + * {
+    margin-top: 1rem;
+}
+
+.ssg-prose p {
+    line-height: 1.75;
+}
+
+.ssg-divider {
+    height: 1px;
+    background: #E6E6EA;
 }
 
 /* 1.2.1 排版 - 全站標準文字系統 */
