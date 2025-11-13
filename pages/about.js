@@ -8,6 +8,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import { H1 } from '@/components/ui/H';
 import PageSection from '@/components/ui/PageSection';
 import Card from '@/components/ui/Card';
+import CardGrid from '@/components/ui/CardGrid';
 import Icon from '@/components/ui/Icon';
 import StepList from '@/components/ui/StepList';
 import Callout from '@/components/ui/Callout';
@@ -20,7 +21,7 @@ const SCENARIO_ICONS = ['compass', 'target', 'calendar', 'clock', 'handshake', '
 function Hero({ intro, showFallbackNotice, fallbackMessage }) {
   if (!intro) return null;
   return (
-    <PageSection className="bg-white">
+    <PageSection background="paper">
       <div className="max-w-3xl space-y-6">
         {intro.eyebrow ? (
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">{intro.eyebrow}</p>
@@ -52,7 +53,7 @@ function TeamSection({ team }) {
   if (!list.length) return null;
   return (
     <PageSection title={team?.title} lead={team?.description} eyebrow={team?.eyebrow}>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <CardGrid columns={{ base: 1, md: 2, lg: 3 }}>
         {list.map((member) => (
           <Card
             key={member.name ?? member.title}
@@ -83,7 +84,7 @@ function TeamSection({ team }) {
             </div>
           </Card>
         ))}
-      </div>
+      </CardGrid>
     </PageSection>
   );
 }
@@ -103,7 +104,7 @@ function ScenarioGrid({ data }) {
   if (!scenarios.length) return null;
   return (
     <PageSection eyebrow={data?.eyebrow} title={data?.title} lead={data?.description}>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <CardGrid columns={{ base: 1, md: 2, lg: 3 }}>
         {scenarios.map((scenario, index) => {
           const normalized = typeof scenario === 'string' ? { title: scenario } : scenario;
           const iconName = normalized.icon ?? SCENARIO_ICONS[index % SCENARIO_ICONS.length];
@@ -118,7 +119,7 @@ function ScenarioGrid({ data }) {
             </Card>
           );
         })}
-      </div>
+      </CardGrid>
       {(data?.cta?.href && data?.cta?.label) || (data?.secondaryCta?.href && data?.secondaryCta?.label) ? (
         <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold">
           {data?.cta?.href && data?.cta?.label ? (
@@ -168,7 +169,7 @@ function Principles({ title, items = [] }) {
   if (!items.length) return null;
   return (
     <PageSection title={title}>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <CardGrid columns={{ base: 1, md: 2, lg: 3 }}>
         {items.map((item, index) => {
           const normalized = typeof item === 'string' ? { description: item } : item;
           return (
@@ -181,7 +182,7 @@ function Principles({ title, items = [] }) {
             </Card>
           );
         })}
-      </div>
+      </CardGrid>
     </PageSection>
   );
 }

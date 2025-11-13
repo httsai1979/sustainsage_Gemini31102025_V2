@@ -3,61 +3,61 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
-import Container from '@/components/ui/Container';
+import CardGrid from '@/components/ui/CardGrid';
 import Icon from '@/components/ui/Icon';
+import PageSection from '@/components/ui/PageSection';
 import ResponsiveImage from '@/components/ui/ResponsiveImage';
-import Section from '@/components/ui/Section';
 import Tag from '@/components/ui/Tag';
 import { getAllPosts } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
 
 export default function BlogPage({ posts = [] }) {
   return (
-    <Section>
-      <Container>
-        <div className="ssg-stack text-center md:text-left">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">Blog</p>
-            <h1 className="mt-2 text-3xl font-extrabold text-ink">Blog</h1>
-            <p className="mt-3 text-base leading-7 text-slate-600">Short, practical notes from our coaching practice.</p>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post) => (
-              <Card
-                key={post.slug}
-                title={
-                  <span className="inline-flex items-center gap-2">
-                    <Icon name="arrowRight" className="h-5 w-5 text-sage" />
-                    {post.title}
-                  </span>
-                }
-                subtitle={post.description}
-                footer={
-                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-semibold text-sage">
-                    Read
-                    <span aria-hidden>→</span>
-                  </Link>
-                }
-                className="flex h-full flex-col gap-4"
-              >
-                <ResponsiveImage
-                  src={post.img ?? '/images/placeholder-hero.jpg'}
-                  alt={post.alt || post.title || ''}
-                  width={1200}
-                  height={675}
-                  className="mt-2"
-                />
-                {post.comingSoon ? (
-                  <div>
-                    <Tag>Coming soon</Tag>
-                  </div>
-                ) : null}
-              </Card>
-            ))}
-          </div>
+    <>
+      <PageSection background="paper">
+        <div className="max-w-3xl text-center md:text-left">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary/80">Blog</p>
+          <h1 className="mt-3 text-4xl font-semibold text-ink">Notes from our coaching practice</h1>
+          <p className="mt-4 text-base text-ink/80">Short reflections on transitions, coaching craft, and grounded tools.</p>
         </div>
-      </Container>
-    </Section>
+      </PageSection>
+      <PageSection>
+        <CardGrid columns={{ base: 1, md: 2, lg: 3 }}>
+          {posts.map((post) => (
+            <Card
+              key={post.slug}
+              title={
+                <span className="inline-flex items-center gap-2">
+                  <Icon name="arrowRight" className="h-5 w-5 text-primary" />
+                  {post.title}
+                </span>
+              }
+              subtitle={post.description}
+              footer={
+                <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-semibold text-primary">
+                  Read
+                  <span aria-hidden>→</span>
+                </Link>
+              }
+              className="flex h-full flex-col gap-4"
+            >
+              <ResponsiveImage
+                src={post.img ?? '/images/placeholder-hero.jpg'}
+                alt={post.alt || post.title || ''}
+                width={1200}
+                height={675}
+                className="mt-2 rounded-2xl"
+              />
+              {post.comingSoon ? (
+                <div>
+                  <Tag>Coming soon</Tag>
+                </div>
+              ) : null}
+            </Card>
+          ))}
+        </CardGrid>
+      </PageSection>
+    </>
   );
 }
 
