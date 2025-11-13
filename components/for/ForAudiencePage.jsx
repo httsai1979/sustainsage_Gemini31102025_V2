@@ -14,6 +14,23 @@ function safeArray(value) {
   return Array.isArray(value) ? value.filter(Boolean) : [];
 }
 
+// 可共用的 examples-first 排序（與 ICFServicePage 保持一致）
+const EXAMPLE_RE =
+  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|scenario|scenarios|who (it'?s )?for|before\/after)/i;
+const looksLikeExample = (b) => {
+  if (!b || typeof b !== 'object') return false;
+  const t = String(b.title ?? b.heading ?? '');
+  const l = String(b.lead ?? b.summary ?? '');
+  return EXAMPLE_RE.test(t) || EXAMPLE_RE.test(l);
+};
+const orderBlocks = (arr) =>
+  Array.isArray(arr)
+    ? [
+        ...arr.filter(looksLikeExample),
+        ...arr.filter((x) => !looksLikeExample(x)),
+      ]
+    : [];
+
 function BulletList({ items = [] } = {}) {
   if (!items || items.length === 0) {
     return null;
@@ -91,6 +108,105 @@ export default function ForAudiencePage({ pageKey }) {
   const seoTitle = page.seo?.title || `${page.hero.title} | SustainSage`;
   const seoDesc = page.seo?.description || page.hero.subtitle || '';
 
+  const toBlock = (key, { title, lead, items, component, children }) => ({
+    key,
+    title,
+    lead,
+    items,
+    component,
+    children,
+  });
+
+  // 重排：先 scenarios/examples/「誰適合」→ 再 challenges/support/approach
+  const leadBlocks = orderBlocks(
+    [
+      page.who?.items?.length
+        ? toBlock('who', {
+            title: page.who?.title,
+            lead: page.who?.description,
+            items: safeArray(page.who?.items),
+            component: BulletList,
+          })
+        : null,
+      page.scenarios?.items?.length
+        ? toBlock('scenarios', {
+            title: page.scenarios?.title,
+            lead: page.scenarios?.description,
+            items: safeArray(page.scenarios?.items),
+            component: BulletList,
+          })
+        : null,
+      page.examples?.items?.length
+        ? toBlock('examples', {
+            title: page.examples?.title,
+            lead: page.examples?.description,
+            items: safeArray(page.examples?.items),
+            component: BulletList,
+          })
+        : null,
+    ].filter(Boolean)
+  );
+
+  const restBlocks = [
+    challenges.length
+      ? toBlock('challenges', {
+          title: titles.challenges,
+          items: challenges,
+          component: BulletList,
+        })
+      : null,
+    topics.length
+      ? toBlock('topics', {
+          title: titles.topics,
+          items: topics,
+          component: BulletList,
+        })
+      : null,
+    partnershipItems.length
+      ? toBlock('partnership', {
+          title: page.partnership?.title || titles.partnership,
+          lead: page.partnership?.description,
+          children: (
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {partnershipItems.map((item) => (
+                <PackageRecommendation key={item.href} item={item} />
+              ))}
+            </div>
+          ),
+        })
+      : null,
+    (page.boundaries?.title || boundaries.length)
+      ? toBlock('boundaries', {
+          title: page.boundaries?.title || titles.boundaries,
+          lead: page.boundaries?.intro,
+          items: boundaries,
+          component: BulletList,
+        })
+      : null,
+  ].filter(Boolean);
+
+  const renderBlock = (block, idx) => {
+    const Component = block.component;
+    const hasItems = Array.isArray(block.items) && block.items.length > 0;
+
+    return (
+      <div
+        key={block.key ?? idx}
+        className="border-t border-emerald-100 py-6 first:border-t-0 first:pt-0"
+      >
+        {block.title ? <h2 className="text-xl font-semibold text-emerald-900">{block.title}</h2> : null}
+        {block.lead ? <p className="mt-2 text-base leading-7 text-slate-600">{block.lead}</p> : null}
+        {Component && hasItems ? (
+          <div className="mt-4">
+            {/* 保持原樣式子元件 */}
+            <Component items={block.items} />
+          </div>
+        ) : null}
+        {block.children ? <div className="mt-4">{block.children}</div> : null}
+      </div>
+    );
+  };
+
   return (
     <MainLayout title={seoTitle} desc={seoDesc}>
       <Hero
@@ -117,33 +233,17 @@ export default function ForAudiencePage({ pageKey }) {
         <SectionContainer variant="surface" tone="muted" title={caseStudy.title} lead={caseStudy.summary} />
       )}
 
-      {challenges.length > 0 && (
-        <SectionContainer title={titles.challenges}>
-          <BulletList items={challenges} />
-        </SectionContainer>
-      )}
+      {leadBlocks.length ? (
+        <section className="mx-auto max-w-4xl px-6 py-8">
+          {leadBlocks.map((block, idx) => renderBlock(block, idx))}
+        </section>
+      ) : null}
 
-      {topics.length > 0 && (
-        <SectionContainer title={titles.topics} tone="muted">
-          <BulletList items={topics} />
-        </SectionContainer>
-      )}
-
-      {partnershipItems.length > 0 && (
-        <SectionContainer wide title={page.partnership?.title || titles.partnership} lead={page.partnership?.description}>
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {partnershipItems.map((item) => (
-              <PackageRecommendation key={item.href} item={item} />
-            ))}
-          </div>
-        </SectionContainer>
-      )}
-
-      {(page.boundaries?.title || boundaries.length > 0) && (
-        <SectionContainer title={page.boundaries?.title || titles.boundaries} lead={page.boundaries?.intro} tone="muted">
-          <BulletList items={boundaries} />
-        </SectionContainer>
-      )}
+      {restBlocks.length ? (
+        <section className="mx-auto max-w-4xl px-6 py-8 border-t border-emerald-100">
+          {restBlocks.map((block, idx) => renderBlock(block, idx))}
+        </section>
+      ) : null}
 
       <SectionContainer variant="surface" tone="muted">
         {page.cta?.body && <p className="text-base leading-7 text-slate-700">{page.cta.body}</p>}

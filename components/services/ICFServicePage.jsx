@@ -7,6 +7,22 @@ import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
 import SectionContainer from '@/components/sections/SectionContainer';
 
+// --- Examples-first helpers (title/lead 關鍵詞判定 + 排序) ---
+const EXAMPLE_RE =
+  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|scenario|scenarios|who (it'?s )?for|before\/after)/i;
+const isExampleLike = (block) => {
+  if (!block || typeof block !== 'object') return false;
+  const t = String(block.title ?? block.heading ?? block.label ?? '');
+  const l = String(block.lead ?? block.summary ?? '');
+  return EXAMPLE_RE.test(t) || EXAMPLE_RE.test(l);
+};
+const orderBlocks = (arr) => {
+  if (!Array.isArray(arr)) return [];
+  const ex = arr.filter(isExampleLike);
+  const rest = arr.filter((b) => !isExampleLike(b));
+  return [...ex, ...rest];
+};
+
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
@@ -133,17 +149,56 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
   const heroImage = image ?? hero.image ?? '/images/services/transition.svg';
   const heroImageAlt = imageAlt ?? hero.imageAlt ?? hero.title ?? 'Service illustration';
   const ctaBody = renderCtaBody(cta?.body);
-  const hasWhoContent = Boolean(
-    who?.title || who?.description || (Array.isArray(who?.items) && who.items.length > 0)
-  );
-  const hasExamplesContent = Boolean(
-    examples?.title ||
-      examples?.description ||
-      (Array.isArray(examples?.items) && examples.items.length > 0)
-  );
-  const hasWhatContent = Boolean(
-    what?.title || what?.description || (Array.isArray(what?.items) && what.items.length > 0)
-  );
+  const whoItems = Array.isArray(who?.items) ? who.items : [];
+  const exampleItems = Array.isArray(examples?.items) ? examples.items : [];
+  const whatItems = Array.isArray(what?.items) ? what.items : [];
+  const howItems = Array.isArray(how?.items) ? how.items : [];
+  const expectItems = Array.isArray(expect?.items) ? expect.items : [];
+
+  const baseGroups = {
+    who: {
+      key: 'who',
+      title: who?.title,
+      lead: who?.description,
+      items: whoItems,
+      component: BulletList,
+    },
+    examples: {
+      key: 'examples',
+      title: examples?.title,
+      lead: examples?.description,
+      items: exampleItems,
+      component: ExampleList,
+    },
+    what: {
+      key: 'what',
+      title: what?.title,
+      lead: what?.description,
+      items: whatItems,
+      component: BulletList,
+    },
+    how: {
+      key: 'how',
+      title: how?.title,
+      lead: how?.description,
+      items: howItems,
+      component: BulletList,
+      note: how?.note,
+    },
+    expect: {
+      key: 'expect',
+      title: expect?.title,
+      lead: expect?.description,
+      items: expectItems,
+      component: BulletList,
+    },
+  };
+
+  // 只變呈現順序：先 who / examples，再 what / how / expect
+  const orderedGroups = [
+    ...orderBlocks([baseGroups.who, baseGroups.examples]),
+    ...[baseGroups.what, baseGroups.how, baseGroups.expect],
+  ].filter((group) => group && (group.title || group.lead || (group.items?.length ?? 0) > 0));
 
   return (
     <MainLayout>
@@ -176,60 +231,42 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
         ) : null}
       </Hero>
 
-      {hasWhoContent ? (
-        <SectionContainer wide title={who?.title} lead={who?.description}>
-          <BulletList items={who?.items} />
-        </SectionContainer>
-      ) : null}
+      {/* 渲染：依 orderedGroups 輸出，並統一標題與間距樣式 */}
+      {orderedGroups.map((group, idx) => {
+        const Component = group.component;
+        const hasItems = Array.isArray(group.items) && group.items.length > 0;
+        const wrapperClass =
+          Component === ExampleList ? 'mt-4' : 'mt-4 space-y-4 text-slate-800';
 
-      {hasExamplesContent ? (
-        <SectionContainer wide title={examples?.title} lead={examples?.description}>
-          <ExampleList items={examples?.items} />
-        </SectionContainer>
-      ) : null}
-
-      {hasWhatContent ? (
-        <SectionContainer wide title={what?.title} lead={what?.description}>
-          <BulletList items={what?.items} />
-        </SectionContainer>
-      ) : null}
-
-      {how?.title || how?.description || (Array.isArray(how?.items) && how.items.length > 0) ? (
-        <SectionContainer wide title={how?.title} lead={how?.description}>
-          <BulletList items={how?.items} />
-          {how?.note ? <p className="mt-6 text-xs leading-5 text-slate-500">{how.note}</p> : null}
-        </SectionContainer>
-      ) : null}
-
-      {(expect?.title || expect?.description || (expect?.items?.length ?? 0) > 0 || ethics?.title ||
-        ethics?.description ||
-        (ethics?.items?.length ?? 0) > 0) ? (
-        <SectionContainer wide>
-          <div className="grid gap-10 md:grid-cols-2">
-            {(expect?.title || expect?.description || (expect?.items?.length ?? 0) > 0) ? (
-              <div>
-                {expect?.title ? (
-                  <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{expect.title}</h2>
-                ) : null}
-                {expect?.description ? (
-                  <p className="mt-4 text-base leading-7 text-slate-600">{expect.description}</p>
-                ) : null}
-                <BulletList items={expect?.items} />
+        return (
+          <section
+            key={group.key ?? idx}
+            className="mx-auto max-w-4xl px-6 py-8 border-t first:border-t-0 border-emerald-100"
+          >
+            {group.title ? <h2 className="text-xl font-semibold text-emerald-900">{group.title}</h2> : null}
+            {group.lead ? <p className="mt-2 text-base leading-7 text-slate-600">{group.lead}</p> : null}
+            {Component && hasItems ? (
+              <div className={wrapperClass}>
+                {/* 保持原本的項目渲染元件，勿改文案 */}
+                {/* 這裡呼叫原本的清單/卡片子元件 */}
+                <Component items={group.items} />
               </div>
             ) : null}
-            {(ethics?.title || ethics?.description || (ethics?.items?.length ?? 0) > 0) ? (
-              <div>
-                {ethics?.title ? (
-                  <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{ethics.title}</h2>
-                ) : null}
-                {ethics?.description ? (
-                  <p className="mt-4 text-base leading-7 text-slate-600">{ethics.description}</p>
-                ) : null}
-                <BulletList items={ethics?.items} />
-              </div>
-            ) : null}
+            {group.note ? <p className="mt-4 text-xs leading-5 text-slate-500">{group.note}</p> : null}
+          </section>
+        );
+      })}
+
+      {(ethics?.title || ethics?.description || (ethics?.items?.length ?? 0) > 0) ? (
+        <section className="mx-auto max-w-4xl px-6 py-8 border-t border-emerald-100">
+          {ethics?.title ? <h2 className="text-xl font-semibold text-emerald-900">{ethics.title}</h2> : null}
+          {ethics?.description ? (
+            <p className="mt-2 text-base leading-7 text-slate-600">{ethics.description}</p>
+          ) : null}
+          <div className="mt-4 space-y-4 text-slate-800">
+            <BulletList items={ethics?.items} />
           </div>
-        </SectionContainer>
+        </section>
       ) : null}
 
       {cta?.title || ctaBody ? (
