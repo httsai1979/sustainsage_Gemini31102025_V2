@@ -1,22 +1,31 @@
-import PropTypes from "prop-types";
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
-export default function PageSection({ id, className, eyebrow, title, lead, children }) {
-  const sectionClassName = ["py-12 sm:py-16", className].filter(Boolean).join(" ");
+import { H2 } from './H';
+import Prose from './Prose';
+
+export default function PageSection({
+  id,
+  className,
+  eyebrow,
+  title,
+  lead,
+  children,
+  prose = false,
+}) {
   return (
-    <section id={id} className={sectionClassName}>
-      <div className="mx-auto max-w-5xl px-6 sm:px-8">
+    <section id={id} className={clsx('py-16 sm:py-20', className)}>
+      <div className="mx-auto max-w-7xl px-6">
         {(eyebrow || title || lead) && (
-          <header className="mb-6 sm:mb-8">
+          <header className="mb-10 space-y-4">
             {eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{eyebrow}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">{eyebrow}</p>
             ) : null}
-            {title ? (
-              <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-slate-900">{title}</h2>
-            ) : null}
-            {lead ? <p className="mt-2 text-base sm:text-lg text-slate-700">{lead}</p> : null}
+            {title ? <H2>{title}</H2> : null}
+            {lead ? <p className="text-base leading-7 text-slate-600">{lead}</p> : null}
           </header>
         )}
-        <div className="typography">{children}</div>
+        {prose ? <Prose>{children}</Prose> : children}
       </div>
     </section>
   );
@@ -28,5 +37,6 @@ PageSection.propTypes = {
   eyebrow: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   lead: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  prose: PropTypes.bool,
   children: PropTypes.node,
 };

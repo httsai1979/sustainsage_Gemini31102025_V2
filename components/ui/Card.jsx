@@ -1,49 +1,43 @@
-import Link from 'next/link';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
-function ExternalLink({ href, children, download }) {
-  const isExternal = /^https?:/i.test(href);
-  if (isExternal || download) {
-    return (
-      <a
-        href={href}
-        download={download ? '' : undefined}
-        target={isExternal ? '_blank' : undefined}
-        rel={isExternal ? 'noreferrer' : undefined}
-        className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-800"
-      >
-        {children}
-      </a>
-    );
-  }
+import { H3 } from './H';
+import Prose from './Prose';
+
+export default function Card({
+  title,
+  subtitle,
+  children,
+  className,
+  footer,
+  as: Component = 'article',
+  icon = null,
+  prose = false,
+}) {
   return (
-    <Link
-      href={href}
-      className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-700 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-800"
-    >
-      {children}
-    </Link>
-  );
-}
-
-export default function Card({ title, desc, href, cta, children }) {
-  const isDownload = typeof href === 'string' && href.endsWith('.pdf');
-
-  return (
-    <div className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-md">
-      <div className="flex flex-1 flex-col gap-4 p-6">
-        <div>
-          <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
-          {desc && <p className="mt-2 text-sm text-slate-600">{desc}</p>}
-        </div>
-        {children}
+    <Component className={clsx('rounded-2xl border border-slate-200/60 bg-white p-6 shadow-sm', className)}>
+      <div className="space-y-4">
+        {(icon || title || subtitle) && (
+          <div className="space-y-2">
+            {icon ? <div className="text-slate-700">{icon}</div> : null}
+            {title ? <H3 className="text-slate-900">{title}</H3> : null}
+            {subtitle ? <p className="text-sm text-slate-600">{subtitle}</p> : null}
+          </div>
+        )}
+        {prose ? <Prose className="space-y-4">{children}</Prose> : children}
       </div>
-      {href && cta && (
-        <div className="border-t border-slate-200 bg-slate-50 px-6 py-4">
-          <ExternalLink href={href} download={isDownload}>
-            {cta}
-          </ExternalLink>
-        </div>
-      )}
-    </div>
+      {footer ? <div className="mt-6 border-t border-slate-100 pt-4 text-sm text-slate-600">{footer}</div> : null}
+    </Component>
   );
 }
+
+Card.propTypes = {
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  children: PropTypes.node,
+  className: PropTypes.string,
+  footer: PropTypes.node,
+  icon: PropTypes.node,
+  prose: PropTypes.bool,
+  as: PropTypes.elementType,
+};
