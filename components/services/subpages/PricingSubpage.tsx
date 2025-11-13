@@ -28,7 +28,7 @@ const { Page } = createServiceSubpage({
     return (
       <div className="space-y-8">
         {packages.length > 0 ? (
-          <SectionContainer title="Packages">
+          <SectionContainer variant="surface" title="Packages">
             <ul className="grid gap-4 md:grid-cols-2">
               {packages.map((pkg) => (
                 <li key={pkg.name} className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
@@ -45,7 +45,7 @@ const { Page } = createServiceSubpage({
         ) : null}
 
         {policies.length > 0 ? (
-          <SectionContainer title="Policies" tone="muted">
+          <SectionContainer variant="surface" title="Policies" tone="muted">
             <ul className="space-y-2 text-sm leading-6 text-slate-700">
               {policies.map((policy) => (
                 <li key={policy.title ?? policy.body}>

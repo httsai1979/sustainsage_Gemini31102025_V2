@@ -43,7 +43,7 @@ const { Page } = createServiceSubpage({
       <div className="space-y-10">
         <div className="grid gap-8 lg:grid-cols-2">
           {checklist.length > 0 ? (
-            <SectionContainer title="Checklist before starting">
+            <SectionContainer variant="surface" title="Checklist before starting">
               <ul className="space-y-3 text-sm leading-6 text-slate-700">
                 {checklist.map((item, index) => (
                   <li key={item ?? index} className="flex gap-3">
@@ -56,7 +56,7 @@ const { Page } = createServiceSubpage({
           ) : null}
 
           {prepare.length > 0 ? (
-            <SectionContainer title="Helpful to prepare" tone="muted">
+            <SectionContainer variant="surface" title="Helpful to prepare" tone="muted">
               <ul className="space-y-3 text-sm leading-6 text-slate-700">
                 {prepare.map((item, index) => (
                   <li key={item ?? index} className="flex gap-3">
