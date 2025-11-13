@@ -3,27 +3,36 @@
   "pricing": {
     "packages": [
       {
-        "name": "6-session block",
-        "duration": "6×60–75min over ~12 weeks",
-        "scope": "Clarity, experiments, review; async check-ins.",
-        "price_note": "Exact fees on request; pro bono/discounts available case-by-case."
+        "title": "重新啟動 — 3 次會談",
+        "highlights": [
+          "3 × 50 分鐘／4–6 週內完成",
+          "中斷後的信心重整與敘事更新",
+          "近期證據點計畫（迷你專案／推薦人）"
+        ]
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One focused topic; action plan + follow-up note.",
-        "price_note": "Best for a specific decision or interview prep."
+        "title": "推進動能 — 6 次會談",
+        "highlights": [
+          "6 × 50 分鐘／8–12 週",
+          "履歷／作品集重構：補上空窗期的橋接證據",
+          "面試演練：重返職場情境與溝通"
+        ]
+      },
+      {
+        "title": "穩定維持 — 12 次會談",
+        "highlights": [
+          "12 × 50 分鐘／3–6 個月",
+          "兼顧照護與工作的節奏設計",
+          "客製化實驗＋週期性回顧"
+        ]
       }
     ],
     "policies": [
-      {
-        "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
-      },
-      {
-        "title": "No guarantees",
-        "body": "We co-design experiments; outcomes depend on your context and actions."
-      }
+      "改期需提前 24 小時；逾時視同使用一次會談。",
+      "套組可在會談間暫停，需雙方同意。",
+      "預設保密；最少必要紀錄；可要求刪除。",
+      "教練而非治療／法律；必要時提供轉介資訊。",
+      "線上、以英國時段為主；以英鎊（GBP）開立發票。"
     ]
   },
   "readiness": {
