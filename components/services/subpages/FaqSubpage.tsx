@@ -22,7 +22,7 @@ const { Page } = createServiceSubpage({
     }
 
     return (
-      <SectionContainer tone="muted">
+      <SectionContainer variant="surface" tone="muted">
         <dl className="space-y-6">
           {items.map((item, index) => {
             const question = item.q ?? item.question;

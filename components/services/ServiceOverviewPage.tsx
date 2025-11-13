@@ -158,7 +158,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
     >
       <div className="space-y-12">
         {service.cases?.title || service.cases?.description || cases.length > 0 ? (
-          <SectionContainer title={service.cases?.title} lead={service.cases?.description}>
+          <SectionContainer variant="surface" title={service.cases?.title} lead={service.cases?.description}>
             {cases.length > 0 ? (
               <div className="grid gap-6 md:grid-cols-3">
                 {cases.map((item) => (
@@ -178,7 +178,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
         ) : null}
 
         {service.key_points?.title || service.key_points?.description || keyCards.length > 0 ? (
-          <SectionContainer title={service.key_points?.title} lead={service.key_points?.description}>
+          <SectionContainer variant="surface" title={service.key_points?.title} lead={service.key_points?.description}>
             {keyCards.length > 0 ? (
               <div className="grid gap-6 md:grid-cols-3">
                 {keyCards.map((item) => (

@@ -43,7 +43,7 @@ const { Page } = createServiceSubpage({
 
     return (
       <div className="space-y-10">
-        <SectionContainer>
+        <SectionContainer variant="surface">
           <div className="space-y-6">
             <p className="text-sm leading-6 text-slate-700">
               These composites blend details from multiple clients to keep identities protected while showing the texture of our work.

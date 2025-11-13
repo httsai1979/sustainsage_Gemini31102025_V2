@@ -58,7 +58,7 @@ const { Page } = createServiceSubpage({
               : [];
 
             return (
-              <SectionContainer key={title ?? index} title={title}>
+              <SectionContainer key={title ?? index} variant="surface" title={title}>
                 {paragraphs.length > 0 ? (
                   <div className="space-y-3 text-sm leading-6 text-slate-700">
                     {paragraphs.map((text, paragraphIndex) => (
