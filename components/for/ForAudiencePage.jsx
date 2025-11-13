@@ -1,10 +1,10 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 
 import Hero from '@/components/layout/Hero';
-import MainLayout from '@/components/layout/MainLayout';
 import SectionContainer from '@/components/sections/SectionContainer';
 import PageSection from '@/components/ui/PageSection';
 import { orderSections } from '@/lib/orderSections';
@@ -192,7 +192,11 @@ export default function ForAudiencePage({ pageKey }) {
   };
 
   return (
-    <MainLayout title={seoTitle} desc={seoDesc}>
+    <>
+      <Head>
+        <title>{seoTitle}</title>
+        {seoDesc ? <meta name="description" content={seoDesc} /> : null}
+      </Head>
       <Hero
         title={page.hero.title}
         subtitle={page.hero.subtitle}
@@ -246,7 +250,7 @@ export default function ForAudiencePage({ pageKey }) {
           </Link>
         </div>
       </SectionContainer>
-    </MainLayout>
+    </>
   );
 }
 

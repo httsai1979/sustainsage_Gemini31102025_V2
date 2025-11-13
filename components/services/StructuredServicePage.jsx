@@ -4,6 +4,9 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 
 import Hero from '@/components/layout/Hero';
+import Card from '@/components/ui/Card';
+import CardGrid from '@/components/ui/CardGrid';
+import PageSection from '@/components/ui/PageSection';
 
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
@@ -28,99 +31,47 @@ function normaliseSummaryItems(items) {
     .filter(Boolean);
 }
 
-function SummaryList({ items = [] } = {}) {
+function SummaryGrid({ items = [] }) {
   const normalisedItems = normaliseSummaryItems(items);
 
-  if (normalisedItems.length === 0) {
+  if (!normalisedItems.length) {
     return null;
   }
 
   return (
-    <ul className="mt-8 space-y-4">
+    <CardGrid>
       {normalisedItems.map((item, index) => (
-        <li
+        <Card
           key={`${item.summary ?? index}-${index}`}
-          className="flex gap-3 rounded-2xl border border-emerald-100 bg-white/95 p-5 shadow-sm"
-        >
-          <span aria-hidden="true" className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-500" />
-          <div className="space-y-1">
-            {item.summary ? (
-              <strong className="block text-sm font-semibold text-slate-900">{item.summary}</strong>
-            ) : null}
-            {item.detail ? (
-              <p className="text-sm leading-6 text-slate-700">{item.detail}</p>
-            ) : null}
-          </div>
-        </li>
+          title={item.summary ?? item.title}
+          subtitle={item.detail ?? item.description}
+          className="h-full"
+        />
       ))}
-    </ul>
+    </CardGrid>
   );
 }
 
-SummaryList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        summary: PropTypes.string,
-        detail: PropTypes.string,
-      }),
-    ]),
-  ),
+SummaryGrid.propTypes = {
+  items: PropTypes.array,
 };
 
-function FAQList({ items = [] } = {}) {
+function FAQGrid({ items = [] }) {
   if (!Array.isArray(items) || items.length === 0) {
     return null;
   }
 
   return (
-    <div className="mt-8 grid gap-6 md:grid-cols-3">
+    <CardGrid>
       {items.map((item) => (
-        <div key={item.question} className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-          <h3 className="text-base font-semibold text-slate-900">{item.question}</h3>
-          <p className="mt-3 text-sm leading-6 text-slate-700">{item.answer}</p>
-        </div>
+        <Card key={item.question} title={item.question} subtitle={item.answer} className="h-full" />
       ))}
-    </div>
+    </CardGrid>
   );
 }
 
-FAQList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      question: PropTypes.string,
-      answer: PropTypes.string,
-    }),
-  ),
-};
-
-function Section({ title, description, note, children, background = 'white' } = {}) {
-  const backgroundClass = background === 'tint' ? 'bg-emerald-950/5' : 'bg-white';
-  return (
-    <section className={`${backgroundClass} py-16 sm:py-20`}>
-      <div className="mx-auto max-w-6xl px-6">
-        {title || description ? (
-          <div className="typography max-w-3xl flex flex-col gap-4">
-            {title ? <h2>{title}</h2> : null}
-            {description ? <p>{description}</p> : null}
-          </div>
-        ) : null}
-        {children}
-        {note ? (
-          <p className="mt-6 text-xs leading-5 text-slate-500">{note}</p>
-        ) : null}
-      </div>
-    </section>
-  );
-}
-
-Section.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  note: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  background: PropTypes.oneOf(['white', 'tint']),
+FAQGrid.propTypes = {
+  items: PropTypes.array,
 };
 
 export default function StructuredServicePage({ serviceKey, image }) {
@@ -145,16 +96,11 @@ export default function StructuredServicePage({ serviceKey, image }) {
         {seo.description ? <meta name="description" content={seo.description} /> : null}
       </Head>
 
-      <Hero
-        title={hero.title}
-        subtitle={hero.subtitle}
-        image={image}
-        imageAlt={`${hero.title ?? 'Service illustration'}`}
-      >
+      <Hero title={hero.title} subtitle={hero.subtitle} note={hero.note} image={image} imageAlt={hero.title ?? 'Service illustration'}>
         {hero.primaryCta && hero.primaryHref ? (
           <Link
             href={hero.primaryHref}
-            className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+            className={`${BUTTON_BASE} bg-primary text-white hover:bg-primary/90 focus-visible:outline-primary`}
           >
             {hero.primaryCta}
           </Link>
@@ -162,68 +108,63 @@ export default function StructuredServicePage({ serviceKey, image }) {
         {hero.secondaryCta && hero.secondaryHref ? (
           <Link
             href={hero.secondaryHref}
-            className={`${BUTTON_BASE} bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
+            className={`${BUTTON_BASE} bg-white text-primary ring-1 ring-inset ring-primary/30 hover:bg-primary/5 focus-visible:outline-primary`}
           >
             {hero.secondaryCta}
           </Link>
         ) : null}
       </Hero>
 
-      <Section title={who.title} description={who.description} background="white">
-        <SummaryList items={who.items} />
-      </Section>
+      <PageSection title={who.title} lead={who.description} background="paper">
+        <SummaryGrid items={who.items} />
+      </PageSection>
 
-      <Section title={topics.title} description={topics.description} background="tint">
-        <SummaryList items={topics.items} />
-      </Section>
+      <PageSection title={topics.title} lead={topics.description}>
+        <SummaryGrid items={topics.items} />
+      </PageSection>
 
-      <Section
-        title={howWeWork.title}
-        description={howWeWork.description}
-        note={howWeWork.note}
-        background="white"
-      >
-        <SummaryList items={howWeWork.items} />
-      </Section>
+      <PageSection title={howWeWork.title} lead={howWeWork.description}>
+        <SummaryGrid items={howWeWork.items} />
+        {howWeWork.note ? <p className="mt-6 text-xs leading-6 text-ink/60">{howWeWork.note}</p> : null}
+      </PageSection>
 
-      <Section title={expect.title} description={expect.description} background="tint">
-        <SummaryList items={expect.items} />
-      </Section>
+      <PageSection title={expect.title} lead={expect.description} background="paper">
+        <SummaryGrid items={expect.items} />
+      </PageSection>
 
-      <Section title={boundaries.title} description={boundaries.description} background="white">
-        <SummaryList items={boundaries.items} />
-      </Section>
+      <PageSection title={boundaries.title} lead={boundaries.description}>
+        <SummaryGrid items={boundaries.items} />
+      </PageSection>
 
-      <Section title={faq.title} description={faq.description} note={faq.note} background="tint">
-        <FAQList items={faq.items} />
-      </Section>
+      <PageSection title={faq.title} lead={faq.description} background="paper">
+        <FAQGrid items={faq.items} />
+        {faq.note ? <p className="mt-6 text-xs leading-6 text-ink/60">{faq.note}</p> : null}
+      </PageSection>
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl rounded-3xl border border-emerald-100 bg-emerald-50/80 px-8 py-12 text-center shadow-sm">
-          {cta.title ? (
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{cta.title}</h2>
-          ) : null}
-          {cta.body ? <p className="mt-4 text-sm leading-6 text-slate-700">{cta.body}</p> : null}
-          <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            {cta.primaryCta && cta.primaryHref ? (
-              <Link
-                href={cta.primaryHref}
-                className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
-              >
-                {cta.primaryCta}
-              </Link>
-            ) : null}
-            {cta.secondaryCta && cta.secondaryHref ? (
-              <Link
-                href={cta.secondaryHref}
-                className={`${BUTTON_BASE} bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
-              >
-                {cta.secondaryCta}
-              </Link>
-            ) : null}
-          </div>
-        </div>
-      </section>
+      {(cta.title || cta.body) && (
+        <PageSection background="paper">
+          <Card className="text-center" title={cta.title} subtitle={cta.body}>
+            <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+              {cta.primaryCta && cta.primaryHref ? (
+                <Link
+                  href={cta.primaryHref}
+                  className={`${BUTTON_BASE} bg-primary text-white hover:bg-primary/90 focus-visible:outline-primary`}
+                >
+                  {cta.primaryCta}
+                </Link>
+              ) : null}
+              {cta.secondaryCta && cta.secondaryHref ? (
+                <Link
+                  href={cta.secondaryHref}
+                  className={`${BUTTON_BASE} bg-white text-primary ring-1 ring-inset ring-primary/30 hover:bg-primary/5 focus-visible:outline-primary`}
+                >
+                  {cta.secondaryCta}
+                </Link>
+              ) : null}
+            </div>
+          </Card>
+        </PageSection>
+      )}
     </>
   );
 }

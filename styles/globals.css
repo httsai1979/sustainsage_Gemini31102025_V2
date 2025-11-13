@@ -1,4 +1,6 @@
 /* 1. 載入 Tailwind CSS 的基礎、組件和工具樣式 */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:wght@600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,49 +8,45 @@
 /* 2. 移植 index.html <style> 中的所有自訂規則 */
 
 :root {
-    /* 1.1 色彩配置 - 與 tailwind.config.js 保持一致 */
-    --color-primary: #4A6C56; /* SustainSage Green */
+    /* 新的設計 token，與 sustain-sage-group-ltd 一致 */
+    --color-primary: #4A6C56;
+    --color-primary-soft: #9FBEA6;
+    --color-ink: #0B1114;
+    --color-ink-soft: #4B4B4F;
     --color-paper: #FFFFFF;
     --color-background: #F5F5F7;
-    --color-ink: #1D1D1F;
-    --color-ink-soft: #4B4B4F;
+    --color-sand: #F4EDE4;
+    --color-mist: #F7F7FB;
     --color-accent: #0070C9;
-    --color-error: #D70022;
-    --color-success: #28A745;
+    --shadow-card: 0 25px 70px rgba(15, 23, 42, 0.08);
+    --radius-card: 1.25rem;
+    --container-width: 1200px;
 }
 
-/* 1.2 排版 - 字體家族 */
 html,
 body {
     height: 100%;
 }
 
 body {
-    /* 字體已在 tailwind.config.js 中設為 'font-sans' */
-    @apply font-sans;
+    font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background-color: var(--color-background);
     color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 /* 全站容器與段落間距 */
+
 .ssg-container {
-    max-width: 1120px;
+    width: 100%;
+    max-width: var(--container-width);
     margin: 0 auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
 
-@media (min-width: 640px) {
-    .ssg-container {
-        padding-left: 1.75rem;
-        padding-right: 1.75rem;
-    }
-}
-
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
     .ssg-container {
         padding-left: 2rem;
         padding-right: 2rem;
@@ -56,8 +54,8 @@ body {
 }
 
 .ssg-section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: clamp(3rem, 8vw, 5.5rem);
+    padding-bottom: clamp(3rem, 8vw, 5.5rem);
 }
 
 .ssg-stack > * + * {
@@ -176,15 +174,16 @@ body {
 .card,
 .ssg-card {
     background: var(--color-paper);
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
     padding: 1.75rem;
-    transition: transform 200ms ease, box-shadow 200ms ease;
+    border: 1px solid rgba(15, 23, 42, 0.04);
+    transition: transform 240ms var(--ease-out-quint, cubic-bezier(0.23, 1, 0.32, 1)), box-shadow 240ms ease;
 }
 .card-hover,
 .ssg-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+    box-shadow: 0 35px 80px rgba(15, 23, 42, 0.12);
 }
 
 /* 1.4 導航欄滾動效果 */

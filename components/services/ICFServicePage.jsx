@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 
 import Hero from '@/components/layout/Hero';
-import MainLayout from '@/components/layout/MainLayout';
-import SectionContainer from '@/components/sections/SectionContainer';
+import Card from '@/components/ui/Card';
+import CardGrid from '@/components/ui/CardGrid';
 import PageSection from '@/components/ui/PageSection';
+import SectionContainer from '@/components/sections/SectionContainer';
 import { orderSections } from '@/lib/orderSections';
 
 const BUTTON_BASE =
@@ -18,26 +19,16 @@ function BulletList({ items = [] } = {}) {
   }
 
   return (
-    <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
+    <CardGrid>
       {items.map((item) => (
-        <li key={typeof item === 'string' ? item : item?.summary} className="flex gap-2">
-          <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
-          <span>{typeof item === 'string' ? item : item?.summary}</span>
-        </li>
+        <Card key={typeof item === 'string' ? item : item?.summary} title={item?.summary ?? item} className="h-full" />
       ))}
-    </ul>
+    </CardGrid>
   );
 }
 
 BulletList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        summary: PropTypes.string,
-      }),
-    ]),
-  ),
+  items: PropTypes.array,
 };
 
 function ExampleList({ items = [] } = {}) {
@@ -46,28 +37,16 @@ function ExampleList({ items = [] } = {}) {
   }
 
   return (
-    <div className="mt-8 grid gap-6 md:grid-cols-2">
+    <CardGrid>
       {items.map((item, index) => (
-        <div key={`${item?.title ?? index}-${index}`} className="rounded-3xl border border-emerald-100 bg-white/90 p-6 shadow-sm">
-          {item?.title ? (
-            <h3 className="text-base font-semibold text-slate-900">{item.title}</h3>
-          ) : null}
-          {item?.description ? (
-            <p className="mt-3 text-sm leading-6 text-slate-700">{item.description}</p>
-          ) : null}
-        </div>
+        <Card key={`${item?.title ?? index}-${index}`} title={item?.title} subtitle={item?.description} className="h-full" />
       ))}
-    </div>
+    </CardGrid>
   );
 }
 
 ExampleList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-    }),
-  ),
+  items: PropTypes.array,
 };
 
 function renderCtaBody(body) {
@@ -91,17 +70,15 @@ function renderCtaBody(body) {
             <Link
               key={`${segment.href}-${index}`}
               href={segment.href}
-              className="text-emerald-700 underline decoration-emerald-700/40 hover:decoration-emerald-700"
+              className="font-semibold text-primary underline-offset-2 hover:underline"
             >
               {segment.label}
             </Link>
           );
         }
 
-        const value = segment?.value;
-
-        if (typeof value === 'string' && value.length > 0) {
-          return <span key={index}>{value}</span>;
+        if (typeof segment?.value === 'string') {
+          return <span key={index}>{segment.value}</span>;
         }
 
         return null;
@@ -189,22 +166,17 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
   ]).filter((group) => group && (group.title || group.lead || (group.items?.length ?? 0) > 0));
 
   return (
-    <MainLayout>
+    <>
       <Head>
         <title>{seo?.title ?? `${hero?.title ?? 'Service'} | SustainSage`}</title>
         {seo?.description ? <meta name="description" content={seo.description} /> : null}
       </Head>
 
-      <Hero
-        title={hero?.title}
-        subtitle={hero?.subtitle}
-        image={heroImage}
-        imageAlt={heroImageAlt}
-      >
+      <Hero title={hero?.title} subtitle={hero?.subtitle} image={heroImage} imageAlt={heroImageAlt}>
         {hero?.primaryCta && hero?.primaryHref ? (
           <Link
             href={hero.primaryHref}
-            className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+            className={`${BUTTON_BASE} bg-primary text-white hover:bg-primary/90 focus-visible:outline-primary`}
           >
             {hero.primaryCta}
           </Link>
@@ -212,50 +184,41 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
         {hero?.secondaryCta && hero?.secondaryHref ? (
           <Link
             href={hero.secondaryHref}
-            className={`${BUTTON_BASE} bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
+            className={`${BUTTON_BASE} bg-white text-primary ring-1 ring-inset ring-primary/30 hover:bg-primary/5 focus-visible:outline-primary`}
           >
             {hero.secondaryCta}
           </Link>
         ) : null}
       </Hero>
 
-      {/* 渲染：依 orderedGroups 輸出，並統一標題與間距樣式 */}
       {orderedGroups.map((group, idx) => {
         const Component = group.component;
         const hasItems = Array.isArray(group.items) && group.items.length > 0;
-        const wrapperClass =
-          Component === ExampleList ? 'mt-4' : 'mt-4 space-y-4 text-slate-800';
 
         return (
           <PageSection key={group.key ?? idx} title={group.title} lead={group.lead}>
-            {Component && hasItems ? (
-              <div className={wrapperClass}>
-                <Component items={group.items} />
-              </div>
-            ) : null}
-            {group.note ? <p className="mt-4 text-xs leading-5 text-slate-500">{group.note}</p> : null}
+            {Component && hasItems ? <Component items={group.items} /> : null}
+            {group.note ? <p className="mt-4 text-xs leading-5 text-ink/60">{group.note}</p> : null}
           </PageSection>
         );
       })}
 
       {(ethics?.title || ethics?.description || (ethics?.items?.length ?? 0) > 0) ? (
-        <PageSection title={ethics?.title} lead={ethics?.description}>
-          <div className="mt-4 space-y-4 text-slate-800">
-            <BulletList items={ethics?.items} />
-          </div>
+        <PageSection title={ethics?.title} lead={ethics?.description} background="paper">
+          <BulletList items={ethics?.items} />
         </PageSection>
       ) : null}
 
       {cta?.title || ctaBody ? (
         <SectionContainer variant="surface" tone="muted">
           <div className="text-center">
-            {cta?.title ? <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{cta.title}</h2> : null}
-            {ctaBody ? <p className="mt-4 text-base leading-7 text-slate-700">{ctaBody}</p> : null}
+            {cta?.title ? <h2 className="text-2xl font-semibold tracking-tight text-ink">{cta.title}</h2> : null}
+            {ctaBody ? <p className="mt-4 text-base leading-7 text-ink/80">{ctaBody}</p> : null}
             <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
               {cta?.primary?.label && cta?.primary?.href ? (
                 <Link
                   href={cta.primary.href}
-                  className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+                  className={`${BUTTON_BASE} bg-primary text-white hover:bg-primary/90 focus-visible:outline-primary`}
                 >
                   {cta.primary.label}
                 </Link>
@@ -263,7 +226,7 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
               {cta?.secondary?.label && cta?.secondary?.href ? (
                 <Link
                   href={cta.secondary.href}
-                  className={`${BUTTON_BASE} bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
+                  className={`${BUTTON_BASE} bg-white text-primary ring-1 ring-inset ring-primary/30 hover:bg-primary/5 focus-visible:outline-primary`}
                 >
                   {cta.secondary.label}
                 </Link>
@@ -272,7 +235,7 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
           </div>
         </SectionContainer>
       ) : null}
-    </MainLayout>
+    </>
   );
 }
 
@@ -281,4 +244,3 @@ ICFServicePage.propTypes = {
   image: PropTypes.string,
   imageAlt: PropTypes.string,
 };
-

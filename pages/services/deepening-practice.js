@@ -4,6 +4,9 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import Hero from '@/components/layout/Hero';
+import Card from '@/components/ui/Card';
+import CardGrid from '@/components/ui/CardGrid';
+import PageSection from '@/components/ui/PageSection';
 import { sanitizeProps } from '@/lib/toSerializable';
 
 import nextI18NextConfig from '../../next-i18next.config.js';
@@ -11,20 +14,22 @@ import nextI18NextConfig from '../../next-i18next.config.js';
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
 
-function BulletList({ items }) {
-  if (!items?.length) {
+function BulletCards({ items }) {
+  if (!Array.isArray(items) || items.length === 0) {
     return null;
   }
 
   return (
-    <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-      {items.map((item) => (
-        <li key={item} className="flex gap-2">
-          <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
-          <span>{item}</span>
-        </li>
-      ))}
-    </ul>
+    <CardGrid>
+      {items.map((item, index) => {
+        const normalized =
+          typeof item === 'string'
+            ? { description: item }
+            : { title: item?.title, description: item?.description ?? item?.summary ?? item?.value };
+        const key = normalized.title ?? normalized.description ?? index;
+        return <Card key={key} title={normalized.title} subtitle={normalized.description} className="h-full" />;
+      })}
+    </CardGrid>
   );
 }
 
@@ -65,58 +70,48 @@ export default function DeepeningPracticePage() {
       >
         <Link
           href="/contact?from=deepening-practice"
-          className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+          className={`${BUTTON_BASE} bg-primary text-white hover:bg-primary/90 focus-visible:outline-primary`}
         >
           {hero?.primaryCta ?? 'Book an intro call'}
         </Link>
         <Link
           href="/services"
-          className={`${BUTTON_BASE} bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-50 focus-visible:outline-emerald-700`}
+          className={`${BUTTON_BASE} bg-white text-primary ring-1 ring-inset ring-primary/30 hover:bg-primary/5 focus-visible:outline-primary`}
         >
           {hero?.secondaryCta ?? 'Back to services'}
         </Link>
       </Hero>
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{fit?.title}</h2>
-          <BulletList items={fit?.items} />
-        </div>
-      </section>
+      <PageSection title={fit?.title} lead={fit?.description} background="paper">
+        <BulletCards items={fit?.items} />
+      </PageSection>
 
-      <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{focus?.title}</h2>
-          <BulletList items={focus?.items} />
-        </div>
-      </section>
+      <PageSection title={focus?.title} lead={focus?.description}>
+        <BulletCards items={focus?.items} />
+      </PageSection>
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-5xl px-6">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{ethics?.title}</h2>
-          <BulletList items={ethics?.items} />
-        </div>
-      </section>
+      <PageSection title={ethics?.title} lead={ethics?.description} background="paper">
+        <BulletCards items={ethics?.items} />
+      </PageSection>
 
-      <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl rounded-3xl border border-emerald-100 bg-white px-8 py-12 text-center shadow-sm">
-          <p className="text-base leading-7 text-slate-700">{renderSegments(cta?.body)}</p>
+      <PageSection>
+        <Card className="text-center" title={cta?.title} subtitle={renderSegments(cta?.body)}>
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/contact?from=deepening-practice"
-              className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+              className={`${BUTTON_BASE} bg-primary text-white hover:bg-primary/90 focus-visible:outline-primary`}
             >
               {cta?.primaryCta ?? hero?.primaryCta ?? 'Book an intro call'}
             </Link>
             <Link
               href="/services"
-              className={`${BUTTON_BASE} bg-emerald-50 text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
+              className={`${BUTTON_BASE} bg-white text-primary ring-1 ring-inset ring-primary/30 hover:bg-primary/5 focus-visible:outline-primary`}
             >
               {cta?.secondaryCta ?? 'Explore all services'}
             </Link>
           </div>
-        </div>
-      </section>
+        </Card>
+      </PageSection>
     </>
   );
 }
