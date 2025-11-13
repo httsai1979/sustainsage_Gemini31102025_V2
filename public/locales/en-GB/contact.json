@@ -73,7 +73,9 @@
   },
   "consent": {
     "label": "I have reviewed the <0>Coaching Boundaries</0> and consent to contact SustainSage about coaching.",
-    "helper": "Check this to confirm the coaching scope and unlock the contact form."
+    "helper": "Check this to confirm the coaching scope and unlock the contact form.",
+    "title": "Consent & data",
+    "text": "By submitting you agree to be contacted about your enquiry. We keep minimal records and respect deletion requests."
   },
   "form": {
     "title": "Send us a note",
@@ -88,20 +90,47 @@
     "focusArea": "Preferred pathway (optional)",
     "focusAreaPlaceholder": "Select a pathway",
     "focusAreaOptions": [
-      { "value": "transition", "label": "Transition coaching" },
-      { "value": "early-career", "label": "Early-career coaching" },
-      { "value": "working-parents", "label": "Working parent coaching" },
-      { "value": "leadership", "label": "Leadership coaching" },
-      { "value": "not-sure", "label": "Not sure yet" }
+      {
+        "value": "transition",
+        "label": "Transition coaching"
+      },
+      {
+        "value": "early-career",
+        "label": "Early-career coaching"
+      },
+      {
+        "value": "working-parents",
+        "label": "Working parent coaching"
+      },
+      {
+        "value": "leadership",
+        "label": "Leadership coaching"
+      },
+      {
+        "value": "not-sure",
+        "label": "Not sure yet"
+      }
     ],
     "focusHint": "Choose the option that feels closest—it is fine to stay uncertain.",
     "language": "Preferred language",
     "languagePlaceholder": "Select a language",
     "languageOptions": [
-      { "value": "en", "label": "English" },
-      { "value": "zh-TW", "label": "Traditional Chinese" },
-      { "value": "zh-CN", "label": "Simplified Chinese" },
-      { "value": "mix", "label": "Mix languages" }
+      {
+        "value": "en",
+        "label": "English"
+      },
+      {
+        "value": "zh-TW",
+        "label": "Traditional Chinese"
+      },
+      {
+        "value": "zh-CN",
+        "label": "Simplified Chinese"
+      },
+      {
+        "value": "mix",
+        "label": "Mix languages"
+      }
     ],
     "languageHint": "Tell us if you prefer English, Mandarin, or a mix—we can switch mid-session.",
     "timezone": "Preferred time zone / availability",
@@ -130,20 +159,18 @@
     "nextCopy": "You choose whether to continue coaching. We summarise agreements and boundaries so you stay in control."
   },
   "miniFaq": {
-    "title": "Quick answers",
-    "intro": "Clear boundaries help you decide comfortably.",
     "items": [
       {
-        "question": "Will you try to sell me a package?",
-        "answer": "No. The intro call is for exploring fit. We share honest observations and you decide. You can leave with suggestions even if we do not work together."
+        "q": "Is this confidential?",
+        "a": "Yes. Confidential by default; minimal notes; deletion on request."
       },
       {
-        "question": "Can my employer pay?",
-        "answer": "Yes. Once your employer or L&D team confirms budget, we invoice them directly and outline confidentiality terms so expectations stay clear."
+        "q": "What is expected between sessions?",
+        "a": "One small experiment or short reflection (≈30–60 min/week)."
       },
       {
-        "question": "Can we work in Mandarin or bilingual?",
-        "answer": "Yes. Sessions can be in Mandarin, English, or a mix. We can switch languages mid-conversation to capture nuance."
+        "q": "Can I reschedule?",
+        "a": "Yes with 24-hour notice; late changes count as used."
       }
     ]
   },
