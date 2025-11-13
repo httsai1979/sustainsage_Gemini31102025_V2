@@ -122,9 +122,9 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
   const sections = t('sections', { returnObjects: true }) ?? {};
 
   const who = sections.who ?? {};
+  const examples = sections.examples ?? {};
   const what = sections.what ?? {};
   const how = sections.how ?? {};
-  const examples = sections.examples ?? {};
   const expect = sections.expect ?? {};
   const ethics = sections.ethics ?? {};
   const cta = sections.cta ?? {};
@@ -134,6 +134,11 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
   const ctaBody = renderCtaBody(cta?.body);
   const hasWhoContent = Boolean(
     who?.title || who?.description || (Array.isArray(who?.items) && who.items.length > 0)
+  );
+  const hasExamplesContent = Boolean(
+    examples?.title ||
+      examples?.description ||
+      (Array.isArray(examples?.items) && examples.items.length > 0)
   );
   const hasWhatContent = Boolean(
     what?.title || what?.description || (Array.isArray(what?.items) && what.items.length > 0)
@@ -186,17 +191,19 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
         </section>
       ) : null}
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          {examples?.title ? (
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{examples.title}</h2>
-          ) : null}
-          {examples?.description ? (
-            <p className="mt-4 text-base leading-7 text-slate-600">{examples.description}</p>
-          ) : null}
-          <ExampleList items={examples?.items} />
-        </div>
-      </section>
+      {hasExamplesContent ? (
+        <section className="bg-white py-16 sm:py-20">
+          <div className="mx-auto max-w-6xl px-6">
+            {examples?.title ? (
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{examples.title}</h2>
+            ) : null}
+            {examples?.description ? (
+              <p className="mt-4 text-base leading-7 text-slate-600">{examples.description}</p>
+            ) : null}
+            <ExampleList items={examples?.items} />
+          </div>
+        </section>
+      ) : null}
 
       {hasWhatContent ? (
         <section className="bg-white py-16 sm:py-20">
