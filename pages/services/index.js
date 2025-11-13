@@ -4,29 +4,30 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import SectionContainer from '@/components/sections/SectionContainer';
-import CardShell from '@/components/ui/CardShell';
+import PageSection from '@/components/ui/PageSection';
+import Card from '@/components/ui/Card';
+import Callout from '@/components/ui/Callout';
+import { H1 } from '@/components/ui/H';
 import { loadContent } from '@/lib/loadContent';
 import { sanitizeProps } from '@/lib/toSerializable';
 
 function PathwayCard({ card, viewDetailsLabel }) {
   return (
-    <CardShell className="flex h-full flex-col justify-between p-6 sm:p-8">
-      <div className="space-y-4">
-        {card.eyebrow ? (
-          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.eyebrow}</p>
-        ) : null}
-        <h3 className="text-lg font-semibold tracking-tight text-slate-900">{card.title}</h3>
-        {card.excerpt ? <p className="text-sm leading-6 text-slate-700">{card.excerpt}</p> : null}
-      </div>
-      <Link
-        href={`/services/${card.slug}`}
-        className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-emerald-700 hover:underline"
-      >
-        {card.ctaLabel ?? viewDetailsLabel}
-        <span aria-hidden="true">→</span>
-      </Link>
-    </CardShell>
+    <Card
+      className="flex h-full flex-col"
+      title={card.title}
+      subtitle={card.excerpt}
+      footer={
+        <Link href={`/services/${card.slug}`} className="inline-flex items-center gap-2 font-semibold text-sage">
+          {card.ctaLabel ?? viewDetailsLabel}
+          <span aria-hidden="true">→</span>
+        </Link>
+      }
+    >
+      {card.eyebrow ? (
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">{card.eyebrow}</p>
+      ) : null}
+    </Card>
   );
 }
 
@@ -52,8 +53,6 @@ export default function ServicesPage({
   const pathways = t('pathways', { returnObjects: true });
   const cta = t('cta', { returnObjects: true });
   const faqLink = t('faqLink', { returnObjects: true });
-  const boundariesLink = hero?.boundariesLink;
-  const visibleCards = Array.isArray(cards) ? cards.filter((card) => card && card.title) : [];
   const fallbackMessage = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return (
@@ -63,81 +62,60 @@ export default function ServicesPage({
         {seo?.description ? <meta name="description" content={seo?.description} /> : null}
       </Head>
 
-      <SectionContainer className="bg-emerald-50/60" wide>
-        <div className="flex flex-col gap-8 md:flex-row md:items-center">
-          <div className="typography flex flex-1 flex-col gap-4">
-            <h1>{hero?.title}</h1>
-            {hero?.highlight ? (
-              <p>
-                <strong>{hero.highlight}</strong>
-              </p>
+      <PageSection className="bg-white">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start">
+          <div className="space-y-6">
+            {hero?.eyebrow ? (
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">{hero.eyebrow}</p>
             ) : null}
-            {hero?.subtitle ? <p>{hero.subtitle}</p> : null}
+            {hero?.title ? <H1>{hero.title}</H1> : null}
+            {hero?.subtitle ? <p className="text-base leading-7 text-slate-600">{hero.subtitle}</p> : null}
+            {hero?.highlight ? (
+              <p className="text-base font-semibold text-slate-900">{hero.highlight}</p>
+            ) : null}
             {showFallbackNotice ? (
               <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
             ) : null}
-            {boundariesLink?.label || faqLink?.label ? (
-              <div className="flex flex-col gap-2 sm:flex-row sm:flex-wrap">
-                {boundariesLink?.label ? (
-                  <Link
-                    href={boundariesLink.href}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline"
-                  >
-                    {boundariesLink.label}
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                ) : null}
-                {faqLink?.label ? (
-                  <Link
-                    href={faqLink.href}
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline"
-                  >
-                    {faqLink.label}
-                    <span aria-hidden="true">→</span>
-                  </Link>
-                ) : null}
-              </div>
-            ) : null}
+            <div className="flex flex-wrap gap-4 text-sm font-semibold text-sage">
+              {hero?.boundariesLink?.label ? (
+                <Link href={hero.boundariesLink.href} className="inline-flex items-center gap-2 hover:underline">
+                  {hero.boundariesLink.label}
+                  <span aria-hidden>→</span>
+                </Link>
+              ) : null}
+              {faqLink?.label ? (
+                <Link href={faqLink.href} className="inline-flex items-center gap-2 hover:underline">
+                  {faqLink.label}
+                  <span aria-hidden>→</span>
+                </Link>
+              ) : null}
+            </div>
           </div>
-          <div className="rounded-2xl border border-emerald-100 bg-white/80 p-5 text-sm leading-6 text-slate-700 md:w-80">
-            <p>{pathways?.sidebar ?? pathways?.description}</p>
-          </div>
+          <Callout
+            title={pathways?.sidebarTitle ?? 'Where to begin'}
+            body={pathways?.sidebar ?? pathways?.description}
+          />
         </div>
-      </SectionContainer>
+      </PageSection>
 
-      <SectionContainer className="bg-white" wide>
-        <div className="typography mx-auto flex max-w-3xl flex-col gap-4">
-          <h2>{pathways?.title}</h2>
-          {pathways?.highlight ? (
-            <p>
-              <strong>{pathways.highlight}</strong>
-            </p>
-          ) : null}
-          {pathways?.description ? <p>{pathways.description}</p> : null}
-        </div>
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
-          {visibleCards.map((card) => (
+      <PageSection title={pathways?.title} lead={pathways?.description}>
+        {pathways?.highlight ? (
+          <p className="mb-8 text-base font-semibold text-slate-900">{pathways.highlight}</p>
+        ) : null}
+        <div className="grid gap-6 md:grid-cols-3">
+          {cards.map((card) => (
             <PathwayCard key={card.slug} card={card} viewDetailsLabel={pathways?.viewDetails ?? 'View details'} />
           ))}
         </div>
-      </SectionContainer>
+      </PageSection>
 
-      <SectionContainer className="bg-emerald-950/5" wide>
-        <div className="flex flex-col items-center gap-4 text-center">
-          <div className="typography flex flex-col gap-4">
-            <h2>{cta?.title}</h2>
-            {cta?.highlight ? (
-              <p>
-                <strong>{cta.highlight}</strong>
-              </p>
-            ) : null}
-            {cta?.body ? <p>{cta.body}</p> : null}
-          </div>
-          <div className="flex flex-col gap-3 sm:flex-row">
+      <PageSection>
+        <Card className="text-center" title={cta?.title} subtitle={cta?.body}>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
             {cta?.primaryHref && cta?.primaryCta ? (
               <Link
                 href={cta.primaryHref}
-                className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+                className="inline-flex items-center justify-center rounded-full bg-sage px-5 py-3 text-sm font-semibold text-white"
               >
                 {cta.primaryCta}
               </Link>
@@ -145,14 +123,14 @@ export default function ServicesPage({
             {cta?.secondaryHref && cta?.secondaryCta ? (
               <Link
                 href={cta.secondaryHref}
-                className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+                className="inline-flex items-center justify-center rounded-full border border-sage/40 px-5 py-3 text-sm font-semibold text-sage"
               >
                 {cta.secondaryCta}
               </Link>
             ) : null}
           </div>
-        </div>
-      </SectionContainer>
+        </Card>
+      </PageSection>
     </>
   );
 }
@@ -170,7 +148,6 @@ ServicesPage.propTypes = {
   showFallbackNotice: PropTypes.bool,
   fallbackNotice: PropTypes.string,
 };
-
 
 export async function getStaticProps({ locale }) {
   const currentLocale = locale ?? 'en-GB';
