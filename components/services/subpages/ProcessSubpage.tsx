@@ -1,4 +1,5 @@
 import { MicroCTA } from '@/components/common/MicroCTA';
+import SectionContainer from '@/components/sections/SectionContainer';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
 const { Page } = createServiceSubpage({
@@ -38,21 +39,23 @@ const { Page } = createServiceSubpage({
     return (
       <div className="space-y-10">
         {steps.length > 0 ? (
-          <ol className="space-y-6">
-            {steps.map((step, index) => (
-              <li key={step.title ?? index} className="flex gap-4">
-                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-700 text-sm font-semibold text-white">
-                  {index + 1}
-                </span>
-                <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-                  {step.title ? <h3 className="text-base font-semibold text-slate-900">{step.title}</h3> : null}
-                  {step.description ? (
-                    <p className="mt-3 text-sm leading-6 text-slate-700">{step.description}</p>
-                  ) : null}
-                </div>
-              </li>
-            ))}
-          </ol>
+          <SectionContainer variant="surface">
+            <ol className="space-y-6">
+              {steps.map((step, index) => (
+                <li key={step.title ?? index} className="flex gap-4">
+                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-700 text-sm font-semibold text-white">
+                    {index + 1}
+                  </span>
+                  <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+                    {step.title ? <h3 className="text-base font-semibold text-slate-900">{step.title}</h3> : null}
+                    {step.description ? (
+                      <p className="mt-3 text-sm leading-6 text-slate-700">{step.description}</p>
+                    ) : null}
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </SectionContainer>
         ) : null}
 
         {note ? <p className="text-xs font-medium text-slate-500">{note}</p> : null}

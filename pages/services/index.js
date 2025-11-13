@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import SectionContainer from '@/components/sections/SectionContainer';
 import CardShell from '@/components/ui/CardShell';
 import { loadContent } from '@/lib/loadContent';
 import { sanitizeProps } from '@/lib/toSerializable';
@@ -62,8 +63,8 @@ export default function ServicesPage({
         {seo?.description ? <meta name="description" content={seo?.description} /> : null}
       </Head>
 
-      <section className="bg-emerald-50/60 py-16">
-        <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 md:flex-row md:items-center md:px-6">
+      <SectionContainer className="bg-emerald-50/60" wide>
+        <div className="flex flex-col gap-8 md:flex-row md:items-center">
           <div className="typography flex flex-1 flex-col gap-4">
             <h1>{hero?.title}</h1>
             {hero?.highlight ? (
@@ -102,29 +103,27 @@ export default function ServicesPage({
             <p>{pathways?.sidebar ?? pathways?.description}</p>
           </div>
         </div>
-      </section>
+      </SectionContainer>
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="typography mx-auto flex max-w-3xl flex-col gap-4">
-            <h2>{pathways?.title}</h2>
-            {pathways?.highlight ? (
-              <p>
-                <strong>{pathways.highlight}</strong>
-              </p>
-            ) : null}
-            {pathways?.description ? <p>{pathways.description}</p> : null}
-          </div>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            {visibleCards.map((card) => (
-              <PathwayCard key={card.slug} card={card} viewDetailsLabel={pathways?.viewDetails ?? 'View details'} />
-            ))}
-          </div>
+      <SectionContainer className="bg-white" wide>
+        <div className="typography mx-auto flex max-w-3xl flex-col gap-4">
+          <h2>{pathways?.title}</h2>
+          {pathways?.highlight ? (
+            <p>
+              <strong>{pathways.highlight}</strong>
+            </p>
+          ) : null}
+          {pathways?.description ? <p>{pathways.description}</p> : null}
         </div>
-      </section>
+        <div className="mt-10 grid gap-8 md:grid-cols-3">
+          {visibleCards.map((card) => (
+            <PathwayCard key={card.slug} card={card} viewDetailsLabel={pathways?.viewDetails ?? 'View details'} />
+          ))}
+        </div>
+      </SectionContainer>
 
-      <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-4 text-center md:px-6">
+      <SectionContainer className="bg-emerald-950/5" wide>
+        <div className="flex flex-col items-center gap-4 text-center">
           <div className="typography flex flex-col gap-4">
             <h2>{cta?.title}</h2>
             {cta?.highlight ? (
@@ -153,7 +152,7 @@ export default function ServicesPage({
             ) : null}
           </div>
         </div>
-      </section>
+      </SectionContainer>
     </>
   );
 }
