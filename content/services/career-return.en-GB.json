@@ -3,93 +3,167 @@
   "pricing": {
     "packages": [
       {
-        "name": "6-session block",
-        "duration": "6×60–75min over ~12 weeks",
-        "scope": "Clarity, experiments, review; async check-ins.",
-        "price_note": "Exact fees on request; pro bono/discounts available case-by-case."
+        "title": "Restart — 3 sessions",
+        "highlights": [
+          "3 × 50-min over 4–6 weeks",
+          "Confidence reset and story refresh after a gap",
+          "Recent proof points plan (mini-project / references)"
+        ]
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One focused topic; action plan + follow-up note.",
-        "price_note": "Best for a specific decision or interview prep."
+        "title": "Momentum — 6 sessions",
+        "highlights": [
+          "6 × 50-min over 8–12 weeks",
+          "Portfolio/CV reframing with gap-bridge evidence",
+          "Interview rehearsal for return-to-work scenarios"
+        ]
+      },
+      {
+        "title": "Sustain — 12 sessions",
+        "highlights": [
+          "12 × 50-min over 3–6 months",
+          "Cadence for balancing care duties and work",
+          "Tailored experiments + rhythm reviews"
+        ]
       }
     ],
     "policies": [
-      {
-        "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
-      },
-      {
-        "title": "No guarantees",
-        "body": "We co-design experiments; outcomes depend on your context and actions."
-      }
+      "Rescheduling: 24 hours’ notice; late changes count as used.",
+      "Blocks may pause between sessions by mutual agreement.",
+      "Confidential by default; minimal notes; deletion on request.",
+      "Coaching, not therapy; signposting if therapy/legal advice is safer.",
+      "Online within UK hours; invoicing in GBP."
     ]
   },
   "readiness": {
     "checklist": [
-      "I can commit 60–90min per week for reflection or experiments.",
-      "I accept that coaching is not therapy or medical advice.",
-      "I’m willing to run small tests and learn from results."
+      "50–60 minutes available online, UK hours workable.",
+      "A gap to bridge (parenting, health, study, care) and a target domain.",
+      "Okay with coaching scope (not therapy/legal).",
+      "Willing to try one micro-experiment between sessions.",
+      "Recent CV or LinkedIn link ready to share.",
+      "Able to use Google Docs/Sheets and Zoom/Meet.",
+      "Consent to minimal notes and data handling."
     ],
     "what_to_prepare": [
-      "Latest CV / role targets",
-      "Three work situations worth improving",
-      "Boundaries and constraints (time, energy, family)"
+      "Your LinkedIn URL or a recent CV (PDF).",
+      "Two short examples from before/after the gap.",
+      "Constraints list (hours, location, care duties).",
+      "Rough weekly rhythm you can keep.",
+      "Top 3 questions for the first two sessions."
+    ],
+    "signals": [
+      "You want calm, honest, UK-relevant guidance.",
+      "You prefer small steps that produce visible proof.",
+      "You can commit to a weekly cadence with short reviews.",
+      "You are comfortable with “coaching, not therapy”."
     ]
   },
   "process": {
     "title": "How the process works",
     "description": "A three to four month container with 60-minute sessions and light touch check-ins between calls.",
     "steps": [
-      {
-        "title": "Orientation & consent",
-        "description": "We map responsibilities, non-negotiables and what support looks like to you."
-      },
-      {
-        "title": "Design paced experiments",
-        "description": "We test options, practise scripts and rehearse conversations you want to lead."
-      },
-      {
-        "title": "Embed routines that protect energy",
-        "description": "We build tracking rituals so you can sustain momentum without overextending."
-      }
+      "Reset & boundaries — aims, constraints, what sits outside coaching.",
+      "Rebuild signal — one visible proof point (mini-project, reference, refresher).",
+      "Story & CV — bridge the gap without apologising; clear “why now”.",
+      "Interview fit — return-to-work scenarios, timing, breaks, care duties.",
+      "Apply & review — track, 20-min retro, adjust the next small step."
     ],
     "note": "Optional asynchronous feedback through voice notes or docs helps you integrate between sessions."
   },
   "agreement": {
     "sections": [
       {
-        "heading": "Scope",
-        "body": "Coaching supports clarity, decisions and self-leadership through questions and experiments."
+        "title": "Scope & Fit",
+        "paragraphs": [
+          "This is coaching, not therapy, counselling, HR, or legal advice.",
+          "We work on UK-relevant proof points, story clarity, preparation, and cadence.",
+          "If therapy/legal support is safer, we will signpost appropriate services."
+        ]
       },
       {
-        "heading": "Not therapy/medical",
-        "body": "We do not diagnose or treat; we may signpost to professional help when appropriate."
+        "title": "Confidentiality",
+        "paragraphs": [
+          "Sessions are confidential by default.",
+          "Only minimal notes are kept; you may request deletion at any time.",
+          "Quality supervision may use anonymised patterns without identifying details."
+        ]
       },
       {
-        "heading": "Confidentiality & limits",
-        "body": "We keep sessions confidential except where law/safety requires disclosure."
+        "title": "Scheduling & Rescheduling",
+        "paragraphs": [
+          "≈50-minute sessions online within UK hours.",
+          "24 hours’ notice to reschedule; late changes count as used.",
+          "Blocks may pause between sessions by mutual agreement."
+        ]
       },
       {
-        "heading": "Consent & boundaries",
-        "body": "You can pause, decline, or stop any activity at any time."
+        "title": "Fees & Invoicing",
+        "paragraphs": [
+          "Fees in GBP, invoiced per block or as agreed.",
+          "Delivered sessions are non-refundable; unused sessions in a block may pause.",
+          "Bank/platform charges are borne by the client unless otherwise agreed."
+        ]
       },
       {
-        "heading": "Cancellations & data",
-        "body": "24h reschedule window; session notes kept minimal and securely."
+        "title": "Data & Records",
+        "paragraphs": [
+          "We keep the minimum data needed to run sessions and invoices.",
+          "You can request copy or deletion of personal data subject to legal limits.",
+          "We use common tools (Google Docs/Sheets, email, video) with reasonable care."
+        ]
+      },
+      {
+        "title": "Fair Use & Boundaries",
+        "paragraphs": [
+          "Light check-ins are fine; heavy review or done-for-you work is out of scope.",
+          "We do not contact employers or HR on your behalf.",
+          "If there is risk of harm, confidentiality may be lifted to keep people safe."
+        ]
+      },
+      {
+        "title": "Disputes",
+        "paragraphs": [
+          "Aim to resolve early via email and a short call.",
+          "If unresolved, we propose a simple written plan and pause if needed.",
+          "UK law and forums apply unless mandatory local law requires otherwise."
+        ]
       }
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "How do we meet?",
-        "a": "Online (video) by default; in-person by arrangement in London."
+        "q": "Can you explain my employment gap for me?",
+        "a": "We co-craft your story, but you own the words. We focus on what changed and what you can evidence now."
       },
       {
-        "q": "What if I’m not ready?",
-        "a": "Start with a 20-minute chat; we’ll decide together with no obligation."
+        "q": "Will you guarantee a return-to-work role?",
+        "a": "No. Coaching is not placement. We help you create proof points and clearer stories; you apply and track results."
+      },
+      {
+        "q": "Do you write my CV/LinkedIn?",
+        "a": "We coach structure and clarity to UK norms, and suggest edits together in Google Docs. You remain the author."
+      },
+      {
+        "q": "How much time between sessions?",
+        "a": "Usually 30–60 minutes weekly for one micro-experiment or edit pass. Keep it small and visible."
+      },
+      {
+        "q": "Is it confidential?",
+        "a": "Yes. Confidential by default; minimal notes; deletion on request. See the boundaries page for details."
+      },
+      {
+        "q": "What about childcare/limited hours?",
+        "a": "We plan rhythm around constraints and target roles that match your workable hours."
+      },
+      {
+        "q": "Can you speak to my manager or HR?",
+        "a": "No. We help you plan the conversation; you speak for yourself when ready."
+      },
+      {
+        "q": "Reschedule/Refunds?",
+        "a": "24-hour notice required to reschedule; late changes count as used. Delivered sessions are non-refundable."
       }
     ]
   },
@@ -134,6 +208,25 @@
         ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
         "slug": "translating-new-skills-after-study"
+      }
+    ]
+  },
+  "key_points": {
+    "items": [
+      {
+        "title": "Gentle 12-week ramp back with light structure and honest boundaries."
+      },
+      {
+        "title": "Weekly cadence; small experiments between sessions to build momentum."
+      },
+      {
+        "title": "Interview rehearsal that sharpens stories and fit—no hacks, no scripts."
+      },
+      {
+        "title": "CV/portfolio reframing to show recent proof of progress."
+      },
+      {
+        "title": "Simple pricing; pause between blocks; confidentiality by default."
       }
     ]
   }

@@ -4,27 +4,28 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import CardShell from '@/components/ui/CardShell';
 import { loadContent } from '@/lib/loadContent';
 import { sanitizeProps } from '@/lib/toSerializable';
 
 function PathwayCard({ card, viewDetailsLabel }) {
   return (
-    <div className="flex h-full flex-col justify-between rounded-2xl border border-emerald-100 bg-white p-5">
+    <CardShell className="flex h-full flex-col justify-between p-6 sm:p-8">
       <div className="space-y-4">
         {card.eyebrow ? (
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{card.eyebrow}</p>
         ) : null}
-        <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
-        {card.excerpt ? <p className="text-sm leading-6 text-slate-600">{card.excerpt}</p> : null}
+        <h3 className="text-lg font-semibold tracking-tight text-slate-900">{card.title}</h3>
+        {card.excerpt ? <p className="text-sm leading-6 text-slate-700">{card.excerpt}</p> : null}
       </div>
       <Link
         href={`/services/${card.slug}`}
-        className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline"
+        className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-emerald-700 hover:underline"
       >
         {card.ctaLabel ?? viewDetailsLabel}
         <span aria-hidden="true">→</span>
       </Link>
-    </div>
+    </CardShell>
   );
 }
 
@@ -185,8 +186,8 @@ export async function getStaticProps({ locale }) {
       slug: card.slug,
       title: card.title,
       eyebrow: card.eyebrow,
-      excerpt: card.excerpt ?? card.description ?? '',
-      ctaLabel: card.ctaLabel ?? card.cta ?? card.buttonLabel ?? null,
+      excerpt: card.excerpt ?? card.description ?? card.teaser ?? '',
+      ctaLabel: card.ctaLabel ?? card.cta ?? card.buttonLabel ?? card.cta_label ?? null,
     }))
     .filter((card) => card.slug && card.title);
 
