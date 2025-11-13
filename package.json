@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "clean": "rimraf .next .turbo node_modules",
+    "reinstall": "npm run clean && npm ci",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "check:defaultprops": "node scripts/check-default-props.js",
-    "postbuild": "node scripts/generate-sitemap.js"
+    "postbuild": "node scripts/generate-sitemap.js",
+    "check:md-links": "node scripts/validate-internal-links.mjs"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.1.5",

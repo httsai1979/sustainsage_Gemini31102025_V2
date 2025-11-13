@@ -4,102 +4,15 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import MainLayout from '@/components/layout/MainLayout';
 import { loadJSON } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
-
-const EXAMPLE_RE =
-  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|use cases|scenario|scenarios|who (it'?s )?for|before\/after)/i;
-
-const isExampleLike = (section) => {
-  if (!section || typeof section !== 'object') {
-    return false;
-  }
-
-  const title = section.title ?? section.heading ?? section.label ?? '';
-  const lead = section.lead ?? section.summary ?? '';
-
-  return EXAMPLE_RE.test(String(title)) || EXAMPLE_RE.test(String(lead));
-};
-
-const orderSections = (items) => {
-  if (!Array.isArray(items) || items.length === 0) {
-    return items ?? [];
-  }
-
-  const exampleSections = items.filter((item) => isExampleLike(item));
-  const remainingSections = items.filter((item) => !isExampleLike(item));
-
-  return [...exampleSections, ...remainingSections];
-};
-
-function BulletHighlights({ block = null } = {}) {
-  if (!block?.items?.length) {
-    return null;
-  }
-
-  return (
-    <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-      {block.title ? (
-        <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{block.title}</p>
-      ) : null}
-      {block.description ? <p className="mt-2 text-sm leading-6 text-slate-700">{block.description}</p> : null}
-      <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
-        {block.items.map((item) => (
-          <li key={item} className="flex gap-3">
-            <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
+import { orderSections } from '@/lib/content/normalize';
+import BulletHighlights from '@/components/sections/BulletHighlights';
+import ProseSection from '@/components/sections/ProseSection';
 
 BulletHighlights.propTypes = {
   block: PropTypes.shape({
     title: PropTypes.string,
     description: PropTypes.string,
     items: PropTypes.arrayOf(PropTypes.string),
-  }),
-};
-
-function Section({ section = null } = {}) {
-  if (!section) return null;
-
-  return (
-    <section className="border-t border-emerald-100 bg-white py-16 sm:py-20">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="typography flex flex-col gap-4">
-          <h2>{section.title}</h2>
-          {section.paragraphs?.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-        {Array.isArray(section.items) && section.items.length > 0 ? (
-          <dl className="mt-8 space-y-5 text-sm leading-6 text-slate-700">
-            {section.items.map((item) => (
-              <div key={item.title ?? item.description}>
-                {item.title ? (
-                  <dt className="font-semibold text-emerald-800">{item.title}</dt>
-                ) : null}
-                {item.description ? <dd className="mt-1">{item.description}</dd> : null}
-              </div>
-            ))}
-          </dl>
-        ) : null}
-      </div>
-    </section>
-  );
-}
-
-Section.propTypes = {
-  section: PropTypes.shape({
-    title: PropTypes.string,
-    paragraphs: PropTypes.arrayOf(PropTypes.string),
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        title: PropTypes.string,
-        description: PropTypes.string,
-      }),
-    ),
   }),
 };
 
@@ -135,19 +48,26 @@ export default function CoachingBoundariesPage({
         </div>
       </section>
 
-      {scope?.whatYouGet?.items?.length || scope?.whatWeDontDo?.items?.length ? (
-        <section className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-5xl px-6">
-            <div className="grid gap-6 md:grid-cols-2">
-              <BulletHighlights block={scope?.whatYouGet} />
-              <BulletHighlights block={scope?.whatWeDontDo} />
-            </div>
-          </div>
-        </section>
-      ) : null}
-
-      {sections.map((section) => (
-        <Section key={section.title ?? section.paragraphs?.[0]} section={section} />
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-6 grid gap-6 sm:grid-cols-2">
+          <BulletHighlights
+            block={{
+              title: scope?.whatYouGet?.title,
+              description: scope?.whatYouGet?.description,
+              items: scope?.whatYouGet?.items ?? [],
+            }}
+          />
+          <BulletHighlights
+            block={{
+              title: scope?.whatWeDontDo?.title,
+              description: scope?.whatWeDontDo?.description,
+              items: scope?.whatWeDontDo?.items ?? [],
+            }}
+          />
+        </div>
+      </section>
+      {sections.map((section, idx) => (
+        <ProseSection key={section.title ?? idx} section={section} />
       ))}
     </MainLayout>
   );

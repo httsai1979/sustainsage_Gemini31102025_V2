@@ -1,4 +1,5 @@
 import { MicroCTA } from '@/components/common/MicroCTA';
+import SectionContainer from '@/components/sections/SectionContainer';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
 const { Page } = createServiceSubpage({
@@ -40,10 +41,9 @@ const { Page } = createServiceSubpage({
 
     return (
       <div className="space-y-10">
-        <div className="grid gap-10 lg:grid-cols-2">
+        <div className="grid gap-8 lg:grid-cols-2">
           {checklist.length > 0 ? (
-            <div className="space-y-4 rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-              <h3 className="text-base font-semibold text-slate-900">Checklist before starting</h3>
+            <SectionContainer title="Checklist before starting">
               <ul className="space-y-3 text-sm leading-6 text-slate-700">
                 {checklist.map((item, index) => (
                   <li key={item ?? index} className="flex gap-3">
@@ -52,12 +52,11 @@ const { Page } = createServiceSubpage({
                   </li>
                 ))}
               </ul>
-            </div>
+            </SectionContainer>
           ) : null}
 
           {prepare.length > 0 ? (
-            <div className="space-y-4 rounded-3xl border border-emerald-100 bg-emerald-50/70 p-6 shadow-sm">
-              <h3 className="text-base font-semibold text-slate-900">Helpful to prepare</h3>
+            <SectionContainer title="Helpful to prepare" tone="muted">
               <ul className="space-y-3 text-sm leading-6 text-slate-700">
                 {prepare.map((item, index) => (
                   <li key={item ?? index} className="flex gap-3">
@@ -66,7 +65,7 @@ const { Page } = createServiceSubpage({
                   </li>
                 ))}
               </ul>
-            </div>
+            </SectionContainer>
           ) : null}
         </div>
 

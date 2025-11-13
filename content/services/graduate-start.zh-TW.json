@@ -28,68 +28,111 @@
   },
   "readiness": {
     "checklist": [
-      "I can try a 2-week test between sessions.",
-      "I accept coaching is not therapy or medical advice.",
-      "I’ll draft my CV/portfolio and be open to iteration."
+      "可安排 50–60 分鐘線上會談，能配合英國時段。",
+      "有大致方向（角色或產業）。",
+      "理解教練服務範圍（非就業媒合／治療／法律）。",
+      "願意在會談間完成一個小實驗。",
+      "準備好最新 CV 或 LinkedIn 連結。"
     ],
     "what_to_prepare": [
-      "Latest CV or portfolio link",
-      "Two target roles or fields",
-      "Three questions that matter most to you"
+      "你的 LinkedIn 連結或最近期的 CV（PDF）。",
+      "兩個課堂／工作專案，能在 60–90 秒說清楚。",
+      "目標職缺／公司清單或限制條件。",
+      "前兩次會談想釐清的三個問題。"
+    ],
+    "signals": [
+      "偏好英國在地、務實而不誇大的指引。",
+      "喜歡小步走、用可見證據累積信心。",
+      "能維持每週節奏並做短回顧。"
     ]
   },
   "process": {
     "title": "Process & pace",
     "description": "A six to eight week sprint with optional monthly check-ins as you transition into your role.",
     "steps": [
-      {
-        "title": "Clarify decisions & boundaries",
-        "description": "We map priorities, expectations and the stakeholders you want to align."
-      },
-      {
-        "title": "Prototype experiments",
-        "description": "We design small tests, build scripts and prepare materials that support your direction."
-      },
-      {
-        "title": "Review & reinforce",
-        "description": "We debrief experiments, capture learning and adjust routines to sustain momentum."
-      }
+      "盤點強項 → 小證據：技能、專案、可見成果。",
+      "對齊英國 CV/LinkedIn：清楚條列、動詞精準、結果可見。",
+      "作品集或樣本：一頁一故事一連結。",
+      "主動聯繫腳本＋輕量面試演練。",
+      "追蹤 → 回顧 → 調整：保持小步且可見。"
     ],
     "note": "Optional aftercare check-ins help you translate offers into confident starts."
   },
   "agreement": {
     "sections": [
       {
-        "heading": "Scope",
-        "body": "Coaching helps you choose and act through questions, frameworks and small tests."
+        "title": "服務範圍與適配",
+        "paragraphs": [
+          "本服務為教練，不是就業媒合、治療或法律建議。",
+          "聚焦證據點、敘事清晰、準備與節奏。"
+        ]
       },
       {
-        "heading": "Not therapy/medical",
-        "body": "We do not treat or diagnose; we may signpost to support services."
+        "title": "保密",
+        "paragraphs": [
+          "預設保密；最少必要紀錄；可要求刪除。",
+          "品質督導可能討論匿名化模式，不含可識別資訊。"
+        ]
       },
       {
-        "heading": "Confidentiality & limits",
-        "body": "Sessions are confidential except where law/safety requires disclosure."
+        "title": "時程與改期",
+        "paragraphs": [
+          "單次約 50 分鐘，線上、以英國時段為主。",
+          "改期需提前 24 小時；逾時視同使用一次會談。"
+        ]
       },
       {
-        "heading": "Consent & boundaries",
-        "body": "You can pause, decline or stop any activity."
+        "title": "費用與發票",
+        "paragraphs": [
+          "以英鎊 (GBP) 計價；依套組或約定開立發票。",
+          "已完成會談不退費。"
+        ]
       },
       {
-        "heading": "Cancellations & data",
-        "body": "24h reschedule; minimal notes stored securely."
+        "title": "個資與紀錄",
+        "paragraphs": [
+          "僅保存執行會談與開立發票所需的最少資料。",
+          "你可在法律許可範圍內申請調閱或刪除個資。"
+        ]
+      },
+      {
+        "title": "合理使用與界線",
+        "paragraphs": [
+          "會談間可輕量回報；大量審稿／代做不在範圍內。",
+          "不代為聯絡雇主。"
+        ]
       }
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "Do you help with portfolios?",
-        "a": "We can review and give structure suggestions but do not build them for you."
+        "q": "你們會直接幫我找到工作嗎？",
+        "a": "不會。教練不是媒合。我們協助你產出英國看得懂的證據與清楚敘事；由你投遞並追蹤。"
       },
       {
-        "q": "Internship or full-time?",
-        "a": "We build a scorecard and test assumptions to help you decide."
+        "q": "你會代寫我的 CV/LinkedIn 嗎？",
+        "a": "不代寫；你仍是作者。我們協助結構與清楚度，並在 Google Docs 共同修訂。"
+      },
+      {
+        "q": "我幾乎沒有實務經驗怎麼辦？",
+        "a": "把課程、志工、小專案轉成證據：說清楚貢獻與結果，最好能附連結。"
+      },
+      {
+        "q": "兩次會談間要投入多少時間？",
+        "a": "通常每週 30–60 分鐘，完成 1 個小實驗或一輪修訂；保持小而可見。"
+      },
+      {
+        "q": "談話會保密嗎？",
+        "a": "預設保密；最少必要紀錄；可要求刪除。詳見邊界頁。"
+      },
+      {
+        "q": "你會代我聯絡雇主嗎？",
+        "a": "不會。我們協助你準備聯繫腳本與信心；由你親自發送。"
+      },
+      {
+        "q": "改期與退費怎麼處理？",
+        "a": "改期需提前 24 小時；逾時視同使用一次會談。已完成會談不退費。"
       }
     ]
   },
@@ -143,5 +186,7 @@
       "面試演練追求清楚與適配——不教話術、不背模板。",
       "簡單定價；套組之間可暫停；預設保密。"
     ]
-  }
+  },
+  "title": "畢業求職 — 教練路徑",
+  "description": "把課程變成證據：一頁、一個故事、一個連結。用小步驟累積可見成果。"
 }
