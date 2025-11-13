@@ -15,7 +15,7 @@ export default function Card({
   prose = false,
 }) {
   return (
-    <Component className={cn('rounded-2xl border border-slate-200/60 bg-white p-6 shadow-sm', className)}>
+    <Component className={cn('rounded-2xl bg-white p-6 shadow-card', className)}>
       <div className="space-y-4">
         {(icon || title || subtitle) && (
           <div className="space-y-2">

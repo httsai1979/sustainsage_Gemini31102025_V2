@@ -1,37 +1,71 @@
-import Image from 'next/image';
+import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
+import Container from '@/components/ui/Container';
+import Icon from '@/components/ui/Icon';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
+import Section from '@/components/ui/Section';
 import Tag from '@/components/ui/Tag';
 import { loadJSON } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
 
-export default function ResourcesPage({ items }) {
+export default function ResourcesPage({ items = [] }) {
   return (
-    <section className="mx-auto mt-10 max-w-6xl px-5 md:px-8">
-      <h1 className="text-3xl font-extrabold text-slate-900">Resources</h1>
-      <p className="mt-2 text-slate-600">Print-friendly A4 PDFs. Use them solo or alongside coaching.</p>
-      <div className="mt-6 grid gap-4 md:grid-cols-3">
-        {items.map((item) => (
-          <Card
-            key={item.id}
-            title={item.title}
-            desc={item.desc}
-            href={!item.comingSoon ? item.href || item.download : null}
-            cta={!item.comingSoon ? (item.href ? 'Open resource' : 'Download') : null}
-          >
-            <figure className="mt-3 overflow-hidden rounded-xl border border-slate-200">
-              <Image src={item.img} alt={item.alt || ''} width={1200} height={675} loading="lazy" />
-            </figure>
-            {item.comingSoon && (
-              <div className="mt-3">
-                <Tag>Coming soon</Tag>
-              </div>
-            )}
-          </Card>
-        ))}
-      </div>
-    </section>
+    <Section>
+      <Container>
+        <div className="ssg-stack text-center md:text-left">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">Resources</p>
+            <h1 className="mt-2 text-3xl font-extrabold text-ink">Resources</h1>
+            <p className="mt-3 text-base leading-7 text-slate-600">
+              Print-friendly A4 PDFs. Use them solo or alongside coaching.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {items.map((item) => {
+              const actionHref = !item.comingSoon ? item.href || item.download : null;
+              const actionLabel = !item.comingSoon ? (item.href ? 'Open resource' : 'Download') : null;
+              return (
+                <Card
+                  key={item.id}
+                  title={
+                    <span className="inline-flex items-center gap-2">
+                      <Icon name="spark" className="h-5 w-5 text-sage" />
+                      {item.title}
+                    </span>
+                  }
+                  subtitle={item.desc}
+                  footer={
+                    actionHref ? (
+                      <Link href={actionHref} className="inline-flex items-center gap-2 font-semibold text-sage">
+                        {actionLabel}
+                        <span aria-hidden>→</span>
+                      </Link>
+                    ) : null
+                  }
+                  className="flex h-full flex-col gap-4"
+                >
+                  <ResponsiveImage
+                    src={item.img ?? '/images/placeholder-hero.jpg'}
+                    alt={item.alt || item.title || ''}
+                    width={1200}
+                    height={675}
+                    className="mt-2"
+                  />
+                  {item.comingSoon ? (
+                    <div>
+                      <Tag>Coming soon</Tag>
+                    </div>
+                  ) : null}
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </Container>
+    </Section>
   );
 }
 
