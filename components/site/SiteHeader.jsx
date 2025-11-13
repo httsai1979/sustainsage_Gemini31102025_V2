@@ -93,12 +93,12 @@ export default function SiteHeader() {
 
   return (
     <header className={headerClasses}>
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3 md:px-8">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8 sm:py-5">
         <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
           SustainSage
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+        <nav className="hidden items-center gap-6 text-sm sm:text-[15px] leading-6 font-medium md:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}

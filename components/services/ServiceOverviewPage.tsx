@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
-import { SubnavTabs } from '@/components/common/SubnavTabs';
 import { CaseCard } from '@/components/cases/CaseCard';
 import SectionContainer from '@/components/sections/SectionContainer';
+import PageSection from '@/components/ui/PageSection';
+import ServiceSubnav from '@/components/services/ServiceSubnav';
+import { sectionizeServiceOverview } from '@/lib/sectionize';
 
 export type ServiceHero = {
   eyebrow?: string;
@@ -32,6 +34,12 @@ export type ServiceOverview = {
   title?: string;
   fallbackNotice?: string;
   hero?: ServiceHero;
+  who?: {
+    title?: string;
+    description?: string;
+    items?: Array<{ title?: string; description?: string } | string>;
+  };
+  scenarios?: Array<{ title?: string; description?: string } | string>;
   key_points?: {
     title?: string;
     description?: string;
@@ -41,6 +49,22 @@ export type ServiceOverview = {
     title?: string;
     description?: string;
     items?: ServiceCase[];
+  };
+  process?: {
+    title?: string;
+    description?: string;
+    steps?: Array<{ title?: string; description?: string } | string>;
+    note?: string;
+  };
+  boundaries?: {
+    title?: string;
+    description?: string;
+    items?: Array<{ title?: string; description?: string; question?: string; answer?: string }>;
+  };
+  faq?: {
+    title?: string;
+    description?: string;
+    items?: Array<{ title?: string; description?: string; question?: string; answer?: string }>;
   };
   cta?: {
     title?: string;
@@ -109,6 +133,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
   const cases = Array.isArray(service.cases?.items)
     ? service.cases?.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
     : [];
+  const sections = sectionizeServiceOverview(service);
 
   const subnavTabs = [
     { slug: 'overview', label: 'Overview', href: `/services/${service.slug}` },
@@ -125,8 +150,8 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
   return (
     <PageLayoutV2
       header={
-        <div className="space-y-4">
-          {hero.eyebrow ? <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.eyebrow}</p> : null}
+      <div className="space-y-4">
+        {hero.eyebrow ? <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.eyebrow}</p> : null}
           <div className="space-y-3">
             <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">
               {hero.title ?? service.title ?? 'Service overview'}
@@ -156,40 +181,131 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
           </div>
         </div>
       }
-      subnav={<SubnavTabs base={`/services/${service.slug}`} tabs={subnavTabs} active="overview" />}
+      subnav={<ServiceSubnav base={`/services/${service.slug}`} tabs={subnavTabs} active="overview" />}
     >
       <div className="space-y-12">
-        {service.cases?.title || service.cases?.description || cases.length > 0 ? (
-          <SectionContainer variant="surface" title={service.cases?.title} lead={service.cases?.description} wide>
-            {cases.length > 0 ? (
-              <div className="grid gap-6 md:grid-cols-3">
-                {cases.map((item) => (
-                  <CaseCard
-                    key={item.title ?? item.context ?? item.shift}
-                    title={item.title}
-                    context={item.context}
-                    coaching_moves={item.coaching_moves}
-                    shift={item.shift}
-                    tools_used={item.tools_used}
-                    disclaimer={item.disclaimer}
-                  />
-                ))}
-              </div>
-            ) : null}
-          </SectionContainer>
-        ) : null}
+        {sections.map((section, index) => {
+          const isCases = section.items === service.cases?.items;
+          const isKeyPoints = section.items === service.key_points?.items;
+          const isProcess = section.items === service.process?.steps;
+          const isBoundaries = section.items === service.boundaries?.items;
+          const isFaq = section.items === service.faq?.items;
+          const metaTitle = isCases
+            ? service.cases?.title
+            : isKeyPoints
+            ? service.key_points?.title
+            : isProcess
+            ? service.process?.title
+            : isBoundaries
+            ? service.boundaries?.title
+            : isFaq
+            ? service.faq?.title
+            : section.title;
+          const metaLead = isCases
+            ? service.cases?.description
+            : isKeyPoints
+            ? service.key_points?.description
+            : isProcess
+            ? service.process?.description
+            : isBoundaries
+            ? service.boundaries?.description
+            : isFaq
+            ? service.faq?.description
+            : section.lead;
 
-        {service.key_points?.title || service.key_points?.description || keyCards.length > 0 ? (
-          <SectionContainer variant="surface" title={service.key_points?.title} lead={service.key_points?.description} wide>
-            {keyCards.length > 0 ? (
-              <div className="grid gap-6 md:grid-cols-3">
-                {keyCards.map((item) => (
-                  <KeyCard key={item.title ?? item.description} title={item.title} description={item.description} />
-                ))}
+          if (isCases) {
+            return (
+              <PageSection key={`cases-${index}`} title={metaTitle} lead={metaLead}>
+                {cases.length > 0 ? (
+                  <div className="grid gap-6 md:grid-cols-3">
+                    {cases.map((item) => (
+                      <CaseCard
+                        key={item.title ?? item.context ?? item.shift}
+                        title={item.title}
+                        context={item.context}
+                        coaching_moves={item.coaching_moves}
+                        shift={item.shift}
+                        tools_used={item.tools_used}
+                        disclaimer={item.disclaimer}
+                      />
+                    ))}
+                  </div>
+                ) : null}
+              </PageSection>
+            );
+          }
+
+          if (isKeyPoints) {
+            return (
+              <PageSection key={`key-points-${index}`} title={metaTitle} lead={metaLead}>
+                {keyCards.length > 0 ? (
+                  <div className="grid gap-6 md:grid-cols-3">
+                    {keyCards.map((item) => (
+                      <KeyCard key={item.title ?? item.description} title={item.title} description={item.description} />
+                    ))}
+                  </div>
+                ) : null}
+              </PageSection>
+            );
+          }
+
+          if (isProcess) {
+            const processNote = service.process?.note;
+            return (
+              <PageSection key={`process-${index}`} title={metaTitle} lead={metaLead}>
+                {Array.isArray(section.items) && section.items.length > 0 ? (
+                  <ol className="mt-6 space-y-4">
+                    {section.items.map((step: any, stepIndex: number) => {
+                      const title = typeof step === 'string' ? null : step?.title;
+                      const description = typeof step === 'string' ? step : step?.description;
+                      return (
+                        <li key={title ?? description ?? stepIndex} className="flex gap-4">
+                          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-700 text-sm font-semibold text-white">
+                            {stepIndex + 1}
+                          </span>
+                          <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+                            {title ? <h3 className="text-base font-semibold text-slate-900">{title}</h3> : null}
+                            {description ? (
+                              <p className="mt-2 text-sm leading-6 text-slate-700">{description}</p>
+                            ) : null}
+                          </div>
+                        </li>
+                      );
+                    })}
+                  </ol>
+                ) : null}
+                {processNote ? <p className="mt-6 text-xs leading-5 text-slate-500">{processNote}</p> : null}
+              </PageSection>
+            );
+          }
+
+          const items = Array.isArray(section.items) ? section.items : [];
+          if (items.length === 0) {
+            return null;
+          }
+
+          return (
+            <PageSection key={`section-${index}`} title={metaTitle} lead={metaLead}>
+              <div className="mt-6 space-y-4">
+                {items.map((item, itemIndex) => {
+                  const title = item?.title ?? item?.question;
+                  const description = item?.description ?? item?.answer ?? item?.summary ?? item;
+                  return (
+                    <div
+                      key={title ?? description ?? itemIndex}
+                      className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm"
+                    >
+                      {title ? <h3 className="text-base font-semibold text-slate-900">{title}</h3> : null}
+                      {description && typeof description === 'string' ? (
+                        <p className="mt-2 text-sm leading-6 text-slate-700">{description}</p>
+                      ) : null}
+                    </div>
+                  );
+                })}
               </div>
-            ) : null}
-          </SectionContainer>
-        ) : null}
+            </PageSection>
+          );
+        })}
 
         <OverviewCTA cta={service.cta} />
       </div>

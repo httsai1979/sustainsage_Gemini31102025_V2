@@ -1,6 +1,7 @@
 // components/sections/ProseSection.tsx
 import React from 'react';
-import SectionTitle from './SectionTitle';
+import PageSection from '@/components/ui/PageSection';
+import Prose from '@/components/ui/Prose';
 
 type Item = { title?: string; description?: string } | string;
 type Section = {
@@ -30,20 +31,17 @@ function renderItem(it: Item, idx: number) {
 export default function ProseSection({ section = {} as Section }) {
   const { title, lead, paragraphs = [], items = [] } = section;
   return (
-    <section className="py-16 sm:py-20">
-      <div className="mx-auto max-w-4xl px-6">
-        <SectionTitle title={title} lead={lead} />
-        {paragraphs?.length ? (
-          <div className="prose prose-slate mt-4 max-w-none">
-            {paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
-        ) : null}
-        {items?.length ? (
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2">{items.map(renderItem)}</ul>
-        ) : null}
-      </div>
-    </section>
+    <PageSection title={title} lead={lead}>
+      {paragraphs?.length ? (
+        <Prose>
+          {paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </Prose>
+      ) : null}
+      {items?.length ? (
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2">{items.map(renderItem)}</ul>
+      ) : null}
+    </PageSection>
   );
 }

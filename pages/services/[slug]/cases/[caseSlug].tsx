@@ -6,9 +6,9 @@ import Link from 'next/link';
 
 import { CaseDetail, type CaseDetailContent } from '@/components/cases/CaseDetail';
 import { StickyCTA } from '@/components/common/StickyCTA';
-import { SubnavTabs } from '@/components/common/SubnavTabs';
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import SectionContainer from '@/components/sections/SectionContainer';
+import ServiceSubnav from '@/components/services/ServiceSubnav';
 import { loadContent } from '@/lib/loadContent';
 import type { ServiceContent, ServiceSlug } from '@/lib/serviceContentTypes';
 import { SERVICE_SLUGS } from '@/lib/serviceContentTypes';
@@ -139,7 +139,7 @@ export default function ServiceCaseDetailPage({
             </div>
           </div>
         }
-        subnav={<SubnavTabs base={basePath} tabs={getSubnavTabs(basePath)} active={CASES_SUBNAV_SLUG} />}
+        subnav={<ServiceSubnav base={basePath} tabs={getSubnavTabs(basePath)} active={CASES_SUBNAV_SLUG} />}
       >
         <div className="space-y-10">
           <SectionContainer>

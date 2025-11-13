@@ -1,6 +1,7 @@
 import { CaseCard } from '@/components/cases/CaseCard';
 import { MicroCTA } from '@/components/common/MicroCTA';
-import SectionContainer from '@/components/sections/SectionContainer';
+import PageSection from '@/components/ui/PageSection';
+import { sectionizeSubpage } from '@/lib/sectionize';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
 const { Page } = createServiceSubpage({
@@ -11,9 +12,11 @@ const { Page } = createServiceSubpage({
       <p className="text-base leading-7 text-slate-600">{service.cases.description}</p>
     ) : null,
   renderContent: (service) => {
-    const cases = Array.isArray(service.cases?.items)
-      ? service.cases?.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
+    const casesBlock = service.cases ?? {};
+    const cases = Array.isArray(casesBlock.items)
+      ? casesBlock.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
       : [];
+    const sections = sectionizeSubpage('cases', casesBlock);
 
     const basePath = `/services/${service.slug}`;
     const contactSource = encodeURIComponent(`${service.slug}-cases`);
@@ -26,9 +29,11 @@ const { Page } = createServiceSubpage({
     if (cases.length === 0) {
       return (
         <div className="space-y-6">
-          <p className="text-sm leading-6 text-slate-700">
-            We are writing anonymised cases for this service. Contact us if you would like to hear relevant examples live.
-          </p>
+          <PageSection>
+            <p className="text-sm leading-6 text-slate-700">
+              We are writing anonymised cases for this service. Contact us if you would like to hear relevant examples live.
+            </p>
+          </PageSection>
           <MicroCTA
             title="Continue exploring this service"
             description="Visit the readiness guide or connect with us so we can share the closest-fit examples."
@@ -44,23 +49,37 @@ const { Page } = createServiceSubpage({
 
     return (
       <div className="space-y-10">
-        <SectionContainer variant="surface" wide>
-          <div className="grid gap-6 md:grid-cols-3">
-            {cases.map((item) => (
-              <CaseCard
-                key={item.title ?? item.context ?? item.shift}
-                title={item.title}
-                context={item.context}
-                coaching_moves={item.coaching_moves}
-                shift={item.shift}
-                tools_used={item.tools_used}
-                disclaimer={item.disclaimer}
-              />
-            ))}
-          </div>
-        </SectionContainer>
+        {sections.map((section, index) => {
+          if (section.items === cases && cases.length > 0) {
+            return (
+              <PageSection key={`cases-${index}`}>
+                {casesBlock.title ? (
+                  <h2 className="text-xl font-semibold text-emerald-900">{casesBlock.title}</h2>
+                ) : null}
+                {casesBlock.description ? (
+                  <p className="mt-2 text-base leading-7 text-slate-600">{casesBlock.description}</p>
+                ) : null}
+                <div className="mt-6 grid gap-6 md:grid-cols-3">
+                  {cases.map((item) => (
+                    <CaseCard
+                      key={item.title ?? item.context ?? item.shift}
+                      title={item.title}
+                      context={item.context}
+                      coaching_moves={item.coaching_moves}
+                      shift={item.shift}
+                      tools_used={item.tools_used}
+                      disclaimer={item.disclaimer}
+                    />
+                  ))}
+                </div>
+              </PageSection>
+            );
+          }
 
-        <SectionContainer variant="surface" tone="muted">
+          return null;
+        })}
+
+        <PageSection>
           <div className="space-y-6">
             <p className="text-sm leading-6 text-slate-700">
               These composites blend details from multiple clients to keep identities protected while showing the texture of our work.
@@ -80,7 +99,7 @@ const { Page } = createServiceSubpage({
               </div>
             ) : null}
           </div>
-        </SectionContainer>
+        </PageSection>
 
         <MicroCTA
           title="Continue exploring this service"

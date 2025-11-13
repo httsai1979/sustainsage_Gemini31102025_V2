@@ -6,6 +6,8 @@ import { useTranslation } from 'next-i18next';
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
 import SectionContainer from '@/components/sections/SectionContainer';
+import PageSection from '@/components/ui/PageSection';
+import { orderSections } from '@/lib/orderSections';
 
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
@@ -13,23 +15,6 @@ const BUTTON_BASE =
 function safeArray(value) {
   return Array.isArray(value) ? value.filter(Boolean) : [];
 }
-
-// 可共用的 examples-first 排序（與 ICFServicePage 保持一致）
-const EXAMPLE_RE =
-  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|scenario|scenarios|who (it'?s )?for|before\/after)/i;
-const looksLikeExample = (b) => {
-  if (!b || typeof b !== 'object') return false;
-  const t = String(b.title ?? b.heading ?? '');
-  const l = String(b.lead ?? b.summary ?? '');
-  return EXAMPLE_RE.test(t) || EXAMPLE_RE.test(l);
-};
-const orderBlocks = (arr) =>
-  Array.isArray(arr)
-    ? [
-        ...arr.filter(looksLikeExample),
-        ...arr.filter((x) => !looksLikeExample(x)),
-      ]
-    : [];
 
 function BulletList({ items = [] } = {}) {
   if (!items || items.length === 0) {
@@ -117,8 +102,7 @@ export default function ForAudiencePage({ pageKey }) {
     children,
   });
 
-  // 重排：先 scenarios/examples/「誰適合」→ 再 challenges/support/approach
-  const leadBlocks = orderBlocks(
+  const leadBlocks = orderSections(
     [
       page.who?.items?.length
         ? toBlock('who', {
@@ -234,15 +218,15 @@ export default function ForAudiencePage({ pageKey }) {
       )}
 
       {leadBlocks.length ? (
-        <section className="mx-auto max-w-4xl px-6 py-8">
+        <PageSection>
           {leadBlocks.map((block, idx) => renderBlock(block, idx))}
-        </section>
+        </PageSection>
       ) : null}
 
       {restBlocks.length ? (
-        <section className="mx-auto max-w-4xl px-6 py-8 border-t border-emerald-100">
+        <PageSection>
           {restBlocks.map((block, idx) => renderBlock(block, idx))}
-        </section>
+        </PageSection>
       ) : null}
 
       <SectionContainer variant="surface" tone="muted">

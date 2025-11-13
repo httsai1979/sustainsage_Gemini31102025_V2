@@ -247,3 +247,14 @@ body {
     top: 1.25rem; /* 調整 textarea 標籤的初始位置 */
     transform: translateY(-120%) scale(0.9);
 }
+/* Unified typography & spacing */
+.typography{--ssg-leading:1.7;--ssg-space:1rem}
+.typography :where(p){margin-top:calc(var(--ssg-space)*.75);margin-bottom:calc(var(--ssg-space)*.75);line-height:var(--ssg-leading);color:#334155}
+.typography :where(h1){margin:0 0 1rem 0;font-weight:700;font-size:2rem;line-height:1.2;color:#0f172a}
+.typography :where(h2){margin:2rem 0 .75rem 0;font-weight:700;font-size:1.5rem;line-height:1.3;color:#0f172a}
+.typography :where(h3){margin:1.5rem 0 .5rem 0;font-weight:600;font-size:1.125rem;line-height:1.35;color:#0f172a}
+.typography :where(ul,ol){margin:.75rem 0 .75rem 1.25rem;display:grid;gap:.5rem}
+.typography :where(li){color:#334155}
+.typography :where(a){color:#065f46;text-underline-offset:3px}
+.typography :where(blockquote){border-left:4px solid #e2e8f0;padding-left:.75rem;color:#334155}
+.typography :where(hr){border:0;border-top:1px solid #e2e8f0;margin:1.25rem 0}

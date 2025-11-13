@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
-import SectionContainer from '@/components/sections/SectionContainer';
+import PageSection from '@/components/ui/PageSection';
 import { loadJSON } from '@/lib/content';
 import { orderSections } from '@/lib/content/normalize';
 import { toSerializable } from '@/lib/toSerializable';
@@ -112,7 +112,7 @@ export default function FAQPage({
 
   return (
     <>
-      <SectionContainer wide className="bg-emerald-950/5">
+      <PageSection className="bg-emerald-950/5">
         <div className="text-center">
           {hero?.kicker ? (
             <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.kicker}</p>
@@ -139,17 +139,17 @@ export default function FAQPage({
             </div>
           ) : null}
         </div>
-      </SectionContainer>
+      </PageSection>
 
-      <SectionContainer wide className="bg-white">
+      <PageSection className="bg-white">
         <div className="space-y-8">
           {orderedCategories.map((category) => (
             <Category key={category.title} category={category} />
           ))}
         </div>
-      </SectionContainer>
+      </PageSection>
 
-      <SectionContainer wide className="bg-emerald-950/5">
+      <PageSection className="bg-emerald-950/5">
         <div className="rounded-3xl border border-emerald-100 bg-white px-8 py-12 text-center shadow-sm">
           <h2 className="text-2xl font-semibold text-slate-900">{cta?.title}</h2>
           <p className="mt-4 text-base leading-7 text-slate-600">{cta?.body}</p>
@@ -168,7 +168,7 @@ export default function FAQPage({
             </Link>
           </div>
         </div>
-      </SectionContainer>
+      </PageSection>
     </>
   );
 }
