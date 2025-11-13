@@ -19,9 +19,12 @@ export type ServiceProcessStep = {
 
 export type ServicePricingPackage = {
   name?: string;
+  title?: string;
   duration?: string;
   scope?: string;
+  description?: string;
   price_note?: string;
+  price?: string;
 };
 
 export type ServicePricingPolicy = {
@@ -50,13 +53,17 @@ export type ServiceContent = {
     description?: string;
     note?: string;
     packages?: ServicePricingPackage[];
+    plans?: ServicePricingPackage[];
     policies?: ServicePricingPolicy[];
+    notes?: string[];
+    intro?: string;
   };
   readiness?: {
     title?: string;
     description?: string;
     checklist?: string[];
     what_to_prepare?: string[];
+    signals?: string[];
   };
   process?: {
     title?: string;
@@ -69,7 +76,11 @@ export type ServiceContent = {
     description?: string;
     sections?: {
       heading?: string;
+      title?: string;
+      label?: string;
       body?: string;
+      description?: string;
+      paragraphs?: string[];
     }[];
   };
   faq?: {
