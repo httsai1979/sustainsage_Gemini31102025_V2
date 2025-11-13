@@ -1,14 +1,7 @@
 import { MicroCTA } from '@/components/common/MicroCTA';
-import SectionContainer from '@/components/sections/SectionContainer';
+import PageSection from '@/components/ui/PageSection';
+import { sectionizeSubpage } from '@/lib/sectionize';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
-
-// 加入 Examples-first 的保底排序（多為說明性章節，順序不變，但防未來新增）
-const EXAMPLE_RE =
-  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|scenario|scenarios|who (it'?s )?for|before\/after)/i;
-const isExample = (s: any) =>
-  s && (EXAMPLE_RE.test(String(s.title ?? '')) || EXAMPLE_RE.test(String(s.lead ?? '')));
-const orderSections = (xs: any[]) =>
-  Array.isArray(xs) ? [...xs.filter(isExample), ...xs.filter((x) => !isExample(x))] : [];
 
 const { Page } = createServiceSubpage({
   subSlug: 'agreement',
@@ -18,8 +11,9 @@ const { Page } = createServiceSubpage({
       <p className="text-base leading-7 text-slate-600">{service.agreement.description}</p>
     ) : null,
   renderContent: (service) => {
-    const sectionsList = Array.isArray(service.agreement?.sections)
-      ? service.agreement.sections.filter((section) =>
+    const agreement = service.agreement ?? {};
+    const sectionsList = Array.isArray(agreement.sections)
+      ? agreement.sections.filter((section) =>
           section &&
           (section.heading ||
             section.title ||
@@ -28,7 +22,7 @@ const { Page } = createServiceSubpage({
             (Array.isArray(section.paragraphs) && section.paragraphs.length > 0))
         )
       : [];
-    const sectionsOrdered = orderSections(sectionsList ?? []);
+    const sectionsOrdered = sectionizeSubpage('agreement', { sections: sectionsList });
 
     const basePath = `/services/${service.slug}`;
     const microLinks = [
@@ -39,9 +33,11 @@ const { Page } = createServiceSubpage({
     if (sectionsOrdered.length === 0) {
       return (
         <div className="space-y-6">
-          <p className="text-sm leading-6 text-slate-700">
-            Our coaching agreement will be published soon. Contact us for the latest terms and we will send a copy.
-          </p>
+          <PageSection>
+            <p className="text-sm leading-6 text-slate-700">
+              Our coaching agreement will be published soon. Contact us for the latest terms and we will send a copy.
+            </p>
+          </PageSection>
           <MicroCTA
             title="Need more detail on scope and boundaries?"
             description="Check related FAQs or revisit our ethics commitments while we finalise this agreement."
@@ -64,15 +60,16 @@ const { Page } = createServiceSubpage({
               : [];
 
             return (
-              <SectionContainer key={title ?? index} variant="surface" title={title}>
+              <PageSection key={title ?? index}>
+                {title ? <h2 className="text-xl font-semibold text-emerald-900">{title}</h2> : null}
                 {paragraphs.length > 0 ? (
-                  <div className="space-y-3 text-sm leading-6 text-slate-700">
+                  <div className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
                     {paragraphs.map((text, paragraphIndex) => (
                       <p key={paragraphIndex}>{text}</p>
                     ))}
                   </div>
                 ) : null}
-              </SectionContainer>
+              </PageSection>
             );
           })}
         </div>

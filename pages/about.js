@@ -4,7 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
-import SectionContainer from '@/components/sections/SectionContainer';
+import PageSection from '@/components/ui/PageSection';
 import TeamGrid from '@/components/about/TeamGrid';
 import WhatIsCoaching from '@/components/about/WhatIsCoaching';
 import { orderSections } from '@/lib/content/normalize';
@@ -176,7 +176,7 @@ export default function AboutPage({
 
   return (
     <>
-      <SectionContainer wide className="bg-white">
+      <PageSection className="bg-white">
         <div className="mx-auto max-w-3xl space-y-6">
           <Eyebrow>{intro.eyebrow}</Eyebrow>
           {intro.title ? (
@@ -187,51 +187,36 @@ export default function AboutPage({
             <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
           ) : null}
         </div>
-      </SectionContainer>
+      </PageSection>
 
       <TeamGrid data={team} />
 
       <WhatIsCoaching data={whatIsCoaching} />
 
       {keyPointItems.length ? (
-        <SectionContainer wide className="bg-emerald-50/70">
-          <div className="mx-auto max-w-3xl">
-            {keyPoints.title ? (
-              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{keyPoints.title}</h2>
-            ) : null}
+        <PageSection className="bg-emerald-50/70" title={keyPoints.title}>
+          <div className="mx-auto max-w-3xl mt-6">
             <BulletList items={keyPointItems} />
           </div>
-        </SectionContainer>
+        </PageSection>
       ) : null}
 
       {processSteps.length ? (
-        <SectionContainer wide className="bg-white">
-          <div className="mx-auto max-w-3xl">
-            {process.title ? (
-              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{process.title}</h2>
-            ) : null}
-            {process.description ? (
-              <p className="mt-3 text-sm leading-6 text-slate-700">{process.description}</p>
-            ) : null}
+        <PageSection className="bg-white" title={process.title} lead={process.description}>
+          <div className="mx-auto max-w-3xl mt-6">
             <StepList steps={processSteps} />
           </div>
-        </SectionContainer>
+        </PageSection>
       ) : null}
 
       <Callout {...callout} />
 
       {boundaryItems.length ? (
-        <SectionContainer wide className="bg-emerald-50/70">
-          <div className="mx-auto max-w-3xl">
-            {boundaries.title ? (
-              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{boundaries.title}</h2>
-            ) : null}
-            {boundaries.description ? (
-              <p className="mt-3 text-sm leading-6 text-slate-700">{boundaries.description}</p>
-            ) : null}
+        <PageSection className="bg-emerald-50/70" title={boundaries.title} lead={boundaries.description}>
+          <div className="mx-auto max-w-3xl mt-6">
             <FAQAccordion items={boundaryItems} className="mt-6" />
           </div>
-        </SectionContainer>
+        </PageSection>
       ) : null}
     </>
   );

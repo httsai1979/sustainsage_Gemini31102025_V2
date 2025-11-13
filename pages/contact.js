@@ -7,7 +7,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ContactForm from '@/components/Sections/ContactForm';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
-import SectionContainer from '@/components/sections/SectionContainer';
+import PageSection from '@/components/ui/PageSection';
 import { orderSections } from '@/lib/content/normalize';
 import { toSerializable } from '@/lib/toSerializable';
 
@@ -80,14 +80,14 @@ export default function ContactPage() {
         <meta name="description" content={seo?.description} />
       </Head>
 
-      <SectionContainer wide className="bg-emerald-50/60">
+      <PageSection className="bg-emerald-50/60">
         <div className="typography mx-auto flex max-w-3xl flex-col gap-4 text-center md:text-left">
           <h1>{hero?.title}</h1>
           {hero?.body ? <p>{hero.body}</p> : null}
         </div>
-      </SectionContainer>
+      </PageSection>
 
-      <SectionContainer wide className="bg-emerald-950/5">
+      <PageSection className="bg-emerald-950/5">
         <div className="typography flex flex-col gap-4">
           <h2>{journey?.title}</h2>
           {journey?.intro ? <p>{journey.intro}</p> : null}
@@ -97,9 +97,9 @@ export default function ContactPage() {
             <JourneyCard key={item.summary} item={item} index={index} />
           ))}
         </div>
-      </SectionContainer>
+      </PageSection>
 
-      <SectionContainer wide className="bg-white">
+      <PageSection className="bg-white">
         {whatYouGetItems.length || whatWeDontDoItems.length ? (
           <div className="mb-10 space-y-8">
             <div className="grid gap-6 md:grid-cols-2">
@@ -145,9 +145,9 @@ export default function ContactPage() {
           <BulletHighlights items={heroBullets} title={hero?.bulletsTitle} />
         </div>
         <ContactForm hasBoundaryConsent={hasBoundaryConsent} />
-      </SectionContainer>
+      </PageSection>
 
-      <SectionContainer wide className="bg-emerald-950/5">
+      <PageSection className="bg-emerald-950/5">
         <div className="typography mx-auto flex max-w-3xl flex-col gap-4">
           <h2>{miniFaq?.title}</h2>
           {miniFaq?.intro ? <p>{miniFaq.intro}</p> : null}
@@ -157,10 +157,10 @@ export default function ContactPage() {
             <FAQItem key={item.question} item={item} />
           ))}
         </div>
-      </SectionContainer>
+      </PageSection>
 
       {faqLink?.label ? (
-        <SectionContainer className="bg-emerald-50/70">
+        <PageSection className="bg-emerald-50/70">
           <div className="flex flex-col items-center gap-2 text-center text-sm leading-6 text-slate-700">
             <p>{faqLink?.text}</p>
             <Link href={faqLink.href} className="inline-flex items-center gap-2 font-semibold text-emerald-700 hover:underline">
@@ -168,12 +168,12 @@ export default function ContactPage() {
               <span aria-hidden="true">→</span>
             </Link>
           </div>
-        </SectionContainer>
+        </PageSection>
       ) : null}
 
-      <SectionContainer>
+      <PageSection>
         <ICFNotice id="icf" className="mx-auto max-w-3xl" />
-      </SectionContainer>
+      </PageSection>
     </>
   );
 }

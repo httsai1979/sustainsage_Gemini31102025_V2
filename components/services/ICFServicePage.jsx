@@ -6,22 +6,8 @@ import { useTranslation } from 'next-i18next';
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
 import SectionContainer from '@/components/sections/SectionContainer';
-
-// --- Examples-first helpers (title/lead 關鍵詞判定 + 排序) ---
-const EXAMPLE_RE =
-  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|scenario|scenarios|who (it'?s )?for|before\/after)/i;
-const isExampleLike = (block) => {
-  if (!block || typeof block !== 'object') return false;
-  const t = String(block.title ?? block.heading ?? block.label ?? '');
-  const l = String(block.lead ?? block.summary ?? '');
-  return EXAMPLE_RE.test(t) || EXAMPLE_RE.test(l);
-};
-const orderBlocks = (arr) => {
-  if (!Array.isArray(arr)) return [];
-  const ex = arr.filter(isExampleLike);
-  const rest = arr.filter((b) => !isExampleLike(b));
-  return [...ex, ...rest];
-};
+import PageSection from '@/components/ui/PageSection';
+import { orderSections } from '@/lib/orderSections';
 
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
@@ -194,11 +180,13 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
     },
   };
 
-  // 只變呈現順序：先 who / examples，再 what / how / expect
-  const orderedGroups = [
-    ...orderBlocks([baseGroups.who, baseGroups.examples]),
-    ...[baseGroups.what, baseGroups.how, baseGroups.expect],
-  ].filter((group) => group && (group.title || group.lead || (group.items?.length ?? 0) > 0));
+  const orderedGroups = orderSections([
+    baseGroups.who,
+    baseGroups.examples,
+    baseGroups.what,
+    baseGroups.how,
+    baseGroups.expect,
+  ]).filter((group) => group && (group.title || group.lead || (group.items?.length ?? 0) > 0));
 
   return (
     <MainLayout>
@@ -239,34 +227,23 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
           Component === ExampleList ? 'mt-4' : 'mt-4 space-y-4 text-slate-800';
 
         return (
-          <section
-            key={group.key ?? idx}
-            className="mx-auto max-w-4xl px-6 py-8 border-t first:border-t-0 border-emerald-100"
-          >
-            {group.title ? <h2 className="text-xl font-semibold text-emerald-900">{group.title}</h2> : null}
-            {group.lead ? <p className="mt-2 text-base leading-7 text-slate-600">{group.lead}</p> : null}
+          <PageSection key={group.key ?? idx} title={group.title} lead={group.lead}>
             {Component && hasItems ? (
               <div className={wrapperClass}>
-                {/* 保持原本的項目渲染元件，勿改文案 */}
-                {/* 這裡呼叫原本的清單/卡片子元件 */}
                 <Component items={group.items} />
               </div>
             ) : null}
             {group.note ? <p className="mt-4 text-xs leading-5 text-slate-500">{group.note}</p> : null}
-          </section>
+          </PageSection>
         );
       })}
 
       {(ethics?.title || ethics?.description || (ethics?.items?.length ?? 0) > 0) ? (
-        <section className="mx-auto max-w-4xl px-6 py-8 border-t border-emerald-100">
-          {ethics?.title ? <h2 className="text-xl font-semibold text-emerald-900">{ethics.title}</h2> : null}
-          {ethics?.description ? (
-            <p className="mt-2 text-base leading-7 text-slate-600">{ethics.description}</p>
-          ) : null}
+        <PageSection title={ethics?.title} lead={ethics?.description}>
           <div className="mt-4 space-y-4 text-slate-800">
             <BulletList items={ethics?.items} />
           </div>
-        </section>
+        </PageSection>
       ) : null}
 
       {cta?.title || ctaBody ? (

@@ -6,7 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Testimonials from '@/components/Testimonials';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
-import SectionContainer from '@/components/sections/SectionContainer';
+import PageSection from '@/components/ui/PageSection';
 import { getIconComponent } from '@/components/icons/map';
 import { loadJSON } from '@/lib/content';
 import { orderSections } from '@/lib/content/normalize';
@@ -172,7 +172,7 @@ export default function Home({
 
   return (
     <>
-      <SectionContainer wide className="pt-10 md:pt-16">
+      <PageSection className="pt-10 md:pt-16">
         <div className="flex flex-col gap-12 md:flex-row md:items-center md:justify-between">
           <div className="max-w-xl space-y-6">
             {hero?.eyebrow ? (
@@ -209,79 +209,49 @@ export default function Home({
             </div>
           ) : null}
         </div>
-      </SectionContainer>
+      </PageSection>
 
       {serviceCards.length ? (
-        <SectionContainer
-          wide
-          eyebrow={services?.eyebrow}
-          title={services?.title}
-          lead={services?.description}
-        >
-          <div className="grid gap-6 md:grid-cols-3">
+        <PageSection eyebrow={services?.eyebrow} title={services?.title} lead={services?.description}>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
             {serviceCards.slice(0, 3).map((card) => (
               <ServiceCard key={card.href} card={card} />
             ))}
           </div>
-        </SectionContainer>
+        </PageSection>
       ) : null}
 
       {keyPointItems.length ? (
-        <SectionContainer wide>
-          <div className="rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm md:p-10">
-            <div className="max-w-2xl">
-              {keyPoints?.title ? (
-                <h2 className="scroll-mt-24 text-2xl font-semibold text-slate-900 sm:text-3xl">{keyPoints.title}</h2>
-              ) : null}
-              {keyPoints?.description ? (
-                <p className="mt-3 text-sm leading-6 text-slate-700">{keyPoints.description}</p>
-              ) : null}
-            </div>
+        <PageSection title={keyPoints?.title} lead={keyPoints?.description}>
+          <div className="mt-6 rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm md:p-10">
             <BulletList items={keyPointItems} />
           </div>
-        </SectionContainer>
+        </PageSection>
       ) : null}
 
       {processSteps.length ? (
-        <SectionContainer wide>
-          <div className="rounded-3xl border border-emerald-100 bg-emerald-50/70 p-8 shadow-sm md:p-10">
-            <div className="max-w-2xl">
-              {process?.title ? (
-                <h2 className="scroll-mt-24 text-2xl font-semibold text-slate-900 sm:text-3xl">{process.title}</h2>
-              ) : null}
-              {process?.description ? (
-                <p className="mt-3 text-sm leading-6 text-slate-700">{process.description}</p>
-              ) : null}
-            </div>
+        <PageSection title={process?.title} lead={process?.description}>
+          <div className="mt-6 rounded-3xl border border-emerald-100 bg-emerald-50/70 p-8 shadow-sm md:p-10">
             <StepList steps={processSteps} />
             {process?.note ? (
               <p className="mt-6 text-xs leading-5 text-slate-500">{process.note}</p>
             ) : null}
           </div>
-        </SectionContainer>
+        </PageSection>
       ) : null}
 
       {boundaryItems.length ? (
-        <SectionContainer wide>
-          <div className="rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm md:p-10">
-            <div className="max-w-2xl">
-              {boundaries?.title ? (
-                <h2 className="scroll-mt-24 text-2xl font-semibold text-slate-900 sm:text-3xl">{boundaries.title}</h2>
-              ) : null}
-              {boundaries?.description ? (
-                <p className="mt-3 text-sm leading-6 text-slate-700">{boundaries.description}</p>
-              ) : null}
-            </div>
+        <PageSection title={boundaries?.title} lead={boundaries?.description}>
+          <div className="mt-6 rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm md:p-10">
             <FAQAccordion items={boundaryItems} className="mt-6" />
           </div>
-        </SectionContainer>
+        </PageSection>
       ) : null}
 
       {faqTeaser?.title ? (
-        <SectionContainer wide>
-          <div className="rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm md:p-10">
+        <PageSection title={faqTeaser?.title}>
+          <div className="mt-6 rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm md:p-10">
             <div className="space-y-4">
-              <h2 className="scroll-mt-24 text-2xl font-semibold text-slate-900">{faqTeaser.title}</h2>
               {faqTeaser?.body ? <p className="text-sm leading-6 text-slate-700">{faqTeaser.body}</p> : null}
               {faqTeaser?.cta?.href ? (
                 <Link
@@ -294,12 +264,12 @@ export default function Home({
               ) : null}
             </div>
           </div>
-        </SectionContainer>
+        </PageSection>
       ) : null}
 
-      <SectionContainer wide className="pb-16">
+      <PageSection className="pb-16">
         <Testimonials items={testimonials ?? []} />
-      </SectionContainer>
+      </PageSection>
     </>
   );
 }
