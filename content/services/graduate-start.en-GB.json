@@ -28,68 +28,111 @@
   },
   "readiness": {
     "checklist": [
-      "I can try a 2-week test between sessions.",
-      "I accept coaching is not therapy or medical advice.",
-      "I’ll draft my CV/portfolio and be open to iteration."
+      "50–60 minutes available online; UK hours workable.",
+      "A target role or field (even if rough).",
+      "Okay with coaching scope (not placement/therapy/legal).",
+      "Willing to run one micro-experiment between sessions.",
+      "Latest CV/LinkedIn link ready to share."
     ],
     "what_to_prepare": [
-      "Latest CV or portfolio link",
-      "Two target roles or fields",
-      "Three questions that matter most to you"
+      "Your LinkedIn URL or recent CV (PDF).",
+      "Two class/work projects you can explain in 60–90 seconds.",
+      "Short list of target roles/companies or constraints.",
+      "Top 3 questions you want answered in the first two sessions."
+    ],
+    "signals": [
+      "You value clear, UK-relevant guidance over hype.",
+      "You prefer tiny steps that build confidence and proof.",
+      "You can keep a weekly cadence with short reviews."
     ]
   },
   "process": {
     "title": "Process & pace",
     "description": "A six to eight week sprint with optional monthly check-ins as you transition into your role.",
     "steps": [
-      {
-        "title": "Clarify decisions & boundaries",
-        "description": "We map priorities, expectations and the stakeholders you want to align."
-      },
-      {
-        "title": "Prototype experiments",
-        "description": "We design small tests, build scripts and prepare materials that support your direction."
-      },
-      {
-        "title": "Review & reinforce",
-        "description": "We debrief experiments, capture learning and adjust routines to sustain momentum."
-      }
+      "Map strengths → small proof: skills, projects, outcomes.",
+      "UK CV/LinkedIn alignment: clear bullets, concrete verbs, results.",
+      "Portfolio or samples: one page, one story, one link.",
+      "Outreach scripts + light interview rehearsal.",
+      "Track → review → adjust: keep steps small and visible."
     ],
     "note": "Optional aftercare check-ins help you translate offers into confident starts."
   },
   "agreement": {
     "sections": [
       {
-        "heading": "Scope",
-        "body": "Coaching helps you choose and act through questions, frameworks and small tests."
+        "title": "Scope & Fit",
+        "paragraphs": [
+          "This is coaching, not placement, therapy, or legal advice.",
+          "We focus on proof points, story clarity, preparation, and cadence."
+        ]
       },
       {
-        "heading": "Not therapy/medical",
-        "body": "We do not treat or diagnose; we may signpost to support services."
+        "title": "Confidentiality",
+        "paragraphs": [
+          "Confidential by default; minimal notes; deletion on request.",
+          "Quality supervision may use anonymised patterns without identifiers."
+        ]
       },
       {
-        "heading": "Confidentiality & limits",
-        "body": "Sessions are confidential except where law/safety requires disclosure."
+        "title": "Scheduling & Rescheduling",
+        "paragraphs": [
+          "≈50-minute sessions online within UK hours.",
+          "24 hours’ notice to reschedule; late changes count as used."
+        ]
       },
       {
-        "heading": "Consent & boundaries",
-        "body": "You can pause, decline or stop any activity."
+        "title": "Fees & Invoicing",
+        "paragraphs": [
+          "Fees in GBP; invoiced per block or as agreed.",
+          "Delivered sessions are non-refundable."
+        ]
       },
       {
-        "heading": "Cancellations & data",
-        "body": "24h reschedule; minimal notes stored securely."
+        "title": "Data & Records",
+        "paragraphs": [
+          "Minimum data kept for sessions and invoices.",
+          "Copy/deletion requests respected within legal limits."
+        ]
+      },
+      {
+        "title": "Fair Use & Boundaries",
+        "paragraphs": [
+          "Light check-ins are fine; heavy review/done-for-you is out of scope.",
+          "We do not contact employers on your behalf."
+        ]
       }
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "Do you help with portfolios?",
-        "a": "We can review and give structure suggestions but do not build them for you."
+        "q": "Do you place graduates into jobs?",
+        "a": "No. Coaching is not placement. We help you produce UK-relevant proof and clear stories; you apply and track."
       },
       {
-        "q": "Internship or full-time?",
-        "a": "We build a scorecard and test assumptions to help you decide."
+        "q": "Will you write my CV/LinkedIn?",
+        "a": "You remain the author. We coach structure, clarity, and UK norms; we co-edit in Google Docs."
+      },
+      {
+        "q": "What if I have no “real experience”?",
+        "a": "We turn coursework, volunteering, and small projects into evidence with outcomes and links."
+      },
+      {
+        "q": "How much work between sessions?",
+        "a": "Usually 30–60 minutes weekly (one micro-experiment or edit pass). Keep it small and visible."
+      },
+      {
+        "q": "Is it confidential?",
+        "a": "Yes. Confidential by default; minimal notes; deletion on request. See boundaries."
+      },
+      {
+        "q": "Do you contact employers for me?",
+        "a": "No. We help with outreach scripts and confidence; you contact directly."
+      },
+      {
+        "q": "Rescheduling/refunds?",
+        "a": "24-hour notice to reschedule; late changes count as used. Delivered sessions are non-refundable."
       }
     ]
   },
