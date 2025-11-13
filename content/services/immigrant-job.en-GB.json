@@ -94,24 +94,60 @@
   "agreement": {
     "sections": [
       {
-        "heading": "Scope",
-        "body": "Coaching supports clarity and momentum for UK job search through questions and experiments."
+        "title": "Scope & Fit",
+        "paragraphs": [
+          "This is coaching, not therapy, counselling, immigration or legal advice.",
+          "We work on UK-relevant proof points, clear stories, preparation and cadence.",
+          "If therapy or legal advice is safer, we will signpost appropriate services."
+        ]
       },
       {
-        "heading": "Not legal/immigration/medical",
-        "body": "No legal or visa advice; we may signpost to professional services where appropriate."
+        "title": "Confidentiality",
+        "paragraphs": [
+          "Sessions are confidential by default.",
+          "Only minimal notes are kept; you may request deletion at any time.",
+          "We may discuss anonymised patterns in supervision for quality, without identifying details."
+        ]
       },
       {
-        "heading": "Confidentiality & limits",
-        "body": "Sessions are confidential except where law/safety requires disclosure."
+        "title": "Scheduling & Rescheduling",
+        "paragraphs": [
+          "Standard session length is ~50 minutes, online, within UK hours.",
+          "24 hours’ notice is required to reschedule; late changes count as used.",
+          "Blocks may pause between sessions by mutual agreement to protect cadence and rest."
+        ]
       },
       {
-        "heading": "Consent & boundaries",
-        "body": "You may stop or decline any exercise at any time."
+        "title": "Fees & Invoicing",
+        "paragraphs": [
+          "Fees are in GBP. Invoices are issued for each block or as agreed.",
+          "Delivered sessions are non-refundable. Unused sessions in a block can be paused.",
+          "Any bank or platform charges are borne by the client unless otherwise agreed."
+        ]
       },
       {
-        "heading": "Cancellations & data",
-        "body": "24h reschedule; minimal notes stored securely."
+        "title": "Data & Records",
+        "paragraphs": [
+          "We keep the minimum necessary data to run sessions and invoices.",
+          "You can request a copy or deletion of personal data subject to legal limits.",
+          "We use common tools (e.g., Google Docs/Sheets, email, video platforms) with reasonable care."
+        ]
+      },
+      {
+        "title": "Fair Use & Boundaries",
+        "paragraphs": [
+          "Between sessions, light check-ins are fine; heavy review or done-for-you work is out of scope.",
+          "We do not contact employers on your behalf, nor provide visa/legal advice.",
+          "If there is risk of harm, confidentiality may be lifted to keep people safe."
+        ]
+      },
+      {
+        "title": "Disputes",
+        "paragraphs": [
+          "We aim to resolve issues early via email and a short call.",
+          "If unresolved, we will propose a simple written plan and a pause if needed.",
+          "UK law and forums apply unless otherwise required by mandatory local law."
+        ]
       }
     ]
   },
