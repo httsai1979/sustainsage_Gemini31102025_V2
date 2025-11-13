@@ -73,7 +73,9 @@
   },
   "consent": {
     "label": "我已閱讀<0>教練範圍與同意</0>，並同意與 SustainSage 聯繫教練相關事宜。",
-    "helper": "勾選後即可繼續填寫聯絡表單。"
+    "helper": "勾選後即可繼續填寫聯絡表單。",
+    "title": "同意與資料",
+    "text": "送出代表同意我們就此詢問聯絡你。我們只保留最少必要紀錄，並尊重刪除要求。"
   },
   "form": {
     "title": "寫信給我們",
@@ -88,20 +90,47 @@
     "focusArea": "有興趣的方案（選填）",
     "focusAreaPlaceholder": "選擇方案",
     "focusAreaOptions": [
-      { "value": "transition", "label": "轉換教練" },
-      { "value": "early-career", "label": "新鮮人／早期職涯" },
-      { "value": "working-parents", "label": "職場父母" },
-      { "value": "leadership", "label": "領導與影響力" },
-      { "value": "not-sure", "label": "還不確定" }
+      {
+        "value": "transition",
+        "label": "轉換教練"
+      },
+      {
+        "value": "early-career",
+        "label": "新鮮人／早期職涯"
+      },
+      {
+        "value": "working-parents",
+        "label": "職場父母"
+      },
+      {
+        "value": "leadership",
+        "label": "領導與影響力"
+      },
+      {
+        "value": "not-sure",
+        "label": "還不確定"
+      }
     ],
     "focusHint": "選擇最接近的選項即可，也可以先保留彈性。",
     "language": "偏好的語言",
     "languagePlaceholder": "選擇語言",
     "languageOptions": [
-      { "value": "en", "label": "英語" },
-      { "value": "zh-TW", "label": "繁體中文" },
-      { "value": "zh-CN", "label": "簡體中文" },
-      { "value": "mix", "label": "雙語混合" }
+      {
+        "value": "en",
+        "label": "英語"
+      },
+      {
+        "value": "zh-TW",
+        "label": "繁體中文"
+      },
+      {
+        "value": "zh-CN",
+        "label": "簡體中文"
+      },
+      {
+        "value": "mix",
+        "label": "雙語混合"
+      }
     ],
     "languageHint": "告訴我們想用的語言或混合方式，過程中也能自由切換。",
     "timezone": "偏好的時區／時間",
@@ -130,20 +159,18 @@
     "nextCopy": "是否繼續合作由你決定，我們會把約定、界線與回顧節奏寫清楚。"
   },
   "miniFaq": {
-    "title": "快速釐清三個問題",
-    "intro": "透明的界線，讓決定更安心。",
     "items": [
       {
-        "question": "你們會推銷方案嗎？",
-        "answer": "不會。初談的目的是確認適配度，我們會坦誠分享觀察，你可以自在決定是否要繼續，也會獲得建議資源。"
+        "q": "談話會保密嗎？",
+        "a": "會。預設保密；最少必要紀錄；可要求刪除。"
       },
       {
-        "question": "公司可以代付嗎？",
-        "answer": "可以。雇主或學習發展部門確認預算後，我們會直接開立發票，並寫下保密與回報範圍。"
+        "q": "會談之間需要做什麼？",
+        "a": "每週 1 個小實驗或短反思（約 30–60 分鐘）。"
       },
       {
-        "question": "可以用中文或雙語進行嗎？",
-        "answer": "可以。會談可使用中文、英文或雙語混合，過程中也能依需要切換語言。"
+        "q": "可以改期嗎？",
+        "a": "可，需提前 24 小時；逾時視同使用一次會談。"
       }
     ]
   },

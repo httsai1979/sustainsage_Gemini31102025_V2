@@ -73,7 +73,9 @@
   },
   "consent": {
     "label": "我已阅读<0>教练范围与同意</0>，并同意与 SustainSage 联系教练相关事宜。",
-    "helper": "勾选后即可继续填写联系表单。"
+    "helper": "勾选后即可继续填写联系表单。",
+    "title": "同意与资料",
+    "text": "提交代表同意我们就此咨询联系你。我们仅保留最少必要记录，并尊重删除请求。"
   },
   "form": {
     "title": "写信给我们",
@@ -88,20 +90,47 @@
     "focusArea": "感兴趣的方案（选填）",
     "focusAreaPlaceholder": "选择方案",
     "focusAreaOptions": [
-      { "value": "transition", "label": "转变教练" },
-      { "value": "early-career", "label": "新鲜人／早期职涯" },
-      { "value": "working-parents", "label": "职场父母" },
-      { "value": "leadership", "label": "领导与影响力" },
-      { "value": "not-sure", "label": "还不确定" }
+      {
+        "value": "transition",
+        "label": "转变教练"
+      },
+      {
+        "value": "early-career",
+        "label": "新鲜人／早期职涯"
+      },
+      {
+        "value": "working-parents",
+        "label": "职场父母"
+      },
+      {
+        "value": "leadership",
+        "label": "领导与影响力"
+      },
+      {
+        "value": "not-sure",
+        "label": "还不确定"
+      }
     ],
     "focusHint": "挑最接近的选项即可，也可以先保留弹性。",
     "language": "偏好的语言",
     "languagePlaceholder": "选择语言",
     "languageOptions": [
-      { "value": "en", "label": "英语" },
-      { "value": "zh-TW", "label": "繁体中文" },
-      { "value": "zh-CN", "label": "简体中文" },
-      { "value": "mix", "label": "双语混合" }
+      {
+        "value": "en",
+        "label": "英语"
+      },
+      {
+        "value": "zh-TW",
+        "label": "繁体中文"
+      },
+      {
+        "value": "zh-CN",
+        "label": "简体中文"
+      },
+      {
+        "value": "mix",
+        "label": "双语混合"
+      }
     ],
     "languageHint": "告诉我们想用的语言或混合方式，过程中也能自由切换。",
     "timezone": "偏好的时区／时间",
@@ -130,20 +159,18 @@
     "nextCopy": "是否继续合作由你决定，我们会把约定、界线与回顾节奏写清楚。"
   },
   "miniFaq": {
-    "title": "快速厘清三个问题",
-    "intro": "透明的界线，让决定更安心。",
     "items": [
       {
-        "question": "你们会推销方案吗？",
-        "answer": "不会。初谈的目的在确认适配度，我们会坦诚分享观察，你可以自在决定是否继续，也会获得建议资源。"
+        "q": "谈话会保密吗？",
+        "a": "会。默认保密；仅保留最少必要记录；可申请删除。"
       },
       {
-        "question": "公司可以代付吗？",
-        "answer": "可以。雇主或学习发展部门确认预算后，我们会直接开立发票，并写下保密与回报范围。"
+        "q": "两次会谈之间需要做什么？",
+        "a": "每周 1 个小实验或短反思（约 30–60 分钟）。"
       },
       {
-        "question": "可以用中文或双语进行吗？",
-        "answer": "可以。会谈可使用中文、英文或双语混合，过程中也能依需要切换语言。"
+        "q": "可以改期吗？",
+        "a": "可以，需提前 24 小时；逾时视同使用一次会谈。"
       }
     ]
   },
