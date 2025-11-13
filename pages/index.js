@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -7,6 +6,9 @@ import Testimonials from '@/components/Testimonials';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
 import PageSection from '@/components/ui/PageSection';
+import IconList from '@/components/ui/IconList';
+import StepList from '@/components/ui/StepList';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import { getIconComponent } from '@/components/icons/map';
 import { loadJSON } from '@/lib/content';
 import { orderSections } from '@/lib/content/normalize';
@@ -60,97 +62,6 @@ ServiceCard.propTypes = {
   }).isRequired,
 };
 
-function BulletList({ items = [] } = {}) {
-  if (!Array.isArray(items) || items.length === 0) {
-    return null;
-  }
-
-  return (
-    <ul className="mt-6 space-y-4">
-      {items.map((item) => {
-        const key = typeof item === 'string' ? item : item.title ?? item.description;
-        const iconKey = typeof item === 'string' ? null : item.icon;
-        const IconComponent = getIconComponent(iconKey);
-
-        return (
-          <li
-            key={key}
-            className="flex items-start gap-4 rounded-3xl border border-emerald-100 bg-white/95 p-5 shadow-sm"
-          >
-            {IconComponent ? (
-              <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-700">
-                <IconComponent className="h-6 w-6" />
-              </span>
-            ) : (
-              <span aria-hidden className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
-            )}
-            <div className="space-y-1">
-              {typeof item === 'string' ? (
-                <span className="text-sm leading-6 text-slate-700">{item}</span>
-              ) : (
-                <>
-                  {item.title ? (
-                    <span className="block text-sm font-semibold text-slate-900">{item.title}</span>
-                  ) : null}
-                  {item.description ? (
-                    <p className="text-sm leading-6 text-slate-700">{item.description}</p>
-                  ) : null}
-                </>
-              )}
-            </div>
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
-
-BulletList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        title: PropTypes.string,
-        description: PropTypes.string,
-        icon: PropTypes.string,
-      }),
-    ])
-  ),
-};
-
-function StepList({ steps = [] } = {}) {
-  if (!Array.isArray(steps) || steps.length === 0) {
-    return null;
-  }
-
-  return (
-    <ol className="mt-8 space-y-6">
-      {steps.map((step, index) => (
-        <li key={step.title ?? index} className="flex gap-4">
-          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-700 text-sm font-semibold text-white">
-            {index + 1}
-          </span>
-          <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-            {step.title ? <h3 className="text-base font-semibold text-slate-900">{step.title}</h3> : null}
-            {step.description ? (
-              <p className="mt-2 text-sm leading-6 text-slate-700">{step.description}</p>
-            ) : null}
-          </div>
-        </li>
-      ))}
-    </ol>
-  );
-}
-
-StepList.propTypes = {
-  steps: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-    })
-  ),
-};
-
 export default function Home({
   content = {},
   testimonials = [],
@@ -196,18 +107,14 @@ export default function Home({
               ) : null}
             </div>
           </div>
-          {hero?.image?.src ? (
-            <div className="relative h-full w-full overflow-hidden rounded-3xl border border-emerald-100 shadow-sm md:max-w-md">
-              <Image
-                src={hero.image.src}
-                alt={hero.image.alt ?? ''}
-                width={1600}
-                height={900}
-                className="h-full w-full object-cover"
-                priority
-              />
-            </div>
-          ) : null}
+          <ResponsiveImage
+            src={hero?.image?.src ?? '/images/placeholder-hero.jpg'}
+            alt={hero?.image?.alt ?? hero?.title ?? 'Hero image'}
+            width={1600}
+            height={900}
+            className="md:max-w-md"
+            priority
+          />
         </div>
       </PageSection>
 
@@ -224,7 +131,7 @@ export default function Home({
       {keyPointItems.length ? (
         <PageSection title={keyPoints?.title} lead={keyPoints?.description}>
           <div className="mt-6 rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm md:p-10">
-            <BulletList items={keyPointItems} />
+            <IconList items={keyPointItems} />
           </div>
         </PageSection>
       ) : null}

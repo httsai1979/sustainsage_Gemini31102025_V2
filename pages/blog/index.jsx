@@ -1,31 +1,63 @@
-import Image from 'next/image';
+import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
+import Container from '@/components/ui/Container';
+import Icon from '@/components/ui/Icon';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
+import Section from '@/components/ui/Section';
 import Tag from '@/components/ui/Tag';
 import { getAllPosts } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
 
-export default function BlogPage({ posts }) {
+export default function BlogPage({ posts = [] }) {
   return (
-    <section className="mx-auto mt-10 max-w-6xl px-5 md:px-8">
-      <h1 className="text-3xl font-extrabold text-slate-900">Blog</h1>
-      <p className="mt-2 text-slate-600">Short, practical notes from our coaching practice.</p>
-      <div className="mt-6 grid gap-4 md:grid-cols-3">
-        {posts.map((post) => (
-          <Card key={post.slug} title={post.title} desc={post.description} href={`/blog/${post.slug}`} cta="Read">
-            <figure className="mt-3 overflow-hidden rounded-xl border border-slate-200">
-              <Image src={post.img} alt={post.alt || ''} width={1200} height={675} loading="lazy" />
-            </figure>
-            {post.comingSoon && (
-              <div className="mt-3">
-                <Tag>Coming soon</Tag>
-              </div>
-            )}
-          </Card>
-        ))}
-      </div>
-    </section>
+    <Section>
+      <Container>
+        <div className="ssg-stack text-center md:text-left">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">Blog</p>
+            <h1 className="mt-2 text-3xl font-extrabold text-ink">Blog</h1>
+            <p className="mt-3 text-base leading-7 text-slate-600">Short, practical notes from our coaching practice.</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <Card
+                key={post.slug}
+                title={
+                  <span className="inline-flex items-center gap-2">
+                    <Icon name="arrowRight" className="h-5 w-5 text-sage" />
+                    {post.title}
+                  </span>
+                }
+                subtitle={post.description}
+                footer={
+                  <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-semibold text-sage">
+                    Read
+                    <span aria-hidden>→</span>
+                  </Link>
+                }
+                className="flex h-full flex-col gap-4"
+              >
+                <ResponsiveImage
+                  src={post.img ?? '/images/placeholder-hero.jpg'}
+                  alt={post.alt || post.title || ''}
+                  width={1200}
+                  height={675}
+                  className="mt-2"
+                />
+                {post.comingSoon ? (
+                  <div>
+                    <Tag>Coming soon</Tag>
+                  </div>
+                ) : null}
+              </Card>
+            ))}
+          </div>
+        </div>
+      </Container>
+    </Section>
   );
 }
 
