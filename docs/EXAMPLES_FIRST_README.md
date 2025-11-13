@@ -20,5 +20,6 @@ The following notes capture how each audited page surfaces example-like content 
 | Services – graduate-start (overview) | Yes – overview keeps example cards first; key points enriched with short, scannable bullets. | Added EN/TW key points; cases written only if `cases.items[]` is a string array. |
 | Services – immigrant-job (overview) | Yes – overview keeps example cards first; key points highlight UK translation steps and micro-experiments. | Added EN/TW key points; cases written only if `cases.items[]` is a string array. |
 | Services – immigrant-job /pricing | Package cards lead; concise policies follow. | Wrote `pricing.packages[]` + `pricing.policies[]` in EN/TW JSON via script. |
+| Services – immigrant-job /faq | FAQs render as concise Q&A; scope, language, outreach, cadence, confidentiality, and policies addressed. | Wrote `faq.items[]` (auto-detected `{q,a}` vs `{question,answer}`) in EN/TW JSON via script. |
 
 _No console errors or layout regressions were observed while navigating the listed routes under `npm run dev`._
