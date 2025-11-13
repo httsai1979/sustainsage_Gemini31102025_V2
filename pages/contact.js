@@ -17,7 +17,7 @@ function BulletHighlights({ items, title, description }) {
   }
 
   return (
-    <div className="rounded-2xl border border-emerald-100 bg-white p-5">
+    <div className="ssg-card">
       {title ? <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{title}</p> : null}
       {description ? <p className="mt-2 text-sm leading-6 text-slate-700">{description}</p> : null}
       <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
@@ -34,12 +34,12 @@ function BulletHighlights({ items, title, description }) {
 
 function JourneyCard({ item, index }) {
   return (
-    <div className="flex flex-col gap-3 rounded-2xl border border-emerald-100 bg-white p-5">
-      <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-sm font-semibold text-emerald-700">
+    <div className="ssg-card flex flex-col gap-3">
+      <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-sm font-semibold text-primary">
         {index + 1}
       </div>
-      <div className="space-y-2 text-sm leading-6 text-slate-700">
-        <h3 className="text-base font-semibold text-slate-900">{item.summary}</h3>
+      <div className="space-y-2 text-sm leading-6 text-ink/80">
+        <h3 className="text-base font-semibold text-ink">{item.summary}</h3>
         {item.detail ? <p>{item.detail}</p> : null}
       </div>
     </div>
@@ -48,9 +48,9 @@ function JourneyCard({ item, index }) {
 
 function FAQItem({ item }) {
   return (
-    <div className="rounded-2xl border border-emerald-100 bg-white p-5">
-      <h3 className="text-lg font-semibold text-slate-900">{item.question}</h3>
-      <p className="mt-3 text-sm leading-6 text-slate-700">{item.answer}</p>
+    <div className="ssg-card">
+      <h3 className="text-lg font-semibold text-ink">{item.question}</h3>
+      <p className="mt-3 text-sm leading-6 text-ink/80">{item.answer}</p>
     </div>
   );
 }
@@ -80,37 +80,40 @@ export default function ContactPage() {
         <meta name="description" content={seo?.description} />
       </Head>
 
-      <PageSection className="bg-emerald-50/60">
+      <PageSection background="paper">
         <div className="typography mx-auto flex max-w-3xl flex-col gap-4 text-center md:text-left">
           <h1>{hero?.title}</h1>
           {hero?.body ? <p>{hero.body}</p> : null}
         </div>
       </PageSection>
 
-      <PageSection className="bg-emerald-950/5">
+      <PageSection>
         <div className="typography flex flex-col gap-4">
           <h2>{journey?.title}</h2>
           {journey?.intro ? <p>{journey.intro}</p> : null}
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {journeyItems.map((item, index) => (
             <JourneyCard key={item.summary} item={item} index={index} />
           ))}
         </div>
       </PageSection>
 
-      <PageSection className="bg-white">
-        {whatYouGetItems.length || whatWeDontDoItems.length ? (
-          <div className="mb-10 space-y-8">
-            <div className="grid gap-6 md:grid-cols-2">
-              <BulletHighlights items={whatYouGetItems} title={whatYouGet?.title} description={whatYouGet?.description} />
-              <BulletHighlights
-                items={whatWeDontDoItems}
-                title={whatWeDontDo?.title}
-                description={whatWeDontDo?.description}
-              />
-            </div>
-            <div className="rounded-2xl border border-emerald-100 bg-white p-5">
+      <PageSection>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+          <div className="space-y-6">
+            {whatYouGetItems.length || whatWeDontDoItems.length ? (
+              <div className="space-y-6">
+                <BulletHighlights items={whatYouGetItems} title={whatYouGet?.title} description={whatYouGet?.description} />
+                <BulletHighlights
+                  items={whatWeDontDoItems}
+                  title={whatWeDontDo?.title}
+                  description={whatWeDontDo?.description}
+                />
+              </div>
+            ) : null}
+            <BulletHighlights items={heroBullets} title={hero?.bulletsTitle} />
+            <div className="ssg-card">
               <div className="flex items-start gap-3">
                 <input
                   id="coaching-consent"
@@ -118,9 +121,9 @@ export default function ContactPage() {
                   type="checkbox"
                   checked={hasBoundaryConsent}
                   onChange={(event) => setHasBoundaryConsent(event.target.checked)}
-                  className="mt-1 h-4 w-4 rounded border-slate-300 text-emerald-600 focus:ring-emerald-600"
+                  className="mt-1 h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary"
                 />
-                <label htmlFor="coaching-consent" className="text-sm leading-6 text-slate-700">
+                <label htmlFor="coaching-consent" className="text-sm leading-6 text-ink/80">
                   <Trans
                     t={t}
                     i18nKey="consent.label"
@@ -128,7 +131,7 @@ export default function ContactPage() {
                       Link: (
                         <Link
                           href="/legal/coaching-boundaries"
-                          className="font-semibold text-emerald-700 underline-offset-2 hover:underline"
+                          className="font-semibold text-primary underline-offset-2 hover:underline"
                         />
                       ),
                     }}
@@ -136,18 +139,17 @@ export default function ContactPage() {
                 </label>
               </div>
               {consent?.helper ? (
-                <p className="mt-3 text-xs leading-6 text-slate-500">{consent.helper}</p>
+                <p className="mt-3 text-xs leading-6 text-ink/60">{consent.helper}</p>
               ) : null}
             </div>
           </div>
-        ) : null}
-        <div className="mb-10">
-          <BulletHighlights items={heroBullets} title={hero?.bulletsTitle} />
+          <div className="ssg-card">
+            <ContactForm hasBoundaryConsent={hasBoundaryConsent} />
+          </div>
         </div>
-        <ContactForm hasBoundaryConsent={hasBoundaryConsent} />
       </PageSection>
 
-      <PageSection className="bg-emerald-950/5">
+      <PageSection>
         <div className="typography mx-auto flex max-w-3xl flex-col gap-4">
           <h2>{miniFaq?.title}</h2>
           {miniFaq?.intro ? <p>{miniFaq.intro}</p> : null}
@@ -160,10 +162,10 @@ export default function ContactPage() {
       </PageSection>
 
       {faqLink?.label ? (
-        <PageSection className="bg-emerald-50/70">
-          <div className="flex flex-col items-center gap-2 text-center text-sm leading-6 text-slate-700">
+        <PageSection background="paper">
+          <div className="flex flex-col items-center gap-2 text-center text-sm leading-6 text-ink/80">
             <p>{faqLink?.text}</p>
-            <Link href={faqLink.href} className="inline-flex items-center gap-2 font-semibold text-emerald-700 hover:underline">
+            <Link href={faqLink.href} className="inline-flex items-center gap-2 font-semibold text-primary hover:underline">
               {faqLink.label}
               <span aria-hidden="true">→</span>
             </Link>

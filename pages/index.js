@@ -1,13 +1,20 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import {
+  AcademicCapIcon,
+  ChatBubbleLeftRightIcon,
+  GlobeAltIcon,
+  SparklesIcon,
+  UserCircleIcon,
+} from '@heroicons/react/24/outline';
 
 import Testimonials from '@/components/Testimonials';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
+import Card from '@/components/ui/Card';
+import CardGrid from '@/components/ui/CardGrid';
 import PageSection from '@/components/ui/PageSection';
-import IconList from '@/components/ui/IconList';
-import StepList from '@/components/ui/StepList';
 import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import { getIconComponent } from '@/components/icons/map';
 import { loadJSON } from '@/lib/content';
@@ -15,52 +22,48 @@ import { orderSections } from '@/lib/content/normalize';
 import { toSerializable } from '@/lib/toSerializable';
 
 const BUTTON_PRIMARY =
-  'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 bg-emerald-700 text-white hover:bg-emerald-800';
+  'inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary';
 const BUTTON_SECONDARY =
-  'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700 bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100';
+  'inline-flex items-center justify-center rounded-full border border-primary/30 px-5 py-3 text-sm font-semibold text-primary transition hover:bg-primary/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary';
 
-function ServiceCard({ card }) {
-  const IconComponent = getIconComponent(card.icon);
+const AUDIENCE_CARDS = [
+  {
+    title: 'Mid-career professionals who feel stuck',
+    description:
+      'You have built a career, but something no longer fits. You want space to explore options without burning everything down.',
+    icon: UserCircleIcon,
+  },
+  {
+    title: 'Immigrants and new residents in the UK',
+    description:
+      'You are navigating a new system, translating skills, and working out how to belong at work again.',
+    icon: GlobeAltIcon,
+  },
+  {
+    title: 'Graduates and young adults',
+    description:
+      'You are finishing university or entering work. Everyone asks “what’s next?” but the answer still feels foggy.',
+    icon: AcademicCapIcon,
+  },
+];
 
-  return (
-    <Link
-      href={card.href}
-      className="group flex h-full flex-col justify-between rounded-3xl border border-emerald-100 bg-white/95 p-6 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
-    >
-      <div className="space-y-4">
-        <div className="flex items-start gap-4">
-          {IconComponent ? (
-            <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700">
-              <IconComponent className="h-6 w-6" />
-            </span>
-          ) : null}
-          <div className="space-y-2">
-            <h3 className="text-lg font-semibold text-slate-900">{card.title}</h3>
-            {card.description ? (
-              <p className="text-sm leading-6 text-slate-700">{card.description}</p>
-            ) : null}
-          </div>
-        </div>
-      </div>
-      <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-emerald-700">
-        {card.linkLabel ?? 'Explore service'}
-        <span aria-hidden className="transition group-hover:translate-x-1">
-          →
-        </span>
-      </span>
-    </Link>
-  );
-}
-
-ServiceCard.propTypes = {
-  card: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    href: PropTypes.string,
-    linkLabel: PropTypes.string,
-    icon: PropTypes.string,
-  }).isRequired,
-};
+const WHY_CARDS = [
+  {
+    title: 'Slow, not rushed',
+    description: 'We prioritise sustainable change over dramatic declarations. The pace matches your real life.',
+    icon: SparklesIcon,
+  },
+  {
+    title: 'Space to think',
+    description: 'Sessions are calm and private. You can say the uncertain, unpolished thoughts without needing to perform.',
+    icon: ChatBubbleLeftRightIcon,
+  },
+  {
+    title: 'Lived experience of transition',
+    description: 'This practice is built from lived experience of immigration, career shifts, and restarting after pauses.',
+    icon: GlobeAltIcon,
+  },
+];
 
 export default function Home({
   content = {},
@@ -70,29 +73,77 @@ export default function Home({
 } = {}) {
   const hero = content?.hero ?? {};
   const services = content?.services ?? {};
-  const keyPoints = content?.key_points ?? {};
   const process = content?.process ?? {};
-  const boundaries = content?.boundaries ?? {};
-  const faqTeaser = content?.faqTeaser ?? {};
+  const faqTeaser = content?.faqTeaser ?? null;
+  const faqContent = {
+    title: faqTeaser?.title ?? 'Questions about coaching?',
+    body:
+      faqTeaser?.body ??
+      'Read about session rhythms, pricing, ethics, and how we tailor support for individuals and organisations.',
+    ctaHref: faqTeaser?.cta?.href ?? '/faq',
+    ctaLabel: faqTeaser?.cta?.label ?? 'Read the FAQs',
+  };
   const serviceCards = orderSections(Array.isArray(services?.cards) ? services.cards : []);
-  const keyPointItems = orderSections(Array.isArray(keyPoints?.items) ? keyPoints.items : []);
   const processSteps = orderSections(Array.isArray(process?.steps) ? process.steps : []);
+  const boundaries = content?.boundaries ?? {};
   const boundaryItems = orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []);
+  const keyPoints = content?.key_points ?? {};
+  const keyPointItems = orderSections(Array.isArray(keyPoints?.items) ? keyPoints.items : []);
   const fallbackMessage =
     fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
+  const audiences = Array.isArray(content?.audiences)
+    ? content.audiences
+    : AUDIENCE_CARDS;
+  const whyCards = keyPointItems.length
+    ? keyPointItems.map((item) =>
+        typeof item === 'string'
+          ? { title: item }
+          : { title: item.title ?? item.question, description: item.description ?? item.answer },
+      )
+    : WHY_CARDS;
+  const processCards = processSteps.length
+    ? processSteps.map((step, index) => ({
+        title: step.title ?? `Step ${index + 1}`,
+        description: step.description,
+        tag: `${index + 1}`,
+      }))
+    : [
+        {
+          title: 'Brief conversation',
+          description:
+            'We begin with a short call to see whether coaching is the right support for this moment.',
+          tag: '1',
+        },
+        {
+          title: 'Shared focus',
+          description: 'We agree what you want to explore and how often we meet.',
+          tag: '2',
+        },
+        {
+          title: 'Sessions',
+          description:
+            'Regular conversations, usually online, to slow down, test small experiments, and notice patterns.',
+          tag: '3',
+        },
+        {
+          title: 'Review and adjust',
+          description: 'We review what helps, pause when needed, and adjust together.',
+          tag: '4',
+        },
+      ];
 
   return (
     <>
-      <PageSection className="pt-10 md:pt-16">
-        <div className="flex flex-col gap-12 md:flex-row md:items-center md:justify-between">
-          <div className="max-w-xl space-y-6">
+      <PageSection background="paper" className="pt-12">
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-center">
+          <div className="space-y-6">
             {hero?.eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.eyebrow}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">{hero.eyebrow}</p>
             ) : null}
-            <h1 className="scroll-mt-28 text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">{hero?.title}</h1>
-            {hero?.description ? <p className="text-base leading-7 text-slate-700">{hero.description}</p> : null}
+            <h1 className="text-4xl font-semibold leading-tight text-ink md:text-5xl">{hero?.title}</h1>
+            {hero?.description ? <p className="text-base leading-7 text-ink/80">{hero.description}</p> : null}
             {showFallbackNotice ? (
-              <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+              <p className="text-xs font-medium text-ink/60">{fallbackMessage}</p>
             ) : null}
             <div className="flex flex-wrap gap-3">
               {hero?.primaryCta?.href ? (
@@ -100,79 +151,118 @@ export default function Home({
                   {hero.primaryCta.label}
                 </Link>
               ) : null}
-              {hero?.secondaryCta?.href ? (
-                <Link href={hero.secondaryCta.href} className={BUTTON_SECONDARY}>
-                  {hero.secondaryCta.label}
-                </Link>
-              ) : null}
+              <Link href="#who-we-work-with" className={BUTTON_SECONDARY}>
+                See who we work with
+              </Link>
             </div>
           </div>
-          <ResponsiveImage
-            src={hero?.image?.src ?? '/images/placeholder-hero.jpg'}
-            alt={hero?.image?.alt ?? hero?.title ?? 'Hero image'}
-            width={1600}
-            height={900}
-            className="md:max-w-md"
-            priority
-          />
+          <div className="ssg-card bg-paper">
+            <ResponsiveImage
+              src={hero?.image?.src ?? '/images/placeholder-hero.jpg'}
+              alt={hero?.image?.alt ?? hero?.title ?? 'Hero image'}
+              width={1600}
+              height={900}
+              className="rounded-2xl"
+              priority
+            />
+          </div>
         </div>
+      </PageSection>
+
+      <PageSection id="who-we-work-with" eyebrow="Who we work with" title="People who find this space helpful">
+        <CardGrid>
+          {audiences.map((card) => {
+            const IconComponent = card.icon;
+            return (
+              <Card
+                key={card.title}
+                title={card.title}
+                subtitle={card.description}
+                icon={IconComponent ? <IconComponent className="h-6 w-6" /> : null}
+              />
+            );
+          })}
+        </CardGrid>
+      </PageSection>
+
+      <PageSection
+        eyebrow={process?.eyebrow ?? 'How coaching works'}
+        title={process?.title ?? 'A calm structure for reflective work'}
+        lead={process?.description}
+      >
+        <CardGrid columns={{ base: 1, md: 2, lg: 4 }}>
+          {processCards.map((step) => (
+            <Card key={step.title} title={step.title} subtitle={step.description} tag={step.tag} />
+          ))}
+        </CardGrid>
+        {process?.note ? <p className="mt-6 text-sm text-ink/70">{process.note}</p> : null}
+      </PageSection>
+
+      <PageSection
+        eyebrow="Why SustainSage"
+        title={keyPoints?.title ?? 'Why people choose SustainSage'}
+        lead={keyPoints?.description}
+      >
+        <CardGrid>
+          {whyCards.map((card) => {
+            const IconComponent = card.icon;
+            return (
+              <Card
+                key={card.title}
+                title={card.title}
+                subtitle={card.description}
+                icon={IconComponent ? <IconComponent className="h-6 w-6" /> : null}
+              />
+            );
+          })}
+        </CardGrid>
       </PageSection>
 
       {serviceCards.length ? (
         <PageSection eyebrow={services?.eyebrow} title={services?.title} lead={services?.description}>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            {serviceCards.slice(0, 3).map((card) => (
-              <ServiceCard key={card.href} card={card} />
-            ))}
-          </div>
-        </PageSection>
-      ) : null}
-
-      {keyPointItems.length ? (
-        <PageSection title={keyPoints?.title} lead={keyPoints?.description}>
-          <div className="mt-6 rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm md:p-10">
-            <IconList items={keyPointItems} />
-          </div>
-        </PageSection>
-      ) : null}
-
-      {processSteps.length ? (
-        <PageSection title={process?.title} lead={process?.description}>
-          <div className="mt-6 rounded-3xl border border-emerald-100 bg-emerald-50/70 p-8 shadow-sm md:p-10">
-            <StepList steps={processSteps} />
-            {process?.note ? (
-              <p className="mt-6 text-xs leading-5 text-slate-500">{process.note}</p>
-            ) : null}
-          </div>
+          <CardGrid>
+            {serviceCards.slice(0, 3).map((card) => {
+              const IconComponent = getIconComponent(card.icon);
+              return (
+                <Card
+                  key={card.href}
+                  title={card.title}
+                  subtitle={card.description}
+                  icon={IconComponent ? <IconComponent className="h-6 w-6" /> : null}
+                  footer={
+                    card.href ? (
+                      <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-primary">
+                        {card.linkLabel ?? 'Explore service'}
+                        <span aria-hidden>→</span>
+                      </Link>
+                    ) : null
+                  }
+                />
+              );
+            })}
+          </CardGrid>
         </PageSection>
       ) : null}
 
       {boundaryItems.length ? (
         <PageSection title={boundaries?.title} lead={boundaries?.description}>
-          <div className="mt-6 rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm md:p-10">
+          <div className="ssg-card">
             <FAQAccordion items={boundaryItems} className="mt-6" />
           </div>
         </PageSection>
       ) : null}
 
-      {faqTeaser?.title ? (
-        <PageSection title={faqTeaser?.title}>
-          <div className="mt-6 rounded-3xl border border-emerald-100 bg-white/95 p-8 shadow-sm md:p-10">
-            <div className="space-y-4">
-              {faqTeaser?.body ? <p className="text-sm leading-6 text-slate-700">{faqTeaser.body}</p> : null}
-              {faqTeaser?.cta?.href ? (
-                <Link
-                  href={faqTeaser.cta.href}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-700 hover:underline"
-                >
-                  {faqTeaser.cta.label}
-                  <span aria-hidden>→</span>
-                </Link>
-              ) : null}
-            </div>
+      <PageSection title={faqContent.title}>
+        <div className="ssg-card">
+          <p className="text-base text-ink/80">{faqContent.body}</p>
+          <div className="mt-6">
+            <Link href={faqContent.ctaHref} className="inline-flex items-center gap-2 font-semibold text-primary">
+              {faqContent.ctaLabel}
+              <span aria-hidden>→</span>
+            </Link>
           </div>
-        </PageSection>
-      ) : null}
+        </div>
+      </PageSection>
 
       <PageSection className="pb-16">
         <Testimonials items={testimonials ?? []} />
