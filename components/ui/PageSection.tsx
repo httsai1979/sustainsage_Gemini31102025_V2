@@ -1,8 +1,20 @@
-import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import type { ReactNode } from 'react';
+
+import cn from '@/lib/cn';
 
 import { H2 } from './H';
 import Prose from './Prose';
+
+interface PageSectionProps {
+  id?: string;
+  className?: string;
+  eyebrow?: string;
+  title?: ReactNode;
+  lead?: ReactNode;
+  children?: ReactNode;
+  prose?: boolean;
+}
 
 export default function PageSection({
   id,
@@ -12,9 +24,9 @@ export default function PageSection({
   lead,
   children,
   prose = false,
-}) {
+}: PageSectionProps) {
   return (
-    <section id={id} className={clsx('py-16 sm:py-20', className)}>
+    <section id={id} className={cn('py-16 sm:py-20', className)}>
       <div className="mx-auto max-w-7xl px-6">
         {(eyebrow || title || lead) && (
           <header className="mb-10 space-y-4">

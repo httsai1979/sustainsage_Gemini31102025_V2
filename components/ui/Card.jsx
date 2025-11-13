@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import cn from '@/lib/cn';
 import PropTypes from 'prop-types';
 
 import { H3 } from './H';
@@ -15,7 +15,7 @@ export default function Card({
   prose = false,
 }) {
   return (
-    <Component className={clsx('rounded-2xl border border-slate-200/60 bg-white p-6 shadow-sm', className)}>
+    <Component className={cn('rounded-2xl border border-slate-200/60 bg-white p-6 shadow-sm', className)}>
       <div className="space-y-4">
         {(icon || title || subtitle) && (
           <div className="space-y-2">

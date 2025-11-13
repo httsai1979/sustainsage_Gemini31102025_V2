@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
+import cn from '@/lib/cn';
 
 import Card from './Card';
 
@@ -8,7 +8,7 @@ export default function Callout({ title, body, actions = [], className }) {
   if (!title && !body && actions.length === 0) return null;
   return (
     <Card
-      className={clsx('border-sage/30 bg-sage/5 text-slate-800', className)}
+      className={cn('border-sage/30 bg-sage/5 text-slate-800', className)}
       title={title}
       subtitle={body}
     >
