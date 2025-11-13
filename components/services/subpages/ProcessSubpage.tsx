@@ -39,7 +39,7 @@ const { Page } = createServiceSubpage({
     return (
       <div className="space-y-10">
         {steps.length > 0 ? (
-          <SectionContainer variant="surface">
+          <SectionContainer variant="surface" wide>
             <ol className="space-y-6">
               {steps.map((step, index) => (
                 <li key={step.title ?? index} className="flex gap-4">

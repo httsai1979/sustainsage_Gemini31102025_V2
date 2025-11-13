@@ -1,3 +1,4 @@
+import { CaseCard } from '@/components/cases/CaseCard';
 import { MicroCTA } from '@/components/common/MicroCTA';
 import SectionContainer from '@/components/sections/SectionContainer';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
@@ -43,16 +44,32 @@ const { Page } = createServiceSubpage({
 
     return (
       <div className="space-y-10">
-        <SectionContainer variant="surface">
+        <SectionContainer variant="surface" wide>
+          <div className="grid gap-6 md:grid-cols-3">
+            {cases.map((item) => (
+              <CaseCard
+                key={item.title ?? item.context ?? item.shift}
+                title={item.title}
+                context={item.context}
+                coaching_moves={item.coaching_moves}
+                shift={item.shift}
+                tools_used={item.tools_used}
+                disclaimer={item.disclaimer}
+              />
+            ))}
+          </div>
+        </SectionContainer>
+
+        <SectionContainer variant="surface" tone="muted">
           <div className="space-y-6">
             <p className="text-sm leading-6 text-slate-700">
               These composites blend details from multiple clients to keep identities protected while showing the texture of our work.
             </p>
 
             {disclaimers.length > 0 ? (
-              <div className="space-y-3 rounded-3xl border border-emerald-100 bg-emerald-50/70 p-6 text-sm leading-6 text-slate-700">
+              <div className="space-y-3">
                 <h3 className="text-base font-semibold text-slate-900">Confidentiality reminders</h3>
-                <ul className="space-y-2">
+                <ul className="space-y-2 text-sm leading-6 text-slate-700">
                   {disclaimers.map((text) => (
                     <li key={text} className="flex gap-3">
                       <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
