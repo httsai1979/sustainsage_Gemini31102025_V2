@@ -37,68 +37,133 @@
   },
   "readiness": {
     "checklist": [
-      "I can commit 60–90min per week for reflection or experiments.",
-      "I accept that coaching is not therapy or medical advice.",
-      "I’m willing to run small tests and learn from results."
+      "可安排 50–60 分鐘線上會談，能配合英國時段。",
+      "有需要橋接的空窗（育兒、健康、進修、照護）與目標領域。",
+      "理解教練服務範圍（非治療／法律）。",
+      "願意在會談間完成 1 個小實驗。",
+      "準備好最新 CV 或 LinkedIn 連結。",
+      "可使用 Google Docs/Sheets 與 Zoom/Meet。",
+      "同意最少必要紀錄與資料處理。"
     ],
     "what_to_prepare": [
-      "Latest CV / role targets",
-      "Three work situations worth improving",
-      "Boundaries and constraints (time, energy, family)"
+      "你的 LinkedIn 連結或最近期的 CV（PDF）。",
+      "兩個來自空窗前／後的短實例。",
+      "限制清單（時數、地點、照護）。",
+      "你可行的每週節奏（粗略即可）。",
+      "前兩次會談最想釐清的三個問題。"
+    ],
+    "signals": [
+      "偏好冷靜、誠實、符合英國在地的引導。",
+      "喜歡小步走、能產出可見證據的方式。",
+      "能維持每週節奏並做短回顧。",
+      "能接受「教練而非治療」的範圍界線。"
     ]
   },
   "process": {
     "title": "How the process works",
     "description": "A three to four month container with 60-minute sessions and light touch check-ins between calls.",
     "steps": [
-      {
-        "title": "Orientation & consent",
-        "description": "We map responsibilities, non-negotiables and what support looks like to you."
-      },
-      {
-        "title": "Design paced experiments",
-        "description": "We test options, practise scripts and rehearse conversations you want to lead."
-      },
-      {
-        "title": "Embed routines that protect energy",
-        "description": "We build tracking rituals so you can sustain momentum without overextending."
-      }
+      "重整與界線：目標、限制，哪些主題較適合留在教練之外。",
+      "重建訊號：一個可被看見的證據點（迷你專案／推薦人／復習練習）。",
+      "故事與履歷：不道歉地橋接空窗，說清楚「為什麼現在」。",
+      "面試適配：重返職場情境、節奏、照護安排與溝通。",
+      "投遞與回顧：追蹤、20 分鐘復盤，調整下一小步。"
     ],
     "note": "Optional asynchronous feedback through voice notes or docs helps you integrate between sessions."
   },
   "agreement": {
     "sections": [
       {
-        "heading": "Scope",
-        "body": "Coaching supports clarity, decisions and self-leadership through questions and experiments."
+        "title": "服務範圍與適配",
+        "paragraphs": [
+          "本服務為教練，不是治療、諮商、HR 或法律建議。",
+          "專注英國在地證據點、敘事清晰、準備與節奏。",
+          "若治療／法律更合適，將提供指引資訊。"
+        ]
       },
       {
-        "heading": "Not therapy/medical",
-        "body": "We do not diagnose or treat; we may signpost to professional help when appropriate."
+        "title": "保密",
+        "paragraphs": [
+          "會談預設保密。",
+          "僅保留最少必要紀錄；你可隨時要求刪除。",
+          "品質督導可能討論匿名化模式，不含可識別資訊。"
+        ]
       },
       {
-        "heading": "Confidentiality & limits",
-        "body": "We keep sessions confidential except where law/safety requires disclosure."
+        "title": "時程與改期",
+        "paragraphs": [
+          "單次約 50 分鐘，線上、以英國時段為主。",
+          "改期需提前 24 小時；逾時視同使用一次會談。",
+          "套組可在會談間暫停，需雙方同意。"
+        ]
       },
       {
-        "heading": "Consent & boundaries",
-        "body": "You can pause, decline, or stop any activity at any time."
+        "title": "費用與發票",
+        "paragraphs": [
+          "以英鎊 (GBP) 計價，依套組或約定開立發票。",
+          "已完成會談不退費；未使用會談可暫停保留。",
+          "匯款／平台手續費除另有約定，原則由客戶負擔。"
+        ]
       },
       {
-        "heading": "Cancellations & data",
-        "body": "24h reschedule window; session notes kept minimal and securely."
+        "title": "個資與紀錄",
+        "paragraphs": [
+          "僅保存執行會談與開立發票所需的最少資料。",
+          "你可在法律許可範圍內申請調閱或刪除個資。",
+          "常用工具（Google Docs/Sheets、Email、視訊）將以合理注意使用。"
+        ]
+      },
+      {
+        "title": "合理使用與界線",
+        "paragraphs": [
+          "會談間可輕量回報；大量審稿或代做內容不在範圍內。",
+          "不代為聯絡雇主或 HR。",
+          "若出現危害風險，為保護安全，保密可能被解除。"
+        ]
+      },
+      {
+        "title": "爭議處理",
+        "paragraphs": [
+          "優先以 Email 與短通話及早處理。",
+          "若未解決，將提出簡要書面方案；必要時暫停服務。",
+          "除法律強制規定外，原則適用英國法與司法管轄。"
+        ]
       }
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "How do we meet?",
-        "a": "Online (video) by default; in-person by arrangement in London."
+        "q": "你可以幫我解釋空窗期嗎？",
+        "a": "我們一起打磨敘事，但內容屬於你。重點是改變了什麼、現在能拿出哪些證據。"
       },
       {
-        "q": "What if I’m not ready?",
-        "a": "Start with a 20-minute chat; we’ll decide together with no obligation."
+        "q": "你們保證我能重返職場嗎？",
+        "a": "不保證。教練不是仲介。我們協助你建立證據點與清楚敘事；由你投遞並追蹤成果。"
+      },
+      {
+        "q": "你會代寫我的 CV/LinkedIn 嗎？",
+        "a": "不代寫。我們協助結構與清楚度，對齊英國常見格式，並在 Google Docs 共同修訂。"
+      },
+      {
+        "q": "兩次會談間需要投入多少時間？",
+        "a": "通常每週 30–60 分鐘，完成 1 個小實驗或一輪修訂；保持「小而可見」。"
+      },
+      {
+        "q": "談話是保密的嗎？",
+        "a": "預設保密；最少必要紀錄；可要求刪除。詳見邊界與政策頁。"
+      },
+      {
+        "q": "若我有照護與時段限制怎麼辦？",
+        "a": "我們會以限制為基準設計節奏，並挑選相符的職位或型態。"
+      },
+      {
+        "q": "可以代為與雇主或 HR 溝通嗎？",
+        "a": "不代替你聯絡。我們協助你準備對話並在你準備好時親自表達。"
+      },
+      {
+        "q": "改期與退費如何處理？",
+        "a": "改期需提前 24 小時；逾時視同使用一次會談。已完成會談不退費。"
       }
     ]
   },
