@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import PageSection from '@/components/ui/PageSection';
 import Card from '@/components/ui/Card';
+import CardGrid from '@/components/ui/CardGrid';
 import Callout from '@/components/ui/Callout';
 import { H1 } from '@/components/ui/H';
 import { loadContent } from '@/lib/loadContent';
@@ -62,7 +63,7 @@ export default function ServicesPage({
         {seo?.description ? <meta name="description" content={seo?.description} /> : null}
       </Head>
 
-      <PageSection className="bg-white">
+      <PageSection background="paper">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start">
           <div className="space-y-6">
             {hero?.eyebrow ? (
@@ -102,11 +103,11 @@ export default function ServicesPage({
         {pathways?.highlight ? (
           <p className="mb-8 text-base font-semibold text-slate-900">{pathways.highlight}</p>
         ) : null}
-        <div className="grid gap-6 md:grid-cols-3">
+        <CardGrid>
           {cards.map((card) => (
             <PathwayCard key={card.slug} card={card} viewDetailsLabel={pathways?.viewDetails ?? 'View details'} />
           ))}
-        </div>
+        </CardGrid>
       </PageSection>
 
       <PageSection>

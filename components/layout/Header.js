@@ -7,7 +7,7 @@ const NAV_ITEMS = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
-  { href: '/resources', label: 'Free Tools' },
+  { href: '/resources', label: 'Resources' },
   { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -51,10 +51,10 @@ export default function Header() {
   };
 
   return (
-    <header className="border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
-          SustainSage
+    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-paper/90 backdrop-blur">
+      <div className="ssg-container flex items-center justify-between py-4">
+        <Link href="/" className="text-lg font-semibold tracking-tight text-ink">
+          SustainSage Group
         </Link>
 
         <nav className="hidden items-center gap-6 text-sm font-semibold md:flex">
@@ -64,8 +64,8 @@ export default function Header() {
               href={item.href}
               className={
                 isActive(item.href)
-                  ? 'text-emerald-700'
-                  : 'text-slate-600 transition-colors hover:text-emerald-700'
+                  ? 'text-primary'
+                  : 'text-ink/70 transition-colors hover:text-primary'
               }
             >
               {item.label}
@@ -73,11 +73,17 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3 md:gap-4">
+        <div className="flex items-center gap-3">
+          <Link
+            href="/contact"
+            className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
+          >
+            Book a conversation
+          </Link>
           <LocaleToggle onToggle={handleToggleLocale} />
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-xl p-2 text-slate-700 transition hover:bg-slate-100 md:hidden"
+            className="inline-flex items-center justify-center rounded-full p-2 text-ink transition hover:bg-slate-100 md:hidden"
             onClick={() => setMenuOpen(true)}
             aria-label="Open navigation"
           >
@@ -87,11 +93,11 @@ export default function Header() {
       </div>
 
       {menuOpen ? (
-        <div className="fixed inset-0 z-50 bg-white/95 backdrop-blur-sm md:hidden">
+        <div className="fixed inset-0 z-50 bg-paper/95 backdrop-blur-sm md:hidden">
           <div className="flex justify-end p-4">
             <button
               type="button"
-              className="rounded-xl p-2 text-slate-700 transition hover:bg-slate-100"
+              className="rounded-full p-2 text-ink transition hover:bg-slate-100"
               onClick={() => setMenuOpen(false)}
               aria-label="Close navigation"
             >
@@ -106,13 +112,20 @@ export default function Header() {
                 onClick={handleNavClick}
                 className={
                   isActive(item.href)
-                    ? 'text-emerald-700'
-                    : 'text-slate-900 transition-colors hover:text-emerald-700'
+                    ? 'text-primary'
+                    : 'text-ink transition-colors hover:text-primary'
                 }
               >
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              onClick={handleNavClick}
+              className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white"
+            >
+              Book a conversation
+            </Link>
             <LocaleToggle variant="mobile" onToggle={handleToggleLocale} />
           </div>
         </div>
