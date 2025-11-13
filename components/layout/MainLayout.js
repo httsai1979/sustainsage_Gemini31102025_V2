@@ -39,7 +39,7 @@ export default function MainLayout({ children, seo = DEFAULT_SEO } = {}) {
       <div className="flex min-h-screen flex-col bg-sage-50">
         <SkipLink />
         <Header />
-        <main id="content" className="flex-1 focus:outline-none">
+        <main id="content" className="typography flex-1 focus:outline-none">
           {children}
         </main>
         <Footer />
