@@ -3,27 +3,36 @@
   "pricing": {
     "packages": [
       {
-        "name": "6-session block",
-        "duration": "6×60–75min over ~12 weeks",
-        "scope": "Clarity, experiments, review; async check-ins.",
-        "price_note": "Exact fees on request; pro bono/discounts available case-by-case."
+        "title": "Restart — 3 sessions",
+        "highlights": [
+          "3 × 50-min over 4–6 weeks",
+          "Confidence reset and story refresh after a gap",
+          "Recent proof points plan (mini-project / references)"
+        ]
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One focused topic; action plan + follow-up note.",
-        "price_note": "Best for a specific decision or interview prep."
+        "title": "Momentum — 6 sessions",
+        "highlights": [
+          "6 × 50-min over 8–12 weeks",
+          "Portfolio/CV reframing with gap-bridge evidence",
+          "Interview rehearsal for return-to-work scenarios"
+        ]
+      },
+      {
+        "title": "Sustain — 12 sessions",
+        "highlights": [
+          "12 × 50-min over 3–6 months",
+          "Cadence for balancing care duties and work",
+          "Tailored experiments + rhythm reviews"
+        ]
       }
     ],
     "policies": [
-      {
-        "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
-      },
-      {
-        "title": "No guarantees",
-        "body": "We co-design experiments; outcomes depend on your context and actions."
-      }
+      "Rescheduling: 24 hours’ notice; late changes count as used.",
+      "Blocks may pause between sessions by mutual agreement.",
+      "Confidential by default; minimal notes; deletion on request.",
+      "Coaching, not therapy; signposting if therapy/legal advice is safer.",
+      "Online within UK hours; invoicing in GBP."
     ]
   },
   "readiness": {
@@ -134,6 +143,25 @@
         ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
         "slug": "translating-new-skills-after-study"
+      }
+    ]
+  },
+  "key_points": {
+    "items": [
+      {
+        "title": "Gentle 12-week ramp back with light structure and honest boundaries."
+      },
+      {
+        "title": "Weekly cadence; small experiments between sessions to build momentum."
+      },
+      {
+        "title": "Interview rehearsal that sharpens stories and fit—no hacks, no scripts."
+      },
+      {
+        "title": "CV/portfolio reframing to show recent proof of progress."
+      },
+      {
+        "title": "Simple pricing; pause between blocks; confidentiality by default."
       }
     ]
   }
