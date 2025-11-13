@@ -12,18 +12,20 @@ function ServerErrorPage() {
   const errorCopy = t('errorPages', { returnObjects: true });
 
   return (
-    <MainLayout>
-      <Hero image="/hero/default.svg" align="left" title={errorCopy.serverErrorTitle} subtitle={errorCopy.serverErrorSubtitle}>
-        <Link
-          href="/"
-          className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900 focus-visible:ring-white"
-        >
-          {errorCopy.cta}
-        </Link>
-      </Hero>
-    </MainLayout>
+    <Hero image="/hero/default.svg" title={errorCopy.serverErrorTitle} subtitle={errorCopy.serverErrorSubtitle}>
+      <Link
+        href="/"
+        className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900 focus-visible:ring-white"
+      >
+        {errorCopy.cta}
+      </Link>
+    </Hero>
   );
 }
+
+ServerErrorPage.getLayout = function getLayout(page) {
+  return <MainLayout>{page}</MainLayout>;
+};
 
 export async function getStaticProps({ locale = 'en' }) {
   return toSerializable({
