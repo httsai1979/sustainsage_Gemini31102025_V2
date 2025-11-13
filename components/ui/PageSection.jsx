@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
-import clsx from "clsx";
 
 export default function PageSection({ id, className, eyebrow, title, lead, children }) {
+  const sectionClassName = ["py-12 sm:py-16", className].filter(Boolean).join(" ");
   return (
-    <section id={id} className={clsx("py-12 sm:py-16", className)}>
+    <section id={id} className={sectionClassName}>
       <div className="mx-auto max-w-5xl px-6 sm:px-8">
         {(eyebrow || title || lead) && (
           <header className="mb-6 sm:mb-8">
