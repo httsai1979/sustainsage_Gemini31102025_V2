@@ -1,3 +1,4 @@
+import SectionContainer from '@/components/sections/SectionContainer';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
 const { Page } = createServiceSubpage({
@@ -21,19 +22,21 @@ const { Page } = createServiceSubpage({
     }
 
     return (
-      <dl className="space-y-6">
-        {items.map((item, index) => {
-          const question = item.q ?? item.question;
-          const answer = item.a ?? item.answer;
+      <SectionContainer variant="surface" tone="muted">
+        <dl className="space-y-6">
+          {items.map((item, index) => {
+            const question = item.q ?? item.question;
+            const answer = item.a ?? item.answer;
 
-          return (
-            <div key={question ?? index} className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-              {question ? <dt className="text-base font-semibold text-slate-900">{question}</dt> : null}
-              {answer ? <dd className="mt-3 text-sm leading-6 text-slate-700">{answer}</dd> : null}
-            </div>
-          );
-        })}
-      </dl>
+            return (
+              <div key={question ?? index} className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
+                {question ? <dt className="text-base font-semibold text-slate-900">{question}</dt> : null}
+                {answer ? <dd className="mt-3 text-sm leading-6 text-slate-700">{answer}</dd> : null}
+              </div>
+            );
+          })}
+        </dl>
+      </SectionContainer>
     );
   },
 });

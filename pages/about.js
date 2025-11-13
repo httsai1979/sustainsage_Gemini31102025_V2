@@ -4,8 +4,10 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
+import SectionContainer from '@/components/sections/SectionContainer';
 import TeamGrid from '@/components/about/TeamGrid';
 import WhatIsCoaching from '@/components/about/WhatIsCoaching';
+import { orderSections } from '@/lib/content/normalize';
 import { loadContent } from '@/lib/loadContent';
 import { sanitizeProps } from '@/lib/toSerializable';
 
@@ -163,6 +165,9 @@ export default function AboutPage({
   } = copy ?? {};
 
   const whatIsCoaching = coaching ?? whatIsCoachingFromCopy;
+  const keyPointItems = orderSections(Array.isArray(keyPoints?.items) ? keyPoints.items : []);
+  const processSteps = orderSections(Array.isArray(process?.steps) ? process.steps : []);
+  const boundaryItems = orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []);
   const fallbackMessage =
     fallbackNotice ??
     copy?.fallbackNotice ??
@@ -171,70 +176,62 @@ export default function AboutPage({
 
   return (
     <>
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 md:px-6">
-          <div className="mx-auto max-w-3xl space-y-6">
-            <Eyebrow>{intro.eyebrow}</Eyebrow>
-            {intro.title ? (
-              <h1 className="scroll-mt-28 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{intro.title}</h1>
-            ) : null}
-            {intro.body ? <p className="text-base leading-7 text-slate-700">{intro.body}</p> : null}
-            {showFallbackNotice ? (
-              <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
-            ) : null}
-          </div>
+      <SectionContainer wide className="bg-white">
+        <div className="mx-auto max-w-3xl space-y-6">
+          <Eyebrow>{intro.eyebrow}</Eyebrow>
+          {intro.title ? (
+            <h1 className="scroll-mt-28 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{intro.title}</h1>
+          ) : null}
+          {intro.body ? <p className="text-base leading-7 text-slate-700">{intro.body}</p> : null}
+          {showFallbackNotice ? (
+            <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+          ) : null}
         </div>
-      </section>
+      </SectionContainer>
 
       <TeamGrid data={team} />
 
       <WhatIsCoaching data={whatIsCoaching} />
 
-      {keyPoints?.items?.length ? (
-        <section className="bg-emerald-50/70 py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 md:px-6">
-            <div className="mx-auto max-w-3xl">
-              {keyPoints.title ? (
-                <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{keyPoints.title}</h2>
-              ) : null}
-              <BulletList items={keyPoints.items} />
-            </div>
+      {keyPointItems.length ? (
+        <SectionContainer wide className="bg-emerald-50/70">
+          <div className="mx-auto max-w-3xl">
+            {keyPoints.title ? (
+              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{keyPoints.title}</h2>
+            ) : null}
+            <BulletList items={keyPointItems} />
           </div>
-        </section>
+        </SectionContainer>
       ) : null}
 
-      {process?.steps?.length ? (
-        <section className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 md:px-6">
-            <div className="mx-auto max-w-3xl">
-              {process.title ? (
-                <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{process.title}</h2>
-              ) : null}
-              {process.description ? (
-                <p className="mt-3 text-sm leading-6 text-slate-700">{process.description}</p>
-              ) : null}
-              <StepList steps={process.steps} />
-            </div>
+      {processSteps.length ? (
+        <SectionContainer wide className="bg-white">
+          <div className="mx-auto max-w-3xl">
+            {process.title ? (
+              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{process.title}</h2>
+            ) : null}
+            {process.description ? (
+              <p className="mt-3 text-sm leading-6 text-slate-700">{process.description}</p>
+            ) : null}
+            <StepList steps={processSteps} />
           </div>
-        </section>
+        </SectionContainer>
       ) : null}
 
       <Callout {...callout} />
 
-      {boundaries?.items?.length ? (
-        <section className="bg-emerald-50/70 py-16 sm:py-20">
-          <div className="mx-auto max-w-7xl px-4 md:px-6">
-            <div className="mx-auto max-w-3xl">
-              {boundaries.title ? (
-                <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{boundaries.title}</h2>
-              ) : null}
-              {boundaries.description ? (
-                <p className="mt-3 text-sm leading-6 text-slate-700">{boundaries.description}</p>
-              ) : null}
-              <FAQAccordion items={boundaries.items} className="mt-6" />
-            </div>
+      {boundaryItems.length ? (
+        <SectionContainer wide className="bg-emerald-50/70">
+          <div className="mx-auto max-w-3xl">
+            {boundaries.title ? (
+              <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{boundaries.title}</h2>
+            ) : null}
+            {boundaries.description ? (
+              <p className="mt-3 text-sm leading-6 text-slate-700">{boundaries.description}</p>
+            ) : null}
+            <FAQAccordion items={boundaryItems} className="mt-6" />
           </div>
-        </section>
+        </SectionContainer>
       ) : null}
     </>
   );

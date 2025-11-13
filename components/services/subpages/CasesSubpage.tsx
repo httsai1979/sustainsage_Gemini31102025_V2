@@ -1,4 +1,5 @@
 import { MicroCTA } from '@/components/common/MicroCTA';
+import SectionContainer from '@/components/sections/SectionContainer';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
 const { Page } = createServiceSubpage({
@@ -42,25 +43,27 @@ const { Page } = createServiceSubpage({
 
     return (
       <div className="space-y-10">
-        <div className="space-y-6">
-          <p className="text-sm leading-6 text-slate-700">
-            These composites blend details from multiple clients to keep identities protected while showing the texture of our work.
-          </p>
+        <SectionContainer variant="surface">
+          <div className="space-y-6">
+            <p className="text-sm leading-6 text-slate-700">
+              These composites blend details from multiple clients to keep identities protected while showing the texture of our work.
+            </p>
 
-          {disclaimers.length > 0 ? (
-            <div className="space-y-3 rounded-3xl border border-emerald-100 bg-emerald-50/70 p-6 text-sm leading-6 text-slate-700">
-              <h3 className="text-base font-semibold text-slate-900">Confidentiality reminders</h3>
-              <ul className="space-y-2">
-                {disclaimers.map((text) => (
-                  <li key={text} className="flex gap-3">
-                    <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
-        </div>
+            {disclaimers.length > 0 ? (
+              <div className="space-y-3 rounded-3xl border border-emerald-100 bg-emerald-50/70 p-6 text-sm leading-6 text-slate-700">
+                <h3 className="text-base font-semibold text-slate-900">Confidentiality reminders</h3>
+                <ul className="space-y-2">
+                  {disclaimers.map((text) => (
+                    <li key={text} className="flex gap-3">
+                      <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
+                      <span>{text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+        </SectionContainer>
 
         <MicroCTA
           title="Continue exploring this service"
