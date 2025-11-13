@@ -3,7 +3,7 @@ import type { ReactElement, ReactNode } from 'react';
 
 import { CaseCard } from '@/components/cases/CaseCard';
 import { StickyCTA } from '@/components/common/StickyCTA';
-import { SubnavTabs } from '@/components/common/SubnavTabs';
+import ServiceSubnav from '@/components/services/ServiceSubnav';
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { SERVICE_SLUGS, type ServiceContent, type ServiceSlug } from '@/lib/serviceContentTypes';
 import { sanitizeProps } from '@/lib/toSerializable';
@@ -159,7 +159,7 @@ function ServiceSubpageLayout({
             </div>
           </div>
         }
-        subnav={<SubnavTabs base={basePath} tabs={tabs} active={active} />}
+        subnav={<ServiceSubnav base={basePath} tabs={tabs} active={active} />}
       >
         <div className="space-y-12">
           <section className="space-y-4">
