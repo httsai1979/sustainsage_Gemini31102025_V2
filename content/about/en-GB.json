@@ -39,7 +39,6 @@
       },
       {
         "title": "Switcher → portfolio reframing, first project in 6 weeks."
-          
       },
       {
         "title": "Founder aligning a cross-border team",
@@ -126,7 +125,6 @@
       {
         "title": "You’re switching fields and feel you’re starting from zero."
       },
-     
       {
         "title": "You’re in the UK with overseas experience and need local proof points."
       },
@@ -140,7 +138,6 @@
       {
         "title": "You lead a small team and want steadier 1:1 conversations."
       },
-      
       {
         "title": "Untangling stakeholder dynamics",
         "description": "Surface power dynamics, accessibility needs, and language you can safely bring back to the room."
@@ -204,5 +201,7 @@
       "label": "Read coaching boundaries",
       "href": "/services/how-coaching-works"
     }
-  }
+  },
+  "title": "About — SustainSage Group",
+  "description": "Bilingual coaches based in the UK. ICF-aligned, confidential by default, practical and culture-aware."
 }
