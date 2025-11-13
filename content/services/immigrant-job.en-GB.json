@@ -3,39 +3,73 @@
   "pricing": {
     "packages": [
       {
-        "name": "6-session block",
-        "duration": "6×60–75min over ~12 weeks",
-        "scope": "CV translation to UK style, outreach scripts, interview rehearsal; async check-ins.",
-        "price_note": "Fees on request; sliding scale available case-by-case."
+        "name": "Starter — 3 sessions",
+        "duration": "3 × 50-min over 4–6 weeks",
+        "scope": "One micro-experiment between sessions; CV/LinkedIn quick pass for UK norms.",
+        "price_note": "Fees on request; invoiced in GBP."
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One focused topic (e.g., recruiter screening or CV bullet rewrite) with an action note.",
-        "price_note": "Good for tactical needs."
+        "name": "Focus — 6 sessions",
+        "duration": "6 × 50-min over 8–12 weeks",
+        "scope": "Portfolio/CV reframing with visible proof points; interview rehearsal for clarity and fit.",
+        "price_note": "Fees on request; invoiced in GBP."
+      },
+      {
+        "name": "Extended — 12 sessions",
+        "duration": "12 × 50-min over 3–6 months",
+        "scope": "Deep practice on culture fit and manager conversations; tailored projects with rhythm reviews.",
+        "price_note": "Fees on request; invoiced in GBP."
       }
     ],
     "policies": [
       {
         "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
+        "body": "24 hours’ notice; late changes count as used."
       },
       {
-        "title": "No guarantees",
-        "body": "We co-design experiments; outcomes depend on market timing and your actions."
+        "title": "Cadence",
+        "body": "Cadence agreed in the first session; pause allowed between blocks."
+      },
+      {
+        "title": "Confidentiality",
+        "body": "Confidential by default; minimal notes; deletion on request."
+      },
+      {
+        "title": "Scope",
+        "body": "Coaching, not therapy — signposting if therapy is safer."
+      },
+      {
+        "title": "Logistics",
+        "body": "UK hours (online); invoicing in GBP."
       }
     ]
   },
   "readiness": {
     "checklist": [
-      "I can commit 60–90min per week for tests and applications.",
-      "I accept coaching is not immigration, legal, or medical advice.",
-      "I’m willing to adapt my CV and outreach to UK hiring norms."
+      "50–60 minutes available; quiet place and stable connection.",
+      "UK hours workable; calendar ready for weekly cadence.",
+      "A situation to test (role/field/city) or one question you care about.",
+      "Comfortable with coaching boundaries; no crisis topics.",
+      "Willing to run one micro-experiment before the next session.",
+      "LinkedIn URL or latest CV ready to share.",
+      "Consent to minimal notes and data handling per policy.",
+      "If English is not first language: okay to pause/clarify.",
+      "Able to use Google Docs/Sheets and Zoom/Meet.",
+      "Payment/invoice method available in GBP."
     ],
     "what_to_prepare": [
-      "Current CV and two target roles (links)",
-      "Two projects to convert into UK-style bullet points",
-      "Basic outreach list (10–20 names or companies)"
+      "Your LinkedIn URL or a recent CV (PDF).",
+      "Two short examples you’re proud of — what you did and why it matters.",
+      "Constraints list (visa, childcare, shifts, location).",
+      "A rough weekly rhythm that could work for you.",
+      "Top 3 questions you want answered in the first two sessions."
+    ],
+    "signals": [
+      "You prefer calm, honest guidance without hype.",
+      "You’re okay with small experiments that may fail.",
+      "You want UK-relevant proof points, not generic advice.",
+      "You can keep a weekly cadence with short reviews.",
+      "You’re comfortable with “coaching, not therapy” scope."
     ]
   },
   "process": {
@@ -60,36 +94,96 @@
   "agreement": {
     "sections": [
       {
-        "heading": "Scope",
-        "body": "Coaching supports clarity and momentum for UK job search through questions and experiments."
+        "title": "Scope & Fit",
+        "paragraphs": [
+          "This is coaching, not therapy, counselling, immigration or legal advice.",
+          "We work on UK-relevant proof points, clear stories, preparation and cadence.",
+          "If therapy or legal advice is safer, we will signpost appropriate services."
+        ]
       },
       {
-        "heading": "Not legal/immigration/medical",
-        "body": "No legal or visa advice; we may signpost to professional services where appropriate."
+        "title": "Confidentiality",
+        "paragraphs": [
+          "Sessions are confidential by default.",
+          "Only minimal notes are kept; you may request deletion at any time.",
+          "We may discuss anonymised patterns in supervision for quality, without identifying details."
+        ]
       },
       {
-        "heading": "Confidentiality & limits",
-        "body": "Sessions are confidential except where law/safety requires disclosure."
+        "title": "Scheduling & Rescheduling",
+        "paragraphs": [
+          "Standard session length is ~50 minutes, online, within UK hours.",
+          "24 hours’ notice is required to reschedule; late changes count as used.",
+          "Blocks may pause between sessions by mutual agreement to protect cadence and rest."
+        ]
       },
       {
-        "heading": "Consent & boundaries",
-        "body": "You may stop or decline any exercise at any time."
+        "title": "Fees & Invoicing",
+        "paragraphs": [
+          "Fees are in GBP. Invoices are issued for each block or as agreed.",
+          "Delivered sessions are non-refundable. Unused sessions in a block can be paused.",
+          "Any bank or platform charges are borne by the client unless otherwise agreed."
+        ]
       },
       {
-        "heading": "Cancellations & data",
-        "body": "24h reschedule; minimal notes stored securely."
+        "title": "Data & Records",
+        "paragraphs": [
+          "We keep the minimum necessary data to run sessions and invoices.",
+          "You can request a copy or deletion of personal data subject to legal limits.",
+          "We use common tools (e.g., Google Docs/Sheets, email, video platforms) with reasonable care."
+        ]
+      },
+      {
+        "title": "Fair Use & Boundaries",
+        "paragraphs": [
+          "Between sessions, light check-ins are fine; heavy review or done-for-you work is out of scope.",
+          "We do not contact employers on your behalf, nor provide visa/legal advice.",
+          "If there is risk of harm, confidentiality may be lifted to keep people safe."
+        ]
+      },
+      {
+        "title": "Disputes",
+        "paragraphs": [
+          "We aim to resolve issues early via email and a short call.",
+          "If unresolved, we will propose a simple written plan and a pause if needed.",
+          "UK law and forums apply unless otherwise required by mandatory local law."
+        ]
       }
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "Do you advise on visas?",
-        "a": "No. We do not provide immigration advice. We focus on job search strategy and practice."
+        "q": "Do you guarantee a job or interview?",
+        "a": "No. Coaching is not placement. We help you create UK-relevant proof points and clearer stories, then you apply and track results."
       },
       {
-        "q": "Will you introduce me to companies?",
-        "a": "We can co-design outreach but do not promise referrals. Your network building is part of the work."
+        "q": "What language are sessions delivered in?",
+        "a": "English. We can slow down, clarify, and write together. If needed, we can switch briefly to Chinese for tricky concepts."
+      },
+      {
+        "q": "Can you advise on visas or immigration law?",
+        "a": "No legal advice. We work with your constraints and signpost official resources where appropriate."
+      },
+      {
+        "q": "Will you write my CV or LinkedIn for me?",
+        "a": "You own the words. We coach the structure, clarity, and UK norms; we can suggest edits together on Google Docs."
+      },
+      {
+        "q": "Will you contact employers or recruiters on my behalf?",
+        "a": "No. We help you build outreach scripts and confidence, but you contact people directly."
+      },
+      {
+        "q": "How much between-session work is expected?",
+        "a": "Usually 30–60 minutes a week (one micro-experiment: info chat, trial task, volunteering taster). Keep it small and visible."
+      },
+      {
+        "q": "Is our conversation confidential?",
+        "a": "Yes. Confidential by default; minimal notes; deletion on request. See boundaries page for details."
+      },
+      {
+        "q": "What is your reschedule/refund policy?",
+        "a": "24-hour notice for rescheduling; late changes count as used. No refunds for delivered sessions; blocks can pause between sessions."
       }
     ]
   },
@@ -132,6 +226,25 @@
         ],
         "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
         "slug": "partner-rebuilding-identity"
+      }
+    ]
+  },
+  "key_points": {
+    "items": [
+      {
+        "title": "Translate overseas experience into UK-relevant examples and terms."
+      },
+      {
+        "title": "Weekly cadence; micro-experiments between sessions (info chats, trial tasks, volunteering taster)."
+      },
+      {
+        "title": "CV/LinkedIn adapted to UK norms; show recent proof points."
+      },
+      {
+        "title": "Interview rehearsal for culture/fit—clear stories without scripts or hacks."
+      },
+      {
+        "title": "Simple pricing; pause between blocks; confidentiality by default."
       }
     ]
   }

@@ -3,21 +3,32 @@
   "pathways": [
     {
       "slug": "career-return",
-      "title": "Return to work with steady support",
-      "excerpt": "Rebuild confidence and routines after a career pause with bilingual coaching paced to your capacity.",
-      "ctaLabel": "Explore career return coaching"
-    },
-    {
-      "slug": "immigrant-job",
-      "title": "Navigate UK job searches as a newcomer",
-      "excerpt": "Map job search steps, language, and cultural nuance so you can show up prepared and grounded in interviews.",
-      "ctaLabel": "See newcomer job coaching"
+      "title": "Returning to work",
+      "teaser": "12-week ramp back: kinder structure, small experiments, honest boundaries.",
+      "cta_label": "See plan"
     },
     {
       "slug": "graduate-start",
-      "title": "Launch your first role with clarity",
-      "excerpt": "Build momentum after graduation with structure for applications, networking, and sustainable routines.",
-      "ctaLabel": "Discover graduate start coaching"
+      "title": "Graduate start",
+      "teaser": "Shape a clear story and turn it into testable, visible actions.",
+      "cta_label": "See plan"
+    },
+    {
+      "slug": "immigrant-job",
+      "title": "New to the UK job market",
+      "teaser": "Translate overseas work into local proof points you can show.",
+      "cta_label": "See plan"
     }
-  ]
+  ],
+  "hero": {
+    "title": "Find your path by real cases, not slogans.",
+    "subtitle": "Three steady pathways. Start from examples; add structure when ready."
+  },
+  "pathways_intro": "Choose a pathway that matches your situation.",
+  "cta": {
+    "primary_label": "Try free tools",
+    "primary_href": "/#tools",
+    "secondary_label": "Book a 20-min conversation",
+    "secondary_href": "/contact"
+  }
 }
