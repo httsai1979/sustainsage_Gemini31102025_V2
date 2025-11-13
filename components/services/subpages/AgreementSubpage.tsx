@@ -1,7 +1,14 @@
 import { MicroCTA } from '@/components/common/MicroCTA';
 import SectionContainer from '@/components/sections/SectionContainer';
-import { orderSections } from '@/lib/content/normalize';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
+
+// 加入 Examples-first 的保底排序（多為說明性章節，順序不變，但防未來新增）
+const EXAMPLE_RE =
+  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|scenario|scenarios|who (it'?s )?for|before\/after)/i;
+const isExample = (s: any) =>
+  s && (EXAMPLE_RE.test(String(s.title ?? '')) || EXAMPLE_RE.test(String(s.lead ?? '')));
+const orderSections = (xs: any[]) =>
+  Array.isArray(xs) ? [...xs.filter(isExample), ...xs.filter((x) => !isExample(x))] : [];
 
 const { Page } = createServiceSubpage({
   subSlug: 'agreement',
@@ -11,18 +18,17 @@ const { Page } = createServiceSubpage({
       <p className="text-base leading-7 text-slate-600">{service.agreement.description}</p>
     ) : null,
   renderContent: (service) => {
-    const sections = orderSections(
-      Array.isArray(service.agreement?.sections)
-        ? service.agreement.sections.filter((section) =>
-            section &&
-            (section.heading ||
-              section.title ||
-              section.label ||
-              section.body ||
-              (Array.isArray(section.paragraphs) && section.paragraphs.length > 0))
-          )
-        : []
-    );
+    const sectionsList = Array.isArray(service.agreement?.sections)
+      ? service.agreement.sections.filter((section) =>
+          section &&
+          (section.heading ||
+            section.title ||
+            section.label ||
+            section.body ||
+            (Array.isArray(section.paragraphs) && section.paragraphs.length > 0))
+        )
+      : [];
+    const sectionsOrdered = orderSections(sectionsList ?? []);
 
     const basePath = `/services/${service.slug}`;
     const microLinks = [
@@ -30,7 +36,7 @@ const { Page } = createServiceSubpage({
       { href: '/about/ethics', label: 'Review ethics commitments' },
     ];
 
-    if (sections.length === 0) {
+    if (sectionsOrdered.length === 0) {
       return (
         <div className="space-y-6">
           <p className="text-sm leading-6 text-slate-700">
@@ -48,7 +54,7 @@ const { Page } = createServiceSubpage({
     return (
       <div className="space-y-10">
         <div className="space-y-6">
-          {sections.map((section, index) => {
+          {sectionsOrdered.map((section, index) => {
             const title = section.heading ?? section.title ?? section.label;
             const bodyText = section.body ?? section.description ?? null;
             const paragraphs = Array.isArray(section.paragraphs)

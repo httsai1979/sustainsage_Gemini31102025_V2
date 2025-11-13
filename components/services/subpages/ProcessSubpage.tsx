@@ -1,5 +1,4 @@
 import { MicroCTA } from '@/components/common/MicroCTA';
-import SectionContainer from '@/components/sections/SectionContainer';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
 const { Page } = createServiceSubpage({
@@ -37,15 +36,13 @@ const { Page } = createServiceSubpage({
     }
 
     return (
-      <div className="space-y-10">
+      <div className="space-y-8">
         {steps.length > 0 ? (
-          <SectionContainer variant="surface" wide>
-            <ol className="space-y-6">
+          <section className="mx-auto max-w-4xl px-6 py-8 border-t first:border-t-0 border-emerald-100">
+            <h2 className="text-xl font-semibold text-emerald-900">Process</h2>
+            <ol className="mt-4 list-decimal space-y-4 pl-6 text-slate-800">
               {steps.map((step, index) => (
-                <li key={step.title ?? index} className="flex gap-4">
-                  <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-700 text-sm font-semibold text-white">
-                    {index + 1}
-                  </span>
+                <li key={step.title ?? index}>
                   <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
                     {step.title ? <h3 className="text-base font-semibold text-slate-900">{step.title}</h3> : null}
                     {step.description ? (
@@ -55,10 +52,12 @@ const { Page } = createServiceSubpage({
                 </li>
               ))}
             </ol>
-          </SectionContainer>
+          </section>
         ) : null}
 
-        {note ? <p className="text-xs font-medium text-slate-500">{note}</p> : null}
+        {note ? (
+          <p className="mx-auto max-w-4xl px-6 text-xs font-medium text-slate-500">{note}</p>
+        ) : null}
 
         <MicroCTA
           title="See how the process translates into practice"

@@ -8,6 +8,25 @@ import { orderSections } from '@/lib/content/normalize';
 import BulletHighlights from '@/components/sections/BulletHighlights';
 import ProseSection from '@/components/sections/ProseSection';
 
+// 與服務頁一致的 Examples-first 守門（已存在則確保正則包含 'examples' 關鍵字）
+const EXAMPLE_RE =
+  /(範例|案例|情境|使用情境|先看例子|適合誰|誰適合|example|examples|use case|scenario|scenarios|who (it'?s )?for|before\/after)/i;
+const isExampleSection = (section) => {
+  if (!section || typeof section !== 'object') return false;
+  const title = String(section.title ?? section.heading ?? '');
+  const lead = String(section.lead ?? section.summary ?? section.description ?? '');
+  return EXAMPLE_RE.test(title) || EXAMPLE_RE.test(lead);
+};
+const ensureExampleFirst = (sections) => {
+  if (typeof orderSections === 'function') {
+    return orderSections(sections);
+  }
+  if (!Array.isArray(sections)) return [];
+  const example = sections.filter(isExampleSection);
+  const rest = sections.filter((s) => !isExampleSection(s));
+  return [...example, ...rest];
+};
+
 BulletHighlights.propTypes = {
   block: PropTypes.shape({
     title: PropTypes.string,
@@ -22,7 +41,8 @@ export default function CoachingBoundariesPage({
   fallbackNotice = null,
 } = {}) {
   const scope = content?.scope ?? {};
-  const sections = orderSections(Array.isArray(content?.sections) ? content.sections : []);
+  const rawSections = Array.isArray(content?.sections) ? content.sections : [];
+  const sections = ensureExampleFirst(rawSections);
   const fallbackMessage =
     fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
