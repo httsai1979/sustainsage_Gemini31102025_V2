@@ -6,15 +6,24 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './content/**/*.{json,md}',
   ],
   theme: {
     extend: {
       colors: {
         primary: '#4A6C56',
+        sage: '#4A6C56',
         'primary-dark': '#3A5543',
         'text-primary': '#1D1D1F',
         'text-secondary': '#6E6E73',
         link: '#0070C9',
+      },
+      borderRadius: {
+        '3xl': '2rem',
+        '4xl': '2.5rem',
+      },
+      spacing: {
+        section: '5rem',
       },
     },
   },

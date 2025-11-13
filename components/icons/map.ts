@@ -89,6 +89,8 @@ export const ICONS = {
   ], 'TargetIcon'),
 } as const satisfies IconDefinitions;
 
+export default ICONS;
+
 export type IconKey = keyof typeof ICONS;
 
 export function getIconComponent(key?: string | null): IconComponent | null {

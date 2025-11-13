@@ -1,173 +1,223 @@
 import PropTypes from 'prop-types';
+import Image from 'next/image';
 import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
+import { H1 } from '@/components/ui/H';
 import PageSection from '@/components/ui/PageSection';
-import TeamGrid from '@/components/about/TeamGrid';
-import WhatIsCoaching from '@/components/about/WhatIsCoaching';
-import { orderSections } from '@/lib/content/normalize';
+import Card from '@/components/ui/Card';
+import Icon from '@/components/ui/Icon';
+import StepList from '@/components/ui/StepList';
+import Callout from '@/components/ui/Callout';
+import { orderSections } from '@/lib/orderSections';
 import { loadContent } from '@/lib/loadContent';
 import { sanitizeProps } from '@/lib/toSerializable';
 
-function Eyebrow({ children = null } = {}) {
-  if (!children) return null;
+const SCENARIO_ICONS = ['compass', 'target', 'calendar', 'clock', 'handshake', 'book'];
+
+function Hero({ intro, showFallbackNotice, fallbackMessage }) {
+  if (!intro) return null;
   return (
-    <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
-      {children}
-    </p>
-  );
-}
-
-Eyebrow.propTypes = {
-  children: PropTypes.node,
-};
-
-function BulletList({ items = [] } = {}) {
-  if (!items?.length) return null;
-  return (
-    <ul className="mt-6 space-y-4">
-      {items.map((item) => (
-        <li
-          key={item.title ?? item}
-          className="flex gap-3 rounded-2xl border border-emerald-100 bg-white p-5"
-        >
-          <span aria-hidden className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
-          <div className="space-y-1">
-            {typeof item === 'string' ? (
-              <span className="text-sm leading-6 text-slate-700">{item}</span>
-            ) : (
-              <>
-                {item.title ? (
-                  <span className="block text-sm font-semibold text-slate-900">{item.title}</span>
-                ) : null}
-                {item.description ? (
-                  <p className="text-sm leading-6 text-slate-700">{item.description}</p>
-                ) : null}
-              </>
-            )}
-          </div>
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-BulletList.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.shape({
-        title: PropTypes.string,
-        description: PropTypes.string,
-      }),
-    ])
-  ),
-};
-
-function StepList({ steps = [] } = {}) {
-  if (!steps?.length) return null;
-
-  return (
-    <ol className="mt-8 space-y-6">
-      {steps.map((step, index) => (
-        <li key={step.title ?? index} className="flex gap-4">
-          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-700 text-sm font-semibold text-white">
-            {index + 1}
-          </span>
-          <div className="rounded-2xl border border-emerald-100 bg-white p-5">
-            {step.title ? <h3 className="text-lg font-semibold text-slate-900">{step.title}</h3> : null}
-            {step.description ? (
-              <p className="mt-2 text-sm leading-6 text-slate-700">{step.description}</p>
-            ) : null}
-          </div>
-        </li>
-      ))}
-    </ol>
-  );
-}
-
-StepList.propTypes = {
-  steps: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-    })
-  ),
-};
-
-function Callout({ title, body, primary, secondary } = {}) {
-  if (!title && !body) return null;
-
-  const hasPrimary = primary?.href && primary?.label;
-  const hasSecondary = secondary?.href && secondary?.label;
-
-  return (
-    <section className="bg-emerald-900 py-12 sm:py-16">
-      <div className="mx-auto max-w-7xl px-4 md:px-6 text-white">
-        {title ? (
-          <h2 className="scroll-mt-24 text-2xl font-semibold tracking-tight sm:text-3xl">{title}</h2>
+    <PageSection className="bg-white">
+      <div className="max-w-3xl space-y-6">
+        {intro.eyebrow ? (
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">{intro.eyebrow}</p>
         ) : null}
-        {body ? (
-          <p className="mt-4 text-base leading-7 text-emerald-100">{body}</p>
+        {intro.title ? <H1>{intro.title}</H1> : null}
+        {intro.body ? (
+          <p className="text-base leading-7 text-slate-600">{intro.body}</p>
         ) : null}
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          {hasPrimary ? (
-            <Link
-              href={primary.href}
-              className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        {showFallbackNotice ? (
+          <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+        ) : null}
+      </div>
+    </PageSection>
+  );
+}
+
+Hero.propTypes = {
+  intro: PropTypes.shape({
+    eyebrow: PropTypes.string,
+    title: PropTypes.string,
+    body: PropTypes.string,
+  }),
+  showFallbackNotice: PropTypes.bool,
+  fallbackMessage: PropTypes.string,
+};
+
+function TeamSection({ team }) {
+  const list = Array.isArray(team?.members) && team.members.length > 0 ? team.members : team?.people ?? [];
+  if (!list.length) return null;
+  return (
+    <PageSection title={team?.title} lead={team?.description} eyebrow={team?.eyebrow}>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {list.map((member) => (
+          <Card
+            key={member.name ?? member.title}
+            title={member.name}
+            subtitle={member.title}
+          >
+            <div className="flex items-start gap-4">
+              {member.image?.src ? (
+                <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full border border-slate-200">
+                  <Image
+                    src={member.image.src}
+                    alt={member.image.alt ?? member.name ?? ''}
+                    fill
+                    sizes="64px"
+                    className="object-cover"
+                  />
+                </div>
+              ) : null}
+              <div className="space-y-2 text-sm text-slate-600">
+                {member.bio ? <p>{member.bio}</p> : null}
+                {member.languages?.length ? (
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    {member.languages.join(' · ')}
+                  </p>
+                ) : null}
+                {member.location ? <p className="text-xs text-slate-500">{member.location}</p> : null}
+              </div>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </PageSection>
+  );
+}
+
+TeamSection.propTypes = {
+  team: PropTypes.shape({
+    eyebrow: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    members: PropTypes.array,
+    people: PropTypes.array,
+  }),
+};
+
+function ScenarioGrid({ data }) {
+  const scenarios = Array.isArray(data?.scenarios) ? data.scenarios.filter(Boolean) : [];
+  if (!scenarios.length) return null;
+  return (
+    <PageSection eyebrow={data?.eyebrow} title={data?.title} lead={data?.description}>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {scenarios.map((scenario, index) => {
+          const normalized = typeof scenario === 'string' ? { title: scenario } : scenario;
+          const iconName = normalized.icon ?? SCENARIO_ICONS[index % SCENARIO_ICONS.length];
+          return (
+            <Card
+              key={normalized.title ?? normalized.description ?? index}
+              title={normalized.title}
+              icon={<Icon name={iconName} />}
+              prose
             >
-              {primary.label}
+              {normalized.description ? <p className="text-sm text-slate-600">{normalized.description}</p> : null}
+            </Card>
+          );
+        })}
+      </div>
+      {(data?.cta?.href && data?.cta?.label) || (data?.secondaryCta?.href && data?.secondaryCta?.label) ? (
+        <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold">
+          {data?.cta?.href && data?.cta?.label ? (
+            <Link
+              href={data.cta.href}
+              className="inline-flex items-center justify-center rounded-full bg-sage px-5 py-3 text-white"
+            >
+              {data.cta.label}
             </Link>
           ) : null}
-          {hasSecondary ? (
+          {data?.secondaryCta?.href && data?.secondaryCta?.label ? (
             <Link
-              href={secondary.href}
-              className="inline-flex items-center justify-center rounded-full border border-emerald-300 px-5 py-3 text-sm font-semibold text-emerald-100 transition hover:border-white hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              href={data.secondaryCta.href}
+              className="inline-flex items-center justify-center rounded-full border border-sage/40 px-5 py-3 text-sage"
             >
-              {secondary.label}
+              {data.secondaryCta.label}
             </Link>
           ) : null}
         </div>
-      </div>
-    </section>
+      ) : null}
+      {data?.disclaimer ? (
+        <p className="mt-6 text-xs leading-5 text-slate-500">{data.disclaimer}</p>
+      ) : null}
+    </PageSection>
   );
 }
 
-Callout.propTypes = {
-  title: PropTypes.string,
-  body: PropTypes.string,
-  primary: PropTypes.shape({
-    href: PropTypes.string,
-    label: PropTypes.string,
+ScenarioGrid.propTypes = {
+  data: PropTypes.shape({
+    eyebrow: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    scenarios: PropTypes.array,
+    cta: PropTypes.shape({
+      href: PropTypes.string,
+      label: PropTypes.string,
+    }),
+    secondaryCta: PropTypes.shape({
+      href: PropTypes.string,
+      label: PropTypes.string,
+    }),
+    disclaimer: PropTypes.string,
   }),
-  secondary: PropTypes.shape({
-    href: PropTypes.string,
-    label: PropTypes.string,
+};
+
+function Principles({ title, items = [] }) {
+  if (!items.length) return null;
+  return (
+    <PageSection title={title}>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {items.map((item, index) => {
+          const normalized = typeof item === 'string' ? { description: item } : item;
+          return (
+            <Card
+              key={normalized.title ?? normalized.description ?? index}
+              title={normalized.title}
+              prose
+            >
+              {normalized.description ? <p className="text-sm text-slate-600">{normalized.description}</p> : null}
+            </Card>
+          );
+        })}
+      </div>
+    </PageSection>
+  );
+}
+
+Principles.propTypes = {
+  title: PropTypes.string,
+  items: PropTypes.array,
+};
+
+function BoundariesSection({ boundaries }) {
+  const items = orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []);
+  if (!items.length) return null;
+  return (
+    <PageSection title={boundaries?.title} lead={boundaries?.description}>
+      <FAQAccordion items={items} className="mt-6" />
+    </PageSection>
+  );
+}
+
+BoundariesSection.propTypes = {
+  boundaries: PropTypes.shape({
+    title: PropTypes.string,
+    description: PropTypes.string,
+    items: PropTypes.array,
   }),
 };
 
 export default function AboutPage({
   copy = {},
   team = undefined,
-  coaching = undefined,
   showFallbackNotice = false,
   fallbackNotice = undefined,
 } = {}) {
-  const {
-    intro = {},
-    key_points: keyPoints = {},
-    process = {},
-    boundaries = {},
-    callout = {},
-    whatIsCoaching: whatIsCoachingFromCopy = {},
-  } = copy ?? {};
-
-  const whatIsCoaching = coaching ?? whatIsCoachingFromCopy;
-  const keyPointItems = orderSections(Array.isArray(keyPoints?.items) ? keyPoints.items : []);
-  const processSteps = orderSections(Array.isArray(process?.steps) ? process.steps : []);
-  const boundaryItems = orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []);
+  const keyPointItems = orderSections(Array.isArray(copy?.key_points?.items) ? copy.key_points.items : []);
+  const processSteps = orderSections(Array.isArray(copy?.process?.steps) ? copy.process.steps : []);
+  const callout = copy?.callout ?? {};
   const fallbackMessage =
     fallbackNotice ??
     copy?.fallbackNotice ??
@@ -176,148 +226,34 @@ export default function AboutPage({
 
   return (
     <>
-      <PageSection className="bg-white">
-        <div className="mx-auto max-w-3xl space-y-6">
-          <Eyebrow>{intro.eyebrow}</Eyebrow>
-          {intro.title ? (
-            <h1 className="scroll-mt-28 text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">{intro.title}</h1>
-          ) : null}
-          {intro.body ? <p className="text-base leading-7 text-slate-700">{intro.body}</p> : null}
-          {showFallbackNotice ? (
-            <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
-          ) : null}
-        </div>
+      <Hero intro={copy?.intro} showFallbackNotice={showFallbackNotice} fallbackMessage={fallbackMessage} />
+      <TeamSection team={team} />
+      <ScenarioGrid data={copy?.whatIsCoaching} />
+      <Principles title={copy?.key_points?.title ?? 'Guiding principles'} items={keyPointItems} />
+      <PageSection title={copy?.process?.title} lead={copy?.process?.description}>
+        <StepList steps={processSteps} />
       </PageSection>
-
-      <TeamGrid data={team} />
-
-      <WhatIsCoaching data={whatIsCoaching} />
-
-      {keyPointItems.length ? (
-        <PageSection className="bg-emerald-50/70" title={keyPoints.title}>
-          <div className="mx-auto max-w-3xl mt-6">
-            <BulletList items={keyPointItems} />
-          </div>
-        </PageSection>
-      ) : null}
-
-      {processSteps.length ? (
-        <PageSection className="bg-white" title={process.title} lead={process.description}>
-          <div className="mx-auto max-w-3xl mt-6">
-            <StepList steps={processSteps} />
-          </div>
-        </PageSection>
-      ) : null}
-
-      <Callout {...callout} />
-
-      {boundaryItems.length ? (
-        <PageSection className="bg-emerald-50/70" title={boundaries.title} lead={boundaries.description}>
-          <div className="mx-auto max-w-3xl mt-6">
-            <FAQAccordion items={boundaryItems} className="mt-6" />
-          </div>
-        </PageSection>
-      ) : null}
+      <BoundariesSection boundaries={copy?.boundaries} />
+      <PageSection>
+        <Callout
+          title={callout?.title}
+          body={callout?.body}
+          actions={[
+            callout?.primary,
+            callout?.secondary,
+          ].filter((link) => link?.href && link?.label)}
+        />
+      </PageSection>
     </>
   );
 }
 
-const teamMemberPropType = PropTypes.shape({
-  name: PropTypes.string,
-  title: PropTypes.string,
-  bio: PropTypes.string,
-  languages: PropTypes.arrayOf(PropTypes.string),
-  location: PropTypes.string,
-  image: PropTypes.shape({
-    src: PropTypes.string,
-    alt: PropTypes.string,
-  }),
-});
-
-const teamDataPropType = PropTypes.shape({
-  eyebrow: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
-  members: PropTypes.arrayOf(teamMemberPropType),
-  people: PropTypes.arrayOf(teamMemberPropType),
-});
-
-const whatIsCoachingPropType = PropTypes.shape({
-  eyebrow: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
-  scenarios: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-    })
-  ),
-  disclaimer: PropTypes.string,
-});
-
 AboutPage.propTypes = {
-  copy: PropTypes.shape({
-    seo: PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-    }),
-    intro: PropTypes.shape({
-      eyebrow: PropTypes.string,
-      title: PropTypes.string,
-      body: PropTypes.string,
-    }),
-    key_points: PropTypes.shape({
-      title: PropTypes.string,
-      items: PropTypes.arrayOf(
-        PropTypes.oneOfType([
-          PropTypes.string,
-          PropTypes.shape({
-            title: PropTypes.string,
-            description: PropTypes.string,
-          }),
-        ])
-      ),
-    }),
-    process: PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-      steps: PropTypes.arrayOf(
-        PropTypes.shape({
-          title: PropTypes.string,
-          description: PropTypes.string,
-        })
-      ),
-    }),
-    boundaries: PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-      items: PropTypes.arrayOf(
-        PropTypes.shape({
-          question: PropTypes.string,
-          answer: PropTypes.string,
-        })
-      ),
-    }),
-    callout: PropTypes.shape({
-      title: PropTypes.string,
-      body: PropTypes.string,
-      primary: PropTypes.shape({
-        href: PropTypes.string,
-        label: PropTypes.string,
-      }),
-      secondary: PropTypes.shape({
-        href: PropTypes.string,
-        label: PropTypes.string,
-      }),
-    }),
-    whatIsCoaching: whatIsCoachingPropType,
-  }),
-  team: teamDataPropType,
-  coaching: whatIsCoachingPropType,
+  copy: PropTypes.object,
+  team: PropTypes.object,
   showFallbackNotice: PropTypes.bool,
   fallbackNotice: PropTypes.string,
 };
-
 
 AboutPage.getLayout = function getLayout(page) {
   const seo = page.props?.copy?.seo ?? {};
@@ -340,7 +276,6 @@ export async function getStaticProps({ locale }) {
 
   const copy = aboutContent.data ?? {};
   const team = teamContent.data ?? undefined;
-  const whatIsCoaching = copy?.whatIsCoaching;
   const showFallbackNotice = Boolean(
     (aboutContent.locale && aboutContent.locale !== currentLocale) ||
       (teamContent.locale && teamContent.locale !== currentLocale)
@@ -353,7 +288,6 @@ export async function getStaticProps({ locale }) {
   const props = {
     copy,
     team,
-    coaching: whatIsCoaching,
     showFallbackNotice,
     fallbackNotice,
     ...(await serverSideTranslations(currentLocale, ['common'])),
