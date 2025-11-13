@@ -3,6 +3,7 @@ import Link from 'next/link';
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { SubnavTabs } from '@/components/common/SubnavTabs';
 import { CaseCard } from '@/components/cases/CaseCard';
+import SectionContainer from '@/components/sections/SectionContainer';
 
 export type ServiceHero = {
   eyebrow?: string;
@@ -73,28 +74,30 @@ function OverviewCTA({ cta }: { cta?: ServiceOverview['cta'] }) {
   }
 
   return (
-    <section className="mt-16 rounded-3xl bg-emerald-950/5 p-8 text-center">
-      {cta.title ? <h2 className="text-2xl font-semibold text-slate-900">{cta.title}</h2> : null}
-      {cta.description ? <p className="mt-3 text-base leading-7 text-slate-700">{cta.description}</p> : null}
-      <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-        {cta.primary?.href && cta.primary?.label ? (
-          <Link
-            href={cta.primary.href}
-            className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
-          >
-            {cta.primary.label}
-          </Link>
-        ) : null}
-        {cta.secondary?.href && cta.secondary?.label ? (
-          <Link
-            href={cta.secondary.href}
-            className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
-          >
-            {cta.secondary.label}
-          </Link>
-        ) : null}
+    <SectionContainer variant="surface" tone="muted">
+      <div className="text-center">
+        {cta.title ? <h2 className="text-2xl font-semibold text-slate-900">{cta.title}</h2> : null}
+        {cta.description ? <p className="mt-3 text-base leading-7 text-slate-700">{cta.description}</p> : null}
+        <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          {cta.primary?.href && cta.primary?.label ? (
+            <Link
+              href={cta.primary.href}
+              className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+            >
+              {cta.primary.label}
+            </Link>
+          ) : null}
+          {cta.secondary?.href && cta.secondary?.label ? (
+            <Link
+              href={cta.secondary.href}
+              className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+            >
+              {cta.secondary.label}
+            </Link>
+          ) : null}
+        </div>
       </div>
-    </section>
+    </SectionContainer>
   );
 }
 
@@ -155,33 +158,11 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
       }
       subnav={<SubnavTabs base={`/services/${service.slug}`} tabs={subnavTabs} active="overview" />}
     >
-      <div className="space-y-16">
-        {service.key_points?.title || service.key_points?.description || keyCards.length > 0 ? (
-          <section>
-            {service.key_points?.title ? (
-              <h2 className="text-2xl font-semibold text-slate-900">{service.key_points.title}</h2>
-            ) : null}
-            {service.key_points?.description ? (
-              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-700">{service.key_points.description}</p>
-            ) : null}
-            {keyCards.length > 0 ? (
-              <div className="mt-8 grid gap-6 md:grid-cols-3">
-                {keyCards.map((item) => (
-                  <KeyCard key={item.title ?? item.description} title={item.title} description={item.description} />
-                ))}
-              </div>
-            ) : null}
-          </section>
-        ) : null}
-
+      <div className="space-y-12">
         {service.cases?.title || service.cases?.description || cases.length > 0 ? (
-          <section>
-            {service.cases?.title ? <h2 className="text-2xl font-semibold text-slate-900">{service.cases.title}</h2> : null}
-            {service.cases?.description ? (
-              <p className="mt-3 max-w-2xl text-base leading-7 text-slate-700">{service.cases.description}</p>
-            ) : null}
+          <SectionContainer variant="surface" title={service.cases?.title} lead={service.cases?.description} wide>
             {cases.length > 0 ? (
-              <div className="mt-8 grid gap-6 md:grid-cols-3">
+              <div className="grid gap-6 md:grid-cols-3">
                 {cases.map((item) => (
                   <CaseCard
                     key={item.title ?? item.context ?? item.shift}
@@ -195,7 +176,19 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
                 ))}
               </div>
             ) : null}
-          </section>
+          </SectionContainer>
+        ) : null}
+
+        {service.key_points?.title || service.key_points?.description || keyCards.length > 0 ? (
+          <SectionContainer variant="surface" title={service.key_points?.title} lead={service.key_points?.description} wide>
+            {keyCards.length > 0 ? (
+              <div className="grid gap-6 md:grid-cols-3">
+                {keyCards.map((item) => (
+                  <KeyCard key={item.title ?? item.description} title={item.title} description={item.description} />
+                ))}
+              </div>
+            ) : null}
+          </SectionContainer>
         ) : null}
 
         <OverviewCTA cta={service.cta} />

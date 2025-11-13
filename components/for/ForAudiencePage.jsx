@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
+import SectionContainer from '@/components/sections/SectionContainer';
 
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
@@ -112,84 +113,55 @@ export default function ForAudiencePage({ pageKey }) {
         </Link>
       </Hero>
 
+      {(caseStudy.title || caseStudy.summary) && (
+        <SectionContainer variant="surface" tone="muted" title={caseStudy.title} lead={caseStudy.summary} />
+      )}
+
       {challenges.length > 0 && (
-        <section className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-5xl px-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{titles.challenges}</h2>
-            <BulletList items={challenges} />
-          </div>
-        </section>
+        <SectionContainer title={titles.challenges}>
+          <BulletList items={challenges} />
+        </SectionContainer>
       )}
 
       {topics.length > 0 && (
-        <section className="bg-emerald-950/5 py-16 sm:py-20">
-          <div className="mx-auto max-w-5xl px-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{titles.topics}</h2>
-            <BulletList items={topics} />
-          </div>
-        </section>
+        <SectionContainer title={titles.topics} tone="muted">
+          <BulletList items={topics} />
+        </SectionContainer>
       )}
 
       {partnershipItems.length > 0 && (
-        <section className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="max-w-3xl">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{page.partnership?.title || titles.partnership}</h2>
-              {page.partnership?.description && (
-                <p className="mt-4 text-base leading-7 text-slate-600">{page.partnership.description}</p>
-              )}
-            </div>
-            <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {partnershipItems.map((item) => (
-                <PackageRecommendation key={item.href} item={item} />
-              ))}
-            </div>
+        <SectionContainer wide title={page.partnership?.title || titles.partnership} lead={page.partnership?.description}>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {partnershipItems.map((item) => (
+              <PackageRecommendation key={item.href} item={item} />
+            ))}
           </div>
-        </section>
+        </SectionContainer>
       )}
 
       {(page.boundaries?.title || boundaries.length > 0) && (
-        <section className="bg-emerald-950/5 py-16 sm:py-20">
-          <div className="mx-auto max-w-5xl px-6">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{page.boundaries?.title || titles.boundaries}</h2>
-            {page.boundaries?.intro && (
-              <p className="mt-4 text-base leading-7 text-slate-600">{page.boundaries.intro}</p>
-            )}
-            <BulletList items={boundaries} />
-          </div>
-        </section>
+        <SectionContainer title={page.boundaries?.title || titles.boundaries} lead={page.boundaries?.intro} tone="muted">
+          <BulletList items={boundaries} />
+        </SectionContainer>
       )}
 
-      {(caseStudy.title || caseStudy.summary) && (
-        <section className="bg-white py-16 sm:py-20">
-          <div className="mx-auto max-w-4xl px-6">
-            <div className="rounded-3xl border border-emerald-100 bg-emerald-50/70 p-6 shadow-sm">
-              {caseStudy.title && <h2 className="text-xl font-semibold text-slate-900">{caseStudy.title}</h2>}
-              {caseStudy.summary && <p className="mt-3 text-sm leading-6 text-slate-700">{caseStudy.summary}</p>}
-            </div>
-          </div>
-        </section>
-      )}
-
-      <section className="bg-emerald-950/5 py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl rounded-3xl border border-emerald-100 bg-white px-8 py-12 text-center shadow-sm">
-          {page.cta?.body && <p className="text-base leading-7 text-slate-700">{page.cta.body}</p>}
-          <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-            <Link
-              href="/contact?from=for-page"
-              className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
-            >
-              {page.cta?.primary || 'Book an intro call'}
-            </Link>
-            <Link
-              href="/services"
-              className={`${BUTTON_BASE} bg-emerald-50 text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
-            >
-              {page.cta?.secondary || 'Compare packages'}
-            </Link>
-          </div>
+      <SectionContainer variant="surface" tone="muted">
+        {page.cta?.body && <p className="text-base leading-7 text-slate-700">{page.cta.body}</p>}
+        <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+          <Link
+            href="/contact?from=for-page"
+            className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+          >
+            {page.cta?.primary || 'Book an intro call'}
+          </Link>
+          <Link
+            href="/services"
+            className={`${BUTTON_BASE} bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
+          >
+            {page.cta?.secondary || 'Compare packages'}
+          </Link>
         </div>
-      </section>
+      </SectionContainer>
     </MainLayout>
   );
 }

@@ -8,6 +8,7 @@ import { CaseDetail, type CaseDetailContent } from '@/components/cases/CaseDetai
 import { StickyCTA } from '@/components/common/StickyCTA';
 import { SubnavTabs } from '@/components/common/SubnavTabs';
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
+import SectionContainer from '@/components/sections/SectionContainer';
 import { loadContent } from '@/lib/loadContent';
 import type { ServiceContent, ServiceSlug } from '@/lib/serviceContentTypes';
 import { SERVICE_SLUGS } from '@/lib/serviceContentTypes';
@@ -141,21 +142,22 @@ export default function ServiceCaseDetailPage({
         subnav={<SubnavTabs base={basePath} tabs={getSubnavTabs(basePath)} active={CASES_SUBNAV_SLUG} />}
       >
         <div className="space-y-10">
-          <section className="space-y-4">
+          <SectionContainer>
             <div className="space-y-3">
               <Link href={`${basePath}/cases`} className="inline-flex items-center text-sm font-medium text-emerald-700">
                 <span aria-hidden className="mr-2">&larr;</span>
                 Back to cases overview
               </Link>
               {showFallbackNotice ? (
-                <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+                <p className="text-xs leading-5 text-slate-500">{fallbackMessage}</p>
               ) : null}
               {caseUsesFallback ? (
-                <p className="text-xs font-medium text-slate-500">
-                  Case available in English while we prepare this translation.
-                </p>
+                <p className="text-xs leading-5 text-slate-500">Case available in English while we prepare this translation.</p>
               ) : null}
             </div>
+          </SectionContainer>
+
+          <SectionContainer variant="surface" wide>
             <CaseDetail
               {...caseDetail}
               header={
@@ -164,7 +166,7 @@ export default function ServiceCaseDetailPage({
                 </p>
               }
             />
-          </section>
+          </SectionContainer>
         </div>
       </PageLayoutV2>
       <StickyCTA />
