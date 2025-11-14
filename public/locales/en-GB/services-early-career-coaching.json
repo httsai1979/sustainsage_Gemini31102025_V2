@@ -6,7 +6,7 @@
   "hero": {
     "title": "Shape your early career with clarity and agency.",
     "subtitle": "You don’t need to have it all figured out. We create space to experiment, reflect, and decide what fits.",
-    "primaryCta": "Book a 20-minute intro call",
+    "primaryCta": "Book a 20-minute chat",
     "primaryHref": "/contact?service=early-career-coaching",
     "secondaryCta": "Back to services",
     "secondaryHref": "/services"
@@ -77,9 +77,9 @@
     },
     "cta": {
       "title": "Ready to build your next step intentionally?",
-      "body": "Book an intro chat so we can hear your story and co-design the first experiment.",
+      "body": "Book a 20-minute chat so we can hear your story and co-design the first experiment.",
       "primary": {
-        "label": "Book an intro call",
+        "label": "Book a 20-minute chat",
         "href": "/contact?service=early-career-coaching"
       },
       "secondary": {

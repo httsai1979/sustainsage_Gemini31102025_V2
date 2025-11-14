@@ -1,0 +1,10 @@
+{
+  "title": "That page isn’t here",
+  "body": "The link may be outdated or the page has moved. Let’s head back to somewhere useful.",
+  "returnHome": "Return home",
+  "supportTitle": "Need a hand?",
+  "supportBody": "If you’re stuck, you can reach out and we’ll reply as soon as we can.",
+  "supportLink": "Contact us",
+  "serverErrorTitle": "Something went wrong",
+  "serverErrorBody": "An unexpected error occurred. Please try again soon or let us know if it continues."
+}
