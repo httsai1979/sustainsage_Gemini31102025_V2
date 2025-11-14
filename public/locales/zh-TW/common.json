@@ -8,7 +8,88 @@
     "navBlog": "部落格",
     "navContact": "聯絡",
     "openMenu": "開啟導覽",
-    "closeMenu": "關閉導覽"
+    "closeMenu": "關閉導覽",
+    "languageSwitcherLabel": "切換語言",
+    "languages": {
+      "en-GB": "英文",
+      "zh-TW": "繁體中文",
+      "zh-CN": "簡體中文"
+    },
+    "mega": {
+      "mobileCta": "查看服務",
+      "columns": [
+        {
+          "title": "教練選項",
+          "links": [
+            {
+              "label": "一對一教練",
+              "href": "/services",
+              "description": "有結構的客製化旅程。"
+            },
+            {
+              "label": "小型團體",
+              "href": "/services#group",
+              "description": "和經歷相近的人一起前進。"
+            },
+            {
+              "label": "自學資源",
+              "href": "/resources",
+              "description": "隨時可以開始的講義與提問。"
+            }
+          ]
+        },
+        {
+          "title": "適合你的支持",
+          "links": [
+            {
+              "label": "中段職涯調整",
+              "href": "/services#mid-career",
+              "description": "重新對齊最重要的優先順序。"
+            },
+            {
+              "label": "新到英國",
+              "href": "/services#new-to-uk",
+              "description": "把你的故事翻譯成跨文化語言。"
+            },
+            {
+              "label": "畢業生與再出發者",
+              "href": "/services#graduates",
+              "description": "踏入新階段時建立信心。"
+            }
+          ]
+        },
+        {
+          "title": "探索主題",
+          "links": [
+            {
+              "label": "職涯轉換",
+              "href": "/#topics",
+              "description": "用不匆忙的方式測試方向。"
+            },
+            {
+              "label": "信心與界線",
+              "href": "/#topics",
+              "description": "在休息與清晰之間取得平衡。"
+            },
+            {
+              "label": "在英國生活",
+              "href": "/#topics",
+              "description": "在新制度裡建立歸屬感。"
+            }
+          ]
+        }
+      ],
+      "highlight": {
+        "title": "無論你在哪裡都能獲得溫柔支持",
+        "description": "雙語線上教練，兼顧倫理、結構與務實的善意。",
+        "ctaLabel": "探索服務",
+        "ctaHref": "/services"
+      }
+    }
+  },
+  "actions": {
+    "bookChat": "預約 20 分鐘聊聊",
+    "exploreServices": "探索服務"
   },
   "footer": {
     "philosophy": "以穩定的對話釐清方向。",
@@ -18,7 +99,15 @@
     "privacyPolicy": "隱私權政策",
     "boundariesTitle": "教練範圍與同意",
     "boundariesNotice": "教練著重於面向未來的支持，不能取代治療或其他專業建議。",
-    "boundariesLink": "閱讀教練範圍與同意"
+    "boundariesLink": "閱讀教練範圍與同意",
+    "ctaTitle": "需要更貼身的支持嗎？",
+    "ctaBody": "預約 20 分鐘聊聊，看看 SustainSage 的教練節奏是否適合你。",
+    "companyName": "SustainSage Group Ltd.",
+    "companyDescription": "總部在 Portsmouth / Southsea 的雙語轉換教練服務。",
+    "locations": "Portsmouth · Southsea · 線上",
+    "quickLinksTitle": "快速連結",
+    "supportTitle": "支援",
+    "coachingApproach": "教練方法"
   },
   "stickyCta": {
     "title": "準備來個小實驗嗎？",
