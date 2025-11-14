@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import RevealSection from '@/components/common/RevealSection';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
@@ -60,31 +61,33 @@ function TeamSection({ team }) {
   if (!members.length) return null;
   return (
     <section className="ss-section">
-      <div className="space-y-4 text-center md:text-left">
+      <RevealSection className="space-y-4 text-center md:text-left">
         {team?.eyebrow ? (
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{team.eyebrow}</p>
         ) : null}
         <h2 className="text-3xl font-semibold text-sustain-text">{team?.title ?? 'Meet the team'}</h2>
         {team?.description ? <p className="text-base text-slate-700">{team.description}</p> : null}
-      </div>
+      </RevealSection>
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {members.map((member) => (
-          <Card key={member.name ?? member.title} title={member.name} subtitle={member.title}>
-            <div className="space-y-3 text-sm leading-relaxed text-slate-700">
-              {member.image?.src ? (
-                <div className="relative h-32 w-full overflow-hidden rounded-2xl">
-                  <Image
-                    src={member.image.src}
-                    alt={member.image.alt ?? member.name ?? ''}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              ) : null}
-              {member.bio ? <p>{member.bio}</p> : null}
-              {member.location ? <p className="text-xs text-slate-500">{member.location}</p> : null}
-            </div>
-          </Card>
+        {members.map((member, index) => (
+          <RevealSection key={member.name ?? member.title} delay={(index % 3) * 0.1}>
+            <Card title={member.name} subtitle={member.title}>
+              <div className="space-y-3 text-sm leading-relaxed text-slate-700">
+                {member.image?.src ? (
+                  <div className="relative h-32 w-full overflow-hidden rounded-2xl">
+                    <Image
+                      src={member.image.src}
+                      alt={member.image.alt ?? member.name ?? ''}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : null}
+                {member.bio ? <p>{member.bio}</p> : null}
+                {member.location ? <p className="text-xs text-slate-500">{member.location}</p> : null}
+              </div>
+            </Card>
+          </RevealSection>
         ))}
       </div>
     </section>
@@ -105,15 +108,17 @@ function ValueGrid({ items = [] }) {
   if (!items.length) return null;
   return (
     <section className="ss-section">
-      <div className="space-y-4 text-center md:text-left">
+      <RevealSection className="space-y-4 text-center md:text-left">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">What guides my work</p>
         <h2 className="text-3xl font-semibold text-sustain-text">Values that shape every partnership</h2>
-      </div>
+      </RevealSection>
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {items.map((value) => (
-          <Card key={value?.key ?? value?.title} title={value?.title ?? 'Guiding principle'} icon={<Icon name="spark" />}>
-            <p className="text-sm text-slate-700">{value?.description ?? value?.body}</p>
-          </Card>
+        {items.map((value, index) => (
+          <RevealSection key={value?.key ?? value?.title ?? index} delay={(index % 4) * 0.1}>
+            <Card title={value?.title ?? 'Guiding principle'} icon={<Icon name="spark" />}>
+              <p className="text-sm text-slate-700">{value?.description ?? value?.body}</p>
+            </Card>
+          </RevealSection>
         ))}
       </div>
     </section>
@@ -132,41 +137,43 @@ function StoryCards({ stories = [] }) {
   if (!successStories.length) return null;
   return (
     <section className="ss-section">
-      <div className="space-y-4 text-center md:text-left">
+      <RevealSection className="space-y-4 text-center md:text-left">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Client success stories</p>
         <h2 className="text-3xl font-semibold text-sustain-text">Composite coaching glimpses</h2>
-      </div>
+      </RevealSection>
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {successStories.map((story) => {
+        {successStories.map((story, index) => {
           const badge = story.category ?? story.segment ?? 'Coaching story';
           const duration = story.duration ?? story.timeline ?? story.length;
           return (
-            <Card key={story.title} title={story.title}>
-              <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-sustain-green/80">
-                  <span>{badge}</span>
-                  {duration ? <span className="text-slate-500 normal-case">{duration}</span> : null}
+            <RevealSection key={story.title} delay={(index % 3) * 0.1}>
+              <Card title={story.title}>
+                <div className="space-y-4 text-sm leading-relaxed text-slate-700">
+                  <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-sustain-green/80">
+                    <span>{badge}</span>
+                    {duration ? <span className="text-slate-500 normal-case">{duration}</span> : null}
+                  </div>
+                  {story.context ? (
+                    <p>
+                      <span className="font-semibold text-sustain-text">Challenge: </span>
+                      {story.context}
+                    </p>
+                  ) : null}
+                  {story.coaching_moves ? (
+                    <p>
+                      <span className="font-semibold text-sustain-text">Journey: </span>
+                      {story.coaching_moves}
+                    </p>
+                  ) : null}
+                  {story.shift ? (
+                    <p>
+                      <span className="font-semibold text-sustain-text">Outcome: </span>
+                      {story.shift}
+                    </p>
+                  ) : null}
                 </div>
-                {story.context ? (
-                  <p>
-                    <span className="font-semibold text-sustain-text">Challenge: </span>
-                    {story.context}
-                  </p>
-                ) : null}
-                {story.coaching_moves ? (
-                  <p>
-                    <span className="font-semibold text-sustain-text">Journey: </span>
-                    {story.coaching_moves}
-                  </p>
-                ) : null}
-                {story.shift ? (
-                  <p>
-                    <span className="font-semibold text-sustain-text">Outcome: </span>
-                    {story.shift}
-                  </p>
-                ) : null}
-              </div>
-            </Card>
+              </Card>
+            </RevealSection>
           );
         })}
       </div>
@@ -186,13 +193,15 @@ function BoundariesSection({ boundaries }) {
   if (!items.length) return null;
   return (
     <section className="ss-section">
-      <div className="space-y-4 text-center md:text-left">
+      <RevealSection className="space-y-4 text-center md:text-left">
         <h2 className="text-3xl font-semibold text-sustain-text">{boundaries?.title}</h2>
         {boundaries?.description ? <p className="text-base text-slate-700">{boundaries.description}</p> : null}
-      </div>
-      <div className="mt-8 rounded-card rounded-2xl border border-slate-100 bg-white p-4 shadow-md">
-        <FAQAccordion items={items} />
-      </div>
+      </RevealSection>
+      <RevealSection delay={0.1} className="mt-8">
+        <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-4 shadow-md">
+          <FAQAccordion items={items} />
+        </div>
+      </RevealSection>
     </section>
   );
 }
@@ -234,42 +243,46 @@ export default function AboutPage({
     <main className="ss-container">
       <section className="ss-section">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-start">
-          <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
-              {copy?.intro?.eyebrow ?? 'My journey'}
-            </p>
-            <h1 className="text-4xl font-semibold text-sustain-text">
-              {copy?.intro?.title ?? 'Coaching for complex transitions'}
-            </h1>
-            <div className="space-y-4 text-base leading-relaxed text-slate-700">
-              {heroParagraphs.length
-                ? heroParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
-                : (
-                    <p>
-                      SustainSage keeps coaching steady, culturally aware, and grounded in practical experiments so you
-                      can move at a humane pace.
-                    </p>
-                  )}
-            </div>
-            {showFallbackNotice ? (
-              <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
-            ) : null}
-          </div>
-          <Card title="A personal note" subtitle="Why this work matters">
-            <p className="text-sm leading-relaxed text-slate-700">{personalNoteText}</p>
-            <div className="mt-4 flex flex-wrap gap-3">
-              {copy?.callout?.primary?.href ? (
-                <Link href={copy.callout.primary.href} className="ss-btn-primary">
-                  {copy.callout.primary.label}
-                </Link>
-              ) : null}
-              {copy?.callout?.secondary?.href ? (
-                <Link href={copy.callout.secondary.href} className="ss-btn-secondary">
-                  {copy.callout.secondary.label}
-                </Link>
+          <RevealSection>
+            <div className="space-y-6">
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
+                {copy?.intro?.eyebrow ?? 'My journey'}
+              </p>
+              <h1 className="text-4xl font-semibold text-sustain-text">
+                {copy?.intro?.title ?? 'Coaching for complex transitions'}
+              </h1>
+              <div className="space-y-4 text-base leading-relaxed text-slate-700">
+                {heroParagraphs.length
+                  ? heroParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+                  : (
+                      <p>
+                        SustainSage keeps coaching steady, culturally aware, and grounded in practical experiments so you
+                        can move at a humane pace.
+                      </p>
+                    )}
+              </div>
+              {showFallbackNotice ? (
+                <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
               ) : null}
             </div>
-          </Card>
+          </RevealSection>
+          <RevealSection delay={0.1}>
+            <Card title="A personal note" subtitle="Why this work matters">
+              <p className="text-sm leading-relaxed text-slate-700">{personalNoteText}</p>
+              <div className="mt-4 flex flex-wrap gap-3">
+                {copy?.callout?.primary?.href ? (
+                  <Link href={copy.callout.primary.href} className="ss-btn-primary">
+                    {copy.callout.primary.label}
+                  </Link>
+                ) : null}
+                {copy?.callout?.secondary?.href ? (
+                  <Link href={copy.callout.secondary.href} className="ss-btn-secondary">
+                    {copy.callout.secondary.label}
+                  </Link>
+                ) : null}
+              </div>
+            </Card>
+          </RevealSection>
         </div>
       </section>
 
@@ -280,43 +293,49 @@ export default function AboutPage({
       <StoryCards stories={copy?.approach?.cases ?? []} />
 
       <section className="ss-section">
-        <div className="space-y-4 text-center md:text-left">
+        <RevealSection className="space-y-4 text-center md:text-left">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Professional background</p>
           <h2 className="text-3xl font-semibold text-sustain-text">Structures that keep our practice steady</h2>
-        </div>
+        </RevealSection>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {backgroundHighlights.map((item) => (
-            <Card key={item.title} title={item.title}>
-              <p className="text-sm text-slate-700">{item.description}</p>
-            </Card>
+          {backgroundHighlights.map((item, index) => (
+            <RevealSection key={item.title} delay={(index % 3) * 0.1}>
+              <Card title={item.title}>
+                <p className="text-sm text-slate-700">{item.description}</p>
+              </Card>
+            </RevealSection>
           ))}
         </div>
       </section>
 
       <section className="ss-section">
-        <Card title={copy?.process?.title ?? 'My coaching approach'}>
-          {approachDescription ? (
-            <p className="text-base leading-relaxed text-slate-700">{approachDescription}</p>
-          ) : null}
-          {processSteps.length ? (
-            <div className="mt-8">
-              <StepList steps={processSteps} />
-            </div>
-          ) : null}
-        </Card>
+        <RevealSection>
+          <Card title={copy?.process?.title ?? 'My coaching approach'}>
+            {approachDescription ? (
+              <p className="text-base leading-relaxed text-slate-700">{approachDescription}</p>
+            ) : null}
+            {processSteps.length ? (
+              <div className="mt-8">
+                <StepList steps={processSteps} />
+              </div>
+            ) : null}
+          </Card>
+        </RevealSection>
       </section>
 
       <BoundariesSection boundaries={copy?.boundaries} />
 
       <section className="ss-section">
-        <Callout
-          title={copy?.callout?.title ?? 'Let’s have a conversation'}
-          body={copy?.callout?.body ?? 'Browse our coaching services or read the full coaching boundaries we uphold.'}
-          actions={[
-            copy?.callout?.primary,
-            copy?.callout?.secondary ?? { label: 'Explore services', href: '/services' },
-          ].filter((link) => link?.href && link?.label)}
-        />
+        <RevealSection>
+          <Callout
+            title={copy?.callout?.title ?? 'Let’s have a conversation'}
+            body={copy?.callout?.body ?? 'Browse our coaching services or read the full coaching boundaries we uphold.'}
+            actions={[
+              copy?.callout?.primary,
+              copy?.callout?.secondary ?? { label: 'Explore services', href: '/services' },
+            ].filter((link) => link?.href && link?.label)}
+          />
+        </RevealSection>
       </section>
     </main>
   );
