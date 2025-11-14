@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>角色分化練習 | Self-Distancing Dialogue</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter & Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- jsPDF and html2canvas for export functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        /* Custom Styles to enhance Tailwind */
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1a457c;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(52, 117, 207, 0.1);
+        }
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            color: #1a457c;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #3475cf;
+            box-shadow: 0 0 0 3px rgba(52, 117, 207, 0.2);
+        }
+        .btn-primary {
+            background-color: #3475cf;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background-color: #2b63ac;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:disabled {
+            background-color: #b5c7e1;
+            cursor: not-allowed;
+        }
+        .voice-card {
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            transform: scale(1);
+        }
+        .voice-card.selected {
+            border-color: #3475cf;
+            background-color: #e0f0ff;
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(52, 117, 207, 0.1);
+        }
+        .chat-bubble {
+            border-radius: 1.25rem;
+            padding: 0.75rem 1.25rem;
+            max-width: 75%;
+            word-break: break-word;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .chat-bubble.left {
+            background-color: #e0f0ff; /* Light blue */
+            border-bottom-left-radius: 0.25rem;
+        }
+        .chat-bubble.right {
+            background-color: #dcfce7; /* Light green */
+            border-bottom-right-radius: 0.25rem;
+            text-align: right;
+        }
+        .chat-bubble.right .voice-name {
+            text-align: right;
+        }
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 9999px;
+            padding: 16px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="container rounded-2xl shadow-xl flex flex-col gap-8">
+
+        <!-- Header -->
+        <header class="text-center">
+            <h1 class="text-3xl font-bold mb-2">角色分化練習 <i class="fas fa-users-viewfinder"></i></h1>
+            <p class="text-gray-500 mb-4">透過外部化內心聲音，與自己進行一場有意識的對話。</p>
+            <div id="step-indicator" class="text-sm font-medium text-gray-400"></div>
+        </header>
+
+        <!-- Step Content Area -->
+        <div id="step-content" class="min-h-[300px] flex flex-col justify-center items-center text-center fade-in">
+            <!-- Content will be dynamically injected here -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between items-center mt-6">
+            <button id="prev-btn" class="btn-primary px-6 py-2 rounded-full font-medium transition-all" disabled>
+                <i class="fas fa-arrow-left mr-2"></i> 上一步
+            </button>
+            <button id="next-btn" class="btn-primary px-6 py-2 rounded-full font-medium transition-all">
+                下一步 <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script>
+        // ==== Global State Management ====
+        let currentStep = 0;
+        const appState = {
+            issue: '',
+            voices: [],
+            dialogue: [],
+            reflections: {
+                patterns: '',
+                mostAlignedVoice: ''
+            }
+        };
+        const toastElement = document.getElementById('toast');
+        const defaultVoices = [
+            { name: "內在批評者", emoji: "👺", color: "#fca5a5" },
+            { name: "擔憂小孩", emoji: "🥺", color: "#fcd34d" },
+            { name: "理性的自己", emoji: "🧐", color: "#60a5fa" },
+            { name: "鼓勵者", emoji: "🦸", color: "#34d399" },
+            { name: "夢想家", emoji: "✨", color: "#a78bfa" },
+        ];
+        
+        // ==== Step Definitions ====
+        const steps = [
+            {
+                title: "第一步：描述困境",
+                description: "請簡要描述一個困擾您的具體情境或議題。",
+                content: () => `
+                    <textarea id="issue-input" class="input-field h-32 resize-none" placeholder="例如：我對工作的未來感到迷茫，不知道該繼續還是轉職。">${appState.issue}</textarea>
+                `,
+                validate: () => appState.issue.trim() !== ''
+            },
+            {
+                title: "第二步：選擇對話角色",
+                description: "請選擇至少兩個內心的聲音，作為您對話的角色。",
+                content: () => `
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 w-full">
+                        ${defaultVoices.map(voice => `
+                            <button class="voice-card p-4 rounded-xl text-center shadow-md flex flex-col items-center gap-2 ${appState.voices.some(v => v.name === voice.name) ? 'selected' : ''}" data-name="${voice.name}" data-emoji="${voice.emoji}" data-color="${voice.color}">
+                                <span class="text-4xl">${voice.emoji}</span>
+                                <span class="font-medium text-lg">${voice.name}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div class="w-full mt-6">
+                        <div class="flex gap-2">
+                            <input type="text" id="custom-voice-input" class="input-field flex-grow" placeholder="新增自訂角色名稱">
+                            <button id="add-custom-voice" class="btn-primary flex-shrink-0">新增</button>
+                        </div>
+                    </div>
+                `,
+                validate: () => appState.voices.length >= 2
+            },
+            {
+                title: "第三步：進行對話",
+                description: "在下方輸入框，輪流為每個角色發言，讓對話自然發生。",
+                content: () => `
+                    <div id="dialogue-container" class="w-full bg-gray-100 p-4 rounded-xl h-[400px] overflow-y-auto mb-4 border border-gray-200">
+                        <!-- Dialogue bubbles will be injected here -->
+                    </div>
+                    <div class="w-full">
+                        <div class="text-sm text-gray-500 mb-2">輪到發言的是：<span id="current-speaker" class="font-bold"></span></div>
+                        <div class="flex gap-2">
+                            <input type="text" id="dialogue-input" class="input-field flex-grow" placeholder="輸入你想說的話...">
+                            <button id="send-btn" class="btn-primary flex-shrink-0 px-4 py-2" disabled>
+                                送出 <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                `,
+                validate: () => appState.dialogue.length > 0
+            },
+            {
+                title: "第四步：反思與洞察",
+                description: "回顧這場對話，請回答以下問題。",
+                content: () => `
+                    <div class="w-full text-left space-y-6">
+                        <div>
+                            <label for="reflection-patterns" class="block text-xl font-bold mb-2">從對話中，您觀察到了什麼模式或新觀點？</label>
+                            <textarea id="reflection-patterns" class="input-field h-32 resize-none" placeholder="例如：我發現『批評者』總是先發言，而『鼓勵者』總是在回應批評。">${appState.reflections.patterns}</textarea>
+                        </div>
+                        <div>
+                            <label for="reflection-aligned" class="block text-xl font-bold mb-2">哪一個聲音最能代表您現在的真實價值觀？</label>
+                            <textarea id="reflection-aligned" class="input-field h-24 resize-none" placeholder="例如：我意識到我更希望成為『鼓勵者』，而不是『批評者』。">${appState.reflections.mostAlignedVoice}</textarea>
+                        </div>
+                    </div>
+                `,
+                validate: () => appState.reflections.patterns.trim() !== '' && appState.reflections.mostAlignedVoice.trim() !== ''
+            },
+            {
+                title: "第五步：總結報告",
+                description: "恭喜您完成練習！以下是您的練習總結。",
+                content: () => `
+                    <div id="summary-report" class="w-full text-left flex flex-col gap-6">
+                        <h3 class="text-2xl font-bold">主題</h3>
+                        <p class="text-gray-600">${appState.issue}</p>
+
+                        <h3 class="text-2xl font-bold mt-4">對話內容</h3>
+                        <div id="summary-dialogue-container" class="w-full bg-gray-100 p-4 rounded-xl border border-gray-200 flex flex-col gap-4">
+                            <!-- Dialogue bubbles will be re-rendered here for summary -->
+                        </div>
+
+                        <h3 class="text-2xl font-bold mt-4">反思與洞察</h3>
+                        <div class="p-4 bg-blue-50 rounded-lg">
+                            <h4 class="font-bold text-lg mb-1">觀察到的模式：</h4>
+                            <p>${appState.reflections.patterns}</p>
+                        </div>
+                        <div class="p-4 bg-green-50 rounded-lg">
+                            <h4 class="font-bold text-lg mb-1">最認同的聲音：</h4>
+                            <p>${appState.reflections.mostAlignedVoice}</p>
+                        </div>
+
+                        <div id="export-buttons" class="mt-6 flex justify-center gap-4">
+                            <button id="export-pdf-btn" class="btn-primary flex items-center gap-2">
+                                <i class="fas fa-file-pdf"></i> 匯出為 PDF
+                            </button>
+                        </div>
+                    </div>
+                `,
+                validate: () => true
+            }
+        ];
+
+        // ==== UI Rendering & Logic ====
+        function renderStep() {
+            const stepContent = document.getElementById('step-content');
+            stepContent.innerHTML = '';
+            const stepData = steps[currentStep];
+
+            const headerHtml = `
+                <div class="w-full text-left mb-6 fade-in">
+                    <h2 class="text-2xl font-bold">${stepData.title}</h2>
+                    <p class="text-gray-500 mt-2">${stepData.description}</p>
+                </div>
+            `;
+            stepContent.insertAdjacentHTML('beforeend', headerHtml);
+            stepContent.insertAdjacentHTML('beforeend', stepData.content());
+
+            setupEventListenersForStep();
+            updateNavigation();
+            saveState(); // Save state on every render
+        }
+
+        function setupEventListenersForStep() {
+            const stepData = steps[currentStep];
+
+            if (currentStep === 0) {
+                const issueInput = document.getElementById('issue-input');
+                issueInput.addEventListener('input', (e) => {
+                    appState.issue = e.target.value;
+                    updateNavigation();
+                });
+            } else if (currentStep === 1) {
+                document.querySelectorAll('.voice-card').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const name = e.currentTarget.dataset.name;
+                        const emoji = e.currentTarget.dataset.emoji;
+                        const color = e.currentTarget.dataset.color;
+                        const index = appState.voices.findIndex(v => v.name === name);
+                        if (index > -1) {
+                            appState.voices.splice(index, 1);
+                            e.currentTarget.classList.remove('selected');
+                        } else {
+                            appState.voices.push({ name, emoji, color });
+                            e.currentTarget.classList.add('selected');
+                        }
+                        updateNavigation();
+                    });
+                });
+                document.getElementById('add-custom-voice').addEventListener('click', () => {
+                    const input = document.getElementById('custom-voice-input');
+                    const customName = input.value.trim();
+                    if (customName && !appState.voices.some(v => v.name === customName)) {
+                        appState.voices.push({ name: customName, emoji: "💬", color: getRandomColor() });
+                        input.value = '';
+                        renderStep();
+                        showToast(`已新增角色：${customName}`, 'success');
+                    } else if (customName) {
+                        showToast('此角色已存在！', 'error');
+                    }
+                    updateNavigation();
+                });
+            } else if (currentStep === 2) {
+                let currentSpeakerIndex = appState.dialogue.length % appState.voices.length;
+                const dialogueContainer = document.getElementById('dialogue-container');
+                const dialogueInput = document.getElementById('dialogue-input');
+                const sendBtn = document.getElementById('send-btn');
+                const currentSpeakerEl = document.getElementById('current-speaker');
+
+                renderDialogueBubbles();
+                updateSpeakerTurn();
+
+                dialogueInput.addEventListener('input', () => {
+                    sendBtn.disabled = dialogueInput.value.trim() === '';
+                });
+
+                sendBtn.addEventListener('click', addDialogue);
+                dialogueInput.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter' && !sendBtn.disabled) {
+                        addDialogue();
+                    }
+                });
+
+                function addDialogue() {
+                    const text = dialogueInput.value.trim();
+                    if (text) {
+                        const speaker = appState.voices[currentSpeakerIndex];
+                        appState.dialogue.push({
+                            speakerName: speaker.name,
+                            speakerEmoji: speaker.emoji,
+                            text: text,
+                            position: currentSpeakerIndex % 2 === 0 ? 'left' : 'right'
+                        });
+                        dialogueInput.value = '';
+                        sendBtn.disabled = true;
+                        currentSpeakerIndex = (currentSpeakerIndex + 1) % appState.voices.length;
+                        renderDialogueBubbles();
+                        updateSpeakerTurn();
+                        saveState();
+                        dialogueContainer.scrollTop = dialogueContainer.scrollHeight; // Auto-scroll to bottom
+                        updateNavigation();
+                    }
+                }
+
+                function renderDialogueBubbles() {
+                    dialogueContainer.innerHTML = appState.dialogue.map(entry => `
+                        <div class="flex gap-2 items-start mb-4 ${entry.position === 'right' ? 'justify-end' : ''}">
+                            ${entry.position === 'left' ? `<span class="text-2xl">${entry.speakerEmoji}</span>` : ''}
+                            <div class="chat-bubble ${entry.position}">
+                                <div class="voice-name text-sm font-bold mb-1">${entry.speakerName}</div>
+                                <p>${entry.text}</p>
+                            </div>
+                            ${entry.position === 'right' ? `<span class="text-2xl">${entry.speakerEmoji}</span>` : ''}
+                        </div>
+                    `).join('');
+                }
+
+                function updateSpeakerTurn() {
+                    currentSpeakerIndex = appState.dialogue.length % appState.voices.length;
+                    const speaker = appState.voices[currentSpeakerIndex];
+                    currentSpeakerEl.innerHTML = `${speaker.emoji} ${speaker.name}`;
+                }
+            } else if (currentStep === 3) {
+                document.getElementById('reflection-patterns').addEventListener('input', (e) => {
+                    appState.reflections.patterns = e.target.value;
+                    updateNavigation();
+                });
+                document.getElementById('reflection-aligned').addEventListener('input', (e) => {
+                    appState.reflections.mostAlignedVoice = e.target.value;
+                    updateNavigation();
+                });
+            } else if (currentStep === 4) {
+                // Summary Page Logic
+                const summaryDialogueContainer = document.getElementById('summary-dialogue-container');
+                summaryDialogueContainer.innerHTML = appState.dialogue.map(entry => `
+                    <div class="flex gap-2 items-start ${entry.position === 'right' ? 'justify-end' : ''}">
+                        ${entry.position === 'left' ? `<span class="text-2xl">${entry.speakerEmoji}</span>` : ''}
+                        <div class="chat-bubble ${entry.position}">
+                            <div class="voice-name text-sm font-bold mb-1">${entry.speakerName}</div>
+                            <p>${entry.text}</p>
+                        </div>
+                        ${entry.position === 'right' ? `<span class="text-2xl">${entry.speakerEmoji}</span>` : ''}
+                    </div>
+                `).join('');
+                document.getElementById('export-pdf-btn').addEventListener('click', exportAsPDF);
+            }
+        }
+
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const stepIndicator = document.getElementById('step-indicator');
+            const stepData = steps[currentStep];
+
+            prevBtn.disabled = currentStep === 0;
+            const nextBtnText = currentStep === steps.length - 1 ? '重新開始' : '下一步';
+            nextBtn.innerHTML = `${nextBtnText} <i class="fas fa-arrow-right ml-2"></i>`;
+            
+            // Validate step before enabling next button
+            const isValid = stepData.validate();
+            nextBtn.disabled = !isValid && currentStep < steps.length - 1;
+
+            stepIndicator.textContent = `步驟 ${currentStep + 1} / ${steps.length}`;
+        }
+        
+        function navigateToNextStep() {
+            const stepData = steps[currentStep];
+            if (currentStep === steps.length - 1) {
+                // Reset and restart
+                currentStep = 0;
+                Object.assign(appState, {
+                    issue: '',
+                    voices: [],
+                    dialogue: [],
+                    reflections: { patterns: '', mostAlignedVoice: '' }
+                });
+                showToast('已重設，讓我們重新開始吧！', 'success');
+            } else if (stepData.validate()) {
+                currentStep++;
+            } else {
+                showToast('請完成此步驟的內容。', 'error');
+            }
+            renderStep();
+        }
+
+        function navigateToPrevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                renderStep();
+            }
+        }
+
+        // ==== Utility Functions ====
+        function showToast(message, type = 'info') {
+            toastElement.textContent = message;
+            toastElement.className = `show rounded-full px-6 py-3 text-white shadow-xl ${type === 'error' ? 'bg-red-500' : 'bg-blue-500'}`;
+            setTimeout(() => {
+                toastElement.className = toastElement.className.replace('show', '');
+            }, 3000);
+        }
+        
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        async function exportAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'pt', 'a4');
+            const element = document.getElementById('summary-report');
+
+            const loadingToast = document.createElement('div');
+            loadingToast.textContent = '正在準備匯出...';
+            loadingToast.className = 'toast show bg-blue-500';
+            document.body.appendChild(loadingToast);
+
+            try {
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#f0f4f8'
+                });
+
+                const imgData = canvas.toDataURL('image/png');
+                const imgWidth = 595.28;
+                const pageHeight = 841.89;
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+
+                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+
+                doc.save('我的角色分化對話總結.pdf');
+                showToast('已匯出為 PDF', 'success');
+            } catch (err) {
+                showToast('匯出失敗，請重試', 'error');
+                console.error('匯出 PDF 失敗:', err);
+            } finally {
+                loadingToast.remove();
+            }
+        }
+
+        // ==== State Persistence (using localStorage) ====
+        function saveState() {
+            localStorage.setItem('selfDistancingState', JSON.stringify(appState));
+            localStorage.setItem('selfDistancingStep', currentStep);
+        }
+
+        function loadState() {
+            const savedState = localStorage.getItem('selfDistancingState');
+            const savedStep = localStorage.getItem('selfDistancingStep');
+            if (savedState) {
+                Object.assign(appState, JSON.parse(savedState));
+            }
+            if (savedStep) {
+                currentStep = parseInt(savedStep, 10);
+            }
+        }
+
+        // ==== Application Initialization ====
+        document.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            renderStep();
+            document.getElementById('prev-btn').addEventListener('click', navigateToPrevStep);
+            document.getElementById('next-btn').addEventListener('click', navigateToNextStep);
+        });
+
+    </script>
+</body>
+</html>
