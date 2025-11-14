@@ -12,6 +12,7 @@ import StepList from '@/components/ui/StepList';
 import Callout from '@/components/ui/Callout';
 import { orderSections } from '@/lib/orderSections';
 import { loadContent } from '@/lib/loadContent';
+import { dedupeBy } from '@/lib/dedupe';
 import { sanitizeProps } from '@/lib/toSerializable';
 
 const SCENARIO_ICONS = ['compass', 'target', 'calendar', 'clock', 'handshake', 'book'];
@@ -65,7 +66,8 @@ Hero.propTypes = {
 
 function TeamSection({ team }) {
   const list = Array.isArray(team?.members) && team.members.length > 0 ? team.members : team?.people ?? [];
-  if (!list.length) return null;
+  const members = dedupeBy(list, (member, index) => member?.name ?? member?.title ?? member?.id ?? index);
+  if (!members.length) return null;
   return (
     <section className="ss-section">
       <div className="space-y-4 text-center md:text-left">
@@ -75,8 +77,8 @@ function TeamSection({ team }) {
         <h2 className="text-3xl font-semibold text-sustain-text">{team?.title}</h2>
         {team?.description ? <p className="text-base text-slate-700">{team.description}</p> : null}
       </div>
-      <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {list.map((member) => (
+      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {members.map((member) => (
           <Card key={member.name ?? member.title} title={member.name} subtitle={member.title}>
             <div className="flex flex-col gap-4 text-sm leading-relaxed text-slate-700">
               {member.image?.src ? (
@@ -116,7 +118,13 @@ TeamSection.propTypes = {
 };
 
 function ScenarioGrid({ data }) {
-  const scenarios = Array.isArray(data?.scenarios) ? data.scenarios.filter(Boolean) : [];
+  const scenarios = dedupeBy(
+    Array.isArray(data?.scenarios) ? data.scenarios.filter(Boolean) : [],
+    (scenario, index) =>
+      typeof scenario === 'string'
+        ? scenario
+        : scenario?.title ?? scenario?.description ?? index
+  );
   if (!scenarios.length) return null;
   return (
     <section className="ss-section">
@@ -127,7 +135,7 @@ function ScenarioGrid({ data }) {
         <h2 className="text-3xl font-semibold text-sustain-text">{data?.title}</h2>
         {data?.description ? <p className="text-base text-slate-700">{data.description}</p> : null}
       </div>
-      <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {scenarios.map((scenario, index) => {
           const normalized = typeof scenario === 'string' ? { title: scenario } : scenario;
           const iconName = normalized.icon ?? SCENARIO_ICONS[index % SCENARIO_ICONS.length];
@@ -176,14 +184,21 @@ ScenarioGrid.propTypes = {
 };
 
 function Principles({ title, items = [] }) {
-  if (!items.length) return null;
+  const uniqueItems = dedupeBy(
+    items,
+    (item, index) =>
+      typeof item === 'string'
+        ? item
+        : item?.title ?? item?.description ?? index
+  );
+  if (!uniqueItems.length) return null;
   return (
     <section className="ss-section">
       <div className="space-y-4 text-center md:text-left">
         <h2 className="text-3xl font-semibold text-sustain-text">{title}</h2>
       </div>
-      <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {items.map((item, index) => {
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        {uniqueItems.map((item, index) => {
           const normalized = typeof item === 'string' ? { description: item } : item;
           return (
             <Card key={normalized.title ?? normalized.description ?? index} title={normalized.title}>
@@ -202,7 +217,10 @@ Principles.propTypes = {
 };
 
 function BoundariesSection({ boundaries }) {
-  const items = orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []);
+  const items = dedupeBy(
+    orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []),
+    (item, index) => item?.question ?? item?.title ?? item?.answer ?? index
+  );
   if (!items.length) return null;
   return (
     <section className="ss-section">
@@ -231,7 +249,10 @@ export default function AboutPage({
   showFallbackNotice = false,
   fallbackNotice = undefined,
 } = {}) {
-  const keyPointItems = orderSections(Array.isArray(copy?.key_points?.items) ? copy.key_points.items : []);
+  const keyPointItems = dedupeBy(
+    orderSections(Array.isArray(copy?.key_points?.items) ? copy.key_points.items : []),
+    (item, index) => item?.title ?? item?.description ?? index
+  );
   const processSteps = orderSections(Array.isArray(copy?.process?.steps) ? copy.process.steps : []);
   const callout = copy?.callout ?? {};
   const fallbackMessage =
@@ -252,7 +273,7 @@ export default function AboutPage({
           {copy?.process?.description ? <p className="text-base text-slate-700">{copy.process.description}</p> : null}
         </div>
         <div className="mt-8">
-          <StepList steps={processSteps} />
+          <StepList steps={processSteps} className="mx-auto max-w-3xl md:mx-0" />
         </div>
       </section>
       <BoundariesSection boundaries={copy?.boundaries} />

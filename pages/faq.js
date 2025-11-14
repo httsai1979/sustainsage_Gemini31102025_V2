@@ -6,6 +6,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import { loadJSON } from '@/lib/content';
 import { orderSections } from '@/lib/content/normalize';
+import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
 export default function FAQPage({
@@ -20,13 +21,16 @@ export default function FAQPage({
   const fallbackMessage =
     fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
-  const faqItems = orderedCategories.flatMap((category) =>
-    Array.isArray(category?.items)
-      ? category.items.map((item) => ({
-          question: item.question,
-          answer: item.answer,
-        }))
-      : []
+  const faqItems = dedupeBy(
+    orderedCategories.flatMap((category) =>
+      Array.isArray(category?.items)
+        ? category.items.map((item) => ({
+            question: item.question,
+            answer: item.answer,
+          }))
+        : []
+    ),
+    (item, index) => item?.question ?? index
   );
 
   return (

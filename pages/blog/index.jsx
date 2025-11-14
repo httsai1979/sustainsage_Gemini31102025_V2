@@ -5,9 +5,11 @@ import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
 import Tag from '@/components/ui/Tag';
 import { getAllPosts } from '@/lib/content';
+import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
 export default function BlogPage({ posts = [] }) {
+  const blogPosts = dedupeBy(posts, (post) => post.slug ?? post.title);
   return (
     <main className="ss-container">
       <section className="ss-section">
@@ -18,8 +20,8 @@ export default function BlogPage({ posts = [] }) {
         </div>
       </section>
       <section className="ss-section">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {posts.map((post) => (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {blogPosts.map((post) => (
             <Card
               key={post.slug}
               title={post.title}

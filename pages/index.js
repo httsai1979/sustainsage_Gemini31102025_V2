@@ -12,6 +12,7 @@ import StepList from '@/components/ui/StepList';
 import { getIconComponent } from '@/components/icons/map';
 import { loadJSON } from '@/lib/content';
 import { orderSections } from '@/lib/content/normalize';
+import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
 const AUDIENCE_CARDS = [
@@ -53,15 +54,28 @@ export default function Home({
     ctaHref: faqTeaser?.cta?.href ?? '/faq',
     ctaLabel: faqTeaser?.cta?.label ?? 'Read the FAQs',
   };
-  const serviceCards = orderSections(Array.isArray(services?.cards) ? services.cards : []);
-  const processSteps = orderSections(Array.isArray(process?.steps) ? process.steps : []);
+  const serviceCards = dedupeBy(
+    orderSections(Array.isArray(services?.cards) ? services.cards : []),
+    (card) => card?.slug ?? card?.href ?? card?.title ?? card?.description ?? ''
+  );
+  const processSteps = dedupeBy(
+    orderSections(Array.isArray(process?.steps) ? process.steps : []),
+    (step) =>
+      typeof step === 'string'
+        ? step
+        : step?.title ?? step?.description ?? `${step?.tag ?? ''}`
+  );
   const boundaries = content?.boundaries ?? {};
-  const boundaryItems = orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []);
+  const boundaryItems = dedupeBy(
+    orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []),
+    (item) => item?.question ?? item?.title ?? item?.answer ?? ''
+  );
   const fallbackMessage =
     fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
-  const audiences = Array.isArray(content?.audiences)
-    ? content.audiences
-    : AUDIENCE_CARDS;
+  const audiences = dedupeBy(
+    Array.isArray(content?.audiences) ? content.audiences : AUDIENCE_CARDS,
+    (item) => item?.title ?? item?.description ?? ''
+  );
   const processCards = processSteps.length
     ? processSteps.map((step, index) => ({
         title: step.title ?? `Step ${index + 1}`,
@@ -94,7 +108,10 @@ export default function Home({
       ];
 
   const recognise = content?.recognise ?? {};
-  const recogniseItems = orderSections(Array.isArray(recognise?.items) ? recognise.items : []);
+  const recogniseItems = dedupeBy(
+    orderSections(Array.isArray(recognise?.items) ? recognise.items : []),
+    (item) => (typeof item === 'string' ? item : item?.title ?? item?.description ?? '')
+  );
   const whatCoachingIs = process?.description ??
     'Sessions stay calm, structured, and paced around what is happening in your real life.';
   const whatCoachingIsNot = boundaries?.description ??
@@ -154,7 +171,7 @@ export default function Home({
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Who this is for</p>
           <h2 className="text-3xl font-semibold text-sustain-text">People who find this space helpful</h2>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {audiences.map((card) => {
             const IconComponent = card.icon;
             return (
@@ -170,7 +187,7 @@ export default function Home({
       </section>
 
       <section className="ss-section">
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <Card title="What coaching is">
             <p>{whatCoachingIs}</p>
             {process?.note ? <p className="mt-3 text-sm text-slate-600">{process.note}</p> : null}
@@ -195,7 +212,7 @@ export default function Home({
           ) : null}
         </div>
         <div className="mt-8">
-          <StepList steps={processCards} />
+          <StepList steps={processCards} className="mx-auto max-w-3xl md:mx-0" />
         </div>
       </section>
 
@@ -209,7 +226,7 @@ export default function Home({
           </h2>
           {recognise?.intro ? <p className="text-base text-slate-700">{recognise.intro}</p> : null}
         </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {recogniseItems.map((item, index) => (
             <Card key={item?.title ?? item ?? index} title={item?.title}>
               <p>{item?.description ?? item}</p>
@@ -229,7 +246,7 @@ export default function Home({
             </h2>
             {services?.description ? <p className="text-base text-slate-700">{services.description}</p> : null}
           </div>
-          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {serviceCards.slice(0, 3).map((card) => {
               const IconComponent = getIconComponent(card.icon);
               return (

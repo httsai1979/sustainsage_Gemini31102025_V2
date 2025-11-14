@@ -7,6 +7,7 @@ import ServiceSubnav from '@/components/services/ServiceSubnav';
 import PageLayoutV2 from '@/components/layout/PageLayoutV2';
 import { SERVICE_SLUGS, type ServiceContent, type ServiceSlug } from '@/lib/serviceContentTypes';
 import { sanitizeProps } from '@/lib/toSerializable';
+import { dedupeBy } from '@/lib/dedupe';
 
 export type ServiceSubpageProps = {
   slug: ServiceSlug;
@@ -136,9 +137,12 @@ function ServiceSubpageLayout({
   const hero = service.hero ?? {};
   const basePath = `/services/${service.slug}`;
   const tabs = getSubnavTabs(basePath);
-  const cases = Array.isArray(service.cases?.items)
-    ? service.cases?.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
-    : [];
+  const cases = dedupeBy(
+    Array.isArray(service.cases?.items)
+      ? service.cases?.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
+      : [],
+    (item, index) => item?.title ?? item?.slug ?? item?.context ?? index
+  );
   const caseCards = cases.slice(0, 3);
   const fallbackMessage =
     service.fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
@@ -149,22 +153,22 @@ function ServiceSubpageLayout({
         header={
           <div className="space-y-4">
             {hero.eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.eyebrow}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sustain-green">{hero.eyebrow}</p>
             ) : null}
             <div className="space-y-2">
-              <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">
+              <h1 className="text-3xl font-semibold leading-tight text-sustain-text md:text-4xl">
                 {hero.title ?? service.title ?? 'Service detail'}
               </h1>
-              {hero.subtitle ? <p className="text-base leading-7 text-slate-600">{hero.subtitle}</p> : null}
+              {hero.subtitle ? <p className="text-base leading-7 text-slate-700">{hero.subtitle}</p> : null}
             </div>
           </div>
         }
         subnav={<ServiceSubnav base={basePath} tabs={tabs} active={active} />}
       >
-        <div className="space-y-12">
+        <div className="space-y-10 md:space-y-12">
           <section className="space-y-4">
             <div className="space-y-2">
-              <h2 className="text-2xl font-semibold text-slate-900">{heading}</h2>
+              <h2 className="text-2xl font-semibold text-sustain-text">{heading}</h2>
               {intro}
             </div>
             {showFallbackNotice ? (
@@ -177,14 +181,14 @@ function ServiceSubpageLayout({
           {caseCards.length > 0 ? (
             <section className="space-y-4">
               <div>
-                <h2 className="text-xl font-semibold text-slate-900">
+                <h2 className="text-xl font-semibold text-sustain-text">
                   {service.cases?.title ?? 'Composite coaching glimpses'}
                 </h2>
                 {service.cases?.description ? (
                   <p className="mt-2 text-sm leading-6 text-slate-700">{service.cases.description}</p>
                 ) : null}
               </div>
-              <div className="grid gap-6 md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {caseCards.map((item, index) => (
                   <CaseCard
                     key={item.title ?? item.context ?? item.shift ?? index}

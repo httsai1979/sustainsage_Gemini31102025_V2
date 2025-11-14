@@ -6,9 +6,11 @@ import Card from '@/components/ui/Card';
 import Icon from '@/components/ui/Icon';
 import Tag from '@/components/ui/Tag';
 import { loadJSON } from '@/lib/content';
+import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
 export default function ResourcesPage({ items = [] }) {
+  const resourceItems = dedupeBy(items, (item) => item.id ?? item.title);
   return (
     <main className="ss-container">
       <section className="ss-section">
@@ -21,8 +23,8 @@ export default function ResourcesPage({ items = [] }) {
         </div>
       </section>
       <section className="ss-section">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {items.map((item) => {
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {resourceItems.map((item) => {
             const actionHref = !item.comingSoon ? item.href || item.download : null;
             const actionLabel = !item.comingSoon ? (item.href ? 'Open resource' : 'Download') : null;
             return (

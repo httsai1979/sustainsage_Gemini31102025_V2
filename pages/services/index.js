@@ -8,6 +8,7 @@ import Card from '@/components/ui/Card';
 import StepList from '@/components/ui/StepList';
 import { H1 } from '@/components/ui/H';
 import { loadContent } from '@/lib/loadContent';
+import { dedupeBy } from '@/lib/dedupe';
 import { sanitizeProps } from '@/lib/toSerializable';
 
 function PathwayCard({ card, viewDetailsLabel }) {
@@ -64,6 +65,8 @@ export default function ServicesPage({
     'Meet online for 60–75 minutes per session and review every few weeks.',
   ];
 
+  const uniqueCards = dedupeBy(cards, (card) => card.slug ?? card.title);
+
   return (
     <main className="ss-container">
       <Head>
@@ -119,8 +122,8 @@ export default function ServicesPage({
             <p className="text-base font-semibold text-sustain-text">{pathways.highlight}</p>
           ) : null}
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {cards.map((card) => (
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {uniqueCards.map((card) => (
             <PathwayCard key={card.slug} card={card} viewDetailsLabel={pathways?.viewDetails ?? 'View details'} />
           ))}
         </div>
@@ -151,7 +154,7 @@ export default function ServicesPage({
           <h2 className="text-3xl font-semibold text-sustain-text">A gentle way into coaching</h2>
         </div>
         <div className="mt-8">
-          <StepList steps={gettingStartedSteps} />
+          <StepList steps={gettingStartedSteps} className="mx-auto max-w-3xl md:mx-0" />
         </div>
         <div className="mt-6">
           <Link href="/contact" className="ss-btn-primary">

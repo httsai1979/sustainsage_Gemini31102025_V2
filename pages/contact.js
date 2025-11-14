@@ -9,6 +9,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
 import StepList from '@/components/ui/StepList';
 import { orderSections } from '@/lib/content/normalize';
+import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
 const INPUT_CLASSNAME =
@@ -45,10 +46,22 @@ export default function ContactPage() {
   const sidebar = t('sidebar', { returnObjects: true });
   const miniFaq = t('miniFaq', { returnObjects: true });
   const faqLink = t('faqLink', { returnObjects: true });
-  const journeyItems = orderSections(Array.isArray(journey?.items) ? journey.items : []);
-  const whatYouGetItems = orderSections(Array.isArray(whatYouGet?.items) ? whatYouGet.items : []);
-  const whatWeDontDoItems = orderSections(Array.isArray(whatWeDontDo?.items) ? whatWeDontDo.items : []);
-  const miniFaqItems = orderSections(Array.isArray(miniFaq?.items) ? miniFaq.items : []);
+  const journeyItems = dedupeBy(
+    orderSections(Array.isArray(journey?.items) ? journey.items : []),
+    (item, index) => item?.summary ?? item?.q ?? index
+  );
+  const whatYouGetItems = dedupeBy(
+    orderSections(Array.isArray(whatYouGet?.items) ? whatYouGet.items : []),
+    (item, index) => item ?? item?.summary ?? index
+  );
+  const whatWeDontDoItems = dedupeBy(
+    orderSections(Array.isArray(whatWeDontDo?.items) ? whatWeDontDo.items : []),
+    (item, index) => item ?? item?.summary ?? index
+  );
+  const miniFaqItems = dedupeBy(
+    orderSections(Array.isArray(miniFaq?.items) ? miniFaq.items : []),
+    (item, index) => item?.q ?? item?.question ?? index
+  );
 
   const journeySteps = journeyItems.map((item) => ({ title: item.summary ?? item.q, description: item.detail ?? item.a }));
 
@@ -134,12 +147,12 @@ export default function ContactPage() {
           {journey?.intro ? <p className="text-base text-slate-700">{journey.intro}</p> : null}
         </div>
         <div className="mt-8">
-          <StepList steps={journeySteps} />
+          <StepList steps={journeySteps} className="mx-auto max-w-3xl md:mx-0" />
         </div>
       </section>
 
       <section className="ss-section">
-        <div className="grid gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
           <div>
             <Card title={t('form.title')} subtitle={t('form.subtitle')}>
               <form onSubmit={handleSubmit} className="space-y-5">
