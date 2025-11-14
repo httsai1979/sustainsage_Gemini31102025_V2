@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>選擇困境釐清器 | Decision Matrix</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter & Noto Sans TC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <!-- jsPDF and html2canvas for export functionality -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        /* Custom Styles to enhance Tailwind */
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #1a457c;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(52, 117, 207, 0.1);
+        }
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            color: #1a457c;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #3475cf;
+            box-shadow: 0 0 0 3px rgba(52, 117, 207, 0.2);
+        }
+        .btn-primary {
+            background-color: #3475cf;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background-color: #2b63ac;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:disabled {
+            background-color: #b5c7e1;
+            cursor: not-allowed;
+        }
+        .option-card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        .option-card.active {
+            border-color: #3475cf;
+            background-color: #e0f0ff;
+        }
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .mood-emoji {
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        .toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 9999px;
+            padding: 16px;
+            position: fixed;
+            z-index: 100;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+        .toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .chart-container {
+            width: 100%;
+            height: 400px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="container rounded-2xl shadow-xl flex flex-col gap-8">
+
+        <!-- Header -->
+        <header class="text-center">
+            <h1 class="text-3xl font-bold mb-2">選擇困境釐清器 <i class="fas fa-shuffle"></i></h1>
+            <p class="text-gray-500 mb-4">結合理性分析與情緒洞察，協助您做出更全面的決策。</p>
+            <div id="step-indicator" class="text-sm font-medium text-gray-400"></div>
+        </header>
+
+        <!-- Step Content Area -->
+        <div id="step-content" class="min-h-[400px] flex flex-col justify-center items-center text-center fade-in">
+            <!-- Content will be dynamically injected here -->
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between items-center mt-6">
+            <button id="prev-btn" class="btn-primary px-6 py-2 rounded-full font-medium transition-all" disabled>
+                <i class="fas fa-arrow-left mr-2"></i> 上一步
+            </button>
+            <button id="next-btn" class="btn-primary px-6 py-2 rounded-full font-medium transition-all">
+                下一步 <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script>
+        // ==== Global State Management ====
+        let currentStep = 0;
+        let myChart;
+        const appState = {
+            decisionQuestion: '',
+            options: ['', ''],
+            scores: {
+                rational: [
+                    { feasibility: 3, financial: 3, potential: 3 },
+                    { feasibility: 3, financial: 3, potential: 3 },
+                    { feasibility: 3, financial: 3, potential: 3 }
+                ],
+                emotional: [
+                    { confidence: 3, anxiety: 3, curiosity: 3, joy: 3 },
+                    { confidence: 3, anxiety: 3, curiosity: 3, joy: 3 },
+                    { confidence: 3, anxiety: 3, curiosity: 3, joy: 3 }
+                ]
+            },
+            reflections: {
+                alignedOption: '',
+                fearlessChoice: '',
+                nextSteps: ''
+            }
+        };
+        const toastElement = document.getElementById('toast');
+        const rationalCriteria = [
+            { id: 'feasibility', name: '可行性', tip: '這個選項的實現難度有多高？' },
+            { id: 'financial', name: '財務影響', tip: '這個選項會對我的財務狀況造成什麼影響？' },
+            { id: 'potential', name: '長期潛力', tip: '這個選項能帶給我多少長遠的成長或價值？' }
+        ];
+        const emotionalCriteria = [
+            { id: 'confidence', name: '信心', emoji: '💪', color: '#34d399' },
+            { id: 'anxiety', name: '焦慮', emoji: '😟', color: '#f87171' },
+            { id: 'curiosity', name: '好奇', emoji: '🤔', color: '#60a5fa' },
+            { id: 'joy', name: '喜悅', emoji: '🥳', color: '#fcd34d' }
+        ];
+        const optionsLetters = ['A', 'B', 'C'];
+        
+        // ==== Step Definitions ====
+        const steps = [
+            {
+                title: "第一步：定義你的困境",
+                description: "請用一句話清楚地描述你需要做出的決策。",
+                content: () => `
+                    <textarea id="question-input" class="input-field h-24 resize-none" placeholder="例如：我應該離職去創業，還是繼續留在現在的公司？">${appState.decisionQuestion}</textarea>
+                `,
+                validate: () => appState.decisionQuestion.trim() !== ''
+            },
+            {
+                title: "第二步：列出你的選項",
+                description: "請寫下最多三個可能的選擇。一個好的選項是具體的。",
+                content: () => `
+                    <div class="space-y-4 w-full">
+                        ${appState.options.map((option, index) => `
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg font-bold w-6 text-center">${optionsLetters[index]}</span>
+                                <input type="text" id="option-${index}" class="input-field flex-grow" placeholder="選項 ${optionsLetters[index]}" value="${option}">
+                                ${index > 1 ? `<button class="remove-option-btn text-gray-500 hover:text-red-500" data-index="${index}"><i class="fas fa-trash"></i></button>` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                    ${appState.options.length < 3 ? `
+                        <div class="mt-4 w-full text-center">
+                            <button id="add-option-btn" class="btn-primary px-4 py-2 text-sm rounded-full">
+                                <i class="fas fa-plus mr-1"></i> 新增選項
+                            </button>
+                        </div>
+                    ` : ''}
+                `,
+                validate: () => appState.options.filter(o => o.trim() !== '').length >= 2
+            },
+            {
+                title: "第三步：理性評估",
+                description: "請為每個選項，根據以下標準進行評分（1分：非常不佳，5分：非常優秀）。",
+                content: () => `
+                    <div class="space-y-8 w-full">
+                        ${appState.options.filter(o => o.trim() !== '').map((option, optIndex) => `
+                            <div class="p-6 rounded-lg shadow-md option-card">
+                                <h3 class="text-xl font-bold mb-4">選項 ${optionsLetters[optIndex]}: ${option}</h3>
+                                ${rationalCriteria.map(criteria => `
+                                    <div class="mb-4">
+                                        <div class="slider-label mb-1">
+                                            <span class="font-medium">${criteria.name}</span>
+                                            <span id="rational-${optIndex}-${criteria.id}-value">${appState.scores.rational[optIndex][criteria.id]}</span>
+                                        </div>
+                                        <input type="range" min="1" max="5" value="${appState.scores.rational[optIndex][criteria.id]}" class="w-full h-2 bg-blue-100 rounded-lg appearance-none cursor-pointer slider" id="rational-${optIndex}-${criteria.id}">
+                                    </div>
+                                `).join('')}
+                            </div>
+                        `).join('')}
+                    </div>
+                `,
+                validate: () => true
+            },
+            {
+                title: "第四步：情緒洞察",
+                description: "想像你選擇了該選項，你的內心會有什麼感覺？請為每個選項評分（1分：感受很低，5分：感受很強烈）。",
+                content: () => `
+                    <div class="space-y-8 w-full">
+                        ${appState.options.filter(o => o.trim() !== '').map((option, optIndex) => `
+                            <div class="p-6 rounded-lg shadow-md option-card">
+                                <h3 class="text-xl font-bold mb-4">選項 ${optionsLetters[optIndex]}: ${option}</h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    ${emotionalCriteria.map(criteria => `
+                                        <div>
+                                            <div class="slider-label mb-1">
+                                                <span class="font-medium flex items-center gap-2">${criteria.name} <span class="mood-emoji">${criteria.emoji}</span></span>
+                                                <span id="emotional-${optIndex}-${criteria.id}-value">${appState.scores.emotional[optIndex][criteria.id]}</span>
+                                            </div>
+                                            <input type="range" min="1" max="5" value="${appState.scores.emotional[optIndex][criteria.id]}" class="w-full h-2 rounded-lg appearance-none cursor-pointer slider" id="emotional-${optIndex}-${criteria.id}" style="background-color: ${criteria.color}40;">
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `,
+                validate: () => true
+            },
+            {
+                title: "第五步：總結與下一步行動",
+                description: "恭喜您完成了分析！這張總結圖表將幫助您做出決策。",
+                content: () => `
+                    <div id="summary-report" class="w-full text-left flex flex-col gap-6">
+                        <h3 class="text-2xl font-bold">決策問題</h3>
+                        <p class="text-gray-600">${appState.decisionQuestion}</p>
+
+                        <h3 class="text-2xl font-bold mt-4">理性評估圖 (雷達圖)</h3>
+                        <div class="w-full h-96">
+                            <canvas id="rational-chart"></canvas>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mt-4">情緒地圖 (感受分佈)</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                            ${appState.options.filter(o => o.trim() !== '').map((option, optIndex) => `
+                                <div class="p-4 rounded-lg shadow-md border-2 border-gray-200">
+                                    <h4 class="font-bold text-lg mb-2">選項 ${optionsLetters[optIndex]}: ${option}</h4>
+                                    <ul class="space-y-2">
+                                        ${emotionalCriteria.map(criteria => `
+                                            <li class="flex items-center gap-2">
+                                                <span class="mood-emoji">${criteria.emoji}</span>
+                                                <span class="text-sm font-medium">${criteria.name}：${appState.scores.emotional[optIndex][criteria.id]} / 5</span>
+                                            </li>
+                                        `).join('')}
+                                    </ul>
+                                </div>
+                            `).join('')}
+                        </div>
+
+                        <h3 class="text-2xl font-bold mt-6">反思與洞察</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label for="reflection-aligned" class="block text-lg font-bold mb-2">哪個選項讓你「感覺」最對？</label>
+                                <textarea id="reflection-aligned" class="input-field h-20 resize-none" placeholder="即使理性分析不盡完美，哪個選項最貼近你的內心？">${appState.reflections.alignedOption}</textarea>
+                            </div>
+                            <div>
+                                <label for="reflection-fearless" class="block text-lg font-bold mb-2">如果恐懼不是問題，你會選擇什麼？</label>
+                                <textarea id="reflection-fearless" class="input-field h-20 resize-none" placeholder="這個問題能幫助你區分『謹慎』和『恐懼』。">${appState.reflections.fearlessChoice}</textarea>
+                            </div>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mt-6">下一步行動</h3>
+                        <p class="text-gray-500">規劃 1-3 個小步驟，驗證你的想法或降低決策風險。</p>
+                        <textarea id="next-steps-input" class="input-field h-32 resize-none" placeholder="例如：1. 與業界朋友聊聊；2. 預約一場諮詢；3. 花一小時研究新技能。">${appState.reflections.nextSteps}</textarea>
+                        
+                        <div id="export-buttons" class="mt-6 flex justify-center gap-4">
+                            <button id="export-pdf-btn" class="btn-primary flex items-center gap-2">
+                                <i class="fas fa-file-pdf"></i> 匯出為 PDF
+                            </button>
+                        </div>
+                    </div>
+                `,
+                validate: () => true
+            }
+        ];
+
+        // ==== UI Rendering & Logic ====
+        function renderStep() {
+            const stepContent = document.getElementById('step-content');
+            stepContent.innerHTML = '';
+            const stepData = steps[currentStep];
+
+            const headerHtml = `
+                <div class="w-full text-left mb-6 fade-in">
+                    <h2 class="text-2xl font-bold">${stepData.title}</h2>
+                    <p class="text-gray-500 mt-2">${stepData.description}</p>
+                </div>
+            `;
+            stepContent.insertAdjacentHTML('beforeend', headerHtml);
+            stepContent.insertAdjacentHTML('beforeend', stepData.content());
+
+            setupEventListenersForStep();
+            updateNavigation();
+            saveState(); // Save state on every render
+        }
+
+        function setupEventListenersForStep() {
+            if (currentStep === 0) {
+                const questionInput = document.getElementById('question-input');
+                questionInput.addEventListener('input', (e) => {
+                    appState.decisionQuestion = e.target.value;
+                    updateNavigation();
+                });
+            } else if (currentStep === 1) {
+                appState.options.forEach((_, index) => {
+                    const input = document.getElementById(`option-${index}`);
+                    if (input) {
+                        input.addEventListener('input', (e) => {
+                            appState.options[index] = e.target.value;
+                            updateNavigation();
+                        });
+                    }
+                });
+                const addBtn = document.getElementById('add-option-btn');
+                if (addBtn) {
+                    addBtn.addEventListener('click', () => {
+                        if (appState.options.length < 3) {
+                            appState.options.push('');
+                            appState.scores.rational.push({ feasibility: 3, financial: 3, potential: 3 });
+                            appState.scores.emotional.push({ confidence: 3, anxiety: 3, curiosity: 3, joy: 3 });
+                            renderStep();
+                        }
+                    });
+                }
+                document.querySelectorAll('.remove-option-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const indexToRemove = parseInt(e.currentTarget.dataset.index, 10);
+                        appState.options.splice(indexToRemove, 1);
+                        appState.scores.rational.splice(indexToRemove, 1);
+                        appState.scores.emotional.splice(indexToRemove, 1);
+                        renderStep();
+                    });
+                });
+            } else if (currentStep === 2) {
+                rationalCriteria.forEach(criteria => {
+                    appState.options.forEach((_, optIndex) => {
+                        const slider = document.getElementById(`rational-${optIndex}-${criteria.id}`);
+                        if (slider) {
+                            const valueSpan = document.getElementById(`rational-${optIndex}-${criteria.id}-value`);
+                            slider.addEventListener('input', (e) => {
+                                appState.scores.rational[optIndex][criteria.id] = parseInt(e.target.value, 10);
+                                valueSpan.textContent = e.target.value;
+                                saveState();
+                            });
+                        }
+                    });
+                });
+            } else if (currentStep === 3) {
+                emotionalCriteria.forEach(criteria => {
+                    appState.options.forEach((_, optIndex) => {
+                        const slider = document.getElementById(`emotional-${optIndex}-${criteria.id}`);
+                        if (slider) {
+                            const valueSpan = document.getElementById(`emotional-${optIndex}-${criteria.id}-value`);
+                            slider.addEventListener('input', (e) => {
+                                appState.scores.emotional[optIndex][criteria.id] = parseInt(e.target.value, 10);
+                                valueSpan.textContent = e.target.value;
+                                saveState();
+                            });
+                        }
+                    });
+                });
+            } else if (currentStep === 4) {
+                // Summary Page Logic
+                renderRationalChart();
+                document.getElementById('reflection-aligned').addEventListener('input', (e) => {
+                    appState.reflections.alignedOption = e.target.value;
+                    saveState();
+                });
+                document.getElementById('reflection-fearless').addEventListener('input', (e) => {
+                    appState.reflections.fearlessChoice = e.target.value;
+                    saveState();
+                });
+                document.getElementById('next-steps-input').addEventListener('input', (e) => {
+                    appState.reflections.nextSteps = e.target.value;
+                    saveState();
+                });
+                document.getElementById('export-pdf-btn').addEventListener('click', exportAsPDF);
+            }
+        }
+
+        function renderRationalChart() {
+            const ctx = document.getElementById('rational-chart');
+            if (myChart) {
+                myChart.destroy();
+            }
+
+            const data = {
+                labels: rationalCriteria.map(c => c.name),
+                datasets: appState.options.filter(o => o.trim() !== '').map((option, index) => ({
+                    label: `選項 ${optionsLetters[index]}: ${option}`,
+                    data: rationalCriteria.map(c => appState.scores.rational[index][c.id]),
+                    fill: true,
+                    backgroundColor: `rgba(52, 117, 207, 0.2)`,
+                    borderColor: `#3475cf`,
+                    pointBackgroundColor: `#3475cf`,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: `#3475cf`
+                }))
+            };
+
+            const config = {
+                type: 'radar',
+                data: data,
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { color: '#d1d5db' },
+                            grid: { color: '#d1d5db' },
+                            pointLabels: {
+                                font: { size: 14, family: 'Noto Sans TC' }
+                            },
+                            ticks: {
+                                display: false,
+                                maxTicksLimit: 5
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 5
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    family: 'Noto Sans TC'
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            myChart = new Chart(ctx, config);
+        }
+
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const stepIndicator = document.getElementById('step-indicator');
+            const stepData = steps[currentStep];
+
+            prevBtn.disabled = currentStep === 0;
+            const nextBtnText = currentStep === steps.length - 1 ? '重新開始' : '下一步';
+            nextBtn.innerHTML = `${nextBtnText} <i class="fas fa-arrow-right ml-2"></i>`;
+            
+            const isValid = stepData.validate();
+            nextBtn.disabled = !isValid && currentStep < steps.length - 1;
+
+            stepIndicator.textContent = `步驟 ${currentStep + 1} / ${steps.length}`;
+        }
+        
+        function navigateToNextStep() {
+            const stepData = steps[currentStep];
+            if (currentStep === steps.length - 1) {
+                // Reset and restart
+                currentStep = 0;
+                Object.assign(appState, {
+                    decisionQuestion: '',
+                    options: ['', ''],
+                    scores: {
+                        rational: [{ feasibility: 3, financial: 3, potential: 3 }, { feasibility: 3, financial: 3, potential: 3 }],
+                        emotional: [{ confidence: 3, anxiety: 3, curiosity: 3, joy: 3 }, { confidence: 3, anxiety: 3, curiosity: 3, joy: 3 }]
+                    },
+                    reflections: {
+                        alignedOption: '',
+                        fearlessChoice: '',
+                        nextSteps: ''
+                    }
+                });
+                showToast('已重設，讓我們重新開始吧！', 'success');
+            } else if (stepData.validate()) {
+                currentStep++;
+            } else {
+                showToast('請完成此步驟的內容。', 'error');
+            }
+            renderStep();
+        }
+
+        function navigateToPrevStep() {
+            if (currentStep > 0) {
+                currentStep--;
+                renderStep();
+            }
+        }
+
+        // ==== Utility Functions ====
+        function showToast(message, type = 'info') {
+            toastElement.textContent = message;
+            toastElement.className = `show rounded-full px-6 py-3 text-white shadow-xl ${type === 'error' ? 'bg-red-500' : 'bg-blue-500'}`;
+            setTimeout(() => {
+                toastElement.className = toastElement.className.replace('show', '');
+            }, 3000);
+        }
+
+        async function exportAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'pt', 'a4');
+            const element = document.getElementById('summary-report');
+
+            const loadingToast = document.createElement('div');
+            loadingToast.textContent = '正在準備匯出...';
+            loadingToast.className = 'toast show bg-blue-500';
+            document.body.appendChild(loadingToast);
+
+            try {
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#f0f4f8'
+                });
+
+                const imgData = canvas.toDataURL('image/png');
+                const imgWidth = 595.28;
+                const pageHeight = 841.89;
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+
+                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+
+                doc.save('我的選擇困境釐清器總結.pdf');
+                showToast('已匯出為 PDF', 'success');
+            } catch (err) {
+                showToast('匯出失敗，請重試', 'error');
+                console.error('匯出 PDF 失敗:', err);
+            } finally {
+                loadingToast.remove();
+            }
+        }
+
+        // ==== State Persistence (using localStorage) ====
+        function saveState() {
+            localStorage.setItem('decisionMatrixState', JSON.stringify(appState));
+            localStorage.setItem('decisionMatrixStep', currentStep);
+        }
+
+        function loadState() {
+            const savedState = localStorage.getItem('decisionMatrixState');
+            const savedStep = localStorage.getItem('decisionMatrixStep');
+            if (savedState) {
+                Object.assign(appState, JSON.parse(savedState));
+            }
+            if (savedStep) {
+                currentStep = parseInt(savedStep, 10);
+            }
+        }
+
+        // ==== Application Initialization ====
+        document.addEventListener('DOMContentLoaded', () => {
+            loadState();
+            renderStep();
+            document.getElementById('prev-btn').addEventListener('click', navigateToPrevStep);
+            document.getElementById('next-btn').addEventListener('click', navigateToNextStep);
+        });
+    </script>
+</body>
+</html>

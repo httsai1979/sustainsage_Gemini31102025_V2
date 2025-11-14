@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情緒三角探索工具 (優化版)</title>
+    <!-- 引入 Font Awesome 6.4.0 圖示庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 引入 Google Fonts Noto Sans TC & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 引入 jsPDF 和 html2canvas 用於匯出功能 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a69bd; /* Royal Blue */
+            --primary-light: #dbe4ff;
+            --secondary-color: #f6b93b; /* Saffron */
+            --success-color: #6ab04c; /* Green */
+            --background-color: #f5f6fa;
+            --card-background: #fff;
+            --text-dark: #1e272e;
+            --text-light: #808e9b;
+            --border-color: #dcdde1;
+            --shadow: 0 8px 24px rgba(0,0,0,0.08);
+            --font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            --border-radius: 16px;
+            /* BUG FIX: Added distinct colors for each triangle part */
+            --color-trigger: #f0932b; /* Orange */
+            --color-primary: #ff7675; /* Pink */
+            --color-underlying: #6c5ce7; /* Purple */
+            --color-unmet: #00b894; /* Green */
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 20px;
+            background: var(--background-color);
+            color: var(--text-dark);
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+            background: var(--card-background);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        h1, h2 { text-align: center; color: var(--primary-color); }
+        h1 { font-size: 2em; }
+        .subtitle { color: var(--text-light); text-align: center; margin-top: -10px; margin-bottom: 30px; }
+
+        .content-section { display: none; }
+        .content-section.active { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .content-card {
+            background-color: #fdfdfd;
+            padding: 25px;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            margin-bottom: 20px;
+        }
+        
+        textarea {
+            width: 100%; min-height: 100px; padding: 12px;
+            border-radius: 10px; border: 1px solid var(--border-color);
+            font-family: var(--font-family); box-sizing: border-box; resize: vertical;
+        }
+
+        .button-group { display: flex; justify-content: center; gap: 15px; margin-top: 20px; flex-wrap: wrap; }
+        button {
+            padding: 12px 24px; border: none; border-radius: 50px; cursor: pointer;
+            font-size: 1em; font-weight: bold; transition: all 0.3s ease;
+            display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        button:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 8px 12px rgba(0,0,0,0.15); }
+        .primary-btn { background-color: var(--primary-color); color: #fff; }
+        .secondary-btn { background-color: var(--card-background); color: var(--primary-color); border: 2px solid var(--primary-color); }
+        button:disabled { background-color: #ddd; cursor: not-allowed; box-shadow: none; transform: none; }
+
+        /* Step 2: Triangle Exploration */
+        #step-2-content { display: grid; grid-template-columns: 1fr 300px; gap: 20px; }
+        #triangle-inputs { display: flex; flex-direction: column; gap: 15px; }
+        .triangle-card { padding: 15px; border-radius: 12px; border: 1px solid var(--border-color); }
+        .triangle-card h3 { margin-top: 0; font-size: 1.1em; display: flex; align-items: center; gap: 8px;}
+        /* BUG FIX: Color-code icons */
+        #triangle-trigger h3 i { color: var(--color-trigger); }
+        #triangle-primary h3 i { color: var(--color-primary); }
+        #triangle-underlying h3 i { color: var(--color-underlying); }
+        #triangle-unmet h3 i { color: var(--color-unmet); }
+
+        .triangle-card .card-instruction { font-size: 0.9em; color: var(--text-light); margin-top: -5px; margin-bottom: 10px;}
+        .triangle-card textarea { min-height: 60px; }
+        .emotion-menu { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .emotion-chip { padding: 6px 14px; border-radius: 20px; font-size: 0.9em; color: #fff; cursor: pointer; transition: all 0.2s; }
+        .emotion-chip.selected { transform: scale(1.1); box-shadow: 0 0 0 3px var(--primary-light); }
+        .emotion-chip.anger { background-color: #ff6b6b; }
+        .emotion-chip.sadness { background-color: #48a6e6; }
+        .emotion-chip.fear { background-color: #feca57; }
+        .emotion-chip.shame { background-color: #9b59b6; }
+        
+        #live-triangle-container { position: sticky; top: 20px; }
+        #live-triangle-svg { width: 100%; height: auto; }
+        #live-triangle-svg path {
+            transition: fill 0.5s ease, fill-opacity 0.5s ease;
+            fill: #ccc;
+            fill-opacity: 0.2;
+        }
+        /* BUG FIX: Apply specific colors when lit */
+        #live-trigger-path.lit { fill: var(--color-trigger); fill-opacity: 1; }
+        #live-primary-path.lit { fill: var(--color-primary); fill-opacity: 1; }
+        #live-underlying-path.lit { fill: var(--color-underlying); fill-opacity: 1; }
+        #live-unmet-path.lit { fill: var(--color-unmet); fill-opacity: 1; }
+        #live-triangle-svg text { font-size: 5px; font-family: var(--font-family); fill: var(--text-light); }
+
+
+        /* Step 3: Summary */
+        .summary-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .insight-card, .reflection-card { padding: 25px; border-radius: 12px; }
+        .insight-card { background-color: var(--primary-light); }
+        .reflection-card { background-color: var(--secondary-color); color: var(--text-dark); }
+        .reflection-card ul { padding-left: 20px; }
+        
+        /* Log & Badges */
+        #log-section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed var(--border-color); }
+        .log-entry { background-color: #fdfdff; border: 1px solid var(--border-color); border-radius: 12px; padding: 15px; margin-bottom: 15px; cursor: pointer; }
+        #pattern-insight-card { background-color: var(--secondary-color); color: var(--text-dark); text-align: center; }
+        .badge-grid { display: flex; gap: 15px; justify-content: center; }
+        .badge .badge-icon { font-size: 3em; color: var(--border-color); }
+        .badge.earned .badge-icon { color: var(--secondary-color); }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute; background-color: var(--text-dark); color: #fff;
+            padding: 10px; border-radius: 8px; z-index: 10; font-size: 0.9em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-width: 250px;
+            animation: fadeIn 0.3s;
+        }
+        
+        #toast { visibility: hidden; min-width: 250px; background-color: var(--text-dark); color: #fff; text-align: center; border-radius: 10px; padding: 18px; position: fixed; z-index: 101; left: 50%; bottom: 30px; transform: translateX(-50%); }
+        #toast.show { visibility: visible; animation: fadeIn 0.5s, fadeOut 0.5s 2.5s; }
+        @keyframes fadeOut { from { bottom: 30px; opacity: 1; } to { bottom: 0; opacity: 0; } }
+        
+        @media (max-width: 768px) {
+            #step-2-content { grid-template-columns: 1fr; }
+            #live-triangle-container { position: static; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-drafting-compass"></i> 情緒三角探索工具</h1>
+        <p class="subtitle">一個從記錄到頓悟，陪伴您探索內在世界的智慧夥伴。</p>
+
+        <!-- Main Content Area -->
+        <div id="main-content">
+            <!-- Step 1: Intro & Event Input -->
+            <div id="step-1" class="content-section active">
+                <div class="content-card">
+                    <h2><i class="fas fa-map-signs"></i> 歡迎來到情緒的探索之旅</h2>
+                    <p>情緒就像一座冰山，我們感受到的往往只是露出水面的一小角。這個工具將引導您潛入水下，看見情緒的全貌，並從中找到寶貴的線索。</p>
+                </div>
+                <div class="content-card" id="event-input">
+                    <h2><i class="fas fa-pencil-alt"></i> 請描述一個最近觸動您情緒的事件</h2>
+                    <textarea id="event-text" placeholder="例如：我提案時被主管打斷，整個會議我幾乎沒再說話。"></textarea>
+                    <div class="button-group">
+                        <button class="primary-btn" id="next-btn-step1"><i class="fas fa-arrow-right"></i> 開始探索</button>
+                        <button class="secondary-btn" id="tour-btn"><i class="fas fa-magic"></i> 跟著範例走一次</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Triangle Exploration -->
+            <div id="step-2" class="content-section">
+                <div id="step-2-content">
+                    <div id="triangle-inputs">
+                        <div id="triangle-trigger" class="triangle-card">
+                            <h3><i class="fas fa-bolt"></i> 1. 外在觸發點 (Trigger)</h3>
+                            <textarea id="trigger-input" placeholder="客觀描述發生了什麼？"></textarea>
+                        </div>
+                        <div id="triangle-primary" class="triangle-card">
+                            <h3><i class="fas fa-water"></i> 2. 表層情緒 (Primary Emotion)</h3>
+                            <p class="card-instruction">您最先感受到的情緒是？（以下為常見範例）</p>
+                            <div class="emotion-menu" data-target="primary-input">
+                                <span class="emotion-chip anger">憤怒</span>
+                                <span class="emotion-chip sadness">焦慮</span>
+                                <span class="emotion-chip sadness">難過</span>
+                                <span class="emotion-chip fear">害怕</span>
+                                <span class="emotion-chip shame">尷尬</span>
+                            </div>
+                            <textarea id="primary-input" placeholder="點擊上方標籤，或在此寫下您的感受..."></textarea>
+                        </div>
+                        <div id="triangle-underlying" class="triangle-card">
+                            <h3><i class="fas fa-icicles"></i> 3. 隱藏情緒 (Underlying Emotion)</h3>
+                            <p class="card-instruction">在表層情緒之下，更深的感受是？（以下為常見範例）</p>
+                             <div class="emotion-menu" data-target="underlying-input">
+                                <span class="emotion-chip sadness">被忽視</span>
+                                <span class="emotion-chip fear">脆弱</span>
+                                <span class="emotion-chip shame">羞愧</span>
+                                <span class="emotion-chip sadness">孤單</span>
+                            </div>
+                            <textarea id="underlying-input" placeholder="點擊上方標籤，或在此寫下您的感受..."></textarea>
+                        </div>
+                         <div id="triangle-unmet" class="triangle-card">
+                            <h3><i class="fas fa-gem"></i> 4. 核心需求 (Core Need)</h3>
+                            <p class="card-instruction">這一切指向您內心什麼渴望？</p>
+                            <textarea id="unmet-input" placeholder="例如：被尊重、安全感、被認可..."></textarea>
+                        </div>
+                    </div>
+                    <div id="live-triangle-container">
+                        <h3><i class="fas fa-chart-pie"></i> 情緒拼圖</h3>
+                        <svg id="live-triangle-svg" viewBox="0 0 100 100">
+                            <path id="live-trigger-path" d="M 50 5 L 27.5 50 L 72.5 50 Z"/>
+                            <path id="live-underlying-path" d="M 5 95 L 27.5 50 L 50 95 Z"/>
+                            <path id="live-primary-path" d="M 95 95 L 72.5 50 L 50 95 Z"/>
+                            <path id="live-unmet-path" d="M 27.5 50 L 72.5 50 L 50 95 Z"/>
+                            <!-- BUG FIX: Added text labels for clarity -->
+                            <text x="50" y="30" text-anchor="middle">觸發點</text>
+                            <text x="75" y="75" text-anchor="middle">表層</text>
+                            <text x="25" y="75" text-anchor="middle">隱藏</text>
+                            <text x="50" y="70" text-anchor="middle">核心需求</text>
+                        </svg>
+                        <p style="text-align:center; font-size:0.9em; color: var(--text-light);">每填寫一項，拼圖就會點亮</p>
+                    </div>
+                </div>
+                 <div class="button-group">
+                    <button class="secondary-btn" id="back-to-step1-btn"><i class="fas fa-arrow-left"></i> 上一步</button>
+                    <button class="primary-btn" id="next-btn-step2"><i class="fas fa-check"></i> 完成探索</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Summary & Reflection -->
+            <div id="step-3" class="content-section">
+                <h2><i class="fas fa-lightbulb"></i> 您的情緒洞察報告</h2>
+                <div class="summary-grid">
+                    <div class="insight-card">
+                        <h3><i class="fas fa-book-reader"></i> 頓悟總結</h3>
+                        <p id="summary-text"></p>
+                    </div>
+                    <div class="reflection-card">
+                        <h3><i class="fas fa-question-circle"></i> 教練式反思</h3>
+                        <ul id="reflection-list"></ul>
+                    </div>
+                </div>
+                <div id="export-container" style="display:none;">
+                </div>
+                <div class="button-group">
+                    <button class="secondary-btn" id="back-to-step2-btn"><i class="fas fa-pencil-alt"></i> 返回修改</button>
+                    <button class="primary-btn" id="save-log-btn"><i class="fas fa-save"></i> 儲存至情緒日誌</button>
+                    <button class="secondary-btn" id="export-pdf-btn"><i class="fas fa-file-pdf"></i> 匯出 PDF 報告</button>
+                </div>
+            </div>
+            
+            <!-- Journal Section -->
+            <div id="journal-section" class="content-section">
+                 <h2><i class="fas fa-book-open"></i> 我的情緒日誌</h2>
+                 <div id="pattern-insight-card" class="content-card" style="display:none;"></div>
+                 <div id="log-entries"></div>
+                 <div id="badge-section">
+                    <h3><i class="fas fa-trophy"></i> 成就</h3>
+                    <div id="badge-grid" class="badge-grid"></div>
+                 </div>
+                 <div class="button-group">
+                    <button class="primary-btn" id="start-new-btn"><i class="fas fa-plus"></i> 開始一次新的探索</button>
+                 </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Tabs -->
+        <div id="nav-tabs" class="button-group">
+            <button class="secondary-btn" id="show-main-btn"><i class="fas fa-home"></i> 返回主工具</button>
+            <button class="secondary-btn" id="show-journal-btn"><i class="fas fa-book"></i> 查看情緒日誌</button>
+        </div>
+    </div>
+    <div id="toast"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DOM Elements ---
+            const mainContent = document.getElementById('main-content');
+            const journalSection = document.getElementById('journal-section');
+            const contentSections = document.querySelectorAll('.content-section');
+            const eventTextarea = document.getElementById('event-text');
+            const nextBtnStep1 = document.getElementById('next-btn-step1');
+            const tourBtn = document.getElementById('tour-btn');
+            const nextBtnStep2 = document.getElementById('next-btn-step2');
+            const saveLogBtn = document.getElementById('save-log-btn');
+            const exportPdfBtn = document.getElementById('export-pdf-btn');
+            const summaryTextElement = document.getElementById('summary-text');
+            const reflectionList = document.getElementById('reflection-list');
+            const logEntriesContainer = document.getElementById('log-entries');
+            const patternInsightCard = document.getElementById('pattern-insight-card');
+            const badgeGrid = document.getElementById('badge-grid');
+            const backToStep1Btn = document.getElementById('back-to-step1-btn');
+            const backToStep2Btn = document.getElementById('back-to-step2-btn');
+            const startNewBtn = document.getElementById('start-new-btn');
+            const showMainBtn = document.getElementById('show-main-btn');
+            const showJournalBtn = document.getElementById('show-journal-btn');
+
+            const inputs = {
+                trigger: document.getElementById('trigger-input'),
+                primary: document.getElementById('primary-input'),
+                underlying: document.getElementById('underlying-input'),
+                unmet: document.getElementById('unmet-input'),
+            };
+
+            const liveTrianglePaths = {
+                trigger: document.getElementById('live-trigger-path'),
+                primary: document.getElementById('live-primary-path'),
+                underlying: document.getElementById('live-underlying-path'),
+                unmet: document.getElementById('live-unmet-path'),
+            };
+
+            // --- State Management ---
+            let currentTriangle = {};
+            let emotionLog = [];
+            let isTour = false;
+
+            const reflectionQuestions = {
+                general: ['這個發現，為您帶來了什麼新的視角？', '如果這個需求被滿足了，您的感受會有什麼不同？', '您可以為自己做一件什麼小事，來回應這個需求？'],
+                '被尊重': ['在什麼情況下，您會感覺被充分尊重？', '下一次，您可以如何為自己設立界線，以確保被尊重的需求被看見？'],
+                '安全感': ['「安全感」對您來說，最核心的要素是什麼？', '您可以為自己做些什麼，來增加內在的安全感，而不過度依賴外界？'],
+                '被傾聽': ['「被傾聽」對您來說，代表著什麼樣的意義？', '您認為要如何讓身邊的人更能聽到您的聲音？'],
+                '被認可': ['除了他人的肯定，您可以如何練習自我認可？', '當您認可自己時，那是一種什麼樣的感受？']
+            };
+
+            const exampleData = {
+                event: '我提案時被主管打斷，整個會議我幾乎沒再說話。',
+                trigger: '主管在我報告時，直接插話並提出質疑。',
+                primary: '憤怒、尷尬',
+                underlying: '被忽視、羞愧',
+                unmet: '被尊重、被認可'
+            };
+
+            // --- Core Navigation & UI ---
+            function navigateTo(stepId) {
+                contentSections.forEach(sec => sec.classList.remove('active'));
+                document.getElementById(stepId).classList.add('active');
+            }
+            
+            function showMainContent() {
+                mainContent.style.display = 'block';
+                journalSection.style.display = 'none';
+            }
+
+            function showJournal() {
+                mainContent.style.display = 'none';
+                journalSection.style.display = 'block';
+                renderLog();
+            }
+            
+            function startNew() {
+                currentTriangle = {};
+                isTour = false;
+                Object.values(inputs).forEach(input => input.value = '');
+                document.querySelectorAll('.emotion-chip').forEach(c => c.classList.remove('selected'));
+                eventTextarea.value = '';
+                updateLiveTriangle();
+                showMainContent();
+                navigateTo('step-1');
+            }
+
+            // --- Tour Mode ---
+            function startTour() {
+                isTour = true;
+                currentTriangle = { ...exampleData };
+                eventTextarea.value = currentTriangle.event;
+                navigateTo('step-2');
+                Object.keys(inputs).forEach(key => {
+                    inputs[key].value = currentTriangle[key];
+                });
+                updateLiveTriangle();
+                runTourSteps();
+            }
+
+            function runTourSteps() {
+                setTimeout(() => showTooltip(inputs.trigger, '你看，我們只記錄客觀發生的事。'), 500);
+                setTimeout(() => showTooltip(inputs.primary.parentElement.querySelector('.card-instruction'), '「憤怒」通常是我們最先感受到的情緒，像冰山的一角。'), 1500);
+                setTimeout(() => showTooltip(inputs.underlying.parentElement.querySelector('.card-instruction'), '試著問自己，在憤怒底下，是否藏著一絲「被忽視」或「羞愧」的感覺？這往往是關鍵。'), 2500);
+                setTimeout(() => showTooltip(inputs.unmet, '所有的情緒，最終都指向我們內心深處的渴望或需求。'), 3500);
+            }
+
+            function showTooltip(element, text) {
+                document.querySelectorAll('.tooltip').forEach(t => t.remove());
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = text;
+                document.body.appendChild(tooltip);
+                const rect = element.getBoundingClientRect();
+                tooltip.style.left = `${rect.left}px`;
+                tooltip.style.top = `${rect.bottom + 10}px`;
+                setTimeout(() => tooltip.remove(), 3000);
+            }
+
+            // --- Step 2 Logic ---
+            function updateLiveTriangle() {
+                Object.keys(liveTrianglePaths).forEach(key => {
+                    const isFilled = inputs[key] && inputs[key].value.trim() !== '';
+                    liveTrianglePaths[key].classList.toggle('lit', isFilled);
+                });
+            }
+
+            function handleEmotionChipClick(e) {
+                const chip = e.target.closest('.emotion-chip');
+                if (!chip) return;
+                const targetId = chip.parentElement.dataset.target;
+                const targetInput = document.getElementById(targetId);
+                const emotion = chip.textContent.trim();
+                
+                let emotions = targetInput.value ? targetInput.value.split('、').filter(Boolean) : [];
+                if (emotions.includes(emotion)) {
+                    emotions = emotions.filter(em => em !== emotion);
+                    chip.classList.remove('selected');
+                } else {
+                    emotions.push(emotion);
+                    chip.classList.add('selected');
+                }
+                targetInput.value = emotions.join('、');
+                updateLiveTriangle();
+            }
+
+            // --- Step 3 Logic ---
+            function generateSummary() {
+                Object.keys(inputs).forEach(key => {
+                    currentTriangle[key] = inputs[key].value.trim();
+                });
+                currentTriangle.event = eventTextarea.value.trim();
+
+                const { event, primary, underlying, unmet } = currentTriangle;
+                summaryTextElement.textContent = `看起來，當「${event}」發生時，雖然您第一時間感受到的是「${primary}」，但這背後似乎隱藏著更深的「${underlying}」。這或許在提醒我們，您內心深處對於「${unmet}」的渴望。這是一個非常寶貴的發現。`;
+                
+                reflectionList.innerHTML = '';
+                let questions = reflectionQuestions.general;
+                for (const key in reflectionQuestions) {
+                    if (unmet.includes(key)) {
+                        questions = reflectionQuestions[key];
+                        break;
+                    }
+                }
+                questions.forEach(q => {
+                    const li = document.createElement('li');
+                    li.textContent = q;
+                    reflectionList.appendChild(li);
+                });
+            }
+            
+            // --- Log & Badge Logic ---
+            function saveCurrentLog() {
+                const logItem = { ...currentTriangle, id: Date.now() };
+                const existingIndex = emotionLog.findIndex(item => item.id === logItem.id);
+                if (existingIndex > -1) {
+                    emotionLog[existingIndex] = logItem;
+                } else {
+                    emotionLog.push(logItem);
+                }
+                localStorage.setItem('emotionTriangleLog', JSON.stringify(emotionLog));
+                showToast('已儲存至情緒日誌！', 'success');
+                renderBadges();
+            }
+
+            function renderLog() {
+                logEntriesContainer.innerHTML = '';
+                if (emotionLog.length === 0) {
+                    logEntriesContainer.innerHTML = '<p>您的日誌目前是空的。開始一次新的探索吧！</p>';
+                    return;
+                }
+                emotionLog.slice().reverse().forEach(log => {
+                    const entry = document.createElement('div');
+                    entry.className = 'log-entry';
+                    entry.innerHTML = `
+                        <h4>${log.event}</h4>
+                        <p><strong>核心需求：</strong>${log.unmet}</p>
+                        <small>${new Date(log.id).toLocaleString()}</small>
+                    `;
+                    logEntriesContainer.appendChild(entry);
+                });
+                analyzeLog();
+            }
+            
+            function analyzeLog() {
+                if (emotionLog.length < 3) {
+                    patternInsightCard.style.display = 'none';
+                    return;
+                }
+                const needsCount = emotionLog.reduce((acc, log) => {
+                    const needs = log.unmet.split('、').map(n => n.trim()).filter(Boolean);
+                    needs.forEach(need => {
+                        acc[need] = (acc[need] || 0) + 1;
+                    });
+                    return acc;
+                }, {});
+                
+                const frequentNeed = Object.entries(needsCount).sort((a, b) => b[1] - a[1])[0];
+                if (frequentNeed && frequentNeed[1] >= 2) {
+                    patternInsightCard.innerHTML = `<p><i class="fas fa-search"></i> 模式洞察：我們發現，在您最近的紀錄中，「<strong>${frequentNeed[0]}</strong>」這個需求出現了 ${frequentNeed[1]} 次。這似乎是您近期特別關注的課題。</p>`;
+                    patternInsightCard.style.display = 'block';
+                } else {
+                    patternInsightCard.style.display = 'none';
+                }
+            }
+
+            function renderBadges() {
+                badgeGrid.innerHTML = '';
+                const badges = [
+                    { id: 'first_log', label: '第一次探索', icon: 'fa-seedling', earned: emotionLog.length > 0 },
+                    { id: 'third_log', label: '三次探索', icon: 'fa-leaf', earned: emotionLog.length >= 3 },
+                ];
+                badges.forEach(badge => {
+                    const badgeEl = document.createElement('div');
+                    badgeEl.className = `badge ${badge.earned ? 'earned' : ''}`;
+                    badgeEl.innerHTML = `
+                        <div class="badge-icon"><i class="fas ${badge.icon}"></i></div>
+                        <div class="badge-label">${badge.label}</div>
+                    `;
+                    badgeGrid.appendChild(badgeEl);
+                });
+            }
+
+            async function exportAsPDF() {
+                const exportNode = document.createElement('div');
+                exportNode.style.padding = '20px';
+                exportNode.style.backgroundColor = 'white';
+                exportNode.style.width = '800px';
+                exportNode.innerHTML = `
+                    <h1 style="color:var(--primary-color); text-align:center;">個人情緒洞察報告</h1>
+                    <h3 style="color:var(--text-light); text-align:center;">${new Date().toLocaleDateString()}</h3>
+                    <hr>
+                    <div style="background-color: var(--primary-light); padding: 20px; border-radius: 12px; margin-top:20px;">
+                        <h3><i class="fas fa-book-reader"></i> 頓悟總結</h3>
+                        <p>${summaryTextElement.innerHTML}</p>
+                    </div>
+                    <div style="background-color: #fef3c7; padding: 20px; border-radius: 12px; margin-top:20px;">
+                        <h3><i class="fas fa-question-circle"></i> 教練式反思</h3>
+                        ${reflectionList.outerHTML}
+                    </div>
+                `;
+                document.body.appendChild(exportNode);
+
+                showToast('正在生成您的報告...', 'info');
+                const canvas = await html2canvas(exportNode, { scale: 2 });
+                const imgData = canvas.toDataURL('image/png');
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const imgProps= pdf.getImageProperties(imgData);
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                pdf.save('我的情緒洞察報告.pdf');
+                document.body.removeChild(exportNode);
+                showToast('報告匯出成功！', 'success');
+            }
+
+            function showToast(message, type = 'info') {
+                const toast = document.getElementById('toast');
+                toast.textContent = message;
+                toast.className = 'show';
+                setTimeout(() => { toast.className = toast.className.replace('show', ''); }, 3000);
+            }
+
+            // --- Event Listeners ---
+            nextBtnStep1.addEventListener('click', () => {
+                if (eventTextarea.value.trim() === '') {
+                    showToast('請先描述一個事件。', 'error');
+                    return;
+                }
+                navigateTo('step-2');
+            });
+            tourBtn.addEventListener('click', startTour);
+            nextBtnStep2.addEventListener('click', () => {
+                generateSummary();
+                navigateTo('step-3');
+            });
+            saveLogBtn.addEventListener('click', saveCurrentLog);
+            exportPdfBtn.addEventListener('click', exportAsPDF);
+            
+            backToStep1Btn.addEventListener('click', () => navigateTo('step-1'));
+            backToStep2Btn.addEventListener('click', () => navigateTo('step-2'));
+            startNewBtn.addEventListener('click', startNew);
+            showMainBtn.addEventListener('click', showMainContent);
+            showJournalBtn.addEventListener('click', showJournal);
+            
+            Object.values(inputs).forEach(input => input.addEventListener('input', updateLiveTriangle));
+            document.querySelectorAll('.emotion-menu').forEach(menu => menu.addEventListener('click', handleEmotionChipClick));
+
+            // --- Initialization ---
+            function init() {
+                const savedLog = localStorage.getItem('emotionTriangleLog');
+                if (savedLog) {
+                    emotionLog = JSON.parse(savedLog);
+                }
+                startNew();
+                renderBadges();
+            }
+
+            init();
+        });
+    </script>
+</body>
+</html>
