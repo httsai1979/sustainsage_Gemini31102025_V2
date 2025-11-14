@@ -1,6 +1,5 @@
 import { MicroCTA } from '@/components/common/MicroCTA';
-import PageSection from '@/components/ui/PageSection';
-import { sectionizeSubpage } from '@/lib/sectionize';
+import StepList from '@/components/ui/StepList';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
 const { Page } = createServiceSubpage({
@@ -13,10 +12,15 @@ const { Page } = createServiceSubpage({
   renderContent: (service) => {
     const process = service.process ?? {};
     const steps = Array.isArray(process.steps)
-      ? process.steps.filter((step) => Boolean(step))
+      ? process.steps
+          .filter(Boolean)
+          .map((step, stepIndex) => ({
+            title: typeof step === 'string' ? null : step?.title,
+            description: typeof step === 'string' ? step : step?.description,
+            stepNumber: stepIndex + 1,
+          }))
       : [];
     const note = process.note;
-    const sections = sectionizeSubpage('process', process);
 
     const basePath = `/services/${service.slug}`;
     const microLinks = [
@@ -24,14 +28,12 @@ const { Page } = createServiceSubpage({
       { href: `${basePath}/agreement`, label: 'Review the agreement' },
     ];
 
-    if (sections.length === 0 && !note) {
+    if (steps.length === 0 && !note) {
       return (
         <div className="space-y-6">
-          <PageSection>
-            <p className="text-sm leading-6 text-slate-700">
-              We will publish a detailed process shortly. Contact us to explore what the container can look like for you.
-            </p>
-          </PageSection>
+          <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 text-sm leading-6 text-slate-700 shadow-sm">
+            We will publish a detailed process shortly. Contact us to explore what the container can look like for you.
+          </div>
           <MicroCTA
             title="See how the process translates into practice"
             description="Review anonymised cases or revisit the coaching agreement to understand how we steward each stage."
@@ -42,42 +44,14 @@ const { Page } = createServiceSubpage({
     }
 
     return (
-      <div className="space-y-8">
-        {sections.map((section, index) => {
-          if (section.items === steps && steps.length > 0) {
-            return (
-              <PageSection key={`process-${index}`}>
-                <h2 className="text-xl font-semibold text-sustain-text">Process</h2>
-                <ol className="mt-4 list-decimal space-y-4 pl-6 text-slate-800">
-                  {steps.map((step, stepIndex) => {
-                    const title = typeof step === 'string' ? null : step?.title;
-                    const description = typeof step === 'string' ? step : step?.description;
-                    return (
-                      <li key={title ?? description ?? stepIndex}>
-                        <div className="rounded-card border border-sustain-cardBorder bg-white p-6 shadow-card">
-                          {title ? <h3 className="text-base font-semibold text-sustain-text">{title}</h3> : null}
-                          {description ? (
-                            <p className="mt-3 text-sm leading-6 text-slate-700">{description}</p>
-                          ) : null}
-                        </div>
-                      </li>
-                    );
-                  })}
-                </ol>
-                {note ? <p className="mt-4 text-xs font-medium text-slate-500">{note}</p> : null}
-              </PageSection>
-            );
-          }
-
-          return null;
-        })}
-
-        {note && steps.length === 0 ? (
-              <PageSection>
-            <p className="text-xs font-medium text-slate-500">{note}</p>
-          </PageSection>
+      <div className="space-y-6">
+        {steps.length > 0 ? (
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold text-sustain-text">Our process together</h3>
+            <StepList steps={steps} />
+          </div>
         ) : null}
-
+        {note ? <p className="text-xs font-medium text-slate-500">{note}</p> : null}
         <MicroCTA
           title="See how the process translates into practice"
           description="Review anonymised cases or revisit the coaching agreement to understand how we steward each stage."

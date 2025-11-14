@@ -7,7 +7,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Card from '@/components/ui/Card';
 import Icon from '@/components/ui/Icon';
 import StepList from '@/components/ui/StepList';
-import { H1 } from '@/components/ui/H';
 import { loadContent } from '@/lib/loadContent';
 import { dedupeBy } from '@/lib/dedupe';
 import { sanitizeProps } from '@/lib/toSerializable';
@@ -59,6 +58,29 @@ export default function ServicesPage({
   const pathways = t('pathways', { returnObjects: true });
   const cta = t('cta', { returnObjects: true });
   const fallbackMessage = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
+  const primaryCta = hero?.primaryCta ?? { href: '/contact', label: 'Book a chat' };
+  const secondaryCta = hero?.secondaryCta ?? { href: '#support', label: 'Who we support' };
+
+  const gettingStartedSteps = [
+    {
+      title: 'Book your free chat',
+      description: 'We talk for 20 minutes to understand what is changing and answer scope questions.',
+    },
+    {
+      title: 'Explore together',
+      description: 'We map priorities, access needs, and the rhythm that keeps you steady.',
+    },
+    {
+      title: 'Choose your path',
+      description: 'Select one of the coaching pathways or co-design something bespoke.',
+    },
+    {
+      title: 'Begin your journey',
+      description: 'We meet online every 2–3 weeks, review progress, and adjust agreements as needed.',
+    },
+  ];
+
+  const uniqueCards = dedupeBy(cards, (card) => card.slug ?? card.title);
 
   const gettingStartedSteps = [
     {
@@ -89,25 +111,49 @@ export default function ServicesPage({
       </Head>
 
       <section className="ss-section">
-        <div className="overflow-hidden rounded-3xl border border-slate-100 bg-gradient-to-br from-sustain-green/10 to-slate-100 p-8 text-center shadow-md md:p-12">
-          {hero?.eyebrow ? (
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{hero.eyebrow}</p>
-          ) : null}
-          {hero?.title ? <H1 className="mt-4 text-4xl">{hero.title}</H1> : null}
-          {hero?.subtitle ? (
-            <p className="mt-4 text-base leading-relaxed text-slate-700">{hero.subtitle}</p>
-          ) : null}
-          {hero?.highlight ? (
-            <p className="mt-4 text-base font-semibold text-sustain-text">{hero.highlight}</p>
-          ) : null}
-          {showFallbackNotice ? (
-            <p className="mt-4 text-xs font-medium text-slate-500">{fallbackMessage}</p>
-          ) : null}
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="relative min-h-[320px] overflow-hidden rounded-3xl border border-sustain-cardBorder bg-gradient-to-br from-sustain-green/20 via-sustain-green/5 to-slate-100 p-1 shadow-md">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(74,108,86,0.25),_transparent_60%)]" aria-hidden />
+            <div className="absolute inset-4 rounded-3xl border border-white/60 bg-white/20 backdrop-blur-sm" aria-hidden />
+            <div className="relative flex h-full flex-col justify-between rounded-[1.75rem] p-6 text-sustain-text">
+              <p className="text-sm font-semibold text-sustain-green">{hero?.eyebrow ?? 'Coaching services'}</p>
+              <p className="text-lg font-medium text-sustain-text/70">
+                {hero?.highlight ?? 'Calm, card-based containers for transitions, restarts, and experimentation.'}
+              </p>
+            </div>
+          </div>
+          <div className="rounded-3xl border border-sustain-cardBorder bg-white p-8 shadow-xl">
+            {hero?.title ? (
+              <h1 className="text-3xl font-semibold tracking-tight text-sustain-text md:text-4xl">{hero.title}</h1>
+            ) : (
+              <h1 className="text-3xl font-semibold tracking-tight text-sustain-text md:text-4xl">Coaching services</h1>
+            )}
+            {hero?.subtitle ? (
+              <p className="mt-4 text-base leading-relaxed text-slate-700">{hero.subtitle}</p>
+            ) : null}
+            {hero?.body ? <p className="mt-4 text-base leading-relaxed text-slate-700">{hero.body}</p> : null}
+            {showFallbackNotice ? (
+              <p className="mt-4 text-xs font-medium text-slate-500">{fallbackMessage}</p>
+            ) : null}
+            <div className="mt-6 flex flex-wrap gap-3">
+              {primaryCta?.href ? (
+                <Link href={primaryCta.href} className="ss-btn-primary">
+                  {primaryCta.label ?? 'Book a chat'}
+                </Link>
+              ) : null}
+              {secondaryCta?.href ? (
+                <Link href={secondaryCta.href} className="ss-btn-secondary">
+                  {secondaryCta.label ?? 'Who we help'}
+                </Link>
+              ) : null}
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className="ss-section">
+      <section id="support" className="ss-section">
         <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Support options</p>
           <h2 className="text-3xl font-semibold text-sustain-text">How I can support you</h2>
           {pathways?.description ? <p className="text-base text-slate-700">{pathways.description}</p> : null}
         </div>
@@ -158,7 +204,11 @@ export default function ServicesPage({
       </section>
 
       <section className="ss-section">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">My approach</p>
+          <h2 className="text-3xl font-semibold text-sustain-text">Practical, personalised, sustainable</h2>
+        </div>
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {APPROACH_CARDS.map((card) => (
             <Card key={card.title} title={card.title}>
               <p className="text-sm leading-relaxed text-slate-700">{card.body}</p>
@@ -168,7 +218,7 @@ export default function ServicesPage({
       </section>
 
       <section className="ss-section">
-        <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-md">
+        <div className="rounded-3xl border border-sustain-cardBorder bg-white p-8 text-center shadow-md">
           <h2 className="text-3xl font-semibold text-sustain-text">{cta?.title ?? 'Let’s find the right starting point'}</h2>
           <p className="mt-4 text-base text-slate-700">{cta?.body ?? 'Book a short chat or keep exploring the services in your own time.'}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">

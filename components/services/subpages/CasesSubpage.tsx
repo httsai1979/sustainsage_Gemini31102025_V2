@@ -1,7 +1,5 @@
 import { CaseCard } from '@/components/cases/CaseCard';
 import { MicroCTA } from '@/components/common/MicroCTA';
-import PageSection from '@/components/ui/PageSection';
-import { sectionizeSubpage } from '@/lib/sectionize';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
 
 const { Page } = createServiceSubpage({
@@ -16,7 +14,6 @@ const { Page } = createServiceSubpage({
     const cases = Array.isArray(casesBlock.items)
       ? casesBlock.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
       : [];
-    const sections = sectionizeSubpage('cases', casesBlock);
 
     const basePath = `/services/${service.slug}`;
     const contactSource = encodeURIComponent(`${service.slug}-cases`);
@@ -29,11 +26,9 @@ const { Page } = createServiceSubpage({
     if (cases.length === 0) {
       return (
         <div className="space-y-6">
-          <PageSection>
-            <p className="text-sm leading-6 text-slate-700">
-              We are writing anonymised cases for this service. Contact us if you would like to hear relevant examples live.
-            </p>
-          </PageSection>
+          <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 text-sm leading-6 text-slate-700 shadow-sm">
+            We are writing anonymised cases for this service. Contact us if you would like to hear relevant examples live.
+          </div>
           <MicroCTA
             title="Continue exploring this service"
             description="Visit the readiness guide or connect with us so we can share the closest-fit examples."
@@ -49,57 +44,35 @@ const { Page } = createServiceSubpage({
 
     return (
       <div className="space-y-10">
-        {sections.map((section, index) => {
-          if (section.items === cases && cases.length > 0) {
-            return (
-              <PageSection key={`cases-${index}`}>
-                {casesBlock.title ? (
-                  <h2 className="text-xl font-semibold text-sustain-text">{casesBlock.title}</h2>
-                ) : null}
-                {casesBlock.description ? (
-                  <p className="mt-2 text-base leading-7 text-slate-700">{casesBlock.description}</p>
-                ) : null}
-                <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                  {cases.map((item) => (
-                    <CaseCard
-                      key={item.title ?? item.context ?? item.shift}
-                      title={item.title}
-                      context={item.context}
-                      coaching_moves={item.coaching_moves}
-                      shift={item.shift}
-                      tools_used={item.tools_used}
-                      disclaimer={item.disclaimer}
-                    />
-                  ))}
-                </div>
-              </PageSection>
-            );
-          }
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          {cases.map((item) => (
+            <CaseCard
+              key={item.title ?? item.context ?? item.shift}
+              title={item.title}
+              context={item.context}
+              coaching_moves={item.coaching_moves}
+              shift={item.shift}
+              tools_used={item.tools_used}
+              disclaimer={item.disclaimer}
+            />
+          ))}
+        </div>
 
-          return null;
-        })}
-
-        <PageSection>
-          <div className="space-y-6">
-            <p className="text-sm leading-6 text-slate-700">
-              These composites blend details from multiple clients to keep identities protected while showing the texture of our work.
-            </p>
-
-            {disclaimers.length > 0 ? (
-              <div className="space-y-3">
-                <h3 className="text-base font-semibold text-sustain-text">Confidentiality reminders</h3>
-                <ul className="space-y-2 text-sm leading-6 text-slate-700">
-                  {disclaimers.map((text) => (
-                    <li key={text} className="flex gap-3">
-                      <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sustain-green" />
-                      <span>{text}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-        </PageSection>
+        <div className="space-y-3 rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
+          <p className="text-sm leading-6 text-slate-700">
+            These composites blend details from multiple clients to keep identities protected while showing the texture of our work.
+          </p>
+          {disclaimers.length > 0 ? (
+            <ul className="space-y-2 text-sm leading-6 text-slate-700">
+              {disclaimers.map((text) => (
+                <li key={text} className="flex gap-3">
+                  <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sustain-green" />
+                  <span>{text}</span>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
 
         <MicroCTA
           title="Continue exploring this service"
