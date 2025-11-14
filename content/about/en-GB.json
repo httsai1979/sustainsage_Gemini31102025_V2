@@ -99,12 +99,6 @@
     "title": "What coaching looks like with SustainSage",
     "description": "Coaching is a structured, future-focused partnership where you stay in charge of direction and pace.",
     "scenarios": [
-      "You’re returning to work after a break and want a kinder ramp back.",
-      "You’ve applied widely but struggle to turn interviews into offers.",
-      "You got an offer but aren’t sure it fits your real priorities.",
-      "You’re switching fields and feel you’re starting from zero.",
-      "You’re in the UK with overseas experience and need local proof points.",
-      "You lead a small team and want steadier 1:1 conversations.",
       {
         "title": "You’re returning to work after a break and want a kinder ramp back."
       },
@@ -126,9 +120,6 @@
       {
         "title": "Launching a role across cultures",
         "description": "Clarify decision rights, agreements, and handoffs before expectations fracture."
-      },
-      {
-        "title": "You lead a small team and want steadier 1:1 conversations."
       },
       {
         "title": "Untangling stakeholder dynamics",
