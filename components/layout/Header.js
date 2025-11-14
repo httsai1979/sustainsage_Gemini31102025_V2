@@ -70,7 +70,7 @@ function LocaleToggle({ variant = 'desktop', value, onChange, label, options = [
     'appearance-none rounded-full border border-slate-200 bg-white px-4 py-2 pr-10 text-sm font-semibold text-slate-700 shadow-sm transition focus:border-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400';
 
   const iconClasses =
-    'pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-slate-500';
+    'pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500';
 
   const handleChange = (event) => {
     const nextLocale = event.target.value;

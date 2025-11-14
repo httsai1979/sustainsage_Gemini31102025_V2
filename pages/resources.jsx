@@ -45,6 +45,13 @@ export default function ResourcesPage({ downloads = [], interactiveTools = [] })
       ? item.actionLabel || (item.download ? actions?.download : actions?.view)
       : null;
     const badge = item.type ?? item.tag ?? item.category ?? (item.download ? 'Download' : null);
+    const shouldOpenInNewTab =
+      typeof actionHref === 'string' &&
+      (actionHref.startsWith('http') ||
+        actionHref.startsWith('/docs/') ||
+        actionHref.endsWith('.pdf') ||
+        actionHref.includes('notion.so') ||
+        actionHref.includes('docs.google'));
     const card = (
       <article className="ss-card h-full overflow-hidden bg-white">
         <div className="relative">
@@ -84,9 +91,15 @@ export default function ResourcesPage({ downloads = [], interactiveTools = [] })
     const delay = (index % 3) * 0.1;
 
     if (actionHref && !item.comingSoon) {
+      const linkProps = shouldOpenInNewTab
+        ? {
+            target: '_blank',
+            rel: 'noreferrer noopener',
+          }
+        : {};
       return (
         <RevealSection key={`${item.id ?? item.title}-${index}`} delay={delay}>
-          <Link href={actionHref} className="block h-full" aria-label={actionLabel ?? item.title}>
+          <Link href={actionHref} className="block h-full" aria-label={actionLabel ?? item.title} {...linkProps}>
             {card}
           </Link>
         </RevealSection>

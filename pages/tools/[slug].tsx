@@ -1,14 +1,20 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
 import MainLayout from '@/components/layout/MainLayout';
-import { toolsConfig, type ToolConfig } from '@/lib/toolsConfig';
+import { resolveToolCopy, toolsConfig, type LocalizedTool } from '@/lib/toolsConfig';
 
 interface ToolPageProps {
-  tool: ToolConfig;
+  tool: LocalizedTool;
 }
 
 function ToolPage({ tool }: ToolPageProps) {
+  const { t } = useTranslation('tools');
+  const reminderCopy = t(
+    'reminder',
+    'This is a self-reflection tool. Take your time and you can download or save your notes just for yourself.'
+  );
   return (
     <main className="ss-container py-16">
       <section className="ss-section">
@@ -19,9 +25,7 @@ function ToolPage({ tool }: ToolPageProps) {
             <p className="text-base text-slate-700">{tool.description}</p>
           </div>
           <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-lg">
-            <p className="text-sm text-slate-600">
-              This is a self-reflection tool. Take your time and you can download or save your notes just for yourself.
-            </p>
+            <p className="text-sm text-slate-600">{reminderCopy}</p>
             <div className="mt-4 overflow-hidden rounded-2xl">
               <iframe
                 src={tool.iframeSrc}
@@ -80,8 +84,8 @@ export const getStaticProps: GetStaticProps<ToolPageProps> = async ({ params, lo
 
   return {
     props: {
-      tool,
-      ...(await serverSideTranslations(locale ?? 'en-GB', ['common'])),
+      tool: resolveToolCopy(tool, locale ?? 'en-GB'),
+      ...(await serverSideTranslations(locale ?? 'en-GB', ['common', 'tools'])),
     },
   };
 };
