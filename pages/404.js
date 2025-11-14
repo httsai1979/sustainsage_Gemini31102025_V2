@@ -14,6 +14,9 @@ import nextI18NextConfig from '../next-i18next.config.js';
 function NotFoundPage() {
   const { t } = useTranslation('errorPages');
 
+  const supportLinkHref = t('supportLinkHref', '/services');
+  const supportLinkLabel = t('supportLinkLabel', t('actions.exploreServices'));
+
   return (
     <PageSection>
       <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
@@ -26,7 +29,11 @@ function NotFoundPage() {
           >
             {t('returnHome')}
           </Link>
-          <Callout title={t('supportTitle')} body={t('supportBody')} actions={[{ href: '/contact', label: t('supportLink') }]} />
+          <Callout
+            title={t('supportTitle')}
+            body={t('supportBody')}
+            actions={[{ href: supportLinkHref, label: supportLinkLabel }]}
+          />
         </div>
         <Card className="flex items-center justify-center">
           <Image

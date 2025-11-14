@@ -117,7 +117,7 @@ export default function Header() {
   };
 
   const handleLocaleChange = (nextLocale) => {
-    router.push(router.asPath, router.asPath, { locale: nextLocale });
+    router.push(router.asPath, undefined, { locale: nextLocale });
   };
 
   const handleNavClick = () => {
