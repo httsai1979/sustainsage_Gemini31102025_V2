@@ -125,6 +125,16 @@ export default function Home({
     .filter(Boolean)
     .slice(0, 3);
 
+  const recognise = content?.recognise ?? {};
+  const recogniseItems = dedupeBy(
+    orderSections(Array.isArray(recognise?.items) ? recognise.items : []),
+    (item) => (typeof item === 'string' ? item : item?.title ?? item?.description ?? '')
+  );
+  const whatCoachingIs = process?.description ??
+    'Sessions stay calm, structured, and paced around what is happening in your real life.';
+  const whatCoachingIsNot = boundaries?.description ??
+    'We hold ICF-aligned boundaries, refer to specialists when needed, and avoid one-size-fits-all advice.';
+
   return (
     <main className="ss-container">
       <section className="ss-section">
