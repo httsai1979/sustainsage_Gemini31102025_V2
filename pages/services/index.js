@@ -4,10 +4,8 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import PageSection from '@/components/ui/PageSection';
 import Card from '@/components/ui/Card';
-import CardGrid from '@/components/ui/CardGrid';
-import Callout from '@/components/ui/Callout';
+import StepList from '@/components/ui/StepList';
 import { H1 } from '@/components/ui/H';
 import { loadContent } from '@/lib/loadContent';
 import { sanitizeProps } from '@/lib/toSerializable';
@@ -19,15 +17,19 @@ function PathwayCard({ card, viewDetailsLabel }) {
       title={card.title}
       subtitle={card.excerpt}
       footer={
-        <Link href={`/services/${card.slug}`} className="inline-flex items-center gap-2 font-semibold text-sage">
+        <Link href={`/services/${card.slug}`} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
           {card.ctaLabel ?? viewDetailsLabel}
           <span aria-hidden="true">→</span>
         </Link>
       }
     >
-      {card.eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">{card.eyebrow}</p>
-      ) : null}
+      <div className="space-y-3 text-sm text-slate-700">
+        {card.eyebrow ? (
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{card.eyebrow}</p>
+        ) : null}
+        {card.audience ? <p className="text-slate-600">{card.audience}</p> : null}
+        <p className="text-slate-500">Online sessions · 60–75 minutes</p>
+      </div>
     </Card>
   );
 }
@@ -56,28 +58,34 @@ export default function ServicesPage({
   const faqLink = t('faqLink', { returnObjects: true });
   const fallbackMessage = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
+  const gettingStartedSteps = [
+    'Schedule a short chemistry call to check fit and scope.',
+    'Co-design a package or rhythm that matches your capacity.',
+    'Meet online for 60–75 minutes per session and review every few weeks.',
+  ];
+
   return (
-    <>
+    <main className="ss-container">
       <Head>
         <title>{seo?.title}</title>
         {seo?.description ? <meta name="description" content={seo?.description} /> : null}
       </Head>
 
-      <PageSection background="paper">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start">
+      <section className="ss-section">
+        <div className="grid gap-10 md:grid-cols-2 md:items-start">
           <div className="space-y-6">
             {hero?.eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">{hero.eyebrow}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{hero.eyebrow}</p>
             ) : null}
             {hero?.title ? <H1>{hero.title}</H1> : null}
-            {hero?.subtitle ? <p className="text-base leading-7 text-slate-600">{hero.subtitle}</p> : null}
+            {hero?.subtitle ? <p className="text-base leading-7 text-slate-700">{hero.subtitle}</p> : null}
             {hero?.highlight ? (
-              <p className="text-base font-semibold text-slate-900">{hero.highlight}</p>
+              <p className="text-base font-semibold text-sustain-text">{hero.highlight}</p>
             ) : null}
             {showFallbackNotice ? (
               <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
             ) : null}
-            <div className="flex flex-wrap gap-4 text-sm font-semibold text-sage">
+            <div className="flex flex-wrap gap-4 text-sm font-semibold text-sustain-green">
               {hero?.boundariesLink?.label ? (
                 <Link href={hero.boundariesLink.href} className="inline-flex items-center gap-2 hover:underline">
                   {hero.boundariesLink.label}
@@ -92,47 +100,66 @@ export default function ServicesPage({
               ) : null}
             </div>
           </div>
-          <Callout
-            title={pathways?.sidebarTitle ?? 'Where to begin'}
-            body={pathways?.sidebar ?? pathways?.description}
-          />
+          <div className="rounded-card border border-sustain-cardBorder bg-white p-6 shadow-card">
+            <h3 className="text-lg font-semibold text-sustain-text">
+              {pathways?.sidebarTitle ?? 'Where to begin'}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate-700">
+              {pathways?.sidebar ?? pathways?.description}
+            </p>
+          </div>
         </div>
-      </PageSection>
+      </section>
 
-      <PageSection title={pathways?.title} lead={pathways?.description}>
-        {pathways?.highlight ? (
-          <p className="mb-8 text-base font-semibold text-slate-900">{pathways.highlight}</p>
-        ) : null}
-        <CardGrid>
+      <section className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <h2 className="text-3xl font-semibold text-sustain-text">{pathways?.title}</h2>
+          {pathways?.description ? <p className="text-base text-slate-700">{pathways.description}</p> : null}
+          {pathways?.highlight ? (
+            <p className="text-base font-semibold text-sustain-text">{pathways.highlight}</p>
+          ) : null}
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {cards.map((card) => (
             <PathwayCard key={card.slug} card={card} viewDetailsLabel={pathways?.viewDetails ?? 'View details'} />
           ))}
-        </CardGrid>
-      </PageSection>
+        </div>
+      </section>
 
-      <PageSection>
-        <Card className="text-center" title={cta?.title} subtitle={cta?.body}>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
+      <section className="ss-section">
+        <div className="rounded-card border border-sustain-cardBorder bg-white p-6 shadow-card">
+          <h2 className="text-3xl font-semibold text-sustain-text">{cta?.title}</h2>
+          <p className="mt-4 text-base text-slate-700">{cta?.body}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
             {cta?.primaryHref && cta?.primaryCta ? (
-              <Link
-                href={cta.primaryHref}
-                className="inline-flex items-center justify-center rounded-full bg-sage px-5 py-3 text-sm font-semibold text-white"
-              >
+              <Link href={cta.primaryHref} className="ss-btn-primary">
                 {cta.primaryCta}
               </Link>
             ) : null}
             {cta?.secondaryHref && cta?.secondaryCta ? (
-              <Link
-                href={cta.secondaryHref}
-                className="inline-flex items-center justify-center rounded-full border border-sage/40 px-5 py-3 text-sm font-semibold text-sage"
-              >
+              <Link href={cta.secondaryHref} className="ss-btn-secondary">
                 {cta.secondaryCta}
               </Link>
             ) : null}
           </div>
-        </Card>
-      </PageSection>
-    </>
+        </div>
+      </section>
+
+      <section className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">How to get started</p>
+          <h2 className="text-3xl font-semibold text-sustain-text">A gentle way into coaching</h2>
+        </div>
+        <div className="mt-8">
+          <StepList steps={gettingStartedSteps} />
+        </div>
+        <div className="mt-6">
+          <Link href="/contact" className="ss-btn-primary">
+            Talk to us
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
 

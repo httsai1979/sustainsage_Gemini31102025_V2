@@ -1,30 +1,18 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import {
-  AcademicCapIcon,
-  ChatBubbleLeftRightIcon,
-  GlobeAltIcon,
-  SparklesIcon,
-  UserCircleIcon,
-} from '@heroicons/react/24/outline';
+import { AcademicCapIcon, GlobeAltIcon, UserCircleIcon } from '@heroicons/react/24/outline';
 
 import Testimonials from '@/components/Testimonials';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
-import CardGrid from '@/components/ui/CardGrid';
-import PageSection from '@/components/ui/PageSection';
 import ResponsiveImage from '@/components/ui/ResponsiveImage';
+import StepList from '@/components/ui/StepList';
 import { getIconComponent } from '@/components/icons/map';
 import { loadJSON } from '@/lib/content';
 import { orderSections } from '@/lib/content/normalize';
 import { toSerializable } from '@/lib/toSerializable';
-
-const BUTTON_PRIMARY =
-  'inline-flex items-center justify-center rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary';
-const BUTTON_SECONDARY =
-  'inline-flex items-center justify-center rounded-full border border-primary/30 px-5 py-3 text-sm font-semibold text-primary transition hover:bg-primary/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary';
 
 const AUDIENCE_CARDS = [
   {
@@ -44,24 +32,6 @@ const AUDIENCE_CARDS = [
     description:
       'You are finishing university or entering work. Everyone asks “what’s next?” but the answer still feels foggy.',
     icon: AcademicCapIcon,
-  },
-];
-
-const WHY_CARDS = [
-  {
-    title: 'Slow, not rushed',
-    description: 'We prioritise sustainable change over dramatic declarations. The pace matches your real life.',
-    icon: SparklesIcon,
-  },
-  {
-    title: 'Space to think',
-    description: 'Sessions are calm and private. You can say the uncertain, unpolished thoughts without needing to perform.',
-    icon: ChatBubbleLeftRightIcon,
-  },
-  {
-    title: 'Lived experience of transition',
-    description: 'This practice is built from lived experience of immigration, career shifts, and restarting after pauses.',
-    icon: GlobeAltIcon,
   },
 ];
 
@@ -87,20 +57,11 @@ export default function Home({
   const processSteps = orderSections(Array.isArray(process?.steps) ? process.steps : []);
   const boundaries = content?.boundaries ?? {};
   const boundaryItems = orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []);
-  const keyPoints = content?.key_points ?? {};
-  const keyPointItems = orderSections(Array.isArray(keyPoints?.items) ? keyPoints.items : []);
   const fallbackMessage =
     fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
   const audiences = Array.isArray(content?.audiences)
     ? content.audiences
     : AUDIENCE_CARDS;
-  const whyCards = keyPointItems.length
-    ? keyPointItems.map((item) =>
-        typeof item === 'string'
-          ? { title: item }
-          : { title: item.title ?? item.question, description: item.description ?? item.answer },
-      )
-    : WHY_CARDS;
   const processCards = processSteps.length
     ? processSteps.map((step, index) => ({
         title: step.title ?? `Step ${index + 1}`,
@@ -132,45 +93,68 @@ export default function Home({
         },
       ];
 
+  const recognise = content?.recognise ?? {};
+  const recogniseItems = orderSections(Array.isArray(recognise?.items) ? recognise.items : []);
+  const whatCoachingIs = process?.description ??
+    'Sessions stay calm, structured, and paced around what is happening in your real life.';
+  const whatCoachingIsNot = boundaries?.description ??
+    'We hold ICF-aligned boundaries, refer to specialists when needed, and avoid one-size-fits-all advice.';
+
   return (
-    <>
-      <PageSection background="paper" className="pt-12">
-        <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-center">
+    <main className="ss-container">
+      <section className="ss-section">
+        <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div className="space-y-6">
             {hero?.eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary/80">{hero.eyebrow}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{hero.eyebrow}</p>
             ) : null}
-            <h1 className="text-4xl font-semibold leading-tight text-ink md:text-5xl">{hero?.title}</h1>
-            {hero?.description ? <p className="text-base leading-7 text-ink/80">{hero.description}</p> : null}
+            <h1 className="text-4xl font-semibold leading-tight text-sustain-text md:text-5xl">
+              {hero?.title ?? hero?.headline ?? 'Grounded coaching for transitions'}
+            </h1>
+            {hero?.description || hero?.subheadline ? (
+              <p className="text-base leading-7 text-slate-700">
+                {hero?.description ?? hero?.subheadline}
+              </p>
+            ) : null}
             {showFallbackNotice ? (
-              <p className="text-xs font-medium text-ink/60">{fallbackMessage}</p>
+              <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
             ) : null}
             <div className="flex flex-wrap gap-3">
-              {hero?.primaryCta?.href ? (
-                <Link href={hero.primaryCta.href} className={BUTTON_PRIMARY}>
-                  {hero.primaryCta.label}
-                </Link>
-              ) : null}
-              <Link href="#who-we-work-with" className={BUTTON_SECONDARY}>
-                See who we work with
+              <Link
+                href={hero?.primaryCta?.href ?? '/contact'}
+                className="ss-btn-primary"
+              >
+                {hero?.primaryCta?.label ?? hero?.primaryCta ?? 'Book a 20-minute chat'}
+              </Link>
+              <Link
+                href={hero?.secondaryCta?.href ?? '/services'}
+                className="ss-btn-secondary"
+              >
+                {hero?.secondaryCta?.label ?? hero?.secondaryCta ?? 'See services'}
               </Link>
             </div>
           </div>
-          <div className="ssg-card bg-paper">
-            <ResponsiveImage
-              src={hero?.image?.src ?? '/images/placeholder-hero.jpg'}
-              alt={hero?.image?.alt ?? hero?.title ?? 'Hero image'}
-              width={1600}
-              height={900}
-              className="rounded-2xl"
-              priority
-            />
+          <div className="mt-8 md:mt-0">
+            <div className="rounded-card border border-sustain-cardBorder bg-white p-3 shadow-card">
+              <ResponsiveImage
+                src={hero?.image?.src ?? hero?.imageSrc ?? '/images/placeholder-hero.jpg'}
+                alt={hero?.image?.alt ?? hero?.imageAlt ?? hero?.title ?? 'Hero image'}
+                width={1600}
+                height={900}
+                className="rounded-card"
+                priority
+              />
+            </div>
           </div>
         </div>
-      </PageSection>
+      </section>
 
-      <PageSection id="who-we-work-with" eyebrow="Who we work with" title="People who find this space helpful">
-        <CardGrid>
+      <section id="who-we-work-with" className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Who this is for</p>
+          <h2 className="text-3xl font-semibold text-sustain-text">People who find this space helpful</h2>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {audiences.map((card) => {
             const IconComponent = card.icon;
             return (
@@ -178,60 +162,85 @@ export default function Home({
                 key={card.title}
                 title={card.title}
                 subtitle={card.description}
-                icon={IconComponent ? <IconComponent className="h-6 w-6" /> : null}
+                icon={IconComponent ? <IconComponent className="h-6 w-6" aria-hidden /> : null}
               />
             );
           })}
-        </CardGrid>
-      </PageSection>
+        </div>
+      </section>
 
-      <PageSection
-        eyebrow={process?.eyebrow ?? 'How coaching works'}
-        title={process?.title ?? 'A calm structure for reflective work'}
-        lead={process?.description}
-      >
-        <CardGrid columns={{ base: 1, md: 2, lg: 4 }}>
-          {processCards.map((step) => (
-            <Card key={step.title} title={step.title} subtitle={step.description} tag={step.tag} />
+      <section className="ss-section">
+        <div className="grid gap-6 md:grid-cols-2">
+          <Card title="What coaching is">
+            <p>{whatCoachingIs}</p>
+            {process?.note ? <p className="mt-3 text-sm text-slate-600">{process.note}</p> : null}
+          </Card>
+          <Card title="What coaching is not">
+            <p>{whatCoachingIsNot}</p>
+            {boundaries?.note ? <p className="mt-3 text-sm text-slate-600">{boundaries.note}</p> : null}
+          </Card>
+        </div>
+      </section>
+
+      <section className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
+            {process?.eyebrow ?? 'How we work together'}
+          </p>
+          <h2 className="text-3xl font-semibold text-sustain-text">
+            {process?.title ?? 'A calm structure for reflective work'}
+          </h2>
+          {process?.description ? (
+            <p className="text-base text-slate-700">{process.description}</p>
+          ) : null}
+        </div>
+        <div className="mt-8">
+          <StepList steps={processCards} />
+        </div>
+      </section>
+
+      <section className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
+            {recognise?.eyebrow ?? 'Coaching topics'}
+          </p>
+          <h2 className="text-3xl font-semibold text-sustain-text">
+            {recognise?.title ?? 'Common coaching topics'}
+          </h2>
+          {recognise?.intro ? <p className="text-base text-slate-700">{recognise.intro}</p> : null}
+        </div>
+        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {recogniseItems.map((item, index) => (
+            <Card key={item?.title ?? item ?? index} title={item?.title}>
+              <p>{item?.description ?? item}</p>
+            </Card>
           ))}
-        </CardGrid>
-        {process?.note ? <p className="mt-6 text-sm text-ink/70">{process.note}</p> : null}
-      </PageSection>
-
-      <PageSection
-        eyebrow="Why SustainSage"
-        title={keyPoints?.title ?? 'Why people choose SustainSage'}
-        lead={keyPoints?.description}
-      >
-        <CardGrid>
-          {whyCards.map((card) => {
-            const IconComponent = card.icon;
-            return (
-              <Card
-                key={card.title}
-                title={card.title}
-                subtitle={card.description}
-                icon={IconComponent ? <IconComponent className="h-6 w-6" /> : null}
-              />
-            );
-          })}
-        </CardGrid>
-      </PageSection>
+        </div>
+      </section>
 
       {serviceCards.length ? (
-        <PageSection eyebrow={services?.eyebrow} title={services?.title} lead={services?.description}>
-          <CardGrid>
+        <section className="ss-section">
+          <div className="space-y-4 text-center md:text-left">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
+              {services?.eyebrow ?? 'Coaching pathways'}
+            </p>
+            <h2 className="text-3xl font-semibold text-sustain-text">
+              {services?.title ?? 'Services to match your stage'}
+            </h2>
+            {services?.description ? <p className="text-base text-slate-700">{services.description}</p> : null}
+          </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {serviceCards.slice(0, 3).map((card) => {
               const IconComponent = getIconComponent(card.icon);
               return (
                 <Card
-                  key={card.href}
+                  key={card.href ?? card.title}
                   title={card.title}
                   subtitle={card.description}
-                  icon={IconComponent ? <IconComponent className="h-6 w-6" /> : null}
+                  icon={IconComponent ? <IconComponent className="h-6 w-6" aria-hidden /> : null}
                   footer={
                     card.href ? (
-                      <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-primary">
+                      <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
                         {card.linkLabel ?? 'Explore service'}
                         <span aria-hidden>→</span>
                       </Link>
@@ -240,34 +249,42 @@ export default function Home({
                 />
               );
             })}
-          </CardGrid>
-        </PageSection>
+          </div>
+        </section>
       ) : null}
 
       {boundaryItems.length ? (
-        <PageSection title={boundaries?.title} lead={boundaries?.description}>
-          <div className="ssg-card">
-            <FAQAccordion items={boundaryItems} className="mt-6" />
+        <section className="ss-section">
+          <div className="space-y-4 text-center md:text-left">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{boundaries?.eyebrow}</p>
+            <h2 className="text-3xl font-semibold text-sustain-text">{boundaries?.title}</h2>
+            {boundaries?.description ? <p className="text-base text-slate-700">{boundaries.description}</p> : null}
           </div>
-        </PageSection>
+          <div className="mt-8 rounded-card border border-sustain-cardBorder bg-white p-4 shadow-card">
+            <FAQAccordion items={boundaryItems} />
+          </div>
+        </section>
       ) : null}
 
-      <PageSection title={faqContent.title}>
-        <div className="ssg-card">
-          <p className="text-base text-ink/80">{faqContent.body}</p>
-          <div className="mt-6">
-            <Link href={faqContent.ctaHref} className="inline-flex items-center gap-2 font-semibold text-primary">
+      <section className="ss-section">
+        <div className="rounded-card border border-sustain-cardBorder bg-white p-6 text-center shadow-card md:p-10">
+          <h2 className="text-3xl font-semibold text-sustain-text">{faqContent.title}</h2>
+          <p className="mt-4 text-base text-slate-700">{faqContent.body}</p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href={faqContent.ctaHref} className="ss-btn-secondary">
               {faqContent.ctaLabel}
-              <span aria-hidden>→</span>
+            </Link>
+            <Link href="/contact" className="ss-btn-primary">
+              Book a conversation
             </Link>
           </div>
         </div>
-      </PageSection>
+      </section>
 
-      <PageSection className="pb-16">
+      <section className="ss-section">
         <Testimonials items={testimonials ?? []} />
-      </PageSection>
-    </>
+      </section>
+    </main>
   );
 }
 
