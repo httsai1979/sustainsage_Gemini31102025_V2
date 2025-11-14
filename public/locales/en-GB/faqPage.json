@@ -30,7 +30,7 @@
           "answer": "That’s common. We begin with what feels most alive and co-create a working focus in session. ICF ethics require us to keep you in charge of the agenda, so we check clarity and consent regularly.",
           "links": [
             { "href": "/services/transition-coaching", "label": "See the Transition package" },
-            { "href": "/contact", "label": "Book an intro chat" }
+            { "href": "/contact", "label": "Book a 20-minute chat" }
           ]
         },
         {
@@ -129,7 +129,7 @@
   "cta": {
     "title": "Still unsure?",
     "body": "Share your context and we’ll confirm whether coaching, a referral or another resource will serve you best. Your clarity matters more than filling a slot.",
-    "primary": "Book a call",
+    "primary": "Book a 20-minute chat",
     "secondary": "Explore coaching packages"
   }
 }

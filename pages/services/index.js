@@ -43,7 +43,7 @@ const APPROACH_CARDS = [
 ];
 
 const CTA_LINKS = [
-  { href: '/contact', label: 'Book a free chat', variant: 'primary' },
+  { href: '/contact', label: 'Book a 20-minute chat', variant: 'primary' },
   { href: '/services', label: 'Explore services', variant: 'secondary' },
 ];
 
@@ -58,13 +58,13 @@ export default function ServicesPage({
   const pathways = t('pathways', { returnObjects: true });
   const cta = t('cta', { returnObjects: true });
   const fallbackMessage = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
-  const primaryCta = hero?.primaryCta ?? { href: '/contact', label: 'Book a chat' };
+  const primaryCta = hero?.primaryCta ?? { href: '/contact', label: 'Book a 20-minute chat' };
   const secondaryCta = hero?.secondaryCta ?? { href: '#support', label: 'Who we support' };
 
   // Single source of truth for the onboarding steps to avoid duplicate declarations.
   const gettingStartedSteps = [
     {
-      title: 'Book your free chat',
+      title: 'Book your 20-minute chat',
       description: 'We talk for 20 minutes to understand what is changing and answer scope questions.',
     },
     {
@@ -119,7 +119,7 @@ export default function ServicesPage({
             <div className="mt-6 flex flex-wrap gap-3">
               {primaryCta?.href ? (
                 <Link href={primaryCta.href} className="ss-btn-primary">
-                  {primaryCta.label ?? 'Book a chat'}
+                  {primaryCta.label ?? 'Book a 20-minute chat'}
                 </Link>
               ) : null}
               {secondaryCta?.href ? (
@@ -201,7 +201,7 @@ export default function ServicesPage({
       <section className="ss-section">
         <div className="rounded-3xl border border-sustain-cardBorder bg-white p-8 text-center shadow-md">
           <h2 className="text-3xl font-semibold text-sustain-text">{cta?.title ?? 'Let’s find the right starting point'}</h2>
-          <p className="mt-4 text-base text-slate-700">{cta?.body ?? 'Book a short chat or keep exploring the services in your own time.'}</p>
+          <p className="mt-4 text-base text-slate-700">{cta?.body ?? 'Book a 20-minute chat or keep exploring the services in your own time.'}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {CTA_LINKS.map((link) => (
               <Link

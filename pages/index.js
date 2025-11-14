@@ -24,18 +24,24 @@ const DEFAULT_WHO_CARDS = [
     description:
       'Mid-career people who want a thoughtful space to decide what stays, what shifts, and how to move without burning out.',
     icon: BriefcaseIcon,
+    href: '/for/mid-career-returners',
+    linkLabel: 'See the mid-career guide',
   },
   {
     title: 'Career changers',
     description:
       'Those translating experience between countries or industries and needing calm structure to test new directions.',
     icon: ArrowsRightLeftIcon,
+    href: '/for/newcomers-to-uk',
+    linkLabel: 'See the newcomers guide',
   },
   {
     title: 'Purpose-driven individuals',
     description:
       'Graduates, working parents, and community builders who want support aligning their work with their values.',
     icon: AcademicCapIcon,
+    href: '/for/parents-returning-to-work',
+    linkLabel: 'See the parents guide',
   },
 ];
 
@@ -92,16 +98,24 @@ export default function Home({
     (item) => item?.title ?? item?.description ?? ''
   );
 
-  const whoCards = DEFAULT_WHO_CARDS.map((card, index) => ({
-    ...card,
-    description: audiences[index]?.description ?? card.description,
-  }));
+  const whoCards = DEFAULT_WHO_CARDS.map((card, index) => {
+    const override = audiences[index] ?? {};
+    return {
+      ...card,
+      ...override,
+      description: override?.description ?? card.description,
+      title: override?.title ?? card.title,
+      href: override?.href ?? card.href,
+      linkLabel: override?.linkLabel ?? card.linkLabel,
+      icon: card.icon,
+    };
+  });
 
   const fallbackSteps = [
     {
       title: 'Initial conversation',
       description:
-        'A short chat to understand what is changing and share the boundaries we work within.',
+        'A 20-minute chat to understand what is changing and share the boundaries we work within.',
     },
     {
       title: 'Goal setting',
@@ -182,7 +196,7 @@ export default function Home({
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href={hero?.primaryCta?.href ?? '/contact'} className="ss-btn-primary">
-                {hero?.primaryCta?.label ?? hero?.primaryCta ?? 'Book a chat'}
+                {hero?.primaryCta?.label ?? hero?.primaryCta ?? 'Book a 20-minute chat'}
               </Link>
               <Link href={hero?.secondaryCta?.href ?? '/services'} className="ss-btn-secondary text-sustain-text">
                 {hero?.secondaryCta?.label ?? hero?.secondaryCta ?? 'Who we help'}
@@ -206,6 +220,17 @@ export default function Home({
                 title={card.title}
                 subtitle={card.description}
                 icon={IconComponent ? <IconComponent className="h-6 w-6" aria-hidden /> : null}
+                footer={
+                  card.href ? (
+                    <Link
+                      href={card.href}
+                      className="inline-flex items-center gap-2 font-semibold text-sustain-green"
+                    >
+                      {card.linkLabel ?? 'Read the detailed guide'}
+                      <span aria-hidden>→</span>
+                    </Link>
+                  ) : null
+                }
               />
             );
           })}
@@ -329,7 +354,7 @@ export default function Home({
               {faqContent.ctaLabel}
             </Link>
             <Link href="/contact" className="ss-btn-primary">
-              Book a conversation
+              Book a 20-minute chat
             </Link>
           </div>
         </div>
