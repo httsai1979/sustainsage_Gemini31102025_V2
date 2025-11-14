@@ -139,8 +139,6 @@ export default function Header() {
                   key={`services-${index}`}
                   ref={servicesMenuRef}
                   className="relative"
-                  onMouseEnter={() => setMegaOpen(true)}
-                  onMouseLeave={() => setMegaOpen(false)}
                   onFocus={() => setMegaOpen(true)}
                   onBlur={handleMegaBlur}
                 >
