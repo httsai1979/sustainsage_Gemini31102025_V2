@@ -5,19 +5,29 @@ import cn from '@/lib/cn';
 export default function StepList({ steps = [], className = '' }) {
   if (!Array.isArray(steps) || steps.length === 0) return null;
   return (
-    <ol className={cn('grid gap-4 sm:grid-cols-2', className)}>
+    <ol
+      className={cn(
+        'grid w-full grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
+        className,
+      )}
+    >
       {steps.map((step, index) => {
         const title = typeof step === 'string' ? null : step?.title;
         const description = typeof step === 'string' ? step : step?.description;
         return (
-          <li key={title ?? description ?? index} className="rounded-2xl bg-white p-5 shadow-card">
-            <div className="mb-2 flex items-center gap-3">
-              <div className="flex h-7 w-7 items-center justify-center rounded-full bg-sage/10 text-sm font-medium text-sage">
-                {index + 1}
-              </div>
-              {title ? <span className="font-medium text-ink">{title}</span> : null}
+          <li
+            key={title ?? description ?? index}
+            className="flex h-full w-full flex-col gap-3 rounded-card rounded-2xl border border-slate-100 bg-white p-4 shadow-md md:p-5"
+          >
+            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sustain-green text-sm font-semibold text-white">
+              {String(index + 1).padStart(2, '0')}
+            </span>
+            <div className="flex flex-1 flex-col">
+              {title ? <p className="font-medium text-sustain-text">{title}</p> : null}
+              {description ? (
+                <p className="mt-1 text-sm leading-relaxed text-slate-700">{description}</p>
+              ) : null}
             </div>
-            {description ? <p className="text-[15px] leading-7 text-slate-600">{description}</p> : null}
           </li>
         );
       })}
