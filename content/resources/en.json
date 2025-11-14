@@ -30,65 +30,86 @@
     {
       "id": "self-talk-reframe",
       "title": "Self-talk Reframe Cards",
-      "desc": "Swap harsh inner scripts with grounded, kinder language you can use in the moment.",
-      "href": "/tools/self-talk-reframe",
+      "desc": "Gentle prompts to help you notice harsh self-talk and reframe it with more compassionate language.",
+      "description": "Gentle prompts to help you notice harsh self-talk and reframe it with more compassionate language.",
+      "href": "/tools/self-talk-reframe.html",
       "img": "/images/resources/selftalk.jpg",
       "alt": "Self-talk practice",
-      "tag": "Interactive tool"
+      "badge": "Interactive tool",
+      "tag": "Interactive tool",
+      "isExternal": false
     },
     {
-      "id": "behaviour-ladder-tool",
+      "id": "behaviour-ladder",
       "title": "Behaviour Experiment Ladder",
-      "desc": "Step through a micro-experiment so you can test one behaviour with care.",
-      "href": "/tools/behaviour-ladder",
+      "desc": "Plan small, low-risk experiments to test new behaviours instead of all-or-nothing change.",
+      "description": "Plan small, low-risk experiments to test new behaviours instead of all-or-nothing change.",
+      "href": "/tools/behaviour-ladder.html",
       "img": "/images/resources/behaviour-ladder-hero.jpg",
       "alt": "Behaviour experiment ladder",
-      "tag": "Interactive tool"
+      "badge": "Interactive tool",
+      "tag": "Interactive tool",
+      "isExternal": false
     },
     {
       "id": "values-map",
       "title": "Values Map",
-      "desc": "Map the anchors and signals that keep decisions aligned with what matters most.",
-      "href": "/tools/values-map",
+      "desc": "Map what truly matters to you and check how your current choices align with your core values.",
+      "description": "Map what truly matters to you and check how your current choices align with your core values.",
+      "href": "/tools/values-map.html",
       "img": "/images/resources/values-worksheet.svg",
       "alt": "Values worksheet",
-      "tag": "Interactive tool"
+      "badge": "Worksheet",
+      "tag": "Worksheet",
+      "isExternal": false
     },
     {
-      "id": "emotion-triangle-tool",
-      "title": "Emotion Triangle Cards",
-      "desc": "Name the feeling, explore the need, and notice one possible next step.",
-      "href": "/tools/emotion-triangle",
-      "img": "/images/resources/emotion-triangle.jpg",
-      "alt": "Emotion triangle practice",
-      "tag": "Interactive tool"
+      "id": "role-separation",
+      "title": "Role Separation Practice",
+      "desc": "Gently separate 'me as a person' from 'me in this role' so criticism doesn’t feel like an attack on your whole identity.",
+      "description": "Gently separate 'me as a person' from 'me in this role' so criticism doesn’t feel like an attack on your whole identity.",
+      "href": "/tools/role-separation.html",
+      "img": "/images/resources/culture-checklist.svg",
+      "alt": "Role separation",
+      "badge": "Reflection",
+      "tag": "Reflection",
+      "isExternal": false
+    },
+    {
+      "id": "choice-clarifier",
+      "title": "Choice Clarifier",
+      "desc": "Lay out your options, costs, and needs so decisions feel less foggy and more grounded.",
+      "description": "Lay out your options, costs, and needs so decisions feel less foggy and more grounded.",
+      "href": "/tools/choice-clarifier.html",
+      "img": "/images/resources/imposter-reading.svg",
+      "alt": "Decision helper",
+      "badge": "Decision aid",
+      "tag": "Decision aid",
+      "isExternal": false
     },
     {
       "id": "thought-log",
       "title": "Thought Log",
-      "desc": "Capture looping thoughts, gather evidence, and practice a balanced reframe.",
-      "href": "/tools/thought-log",
+      "desc": "Capture triggering situations, thoughts, and feelings to spot patterns over time.",
+      "description": "Capture triggering situations, thoughts, and feelings to spot patterns over time.",
+      "href": "/tools/thought-log.html",
       "img": "/images/resources/grounding-audio.svg",
       "alt": "Grounding log",
-      "tag": "Interactive tool"
+      "badge": "Tracking tool",
+      "tag": "Tracking tool",
+      "isExternal": false
     },
     {
-      "id": "role-separation",
-      "title": "Role Separation Exercise",
-      "desc": "Untangle roles and responsibilities so you can decide what to hold or delegate.",
-      "href": "/tools/role-separation",
-      "img": "/images/resources/culture-checklist.svg",
-      "alt": "Role separation",
-      "tag": "Interactive tool"
-    },
-    {
-      "id": "choice-clarifier",
-      "title": "Decision Clarity Helper",
-      "desc": "Lay out trade-offs, boundaries, and needs before you commit to the next step.",
-      "href": "/tools/choice-clarifier",
-      "img": "/images/resources/imposter-reading.svg",
-      "alt": "Decision helper",
-      "tag": "Interactive tool"
+      "id": "emotion-triangle",
+      "title": "Emotion Triangle",
+      "desc": "Notice the link between situations, feelings, and actions, and gently explore other options.",
+      "description": "Notice the link between situations, feelings, and actions, and gently explore other options.",
+      "href": "/tools/emotion-triangle.html",
+      "img": "/images/resources/emotion-triangle.jpg",
+      "alt": "Emotion triangle practice",
+      "badge": "Reflection",
+      "tag": "Reflection",
+      "isExternal": false
     }
   ]
 }

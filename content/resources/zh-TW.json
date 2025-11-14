@@ -31,16 +31,16 @@
       "id": "self-talk-reframe",
       "title": "自我對話重塑卡",
       "desc": "把嚴苛的內在對話換成更穩定、溫柔的提醒。",
-      "href": "/tools/self-talk-reframe",
+      "href": "/tools/self-talk-reframe.html",
       "img": "/images/resources/selftalk.jpg",
       "alt": "自我對話練習",
       "tag": "互動工具"
     },
     {
-      "id": "behaviour-ladder-tool",
+      "id": "behaviour-ladder",
       "title": "行為實驗階梯",
       "desc": "循序規劃一個小型實驗，溫柔測試新的行為。",
-      "href": "/tools/behaviour-ladder",
+      "href": "/tools/behaviour-ladder.html",
       "img": "/images/resources/behaviour-ladder-hero.jpg",
       "alt": "行為實驗工具",
       "tag": "互動工具"
@@ -49,16 +49,16 @@
       "id": "values-map",
       "title": "自我價值地圖",
       "desc": "標記支撐你的價值與訊號，讓決策對齊真正的重心。",
-      "href": "/tools/values-map",
+      "href": "/tools/values-map.html",
       "img": "/images/resources/values-worksheet.svg",
       "alt": "價值地圖",
       "tag": "互動工具"
     },
     {
-      "id": "emotion-triangle-tool",
+      "id": "emotion-triangle",
       "title": "情緒三角卡",
       "desc": "說出感受、看見需求，再想一個可行的小步。",
-      "href": "/tools/emotion-triangle",
+      "href": "/tools/emotion-triangle.html",
       "img": "/images/resources/emotion-triangle.jpg",
       "alt": "情緒三角卡",
       "tag": "互動工具"
@@ -67,7 +67,7 @@
       "id": "thought-log",
       "title": "思維紀錄儀",
       "desc": "記錄反覆出現的念頭、蒐集證據，練習較平衡的回應。",
-      "href": "/tools/thought-log",
+      "href": "/tools/thought-log.html",
       "img": "/images/resources/grounding-audio.svg",
       "alt": "思維紀錄",
       "tag": "互動工具"
@@ -76,7 +76,7 @@
       "id": "role-separation",
       "title": "角色分化練習",
       "desc": "釐清不同角色與責任，決定自己要拿著或交棒。",
-      "href": "/tools/role-separation",
+      "href": "/tools/role-separation.html",
       "img": "/images/resources/culture-checklist.svg",
       "alt": "角色分化",
       "tag": "互動工具"
@@ -85,7 +85,7 @@
       "id": "choice-clarifier",
       "title": "選擇困境釐清器",
       "desc": "在做決定前列出取捨、界線與需要。",
-      "href": "/tools/choice-clarifier",
+      "href": "/tools/choice-clarifier.html",
       "img": "/images/resources/imposter-reading.svg",
       "alt": "決策釐清",
       "tag": "互動工具"
