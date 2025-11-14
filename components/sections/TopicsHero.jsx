@@ -2,6 +2,7 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import ResponsiveImage from '@/components/ui/ResponsiveImage';
+import Section from '@/components/ui/Section';
 
 export default function TopicsHero({
   eyebrow,
@@ -13,7 +14,7 @@ export default function TopicsHero({
   backgroundAlt = 'Coaching topics background',
 }) {
   return (
-    <section className="ss-section">
+    <Section fullWidth>
       <div className="relative overflow-hidden rounded-3xl bg-slate-900 text-white">
         <ResponsiveImage
           src={backgroundImage}
@@ -43,7 +44,7 @@ export default function TopicsHero({
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }
 

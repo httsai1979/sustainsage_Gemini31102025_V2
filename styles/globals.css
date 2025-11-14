@@ -194,6 +194,28 @@ h3 {
     @apply text-[14px] font-normal text-[var(--color-text-secondary)];
 }
 
+@layer components {
+    .text-h1 {
+        @apply text-4xl font-semibold leading-tight tracking-tight text-sustain-text md:text-5xl;
+    }
+
+    .text-h2 {
+        @apply text-3xl font-semibold leading-snug text-sustain-text md:text-4xl;
+    }
+
+    .text-h3 {
+        @apply text-2xl font-semibold text-sustain-text;
+    }
+
+    .text-body {
+        @apply text-base leading-relaxed text-slate-700;
+    }
+
+    .text-small {
+        @apply text-sm leading-relaxed text-slate-600;
+    }
+}
+
 /* 按鈕樣式 */
 .btn-primary {
     @apply bg-[var(--color-primary)] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300;

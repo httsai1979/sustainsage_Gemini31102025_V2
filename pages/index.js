@@ -10,6 +10,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
 import Icon from '@/components/ui/Icon';
 import ResponsiveImage from '@/components/ui/ResponsiveImage';
+import Section from '@/components/ui/Section';
 import StepList from '@/components/ui/StepList';
 import { getIconComponent } from '@/components/icons/map';
 import { loadJSON } from '@/lib/content';
@@ -96,7 +97,7 @@ export default function Home({
     description: audiences[index]?.description ?? card.description,
   }));
 
-  const processCards = (processSteps.length ? processSteps : [
+  const fallbackSteps = [
     {
       title: 'Initial conversation',
       description:
@@ -114,7 +115,26 @@ export default function Home({
       title: 'Sustainable growth',
       description: 'We pause, review, and keep what works so progress feels steady and kind.',
     },
-  ]).slice(0, 4);
+  ];
+
+  const stepIcons = ['calendar', 'target', 'note', 'handshake'];
+
+  const processCards = (processSteps.length ? processSteps : fallbackSteps)
+    .slice(0, 4)
+    .map((step, index) => {
+      if (typeof step === 'string') {
+        return {
+          title: `Step ${index + 1}`,
+          description: step,
+          icon: stepIcons[index] ?? 'spark',
+        };
+      }
+
+      return {
+        ...step,
+        icon: step?.icon ?? step?.iconName ?? stepIcons[index] ?? 'spark',
+      };
+    });
 
   const topicItems = dedupeBy(
     orderSections(Array.isArray(recogniseContent?.items) ? recogniseContent.items : []),
@@ -129,10 +149,10 @@ export default function Home({
     .slice(0, 3);
 
   return (
-    <main className="ss-container">
-      <section className="ss-section">
-        <div className="grid gap-8 md:grid-cols-2 md:items-stretch">
-          <div className="relative min-h-[320px] overflow-hidden rounded-3xl">
+    <main className="bg-sustain-bg">
+      <Section>
+        <div className="grid gap-8 lg:grid-cols-[1.05fr_minmax(0,0.95fr)] lg:items-center">
+          <div className="relative min-h-[360px] overflow-hidden rounded-3xl">
             <ResponsiveImage
               src={hero?.image?.src ?? hero?.imageSrc ?? '/images/placeholder-hero.jpg'}
               alt={hero?.image?.alt ?? hero?.imageAlt ?? hero?.title ?? 'SustainSage coaching hero'}
@@ -141,50 +161,41 @@ export default function Home({
               className="h-full w-full object-cover"
               priority
             />
+            <div className="absolute inset-0 bg-sustain-text/20" aria-hidden />
           </div>
-          <div className="relative overflow-hidden rounded-3xl bg-sustain-text text-white">
-            <ResponsiveImage
-              src={hero?.image?.src ?? hero?.imageSrc ?? '/images/placeholder-hero.jpg'}
-              alt=""
-              width={1600}
-              height={1200}
-              className="absolute inset-0 h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-sustain-text/90" aria-hidden />
-            <div className="relative flex h-full flex-col gap-6 p-8 md:p-10">
-              {hero?.eyebrow ? (
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-white/70">{hero.eyebrow}</p>
+          <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-card md:p-10">
+            {hero?.eyebrow ? (
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{hero.eyebrow}</p>
+            ) : null}
+            <div className="mt-4 space-y-4">
+              <h1 className="text-h1">
+                {hero?.title ?? hero?.headline ?? 'Space for life’s turning points'}
+              </h1>
+              {hero?.description || hero?.subheadline ? (
+                <p className="text-body">
+                  {hero?.description ?? hero?.subheadline}
+                </p>
               ) : null}
-              <div className="space-y-4">
-                <h1 className="text-4xl font-semibold leading-tight md:text-5xl">
-                  {hero?.title ?? hero?.headline ?? 'Space for life’s turning points'}
-                </h1>
-                {hero?.description || hero?.subheadline ? (
-                  <p className="text-base leading-relaxed text-white/90">
-                    {hero?.description ?? hero?.subheadline}
-                  </p>
-                ) : null}
-                {showFallbackNotice ? (
-                  <p className="text-xs font-medium text-white/80">{fallbackMessage}</p>
-                ) : null}
-              </div>
-              <div className="flex flex-wrap gap-3">
-                <Link href={hero?.primaryCta?.href ?? '/contact'} className="ss-btn-primary">
-                  {hero?.primaryCta?.label ?? hero?.primaryCta ?? 'Book a chat'}
-                </Link>
-                <Link href={hero?.secondaryCta?.href ?? '/services'} className="ss-btn-secondary text-sustain-text">
-                  {hero?.secondaryCta?.label ?? hero?.secondaryCta ?? 'Explore services'}
-                </Link>
-              </div>
+              {showFallbackNotice ? (
+                <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+              ) : null}
+            </div>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link href={hero?.primaryCta?.href ?? '/contact'} className="ss-btn-primary">
+                {hero?.primaryCta?.label ?? hero?.primaryCta ?? 'Book a chat'}
+              </Link>
+              <Link href={hero?.secondaryCta?.href ?? '/services'} className="ss-btn-secondary text-sustain-text">
+                {hero?.secondaryCta?.label ?? hero?.secondaryCta ?? 'Who we help'}
+              </Link>
             </div>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section id="who-we-work-with" className="ss-section">
+      <Section id="who-we-work-with">
         <div className="space-y-4 text-center md:text-left">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Who coaching is for</p>
-          <h2 className="text-3xl font-semibold text-sustain-text">People who find this space helpful</h2>
+          <h2 className="text-h2">People who find this space helpful</h2>
         </div>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {whoCards.map((card) => {
@@ -199,9 +210,9 @@ export default function Home({
             );
           })}
         </div>
-      </section>
+      </Section>
 
-      <section className="ss-section">
+      <Section>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <Card title="What coaching is" icon={<Icon name="spark" />}>
             <ul className="space-y-2 text-sm leading-relaxed text-slate-700">
@@ -224,24 +235,20 @@ export default function Home({
             </ul>
           </Card>
         </div>
-      </section>
+      </Section>
 
-      <section className="ss-section">
+      <Section background="muted">
         <div className="space-y-4 text-center md:text-left">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
             {process?.eyebrow ?? 'How we work together'}
           </p>
-          <h2 className="text-3xl font-semibold text-sustain-text">
-            {process?.title ?? 'A calm structure for reflective work'}
-          </h2>
-          {process?.description ? (
-            <p className="text-base text-slate-700">{process.description}</p>
-          ) : null}
+          <h2 className="text-h2">{process?.title ?? 'A calm structure for reflective work'}</h2>
+          {process?.description ? <p className="text-body">{process.description}</p> : null}
         </div>
         <div className="mt-8">
           <StepList steps={processCards} />
         </div>
-      </section>
+      </Section>
 
       <TopicsHero
         eyebrow={recogniseContent?.eyebrow ?? 'Areas we can explore together'}
@@ -257,7 +264,7 @@ export default function Home({
         }
       />
 
-      <section id="topics" className="ss-section">
+      <Section id="topics">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {topicItems.map((item, index) => (
             <Card key={item?.title ?? item ?? index} title={item?.title ?? item}>
@@ -265,20 +272,16 @@ export default function Home({
             </Card>
           ))}
         </div>
-      </section>
+      </Section>
 
       {serviceCards.length ? (
-        <section className="ss-section">
+        <Section>
           <div className="space-y-4 text-center md:text-left">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
               {services?.eyebrow ?? 'Coaching pathways'}
             </p>
-            <h2 className="text-3xl font-semibold text-sustain-text">
-              {services?.title ?? 'Services to match your stage'}
-            </h2>
-            {services?.description ? (
-              <p className="text-base text-slate-700">{services.description}</p>
-            ) : null}
+            <h2 className="text-h2">{services?.title ?? 'Services to match your stage'}</h2>
+            {services?.description ? <p className="text-body">{services.description}</p> : null}
           </div>
           <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {serviceCards.slice(0, 3).map((card) => {
@@ -301,28 +304,26 @@ export default function Home({
               );
             })}
           </div>
-        </section>
+        </Section>
       ) : null}
 
       {boundaryItems.length ? (
-        <section className="ss-section">
+        <Section>
           <div className="space-y-4 text-center md:text-left">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{boundaries?.eyebrow}</p>
-            <h2 className="text-3xl font-semibold text-sustain-text">{boundaries?.title}</h2>
-            {boundaries?.description ? (
-              <p className="text-base text-slate-700">{boundaries.description}</p>
-            ) : null}
+            <h2 className="text-h2">{boundaries?.title}</h2>
+            {boundaries?.description ? <p className="text-body">{boundaries.description}</p> : null}
           </div>
           <div className="mt-8 rounded-card rounded-2xl border border-slate-100 bg-white p-4 shadow-md">
             <FAQAccordion items={boundaryItems} />
           </div>
-        </section>
+        </Section>
       ) : null}
 
-      <section className="ss-section">
+      <Section>
         <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-6 text-center shadow-md md:p-10">
-          <h2 className="text-3xl font-semibold text-sustain-text">{faqContent.title}</h2>
-          <p className="mt-4 text-base text-slate-700">{faqContent.body}</p>
+          <h2 className="text-h2">{faqContent.title}</h2>
+          <p className="mt-4 text-body">{faqContent.body}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link href={faqContent.ctaHref} className="ss-btn-secondary">
               {faqContent.ctaLabel}
@@ -332,11 +333,11 @@ export default function Home({
             </Link>
           </div>
         </div>
-      </section>
+      </Section>
 
-      <section className="ss-section">
+      <Section>
         <Testimonials items={testimonials ?? []} />
-      </section>
+      </Section>
     </main>
   );
 }
