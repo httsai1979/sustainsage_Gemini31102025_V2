@@ -12,7 +12,7 @@
       "alt": "Rashi Anand coaching a client in a bright room"
     },
     "primaryCta": {
-      "label": "Book an intro call",
+      "label": "Book a 20-minute chat",
       "href": "/contact"
     },
     "secondaryCta": {
@@ -124,7 +124,7 @@
   "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
   "cta": {
     "primary_label": "先試用免費工具",
-    "primary_href": "/#tools",
+    "primary_href": "/resources",
     "secondary_label": "預約 20 分鐘對談",
     "secondary_href": "/contact"
   },

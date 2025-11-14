@@ -8,7 +8,7 @@
       "title": "Coaching for career returners",
       "subtitle": "Rebuild momentum after a break without pretending the last chapter did not happen.",
       "imageAlt": "Illustration symbolising a fresh chapter",
-      "primaryCta": "Book an intro call",
+      "primaryCta": "Book a 20-minute chat",
       "secondaryCta": "Back to services"
     },
     "sections": {
@@ -85,7 +85,7 @@
       "title": "Coaching for newcomers to the UK",
       "subtitle": "Make sense of work, culture, and expectations—without having to translate your whole story from scratch.",
       "imageAlt": "Illustration representing newcomers to the UK",
-      "primaryCta": "Book an intro call",
+      "primaryCta": "Book a 20-minute chat",
       "secondaryCta": "Back to services"
     },
     "sections": {
@@ -147,7 +147,7 @@
           [
             { "type": "text", "value": "Still unsure? Browse the " },
             { "type": "link", "href": "/faq", "label": "FAQ" },
-            { "type": "text", "value": " or book an intro call to see if coaching is the right container right now." }
+            { "type": "text", "value": " or book a 20-minute chat to see if coaching is the right container right now." }
           ]
         ]
       }
@@ -162,7 +162,7 @@
       "title": "Coaching for parents returning to work",
       "subtitle": "Return to work in ways that honour care roles, ambition, and rest.",
       "imageAlt": "Illustration of balancing caregiving and work",
-      "primaryCta": "Book an intro call",
+      "primaryCta": "Book a 20-minute chat",
       "secondaryCta": "Back to services"
     },
     "sections": {
@@ -241,7 +241,7 @@
       "title": "Coaching for young professionals",
       "subtitle": "Grow into leadership while staying values-led and resourced.",
       "imageAlt": "Illustration of a young professional exploring options",
-      "primaryCta": "Book an intro call",
+      "primaryCta": "Book a 20-minute chat",
       "secondaryCta": "Back to services"
     },
     "sections": {

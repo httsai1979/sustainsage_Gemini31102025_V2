@@ -14,7 +14,7 @@ function resolveCta(service, override) {
     title:
       override?.title ??
       serviceCta.title ??
-      'Book a chemistry chat',
+      'Book a 20-minute chat',
     description:
       override?.description ??
       serviceCta.description ??

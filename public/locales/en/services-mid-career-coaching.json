@@ -6,7 +6,7 @@
   "hero": {
     "title": "Realign mid-career decisions with the life you want now.",
     "subtitle": "Pause, re-evaluate, and design experiments that honour your experience and evolving values.",
-    "primaryCta": "Book a 20-minute intro call",
+    "primaryCta": "Book a 20-minute chat",
     "primaryHref": "/contact?service=mid-career-coaching",
     "secondaryCta": "Back to services",
     "secondaryHref": "/services"
@@ -77,9 +77,9 @@
     },
     "cta": {
       "title": "Want space to redesign the middle of your career?",
-      "body": "Book an intro chat to see whether this partnership supports the decisions ahead.",
+      "body": "Book a 20-minute chat to see whether this partnership supports the decisions ahead.",
       "primary": {
-        "label": "Book an intro call",
+        "label": "Book a 20-minute chat",
         "href": "/contact?service=mid-career-coaching"
       },
       "secondary": {

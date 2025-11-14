@@ -167,14 +167,14 @@ function ServiceSubpageLayout({
   const defaultCta: ServiceCTA = {
     title: 'Next steps',
     description:
-      'Compare pricing or start a short conversation to see if this coaching pathway fits your moment.',
+      'Compare pricing or start a 20-minute chat to see if this coaching pathway fits your moment.',
     primary: {
       href: `${basePath}/pricing`,
       label: 'Review pricing',
     },
     secondary: {
       href: '/contact',
-      label: 'Talk to a coach',
+      label: 'Book a 20-minute chat',
     },
   };
   const resolvedCta: ServiceCTA =

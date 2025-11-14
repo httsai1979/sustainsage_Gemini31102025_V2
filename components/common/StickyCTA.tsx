@@ -1,4 +1,4 @@
-export function StickyCTA({ href = '/contact', label = 'Book a 20-min chat' }) {
+export function StickyCTA({ href = '/contact', label = 'Book a 20-minute chat' }) {
   return (
     <a
       href={href}
