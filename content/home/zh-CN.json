@@ -1,116 +1,148 @@
 {
   "seo": {
-    "title": "Career coaching for sustainable change",
-    "description": "SustainSage offers thoughtful coaching for people navigating transitions, relocations, and re-entry moments."
+    "title": "SustainSage 职业教练｜沉稳陪你度过转折",
+    "description": "为正在转职、搬迁或重返职场的人提供冷静、保密的教练空间。"
   },
   "hero": {
-    "eyebrow": "Navigate change sustainably",
-    "title": "Coaching to help you move forward with clarity",
-    "description": "Work with an ICF-aligned coach to map your next step without burning out or losing what matters to you.",
+    "eyebrow": "遇到变化时",
+    "title": "一起看清下一步",
+    "description": "与符合 ICF 标准的教练合作，不必燃尽自己就能看见优先顺序与可行行动。",
     "image": {
       "src": "/images/hero/main.jpg",
-      "alt": "Rashi Anand coaching a client in a bright room"
+      "alt": "教练与来谈者在窗边安静交流"
     },
-    "primaryCta": {
-      "label": "Book an intro call",
-      "href": "/contact"
-    },
-    "secondaryCta": {
-      "label": "Browse services",
-      "href": "/services"
-    }
+    "primaryCta": {"label": "预约 20 分钟聊一聊", "href": "/contact"},
+    "secondaryCta": {"label": "查看服务内容", "href": "/services"}
   },
   "services": {
-    "eyebrow": "Services",
-    "title": "Choose the coaching focus that fits your moment",
-    "description": "Each pathway blends practical planning with reflective space so you can make grounded, values-led decisions.",
+    "eyebrow": "服务",
+    "title": "先找出与你情境最贴近的路径",
+    "description": "先透过真实案例确认是否匹配，再深入了解流程、定价与协议。",
     "cards": [
       {
-        "title": "Career transitions",
-        "description": "Relocate or shift roles with calm structure and clear next steps.",
-        "href": "/services/transition-coaching",
-        "icon": "compass"
+        "title": "重返职场",
+        "description": "12 周稳步回到节奏，保有弹性也有结构。",
+        "href": "/services/career-return",
+        "linkLabel": "查看路径"
       },
       {
-        "title": "Mid-career coaching",
-        "description": "Re-align your direction with grounded support and refreshed boundaries.",
-        "href": "/services/mid-career-coaching",
-        "icon": "handshake"
+        "title": "毕业起步",
+        "description": "把零散努力整理成清楚的故事与可测试的小步骤。",
+        "href": "/services/graduate-start",
+        "linkLabel": "查看路径"
       },
       {
-        "title": "Reset sprint",
-        "description": "Short, focused sessions to regain momentum after change or pause.",
-        "href": "/services/reset-sprint",
-        "icon": "clock"
+        "title": "英国职场新起点",
+        "description": "把海外经验转成当地可信的证据点。",
+        "href": "/services/immigrant-job",
+        "linkLabel": "查看路径"
       }
     ]
   },
-  "key_points": {
-    "title": "What you can expect",
-    "description": "Coaching stays practical, bilingual, and paced so you can make steady moves.",
+  "audiences": [
+    {
+      "title": "职涯中段的专业者",
+      "description": "拥有 8–15 年经验，需要一个沉稳空间来判断要保留什么、调整什么、改变可以多慢。",
+      "href": "/for/mid-career-returners",
+      "linkLabel": "查看中段职涯指南"
+    },
+    {
+      "title": "跨域或跨国转换者",
+      "description": "在不同国家或产业之间移动，需要有结构地测试新的方向。",
+      "href": "/for/newcomers-to-uk",
+      "linkLabel": "查看新到英国指南"
+    },
+    {
+      "title": "父母与社群照料者",
+      "description": "毕业生、照护者或社群带领者，想在照顾与工作之间对齐价值与节奏。",
+      "href": "/for/parents-returning-to-work",
+      "linkLabel": "查看父母指南"
+    }
+  ],
+  "audienceSection": {
+    "eyebrow": "适合的对象",
+    "title": "谁会觉得这里有帮助",
+    "description": "这三种情境最常出现，每个连结都说明案例、界限与下一步。"
+  },
+  "recognise": {
+    "eyebrow": "常见情境",
+    "title": "如果你对这些片段熟悉",
+    "intro": "摘自真实对话，让你感受这里的语气、节奏与照顾方式是否符合需要。",
     "items": [
       {
-        "title": "Agree pace, goals, and support before we begin.",
-        "icon": "note"
+        "title": "刚搬到英国",
+        "description": "白天学习职场规范，晚上还要跨时区照顾家人。"
       },
       {
-        "title": "Switch between Mandarin and English without losing nuance.",
-        "icon": "book"
+        "title": "照护后重新出发",
+        "description": "想重返职场，同时守住让家庭与健康稳定的约定。"
       },
       {
-        "title": "Design experiments that respect energy, care, and capacity.",
-        "icon": "calendar"
+        "title": "双语切换",
+        "description": "一句话需要用两种语言才表达得清楚，希望教练能跟上节奏。"
+      },
+      {
+        "title": "签证与身分的交错压力",
+        "description": "一边追赶签证时程，一边思考归属感与领导风格。"
+      },
+      {
+        "title": "及早看见倦怠",
+        "description": "察觉能量下滑，想用小实验保护界线与健康。"
       }
+    ],
+    "image": {
+      "src": "/images/topics-hero.jpg",
+      "alt": "桌上的手帐和茶点，象征沉淀"
+    }
+  },
+  "coachingDefinition": {
+    "isTitle": "教练是什么",
+    "isNotTitle": "教练不包含什么"
+  },
+  "key_points": {
+    "title": "前几次会谈会遇到什么",
+    "description": "用情境先对焦，再慢慢加上节奏与工具。",
+    "items": [
+      {"title": "语气沉稳、实务导向，不夸大也不许诺结果。"},
+      {"title": "可以先试用免费工具，挑对自己有帮助的。"},
+      {"title": "维持每周节奏，期间做小实验。"},
+      {"title": "一开始就说明保密与合作边界。"},
+      {"title": "定价简单，区块之间可暂时暂停。"}
     ]
   },
   "process": {
-    "title": "How we work together",
-    "description": "A lightweight structure keeps momentum without overwhelming your schedule.",
+    "title": "确认适合后的合作方式",
+    "description": "维持情境优先，同时说清节奏、协议与回顾点。",
     "steps": [
-      {
-        "title": "Share context",
-        "description": "We map the transitions you are navigating, the stakeholders involved, and any immediate constraints."
-      },
-      {
-        "title": "Design experiments",
-        "description": "We co-create small, testable actions that help you practise language, decisions, and boundaries."
-      },
-      {
-        "title": "Review and recalibrate",
-        "description": "We check-in on outcomes, iterate your plan, and celebrate shifts without adding pressure."
-      }
+      {"title": "探索", "description": "一起厘清现在最重要的事、为何是现在、以及理想成果。"},
+      {"title": "试谈", "description": "20 分钟对谈，确认化学反应、需求与可及性。"},
+      {"title": "对齐", "description": "付费前先确认目标、界线、节奏与资料处理。"},
+      {"title": "开展", "description": "每周会谈并穿插短回顾与小实验，累积可见的证据。"}
     ]
   },
   "boundaries": {
-    "title": "Boundaries that keep coaching safe",
-    "description": "These agreements help you stay in charge of the process.",
+    "title": "我们守住的界线",
+    "description": "这些约定保护节奏、身心安全与保密。",
     "items": [
-      {
-        "question": "What happens to the information I share?",
-        "answer": "Notes stay between coach and client. We follow ICF-aligned confidentiality and data retention practices."
-      },
-      {
-        "question": "How do we handle sensitive topics?",
-        "answer": "We name triggers early, pause when something feels unsafe, and signpost therapy or legal support when needed."
-      },
-      {
-        "question": "Can we adjust cadence if life gets busy?",
-        "answer": "Yes. We co-design the rhythm of sessions and pause or slow down when capacity is stretched."
-      }
+      {"question": "这里是教练还是治疗？", "answer": "这里是教练；若治疗或其他支援更安全，会协助转介。"},
+      {"question": "时间如何安排？", "answer": "准时开始与结束，让你能放心安排行程。"},
+      {"question": "如何处理记录？", "answer": "只保留最少必要记录，需要时可依协议删除。"},
+      {"question": "谁决定节奏？", "answer": "你决定节奏，我们提供结构与温和的提醒。"}
     ]
   },
   "faqTeaser": {
-    "title": "Questions about how coaching works?",
-    "body": "Read about session rhythms, pricing, ethics, and how we tailor support for individuals and organisations.",
-    "cta": {
-      "label": "Read the FAQs",
-      "href": "/faq"
-    }
+    "title": "想先了解更多？",
+    "body": "FAQ 说明会谈节奏、收费、伦理以及常见的合作调整方式。",
+    "cta": {"label": "阅读 FAQ", "href": "/faq"}
   },
-  "testimonials": {
-    "title": "Trusted by people navigating change"
+  "testimonials": {"title": "曾在转折中合作的客户"},
+  "fallbackNotice": "若某些段落尚未翻成中文，会暂以英文显示。",
+  "cta": {
+    "primary_label": "先试用免费工具",
+    "primary_href": "/resources",
+    "secondary_label": "预约 20 分钟聊一聊",
+    "secondary_href": "/contact"
   },
-  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。",
   "title": "SustainSage 双语教练（英国）",
-  "description": "冷静、以证据为核心的职业教练：重返职场、移民求职、毕业求职。小步走、可见成果。"
+  "description": "冷静、以证据为基础的职业教练：重返职场、移民求职与毕业起步都能找到合适路径。"
 }

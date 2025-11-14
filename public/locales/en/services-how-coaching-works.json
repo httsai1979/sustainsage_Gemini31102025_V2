@@ -6,7 +6,7 @@
   "hero": {
     "title": "How coaching works",
     "subtitle": "What to expect before we start: structure, partnership, and the guardrails that keep coaching ethical.",
-    "primaryCta": "Book a 20-minute intro call",
+    "primaryCta": "Book a 20-minute chat",
     "primaryHref": "/contact?from=how-coaching-works",
     "secondaryCta": "Back to services",
     "secondaryHref": "/services"
@@ -80,7 +80,7 @@
       "title": "Have more questions?",
       "body": "Let’s talk through your context and decide together whether coaching is the right next step.",
       "primary": {
-        "label": "Book an intro call",
+        "label": "Book a 20-minute chat",
         "href": "/contact?from=how-coaching-works"
       },
       "secondary": {

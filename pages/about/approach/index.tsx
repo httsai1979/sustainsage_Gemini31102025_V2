@@ -116,7 +116,7 @@ export default function ApproachPage({ approach, usedLocale, locale, fallbackNot
           </ul>
           <div className="pt-4 text-sm font-semibold text-emerald-700">
             <Link href="/contact" className="inline-flex items-center gap-1 transition hover:text-emerald-900">
-              <span>Book a chemistry chat</span>
+              <span>Book a 20-minute chat</span>
               <span aria-hidden>→</span>
             </Link>
           </div>

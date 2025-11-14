@@ -86,7 +86,7 @@
         "segments": [
           { "type": "text", "value": "Ready to sense how this approach could support you? Browse our " },
           { "type": "link", "href": "/services", "label": "coaching services" },
-          { "type": "text", "value": " or schedule an intro call from the " },
+          { "type": "text", "value": " or schedule a 20-minute chat from the " },
           { "type": "link", "href": "/services/how-coaching-works", "label": "How coaching works" },
           { "type": "text", "value": " guide." }
         ]

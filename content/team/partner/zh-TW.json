@@ -1,25 +1,20 @@
 {
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
-  "name": "Partner-in-Residence",
-  "title": "Transition Support Coach",
-  "location": "Taipei · London",
+  "fallbackNotice": "如有尚未翻譯的段落，會暫以英文顯示。",
+  "name": "駐站夥伴教練",
+  "title": "轉換支援教練",
+  "location": "台北 · 倫敦",
   "bio": [
-    "Our Partner-in-Residence supports spouses, carers, and loved ones who relocate alongside sustainability leaders.",
-    "They specialise in pacing big moves, negotiating shared care plans, and holding space for identity shifts.",
-    "Sessions weave multilingual coaching, practical planning, and restorative rituals for the whole household."
+    "陪伴永續領導者的配偶、照護者與家人，共同面對移居。",
+    "擅長安排大幅度搬遷的節奏、談妥共享照護協議，並照顧身份轉換。",
+    "會談結合多語教練、實務規畫與全家人都受用的修復性儀式。"
   ],
   "focus": [
-    "Rebuilding identity and networks after relocation",
-    "Designing shared agreements that balance caregiving and career transitions",
-    "Creating multilingual rituals that keep families grounded during rapid change"
+    "搬遷後重建身份與社群",
+    "設計兼顧照護與職涯的共享協議",
+    "打造多語儀式，讓家庭在快速變動中仍有根基"
   ],
   "credentials": [
-    "ICF Professional Certified Coach (PCC)",
-    "Somatics and trauma-informed facilitation training",
-    "Former community organiser across Taiwan and the UK"
+    "ICF PCC", "身體實作與創傷知情培訓", "曾在台灣與英國擔任社群組織者"
   ],
-  "cta": {
-    "label": "Book a partner consult",
-    "href": "/contact"
-  }
+  "cta": {"label": "預約伴侶諮詢", "href": "/contact"}
 }
