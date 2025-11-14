@@ -27,7 +27,7 @@
   "pathways_intro": "Choose a pathway that matches your situation.",
   "cta": {
     "primary_label": "Try free tools",
-    "primary_href": "/#tools",
+    "primary_href": "/resources",
     "secondary_label": "Book a 20-min conversation",
     "secondary_href": "/contact"
   },
