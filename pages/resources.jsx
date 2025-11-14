@@ -91,17 +91,29 @@ export default function ResourcesPage({ downloads = [], interactiveTools = [] })
     const delay = (index % 3) * 0.1;
 
     if (actionHref && !item.comingSoon) {
-      const linkProps = shouldOpenInNewTab
-        ? {
-            target: '_blank',
-            rel: 'noreferrer noopener',
-          }
-        : {};
+      const isExternalLink =
+        shouldOpenInNewTab || !actionHref.startsWith('/') || actionHref.endsWith('.pdf');
+      const commonProps = {
+        className: 'block h-full',
+        'aria-label': actionLabel ?? item.title,
+      };
+
       return (
         <RevealSection key={`${item.id ?? item.title}-${index}`} delay={delay}>
-          <Link href={actionHref} className="block h-full" aria-label={actionLabel ?? item.title} {...linkProps}>
-            {card}
-          </Link>
+          {isExternalLink ? (
+            <a
+              href={actionHref}
+              target={shouldOpenInNewTab ? '_blank' : undefined}
+              rel={shouldOpenInNewTab ? 'noreferrer noopener' : undefined}
+              {...commonProps}
+            >
+              {card}
+            </a>
+          ) : (
+            <Link href={actionHref} {...commonProps}>
+              {card}
+            </Link>
+          )}
         </RevealSection>
       );
     }

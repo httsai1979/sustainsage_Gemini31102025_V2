@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
@@ -10,18 +11,35 @@ import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
 const DEFAULT_FAQ_COPY = {
-  session:
-    'Coaching is a collaborative, future-leaning conversation. You set the agenda, we ask reflective questions, and we co-design experiments.',
-  difference:
-    'Therapy diagnoses or treats mental health needs, while mentors or consultants provide directive plans—those stay outside coaching. We follow the International Coaching Federation Code of Ethics.',
-  cadence:
-    'Individuals often start with six sessions over two to three months. You can pause or extend after each review.',
-  online:
-    'Sessions run on Zoom by default. We coach in English and Mandarin, and you can switch languages mid-session if that helps you express nuance.',
-  global:
-    'Yes. We work with teams across Europe and Asia-Pacific using online sessions, shared notes, and agreed review points.',
-  fees:
-    'Personal packages range from £420 to £1,200 depending on length. Organisation-sponsored coaching starts from £1,800 for a three-month engagement.',
+  session: {
+    question: 'What happens in a coaching session?',
+    answer:
+      'Coaching is a collaborative, future-leaning conversation. You set the agenda, we ask reflective questions, and we co-design experiments.',
+  },
+  difference: {
+    question: 'How is coaching different from therapy or mentoring?',
+    answer:
+      'Therapy diagnoses or treats mental health needs, while mentors or consultants provide directive plans—those stay outside coaching. We follow the International Coaching Federation Code of Ethics.',
+  },
+  cadence: {
+    question: 'How often do we meet?',
+    answer: 'Individuals often start with six sessions over two to three months. You can pause or extend after each review.',
+  },
+  online: {
+    question: 'Do you offer online sessions?',
+    answer:
+      'Sessions run on Zoom by default. We coach in English and Mandarin, and you can switch languages mid-session if that helps you express nuance.',
+  },
+  global: {
+    question: 'Do you work with clients outside the UK?',
+    answer:
+      'Yes. We work with teams across Europe and Asia-Pacific using online sessions, shared notes, and agreed review points.',
+  },
+  fees: {
+    question: 'How do fees work?',
+    answer:
+      'Personal packages range from £420 to £1,200 depending on length. Organisation-sponsored coaching starts from £1,800 for a three-month engagement.',
+  },
 };
 
 export default function FAQPage({
@@ -29,12 +47,14 @@ export default function FAQPage({
   showFallbackNotice = false,
   fallbackNotice = null,
 } = {}) {
+  const { t } = useTranslation('faq');
   const hero = content?.hero ?? {};
   const categories = content?.categories ?? [];
   const cta = content?.cta ?? {};
   const orderedCategories = orderSections(Array.isArray(categories) ? categories : []);
   const fallbackMessage =
     fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
+  const accordionFallback = t('accordion', { returnObjects: true }) ?? {};
 
   const faqItems = dedupeBy(
     orderedCategories.flatMap((category) =>
@@ -48,39 +68,44 @@ export default function FAQPage({
     (item, index) => item?.question ?? index
   );
 
+  const getFallback = (fallbackKey = 'session') => {
+    const localized = accordionFallback?.[fallbackKey];
+    if (localized && typeof localized === 'object') {
+      return {
+        question: localized.question ?? DEFAULT_FAQ_COPY[fallbackKey]?.question,
+        answer: localized.answer ?? DEFAULT_FAQ_COPY[fallbackKey]?.answer,
+      };
+    }
+
+    return DEFAULT_FAQ_COPY[fallbackKey] ?? { question: '', answer: '' };
+  };
+
   const findAnswer = (keywords = [], fallbackKey = 'session') => {
     const match = faqItems.find((item) =>
       keywords.some((keyword) => item.question?.toLowerCase().includes(keyword))
     );
-    return match?.answer ?? DEFAULT_FAQ_COPY[fallbackKey];
+    if (match) {
+      return { question: match.question, answer: match.answer };
+    }
+
+    return getFallback(fallbackKey);
   };
 
   const curatedFaqItems = [
-    {
-      question: 'What happens in a coaching session?',
-      answer: findAnswer(['what is coaching', 'session'], 'session'),
-    },
-    {
-      question: 'How is coaching different from therapy or mentoring?',
-      answer: findAnswer(['therapy', 'consulting'], 'difference'),
-    },
-    {
-      question: 'How often do we meet?',
-      answer: findAnswer(['how many sessions'], 'cadence'),
-    },
-    {
-      question: 'Do you offer online sessions?',
-      answer: findAnswer(['formats', 'languages', 'zoom'], 'online'),
-    },
-    {
-      question: 'Do you work with clients outside the UK?',
-      answer: findAnswer(['time zones', 'teams across'], 'global'),
-    },
-    {
-      question: 'How do fees work?',
-      answer: findAnswer(['fees'], 'fees'),
-    },
-  ];
+    { fallbackKey: 'session', keywords: ['what is coaching', 'session'] },
+    { fallbackKey: 'difference', keywords: ['therapy', 'consulting'] },
+    { fallbackKey: 'cadence', keywords: ['how many sessions'] },
+    { fallbackKey: 'online', keywords: ['formats', 'languages', 'zoom'] },
+    { fallbackKey: 'global', keywords: ['time zones', 'teams across'] },
+    { fallbackKey: 'fees', keywords: ['fees'] },
+  ].map(({ fallbackKey, keywords }) => {
+    const result = findAnswer(keywords, fallbackKey);
+    const fallbackValue = getFallback(fallbackKey);
+    return {
+      question: result.question ?? fallbackValue.question,
+      answer: result.answer ?? fallbackValue.answer,
+    };
+  });
 
   return (
     <main className="ss-container">

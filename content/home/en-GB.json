@@ -65,6 +65,46 @@
       "linkLabel": "See the parents guide"
     }
   ],
+  "audienceSection": {
+    "eyebrow": "Who coaching is for",
+    "title": "People who find this space helpful",
+    "description": "These are the contexts we hear every week. Each link shows scenarios, boundaries, and ways to start."
+  },
+  "recognise": {
+    "eyebrow": "Areas we can explore together",
+    "title": "You might recognise these moments",
+    "intro": "Short prompts from real conversations so you can sense whether the rhythm, tone, and care fit what you need.",
+    "items": [
+      {
+        "title": "Relocating to the UK",
+        "description": "You are learning new workplace norms while supporting family in another timezone."
+      },
+      {
+        "title": "Re-entering after care leave",
+        "description": "You want to return without losing the agreements that protect your household or health."
+      },
+      {
+        "title": "Speaking multiple languages",
+        "description": "You switch languages mid-sentence to capture nuance and want a coach who can hold that pace."
+      },
+      {
+        "title": "Balancing visas and identity",
+        "description": "You are weighing sponsorship timelines, belonging, and what leadership looks like in a new system."
+      },
+      {
+        "title": "Catching burnout early",
+        "description": "You notice signals of exhaustion and want experiments that protect energy before things fracture."
+      }
+    ],
+    "image": {
+      "src": "/images/topics-hero.jpg",
+      "alt": "Notebook and tea on a table to reflect"
+    }
+  },
+  "coachingDefinition": {
+    "isTitle": "What coaching is",
+    "isNotTitle": "What coaching isn’t"
+  },
   "key_points": {
     "title": "What you will notice in early sessions",
     "description": "Example-led conversations keep decisions grounded before we layer on more structure.",

@@ -9,6 +9,46 @@
     "notIncluded": "Not included",
     "reflection": "Questions to reflect on"
   },
+  "tabs": {
+    "overview": "Overview",
+    "pricing": "Pricing",
+    "readiness": "Readiness",
+    "process": "Process",
+    "agreement": "Agreement",
+    "faq": "FAQ",
+    "cases": "Cases"
+  },
+  "overviewPage": {
+    "sidebarEyebrow": "In this service",
+    "sidebarFallback": "Gentle coaching containers for your specific transition or experiment.",
+    "contactCard": {
+      "title": "Need a gentle sounding board?",
+      "body": "Book a 20-minute chat or email a few lines about what is shifting right now.",
+      "note": "We usually reply within two working days."
+    }
+  },
+  "subpage": {
+    "exploreLabel": "Explore",
+    "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+    "defaultCta": {
+      "title": "Next steps",
+      "description": "Compare pricing or start a 20-minute chat to see if this pathway fits your moment.",
+      "primary": "Review pricing",
+      "secondary": "Book a 20-minute chat",
+      "note": ""
+    }
+  },
+  "casesPage": {
+    "backLink": "Back to cases overview",
+    "fallbackEnglish": "Case available in English while we prepare this translation.",
+    "detailEyebrow": "Case detail",
+    "sidebar": {
+      "title": "Need a different example?",
+      "body": "Browse other cases or email us so we can share the closest-fit anonymised story.",
+      "back": "Back to cases",
+      "contact": "Contact SustainSage"
+    }
+  },
   "defaultCta": "Book a 20-minute chat",
   "missing": {
     "title": "Service not available right now",

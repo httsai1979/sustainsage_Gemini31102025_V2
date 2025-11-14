@@ -1,4 +1,128 @@
 {
+  "title": "畢業起步 — 教練路徑",
+  "hero": {
+    "eyebrow": "給應屆畢業生與早期職涯",
+    "title": "不需要假裝都想好了，也能開始",
+    "subtitle": "我們陪你整理選項、練習敘事，並建立第一份工作用得上的節奏。",
+    "primaryCta": {
+      "label": "預約 20 分鐘聊聊",
+      "href": "/contact?topic=graduate-start"
+    },
+    "secondaryCta": {
+      "label": "分享給家人或導師",
+      "href": "mailto:hello@sustainsage.com?subject=Graduate%20coaching"
+    }
+  },
+  "card": {
+    "order": 3,
+    "eyebrow": "畢業起步",
+    "title": "畢業啟動",
+    "description": "把零散努力轉成清楚的故事、小步測試與穩定的習慣。",
+    "benefits": [
+      "說出自己在乎的方向與限制。",
+      "先做小實驗再決定要不要承諾。",
+      "練習守得住的工作節奏與自我照顧。"
+    ],
+    "icon": "book"
+  },
+  "key_points": {
+    "title": "適合誰",
+    "description": "想在探索或剛入職時，有人陪你對齊節奏與語言。",
+    "items": [
+      {
+        "title": "即將畢業的學生",
+        "description": "論文、求職與家人的期待同時發生，需要有人陪你理順節奏。"
+      },
+      {
+        "title": "剛入職 12 個月內的新人",
+        "description": "想有人一起復盤、說清楚哪些事要跟哪些人討論。"
+      },
+      {
+        "title": "還在探索方向的人",
+        "description": "想安全地測試多個選項，不想被逼選擇單一路徑。"
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "界線與共識",
+    "description": "尊重早期職涯常見的家庭、財務與心理負擔。",
+    "items": [
+      {
+        "question": "誰決定議程？",
+        "answer": "受教練者自己。贊助者可參與行政對齊，但會談內容保持保密。"
+      },
+      {
+        "question": "如何面對生產力焦慮？",
+        "answer": "我們會依神經多樣性、健康或財務現實設計節奏，不用再假裝沒壓力。"
+      },
+      {
+        "question": "如果焦慮太大怎麼辦？",
+        "answer": "會暫停並討論是否需要臨床或心理支持，再決定是否並行或轉介。"
+      }
+    ]
+  },
+  "faq": {
+    "title": "常見問題",
+    "items": [
+      {
+        "question": "父母可以參與部分會談嗎？",
+        "answer": "可以安排三方對齊，只討論後勤與界線；教練內容仍保持保密。"
+      },
+      {
+        "question": "會幫忙準備甄試或小組面試嗎？",
+        "answer": "會。我們會練習簡報、分組任務與常見的反思題。"
+      },
+      {
+        "question": "錄取後還有後續支持嗎？",
+        "answer": "可以加購每月或季節性的回顧，陪你在試用期內穩住。"
+      }
+    ]
+  },
+  "cases": {
+    "title": "綜合案例",
+    "description": "將多位畢業生與早期職涯者的故事融合處理。",
+    "items": [
+      {
+        "title": "第一份工作的選擇",
+        "context": "一位應屆生在兩個城市之間猶豫，家人希望他選穩定但他想探索。",
+        "coaching_moves": "釐清價值、推估生活成本，並練習與家人談界線。",
+        "shift": "選擇與學習目標一致的職缺，並安心說明自己的決定。",
+        "tools_used": ["價值地圖", "決策矩陣"],
+        "disclaimer": "內容已混合多位客戶。",
+        "slug": "too-many-choices-no-criteria"
+      },
+      {
+        "title": "試用期的穩定度",
+        "context": "一位顧問業新鮮人想開口要回饋卻不知道如何開始。",
+        "coaching_moves": "演練回饋腳本、設計每週反思表並找出支持網絡。",
+        "shift": "敢於主動約談，與主管之間的期望也更清楚。",
+        "tools_used": ["回饋腳本", "每週反思追蹤"],
+        "disclaimer": "細節經處理以保密。",
+        "slug": "interview-stories-flat"
+      },
+      {
+        "title": "調整對拒絕的看法",
+        "context": "一位理工背景畢業生連續幾次面試落選，開始懷疑方向。",
+        "coaching_moves": "分析面試資料、設計資訊訪談並重建補給儀式。",
+        "shift": "恢復動能、找到支持型導師，也把自我照顧排進日程。",
+        "tools_used": ["面試復盤", "能量儀式"],
+        "disclaimer": "為保護個資已混合多位案例。",
+        "slug": "portfolio-without-context"
+      }
+    ]
+  },
+  "cta": {
+    "title": "想有人陪你一起選或開始？",
+    "description": "告訴我你在哪個階段，我會建議合適的節奏與結構。",
+    "primary": {
+      "label": "預約 20 分鐘聊聊",
+      "href": "/contact?topic=graduate-start"
+    },
+    "secondary": {
+      "label": "了解教練方式",
+      "href": "/services/how-coaching-works"
+    }
+  },
   "fallbackNotice": "如有尚未翻譯的段落，會暫以英文顯示。",
   "pricing": {
     "packages": [

@@ -65,6 +65,46 @@
       "linkLabel": "查看家長指南"
     }
   ],
+  "audienceSection": {
+    "eyebrow": "適合的對象",
+    "title": "誰會覺得這個空間有幫助",
+    "description": "這三種情境最常見，每個連結都說明案例、界線與下一步。"
+  },
+  "recognise": {
+    "eyebrow": "常見情境",
+    "title": "如果你對這些情境有共鳴",
+    "intro": "來自真實對談的片段，讓你感受這裡的節奏、語氣與照顧是否合適。",
+    "items": [
+      {
+        "title": "剛搬到英國",
+        "description": "白天適應職場規則，夜晚還在跨時區照顧家人。"
+      },
+      {
+        "title": "照護後重新出發",
+        "description": "想回到職場，但也要守住讓家庭穩定的約定。"
+      },
+      {
+        "title": "雙語或多語對話",
+        "description": "一句話要換兩種語言才能說清楚，需要可以跟著你切換的教練。"
+      },
+      {
+        "title": "簽證與身分的交叉壓力",
+        "description": "一邊跑簽證時程，一邊思考歸屬感與領導要長什麼樣子。"
+      },
+      {
+        "title": "提早留意燃燒感",
+        "description": "覺得快被耗盡，想先做小實驗保護能量與界線。"
+      }
+    ],
+    "image": {
+      "src": "/images/topics-hero.jpg",
+      "alt": "桌上放著筆記本與茶，適合沉澱"
+    }
+  },
+  "coachingDefinition": {
+    "isTitle": "教練會是什麼樣子",
+    "isNotTitle": "教練不會做的事"
+  },
   "key_points": {
     "title": "前幾次會談會長這樣",
     "description": "用真實情境討論，再慢慢加上節奏與工具。",

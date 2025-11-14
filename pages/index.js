@@ -60,6 +60,8 @@ export default function Home({
     recognise: recogniseContent = {},
     boundaries = {},
     audiences: contentAudiences,
+    audienceSection = {},
+    coachingDefinition = {},
   } = content ?? {};
 
   const faqContent = {
@@ -213,8 +215,13 @@ export default function Home({
 
       <Section id="who-we-work-with">
         <RevealSection className="space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Who coaching is for</p>
-          <h2 className="text-h2">People who find this space helpful</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
+            {audienceSection?.eyebrow ?? 'Who coaching is for'}
+          </p>
+          <h2 className="text-h2">{audienceSection?.title ?? 'People who find this space helpful'}</h2>
+          {audienceSection?.description ? (
+            <p className="text-body">{audienceSection.description}</p>
+          ) : null}
         </RevealSection>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {whoCards.map((card, index) => {
@@ -247,7 +254,14 @@ export default function Home({
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {[coachingIsBullets, coachingIsNotBullets].map((list, index) => (
             <RevealSection key={index} delay={index * 0.1}>
-              <Card title={index === 0 ? 'What coaching is' : 'What coaching isn’t'} icon={<Icon name={index === 0 ? 'spark' : 'info'} />}>
+              <Card
+                title={
+                  index === 0
+                    ? coachingDefinition?.isTitle ?? 'What coaching is'
+                    : coachingDefinition?.isNotTitle ?? 'What coaching isn’t'
+                }
+                icon={<Icon name={index === 0 ? 'spark' : 'info'} />}
+              >
                 <ul className="space-y-2 text-sm leading-relaxed text-slate-700">
                   {list.map((bullet) => (
                     <li key={bullet} className="flex gap-3">

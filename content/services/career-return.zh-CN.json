@@ -1,4 +1,135 @@
 {
+  "title": "重返职场 — 教练路径",
+  "hero": {
+    "eyebrow": "给暂停后准备回到职场的人",
+    "title": "回到有收入的工作，同时守住自己的界限",
+    "subtitle": "我们一起重建信心、节奏与照顾自己的日常，让回归符合你现在的生活状态。",
+    "primaryCta": {
+      "label": "预约 20 分钟聊聊",
+      "href": "/contact?topic=career-return"
+    },
+    "secondaryCta": {
+      "label": "写信询问",
+      "href": "mailto:hello@sustainsage.com"
+    }
+  },
+  "card": {
+    "order": 1,
+    "eyebrow": "重返职场",
+    "title": "重回节奏",
+    "description": "12 周内温和拉回工作节奏：有结构、不过度。",
+    "benefits": [
+      "在照护、进修或休养后重新建立信心与语言。",
+      "先用小实验测试，再决定要不要加速。",
+      "设计守得住的作息与补给仪式。"
+    ],
+    "icon": "calendar"
+  },
+  "key_points": {
+    "title": "适合谁",
+    "description": "当你同时承担多重角色，又想回到有收入的工作。",
+    "items": [
+      {
+        "title": "照护与工作的协调者",
+        "description": "想重返职场，但也要守住家庭或照顾的节奏。"
+      },
+      {
+        "title": "重新定位的专业者",
+        "description": "在进修或转职后，需要把新技能转换成有说服力的故事。"
+      },
+      {
+        "title": "慢慢从倦怠恢复的人",
+        "description": "需要温和的责任感与节奏，让康复不再换成速度。"
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "界线与共识",
+    "description": "我们保持透明，让你随时掌握节奏与资讯分享。",
+    "items": [
+      {
+        "question": "谁能得知会谈内容？",
+        "answer": "由你决定资讯是否外传。没有明确同意，不会与雇主或赞助者分享细节。"
+      },
+      {
+        "question": "这是治疗吗？",
+        "answer": "不是。若在过程中需要临床或创伤支持，我们会讨论转介或暂停。"
+      },
+      {
+        "question": "如果外界需求又压得太满？",
+        "answer": "会先暂停，重新盘点界线与风险，再决定如何继续。"
+      }
+    ],
+    "policies": [
+      "改期需提前 24 小时；逾时视同使用一次会谈。",
+      "套组可在会谈间暂停，需双方同意。",
+      "预设保密；仅保留最少必要纪录；可要求删除。",
+      "教练而非治疗／法律；必要时提供转介资讯。",
+      "线上、以英国时段为主；以英镑（GBP）开立发票。"
+    ]
+  },
+  "faq": {
+    "title": "常见提问",
+    "items": [
+      {
+        "question": "公司可以赞助这个方案吗？",
+        "answer": "可以。我们会先对齐保密界线与回馈节奏，确保你仍然主导会谈内容。"
+      },
+      {
+        "question": "会一起看履历或面试吗？",
+        "answer": "会。我们会练习叙事、模拟对话，也会提供文件回馈。"
+      },
+      {
+        "question": "如果需要放慢怎么办？",
+        "answer": "可以拉长节奏，或在照护高峰时改成轻量的维持方式。"
+      }
+    ]
+  },
+  "cases": {
+    "title": "综合案例",
+    "description": "将多位客户的经验混合处理，保护个人隐私。",
+    "items": [
+      {
+        "title": "照护与回职并行",
+        "context": "暂停两年照顾长辈的行销经理，被邀请回任却担心物流与精力。",
+        "coaching_moves": "一起盘点不可妥协的需求、设计沟通脚本，并演练分阶段回任提案。",
+        "shift": "谈到每周四天的回任计划，并与主管约定定期健康检视。",
+        "tools_used": ["界线脚本", "利害关系人盘点"],
+        "disclaimer": "细节已混合多位客户以保密。",
+        "slug": "back-after-3-years-worried-about-gaps"
+      },
+      {
+        "title": "倦怠后的缓冲",
+        "context": "一位专案负责人从倦怠留职停薪回归，担心节奏过快。",
+        "coaching_moves": "设计能量盘点、练习提出支援请求，并与主管约好回顾节奏。",
+        "shift": "能够更坦然说明负荷，感觉节奏被看见而不是再度硬撑。",
+        "tools_used": ["能量盘点", "每周反思提示"],
+        "disclaimer": "案例内容经匿名混合。",
+        "slug": "rebuilding-confidence-post-burnout"
+      },
+      {
+        "title": "进修后的重新定位",
+        "context": "一位家长在空窗期完成证照，想把新技能连结到混合式职缺。",
+        "coaching_moves": "重写故事、练习联络策略并演练面试答覆。",
+        "shift": "能清楚说明为何现在回到职场，谈判时也更有底气。",
+        "tools_used": ["故事资料库", "面试演练"],
+        "disclaimer": "细节经过调整以保护个资。",
+        "slug": "translating-new-skills-after-study"
+      }
+    ]
+  },
+  "cta": {
+    "title": "想稳稳地回到轨道？",
+    "description": "先聊聊你的时程与需要的支援，再一起决定步调。",
+    "primary": {
+      "label": "预约 20 分钟聊聊",
+      "href": "/contact?topic=career-return"
+    },
+    "secondary": {
+      "label": "了解教练怎么进行",
+      "href": "/services/how-coaching-works"
+    }
+  },
   "fallbackNotice": "若有尚未完成的段落，会暂以英文显示。",
   "pricing": {
     "packages": [

@@ -59,6 +59,46 @@
       "linkLabel": "查看父母指南"
     }
   ],
+  "audienceSection": {
+    "eyebrow": "适合的对象",
+    "title": "谁会觉得这里有帮助",
+    "description": "这三种情境最常出现，每个连结都说明案例、界限与下一步。"
+  },
+  "recognise": {
+    "eyebrow": "常见情境",
+    "title": "如果你对这些片段熟悉",
+    "intro": "摘自真实对话，让你感受这里的语气、节奏与照顾方式是否符合需要。",
+    "items": [
+      {
+        "title": "刚搬到英国",
+        "description": "白天学习职场规范，晚上还要跨时区照顾家人。"
+      },
+      {
+        "title": "照护后重新出发",
+        "description": "想重返职场，同时守住让家庭与健康稳定的约定。"
+      },
+      {
+        "title": "双语切换",
+        "description": "一句话需要用两种语言才表达得清楚，希望教练能跟上节奏。"
+      },
+      {
+        "title": "签证与身分的交错压力",
+        "description": "一边追赶签证时程，一边思考归属感与领导风格。"
+      },
+      {
+        "title": "及早看见倦怠",
+        "description": "察觉能量下滑，想用小实验保护界线与健康。"
+      }
+    ],
+    "image": {
+      "src": "/images/topics-hero.jpg",
+      "alt": "桌上的手帐和茶点，象征沉淀"
+    }
+  },
+  "coachingDefinition": {
+    "isTitle": "教练是什么",
+    "isNotTitle": "教练不包含什么"
+  },
   "key_points": {
     "title": "前几次会谈会遇到什么",
     "description": "用情境先对焦，再慢慢加上节奏与工具。",

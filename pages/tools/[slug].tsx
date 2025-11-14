@@ -1,3 +1,4 @@
+import type { ComponentType } from 'react';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
@@ -46,15 +47,16 @@ function ToolPage({ tool }: ToolPageProps) {
 ToolPage.getLayout = function getLayout(page: any) {
   const title = page?.props?.tool?.title ?? 'Interactive tool';
   const description = page?.props?.tool?.description ?? '';
+  const Layout = MainLayout as ComponentType<any>;
   return (
-    <MainLayout
+    <Layout
       seo={{
         title: `${title} | SustainSage tools`,
         description,
       }}
     >
       {page}
-    </MainLayout>
+    </Layout>
   );
 };
 

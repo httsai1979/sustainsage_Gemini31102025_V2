@@ -9,6 +9,46 @@
     "notIncluded": "不包含",
     "reflection": "先想一想"
   },
+  "tabs": {
+    "overview": "概览",
+    "pricing": "定价",
+    "readiness": "准备度",
+    "process": "流程",
+    "agreement": "合作协议",
+    "faq": "常见问题",
+    "cases": "案例"
+  },
+  "overviewPage": {
+    "sidebarEyebrow": "此服务包含",
+    "sidebarFallback": "为你的转换或实验提供沉稳、有结构的教练空间。",
+    "contactCard": {
+      "title": "想找沉稳的讨论伙伴？",
+      "body": "可以预约 20 分钟聊聊，或写几行字说明目前的状况。",
+      "note": "通常会在两个工作天内回复。"
+    }
+  },
+  "subpage": {
+    "exploreLabel": "浏览",
+    "fallbackNotice": "翻译更新中，暂以英文呈现。",
+    "defaultCta": {
+      "title": "下一步",
+      "description": "可以先比较费用，或预约 20 分钟聊聊看看这个路径是否贴近你的情境。",
+      "primary": "查看费用",
+      "secondary": "预约 20 分钟聊聊",
+      "note": ""
+    }
+  },
+  "casesPage": {
+    "backLink": "回到案例总览",
+    "fallbackEnglish": "案例尚在翻译，暂以英文显示。",
+    "detailEyebrow": "案例细节",
+    "sidebar": {
+      "title": "想看其他例子？",
+      "body": "可以浏览更多案例，或写信给我们，分享最贴近的匿名故事。",
+      "back": "回到案例",
+      "contact": "联系 SustainSage"
+    }
+  },
   "defaultCta": "预约 20 分钟初谈",
   "missing": {
     "title": "暂时无法显示此服务",

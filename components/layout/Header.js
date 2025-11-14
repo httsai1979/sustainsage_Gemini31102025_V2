@@ -63,14 +63,14 @@ function LocaleToggle({ variant = 'desktop', value, onChange, label, options = [
 
   const wrapperClasses =
     variant === 'desktop'
-      ? 'relative hidden md:inline-flex'
-      : 'relative inline-flex w-full';
+      ? 'relative hidden items-center md:inline-flex'
+      : 'relative inline-flex w-full items-center';
 
   const selectClasses =
-    'appearance-none rounded-full border border-slate-200 bg-white px-4 py-2 pr-10 text-sm font-semibold text-slate-700 shadow-sm transition focus:border-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400';
+    'appearance-none rounded-full border border-slate-200 bg-white px-3 py-1.5 pr-6 text-sm font-semibold leading-tight text-slate-700 shadow-sm transition focus:border-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400';
 
   const iconClasses =
-    'pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500';
+    'pointer-events-none absolute right-2 top-1/2 h-2.5 w-2.5 -translate-y-1/2 text-slate-500';
 
   const handleChange = (event) => {
     const nextLocale = event.target.value;
@@ -80,7 +80,7 @@ function LocaleToggle({ variant = 'desktop', value, onChange, label, options = [
   };
 
   return (
-    <label className={`${wrapperClasses} items-center`}>
+    <label className={wrapperClasses}>
       <span className="sr-only">{label}</span>
       <select className={selectClasses} value={value} onChange={handleChange}>
         {options.map((option) => (

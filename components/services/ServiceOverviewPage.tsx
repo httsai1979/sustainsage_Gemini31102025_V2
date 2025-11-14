@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { ComponentType } from 'react';
+import { useTranslation } from 'next-i18next';
 
 import { CaseCard } from '@/components/cases/CaseCard';
 import ServiceSubnav from '@/components/services/ServiceSubnav';
@@ -115,6 +116,7 @@ function OverviewCTA({ cta }: { cta?: ServiceOverview['cta'] }) {
 }
 
 export function ServiceOverviewPage({ service, showFallbackNotice = false }: ServiceOverviewPageProps) {
+  const { t } = useTranslation('serviceDetails');
   const hero = service.hero ?? {};
   const basePath = `/services/${service.slug}`;
   const keyCards = dedupeBy(
@@ -130,18 +132,41 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
     (item, index) => item?.title ?? item?.context ?? index
   );
   const sections = sectionizeServiceOverview(service);
-
+  const tabLabels = (t('tabs', { returnObjects: true }) ?? {}) as Record<string, string>;
   const subnavTabs = [
-    { slug: 'overview', label: 'Overview', href: `/services/${service.slug}` },
-    { slug: 'pricing', label: 'Pricing' },
-    { slug: 'readiness', label: 'Readiness' },
-    { slug: 'process', label: 'Process' },
-    { slug: 'agreement', label: 'Agreement' },
-    { slug: 'faq', label: 'FAQ' },
-    { slug: 'cases', label: 'Cases' },
+    { slug: 'overview', label: tabLabels.overview ?? 'Overview', href: `/services/${service.slug}` },
+    { slug: 'pricing', label: tabLabels.pricing ?? 'Pricing' },
+    { slug: 'readiness', label: tabLabels.readiness ?? 'Readiness' },
+    { slug: 'process', label: tabLabels.process ?? 'Process' },
+    { slug: 'agreement', label: tabLabels.agreement ?? 'Agreement' },
+    { slug: 'faq', label: tabLabels.faq ?? 'FAQ' },
+    { slug: 'cases', label: tabLabels.cases ?? 'Cases' },
   ];
 
-  const fallbackNotice = service.fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
+  const translationFallback = t(
+    'subpage.fallbackNotice',
+    'Temporarily showing English content while we complete this translation.'
+  );
+  const fallbackNotice = service.fallbackNotice ?? translationFallback;
+  const overviewCopy = (t('overviewPage', { returnObjects: true }) ?? {}) as Record<string, unknown>;
+  const sidebarLabel =
+    typeof overviewCopy?.sidebarEyebrow === 'string'
+      ? (overviewCopy.sidebarEyebrow as string)
+      : 'In this service';
+  const sidebarFallback =
+    typeof overviewCopy?.sidebarFallback === 'string'
+      ? (overviewCopy.sidebarFallback as string)
+      : 'Gentle coaching containers for your specific transition or experiment.';
+  const contactCopy = (overviewCopy?.contactCard as Record<string, unknown>) ?? {};
+  const contactTitle =
+    typeof contactCopy?.title === 'string'
+      ? (contactCopy.title as string)
+      : 'Need a gentle sounding board?';
+  const contactBody =
+    typeof contactCopy?.body === 'string'
+      ? (contactCopy.body as string)
+      : 'Book a 20-minute chat or email a few lines about what is shifting right now.';
+  const contactNote = typeof contactCopy?.note === 'string' ? (contactCopy.note as string) : null;
 
   const renderHeader = (title?: string, lead?: string) => {
     if (!title && !lead) {
@@ -211,10 +236,9 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
               </div>
             </div>
             <div className="rounded-3xl border border-sustain-cardBorder bg-white/80 p-8 shadow-lg">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">In this service</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{sidebarLabel}</p>
               <p className="mt-4 text-base leading-relaxed text-slate-700">
-                {service.who?.description ?? service.key_points?.description ??
-                  'Gentle coaching containers for your specific transition or experiment.'}
+                {service.who?.description ?? service.key_points?.description ?? sidebarFallback}
               </p>
             </div>
           </div>
@@ -226,10 +250,8 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
           <aside className="space-y-6">
             <ServiceSubnav base={basePath} tabs={subnavTabs} active="overview" orientation="vertical" />
             <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
-              <p className="text-sm font-semibold text-sustain-text">Need a gentle sounding board?</p>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
-                Book a 20-minute chat or email a few lines about what is shifting right now.
-              </p>
+              <p className="text-sm font-semibold text-sustain-text">{contactTitle}</p>
+              <p className="mt-2 text-sm leading-6 text-slate-700">{contactBody}</p>
               <div className="mt-4 flex flex-col gap-3">
                 {hero.primaryCta?.href && hero.primaryCta?.label ? (
                   <Link href={hero.primaryCta.href} className="ss-btn-primary">
@@ -242,6 +264,9 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
                   </Link>
                 ) : null}
               </div>
+              {contactNote ? (
+                <p className="mt-4 text-xs leading-5 text-slate-500">{contactNote}</p>
+              ) : null}
             </div>
           </aside>
 

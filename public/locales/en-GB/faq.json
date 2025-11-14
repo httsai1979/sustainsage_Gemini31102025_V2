@@ -102,5 +102,31 @@
     "body": "Share your context and we will confirm whether coaching, a referral, or another resource will serve you best. Your clarity matters more than filling a slot.",
     "primary": "Book a 20-minute chat",
     "secondary": "Explore coaching pathways"
+  },
+  "accordion": {
+    "session": {
+      "question": "What happens in a coaching session?",
+      "answer": "Coaching is a collaborative, future-leaning conversation. You set the agenda, we ask reflective questions, and we co-design experiments."
+    },
+    "difference": {
+      "question": "How is coaching different from therapy or mentoring?",
+      "answer": "Therapy diagnoses or treats mental health needs, while mentors or consultants provide directive plans—those stay outside coaching. We follow the International Coaching Federation Code of Ethics."
+    },
+    "cadence": {
+      "question": "How often do we meet?",
+      "answer": "Individuals often start with six sessions over two to three months. You can pause or extend after each review."
+    },
+    "online": {
+      "question": "Do you offer online sessions?",
+      "answer": "Sessions run on Zoom by default. We coach in English and Mandarin, and you can switch languages mid-session if that helps you express nuance."
+    },
+    "global": {
+      "question": "Do you work with clients outside the UK?",
+      "answer": "Yes. We work with teams across Europe and Asia-Pacific using online sessions, shared notes, and agreed review points."
+    },
+    "fees": {
+      "question": "How do fees work?",
+      "answer": "Personal packages range from £420 to £1,200 depending on length. Organisation-sponsored coaching starts from £1,800 for a three-month engagement."
+    }
   }
 }
