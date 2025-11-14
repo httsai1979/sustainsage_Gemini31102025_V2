@@ -1,0 +1,94 @@
+{
+  "downloads": [
+    {
+      "id": "behaviour-ladder",
+      "title": "行为实验阶梯",
+      "desc": "用安全的小实验在本周就得到反馈。",
+      "img": "/images/resources/behaviour-ladder.jpg",
+      "alt": "行为实验阶梯",
+      "downloadable": true,
+      "download": "/docs/behaviour-experiment-ladder.pdf"
+    },
+    {
+      "id": "selftalk-cards",
+      "title": "自我对话重写卡片",
+      "desc": "把苛刻语句换成更温柔且有用的提醒。",
+      "img": "/images/resources/selftalk.jpg",
+      "alt": "自我对话卡片",
+      "comingSoon": true
+    },
+    {
+      "id": "emotion-triangle",
+      "title": "情绪三角练习",
+      "desc": "从感受 → 需要 → 下一步，5 分钟理清。",
+      "img": "/images/resources/emotion-triangle.jpg",
+      "alt": "情绪三角",
+      "comingSoon": true
+    }
+  ],
+  "interactiveTools": [
+    {
+      "id": "self-talk-reframe",
+      "title": "自我对话重塑卡",
+      "desc": "把苛刻的内在对话换成更稳妥、温柔的提醒。",
+      "href": "/tools/self-talk-reframe.html",
+      "img": "/images/resources/selftalk.jpg",
+      "alt": "自我对话练习",
+      "tag": "互动工具"
+    },
+    {
+      "id": "behaviour-ladder",
+      "title": "行为实验阶梯",
+      "desc": "按步骤规划一个小实验，温和测试新的行为。",
+      "href": "/tools/behaviour-ladder.html",
+      "img": "/images/resources/behaviour-ladder-hero.jpg",
+      "alt": "行为实验工具",
+      "tag": "互动工具"
+    },
+    {
+      "id": "values-map",
+      "title": "自我价值地图",
+      "desc": "标记支撑你的价值与信号，让决策对齐真正的重心。",
+      "href": "/tools/values-map.html",
+      "img": "/images/resources/values-worksheet.svg",
+      "alt": "价值地图",
+      "tag": "互动工具"
+    },
+    {
+      "id": "emotion-triangle",
+      "title": "情绪三角卡",
+      "desc": "说出感受、看见需要，再想一个可行的小步。",
+      "href": "/tools/emotion-triangle.html",
+      "img": "/images/resources/emotion-triangle.jpg",
+      "alt": "情绪三角卡",
+      "tag": "互动工具"
+    },
+    {
+      "id": "thought-log",
+      "title": "思维记录仪",
+      "desc": "记录反复出现的念头、收集证据，练习更平衡的回应。",
+      "href": "/tools/thought-log.html",
+      "img": "/images/resources/grounding-audio.svg",
+      "alt": "思维记录",
+      "tag": "互动工具"
+    },
+    {
+      "id": "role-separation",
+      "title": "角色分化练习",
+      "desc": "厘清不同角色与责任，决定自己要握着或交棒。",
+      "href": "/tools/role-separation.html",
+      "img": "/images/resources/culture-checklist.svg",
+      "alt": "角色分化",
+      "tag": "互动工具"
+    },
+    {
+      "id": "choice-clarifier",
+      "title": "选择困境厘清器",
+      "desc": "在做决定前列出取舍、界限与需要。",
+      "href": "/tools/choice-clarifier.html",
+      "img": "/images/resources/imposter-reading.svg",
+      "alt": "决策厘清",
+      "tag": "互动工具"
+    }
+  ]
+}

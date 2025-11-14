@@ -1,20 +1,16 @@
 {
-  "title": "Interview stories flat",
-  "context": "Composite of graduates whose interview stories sounded generic and failed to communicate impact.",
+  "title": "面試故事太平",
+  "context": "多位初入職場者的綜合情境：專案描述太制式，回饋是「缺乏影響力」。",
   "session_flow": [
-    "Audited existing stories and identified missing stakes, actions and reflections.",
-    "Rebuilt two STAR stories with vivid details and rehearsed follow-up questions.",
-    "Recorded mock interviews to observe pacing and reduce filler."
+    "挑選兩個故事並用 STAR 結構重寫。",
+    "練習追問與澄清，學會停頓與確認。",
+    "刪掉行話、補上數據與具體結果。"
   ],
-  "tools_used": [
-    "STAR builder",
-    "Interview rehearsal",
-    "Feedback transcript"
-  ],
-  "boundary_and_consent": "Student could delete any recording immediately and opted into which clips we analysed together.",
-  "timeframe": "3 sessions over 4 weeks with asynchronous transcript reviews.",
-  "shift": "They sounded more grounded describing impact and could handle probing without spiralling.",
-  "outcome": "Received clearer feedback from interviewers about specific strengths and advanced to final rounds.",
-  "disclaimer": "Composite illustration; interview outcomes vary.",
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。"
+  "tools_used": ["STAR Builder", "Interview Rehearsal"],
+  "boundary_and_consent": "只在學員同意下錄音；錄音於 30 天內刪除。",
+  "timeframe": "4 週 3 次會談＋一次語音回饋。",
+  "shift": "故事節奏更清楚，面試時較少離題。",
+  "outcome": "拿到第二輪面試並對追問更有準備。",
+  "disclaimer": "示意並已匿名；成果不保證。",
+  "fallbackNotice": "如有未翻譯段落會暫以英文顯示。"
 }

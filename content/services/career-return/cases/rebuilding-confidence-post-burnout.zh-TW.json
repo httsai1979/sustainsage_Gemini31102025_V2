@@ -1,23 +1,16 @@
 {
-  "title": "Rebuilding confidence post-burnout",
-  "context": "Composite of managers re-entering after burnout-related leave while negotiating reduced hours and energy rebuild.",
+  "title": "倦怠後重建信心",
+  "context": "綜合多位在倦怠後回歸的人：擔心節奏過快、害怕再度耗盡。",
   "session_flow": [
-    "Ran an energy audit to map activities that drain or restore focus.",
-    "Scripted requests for accommodations and experimented with gradual responsibility increases.",
-    "Set up a weekly reflection ritual to notice progress before urgency took over."
+    "以能量盤點檢視日常承諾並找出必須保留的休息。",
+    "排演尋求支援與界線語句，練習開口說「需要」。",
+    "建立每週回顧儀式，讓進展與負荷早點浮現。"
   ],
-  "tools_used": [
-    "Energy audit",
-    "Accommodation scripts",
-    "Weekly reflection prompts"
-  ],
-  "boundary_and_consent": [
-    "Established a scale for checking capacity before deeper somatic exercises.",
-    "Agreed to skip any task that recreated burnout warning signs."
-  ],
-  "timeframe": "6 sessions over 9 weeks with lightweight check-ins between meetings.",
-  "shift": "They described steadier energy and could articulate needs with less guilt.",
-  "outcome": "Negotiated a phased return plan and identified early warning signals before accepting new commitments.",
-  "disclaimer": "Composite scenario; individual outcomes vary.",
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。"
+  "tools_used": ["Energy Audit", "Weekly Reflection", "Boundary Scripts"],
+  "boundary_and_consent": "任何實驗都以學員身心狀態為優先，必要時可改成書面或非同步回饋。",
+  "timeframe": "8 週 5 次會談＋非同步追蹤。",
+  "shift": "能明確描述自己可承受的容量，反應也從防備轉為穩定。",
+  "outcome": "與主管談妥漸進式回歸計畫並重新安排照護支援。",
+  "disclaimer": "示意並已匿名；成果不保證。",
+  "fallbackNotice": "如有未翻譯段落會暫以英文顯示。"
 }

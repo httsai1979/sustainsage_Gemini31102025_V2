@@ -93,7 +93,7 @@ const payloads = {
     cta: {
       primary_label: 'Try free tools',
       primary_href: '/#tools',
-      secondary_label: 'Book a 20-min conversation',
+      secondary_label: 'Book a 20-minute chat',
       secondary_href: '/contact',
     },
   },

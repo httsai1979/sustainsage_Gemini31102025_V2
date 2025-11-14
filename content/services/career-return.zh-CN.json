@@ -1,142 +1,314 @@
 {
-  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。",
+  "title": "重返职场 — 教练路径",
+  "hero": {
+    "eyebrow": "给暂停后准备回到职场的人",
+    "title": "回到有收入的工作，同时守住自己的界限",
+    "subtitle": "我们一起重建信心、节奏与照顾自己的日常，让回归符合你现在的生活状态。",
+    "primaryCta": {
+      "label": "预约 20 分钟聊聊",
+      "href": "/contact?topic=career-return"
+    },
+    "secondaryCta": {
+      "label": "写信询问",
+      "href": "mailto:hello@sustainsage.com"
+    }
+  },
+  "card": {
+    "order": 1,
+    "eyebrow": "重返职场",
+    "title": "重回节奏",
+    "description": "12 周内温和拉回工作节奏：有结构、不过度。",
+    "benefits": [
+      "在照护、进修或休养后重新建立信心与语言。",
+      "先用小实验测试，再决定要不要加速。",
+      "设计守得住的作息与补给仪式。"
+    ],
+    "icon": "calendar"
+  },
+  "key_points": {
+    "title": "适合谁",
+    "description": "当你同时承担多重角色，又想回到有收入的工作。",
+    "items": [
+      {
+        "title": "照护与工作的协调者",
+        "description": "想重返职场，但也要守住家庭或照顾的节奏。"
+      },
+      {
+        "title": "重新定位的专业者",
+        "description": "在进修或转职后，需要把新技能转换成有说服力的故事。"
+      },
+      {
+        "title": "慢慢从倦怠恢复的人",
+        "description": "需要温和的责任感与节奏，让康复不再换成速度。"
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "界线与共识",
+    "description": "我们保持透明，让你随时掌握节奏与资讯分享。",
+    "items": [
+      {
+        "question": "谁能得知会谈内容？",
+        "answer": "由你决定资讯是否外传。没有明确同意，不会与雇主或赞助者分享细节。"
+      },
+      {
+        "question": "这是治疗吗？",
+        "answer": "不是。若在过程中需要临床或创伤支持，我们会讨论转介或暂停。"
+      },
+      {
+        "question": "如果外界需求又压得太满？",
+        "answer": "会先暂停，重新盘点界线与风险，再决定如何继续。"
+      }
+    ]
+  },
+  "faq": {
+    "title": "常见提问",
+    "items": [
+      {
+        "question": "公司可以赞助这个方案吗？",
+        "answer": "可以。我们会先对齐保密界线与回馈节奏，确保你仍然主导会谈内容。"
+      },
+      {
+        "question": "会一起看履历或面试吗？",
+        "answer": "会。我们会练习叙事、模拟对话，也会提供文件回馈。"
+      },
+      {
+        "question": "如果需要放慢怎么办？",
+        "answer": "可以拉长节奏，或在照护高峰时改成轻量的维持方式。"
+      }
+    ]
+  },
+  "cases": {
+    "title": "综合案例",
+    "description": "将多位客户的经验混合处理，保护个人隐私。",
+    "items": [
+      {
+        "title": "照护与回职并行",
+        "context": "暂停两年照顾长辈的行销经理，被邀请回任却担心物流与精力。",
+        "coaching_moves": "一起盘点不可妥协的需求、设计沟通脚本，并演练分阶段回任提案。",
+        "shift": "谈到每周四天的回任计划，并与主管约定定期健康检视。",
+        "tools_used": ["界线脚本", "利害关系人盘点"],
+        "disclaimer": "细节已混合多位客户以保密。",
+        "slug": "back-after-3-years-worried-about-gaps"
+      },
+      {
+        "title": "倦怠后的缓冲",
+        "context": "一位专案负责人从倦怠留职停薪回归，担心节奏过快。",
+        "coaching_moves": "设计能量盘点、练习提出支援请求，并与主管约好回顾节奏。",
+        "shift": "能够更坦然说明负荷，感觉节奏被看见而不是再度硬撑。",
+        "tools_used": ["能量盘点", "每周反思提示"],
+        "disclaimer": "案例内容经匿名混合。",
+        "slug": "rebuilding-confidence-post-burnout"
+      },
+      {
+        "title": "进修后的重新定位",
+        "context": "一位家长在空窗期完成证照，想把新技能连结到混合式职缺。",
+        "coaching_moves": "重写故事、练习联络策略并演练面试答覆。",
+        "shift": "能清楚说明为何现在回到职场，谈判时也更有底气。",
+        "tools_used": ["故事资料库", "面试演练"],
+        "disclaimer": "细节经过调整以保护个资。",
+        "slug": "translating-new-skills-after-study"
+      }
+    ]
+  },
+  "cta": {
+    "title": "想稳稳地回到轨道？",
+    "description": "先聊聊你的时程与需要的支援，再一起决定步调。",
+    "primary": {
+      "label": "预约 20 分钟聊聊",
+      "href": "/contact?topic=career-return"
+    },
+    "secondary": {
+      "label": "了解教练怎么进行",
+      "href": "/services/how-coaching-works"
+    }
+  },
+  "fallbackNotice": "若有尚未完成的段落，会暂以英文显示。",
   "pricing": {
     "packages": [
       {
-        "name": "6-session block",
-        "duration": "6×60–75min over ~12 weeks",
-        "scope": "Clarity, experiments, review; async check-ins.",
-        "price_note": "Exact fees on request; pro bono/discounts available case-by-case."
+        "title": "重新启动 — 3 次会谈",
+        "highlights": [
+          "3 × 50 分钟／4–6 周内完成",
+          "中断后的信心重整与叙事更新",
+          "近期证据点计划（迷你专案／推荐人）"
+        ]
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One focused topic; action plan + follow-up note.",
-        "price_note": "Best for a specific decision or interview prep."
+        "title": "推进动能 — 6 次会谈",
+        "highlights": [
+          "6 × 50 分钟／8–12 周",
+          "履历／作品集重构：补上空窗期的桥接证据",
+          "面试演练：重返职场情境与沟通"
+        ]
+      },
+      {
+        "title": "稳定维持 — 12 次会谈",
+        "highlights": [
+          "12 × 50 分钟／3–6 个月",
+          "兼顾照护与工作的节奏设计",
+          "客制化实验＋周期性回顾"
+        ]
       }
     ],
     "policies": [
-      {
-        "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
-      },
-      {
-        "title": "No guarantees",
-        "body": "We co-design experiments; outcomes depend on your context and actions."
-      }
+      "改期需提前 24 小时；逾时视同使用一次会谈。",
+      "套组可在会谈间暂停，需双方同意。",
+      "预设保密；仅保留最少必要纪录；可要求删除。",
+      "教练而非治疗／法律；必要时提供转介资讯。",
+      "线上、以英国时段为主；以英镑（GBP）开立发票。"
     ]
   },
   "readiness": {
     "checklist": [
-      "I can commit 60–90min per week for reflection or experiments.",
-      "I accept that coaching is not therapy or medical advice.",
-      "I’m willing to run small tests and learn from results."
+      "可安排 50–60 分钟线上会谈，并能配合英国时段。",
+      "有需要桥接的空窗（育儿、健康、进修、照护）与目标领域。",
+      "理解教练服务范围（非治疗／法律）。",
+      "愿意在会谈间完成 1 个小实验。",
+      "准备好最新 CV 或 LinkedIn 连结。",
+      "可使用 Google Docs/Sheets 与 Zoom/Meet。",
+      "同意最少必要纪录与资料处理。"
     ],
     "what_to_prepare": [
-      "Latest CV / role targets",
-      "Three work situations worth improving",
-      "Boundaries and constraints (time, energy, family)"
+      "你的 LinkedIn 连结或最近期的 CV（PDF）。",
+      "两个来自空窗前／后的短案例。",
+      "限制清单（时数、地点、照护）。",
+      "你可行的每周节奏（粗略即可）。",
+      "前两次会谈最想厘清的三个问题。"
+    ],
+    "signals": [
+      "偏好沉稳、诚实、符合英国情境的引导。",
+      "喜欢小步前进、能产出可见证据的方式。",
+      "能维持每周节奏并做短回顾。",
+      "能接受「教练而非治疗」的范围界线。"
     ]
   },
   "process": {
-    "title": "How the process works",
-    "description": "A three to four month container with 60-minute sessions and light touch check-ins between calls.",
+    "title": "流程如何进行",
+    "description": "通常为期 3–4 个月，每次 60 分钟，并在会谈之间穿插轻量回报。",
     "steps": [
-      {
-        "title": "Orientation & consent",
-        "description": "We map responsibilities, non-negotiables and what support looks like to you."
-      },
-      {
-        "title": "Design paced experiments",
-        "description": "We test options, practise scripts and rehearse conversations you want to lead."
-      },
-      {
-        "title": "Embed routines that protect energy",
-        "description": "We build tracking rituals so you can sustain momentum without overextending."
-      }
+      "重整与界线：目标、限制，哪些主题较适合留在教练之外。",
+      "重建讯号：一个可被看见的证据点（迷你专案／推荐人／复习练习）。",
+      "故事与履历：不道歉地桥接空窗，说清楚「为什么现在」。",
+      "面试适配：重返职场情境、节奏、照护安排与沟通。",
+      "投递与回顾：追踪、20 分钟复盘，调整下一小步。"
     ],
-    "note": "Optional asynchronous feedback through voice notes or docs helps you integrate between sessions."
+    "note": "若需要，也可透过语音或文件回馈，在会谈间获得轻量指引。"
   },
   "agreement": {
     "sections": [
       {
-        "heading": "Scope",
-        "body": "Coaching supports clarity, decisions and self-leadership through questions and experiments."
+        "title": "服务范围与适配",
+        "paragraphs": [
+          "本服务为教练，不是治疗、谘商、HR 或法律建议。",
+          "聚焦英国在地证据点、叙事清晰、准备与节奏。",
+          "若治疗／法律更合适，将提供指引资讯。"
+        ]
       },
       {
-        "heading": "Not therapy/medical",
-        "body": "We do not diagnose or treat; we may signpost to professional help when appropriate."
+        "title": "保密",
+        "paragraphs": [
+          "会谈预设保密。",
+          "仅保留最少必要纪录；你可随时要求删除。",
+          "品质督导可能讨论匿名化模式，不含可识别资讯。"
+        ]
       },
       {
-        "heading": "Confidentiality & limits",
-        "body": "We keep sessions confidential except where law/safety requires disclosure."
+        "title": "时程与改期",
+        "paragraphs": [
+          "单次约 50 分钟，线上、以英国时段为主。",
+          "改期需提前 24 小时；逾时视同使用一次会谈。",
+          "套组可在会谈间暂停，需双方同意。"
+        ]
       },
       {
-        "heading": "Consent & boundaries",
-        "body": "You can pause, decline, or stop any activity at any time."
+        "title": "费用与发票",
+        "paragraphs": [
+          "以英镑 (GBP) 计价，依套组或约定开立发票。",
+          "已完成会谈不退费；未使用会谈可暂停保留。",
+          "汇款／平台手续费除另有约定，原则由客户负担。"
+        ]
       },
       {
-        "heading": "Cancellations & data",
-        "body": "24h reschedule window; session notes kept minimal and securely."
+        "title": "个资与纪录",
+        "paragraphs": [
+          "仅保存执行会谈与开立发票所需的最少资料。",
+          "你可在法律许可范围内申请调阅或删除个资。",
+          "常用工具（Google Docs/Sheets、Email、视讯）将以合理注意使用。"
+        ]
+      },
+      {
+        "title": "合理使用与界线",
+        "paragraphs": [
+          "会谈间可轻量回报；大量审稿或代做内容不在范围内。",
+          "不代为联络雇主或 HR。",
+          "若出现危害风险，为保护安全，保密可能被解除。"
+        ]
+      },
+      {
+        "title": "争议处理",
+        "paragraphs": [
+          "优先以 Email 与短通话及早处理。",
+          "若未解决，将提出简要书面方案；必要时暂停服务。",
+          "除法律强制规定外，原则适用英国法与司法管辖。"
+        ]
       }
     ]
   },
   "faq": {
     "items": [
-      {
-        "q": "How do we meet?",
-        "a": "Online (video) by default; in-person by arrangement in London."
-      },
-      {
-        "q": "What if I’m not ready?",
-        "a": "Start with a 20-minute chat; we’ll decide together with no obligation."
-      }
+      {"q": "你可以帮我解释空窗期吗？", "a": "我们一起打磨叙事，但内容属于你。重点是改变了什么、现在能拿出哪些证据。"},
+      {"q": "你们保证我能重返职场吗？", "a": "不保证。教练不是仲介。我们协助你建立证据点与清楚叙事；由你投递并追踪成果。"},
+      {"q": "你会代写我的 CV/LinkedIn 吗？", "a": "不代写。我们协助结构与清楚度，对齐英国常见格式，并在 Google Docs 共同修订。"},
+      {"q": "两次会谈间需要投入多少时间？", "a": "通常每周 30–60 分钟，完成 1 个小实验或一轮修订；保持「小而可见」。"},
+      {"q": "谈话是保密的吗？", "a": "预设保密；最少必要纪录；可要求删除。详见边界与政策页。"},
+      {"q": "若我有照护与时段限制怎么办？", "a": "我们会以限制为基准设计节奏，并挑选相符的职位或型态。"},
+      {"q": "可以代为与雇主或 HR 沟通吗？", "a": "不会。我们协助你准备对话并在你准备好时亲自表达。"},
+      {"q": "改期与退费如何处理？", "a": "改期需提前 24 小时；逾时视同使用一次会谈。已完成会谈不退费。"}
     ]
   },
   "cases": {
-    "title": "Composite coaching glimpses",
-    "description": "Real situations blended from multiple returners so identities stay confidential.",
+    "title": "匿名情境速写",
+    "description": "以下为多位重返职场者的综合案例，保护身份并仅供参考。",
     "items": [
       {
-        "title": "Back after 3 years, worried about gaps",
-        "context": "UK job search after a 3-year break; unsure how to frame caregiving.",
-        "coaching_moves": "Mapped a 30-min 'first day' simulation; rewrote 4 CV bullets with CAR; rehearsed boundary language.",
-        "shift": "Clearer language for gaps; sent 2 outreach messages with less avoidance.",
-        "tools_used": [
-          "Values Map",
-          "Self-Talk Reframe",
-          "Behavior Ladder"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "离开 3 年后回到求职市场",
+        "context": "暂离职场三年在英国重新投递，担心如何谈照护空窗。",
+        "coaching_moves": "设计 30 分钟的“回到第一天”模拟；用 CAR 结构改写 4 个履历段落；排演界线语句。",
+        "shift": "描述空窗的语言更踏实，也勇于发出 2 封主动讯息。",
+        "tools_used": ["价值地图", "自我对话改写", "行为实验阶梯"],
+        "disclaimer": "示意并已匿名，成果不作保证。",
         "slug": "back-after-3-years-worried-about-gaps"
       },
       {
-        "title": "Rebuilding confidence post-burnout",
-        "context": "Returning after burnout leave; anxious about pace and expectations.",
-        "coaching_moves": "Designed gentle energy audit; practised asking for support; set weekly review ritual.",
-        "shift": "Communicated capacity cleanly; reported growing steadiness instead of bracing.",
-        "tools_used": [
-          "Energy Audit",
-          "Weekly Reflection",
-          "Boundary Scripts"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "倦怠后重新建立信心",
+        "context": "因倦怠请假，回归时对节奏与期待感到焦虑。",
+        "coaching_moves": "规划温和的能量盘点；练习开口求助；建立每周回顾仪式。",
+        "shift": "能清楚说明自己的容量，从防备转为稳定。",
+        "tools_used": ["能量盘点", "每周回顾", "界线语句"],
+        "disclaimer": "示意并已匿名，成果不作保证。",
         "slug": "rebuilding-confidence-post-burnout"
       },
       {
-        "title": "Translating new skills after study",
-        "context": "Certification during break; needs hybrid-role repositioning.",
-        "coaching_moves": "Reframed experience stories; prototyped networking outreach; tested answers.",
-        "shift": "Entered conversations confident about naming boundaries and new value.",
-        "tools_used": [
-          "Story Library",
-          "Interview Rehearsal"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "把进修成果转成证据",
+        "context": "休息期间完成证照，想转向混合型职务。",
+        "coaching_moves": "重整经验故事；试写拓展人脉讯息；演练常见追问。",
+        "shift": "更能说清楚新价值与界线，带着信心进入对话。",
+        "tools_used": ["故事资料库", "面试排演"],
+        "disclaimer": "示意并已匿名，成果不作保证。",
         "slug": "translating-new-skills-after-study"
       }
     ]
   },
+  "key_points": {
+    "items": [
+      {"title": "12 周稳稳回到节奏：轻量结构、清楚界线。"},
+      {"title": "维持每周节奏；两次会谈之间做小实验，累积动能。"},
+      {"title": "面试演练聚焦故事与适配——不教话术、不背模板。"},
+      {"title": "履历／作品集重构，让近期进展被看见。"},
+      {"title": "定价简单；套组之间可暂停；预设保密。"}
+    ]
+  },
   "title": "重返职场 — 教练路径",
-  "description": "不道歉地桥接空窗。故事、证据、节奏与照护/时段平衡。"
+  "description": "不道歉地桥接空窗：故事、证据、节奏与照护／时段的平衡。"
 }

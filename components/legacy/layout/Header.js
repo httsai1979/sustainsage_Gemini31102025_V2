@@ -78,7 +78,7 @@ export default function Header() {
             href="/contact"
             className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
           >
-            Book a conversation
+            Book a 20-minute chat
           </Link>
           <LocaleToggle onToggle={handleToggleLocale} />
           <button
@@ -124,7 +124,7 @@ export default function Header() {
               onClick={handleNavClick}
               className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white"
             >
-              Book a conversation
+              Book a 20-minute chat
             </Link>
             <LocaleToggle variant="mobile" onToggle={handleToggleLocale} />
           </div>

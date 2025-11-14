@@ -13,24 +13,44 @@
   },
   "items": [
     {
+      "slugs": ["default"],
+      "question": "How often do we meet and how long do sessions last?",
+      "answer": "Most pathways meet every two to three weeks for 60–75 minutes. Graduates sometimes prefer 50-minute calls, and urgent transitions may use weekly sprints for a short period."
+    },
+    {
+      "slugs": ["default"],
+      "question": "Where do sessions take place?",
+      "answer": "Sessions are primarily online via Zoom so we can support people across time zones. In-person intensives in London or Cambridge happen a few times a year when they genuinely help."
+    },
+    {
+      "slugs": ["default"],
+      "question": "Can I pause or end coaching?",
+      "answer": "Yes. Agreements are reviewed every quarter and you can pause between sessions, shift to lighter check-ins, or wrap up once the goals are met."
+    },
+    {
+      "slugs": ["default"],
+      "question": "How do I know if coaching is the right space right now?",
+      "answer": "Use the Readiness checklist for a fuller look at when coaching helps and when other professionals are a better first step. Mention any concerns during the 20-minute chat so we can plan together."
+    },
+    {
       "slugs": ["career-return", "immigrant-job"],
       "question": "Can my employer or sponsor be involved?",
-      "answer": "Yes. We agree what updates, if any, will be shared outside sessions. Sponsors only receive information you authorise."
+      "answer": "Yes. We co-design what updates, if any, will be shared outside sessions. Sponsors only receive information you authorise."
     },
     {
       "slugs": ["career-return"],
       "question": "What if I need to pause because of caring responsibilities?",
-      "answer": "We design flexible cadences from the start. You can pause or spread out sessions — momentum matters more than speed."
+      "answer": "We build in flexible cadences from the start. You can pause or spread out sessions — momentum matters more than speed."
+    },
+    {
+      "slugs": ["graduate-start", "immigrant-job"],
+      "question": "Is there homework between sessions?",
+      "answer": "We agree small experiments between sessions. They are co-designed so they feel doable alongside study, work, or caregiving."
     },
     {
       "slugs": ["graduate-start"],
       "question": "Do you offer preparation before performance reviews?",
       "answer": "We rehearse conversations, co-write talking points and identify evidence to bring into the room with confidence."
-    },
-    {
-      "slugs": ["graduate-start", "immigrant-job"],
-      "question": "Is there homework between sessions?",
-      "answer": "We agree small experiments between sessions. They are always co-designed so they feel doable alongside your workload."
     },
     {
       "slugs": ["immigrant-job"],
@@ -45,7 +65,7 @@
     {
       "slugs": ["default"],
       "question": "Do you work internationally?",
-      "answer": "Most sessions happen online. We regularly support clients across the UK, Europe and Asia-Pacific time zones."
+      "answer": "We regularly support clients across the UK, Europe and Asia-Pacific time zones via online sessions."
     }
   ]
 }

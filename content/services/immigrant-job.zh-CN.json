@@ -1,140 +1,250 @@
 {
-  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。",
+  "title": "英国职场新起点 — 教练路径",
+  "hero": {
+    "eyebrow": "给国际移居与跨国专业者",
+    "title": "把跨国故事翻成英国听得懂的语言",
+    "subtitle": "我们一起理解当地规则、写出可信的叙事，并安排可持续的主动联络。",
+    "primaryCta": {
+      "label": "预约 20 分钟聊一聊",
+      "href": "/contact?topic=immigrant-job"
+    },
+    "secondaryCta": {
+      "label": "查看 FAQ",
+      "href": "/faq"
+    }
+  },
+  "card": {
+    "order": 2,
+    "eyebrow": "新到英国",
+    "title": "移居后的求职",
+    "description": "在不缩小自己的前提下，翻译 CV、故事与签证资讯。",
+    "benefits": [
+      "转换成英国熟悉的履历、LinkedIn 与简介方式。",
+      "练习猎头、主管与人脉对话的脚本。",
+      "在申请与家庭照顾之间维持稳定节奏。"
+    ],
+    "icon": "mail"
+  },
+  "key_points": {
+    "title": "我们最常合作的情境",
+    "description": "拥有完整国际资历，但需要一起拆解英国招聘讯号。",
+    "items": [
+      {
+        "title": "需要赞助或签证的专业者",
+        "description": "兼顾签证时程、家属与英国招聘节奏。"
+      },
+      {
+        "title": "想留在英国工作的毕业生",
+        "description": "把实习、海外专案转成当地看得懂的证据。"
+      },
+      {
+        "title": "随伴侣移居的家人",
+        "description": "重建专业身份，同时建立新的支持系统。"
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "界线与同意",
+    "description": "合作保持由你主导，并以创伤知情方式应对系统性压力。",
+    "items": [
+      {
+        "question": "会建议不安全的工作安排吗？",
+        "answer": "不会。我们拒绝无酬试用或剥削性的安排，并陪你练习拒绝。"
+      },
+      {
+        "question": "会保证快速拿到赞助吗？",
+        "answer": "不做保证。我们专注透明节奏与可验证的策略，而不是算法偏方。"
+      },
+      {
+        "question": "遇到歧视时怎么办？",
+        "answer": "会一起设计自我保护、记录事件，并指引法律或倡议资源。"
+      }
+    ]
+  },
+  "fallbackNotice": "若有尚未翻译的段落，会暂以英文显示。",
   "pricing": {
     "packages": [
       {
-        "name": "6-session block",
-        "duration": "6×60–75min over ~12 weeks",
-        "scope": "CV translation to UK style, outreach scripts, interview rehearsal; async check-ins.",
-        "price_note": "Fees on request; sliding scale available case-by-case."
+        "name": "入门 — 3 次会谈",
+        "duration": "3 × 50 分钟／4–6 周",
+        "scope": "每次之间 1 个小实验；CV／LinkedIn 以英国格式快速校正。",
+        "price_note": "以 GBP 计价。"
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One focused topic (e.g., recruiter screening or CV bullet rewrite) with an action note.",
-        "price_note": "Good for tactical needs."
+        "name": "聚焦 — 6 次会谈",
+        "duration": "6 × 50 分钟／8–12 周",
+        "scope": "作品集／履历重构，凸显当地可见的证据点；面试演练聚焦清楚与适配。",
+        "price_note": "以 GBP 计价。"
+      },
+      {
+        "name": "延伸 — 12 次会谈",
+        "duration": "12 × 50 分钟／3–6 个月",
+        "scope": "深入练习文化适配与主管对话；客制练习题与节奏回顾。",
+        "price_note": "以 GBP 计价。"
       }
     ],
     "policies": [
-      {
-        "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
-      },
-      {
-        "title": "No guarantees",
-        "body": "We co-design experiments; outcomes depend on market timing and your actions."
-      }
+      { "title": "改期", "body": "需提前 24 小时；逾时视同使用一次会谈。" },
+      { "title": "频率", "body": "第一堂确认节奏；套组之间可暂停。" },
+      { "title": "保密", "body": "预设保密；最少必要纪录；可要求删除。" },
+      { "title": "范围", "body": "教练而非治疗或法律；必要时提供转介资讯。" },
+      { "title": "时差与费用", "body": "线上时段以英国时间为主；以 GBP 开立发票。" }
     ]
   },
   "readiness": {
     "checklist": [
-      "I can commit 60–90min per week for tests and applications.",
-      "I accept coaching is not immigration, legal, or medical advice.",
-      "I’m willing to adapt my CV and outreach to UK hiring norms."
+      "可安排 50–60 分钟、安静且网路稳定的空间。",
+      "能配合英国时段，并在日历上保留每周节奏。",
+      "带一个想测试的情境（职位／产业／城市）或优先问题。",
+      "理解教练边界；急性危机或治疗性议题不在范围内。",
+      "愿意在两次会谈间完成 1 个小实验。",
+      "准备好 LinkedIn 连结或最新 CV。",
+      "同意最少必要纪录与资料处理。",
+      "若英文非母语：能接受放慢、澄清、共同写作。",
+      "会使用 Google Docs/Sheets 与 Zoom/Meet。",
+      "可使用英镑 (GBP) 付款与收取发票。"
     ],
     "what_to_prepare": [
-      "Current CV and two target roles (links)",
-      "Two projects to convert into UK-style bullet points",
-      "Basic outreach list (10–20 names or companies)"
+      "LinkedIn 连结或最近期 CV。",
+      "两个让你有成就感的短实例——做了什么、为何重要。",
+      "限制清单（签证、照护、排班、地点）。",
+      "每周可行节奏（粗略即可）。",
+      "前两次会谈最想厘清的三个问题。"
+    ],
+    "signals": [
+      "偏好沉稳、诚实、不夸大的指引。",
+      "需要英国在地“可被看见的证据点”，而非空泛建议。",
+      "能接受小实验可能不完美，但愿意回顾调整。",
+      "愿意维持每周节奏并做短回顾。",
+      "能接受“教练而非治疗／法律”的范围。"
     ]
   },
   "process": {
-    "title": "Process & milestones",
-    "description": "We usually partner for eight to ten sessions across three months with optional co-working sprints.",
+    "title": "流程与里程碑",
+    "description": "常见为期 3 个月、8–10 次会谈，可视需要插入共作冲刺或文件审阅。",
     "steps": [
-      {
-        "title": "Map the hiring landscape",
-        "description": "We unpack sector norms, sponsorship realities and what evidence UK employers seek."
-      },
-      {
-        "title": "Build your narrative toolkit",
-        "description": "We co-write scripts, portfolio stories and Q&A to use with recruiters, hiring managers and networks."
-      },
-      {
-        "title": "Sustain the search",
-        "description": "We monitor energy, iterate weekly plans and celebrate momentum so you do not burn out."
-      }
+      { "title": "看懂市场", "description": "厘清产业规则、签证政策与英国雇主想看的证据。" },
+      { "title": "建立叙事工具箱", "description": "共同写作脚本、作品集故事与 Q&A，用于猎头、主管与人脉对话。" },
+      { "title": "维持动能", "description": "追踪能量与节奏，调整每周计划，让进展可见又不烧尽。" }
     ],
-    "note": "You can add document reviews or mock interviews between sessions when deadlines appear."
+    "note": "若有突发面试或文件需求，可在会谈间加入 mock interview 或文件审阅。"
   },
   "agreement": {
     "sections": [
       {
-        "heading": "Scope",
-        "body": "Coaching supports clarity and momentum for UK job search through questions and experiments."
+        "title": "服务范围与适配",
+        "paragraphs": [
+          "本服务为教练，不提供心理治疗、移民或法律建议。",
+          "聚焦英国在地证据点、叙事清楚、准备与节奏。",
+          "若治疗或法律资源更适合，会协助指引。"
+        ]
       },
       {
-        "heading": "Not legal/immigration/medical",
-        "body": "No legal or visa advice; we may signpost to professional services where appropriate."
+        "title": "保密",
+        "paragraphs": [
+          "会谈预设保密。",
+          "仅保留最少必要纪录；可随时要求删除。",
+          "品质督导仅讨论匿名化模式，不含可识别资讯。"
+        ]
       },
       {
-        "heading": "Confidentiality & limits",
-        "body": "Sessions are confidential except where law/safety requires disclosure."
+        "title": "时程与改期",
+        "paragraphs": [
+          "单次约 50 分钟，线上进行，以英国时段为主。",
+          "改期需提前 24 小时；逾时视同使用一次会谈。",
+          "经双方同意，套组可在会谈间暂停。"
+        ]
       },
       {
-        "heading": "Consent & boundaries",
-        "body": "You may stop or decline any exercise at any time."
+        "title": "费用与发票",
+        "paragraphs": [
+          "以英镑 (GBP) 计价；依套组或双方约定开立发票。",
+          "已完成会谈不退费；未使用会谈可暂停保留。",
+          "汇款或平台手续费除另有约定，原则由客户负担。"
+        ]
       },
       {
-        "heading": "Cancellations & data",
-        "body": "24h reschedule; minimal notes stored securely."
+        "title": "个资与纪录",
+        "paragraphs": [
+          "仅保存执行会谈与开立发票所需的最少资料。",
+          "你可依法律范围申请调阅或删除个资。",
+          "常用工具（Google Docs/Sheets、Email、视讯）将以合理注意使用。"
+        ]
+      },
+      {
+        "title": "合理使用与界线",
+        "paragraphs": [
+          "会谈间可轻量回报；大量审稿或代做不在范围内。",
+          "不代为联络雇主，也不提供签证／法律建议。",
+          "若出现危害风险，为保护安全，保密义务可能被解除。"
+        ]
+      },
+      {
+        "title": "争议处理",
+        "paragraphs": [
+          "优先透过 Email 与短通话及早处理。",
+          "若仍无法解决，将提出书面方案并视情况暂停服务。",
+          "除法律另有规定外，原则适用英国法与司法管辖。"
+        ]
       }
     ]
   },
   "faq": {
     "items": [
-      {
-        "q": "Do you advise on visas?",
-        "a": "No. We do not provide immigration advice. We focus on job search strategy and practice."
-      },
-      {
-        "q": "Will you introduce me to companies?",
-        "a": "We can co-design outreach but do not promise referrals. Your network building is part of the work."
-      }
+      { "q": "你们保证能拿到工作或面试吗？", "a": "不保证。教练不是仲介。我们协助你建立英国看得懂的证据与叙事；由你投递并追踪。" },
+      { "q": "会谈使用哪种语言？", "a": "主要使用英文；必要时可放慢、澄清、一起写作，遇到较难表达的概念可短暂切换中文。" },
+      { "q": "你们提供签证或移民法规建议吗？", "a": "不提供法律意见。我们在你的限制条件下工作，必要时提供官方资讯方向。" },
+      { "q": "会代写 CV 或 LinkedIn 吗？", "a": "不代写。内容属于你。我们协助结构与清楚度，并在 Google Docs 共同编修。" },
+      { "q": "会代我联络雇主或猎头吗？", "a": "不会。我们协助你准备联络脚本并提升信心，由你亲自发送。" },
+      { "q": "两次会谈间需要多少时间？", "a": "通常每周 30–60 分钟，如资讯性聊天、试做任务或志工，保持小步且可见。" },
+      { "q": "谈话会保密吗？", "a": "预设保密；最少必要纪录；可要求删除。详见界线与政策页。" },
+      { "q": "改期与退费怎么处理？", "a": "改期需提前 24 小时；逾时视同使用一次会谈。已完成会谈不退费；套组可在会谈间暂停。" }
     ]
   },
   "cases": {
-    "title": "Composite coaching glimpses",
-    "description": "Examples anonymised across internationally trained professionals navigating the UK market.",
+    "title": "匿名情境速写",
+    "description": "综合多位在英国求职的国际人才，保护个人资料。",
     "items": [
       {
-        "title": "Sponsorship status anxiety",
-        "context": "Non-UK degree; unsure how to address visa sponsorship early.",
-        "coaching_moves": "Built a 2-line sponsorship script; prioritised target firms by policy; planned 10-day outreach.",
-        "shift": "Fewer ghosted threads; clearer yes/no signals faster.",
-        "tools_used": [
-          "Decision Scorecard",
-          "Outreach Tracker"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "担心签证被拒",
+        "context": "非英国学历，担心一提签证就被刷掉。",
+        "coaching_moves": "写出两句式签证说明；依政策排序目标公司；规划 10 天主动联络。",
+        "shift": "更快拿到明确的 yes/no 回应，减少石沉大海。",
+        "tools_used": ["Decision Scorecard", "Outreach Tracker"],
+        "disclaimer": "示意并已匿名，成果不保证。",
         "slug": "securing-sponsorship-with-clarity"
       },
       {
-        "title": "Translating overseas wins",
-        "context": "Strong results abroad not mapping to UK bullets.",
-        "coaching_moves": "Converted two projects to UK-style metrics; created proof links; rehearsed succinct framing.",
-        "shift": "Hiring managers understood scope without over-explaining.",
-        "tools_used": [
-          "CAR Bullets",
-          "Portfolio Map"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "海外资历难以说服",
+        "context": "在亚洲带过团队，但英国主管听不懂。",
+        "coaching_moves": "重写 3 个案例，加入规模、风险与决策权；练习主管对话。",
+        "shift": "更敢以领导者身份发言，面试回馈聚焦在适配而非资历不足。",
+        "tools_used": ["Story Library", "Interview Rehearsal"],
+        "disclaimer": "示意并已匿名，成果不保证。",
         "slug": "translating-overseas-leadership"
       },
       {
-        "title": "Accent & confidence",
-        "context": "Avoids phone screens due to accent worries.",
-        "coaching_moves": "Practised slow-first phrasing; scripted clarifying questions; built pause habits.",
-        "shift": "Entered calls with steadier pace and fewer rush-talk loops.",
-        "tools_used": [
-          "Pacing Cues",
-          "Question Bank"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "身为配偶的身份转换",
+        "context": "随伴侣移居，想重新建立专业与社群。",
+        "coaching_moves": "设计社群探询脚本、安排资讯性对谈、练习自我介绍。",
+        "shift": "找到新的专案合作伙伴，也更自在谈自己的专业。",
+        "tools_used": ["Values Map", "Conversation Scripts"],
+        "disclaimer": "示意并已匿名，成果不保证。",
         "slug": "partner-rebuilding-identity"
       }
     ]
   },
-  "title": "移民求职 — 教练路径",
-  "description": "把经验转为英国在地证据点。CV/LinkedIn 清晰度、主动联系脚本、面试练习。"
+  "cta": {
+    "title": "想要稳稳地推进英国求职？",
+    "description": "先告诉我你的故事与限制，我们再设计尊重这些现实的教练节奏。",
+    "primary": {
+      "label": "预约 20 分钟聊一聊",
+      "href": "/contact?topic=immigrant-job"
+    },
+    "secondary": {
+      "label": "了解教练方式",
+      "href": "/services/how-coaching-works"
+    }
+  },
+  "description": "把跨国经验转成英国可理解的证据，找到节奏、界线与新的支持系统。"
 }

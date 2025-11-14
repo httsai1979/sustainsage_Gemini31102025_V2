@@ -1,140 +1,220 @@
 {
-  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。",
+  "title": "毕业起步 — 教练路径",
+  "hero": {
+    "eyebrow": "给应届毕业生与早期职涯",
+    "title": "不需要假装都想好了，也能开始",
+    "subtitle": "我们陪你整理选项、练习叙事，并建立第一份工作用得上的节奏。",
+    "primaryCta": {
+      "label": "预约 20 分钟聊一聊",
+      "href": "/contact?topic=graduate-start"
+    },
+    "secondaryCta": {
+      "label": "分享给家人或导师",
+      "href": "mailto:hello@sustainsage.com?subject=Graduate%20coaching"
+    }
+  },
+  "card": {
+    "order": 3,
+    "eyebrow": "毕业起步",
+    "title": "毕业起跑",
+    "description": "把零散努力转成清楚的故事、小步实验与稳定习惯。",
+    "benefits": [
+      "说清楚自己在乎的方向与限制。",
+      "先做小实验再决定是否投入。",
+      "练习守得住的工作节奏与自我照顾。"
+    ],
+    "icon": "book"
+  },
+  "key_points": {
+    "title": "适合谁",
+    "description": "希望在探索或刚入职时，有人陪你对齐节奏与语言。",
+    "items": [
+      {
+        "title": "即将毕业的学生",
+        "description": "论文、求职与家人期待同时发生，需要有人陪你理顺节奏。"
+      },
+      {
+        "title": "入职 12 个月内的新鲜人",
+        "description": "想有人一起复盘、说清楚哪些事要和哪些人对话。"
+      },
+      {
+        "title": "还在探索方向的人",
+        "description": "想安全地测试多个选项，不想被逼着只选一条路。"
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "界线与共识",
+    "description": "尊重早期职涯常见的家庭、财务与心理负担。",
+    "items": [
+      {
+        "question": "谁决定议程？",
+        "answer": "受教练者自己。赞助者可参与行政对齐，但会谈内容保持保密。"
+      },
+      {
+        "question": "如何面对生产力焦虑？",
+        "answer": "我们会依据神经多样性、健康或财务现实设计节奏，不需假装没压力。"
+      },
+      {
+        "question": "如果焦虑太大怎么办？",
+        "answer": "会暂停并讨论是否需要临床或心理支持，再决定是否并行或转介。"
+      }
+    ]
+  },
+  "fallbackNotice": "若有尚未翻译的段落，会暂以英文显示。",
   "pricing": {
     "packages": [
       {
-        "name": "4-session starter",
-        "duration": "4×60–75min over ~6–8 weeks",
-        "scope": "Decision scorecard, tiny tests, basic portfolio/CV review.",
-        "price_note": "Student-friendly fees on request."
+        "name": "4 周起步包",
+        "duration": "4 × 60–75 分钟／约 6–8 周",
+        "scope": "决策评分表、小实验计划、作品集／履历基础修订。",
+        "price_note": "可提供学生友善费用。"
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One decision or interview prep with a clear action note.",
-        "price_note": "Good for assessment centre or first interviews."
+        "name": "单次聚焦会谈",
+        "duration": "60–75 分钟",
+        "scope": "针对一场面试或一个抉择，产出清楚行动笔记。",
+        "price_note": "适合 assessment centre 或首轮面试前。"
       }
     ],
     "policies": [
-      {
-        "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
-      },
-      {
-        "title": "No guarantees",
-        "body": "We support experiments; outcomes depend on your effort and timing."
-      }
+      { "title": "改期", "body": "需提前 24 小时；否则视同使用一次会谈。" },
+      { "title": "不保证结果", "body": "我们专注实验与证据，成果取决于你的投入与时机。" }
     ]
   },
   "readiness": {
     "checklist": [
-      "I can try a 2-week test between sessions.",
-      "I accept coaching is not therapy or medical advice.",
-      "I’ll draft my CV/portfolio and be open to iteration."
+      "可安排 50–60 分钟线上会谈，能配合英国时段。",
+      "有大致方向（角色或产业）。",
+      "理解教练服务范围（非媒合／治疗／法律）。",
+      "愿意在会谈间完成一个小实验。",
+      "准备好最新 CV 或 LinkedIn 连结。"
     ],
     "what_to_prepare": [
-      "Latest CV or portfolio link",
-      "Two target roles or fields",
-      "Three questions that matter most to you"
+      "你的 LinkedIn 连结或最近期的 CV（PDF）。",
+      "两个课程／专案范例，能在 60–90 秒说清楚。",
+      "目标职缺或条件限制清单。",
+      "前两次会谈想厘清的三个问题。"
+    ],
+    "signals": [
+      "偏好英国在地、务实又不夸大的指引。",
+      "喜欢小步走、用可见证据累积信心。",
+      "能维持每周节奏并做短回顾。"
     ]
   },
   "process": {
-    "title": "Process & pace",
-    "description": "A six to eight week sprint with optional monthly check-ins as you transition into your role.",
+    "title": "流程与节奏",
+    "description": "6–8 周的加速期，若进入新职位可视需要每月回访。",
     "steps": [
-      {
-        "title": "Clarify decisions & boundaries",
-        "description": "We map priorities, expectations and the stakeholders you want to align."
-      },
-      {
-        "title": "Prototype experiments",
-        "description": "We design small tests, build scripts and prepare materials that support your direction."
-      },
-      {
-        "title": "Review & reinforce",
-        "description": "We debrief experiments, capture learning and adjust routines to sustain momentum."
-      }
+      "盘点强项并设计可见证据（迷你专案／样本）。",
+      "对齐英国 CV/LinkedIn：清楚条列、动词精准、结果可见。",
+      "作品集或样本：一页一故事一连结。",
+      "主动联系脚本与轻量面试演练。",
+      "追踪 → 回顾 → 调整：保持小步且可见。"
     ],
-    "note": "Optional aftercare check-ins help you translate offers into confident starts."
+    "note": "必要时可安排短回访，协助你把录取转成稳定起步。"
   },
   "agreement": {
     "sections": [
       {
-        "heading": "Scope",
-        "body": "Coaching helps you choose and act through questions, frameworks and small tests."
+        "title": "服务范围与适配",
+        "paragraphs": [
+          "本服务为教练，不是就业媒合、治疗或法律建议。",
+          "聚焦证据点、叙事清晰、准备与节奏。"
+        ]
       },
       {
-        "heading": "Not therapy/medical",
-        "body": "We do not treat or diagnose; we may signpost to support services."
+        "title": "保密",
+        "paragraphs": [
+          "预设保密；最少必要纪录；可要求删除。",
+          "品质督导仅讨论匿名化模式，不含可识别资讯。"
+        ]
       },
       {
-        "heading": "Confidentiality & limits",
-        "body": "Sessions are confidential except where law/safety requires disclosure."
+        "title": "时程与改期",
+        "paragraphs": [
+          "单次约 50–75 分钟，线上、以英国时段为主。",
+          "改期需提前 24 小时；逾时视同使用一次会谈。"
+        ]
       },
       {
-        "heading": "Consent & boundaries",
-        "body": "You can pause, decline or stop any activity."
+        "title": "费用与发票",
+        "paragraphs": [
+          "以英镑 (GBP) 计价；依套组或约定开立发票。",
+          "已完成会谈不退费。"
+        ]
       },
       {
-        "heading": "Cancellations & data",
-        "body": "24h reschedule; minimal notes stored securely."
+        "title": "个资与纪录",
+        "paragraphs": [
+          "仅保存执行会谈与开立发票所需的最少资料。",
+          "你可在法律许可范围内申请调阅或删除个资。"
+        ]
+      },
+      {
+        "title": "合理使用与界线",
+        "paragraphs": [
+          "会谈间可轻量回报；大量审稿或代做不在范围内。",
+          "不代为联络雇主。"
+        ]
       }
     ]
   },
   "faq": {
     "items": [
-      {
-        "q": "Do you help with portfolios?",
-        "a": "We can review and give structure suggestions but do not build them for you."
-      },
-      {
-        "q": "Internship or full-time?",
-        "a": "We build a scorecard and test assumptions to help you decide."
-      }
+      { "q": "你们会直接帮我找到工作吗？", "a": "不会。教练不是媒合。我们协助你产出英国看得懂的证据与叙事；由你投递并追踪。" },
+      { "q": "你会代写我的 CV/LinkedIn 吗？", "a": "不代写；你仍是作者。我们协助结构与清楚度，并在 Google Docs 共同修订。" },
+      { "q": "几乎没有实务经验怎么办？", "a": "把课程、志工或 side project 转成证据：说清楚角色、贡献、结果并附连结。" },
+      { "q": "会谈间要投入多少时间？", "a": "通常每周 30–60 分钟，完成 1 个小实验或一轮修订，保持小而可见。" },
+      { "q": "谈话会保密吗？", "a": "预设保密；最少必要纪录；可要求删除。详见界线说明。" },
+      { "q": "可以代我联络雇主吗？", "a": "不会。我们协助你准备联络脚本并在你准备好时亲自发送。" },
+      { "q": "改期与退费怎么处理？", "a": "改期需提前 24 小时；逾时视同使用一次会谈。已完成会谈不退费。" }
     ]
   },
   "cases": {
-    "title": "Composite coaching glimpses",
-    "description": "Stories merged from graduates and early-career professionals to keep individuals anonymous.",
+    "title": "匿名情境速写",
+    "description": "综合毕业生与初阶职场者的情境，保护个人资料。",
     "items": [
       {
-        "title": "Too many choices, no criteria",
-        "context": "Three sectors look appealing but overwhelm decisions.",
-        "coaching_moves": "Built decision scorecard; set 2-week micro-test per sector.",
-        "shift": "Made next pick using data rather than mood.",
-        "tools_used": [
-          "Decision Scorecard",
-          "Experiment Log"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "选项太多、没有判准",
+        "context": "三个产业都想试，却不知道怎么选。",
+        "coaching_moves": "一起建立决策评分表；每个产业排 2 周微型实验。",
+        "shift": "用资料而非心情决定下一步。",
+        "tools_used": ["Decision Scorecard", "Experiment Log"],
+        "disclaimer": "示意并已匿名，成果不保证。",
         "slug": "too-many-choices-no-criteria"
       },
       {
-        "title": "Interview stories flat",
-        "context": "Projects sound generic; feedback: 'lack of impact'.",
-        "coaching_moves": "Refined two STAR stories; rehearsed follow-ups; trimmed jargon.",
-        "shift": "Stories felt concrete and paced; fewer ramble moments.",
-        "tools_used": [
-          "STAR Builder",
-          "Interview Rehearsal"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "面试故事太平",
+        "context": "专案描述太制式，回馈是“感觉没影响力”。",
+        "coaching_moves": "精修两个 STAR 故事、练习追问、删掉行话。",
+        "shift": "故事节奏更清楚，少了离题。",
+        "tools_used": ["STAR Builder", "Interview Rehearsal"],
+        "disclaimer": "示意并已匿名，成果不保证。",
         "slug": "interview-stories-flat"
       },
       {
-        "title": "Portfolio without context",
-        "context": "Screenshots with no 'why/so-what'.",
-        "coaching_moves": "Added problem-goal-result captions; linked constraints; ordered by learning.",
-        "shift": "Reviewers grasped thinking, not just visuals.",
-        "tools_used": [
-          "Story Library",
-          "Portfolio Map"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "作品集缺乏脉络",
+        "context": "只有截图，没有为什么与结果。",
+        "coaching_moves": "为每页加上问题－目标－成果摘要，补上限制并依学习排序。",
+        "shift": "审稿者看到思考过程，而不只是画面。",
+        "tools_used": ["Story Library", "Portfolio Map"],
+        "disclaimer": "示意并已匿名，成果不保证。",
         "slug": "portfolio-without-context"
       }
     ]
   },
-  "title": "毕业求职 — 教练路径",
-  "description": "把课程变成证据：一页、一个故事、一个链接。用小步骤累积可见成果。"
+  "cta": {
+    "title": "需要有人陪你一起选择或起步？",
+    "description": "告诉我你在哪个阶段，我会建议合适的节奏与结构。",
+    "primary": {
+      "label": "预约 20 分钟聊一聊",
+      "href": "/contact?topic=graduate-start"
+    },
+    "secondary": {
+      "label": "了解教练方式",
+      "href": "/services/how-coaching-works"
+    }
+  },
+  "description": "把课程变成证据：一页、一个故事、一个连结。用小步骤累积可见成果。"
 }

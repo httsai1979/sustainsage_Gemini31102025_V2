@@ -12,6 +12,10 @@
       "href": "/legal/coaching-boundaries"
     }
   },
+  "faqLink": {
+    "label": "還有問題嗎？前往 FAQ。",
+    "href": "/faq"
+  },
   "pathways": {
     "title": "選擇適合你的教練路徑",
     "description": "四條最常被詢問的路徑，都會依你的情境彈性調整。",
@@ -67,7 +71,13 @@
         ],
         "icon": "/images/services/leadership.svg"
       }
-    ]
+    ],
+    "eyebrow": "服務選項",
+    "badges": {
+      "who": "適合對象",
+      "focus": "聚焦重點",
+      "format": "進行方式"
+    }
   },
   "cta": {
     "title": "還不確定怎麼開始？",
@@ -707,5 +717,42 @@
         "secondaryHref": "/services"
       }
     }
+  },
+  "gettingStarted": {
+    "eyebrow": "開始方式",
+    "title": "從初談到合作的穩定流程",
+    "steps": [
+      {
+        "title": "預約 20 分鐘聊聊",
+        "description": "先了解你的情境，釐清教練範圍與合作可行性。"
+      },
+      {
+        "title": "一起盤點現況",
+        "description": "討論目標、資源與可近性需求，確認節奏怎麼安排。"
+      },
+      {
+        "title": "選擇路徑或客製",
+        "description": "挑一條現成路徑，或依照情境混搭設計。"
+      },
+      {
+        "title": "開始合作",
+        "description": "每 2–3 週線上會談並穿插回顧，必要時調整協議。"
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "合作風格",
+    "title": "務實、個人化、可持續",
+    "description": "我們用文化敏感、善待步調的方式設計實驗，讓你能安心測試。",
+    "cards": [
+      {
+        "title": "個人化又有彈性",
+        "body": "會談語言、節奏與協議一起設計，確保可以配合你的責任與生活。"
+      },
+      {
+        "title": "務實又照顧能量",
+        "body": "每次會談都收斂成可實作的小步驟或稿子，累積而不燒盡。"
+      }
+    ]
   }
 }

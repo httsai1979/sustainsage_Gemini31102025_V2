@@ -9,7 +9,47 @@
     "notIncluded": "Not included",
     "reflection": "Questions to reflect on"
   },
-  "defaultCta": "Book a 20-min intro call",
+  "tabs": {
+    "overview": "Overview",
+    "pricing": "Pricing",
+    "readiness": "Readiness",
+    "process": "Process",
+    "agreement": "Agreement",
+    "faq": "FAQ",
+    "cases": "Cases"
+  },
+  "overviewPage": {
+    "sidebarEyebrow": "In this service",
+    "sidebarFallback": "Gentle coaching containers for your specific transition or experiment.",
+    "contactCard": {
+      "title": "Need a gentle sounding board?",
+      "body": "Book a 20-minute chat or email a few lines about what is shifting right now.",
+      "note": "We usually reply within two working days."
+    }
+  },
+  "subpage": {
+    "exploreLabel": "Explore",
+    "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+    "defaultCta": {
+      "title": "Next steps",
+      "description": "Compare pricing or start a 20-minute chat to see if this pathway fits your moment.",
+      "primary": "Review pricing",
+      "secondary": "Book a 20-minute chat",
+      "note": ""
+    }
+  },
+  "casesPage": {
+    "backLink": "Back to cases overview",
+    "fallbackEnglish": "Case available in English while we prepare this translation.",
+    "detailEyebrow": "Case detail",
+    "sidebar": {
+      "title": "Need a different example?",
+      "body": "Browse other cases or email us so we can share the closest-fit anonymised story.",
+      "back": "Back to cases",
+      "contact": "Contact SustainSage"
+    }
+  },
+  "defaultCta": "Book a 20-minute chat",
   "missing": {
     "title": "Service not available right now",
     "description": "We could not load this service detail. Please return to the overview or message us and we will help you find the right support.",
@@ -63,8 +103,8 @@
       }
     ],
     "cta": {
-      "body": "Curious whether Transition fits? Book an intro call and note ‘Transition’. We will confirm scope before you commit.",
-      "primary": "Book the intro call",
+      "body": "Curious whether Transition fits? Book a 20-minute chat and note ‘Transition’. We will confirm scope before you commit.",
+      "primary": "Book a 20-minute chat",
       "secondary": "Compare packages"
     }
   },
@@ -162,8 +202,8 @@
       }
     ],
     "cta": {
-      "body": "Ready for a gentler reset? Book the intro call and mention ‘Reset’. We will confirm scope and timing together.",
-      "primary": "Book the intro call",
+      "body": "Ready for a gentler reset? Book a 20-minute chat and mention ‘Reset’. We will confirm scope and timing together.",
+      "primary": "Book a 20-minute chat",
       "secondary": "Compare packages"
     }
   },
@@ -215,8 +255,8 @@
       }
     ],
     "cta": {
-      "body": "Deepening is a longer commitment. Book an intro call and mention ‘Deepening’ so we can confirm fit and scheduling.",
-      "primary": "Book the intro call",
+      "body": "Deepening is a longer commitment. Book a 20-minute chat and mention ‘Deepening’ so we can confirm fit and scheduling.",
+      "primary": "Book a 20-minute chat",
       "secondary": "Compare packages"
     }
   },
@@ -267,8 +307,8 @@
       "Where do I need more consent, clarity or data before moving forward?",
       "What conditions would tell me to pause, stop or celebrate progress?"
     ],
-    "cta": "If you are ready to steward experiments with integrity, book the intro call and note ‘Experiments’. We will check scope and capacity together.",
-    "ctaButton": "Book the intro call for Experiments"
+    "cta": "If you are ready to steward experiments with integrity, book the 20-minute chat and note ‘Experiments’. We will check scope and capacity together.",
+    "ctaButton": "Book a 20-minute chat for Experiments"
   },
   "backToOverview": "Back to all services",
   "checkIn": {

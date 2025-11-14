@@ -1,193 +1,193 @@
 {
   "sectionTitles": {
-    "challenges": "You might be facing",
-    "topics": "You can bring these into coaching",
-    "partnership": "How we can collaborate",
-    "boundaries": "What this is not"
+    "challenges": "你可能遇到的情况",
+    "topics": "可以带进教练的主题",
+    "partnership": "我们能如何合作",
+    "boundaries": "这里不会承诺的事"
   },
   "midCareerReturners": {
     "slug": "mid-career-returners",
     "seo": {
-      "title": "Coaching for mid-career returners | SustainSage",
-      "description": "Support for professionals returning after a career break or relocation—regain momentum without ignoring capacity."
+      "title": "中段职业再出发教练｜SustainSage",
+      "description": "支持经历职业空窗或搬迁的专业人士，重新找回节奏，同时尊重自己的容量。"
     },
     "hero": {
-      "title": "For mid-career returners",
-      "subtitle": "You’ve done this before, yet the landscape changed. Let’s rebuild momentum with care.",
+      "title": "给中段职业回归的人",
+      "subtitle": "你不是第一次工作，但环境已经变了。让我们在照顾自己的前提下重新累积动能。",
       "image": "/hero/services.svg",
-      "imageAlt": "Mid-career returners considering options"
+      "imageAlt": "评估下一步的中段职业来谈者"
     },
     "challenges": [
-      "You’re re-entering work after caregiving, illness or relocation and feel both eager and rusty.",
-      "Job descriptions and expectations look different from the last time you searched.",
-      "Your network shifted; you’re unsure who to update or how to ask for support.",
-      "Family logistics compete with the focus you want for your professional goals."
+      "照护、疗养或搬迁后重返工作，既兴奋又生疏。",
+      "职位说明与期待和以前很不一样。",
+      "人脉重新洗牌，不确定要更新谁或怎么开口。",
+      "家庭后勤占掉大量注意力，难以专注在职业目标。"
     ],
     "topics": [
-      "Designing a phased return that protects energy and finances.",
-      "Reframing your story so gaps feel honest, not apologetic.",
-      "Negotiating boundaries at home and work without guilt.",
-      "Testing small experiments before committing to a full-time leap."
+      "设计循序渐进的回归，兼顾精力与财务。",
+      "把空档期说得诚实又不必道歉。",
+      "与家人和同事协商界线，不再被愧疚绑住。",
+      "先做小实验，再决定是否跳进全职。"
     ],
     "partnership": {
-      "title": "Packages we often recommend",
-      "description": "Each link opens a detailed page with who it suits, session flow and boundaries.",
+      "title": "常推荐的方案",
+      "description": "每个连结都会打开详细页面，说明适合对象、节奏与界线。",
       "items": [
         {
           "href": "/services/transition-coaching",
-          "title": "Transition package",
-          "summary": "Stabilise the first 3–4 months of your return with structured reflection.",
+          "title": "Transition 方案",
+          "summary": "以结构化反思稳住前 3–4 个月。",
           "icon": "/images/services/transition.svg",
-          "cta": "Explore Transition"
+          "cta": "了解 Transition"
         },
         {
           "href": "/services/reset-sprint",
-          "title": "Reset package",
-          "summary": "Short arc to rebuild routines if energy feels fragmented.",
+          "title": "Reset 方案",
+          "summary": "当精力分散时，用短周期重建日常。",
           "icon": "/images/services/returning.svg",
-          "cta": "Explore Reset"
+          "cta": "了解 Reset"
         }
       ]
     },
     "boundaries": {
-      "title": "What this page is not promising",
-      "intro": "We stay within coaching and honest partnership.",
+      "title": "这页不会保证的事",
+      "intro": "我们坚持教练本质与诚实的合作。",
       "items": [
-        "No guaranteed job offers or fast-tracked promotions.",
-        "No done-for-you CV writing or recruiter outreach.",
-        "No replacement for therapy if trauma or burnout needs clinical care."
+        "不保证录取或升职。",
+        "不代写简历或主动联系猎头。",
+        "需要治疗时不会由我们取代。"
       ]
     },
     "case": {
-      "title": "Composite snapshot",
-      "summary": "After a 3-year care break, a programme manager used Transition to script conversations with a new employer, design childcare contingency plans and rehearse confidence for stakeholder meetings. They returned at 4 days per week with a reviewed workload agreement."
+      "title": "综合案例",
+      "summary": "一位项目经理在三年照护期后，透过 Transition 规划与新雇主的对话、设计托育备援并排演与利益相关人的沟通。最后以每周四天的节奏回到职场，并重新确认工作量。"
     },
     "cta": {
-      "body": "Curious how this could look for you? Book the intro call and we’ll explore pace, scope and readiness together.",
-      "primary": "Book intro call",
-      "secondary": "Compare services"
+      "body": "想知道这对你会是什么样子？预约 20 分钟聊一聊，我们一起确认节奏、范围与准备度。",
+      "primary": "预约 20 分钟聊一聊",
+      "secondary": "比较所有服务"
     }
   },
   "newcomersToUk": {
     "slug": "newcomers-to-uk",
     "seo": {
-      "title": "Coaching for newcomers to the UK | SustainSage",
-      "description": "Navigate UK life and work transitions with culturally aware coaching—no assimilation pressure, just honest partnership."
+      "title": "新到英国者教练｜SustainSage",
+      "description": "以文化敏感的方式陪伴你在英国落脚，不急着同化，而是诚实面对转变。"
     },
     "hero": {
-      "title": "For newcomers to the UK",
-      "subtitle": "You’re building a life here while honouring who you were before. Coaching can hold the nuance.",
+      "title": "给刚到英国的你",
+      "subtitle": "你一边在这里扎根，一边尊重过去的自己。教练可以接住这些细节。",
       "image": "/hero/services.svg",
-      "imageAlt": "Newcomers to the UK finding footing"
+      "imageAlt": "寻找立足点的新移居者"
     },
     "challenges": [
-      "Visas, housing and bank accounts leave little space to feel settled.",
-      "Workplace norms and communication styles are still unfamiliar.",
-      "You’re translating yourself between languages or cultures all day.",
-      "Loved ones abroad expect quick success; you need steadier pace."
+      "签证、住所与银行账户占满精力。",
+      "职场规范与沟通风格仍不熟悉。",
+      "整天在不同语言和文化间切换。",
+      "远方的亲友期待快速成果，但你需要更稳的步调。"
     ],
     "topics": [
-      "Mapping practical next steps alongside emotional processing.",
-      "Designing experiments to test networks, job search or community options.",
-      "Naming the grief, loneliness or frustration that polite conversations skip.",
-      "Advocating for fair treatment without burning bridges."
+      "同步处理实务步骤与情绪。",
+      "设计测试人脉、求职或社群的实验。",
+      "说出礼貌对话常跳过的悲伤、孤单或挫折。",
+      "在不烧掉关系的情况下争取公平。"
     ],
     "partnership": {
-      "title": "Packages we often recommend",
+      "title": "常见的合作组合",
       "items": [
         {
           "href": "/services/transition-coaching",
-          "title": "Transition package",
-          "summary": "Hold space for the administrative and emotional weight of relocating.",
+          "title": "Transition 方案",
+          "summary": "承接搬迁带来的行政与情绪重量。",
           "icon": "/images/services/transition.svg",
-          "cta": "See Transition"
+          "cta": "查看 Transition"
         },
         {
           "href": "/services/reset-sprint",
-          "title": "Reset package",
-          "summary": "If you are already here but overwhelmed, Reset helps you rebuild steady habits.",
+          "title": "Reset 方案",
+          "summary": "如果人已在英国却快撑不住，Reset 帮你重新建立节奏。",
           "icon": "/images/services/returning.svg",
-          "cta": "See Reset"
+          "cta": "查看 Reset"
         }
       ]
     },
     "boundaries": {
-      "title": "What this space is not",
+      "title": "这不是",
       "items": [
-        "Not immigration advice or legal representation.",
-        "Not job placement or landlord negotiation on your behalf.",
-        "Not therapy for trauma or acute mental health support."
+        "不是移民、法律或代办服务。",
+        "不会代你与雇主、房东等人交涉。",
+        "不是处理创伤或急性心理议题的治疗。"
       ]
     },
     "case": {
-      "title": "Composite snapshot",
-      "summary": "A product designer moved from Taipei to Manchester. Through Transition we planned a values-based job search, translated accomplishments into UK-friendly language and created rituals to stay connected with family across time zones. They accepted an offer that matched their capacity and boundaries."
+      "title": "综合案例",
+      "summary": "一位产品设计师从台北搬到曼彻斯特。我们透过 Transition 设计以价值为核心的求职、把成果翻译成英国常用的语言，并建立跨时区与家人连结的仪式。最后找到符合界线与产能的工作。"
     },
     "cta": {
-      "body": "Bring your questions to an intro call—we’ll check scope, timing and whether coaching is the best next step.",
-      "primary": "Book intro call",
-      "secondary": "Compare services"
+      "body": "带着问题来一场 20 分钟的对谈，我们会确认范围、节奏，并判断教练是否适合作为下一步。",
+      "primary": "预约 20 分钟聊一聊",
+      "secondary": "比较所有服务"
     }
   },
   "parentsReturningToWork": {
     "slug": "parents-returning-to-work",
     "seo": {
-      "title": "Coaching for parents returning to work | SustainSage",
-      "description": "Navigate caregiving, workload and identity with coaching that respects your boundaries and pace."
+      "title": "职场父母再出发教练｜SustainSage",
+      "description": "陪你协调照护、工作与身份，尊重界线与节奏。"
     },
     "hero": {
-      "title": "For parents returning to work",
-      "subtitle": "You’re balancing care, career and a new sense of self. Coaching offers a steady thinking space.",
+      "title": "给重新上工的父母与照护者",
+      "subtitle": "你在照护、事业与新的自我认同之间拉扯。教练提供一个稳固的思考空间。",
       "image": "/hero/services.svg",
-      "imageAlt": "Parents balancing work and care"
+      "imageAlt": "兼顾家庭与工作的父母"
     },
     "challenges": [
-      "Childcare logistics and backup plans keep shifting.",
-      "You’re negotiating flexible arrangements while doubting if it’s allowed.",
-      "Guilt, resentment and love show up in the same hour.",
-      "You want to lead well without pretending capacity is unlimited."
+      "托育安排与备援方案不断变化。",
+      "谈弹性时也会怀疑自己有没有资格。",
+      "内疚、怨气与爱常在同一小时出现。",
+      "想好好带团队，也不想假装自己永远精力充沛。"
     ],
     "topics": [
-      "Setting consent-based boundaries with partners, managers and extended family.",
-      "Designing recovery time that fits nap schedules or school runs.",
-      "Advocating for flexibility without apologising for care roles.",
-      "Rebuilding confidence in your professional judgment after time away."
+      "和伴侣、主管、大家庭以同意为基础谈界线。",
+      "把恢复时间嵌入午睡或接送的节奏中。",
+      "争取弹性时不再为照护角色道歉。",
+      "离开一阵子后重新找回专业判断的信心。"
     ],
     "partnership": {
-      "title": "Packages we often recommend",
+      "title": "可能适合的方案",
       "items": [
         {
           "href": "/services/reset-sprint",
-          "title": "Reset package",
-          "summary": "Short arc to rebuild your routine and energy after parental leave.",
+          "title": "Reset 方案",
+          "summary": "在育婴或照护假后，用短周期找回日常节奏。",
           "icon": "/images/services/returning.svg",
-          "cta": "See Reset"
+          "cta": "查看 Reset"
         },
         {
           "href": "/services/deepening-practice",
-          "title": "Deepening package",
-          "summary": "For leaders juggling care and influence who want longer-term support.",
+          "title": "Deepening 方案",
+          "summary": "适合同步承担照护与影响力的领导者，提供较长期的支持。",
           "icon": "/images/services/experiments.svg",
-          "cta": "See Deepening"
+          "cta": "查看 Deepening"
         }
       ]
     },
     "boundaries": {
-      "title": "What we will not do",
+      "title": "我们不会做的事",
       "items": [
-        "Not guarantee specific childcare solutions or employer outcomes.",
-        "Not replace therapy, medical or financial advice.",
-        "Not pressure you into hustle narratives or perfect-parent myths."
+        "不保证特定托育或雇主的结果。",
+        "不取代治疗、医疗或财务意见。",
+        "不会推销拼命文化或完美父母的神话。"
       ]
     },
     "case": {
-      "title": "Composite snapshot",
-      "summary": "A senior analyst returning after adoption leave felt torn between visibility and family needs. Through Reset then Deepening we mapped non-negotiables, rehearsed boundary conversations and designed shared calendars with their partner. Six months later they reported sustainable energy and clear agreements at work."
+      "title": "综合案例",
+      "summary": "一位资深分析师在领养假后回到职场，夹在曝光与家庭需求之间。我们先用 Reset 再接 Deepening，列出非谈不可的界线、排练界线对话，并与伴侣共享透明日程。六个月后，她描述能量稳定且工作协议更清楚。"
     },
     "cta": {
-      "body": "Let’s talk about what support would feel sustainable. Start with an intro call or review the service pathways.",
-      "primary": "Book intro call",
-      "secondary": "Compare services"
+      "body": "想一起找出可持续的支持方式吗？先预约 20 分钟聊一聊，或回到服务页比较不同路径。",
+      "primary": "预约 20 分钟聊一聊",
+      "secondary": "比较所有服务"
     }
   }
 }

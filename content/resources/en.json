@@ -1,5 +1,115 @@
-[
-  { "id":"behaviour-ladder","title":"Behaviour Experiment Ladder","desc":"Design a small, safe test to learn by doing — this week.","href":"/resources/behaviour-ladder","img":"/images/resources/behaviour-ladder.jpg","alt":"Behaviour ladder","downloadable":true,"download":"/docs/behaviour-experiment-ladder.pdf" },
-  { "id":"selftalk-cards","title":"Self-talk Reframe Cards","desc":"Replace harsh scripts with kinder, more useful lines.","img":"/images/resources/selftalk.jpg","alt":"Self-talk cards","comingSoon":true },
-  { "id":"emotion-triangle","title":"Emotion Triangle","desc":"From feeling → need → next step; 5 minutes to clarity.","img":"/images/resources/emotion-triangle.jpg","alt":"Emotion triangle","comingSoon":true }
-]
+{
+  "downloads": [
+    {
+      "id": "behaviour-ladder",
+      "title": "Behaviour Experiment Ladder",
+      "desc": "Design a small, safe test to learn by doing — this week.",
+      "img": "/images/resources/behaviour-ladder.jpg",
+      "alt": "Behaviour ladder",
+      "downloadable": true,
+      "download": "/docs/behaviour-experiment-ladder.pdf"
+    },
+    {
+      "id": "selftalk-cards",
+      "title": "Self-talk Reframe Cards",
+      "desc": "Replace harsh scripts with kinder, more useful lines.",
+      "img": "/images/resources/selftalk.jpg",
+      "alt": "Self-talk cards",
+      "comingSoon": true
+    },
+    {
+      "id": "emotion-triangle",
+      "title": "Emotion Triangle",
+      "desc": "From feeling → need → next step; 5 minutes to clarity.",
+      "img": "/images/resources/emotion-triangle.jpg",
+      "alt": "Emotion triangle",
+      "comingSoon": true
+    }
+  ],
+  "interactiveTools": [
+    {
+      "id": "self-talk-reframe",
+      "title": "Self-talk Reframe Cards",
+      "desc": "Gentle prompts to help you notice harsh self-talk and reframe it with more compassionate language.",
+      "description": "Gentle prompts to help you notice harsh self-talk and reframe it with more compassionate language.",
+      "href": "/tools/self-talk-reframe.html",
+      "img": "/images/resources/selftalk.jpg",
+      "alt": "Self-talk practice",
+      "badge": "Interactive tool",
+      "tag": "Interactive tool",
+      "isExternal": false
+    },
+    {
+      "id": "behaviour-ladder",
+      "title": "Behaviour Experiment Ladder",
+      "desc": "Plan small, low-risk experiments to test new behaviours instead of all-or-nothing change.",
+      "description": "Plan small, low-risk experiments to test new behaviours instead of all-or-nothing change.",
+      "href": "/tools/behaviour-ladder.html",
+      "img": "/images/resources/behaviour-ladder-hero.jpg",
+      "alt": "Behaviour experiment ladder",
+      "badge": "Interactive tool",
+      "tag": "Interactive tool",
+      "isExternal": false
+    },
+    {
+      "id": "values-map",
+      "title": "Values Map",
+      "desc": "Map what truly matters to you and check how your current choices align with your core values.",
+      "description": "Map what truly matters to you and check how your current choices align with your core values.",
+      "href": "/tools/values-map.html",
+      "img": "/images/resources/values-worksheet.svg",
+      "alt": "Values worksheet",
+      "badge": "Worksheet",
+      "tag": "Worksheet",
+      "isExternal": false
+    },
+    {
+      "id": "role-separation",
+      "title": "Role Separation Practice",
+      "desc": "Gently separate 'me as a person' from 'me in this role' so criticism doesn’t feel like an attack on your whole identity.",
+      "description": "Gently separate 'me as a person' from 'me in this role' so criticism doesn’t feel like an attack on your whole identity.",
+      "href": "/tools/role-separation.html",
+      "img": "/images/resources/culture-checklist.svg",
+      "alt": "Role separation",
+      "badge": "Reflection",
+      "tag": "Reflection",
+      "isExternal": false
+    },
+    {
+      "id": "choice-clarifier",
+      "title": "Choice Clarifier",
+      "desc": "Lay out your options, costs, and needs so decisions feel less foggy and more grounded.",
+      "description": "Lay out your options, costs, and needs so decisions feel less foggy and more grounded.",
+      "href": "/tools/choice-clarifier.html",
+      "img": "/images/resources/imposter-reading.svg",
+      "alt": "Decision helper",
+      "badge": "Decision aid",
+      "tag": "Decision aid",
+      "isExternal": false
+    },
+    {
+      "id": "thought-log",
+      "title": "Thought Log",
+      "desc": "Capture triggering situations, thoughts, and feelings to spot patterns over time.",
+      "description": "Capture triggering situations, thoughts, and feelings to spot patterns over time.",
+      "href": "/tools/thought-log.html",
+      "img": "/images/resources/grounding-audio.svg",
+      "alt": "Grounding log",
+      "badge": "Tracking tool",
+      "tag": "Tracking tool",
+      "isExternal": false
+    },
+    {
+      "id": "emotion-triangle",
+      "title": "Emotion Triangle",
+      "desc": "Notice the link between situations, feelings, and actions, and gently explore other options.",
+      "description": "Notice the link between situations, feelings, and actions, and gently explore other options.",
+      "href": "/tools/emotion-triangle.html",
+      "img": "/images/resources/emotion-triangle.jpg",
+      "alt": "Emotion triangle practice",
+      "badge": "Reflection",
+      "tag": "Reflection",
+      "isExternal": false
+    }
+  ]
+}

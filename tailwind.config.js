@@ -53,8 +53,8 @@ module.exports = {
       },
       spacing: {
         section: '5rem',
-        'section-y': '4.5rem',
-        'section-y-sm': '3rem',
+        'section-y': '3.75rem',
+        'section-y-sm': '2.5rem',
       },
     },
   },

@@ -1,0 +1,11 @@
+{
+  "title": "That page isn’t here",
+  "body": "The link may be outdated or the page has moved. Let’s head back to somewhere useful.",
+  "returnHome": "Return home",
+  "supportTitle": "Looking for coaching support?",
+  "supportBody": "If you were trying to reach information about coaching, resources, or booking a conversation, you can use the links below.",
+  "supportLinkLabel": "Explore services",
+  "supportLinkHref": "/services",
+  "serverErrorTitle": "Something went wrong",
+  "serverErrorBody": "An unexpected error occurred. Please try again soon or let us know if it continues."
+}
