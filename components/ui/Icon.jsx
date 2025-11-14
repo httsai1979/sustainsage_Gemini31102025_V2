@@ -1,3 +1,5 @@
+import { cloneElement } from 'react';
+
 import cn from '@/lib/cn';
 import PropTypes from 'prop-types';
 
@@ -31,23 +33,30 @@ export default function Icon({ name = 'info', className } = {}) {
   if (!name) return null;
   const key = name.toLowerCase();
   const Component = ICONS[key];
-  if (Component) {
-    return (
-      <Component
-        className={cn('h-6 w-6 text-slate-600 sm:h-7 sm:w-7 sm:text-slate-700', className)}
-        aria-hidden="true"
-      />
-    );
-  }
-
   const InlineIcon = INLINE_ICONS[key] ?? INLINE_ICONS.info;
-  if (!InlineIcon) return null;
+
+  const renderIcon = () => {
+    if (Component) {
+      return <Component className="h-5 w-5" aria-hidden="true" />;
+    }
+    if (!InlineIcon) return null;
+    return cloneElement(InlineIcon, {
+      className: cn('h-5 w-5', InlineIcon.props?.className),
+      'aria-hidden': true,
+    });
+  };
+
+  const icon = renderIcon();
+  if (!icon) return null;
+
   return (
     <span
-      className={cn('inline-flex h-6 w-6 text-slate-600 sm:h-7 sm:w-7 sm:text-slate-700', className)}
-      aria-hidden="true"
+      className={cn(
+        'inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-600',
+        className,
+      )}
     >
-      {InlineIcon}
+      {icon}
     </span>
   );
 }

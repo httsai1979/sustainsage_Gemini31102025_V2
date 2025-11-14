@@ -9,7 +9,7 @@ const { Page } = createServiceSubpage({
   heading: (service) => service.cases?.title ?? 'Composite coaching glimpses',
   intro: (service) =>
     service.cases?.description ? (
-      <p className="text-base leading-7 text-slate-600">{service.cases.description}</p>
+      <p className="text-base leading-7 text-slate-700">{service.cases.description}</p>
     ) : null,
   renderContent: (service) => {
     const casesBlock = service.cases ?? {};
@@ -54,12 +54,12 @@ const { Page } = createServiceSubpage({
             return (
               <PageSection key={`cases-${index}`}>
                 {casesBlock.title ? (
-                  <h2 className="text-xl font-semibold text-emerald-900">{casesBlock.title}</h2>
+                  <h2 className="text-xl font-semibold text-sustain-text">{casesBlock.title}</h2>
                 ) : null}
                 {casesBlock.description ? (
-                  <p className="mt-2 text-base leading-7 text-slate-600">{casesBlock.description}</p>
+                  <p className="mt-2 text-base leading-7 text-slate-700">{casesBlock.description}</p>
                 ) : null}
-                <div className="mt-6 grid gap-6 md:grid-cols-3">
+                <div className="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {cases.map((item) => (
                     <CaseCard
                       key={item.title ?? item.context ?? item.shift}
@@ -87,11 +87,11 @@ const { Page } = createServiceSubpage({
 
             {disclaimers.length > 0 ? (
               <div className="space-y-3">
-                <h3 className="text-base font-semibold text-slate-900">Confidentiality reminders</h3>
+                <h3 className="text-base font-semibold text-sustain-text">Confidentiality reminders</h3>
                 <ul className="space-y-2 text-sm leading-6 text-slate-700">
                   {disclaimers.map((text) => (
                     <li key={text} className="flex gap-3">
-                      <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
+                      <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sustain-green" />
                       <span>{text}</span>
                     </li>
                   ))}
