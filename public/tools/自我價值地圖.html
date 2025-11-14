@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的自我價值地圖</title>
+    <!-- 引入 Google Fonts Noto Sans TC & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 引入 Font Awesome 6.4.0 圖示庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 引入 html2canvas 和 jspdf 用於匯出功能 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- 引入 D3.js 用於視覺化圖表 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+    <style>
+        /* CSS 變數定義 */
+        :root {
+            --primary-color: #5d9cec; /* Soft Blue */
+            --secondary-color: #88d49e; /* Grass Green */
+            --tertiary-color: #f7a35c; /* Light Orange */
+            --background-color: #f0f4f8;
+            --card-bg: #fff;
+            --text-dark: #333;
+            --text-light: #666;
+            --border-color: #e2e8f0;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --font-family-zh: 'Noto Sans TC', sans-serif;
+            --font-family-en: 'Inter', sans-serif;
+            --transition-speed: 0.3s;
+        }
+        
+        /* 全域樣式 */
+        body {
+            font-family: var(--font-family-zh), var(--font-family-en);
+            background-color: var(--background-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 主容器 */
+        .container {
+            width: 100%;
+            max-width: 900px;
+            text-align: center;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            transition: all var(--transition-speed) ease-in-out;
+        }
+        
+        /* 標題與說明 */
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-light);
+            font-size: 1.1em;
+            margin-top: 0;
+        }
+        
+        /* 步驟指示器卡片 */
+        .step-cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .step-card {
+            background-color: #f8f9fa;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            transition: all var(--transition-speed) ease;
+            opacity: 0.5;
+        }
+        .step-card.active {
+            border-color: var(--primary-color);
+            background-color: #e9efff;
+            opacity: 1;
+            transform: scale(1.05);
+        }
+        .step-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .step-card-header .icon {
+            font-size: 1.2em;
+        }
+        .step-card p {
+            font-size: 0.85em;
+            color: var(--text-light);
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+
+        /* 內容區塊 */
+        .content-section {
+            display: none;
+            padding-top: 20px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        /* 價值詞彙卡片網格 */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .value-card {
+            background-color: var(--card-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.2s;
+            position: relative;
+            user-select: none;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px var(--shadow-color);
+        }
+
+        .value-card.selected {
+            border-color: var(--primary-color);
+            background-color: #e6f1ff;
+            color: var(--primary-color);
+            transform: scale(1.03);
+        }
+
+        .value-card .value-name {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .value-card .value-en {
+            font-size: 0.8em;
+            color: var(--text-light);
+            display: block;
+        }
+        
+        /* 排序列表 */
+        #sortable-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .sortable-item {
+            display: flex;
+            align-items: flex-start;
+            background-color: #f8f9fa;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            cursor: grab;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: left;
+        }
+
+        .sortable-item:active {
+            cursor: grabbing;
+        }
+
+        .sortable-item.dragging {
+            opacity: 0.5;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .sort-handle {
+            font-size: 1.2em;
+            color: var(--text-light);
+            margin-right: 15px;
+            padding-top: 5px;
+        }
+
+        .item-content {
+            flex-grow: 1;
+        }
+        
+        .item-content h3 {
+            margin: 0 0 10px;
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+
+        .item-content textarea {
+            width: 100%;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 10px;
+            resize: vertical;
+            font-family: inherit;
+            font-size: 0.9em;
+            min-height: 60px;
+        }
+        
+        /* 星級評分 */
+        .rating-container {
+            margin-top: 15px;
+        }
+        .rating-label {
+            font-weight: bold;
+            font-size: 0.9em;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            display: block;
+        }
+        .star-rating {
+            display: inline-flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            font-size: 1.8em;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: #f7a35c;
+        }
+
+        /* 價值地圖視覺化 */
+        #map-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background-color: #fcfcfc;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            margin: 20px auto;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #values-map-svg {
+            width: 100%;
+            height: 100%;
+            max-width: 500px;
+            max-height: 500px;
+        }
+
+        .value-bubble {
+            cursor: pointer;
+        }
+        .value-bubble:hover {
+            opacity: 0.9;
+        }
+
+        .value-bubble text {
+            fill: #fff;
+            font-family: var(--font-family-zh), var(--font-family-en);
+            font-weight: bold;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        /* 泡泡點擊展開模態視窗 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        
+        .modal-overlay.visible {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .modal-header h3 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 1.5em;
+        }
+
+        .close-modal-btn {
+            background: none;
+            border: none;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.2s;
+        }
+        
+        .close-modal-btn:hover {
+            color: var(--primary-color);
+        }
+        
+        .modal .note-content {
+             background-color: #f8f9fa;
+             padding: 15px;
+             border-radius: 8px;
+             margin-bottom: 20px;
+             line-height: 1.7;
+             color: var(--text-light);
+        }
+
+        .modal-questions ul {
+            list-style-type: none;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .question-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
+            border-radius: 8px;
+            background-color: #f0f4f8;
+            color: var(--text-dark);
+            font-size: 0.95em;
+        }
+        .question-item i {
+            color: var(--primary-color);
+            margin-top: 4px;
+        }
+
+        .generated-questions {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-color);
+        }
+        
+        .generated-questions h4 {
+            margin: 0 0 15px;
+            color: var(--tertiary-color);
+            font-size: 1.2em;
+        }
+
+        /* 匯出區塊 */
+        .export-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        
+        /* 導航與功能按鈕 */
+        .button-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .action-button, .nav-button {
+            background-color: #fff;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            text-decoration: none;
+        }
+
+        .action-button:hover, .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow-color);
+        }
+        
+        .action-button:active, .nav-button:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        .primary-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+        }
+        
+        .primary-button:hover {
+            background-color: #4a88cc;
+        }
+        
+        .primary-button:disabled {
+            background-color: #d1d9e0;
+            color: #a0aec0;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .secondary-button {
+            background-color: #fff;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+        
+        .secondary-button:hover {
+            background-color: #f0f4f8;
+        }
+
+        /* 訊息提示 (Toast) */
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1001;
+        }
+        
+        .toast {
+            background-color: var(--text-dark);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transform: translateY(20px);
+        }
+        
+        .toast.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast.success { background-color: var(--secondary-color); }
+        .toast.error { background-color: var(--tertiary-color); }
+        
+        /* 響應式設計 */
+        @media (max-width: 768px) {
+            .step-cards-container {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 { font-size: 1.8em; }
+            .subtitle { font-size: 1em; }
+            .values-grid { grid-template-columns: 1fr; }
+            .sortable-item { flex-direction: column; align-items: stretch; }
+            .sort-handle { text-align: center; margin-right: 0; margin-bottom: 10px; }
+            .modal { padding: 20px; }
+            .action-button, .nav-button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>我的自我價值地圖</h1>
+        <p class="subtitle">一個探索、排序並視覺化您核心價值的互動工具。</p>
+        
+        <!-- Step Indicator Cards -->
+        <div class="step-cards-container">
+            <div id="step-card-1" class="step-card active">
+                <div class="step-card-header"><span class="icon">1️⃣</span> 步驟一：選擇價值</div>
+                <p>從列表中選出 5-10 個最能引起您共鳴的價值觀。</p>
+            </div>
+            <div id="step-card-2" class="step-card">
+                <div class="step-card-header"><span class="icon">2️⃣</span> 步驟二：排序與賦權</div>
+                <p>拖曳排序價值觀，並為每個價值評定重要性星級。</p>
+            </div>
+            <div id="step-card-3" class="step-card">
+                <div class="step-card-header"><span class="icon">3️⃣</span> 步驟三：看見地圖</div>
+                <p>您的價值地圖將會生成，星級越高，泡泡越大。</p>
+            </div>
+        </div>
+        
+        <!-- Step 1: 選擇核心價值 -->
+        <div id="step1" class="content-section active">
+            <h2><i class="fas fa-heart-circle-check"></i> 選擇您的核心價值</h2>
+            <p class="text-gray-600 mb-4">第一步，請從下方的詞彙中，憑直覺選出 5 至 10 個您認為在生活中最不可或缺的價值觀。這將是您價值地圖的基礎。</p>
+            <div id="values-selection-grid" class="values-grid"></div>
+        </div>
+        
+        <!-- Step 2: 排序與註記 -->
+        <div id="step2" class="content-section">
+            <h2><i class="fas fa-star"></i> 排序並評定重要性</h2>
+            <p class="text-gray-600 mb-4">接下來，請將您選擇的價值觀，依照重要性由上至下拖曳排序。然後，為每個價值評定 1-5 顆星的重要性，這將決定泡泡的大小。</p>
+            <ul id="sortable-list"></ul>
+        </div>
+        
+        <!-- Step 3: 價值地圖與匯出 -->
+        <div id="step3" class="content-section">
+            <h2><i class="fas fa-sitemap"></i> 您的個人價值地圖</h2>
+            <p class="text-gray-600 mb-4">這是根據您的排序與星級評分所生成的價值地圖。<b>泡泡的大小由您評定的星級決定</b>。點擊泡泡可以查看您的個人註記與<b>進一步的探索問題</b>。</p>
+            <div id="map-container">
+                <svg id="values-map-svg"></svg>
+            </div>
+            <div class="export-buttons">
+                <button id="export-png-btn" class="action-button primary-button"><i class="fas fa-image"></i> 匯出為 PNG</button>
+                <button id="export-pdf-btn" class="action-button primary-button"><i class="fas fa-file-pdf"></i> 匯出為 PDF</button>
+                <button id="export-json-btn" class="action-button secondary-button"><i class="fas fa-save"></i> 匯出為 JSON</button>
+            </div>
+        </div>
+        
+        <!-- 導航按鈕 -->
+        <div class="button-group">
+            <button id="prev-btn" class="nav-button" style="display: none;"><i class="fas fa-arrow-left"></i> 上一步</button>
+            <button id="next-btn" class="nav-button primary-button">下一步 <i class="fas fa-arrow-right"></i></button>
+            <button id="finish-btn" class="nav-button primary-button" style="display: none;">完成 <i class="fas fa-check"></i></button>
+        </div>
+    </div>
+    
+    <!-- 泡泡點擊的模態視窗 -->
+    <div id="value-modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-value-name"></h3>
+                <button id="close-modal-btn" class="close-modal-btn">&times;</button>
+            </div>
+            <div id="modal-content-area">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- 訊息提示區 -->
+    <div id="toast-container"></div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // 核心價值詞彙庫
+        const VALUES_LIST = [
+            { name: "成就", en: "Achievement", questions: ["你如何定義「成就」？", "在哪些方面你渴望有所作為？"] },
+            { name: "冒險", en: "Adventure", questions: ["對你而言，冒險的意義是什麼？", "你願意為了什麼而冒險？"] },
+            { name: "自主", en: "Autonomy", questions: ["你希望在生活和工作中擁有多少自主權？", "自主對你來說代表什麼樣的自由？"] },
+            { name: "平衡", en: "Balance", questions: ["你如何平衡生活中的不同面向？", "對你來說，理想中的平衡是什麼樣子？"] },
+            { name: "美", en: "Beauty", questions: ["你如何從日常生活中發現美？", "美對你的心靈有什麼影響？"] },
+            { name: "歸屬感", en: "Belonging", questions: ["在什麼樣的群體中你感到最有歸屬感？", "為了維持歸屬感，你願意付出什麼？"] },
+            { name: "仁慈", en: "Compassion", questions: ["你如何對待自己和他人的不完美？", "仁慈如何影響你與人的關係？"] },
+            { name: "社群", en: "Community", questions: ["你希望在你的社群中扮演什麼角色？", "一個健康的社群對你來說意味著什麼？"] },
+            { name: "連結", en: "Connection", questions: ["你與誰的連結最為深刻？", "你如何維護這些重要的連結？"] },
+            { name: "創意", en: "Creativity", questions: ["什麼時候你感到最有創意？", "你如何將創意應用到你的生活中？"] },
+            { name: "決心", en: "Determination", questions: ["什麼樣的挑戰能激發你的決心？", "當遇到困難時，你如何保持決心？"] },
+            { name: "教育", en: "Education", questions: ["你認為學習最重要的是什麼？", "你如何持續地自我學習和成長？"] },
+            { name: "效率", en: "Efficiency", questions: ["你如何定義「效率」？", "你希望在哪些方面提升效率？"] },
+            { name: "平等", en: "Equality", questions: ["你如何看待社會上的不平等現象？", "你希望在哪些方面為平等做出貢獻？"] },
+            { name: "家庭", en: "Family", questions: ["家庭對你來說意味著什麼？", "你如何維護家庭關係的和諧？"] },
+            { name: "自由", en: "Freedom", questions: ["對你來說，自由最重要的面向是什麼？", "為了自由，你願意做出什麼犧牲？"] },
+            { name: "友誼", en: "Friendship", questions: ["你如何維護你的友誼？", "你認為好的朋友應該具備什麼特質？"] },
+            { name: "樂趣", en: "Fun", questions: ["你如何為自己的生活創造樂趣？", "樂趣如何影響你的身心健康？"] },
+            { name: "慷慨", en: "Generosity", questions: ["你如何定義「慷慨」？", "除了金錢，你還可以用什麼方式慷慨地給予？"] },
+            { name: "成長", en: "Growth", questions: ["你如何衡量自己的成長？", "你希望在未來一年內在哪些方面成長？"] },
+            { name: "和諧", en: "Harmony", questions: ["你如何處理衝突，以維持和諧？", "和諧對你的心靈平靜有什麼影響？"] },
+            { name: "健康", en: "Health", questions: ["你如何照顧自己的身心健康？", "你認為健康與成功的關係是什麼？"] },
+            { name: "誠實", en: "Honesty", questions: ["你認為誠實最困難的部分是什麼？", "誠實如何影響你與他人的信任關係？"] },
+            { name: "幽默", en: "Humor", questions: ["幽默對你的生活有什麼幫助？", "你如何在困難時期保持幽默感？"] },
+            { name: "獨立", en: "Independence", questions: ["你希望在哪些方面更加獨立？", "獨立對你來說最大的挑戰是什麼？"] },
+            { name: "啟發", en: "Inspiration", questions: ["什麼人或事最能啟發你？", "你如何成為他人的啟發？"] },
+            { name: "正義", en: "Justice", questions: ["對你來說，正義的核心原則是什麼？", "你如何為你所相信的正義而奮鬥？"] },
+            { name: "學習", en: "Learning", questions: ["你對什麼事物充滿好奇心？", "學習如何幫助你實現你的目標？"] },
+            { name: "愛", en: "Love", questions: ["你如何定義「愛」？", "你如何向你愛的人表達你的愛？"] },
+            { name: "正念", en: "Mindfulness", questions: ["你如何練習正念？", "正念對你的日常壓力管理有什麼幫助？"] },
+            { name: "耐心", en: "Patience", questions: ["你對什麼事情最缺乏耐心？", "你如何培養自己的耐心？"] },
+            { name: "平靜", en: "Peace", questions: ["什麼樣的環境或活動能帶給你平靜？", "你如何處理內心的焦慮以獲得平靜？"] },
+            { name: "權力", en: "Power", questions: ["你如何定義「權力」？", "你希望如何運用你的影響力？"] },
+            { name: "聲譽", en: "Reputation", questions: ["聲譽對你來說有多重要？", "你希望別人如何評價你？"] },
+            { name: "責任", en: "Responsibility", questions: ["你對什麼事情感到最有責任感？", "責任感如何驅動你行動？"] },
+            { name: "安全", en: "Security", questions: ["對你來說，安全感最重要的來源是什麼？", "你如何為自己和家人創造安全？"] },
+            { name: "服務", en: "Service", questions: ["你希望以何種方式服務他人？", "服務如何為你的生活帶來意義？"] },
+            { name: "穩定", en: "Stability", questions: ["在你的生活中，什麼能為你帶來穩定？", "當生活變得不穩定時，你如何應對？"] },
+            { name: "成功", en: "Success", questions: ["你如何定義「成功」？", "成功對你的生活目標有什麼影響？"] },
+            { name: "信任", en: "Trust", questions: ["你認為信任最重要的基礎是什麼？", "你如何重建一段破裂的信任關係？"] },
+            { name: "真理", en: "Truth", questions: ["你認為追求真理的過程中最困難的部分是什麼？", "你如何區分真理和個人信念？"] },
+            { name: "財富", en: "Wealth", questions: ["你對「財富」的定義是什麼？", "除了金錢，你還擁有什麼形式的財富？"] },
+            { name: "智慧", en: "Wisdom", questions: ["你如何定義「智慧」？", "你從人生經歷中學到了哪些智慧？"] }
+        ];
+
+        // 頁面元素
+        const stepCards = document.querySelectorAll('.step-card');
+        const contentSections = document.querySelectorAll('.content-section');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const finishBtn = document.getElementById('finish-btn');
+        const valuesGrid = document.getElementById('values-selection-grid');
+        const sortableList = document.getElementById('sortable-list');
+        const mapContainer = document.getElementById('map-container');
+        const svgElement = document.getElementById('values-map-svg');
+        const exportPngBtn = document.getElementById('export-png-btn');
+        const exportPdfBtn = document.getElementById('export-pdf-btn');
+        const exportJsonBtn = document.getElementById('export-json-btn');
+        const modalOverlay = document.getElementById('value-modal-overlay');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const modalValueName = document.getElementById('modal-value-name');
+        const modalContentArea = document.getElementById('modal-content-area');
+
+        // 狀態管理
+        let currentStep = 1;
+        let selectedValues = [];
+        const userNotes = {};
+        const userRatings = {}; // NEW: Store user ratings
+        
+        // 渲染價值詞彙卡片
+        function renderValuesGrid() {
+            valuesGrid.innerHTML = '';
+            VALUES_LIST.forEach(value => {
+                const isSelected = selectedValues.some(v => v.name === value.name);
+                const card = document.createElement('div');
+                card.className = `value-card ${isSelected ? 'selected' : ''}`;
+                card.innerHTML = `<span class="value-name">${value.name}</span><span class="value-en">${value.en}</span>`;
+                card.dataset.valueName = value.name;
+                card.addEventListener('click', () => toggleValueSelection(value));
+                valuesGrid.appendChild(card);
+            });
+        }
+
+        // 選擇/取消選擇價值詞彙
+        function toggleValueSelection(value) {
+            const index = selectedValues.findIndex(v => v.name === value.name);
+            if (index > -1) {
+                selectedValues.splice(index, 1);
+            } else {
+                selectedValues.push(value);
+                if (!userRatings[value.name]) {
+                    userRatings[value.name] = 3; // Default to 3 stars on selection
+                }
+            }
+            renderValuesGrid();
+            updateUI(); 
+        }
+
+        // 渲染排序列表
+        function renderSortableList() {
+            sortableList.innerHTML = '';
+            selectedValues.forEach((value, index) => {
+                const li = document.createElement('li');
+                li.className = 'sortable-item';
+                li.draggable = true;
+                li.dataset.valueName = value.name;
+
+                // Create star rating HTML
+                let starsHTML = '';
+                for (let i = 5; i >= 1; i--) {
+                    starsHTML += `<input type="radio" id="star-${value.name}-${i}" name="rating-${value.name}" value="${i}" ${userRatings[value.name] == i ? 'checked' : ''}><label for="star-${value.name}-${i}">★</label>`;
+                }
+
+                li.innerHTML = `
+                    <i class="fas fa-grip-vertical sort-handle"></i>
+                    <div class="item-content">
+                        <h3>${index + 1}. ${value.name} (${value.en})</h3>
+                        <div class="rating-container">
+                           <span class="rating-label">這個價值對我的重要性：</span>
+                           <div class="star-rating">${starsHTML}</div>
+                        </div>
+                        <textarea placeholder="提示：${value.questions[0]}" rows="3">${userNotes[value.name] || ''}</textarea>
+                    </div>
+                `;
+                sortableList.appendChild(li);
+                
+                // Add event listeners for notes and ratings
+                li.querySelector('textarea').addEventListener('input', (e) => {
+                    userNotes[value.name] = e.target.value;
+                });
+                li.querySelectorAll('.star-rating input').forEach(radio => {
+                    radio.addEventListener('change', (e) => {
+                        userRatings[value.name] = parseInt(e.target.value);
+                    });
+                });
+            });
+            setupDragAndDrop();
+        }
+
+        // 處理拖曳排序
+        function setupDragAndDrop() {
+            const list = document.getElementById('sortable-list');
+            let dragSrcEl = null;
+
+            function handleDragStart(e) {
+                dragSrcEl = this;
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/html', this.innerHTML);
+                this.classList.add('dragging');
+            }
+
+            function handleDragOver(e) {
+                e.preventDefault();
+                e.dataTransfer.dropEffect = 'move';
+                return false;
+            }
+
+            function handleDrop(e) {
+                e.stopPropagation();
+                if (dragSrcEl !== this) {
+                    const fromIndex = Array.from(list.children).indexOf(dragSrcEl);
+                    const toIndex = Array.from(list.children).indexOf(this);
+                    
+                    const [draggedItem] = selectedValues.splice(fromIndex, 1);
+                    selectedValues.splice(toIndex, 0, draggedItem);
+                    
+                    renderSortableList();
+                }
+                return false;
+            }
+
+            function handleDragEnd() {
+                this.classList.remove('dragging');
+            }
+            
+            list.querySelectorAll('.sortable-item').forEach(item => {
+                item.addEventListener('dragstart', handleDragStart);
+                item.addEventListener('dragover', handleDragOver);
+                item.addEventListener('drop', handleDrop);
+                item.addEventListener('dragend', handleDragEnd);
+            });
+        }
+        
+        // 使用 D3.js 渲染泡泡圖
+        function renderValueMap() {
+            const width = mapContainer.clientWidth;
+            const height = mapContainer.clientHeight;
+            const svg = d3.select(svgElement).attr("viewBox", [0, 0, width, height]);
+            svg.selectAll('*').remove();
+
+            if (selectedValues.length === 0 || width === 0) {
+                return;
+            }
+
+            const data = selectedValues.map((d, i) => ({
+                name: d.name,
+                en: d.en, 
+                note: userNotes[d.name] || '沒有個人註記。',
+                // NEW: Use rating for size, with a fallback
+                rankValue: userRatings[d.name] || 3, 
+                questions: d.questions,
+                color: d3.interpolateViridis((selectedValues.length - i) / selectedValues.length)
+            }));
+            
+            const pack = d3.pack().size([width, height]).padding(5);
+            
+            const root = d3.hierarchy({ children: data })
+                .sum(d => d.rankValue) 
+                .sort((a, b) => b.value - a.value);
+
+            const bubbles = svg.selectAll(".value-bubble")
+                .data(pack(root).leaves())
+                .enter()
+                .append("g")
+                .attr("class", "value-bubble")
+                .attr("transform", d => `translate(${d.x},${d.y})`)
+                .on("click", (e, d) => showValueModal(d.data));
+
+            bubbles.append("circle")
+                .attr("r", d => d.r)
+                .attr("fill", d => d.data.color)
+                .attr("stroke", varFromCss('--card-bg'))
+                .attr("stroke-width", 2);
+
+            bubbles.append("text")
+                .attr("text-anchor", "middle")
+                .attr("dominant-baseline", "central")
+                .style("fill", "#fff")
+                .style("font-weight", "bold")
+                .style("font-size", d => `${Math.max(10, d.r / 3.5)}px`)
+                .text(d => {
+                    const fontSize = Math.max(10, d.r / 3.5);
+                    if (d.r * 2 > (d.data.name.length * fontSize * 0.65)) {
+                        return d.data.name;
+                    }
+                    return '';
+                });
+        }
+
+        function varFromCss(varName) {
+            return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+        }
+        
+        function showValueModal(data) {
+            modalValueName.textContent = `${data.name} (${data.en})`;
+            const noteContent = data.note ? data.note.replace(/\n/g, '<br>') : '<i>沒有個人註記。</i>';
+            let defaultQuestionsHtml = data.questions.map(q => `<li class="question-item"><i class="fas fa-question-circle"></i><span>${q}</span></li>`).join('');
+            
+            modalContentArea.innerHTML = `
+                <p class="note-content">${noteContent}</p>
+                <div class="generated-questions">
+                    <h4>探索問題</h4>
+                    <ul class="modal-questions">
+                        ${defaultQuestionsHtml}
+                    </ul>
+                </div>
+            `;
+
+            modalOverlay.classList.add('visible');
+        }
+
+        function hideValueModal() {
+            modalOverlay.classList.remove('visible');
+        }
+        
+        async function exportAsPNG() {
+            try {
+                showToast('正在生成圖片...', 'success');
+                const canvas = await html2canvas(mapContainer, { backgroundColor: null });
+                const a = document.createElement('a');
+                a.href = canvas.toDataURL('image/png');
+                a.download = '我的自我價值地圖.png';
+                a.click();
+                showToast('已匯出為 PNG', 'success');
+            } catch (e) {
+                showToast('匯出失敗，請重試。', 'error');
+                console.error(e);
+            }
+        }
+        
+        async function exportAsPDF() {
+            try {
+                showToast('正在生成 PDF...', 'success');
+                const { jsPDF } = window.jspdf;
+                const canvas = await html2canvas(mapContainer, { scale: 2 });
+                const imgData = canvas.toDataURL('image/png');
+                
+                const pdf = new jsPDF({ orientation: 'p', unit: 'mm', format: 'a4' });
+                
+                pdf.text('我的自我價值地圖', 105, 30, { align: 'center' });
+                pdf.setFontSize(12);
+                pdf.text('這是你探索核心價值的結果', 105, 45, { align: 'center' });
+                
+                pdf.addPage();
+                const imgProps = pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+                pdf.addPage();
+                pdf.setFontSize(16);
+                pdf.text('核心價值排序與註記', 105, 20, { align: 'center' });
+                let yPosition = 30;
+                pdf.setFontSize(11);
+                
+                selectedValues.forEach((value, index) => {
+                    if (yPosition > 270) { 
+                        pdf.addPage();
+                        yPosition = 20;
+                    }
+                    const rating = userRatings[value.name] || 'N/A';
+                    const note = userNotes[value.name] || '沒有個人註記。';
+                    const text = `${index + 1}. ${value.name} (${rating}顆星): \n${note}`;
+                    const lines = pdf.splitTextToSize(text, 180);
+                    pdf.text(lines, 15, yPosition);
+                    yPosition += (lines.length * 5) + 5;
+                });
+                
+                pdf.save('我的自我價值地圖.pdf');
+                showToast('已匯出為 PDF', 'success');
+            } catch (e) {
+                showToast('PDF 匯出失敗，請重試。', 'error');
+                console.error(e);
+            }
+        }
+        
+        function exportAsJSON() {
+            try {
+                const data = {
+                    title: "我的自我價值地圖",
+                    timestamp: new Date().toISOString(),
+                    values: selectedValues.map(v => ({
+                        name: v.name,
+                        en: v.en,
+                        rating: userRatings[v.name] || 3,
+                        note: userNotes[v.name] || ''
+                    }))
+                };
+                const jsonStr = JSON.stringify(data, null, 2);
+                const blob = new Blob([jsonStr], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = '我的自我價值地圖.json';
+                a.click();
+                URL.revokeObjectURL(url);
+                showToast('已匯出為 JSON', 'success');
+            } catch (e) {
+                showToast('JSON 匯出失敗，請重試。', 'error');
+                console.error(e);
+            }
+        }
+        
+        function showToast(message, type = 'info') {
+            const toastContainer = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `toast ${type}`;
+            toast.innerHTML = `<span>${message}</span>`;
+            toastContainer.appendChild(toast);
+            
+            setTimeout(() => toast.classList.add('visible'), 10);
+            setTimeout(() => {
+                toast.classList.remove('visible');
+                toast.addEventListener('transitionend', () => toast.remove());
+            }, 3000);
+        }
+        
+        function updateUI() {
+            stepCards.forEach((card, index) => {
+                card.classList.toggle('active', index + 1 === currentStep);
+            });
+
+            contentSections.forEach((section, index) => {
+                section.classList.toggle('active', index + 1 === currentStep);
+            });
+            
+            prevBtn.style.display = currentStep === 1 ? 'none' : 'inline-flex';
+            nextBtn.style.display = currentStep === 3 ? 'none' : 'inline-flex';
+            finishBtn.style.display = currentStep === 3 ? 'inline-flex' : 'none';
+            
+            if (currentStep === 1) {
+                nextBtn.disabled = selectedValues.length < 5 || selectedValues.length > 10;
+            } else {
+                nextBtn.disabled = false;
+            }
+        }
+
+        function goToStep(step) {
+            if (step === 2) {
+                if (selectedValues.length < 5 || selectedValues.length > 10) {
+                    showToast('請選擇 5 至 10 個核心價值', 'error');
+                    return;
+                }
+            }
+            currentStep = step;
+            
+            updateUI();
+            
+            if (currentStep === 2) {
+                renderSortableList();
+            }
+            if (currentStep === 3) {
+                 setTimeout(renderValueMap, 50);
+            }
+        }
+
+        // --- Event Listeners ---
+        prevBtn.addEventListener('click', () => goToStep(currentStep - 1));
+        nextBtn.addEventListener('click', () => goToStep(currentStep + 1));
+        finishBtn.addEventListener('click', () => showToast('已完成價值地圖！', 'success'));
+        
+        exportPngBtn.addEventListener('click', exportAsPNG);
+        exportPdfBtn.addEventListener('click', exportAsPDF);
+        exportJsonBtn.addEventListener('click', exportAsJSON);
+        
+        closeModalBtn.addEventListener('click', hideValueModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) hideValueModal();
+        });
+        
+        window.addEventListener('resize', () => {
+            if (currentStep === 3) {
+                setTimeout(renderValueMap, 50);
+            }
+        });
+
+        // --- Initialization ---
+        renderValuesGrid();
+        updateUI();
+    });
+    </script>
+</body>
+</html>
