@@ -1,4 +1,128 @@
 {
+  "title": "重返職場 — 教練路徑",
+  "hero": {
+    "eyebrow": "給暫停後準備回到職場的人",
+    "title": "回到有收入的工作，同時守住自己的界線",
+    "subtitle": "我們一起重建信心、節奏與照顧自己的日常，讓回歸符合你此刻的生活狀態。",
+    "primaryCta": {
+      "label": "預約 20 分鐘聊聊",
+      "href": "/contact?topic=career-return"
+    },
+    "secondaryCta": {
+      "label": "寫信詢問",
+      "href": "mailto:hello@sustainsage.com"
+    }
+  },
+  "card": {
+    "order": 1,
+    "eyebrow": "重返職場",
+    "title": "重返節奏",
+    "description": "12 週內溫和拉回工作節奏：輕量結構、善待自己。",
+    "benefits": [
+      "在照護、進修或休養後重建信心與語言。",
+      "先用小實驗測試，再決定要不要加速。",
+      "規畫守得住的作息與能量補給。"
+    ],
+    "icon": "calendar"
+  },
+  "key_points": {
+    "title": "適合誰",
+    "description": "同時扛多重責任、準備回到有收入工作的你。",
+    "items": [
+      {
+        "title": "照護與工作的協調者",
+        "description": "想重返職場，但也要守住家庭或照顧的節奏。"
+      },
+      {
+        "title": "重新定位的專業者",
+        "description": "在進修或轉換後，需要把新技能翻成有說服力的故事。"
+      },
+      {
+        "title": "從倦怠中慢慢恢復的人",
+        "description": "需要溫和的責任感與節奏，讓康復不再被速度交換。"
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "界線與共識",
+    "description": "我們保持透明，讓你隨時掌握節奏與資訊的分享。",
+    "items": [
+      {
+        "question": "誰可以知道會談內容？",
+        "answer": "由你決定資訊如何被傳遞。沒有明確同意，不會與雇主或贊助者分享細節。"
+      },
+      {
+        "question": "這是治療嗎？",
+        "answer": "不是。若在過程中需要臨床或創傷支持，我們會討論轉介或暫停。"
+      },
+      {
+        "question": "如果外界需求又壓得太滿？",
+        "answer": "會先暫停，重新盤點界線與風險，再決定要怎麼繼續。"
+      }
+    ]
+  },
+  "faq": {
+    "title": "常被問到的事",
+    "items": [
+      {
+        "question": "公司可以贊助這個方案嗎？",
+        "answer": "可以。我們會先對齊保密界線與回饋節奏，確保你仍然主導會談內容。"
+      },
+      {
+        "question": "會一起看履歷或面試嗎？",
+        "answer": "會。我們會練習敘事、模擬對話，也會給予文件回饋。"
+      },
+      {
+        "question": "如果需要放慢怎麼辦？",
+        "answer": "可以拉長節奏，或在照護高峰時改成輕量的維持方式。"
+      }
+    ]
+  },
+  "cases": {
+    "title": "綜合案例",
+    "description": "融合不同客戶的情境，保護個人隱私。",
+    "items": [
+      {
+        "title": "照護與回職並行",
+        "context": "暫停兩年照顧長者的行銷經理，獲邀回任但擔心物流與精力。",
+        "coaching_moves": "一起盤點不可妥協的需求、設計溝通腳本，並演練分階段回任提案。",
+        "shift": "成功談到四天工作並建立定期的健康檢視，主管也同意共同回顧。",
+        "tools_used": ["界線腳本", "利害關係人盤點"],
+        "disclaimer": "細節已混合多位客戶以保密。",
+        "slug": "back-after-3-years-worried-about-gaps"
+      },
+      {
+        "title": "倦怠後的緩衝",
+        "context": "一位專案領導從倦怠留職停薪中歸來，擔心節奏過快。",
+        "coaching_moves": "設計能量盤點、練習提出支援請求，並與主管約好回顧節奏。",
+        "shift": "能更坦然地說明負荷，感受到節奏被看見而非再度硬撐。",
+        "tools_used": ["能量盤點", "每週反思提示"],
+        "disclaimer": "案例內容經匿名混合。",
+        "slug": "rebuilding-confidence-post-burnout"
+      },
+      {
+        "title": "進修後重新定位",
+        "context": "一位家長在空窗期完成證照，想把新技能連結到混合式職缺。",
+        "coaching_moves": "重寫故事、練習聯絡策略並演練面試答覆。",
+        "shift": "能清楚說明為何現在回到職場，談判時也更有底氣。",
+        "tools_used": ["故事資料庫", "面試演練"],
+        "disclaimer": "細節經過調整以保護個資。",
+        "slug": "translating-new-skills-after-study"
+      }
+    ]
+  },
+  "cta": {
+    "title": "想穩穩地回到軌道？",
+    "description": "先聊聊你的時程與需要的支援，再一起決定步調。",
+    "primary": {
+      "label": "預約 20 分鐘聊聊",
+      "href": "/contact?topic=career-return"
+    },
+    "secondary": {
+      "label": "了解教練怎麼進行",
+      "href": "/services/how-coaching-works"
+    }
+  },
   "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
   "pricing": {
     "packages": [
@@ -60,8 +184,8 @@
     ]
   },
   "process": {
-    "title": "How the process works",
-    "description": "A three to four month container with 60-minute sessions and light touch check-ins between calls.",
+    "title": "流程怎麼走",
+    "description": "通常為期 3–4 個月，每次 60 分鐘並在會談間穿插輕量回報。",
     "steps": [
       "重整與界線：目標、限制，哪些主題較適合留在教練之外。",
       "重建訊號：一個可被看見的證據點（迷你專案／推薦人／復習練習）。",
@@ -69,7 +193,7 @@
       "面試適配：重返職場情境、節奏、照護安排與溝通。",
       "投遞與回顧：追蹤、20 分鐘復盤，調整下一小步。"
     ],
-    "note": "Optional asynchronous feedback through voice notes or docs helps you integrate between sessions."
+    "note": "若需要，也可透過語音或文件回饋在會談間獲得輕量指引。"
   },
   "agreement": {
     "sections": [
@@ -168,45 +292,34 @@
     ]
   },
   "cases": {
-    "title": "Composite coaching glimpses",
-    "description": "Real situations blended from multiple returners so identities stay confidential.",
+    "title": "匿名情境速寫",
+    "description": "以下為多位重返職場者的綜合案例，保護身份並僅作參考。",
     "items": [
       {
-        "title": "Back after 3 years, worried about gaps",
-        "context": "UK job search after a 3-year break; unsure how to frame caregiving.",
-        "coaching_moves": "Mapped a 30-min 'first day' simulation; rewrote 4 CV bullets with CAR; rehearsed boundary language.",
-        "shift": "Clearer language for gaps; sent 2 outreach messages with less avoidance.",
-        "tools_used": [
-          "Values Map",
-          "Self-Talk Reframe",
-          "Behavior Ladder"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "離開 3 年後回到求職市場",
+        "context": "暫離職場三年在英國重新投遞，擔心如何談照護空窗。",
+        "coaching_moves": "設計 30 分鐘的『回到第一天』模擬；用 CAR 結構改寫 4 個履歷段落；排演界線語句。",
+        "shift": "描述空窗的語言更踏實，也勇於發出 2 封主動訊息。",
+        "tools_used": ["價值地圖", "自我對話重寫", "行為實驗階梯"],
+        "disclaimer": "為示意用途且經過匿名處理，成果不保證。",
         "slug": "back-after-3-years-worried-about-gaps"
       },
       {
-        "title": "Rebuilding confidence post-burnout",
-        "context": "Returning after burnout leave; anxious about pace and expectations.",
-        "coaching_moves": "Designed gentle energy audit; practised asking for support; set weekly review ritual.",
-        "shift": "Communicated capacity cleanly; reported growing steadiness instead of bracing.",
-        "tools_used": [
-          "Energy Audit",
-          "Weekly Reflection",
-          "Boundary Scripts"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "倦怠後重新建立信心",
+        "context": "因倦怠請假，回歸時對節奏與期待感到焦慮。",
+        "coaching_moves": "規畫溫和的能量盤點；練習開口求助；建立每週回顧儀式。",
+        "shift": "能清楚說明自己的容量，從防備轉為穩定。",
+        "tools_used": ["能量盤點", "週回顧", "界線語句"],
+        "disclaimer": "為示意用途且經過匿名處理，成果不保證。",
         "slug": "rebuilding-confidence-post-burnout"
       },
       {
-        "title": "Translating new skills after study",
-        "context": "Certification during break; needs hybrid-role repositioning.",
-        "coaching_moves": "Reframed experience stories; prototyped networking outreach; tested answers.",
-        "shift": "Entered conversations confident about naming boundaries and new value.",
-        "tools_used": [
-          "Story Library",
-          "Interview Rehearsal"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "把進修成果轉成證據",
+        "context": "休息期間完成證照，想轉向混合型職務。",
+        "coaching_moves": "重整經驗故事；試寫拓展人脈訊息；演練常見追問。",
+        "shift": "更能說清楚新價值與界線，帶著信心進入對話。",
+        "tools_used": ["故事資料庫", "面試排演"],
+        "disclaimer": "為示意用途且經過匿名處理，成果不保證。",
         "slug": "translating-new-skills-after-study"
       }
     ]

@@ -4,6 +4,7 @@
     "description": "Reflective coaching prompts and stories from SustainSage. Explore bilingual articles on career transitions, cultural bridges, and gentle leadership."
   },
   "hero": {
+    "eyebrow": "Blog",
     "title": "Reflect, experiment, notice",
     "subtitle": "Short reads with coaching questions to help you pause, breathe, and choose your next experiment."
   },
@@ -40,8 +41,12 @@
     "body": "Coaching offers a confidential space to turn these reflections into choices you own.",
     "primary": "Explore services",
     "primaryHref": "/services",
-    "secondary": "Book an intro call",
+    "secondary": "Book a 20-minute chat",
     "secondaryHref": "/contact"
+  },
+  "labels": {
+    "readArticle": "Read article",
+    "readArticleAria": "Read {{title}}"
   },
   "post1": {
     "slug": "making-room-for-slow-transition",

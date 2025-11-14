@@ -1,19 +1,10 @@
 {
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
-  "title": "Our Approach",
-  "intro": "We bring together data-driven insight and community partnerships to deliver sustainable impact.",
+  "fallbackNotice": "如有尚未翻譯的段落，會暫以英文顯示。",
+  "title": "我們的合作方式",
+  "intro": "以資料洞察、社群夥伴關係與實際實驗結合，讓改變既務實又可持續。",
   "pillars": [
-    {
-      "title": "Listen First",
-      "description": "We start by understanding the communities and ecosystems we serve."
-    },
-    {
-      "title": "Act Responsibly",
-      "description": "Every initiative balances environmental, social, and economic priorities."
-    },
-    {
-      "title": "Measure Progress",
-      "description": "Transparent metrics guide continuous improvement and accountability."
-    }
+    {"title": "先傾聽", "description": "從了解社群與所處系統開始，尊重在地經驗。"},
+    {"title": "負責行動", "description": "每個方案都兼顧環境、社會與經濟優先序。"},
+    {"title": "衡量進展", "description": "用透明指標持續回顧並對成果負責。"}
   ]
 }
