@@ -17,12 +17,55 @@
     "href": "/faq"
   },
   "pathways": {
+    "eyebrow": "Support options",
     "title": "Three ways we can work together",
     "description": "Three focused coaching pathways that you can combine or adapt after our 20-minute chat.",
     "highlight": "Each pathway flexes to your pace and capacity.",
     "sidebar": "We keep sessions reflective, practical and trauma-aware. Pace, language and intensity change once we understand your context.",
     "viewDetails": "Learn more",
+    "badges": {
+      "who": "Who it’s for",
+      "focus": "Focus",
+      "format": "Format"
+    },
     "cards": []
+  },
+  "gettingStarted": {
+    "eyebrow": "Getting started",
+    "title": "A steady process from first chat to ongoing sessions",
+    "steps": [
+      {
+        "title": "Book your 20-minute chat",
+        "description": "We talk for 20 minutes to understand what is changing and answer scope questions."
+      },
+      {
+        "title": "Explore together",
+        "description": "We map priorities, access needs, and the rhythm that keeps you steady."
+      },
+      {
+        "title": "Choose your path",
+        "description": "Select one of the coaching pathways or co-design something bespoke."
+      },
+      {
+        "title": "Begin your journey",
+        "description": "We meet online every 2–3 weeks, review progress, and adjust agreements as needed."
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "My approach",
+    "title": "Practical, personalised, sustainable",
+    "description": "We co-create experiments that are culturally aware, trauma-informed, and kind to your pace.",
+    "cards": [
+      {
+        "title": "Personalised & flexible",
+        "body": "We co-design agreements, cadence, and language preferences so the coaching rhythm fits your life and responsibilities."
+      },
+      {
+        "title": "Practical & sustainable",
+        "body": "Every session ends with right-sized experiments, reflections, or scripts you can use immediately without burning out."
+      }
+    ]
   },
   "cta": {
     "title": "Not sure where to start?",

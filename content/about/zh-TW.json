@@ -13,6 +13,11 @@
     "eyebrow": "合作方式",
     "title": "尊重節奏與脈絡的實驗設計",
     "description": "每段合作都從充分告知、共用語言與清楚的工作方式開始。",
+    "pillarsEyebrow": "專業背景",
+    "pillarsTitle": "支撐我們實務的結構",
+    "pillarsDescription": "持續進修、督導與雙語夥伴合作，讓這份工作穩定又有責信。",
+    "casesTitle": "綜合後的教練縮影",
+    "casesDescription": "經過匿名與融合的故事，既保護保密也分享教練能帶來的感受。",
     "pillars": [
       {
         "title": "先理解脈絡再行動",
@@ -59,7 +64,9 @@
     ]
   },
   "key_points": {
+    "eyebrow": "指引合作的原則",
     "title": "指引我們的原則",
+    "description": "這些 ICF 對齊的準則，讓每次對話都沉穩、透明並尊重文化脈絡。",
     "items": [
       "依循 ICF 實務，讓協議、資料照護與督導透明。",
       "橫跨亞太與英國的生活經驗，讓文化與政策脈絡被看見。",

@@ -4,6 +4,7 @@
     "description": "Coaching-informed worksheets, prompts, and playlists from SustainSage. Use them gently and adapt them with consent to your own context."
   },
   "hero": {
+    "eyebrow": "Resources",
     "title": "Tools for reflection at your own pace",
     "subtitle": "Curated bilingual resources to support your experiments between sessions. No email gate, no pressure—just invitations to pause and notice."
   },
@@ -70,6 +71,15 @@
     "title": "Want a guided walkthrough?",
     "body": "Book a 20-minute chat to explore how these tools can support your goals, or ask for a custom resource for your team.",
     "primaryCta": "Talk with a coach",
-    "secondaryCta": "Contact us"
+    "primaryHref": "/contact",
+    "secondaryCta": "Contact us",
+    "secondaryHref": "/services"
+  },
+  "labels": {
+    "comingSoon": "Coming soon"
+  },
+  "actions": {
+    "view": "View resource",
+    "download": "Download"
   }
 }

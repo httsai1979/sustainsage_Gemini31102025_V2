@@ -45,6 +45,26 @@
       }
     ]
   },
+  "audiences": [
+    {
+      "title": "中段職涯的專業者",
+      "description": "有 8–15 年經驗，想要一個沉穩空間看清楚哪些要保留、哪些要調整、改變可以多慢。",
+      "href": "/for/mid-career-returners",
+      "linkLabel": "查看中段職涯指南"
+    },
+    {
+      "title": "跨域或跨國轉換者",
+      "description": "在不同國家或產業之間移動，需要沉穩結構測試新的方向。",
+      "href": "/for/newcomers-to-uk",
+      "linkLabel": "查看新到英國指南"
+    },
+    {
+      "title": "家長與社群陪伴者",
+      "description": "畢業生、照護者或社群帶領者，想在照顧與工作之間對齊價值與節奏。",
+      "href": "/for/parents-returning-to-work",
+      "linkLabel": "查看家長指南"
+    }
+  ],
   "key_points": {
     "title": "前幾次會談會長這樣",
     "description": "用真實情境討論，再慢慢加上節奏與工具。",

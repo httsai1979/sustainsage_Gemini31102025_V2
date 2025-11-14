@@ -4,6 +4,7 @@
     "description": "SustainSage 精选的教练式工作纸、提问与播放清单。以 ICF 伦理为底，邀请你在同意与自我照顾中调整使用。"
   },
   "hero": {
+    "eyebrow": "资源",
     "title": "按自己的节奏停下来看看",
     "subtitle": "这些双语资源陪你在会谈之间持续实验。无需留下资料，也没有下载门槛，只在适合的时刻轻轻提醒你暂停。"
   },
@@ -70,6 +71,15 @@
     "title": "想要有人陪你一起走过吗？",
     "body": "欢迎预约相互了解，一起看看哪些资源适合你，或为团队量身打造新工具。",
     "primaryCta": "与教练聊聊",
-    "secondaryCta": "联络我们"
+    "primaryHref": "/contact",
+    "secondaryCta": "联络我们",
+    "secondaryHref": "/services"
+  },
+  "labels": {
+    "comingSoon": "即将上线"
+  },
+  "actions": {
+    "view": "查看资源",
+    "download": "下载"
   }
 }

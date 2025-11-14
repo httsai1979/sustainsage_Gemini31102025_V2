@@ -45,6 +45,26 @@
       }
     ]
   },
+  "audiences": [
+    {
+      "title": "Mid-career professionals",
+      "description": "People with 8–15 years of experience who need a reflective space to decide what stays, what shifts, and how to pace change.",
+      "href": "/for/mid-career-returners",
+      "linkLabel": "See the mid-career guide"
+    },
+    {
+      "title": "Career changers",
+      "description": "Professionals translating experience between countries or industries who want calm structure to test new directions.",
+      "href": "/for/newcomers-to-uk",
+      "linkLabel": "See the newcomers guide"
+    },
+    {
+      "title": "Parents and community builders",
+      "description": "Graduates, working parents, or carers aligning work with values while balancing caregiving and leadership.",
+      "href": "/for/parents-returning-to-work",
+      "linkLabel": "See the parents guide"
+    }
+  ],
   "key_points": {
     "title": "What you will notice in early sessions",
     "description": "Example-led conversations keep decisions grounded before we layer on more structure.",

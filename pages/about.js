@@ -104,13 +104,16 @@ TeamSection.propTypes = {
   }),
 };
 
-function ValueGrid({ items = [] }) {
+function ValueGrid({ items = [], eyebrow, title, description }) {
   if (!items.length) return null;
   return (
     <section className="ss-section">
       <RevealSection className="space-y-4 text-center md:text-left">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">What guides my work</p>
-        <h2 className="text-3xl font-semibold text-sustain-text">Values that shape every partnership</h2>
+        {eyebrow ? (
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{eyebrow}</p>
+        ) : null}
+        <h2 className="text-3xl font-semibold text-sustain-text">{title ?? 'Values that shape every partnership'}</h2>
+        {description ? <p className="text-base text-slate-700">{description}</p> : null}
       </RevealSection>
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((value, index) => (
@@ -127,9 +130,12 @@ function ValueGrid({ items = [] }) {
 
 ValueGrid.propTypes = {
   items: PropTypes.array,
+  eyebrow: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
 };
 
-function StoryCards({ stories = [] }) {
+function StoryCards({ stories = [], eyebrow, title, description }) {
   const successStories = dedupeBy(
     stories.filter((story) => typeof story === 'object' && story?.title),
     (story) => story.title
@@ -138,8 +144,11 @@ function StoryCards({ stories = [] }) {
   return (
     <section className="ss-section">
       <RevealSection className="space-y-4 text-center md:text-left">
-        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Client success stories</p>
-        <h2 className="text-3xl font-semibold text-sustain-text">Composite coaching glimpses</h2>
+        {eyebrow ? (
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{eyebrow}</p>
+        ) : null}
+        <h2 className="text-3xl font-semibold text-sustain-text">{title ?? 'Client success stories'}</h2>
+        {description ? <p className="text-base text-slate-700">{description}</p> : null}
       </RevealSection>
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {successStories.map((story, index) => {
@@ -183,6 +192,9 @@ function StoryCards({ stories = [] }) {
 
 StoryCards.propTypes = {
   stories: PropTypes.array,
+  eyebrow: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
 };
 
 function BoundariesSection({ boundaries }) {
@@ -286,16 +298,35 @@ export default function AboutPage({
         </div>
       </section>
 
-      <ValueGrid items={valueCards} />
+      <ValueGrid
+        items={valueCards}
+        eyebrow={copy?.key_points?.eyebrow}
+        title={copy?.key_points?.title}
+        description={copy?.key_points?.description}
+      />
 
       <TeamSection team={team} />
 
-      <StoryCards stories={copy?.approach?.cases ?? []} />
+      <StoryCards
+        stories={copy?.approach?.cases ?? []}
+        eyebrow={copy?.approach?.eyebrow}
+        title={copy?.approach?.casesTitle ?? copy?.approach?.title}
+        description={copy?.approach?.casesDescription ?? copy?.approach?.description}
+      />
 
       <section className="ss-section">
         <RevealSection className="space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Professional background</p>
-          <h2 className="text-3xl font-semibold text-sustain-text">Structures that keep our practice steady</h2>
+          {copy?.approach?.pillarsEyebrow ? (
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
+              {copy.approach.pillarsEyebrow}
+            </p>
+          ) : null}
+          <h2 className="text-3xl font-semibold text-sustain-text">
+            {copy?.approach?.pillarsTitle ?? 'Structures that keep our practice steady'}
+          </h2>
+          {copy?.approach?.pillarsDescription ? (
+            <p className="text-base text-slate-700">{copy.approach.pillarsDescription}</p>
+          ) : null}
         </RevealSection>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {backgroundHighlights.map((item, index) => (

@@ -13,6 +13,11 @@
     "eyebrow": "Our approach",
     "title": "Experiments that respect pace and context",
     "description": "Every partnership begins with informed consent, shared language, and clarity on how we will work together.",
+    "pillarsEyebrow": "Professional background",
+    "pillarsTitle": "Structures that keep our practice steady",
+    "pillarsDescription": "Training, supervision, and bilingual partnerships that keep our work grounded and accountable.",
+    "casesTitle": "Composite coaching glimpses",
+    "casesDescription": "Merged, anonymised stories that honour confidentiality while showing what coaching can feel like.",
     "pillars": [
       {
         "title": "Context before action",
@@ -69,7 +74,9 @@
     ]
   },
   "key_points": {
-    "title": "What guides our coaching",
+    "eyebrow": "What guides our coaching",
+    "title": "Values that shape every partnership",
+    "description": "Gentle, ICF-aligned principles that keep each conversation calm, transparent, and culturally aware.",
     "items": [
       "ICF-aligned practice keeps agreements, data care, and supervision transparent.",
       "Lived experience across Asia-Pacific and the UK keeps culture and policy context in view.",

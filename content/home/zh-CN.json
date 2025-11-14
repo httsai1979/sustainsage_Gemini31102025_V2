@@ -39,6 +39,26 @@
       }
     ]
   },
+  "audiences": [
+    {
+      "title": "职涯中段的专业者",
+      "description": "拥有 8–15 年经验，需要一个沉稳空间来判断要保留什么、调整什么、改变可以多慢。",
+      "href": "/for/mid-career-returners",
+      "linkLabel": "查看中段职涯指南"
+    },
+    {
+      "title": "跨域或跨国转换者",
+      "description": "在不同国家或产业之间移动，需要有结构地测试新的方向。",
+      "href": "/for/newcomers-to-uk",
+      "linkLabel": "查看新到英国指南"
+    },
+    {
+      "title": "父母与社群照料者",
+      "description": "毕业生、照护者或社群带领者，想在照顾与工作之间对齐价值与节奏。",
+      "href": "/for/parents-returning-to-work",
+      "linkLabel": "查看父母指南"
+    }
+  ],
   "key_points": {
     "title": "前几次会谈会遇到什么",
     "description": "用情境先对焦，再慢慢加上节奏与工具。",

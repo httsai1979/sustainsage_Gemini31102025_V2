@@ -12,42 +12,6 @@ import { loadContent } from '@/lib/loadContent';
 import { dedupeBy } from '@/lib/dedupe';
 import { sanitizeProps } from '@/lib/toSerializable';
 
-const PACKAGE_DETAILS = {
-  'career-return': {
-    who: 'Professionals returning to work after a pause or relocation.',
-    focus: 'Rebuild routines, communicate boundaries, and design a sustainable ramp-up.',
-    format: '1:1 online coaching · 12 weeks · 60–75 minute sessions.',
-  },
-  'graduate-start': {
-    who: 'Graduates and early-career hires figuring out their story.',
-    focus: 'Clarify strengths, build proof points, and test pathways safely.',
-    format: '1:1 online coaching · 8–10 weeks · 60-minute sessions.',
-  },
-  'immigrant-job': {
-    who: 'People new to the UK job market translating overseas experience.',
-    focus: 'Localise your narrative, map networks, and rehearse confident interviews.',
-    format: '1:1 online coaching · 8–12 weeks · 60–75 minute sessions.',
-  },
-};
-
-const APPROACH_CARDS = [
-  {
-    title: 'Personalised & flexible',
-    body:
-      'We co-design agreements, cadence, and language preferences so the coaching rhythm fits your life and responsibilities.',
-  },
-  {
-    title: 'Practical & sustainable',
-    body:
-      'Every session ends with right-sized experiments, reflections, or scripts you can use immediately without burning out.',
-  },
-];
-
-const CTA_LINKS = [
-  { href: '/contact', label: 'Book a 20-minute chat', variant: 'primary' },
-  { href: '/services', label: 'Explore services', variant: 'secondary' },
-];
-
 export default function ServicesPage({
   cards = [],
   showFallbackNotice = false,
@@ -57,30 +21,35 @@ export default function ServicesPage({
   const seo = t('seo', { returnObjects: true });
   const hero = t('hero', { returnObjects: true });
   const pathways = t('pathways', { returnObjects: true });
+  const badges = pathways?.badges ?? {};
+  const gettingStartedCopy = t('gettingStarted', { returnObjects: true }) ?? {};
+  const approachCopy = t('approach', { returnObjects: true }) ?? {};
+  const approachCards = Array.isArray(approachCopy?.cards) ? approachCopy.cards : [];
   const cta = t('cta', { returnObjects: true });
   const fallbackMessage = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
   const primaryCta = hero?.primaryCta ?? { href: '/contact', label: 'Book a 20-minute chat' };
   const secondaryCta = hero?.secondaryCta ?? { href: '#support', label: 'Who we support' };
 
-  // Single source of truth for the onboarding steps to avoid duplicate declarations.
-  const gettingStartedSteps = [
-    {
-      title: 'Book your 20-minute chat',
-      description: 'We talk for 20 minutes to understand what is changing and answer scope questions.',
-    },
-    {
-      title: 'Explore together',
-      description: 'We map priorities, access needs, and the rhythm that keeps you steady.',
-    },
-    {
-      title: 'Choose your path',
-      description: 'Select one of the coaching pathways or co-design something bespoke.',
-    },
-    {
-      title: 'Begin your journey',
-      description: 'We meet online every 2–3 weeks, review progress, and adjust agreements as needed.',
-    },
-  ];
+  const gettingStartedSteps = Array.isArray(gettingStartedCopy?.steps) && gettingStartedCopy.steps.length
+    ? gettingStartedCopy.steps
+    : [
+        {
+          title: 'Book your 20-minute chat',
+          description: 'We talk for 20 minutes to understand what is changing and answer scope questions.',
+        },
+        {
+          title: 'Explore together',
+          description: 'We map priorities, access needs, and the rhythm that keeps you steady.',
+        },
+        {
+          title: 'Choose your path',
+          description: 'Select one of the coaching pathways or co-design something bespoke.',
+        },
+        {
+          title: 'Begin your journey',
+          description: 'We meet online every 2–3 weeks, review progress, and adjust agreements as needed.',
+        },
+      ];
 
   // Deduplicate CMS cards once so each package renders exactly once.
   const uniqueCards = dedupeBy(cards, (card) => card.slug ?? card.title);
@@ -139,13 +108,19 @@ export default function ServicesPage({
 
       <section id="support" className="ss-section">
         <RevealSection className="space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Support options</p>
-          <h2 className="text-3xl font-semibold text-sustain-text">How I can support you</h2>
+          {pathways?.eyebrow ? (
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{pathways.eyebrow}</p>
+          ) : null}
+          <h2 className="text-3xl font-semibold text-sustain-text">
+            {pathways?.title ?? 'How I can support you'}
+          </h2>
           {pathways?.description ? <p className="text-base text-slate-700">{pathways.description}</p> : null}
         </RevealSection>
         <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {uniqueCards.map((card, index) => {
-            const detail = PACKAGE_DETAILS[card.slug] ?? {};
+            const audience = card.audience ?? card.excerpt ?? card.description;
+            const focus = card.focus ?? pathways?.highlight;
+            const format = card.format ?? 'Online coaching · 60–75 minutes per session';
             return (
               <RevealSection key={card.slug} delay={(index % 3) * 0.1}>
                 <Card
@@ -161,16 +136,22 @@ export default function ServicesPage({
                 >
                   <div className="space-y-4 text-sm leading-relaxed text-slate-700">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Who it’s for</p>
-                      <p className="mt-1">{detail.who ?? card.audience ?? 'Designed for people navigating complex transitions.'}</p>
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">
+                        {badges?.who ?? 'Who it’s for'}
+                      </p>
+                      <p className="mt-1">{audience ?? 'Designed for people navigating complex transitions.'}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Focus</p>
-                      <p className="mt-1">{detail.focus ?? card.excerpt}</p>
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">
+                        {badges?.focus ?? 'Focus'}
+                      </p>
+                      <p className="mt-1">{focus ?? card.excerpt}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Format</p>
-                      <p className="mt-1">{detail.format ?? 'Online coaching · 60–75 minutes per session'}</p>
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">
+                        {badges?.format ?? 'Format'}
+                      </p>
+                      <p className="mt-1">{format}</p>
                     </div>
                   </div>
                 </Card>
@@ -182,8 +163,14 @@ export default function ServicesPage({
 
       <section className="ss-section">
         <RevealSection className="space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Getting started is simple</p>
-          <h2 className="text-3xl font-semibold text-sustain-text">A steady process from first chat to ongoing sessions</h2>
+          {gettingStartedCopy?.eyebrow ? (
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">
+              {gettingStartedCopy.eyebrow}
+            </p>
+          ) : null}
+          <h2 className="text-3xl font-semibold text-sustain-text">
+            {gettingStartedCopy?.title ?? 'A steady process from first chat to ongoing sessions'}
+          </h2>
         </RevealSection>
         <RevealSection delay={0.1} className="mt-8">
           <StepList steps={gettingStartedSteps} />
@@ -192,11 +179,18 @@ export default function ServicesPage({
 
       <section className="ss-section">
         <RevealSection className="space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">My approach</p>
-          <h2 className="text-3xl font-semibold text-sustain-text">Practical, personalised, sustainable</h2>
+          {approachCopy?.eyebrow ? (
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">
+              {approachCopy.eyebrow}
+            </p>
+          ) : null}
+          <h2 className="text-3xl font-semibold text-sustain-text">
+            {approachCopy?.title ?? 'Practical, personalised, sustainable'}
+          </h2>
+          {approachCopy?.description ? <p className="text-base text-slate-700">{approachCopy.description}</p> : null}
         </RevealSection>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {APPROACH_CARDS.map((card, index) => (
+          {approachCards.map((card, index) => (
             <RevealSection key={card.title} delay={index * 0.1}>
               <Card title={card.title}>
                 <p className="text-sm leading-relaxed text-slate-700">{card.body}</p>
@@ -212,15 +206,16 @@ export default function ServicesPage({
             <h2 className="text-3xl font-semibold text-sustain-text">{cta?.title ?? 'Let’s find the right starting point'}</h2>
             <p className="mt-4 text-base text-slate-700">{cta?.body ?? 'Book a 20-minute chat or keep exploring the services in your own time.'}</p>
             <div className="mt-6 flex flex-wrap justify-center gap-3">
-              {CTA_LINKS.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={link.variant === 'primary' ? 'ss-btn-primary' : 'ss-btn-secondary'}
-                >
-                  {link.label}
+              {cta?.primaryHref ? (
+                <Link href={cta.primaryHref} className="ss-btn-primary">
+                  {cta?.primaryCta ?? 'Book a 20-minute chat'}
                 </Link>
-              ))}
+              ) : null}
+              {cta?.secondaryHref ? (
+                <Link href={cta.secondaryHref} className="ss-btn-secondary">
+                  {cta?.secondaryCta ?? 'Explore services'}
+                </Link>
+              ) : null}
             </div>
           </div>
         </RevealSection>
@@ -257,6 +252,9 @@ export async function getStaticProps({ locale }) {
       title: card.title,
       eyebrow: card.eyebrow,
       excerpt: card.excerpt ?? card.description ?? card.teaser ?? '',
+      audience: card.audience,
+      focus: card.focus,
+      format: card.format,
       ctaLabel: card.ctaLabel ?? card.cta ?? card.buttonLabel ?? card.cta_label ?? null,
     }))
     .filter((card) => card.slug && card.title);
