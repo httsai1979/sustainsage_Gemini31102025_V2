@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>情緒三角卡 | Emotion Triangle</title>
+    <!-- 引入 Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 引入 Google Fonts：Inter 作為基礎字體，Noto Sans TC 作為中文字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- 引入 Font Awesome 6.4.0 圖示庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 引入 html2canvas 和 jspdf 用於匯出功能 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        /* 自定義樣式覆寫 Tailwind */
+        :root {
+            --primary-color: #3475cf;
+            --primary-light: #e0f0ff;
+            --text-color: #1a457c;
+            --bg-color: #f0f4f8;
+            --card-bg: #fff;
+            --border-color: #d1d5db;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 20px rgba(52, 117, 207, 0.1);
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            transition: all 0.2s ease-in-out;
+            color: var(--text-color);
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(52, 117, 207, 0.2);
+        }
+        .input-field::placeholder {
+            color: #9ca3af;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover:not(:disabled) {
+            background-color: #2b63ac;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:disabled {
+            background-color: #b5c7e1;
+            cursor: not-allowed;
+        }
+
+        /* 提示框 (Toast) 樣式 */
+        #toast {
+            visibility: hidden;
+            min-width: 250px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 9999px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
+            transform: translateX(-50%);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+        #toast.show {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .summary-card { border-left: 4px solid; padding: 1rem; border-radius: 0.5rem; }
+        .summary-behavior { border-color: #60a5fa; background-color: #eff6ff; }
+        .summary-thought { border-color: #34d399; background-color: #ecfdf5; }
+        .summary-emotion { border-color: #fca5a5; background-color: #fef2f2; }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="container rounded-2xl shadow-xl flex flex-col gap-8">
+
+        <!-- 標題與說明 -->
+        <header class="text-center">
+            <h1 class="text-3xl font-bold mb-2">情緒三角卡 <i class="fas fa-brave"></i></h1>
+            <p class="text-gray-500 mb-4">這是一個情緒處理工具，它會引導您拆解情緒、想法與行為之間的關係，幫助您找到新的應對方式。這個練習的目標不是消除情緒，而是理解並重構它們。</p>
+            <div id="step-indicator" class="text-sm font-medium text-gray-400"></div>
+        </header>
+
+        <!-- 步驟內容區塊 -->
+        <div id="step-content" class="min-h-[300px] flex flex-col justify-center items-center text-center fade-in">
+            <!-- 這裡會動態載入步驟內容 -->
+        </div>
+        
+        <!-- 導航按鈕 -->
+        <div class="flex justify-between items-center mt-6">
+            <button id="prev-btn" class="btn-primary px-6 py-2 rounded-full font-medium transition-all" disabled>
+                <i class="fas fa-arrow-left mr-2"></i> 上一步
+            </button>
+            <button id="next-btn" class="btn-primary px-6 py-2 rounded-full font-medium transition-all">
+                下一步 <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+
+    </div>
+
+    <!-- 提示框 (Toast) -->
+    <div id="toast"></div>
+
+    <script>
+        // ==== 應用程式狀態管理 ====
+        let currentStep = 0;
+        const state = {
+            scenario: '',
+            thought: '',
+            emotion: { name: '', emoji: '', intensity: 5 },
+            behavior: '',
+            rethinkThought: '',
+            rethinkBehavior: '',
+        };
+        const toastElement = document.getElementById('toast');
+        const steps = [
+            {
+                title: "第一步：描述情境",
+                description: "請回想一個讓您情緒波動的具體場景。這個場景越具體，後續的拆解會越清晰。",
+                content: () => `<textarea id="scenario-input" class="input-field h-32 resize-none" placeholder="例如：老闆在會議上突然批評了我的專案，我感到很沮喪。">${state.scenario}</textarea>`
+            },
+            {
+                title: "第二步：覺察情緒",
+                description: "當情境發生時，您感受到了什麼情緒？請選擇一個最貼切的，並評估其強度。",
+                content: () => `
+                    <div class="flex flex-wrap justify-center gap-2 mb-4">
+                        <button class="emotion-btn text-4xl p-2 rounded-lg hover:bg-gray-100 transition-colors" data-emoji="😔" data-name="難過">😔</button>
+                        <button class="emotion-btn text-4xl p-2 rounded-lg hover:bg-gray-100 transition-colors" data-emoji="😠" data-name="憤怒">😠</button>
+                        <button class="emotion-btn text-4xl p-2 rounded-lg hover:bg-gray-100 transition-colors" data-emoji="😟" data-name="焦慮">😟</button>
+                        <button class="emotion-btn text-4xl p-2 rounded-lg hover:bg-gray-100 transition-colors" data-emoji="😢" data-name="悲傷">😢</button>
+                        <button class="emotion-btn text-4xl p-2 rounded-lg hover:bg-gray-100 transition-colors" data-emoji="😨" data-name="害怕">😨</button>
+                        <button class="emotion-btn text-4xl p-2 rounded-lg hover:bg-gray-100 transition-colors" data-emoji="😌" data-name="平靜">😌</button>
+                        <button class="emotion-btn text-4xl p-2 rounded-lg hover:bg-gray-100 transition-colors" data-emoji="🥳" data-name="興奮">🥳</button>
+                    </div>
+                    <div class="text-center mt-6">
+                        <div class="mb-2 text-xl font-bold">${state.emotion.emoji ? state.emotion.emoji + ' ' + state.emotion.name : '請選擇情緒'}</div>
+                        <label for="intensity-slider" class="block text-gray-500 mb-2">強度：<span id="intensity-value" class="font-bold text-lg">${state.emotion.intensity}</span> / 10</label>
+                        <input type="range" id="intensity-slider" min="1" max="10" value="${state.emotion.intensity}" class="w-full">
+                    </div>
+                `
+            },
+            {
+                title: "第三步：辨識想法",
+                description: `當您感受到 **${state.emotion.emoji} ${state.emotion.name}** 時，您腦中浮現了什麼念頭？這是最快閃過腦海的自動化思考。`,
+                content: () => `<textarea id="thought-input" class="input-field h-32 resize-none" placeholder="例如：我搞砸了、我永遠學不會...">${state.thought}</textarea>`
+            },
+            {
+                title: "第四步：觀察行為",
+                description: "在那個當下，您身體是如何回應的？您做了什麼或沒做什麼？",
+                content: () => `<textarea id="behavior-input" class="input-field h-32 resize-none" placeholder="例如：我大聲回嘴、我開始哭泣、我假裝沒事...">${state.behavior}</textarea>`
+            },
+            {
+                title: "第五步：情緒重構 (重塑)",
+                description: "現在我們已經拆解了這個三角關係。如果我們改變其中一角，會發生什麼？請嘗試重新思考，並寫下新的應對方式。",
+                content: () => `
+                    <div class="space-y-4 w-full">
+                        <div class="bg-blue-50 p-4 rounded-lg flex flex-col gap-2">
+                            <div class="font-bold">🧠 如果當時的想法不同？</div>
+                            <textarea id="rethink-thought" class="input-field h-20 resize-none mt-1" placeholder="例如：這只是老闆給的意見，不代表我能力不足。">${state.rethinkThought}</textarea>
+                        </div>
+                        <div class="bg-red-50 p-4 rounded-lg flex flex-col gap-2">
+                            <div class="font-bold">🏃‍♀️ 如果當時的行為不同？</div>
+                            <textarea id="rethink-behavior" class="input-field h-20 resize-none mt-1" placeholder="例如：我會先深呼吸，然後主動詢問老闆更多細節。">${state.rethinkBehavior}</textarea>
+                        </div>
+                    </div>
+                `
+            },
+            {
+                title: "第六步：總結與洞察",
+                description: "恭喜您完成了一次情緒探索！現在，讓我為您總結，並提出一些建議。",
+                content: () => `
+                    <div id="summary-content" class="w-full text-left flex flex-col gap-6">
+                        <h3 class="text-2xl font-bold mb-2">原始三角</h3>
+                        <div class="summary-card summary-emotion">
+                            <h4 class="font-bold text-lg"><i class="fas fa-face-smile mr-2"></i> 情緒</h4>
+                            <p class="mt-1">${state.emotion.emoji} ${state.emotion.name} (${state.emotion.intensity}/10)</p>
+                        </div>
+                        <div class="summary-card summary-thought">
+                            <h4 class="font-bold text-lg"><i class="fas fa-head-side-virus mr-2"></i> 想法</h4>
+                            <p class="mt-1">${state.thought}</p>
+                        </div>
+                        <div class="summary-card summary-behavior">
+                            <h4 class="font-bold text-lg"><i class="fas fa-running mr-2"></i> 行為</h4>
+                            <p class="mt-1">${state.behavior}</p>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mt-4 mb-2">重構後的可能性</h3>
+                        <div class="summary-card summary-thought">
+                            <h4 class="font-bold text-lg">🧠 新的想法</h4>
+                            <p class="mt-1">${state.rethinkThought || '未填寫'}</p>
+                        </div>
+                        <div class="summary-card summary-behavior">
+                            <h4 class="font-bold text-lg">🏃‍♀️ 新的行為</h4>
+                            <p class="mt-1">${state.rethinkBehavior || '未填寫'}</p>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mt-6 mb-2 flex items-center gap-2">
+                            <i class="fas fa-robot text-blue-500"></i>
+                            AI 洞察與行動建議
+                            <i class="fas fa-circle-notch fa-spin ml-2 text-blue-500 text-xl" id="loading-spinner"></i>
+                        </h3>
+                        <div id="ai-analysis-output" class="bg-gray-50 p-4 rounded-lg prose max-w-none text-left">
+                            <p class="text-gray-500">正在為您生成洞察報告，請稍候...</p>
+                        </div>
+
+                        <div id="summary-export-buttons" class="mt-6 flex justify-center gap-4">
+                            <button id="export-pdf-btn" class="btn-primary flex items-center gap-2">
+                                <i class="fas fa-file-pdf"></i> 匯出為 PDF
+                            </button>
+                        </div>
+                    </div>
+                `
+            }
+        ];
+
+        // ==== 函數：渲染目前步驟 ====
+        function renderStep() {
+            const stepContent = document.getElementById('step-content');
+            stepContent.innerHTML = '';
+            const stepData = steps[currentStep];
+
+            const headerHtml = `
+                <div class="w-full text-left mb-6 fade-in">
+                    <h2 class="text-2xl font-bold">${stepData.title}</h2>
+                    <p class="text-gray-500 mt-2">${stepData.description}</p>
+                </div>
+            `;
+            stepContent.insertAdjacentHTML('beforeend', headerHtml);
+            stepContent.insertAdjacentHTML('beforeend', stepData.content());
+            
+            // 設定事件監聽器
+            if (currentStep === 0) {
+                document.getElementById('scenario-input').addEventListener('input', (e) => { state.scenario = e.target.value; validateStep(); });
+            } else if (currentStep === 1) {
+                document.querySelectorAll('.emotion-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        document.querySelectorAll('.emotion-btn').forEach(b => b.classList.remove('bg-blue-200'));
+                        e.currentTarget.classList.add('bg-blue-200');
+                        state.emotion.emoji = e.currentTarget.dataset.emoji;
+                        state.emotion.name = e.currentTarget.dataset.name;
+                        document.querySelector('#step-content .font-bold').textContent = `${state.emotion.emoji} ${state.emotion.name}`;
+                        validateStep();
+                    });
+                    if (btn.dataset.emoji === state.emotion.emoji) {
+                        btn.classList.add('bg-blue-200');
+                    }
+                });
+                const intensitySlider = document.getElementById('intensity-slider');
+                intensitySlider.addEventListener('input', (e) => {
+                    state.emotion.intensity = e.target.value;
+                    document.getElementById('intensity-value').textContent = e.target.value;
+                });
+            } else if (currentStep === 2) {
+                document.getElementById('thought-input').addEventListener('input', (e) => { state.thought = e.target.value; validateStep(); });
+            } else if (currentStep === 3) {
+                document.getElementById('behavior-input').addEventListener('input', (e) => { state.behavior = e.target.value; validateStep(); });
+            } else if (currentStep === 4) {
+                document.getElementById('rethink-thought').addEventListener('input', (e) => { state.rethinkThought = e.target.value; validateStep(); });
+                document.getElementById('rethink-behavior').addEventListener('input', (e) => { state.rethinkBehavior = e.target.value; validateStep(); });
+            } else if (currentStep === 5) {
+                // 總結頁面，生成 AI 洞察
+                document.getElementById('export-pdf-btn').addEventListener('click', exportAsPDF);
+                generateAnalysis();
+            }
+
+            // 更新導航按鈕和步驟指示器
+            updateNavigation();
+            // 載入舊有資料並驗證
+            validateStep();
+        }
+
+        // ==== 函數：驗證當前步驟資料 ====
+        function validateStep() {
+            let isValid = false;
+            if (currentStep === 0) {
+                isValid = state.scenario.trim() !== '';
+            } else if (currentStep === 1) {
+                isValid = state.emotion.emoji !== '';
+            } else if (currentStep === 2) {
+                isValid = state.thought.trim() !== '';
+            } else if (currentStep === 3) {
+                isValid = state.behavior.trim() !== '';
+            } else if (currentStep === 4) {
+                isValid = state.rethinkThought.trim() !== '' || state.rethinkBehavior.trim() !== '';
+            } else if (currentStep === 5) {
+                isValid = true; // 總結頁面永遠有效
+            }
+            document.getElementById('next-btn').disabled = !isValid;
+            return isValid;
+        }
+
+        // ==== 函數：更新導航按鈕狀態和步驟指示器 ====
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const stepIndicator = document.getElementById('step-indicator');
+
+            prevBtn.disabled = currentStep === 0;
+            const nextBtnText = currentStep === steps.length - 1 ? '完成' : '下一步';
+            nextBtn.innerHTML = `${nextBtnText} <i class="fas fa-arrow-right ml-2"></i>`;
+            stepIndicator.textContent = `步驟 ${currentStep + 1} / ${steps.length}`;
+            
+            // 如果是總結頁面，修改按鈕文字
+            if (currentStep === steps.length - 1) {
+                nextBtn.innerHTML = `重新開始 <i class="fas fa-redo-alt ml-2"></i>`;
+            }
+            validateStep();
+        }
+
+        // ==== 函數：顯示提示框 (Toast) ====
+        function showToast(message, type = 'info') {
+            toastElement.textContent = message;
+            toastElement.className = `show rounded-full px-6 py-3 text-white shadow-xl ${type === 'error' ? 'bg-red-500' : 'bg-blue-500'}`;
+            setTimeout(() => {
+                toastElement.className = toastElement.className.replace('show', '');
+            }, 3000);
+        }
+
+        // ==== 函數：匯出為 PDF ====
+        async function exportAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF('p', 'pt', 'a4');
+            const element = document.getElementById('summary-content');
+
+            const loadingToast = document.createElement('div');
+            loadingToast.textContent = '正在準備匯出...';
+            loadingToast.id = 'loading-toast';
+            loadingToast.className = 'show rounded-full px-6 py-3 text-white shadow-xl bg-blue-500';
+            document.body.appendChild(loadingToast);
+
+            try {
+                const canvas = await html2canvas(element, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    backgroundColor: '#f0f4f8'
+                });
+
+                const imgData = canvas.toDataURL('image/png');
+                const imgWidth = 595.28;
+                const pageHeight = 841.89;
+                const imgHeight = canvas.height * imgWidth / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+
+                doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+
+                while (heightLeft >= 0) {
+                    position = heightLeft - imgHeight;
+                    doc.addPage();
+                    doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+
+                doc.save('情緒三角卡總結.pdf');
+                showToast('已匯出為 PDF', 'success');
+            } catch (err) {
+                showToast('匯出失敗，請重試', 'error');
+                console.error('匯出 PDF 失敗:', err);
+            } finally {
+                loadingToast.remove();
+            }
+        }
+
+        // ==== 函數：呼叫 AI 進行分析 ====
+        async function generateAnalysis() {
+            const loadingSpinner = document.getElementById('loading-spinner');
+            const outputDiv = document.getElementById('ai-analysis-output');
+            
+            loadingSpinner.classList.remove('hidden');
+            outputDiv.innerHTML = '<p class="text-gray-500 animate-pulse">正在為您生成洞察報告，請稍候...</p>';
+            
+            try {
+                const prompt = `
+                請扮演一位專業的心理教練。我使用了「情緒三角卡」工具，並填寫了以下內容。請根據這些資訊，提供一份詳細的洞察報告和具體的行動建議。報告應包含以下部分：
+
+                1.  **情境總結**：簡要重述我遇到的情境、我的原始想法、情緒和行為，並分析這三者之間的關聯性。
+                2.  **新觀點分析**：分析我重構後的「新想法」和「新行為」如何打破舊有的模式。
+                3.  **行動建議**：根據我的新觀點，提供 1-2 條具體的、可實踐的行動建議。
+                4.  **價值總結**：解釋這個「情緒三角」過程對我的意義，以及它能幫助我帶來什麼改變。
+
+                以下是我的填寫內容：
+                情境 (Scenario): ${state.scenario}
+                情緒 (Emotion): ${state.emotion.name} (${state.emotion.intensity}/10)
+                原始想法 (Original Thought): ${state.thought}
+                原始行為 (Original Behavior): ${state.behavior}
+                重構後的新想法 (New Thought): ${state.rethinkThought}
+                重構後的新行為 (New Behavior): ${state.rethinkBehavior}
+                `;
+
+                // 呼叫 Gemini API
+                const chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = "" 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const result = await response.json();
+                
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    outputDiv.innerHTML = `<div class="prose max-w-none">${marked.parse(text)}</div>`;
+                } else {
+                    outputDiv.innerHTML = '<p class="text-red-500">無法生成洞察報告，請重試。</p>';
+                }
+
+            } catch (error) {
+                console.error("AI Generation failed:", error);
+                outputDiv.innerHTML = '<p class="text-red-500">生成失敗，請檢查您的網路或稍後重試。</p>';
+            } finally {
+                loadingSpinner.classList.add('hidden');
+            }
+        }
+        
+        // 為了讓 AI 輸出 Markdown 能正確渲染，我們需要引入一個 Markdown 渲染庫
+        const markedScript = document.createElement('script');
+        markedScript.src = "https://cdn.jsdelivr.net/npm/marked/marked.min.js";
+        document.head.appendChild(markedScript);
+
+        // ==== 導航按鈕事件監聽器 ====
+        document.getElementById('prev-btn').addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                renderStep();
+            }
+        });
+
+        document.getElementById('next-btn').addEventListener('click', () => {
+            if (currentStep === steps.length - 1) {
+                // 重新開始
+                currentStep = 0;
+                Object.keys(state).forEach(key => {
+                    if (typeof state[key] === 'object') {
+                        state[key] = { name: '', emoji: '', intensity: 5 };
+                    } else {
+                        state[key] = '';
+                    }
+                });
+                renderStep();
+                showToast('已重設，讓我們重新開始吧！');
+            } else if (validateStep()) {
+                currentStep++;
+                renderStep();
+            } else {
+                showToast('請完成此步驟的所有內容。');
+            }
+            saveState();
+        });
+
+        // ==== 函數：更新狀態並儲存到 localStorage ====
+        function saveState() {
+            localStorage.setItem('emotionTriangleState', JSON.stringify(state));
+        }
+
+        // ==== 函數：初始化應用程式 ====
+        function initializeApp() {
+            const savedState = localStorage.getItem('emotionTriangleState');
+            if (savedState) {
+                Object.assign(state, JSON.parse(savedState));
+            }
+            renderStep();
+        }
+        
+        // 啟動應用程式
+        initializeApp();
+    </script>
+</body>
+</html>

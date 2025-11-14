@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行為實驗階梯</title>
+    <!-- 引入 Font Awesome 6.4.0 圖示庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 引入 Google Fonts Noto Sans TC & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 引入 html2canvas 和 jspdf 用於匯出功能 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #4a69bd; /* Royal Blue */
+            --primary-light: #7a93d4;
+            --secondary-color: #f6b93b; /* Saffron */
+            --success-color: #6ab04c; /* Green */
+            --background-color: #f5f6fa;
+            --card-bg: #fff;
+            --text-dark: #1e272e;
+            --text-light: #808e9b;
+            --border-color: #dcdde1;
+            --shadow-color: rgba(0, 0, 0, 0.08);
+            --font-family-zh: 'Noto Sans TC', sans-serif;
+            --font-family-en: 'Inter', sans-serif;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: var(--font-family-zh), var(--font-family-en);
+            background-color: var(--background-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px var(--shadow-color);
+        }
+
+        h1, h2 { text-align: center; }
+        h1 { color: var(--primary-color); font-size: 2.2em; margin-bottom: 10px; }
+        .subtitle { color: var(--text-light); font-size: 1.1em; margin-top: 0; margin-bottom: 30px; text-align: center; }
+
+        /* --- Visual Progress Bar --- */
+        .progress-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        .progress-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+        }
+        .progress-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            margin: 0 auto 10px;
+            transition: all var(--transition-speed);
+            border: 3px solid var(--border-color);
+        }
+        .progress-step.active .progress-icon {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        .progress-step.completed .progress-icon {
+            background-color: var(--success-color);
+            border-color: var(--success-color);
+        }
+        .progress-label {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: var(--text-light);
+            transition: color var(--transition-speed);
+        }
+        .progress-step.active .progress-label, .progress-step.completed .progress-label {
+            color: var(--text-dark);
+        }
+        .progress-line {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            width: 100%;
+            height: 4px;
+            background-color: var(--border-color);
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+        .progress-step:first-child .progress-line { left: 50%; width: 50%; }
+        .progress-step:last-child .progress-line { width: 50%; }
+        .progress-step.completed + .progress-step .progress-line {
+            background-color: var(--success-color);
+        }
+
+
+        .content-section { display: none; text-align: left; }
+        .content-section.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
+        .card {
+            background-color: #fdfdff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        label { display: block; font-weight: bold; margin-bottom: 8px; color: var(--primary-color); }
+        input[type="text"], textarea {
+            width: 100%; padding: 12px; border: 1px solid var(--border-color);
+            border-radius: 8px; font-size: 1em; font-family: inherit;
+            box-sizing: border-box; margin-bottom: 15px; resize: vertical;
+        }
+        textarea { min-height: 100px; }
+        
+        .belief-list { list-style: none; padding: 0; margin: 10px 0; }
+        .belief-item { display: flex; align-items: center; margin-bottom: 10px; }
+        .belief-item input[type="checkbox"] { margin-right: 10px; }
+        .custom-belief-input { width: calc(100% - 25px); margin-left: 25px; }
+
+        #ladder-builder { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+        .ladder-step {
+            display: flex; align-items: flex-start; background-color: var(--card-bg);
+            border: 1px solid var(--border-color); border-radius: 12px; padding: 15px;
+            box-shadow: 0 2px 8px var(--shadow-color); transition: all var(--transition-speed);
+            cursor: grab; text-align: left; position: relative;
+        }
+        .ladder-step:active { cursor: grabbing; }
+        .ladder-step.dragging { opacity: 0.5; }
+        
+        .ladder-info { flex-grow: 1; }
+        .ladder-info label { font-weight: normal; font-size: 0.9em; color: var(--text-dark); margin-bottom: 5px; }
+        .ladder-info input { padding: 8px; margin-bottom: 10px; border-radius: 6px; }
+        
+        .step-handle { font-size: 1.5em; color: var(--text-light); margin-right: 15px; padding-top: 5px; }
+        .remove-step-btn { background: none; border: none; color: var(--text-light); font-size: 1.2em; cursor: pointer; position: absolute; top: 10px; right: 10px; }
+        .add-step-btn { background-color: var(--primary-light); color: #fff; border: none; padding: 10px 20px; border-radius: 50px; margin-top: 10px; cursor: pointer; font-weight: bold; }
+        
+        .button-group { display: flex; justify-content: center; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+        .action-button {
+            background-color: var(--primary-color); color: #fff; border: none;
+            border-radius: 50px; padding: 12px 25px; cursor: pointer;
+            font-size: 1em; font-weight: 700; display: inline-flex;
+            align-items: center; gap: 8px; transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+        .action-button.secondary { background-color: #fff; color: var(--primary-color); border: 2px solid var(--primary-color); }
+        .action-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px var(--shadow-color); }
+        .action-button:disabled { background-color: #d1d9e0; cursor: not-allowed; transform: none; box-shadow: none; }
+        
+        #export-preview-container { padding: 20px; background-color: #fff; border-radius: 12px; }
+        .summary-header h2 { color: var(--primary-color); font-size: 1.8em; margin-bottom: 10px; }
+        .summary-details { text-align: left; margin-bottom: 20px; }
+        .summary-details h3 { font-size: 1.2em; color: var(--primary-light); }
+        .summary-ladder { display: flex; flex-direction: column; gap: 15px; }
+        .summary-step { border: 1px solid var(--border-color); border-radius: 12px; padding: 15px; text-align: left; }
+        .summary-step h4 { margin: 0 0 5px; color: var(--primary-color); }
+        .summary-step p { font-size: 0.9em; margin: 5px 0; }
+        .summary-step p span { font-weight: bold; color: var(--text-dark); }
+
+        /* --- New Feature Styles --- */
+        .tooltip {
+            position: absolute; background-color: var(--secondary-color); color: var(--text-dark);
+            padding: 10px; border-radius: 8px; z-index: 10; font-size: 0.9em;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); max-width: 250px;
+        }
+        .prediction-section { margin-top: 15px; }
+        .prediction-section label { font-size: 0.9em; }
+        .slider-container { display: flex; align-items: center; gap: 10px; }
+        input[type="range"] { flex-grow: 1; }
+        .slider-value { font-weight: bold; color: var(--primary-color); }
+        
+        .outcome-section { margin-top: 15px; }
+        
+        #log-section, #badge-section { margin-top: 40px; padding-top: 20px; border-top: 2px dashed var(--border-color); }
+        .log-entry { background-color: #fdfdff; border: 1px solid var(--border-color); border-radius: 12px; padding: 15px; margin-bottom: 15px; text-align: left; }
+        .log-entry h4 { margin: 0 0 10px; color: var(--primary-color); }
+        .log-entry small { color: var(--text-light); }
+        
+        .badge-grid { display: flex; gap: 15px; justify-content: center; }
+        .badge { display: flex; flex-direction: column; align-items: center; }
+        .badge-icon { font-size: 3em; color: var(--border-color); transition: color 0.3s; }
+        .badge.earned .badge-icon { color: var(--secondary-color); }
+        .badge-label { font-size: 0.8em; color: var(--text-light); }
+        
+        #toast-container { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1001; }
+        .toast { background-color: var(--text-dark); color: #fff; padding: 12px 20px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); opacity: 0; transition: all 0.3s ease; transform: translateY(20px); }
+        .toast.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="app-title"><i class="fas fa-rocket"></i> 行為實驗階梯</h1>
+        <p class="subtitle">將「想做但害怕」的事情，拆解為可逐步嘗試的階梯行動</p>
+        
+        <!-- Visual Progress Bar -->
+        <div class="progress-bar">
+            <div class="progress-step active" id="progress-step-1">
+                <div class="progress-icon"><i class="fas fa-flag"></i></div>
+                <div class="progress-label">設定目標</div>
+                <div class="progress-line"></div>
+            </div>
+            <div class="progress-step" id="progress-step-2">
+                <div class="progress-icon"><i class="fas fa-stairs"></i></div>
+                <div class="progress-label">建立階梯</div>
+                <div class="progress-line"></div>
+            </div>
+            <div class="progress-step" id="progress-step-3">
+                <div class="progress-icon"><i class="fas fa-vial"></i></div>
+                <div class="progress-label">進行實驗</div>
+                <div class="progress-line"></div>
+            </div>
+            <div class="progress-step" id="progress-step-4">
+                <div class="progress-icon"><i class="fas fa-book-open"></i></div>
+                <div class="progress-label">回顧總結</div>
+            </div>
+        </div>
+
+        <!-- Step 1: Intro -->
+        <div id="step1-intro" class="content-section active">
+            <div class="card" style="text-align: left;">
+                <h2>什麼是「行為實驗」？</h2>
+                <p>這是一個自我教練工具，旨在幫助你將感到壓力的「大目標」拆解成一系列「小實驗」。透過「做了什麼」與「學到了什麼」，逐步建立自信，最終達成目標。</p>
+            </div>
+            <div class="button-group">
+                <button id="start-btn" class="action-button">開始建立我的階梯 <i class="fas fa-arrow-right"></i></button>
+                <button id="example-btn" class="action-button secondary">跟著範例走一次 <i class="fas fa-magic"></i></button>
+            </div>
+        </div>
+
+        <!-- Step 2: Input Challenge & Beliefs -->
+        <div id="step2-input" class="content-section">
+            <div class="card">
+                <label for="challenge-action"><i class="fas fa-bullseye"></i> 挑戰行動：你目前想做但遲遲沒做的事情？</label>
+                <textarea id="challenge-action" placeholder="例如：在團隊會議中提出自己的點子"></textarea>
+            </div>
+            <div class="card">
+                <label><i class="fas fa-brain"></i> 自我限制語句（可選）：你腦中出現的自我懷疑？</label>
+                <ul class="belief-list">
+                    <li class="belief-item"><input type="checkbox" id="belief1" value="我這樣會不會被討厭？"><label for="belief1">我這樣會不會被討厭？</label></li>
+                    <li class="belief-item"><input type="checkbox" id="belief2" value="我還沒準備好。"><label for="belief2">我還沒準備好。</label></li>
+                    <li class="belief-item"><input type="checkbox" id="belief3" value="萬一我失敗了怎麼辦？"><label for="belief3">萬一我失敗了怎麼辦？</label></li>
+                    <li class="belief-item"><input type="checkbox" id="belief4" value="別人都比我更懂。"><label for="belief4">別人都比我更懂。</label></li>
+                    <li class="belief-item"><input type="checkbox" id="belief5" value="自訂..."><label for="belief5">自訂...</label><input type="text" id="custom-belief-text" class="custom-belief-input" placeholder="例如：我沒有足夠的經驗..."></li>
+                </ul>
+            </div>
+            <div class="button-group">
+                <button class="action-button secondary" onclick="navigateTo('intro')"><i class="fas fa-arrow-left"></i> 返回</button>
+                <button id="next-to-ladder-btn" class="action-button" disabled>建立行動階梯 <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+        
+        <!-- Step 3: Build Ladder -->
+        <div id="step3-ladder" class="content-section">
+            <div class="card">
+                <h2><i class="fas fa-list-ol"></i> 建立你的行動階梯</h2>
+                <p>請將挑戰拆解成 3-5 個階層。從「最容易的第一步」到「最終挑戰」。</p>
+                <div id="ladder-builder"></div>
+                <div class="button-group">
+                    <button id="add-step-btn" class="add-step-btn"><i class="fas fa-plus"></i> 新增階層</button>
+                    <button id="suggest-step-btn" class="action-button secondary"><i class="fas fa-lightbulb"></i> 需要靈感嗎？</button>
+                </div>
+            </div>
+            <div class="button-group">
+                <button class="action-button secondary" onclick="navigateTo('input')"><i class="fas fa-arrow-left"></i> 上一步</button>
+                <button id="next-to-summary-btn" class="action-button" disabled>完成並預覽 <i class="fas fa-check"></i></button>
+            </div>
+        </div>
+
+        <!-- Step 4: Summary & Export -->
+        <div id="step4-summary" class="content-section">
+            <h2><i class="fas fa-flag-checkered"></i> 你的行動階梯已完成！</h2>
+            <p>這是你的實驗計畫。完成每個實驗後，記得回來記錄實際結果！</p>
+            <div id="export-preview-container">
+                <!-- Summary will be rendered here -->
+            </div>
+            <div class="button-group">
+                <button class="action-button secondary" onclick="navigateTo('ladder')"><i class="fas fa-pencil-alt"></i> 修改階梯</button>
+                <button id="save-to-log-btn" class="action-button"><i class="fas fa-save"></i> 儲存至日誌</button>
+                <button id="export-pdf-btn" class="action-button"><i class="fas fa-file-pdf"></i> 匯出為 PDF</button>
+            </div>
+        </div>
+
+        <!-- Log & Badge Sections -->
+        <div id="log-section" class="content-section">
+            <h2><i class="fas fa-book"></i> 我的實驗日誌</h2>
+            <div id="log-entries"></div>
+            <div class="button-group">
+                <button class="action-button" onclick="navigateTo('intro')"><i class="fas fa-plus"></i> 開始新的實驗</button>
+            </div>
+        </div>
+        <div id="badge-section" class="content-section">
+            <h2><i class="fas fa-trophy"></i> 我的成就</h2>
+            <div id="badge-grid" class="badge-grid"></div>
+        </div>
+    </div>
+
+    <div id="toast-container"></div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- DOM Elements ---
+            const contentSections = document.querySelectorAll('.content-section');
+            const progressSteps = document.querySelectorAll('.progress-step');
+            // Buttons
+            const startBtn = document.getElementById('start-btn');
+            const exampleBtn = document.getElementById('example-btn');
+            const nextToLadderBtn = document.getElementById('next-to-ladder-btn');
+            const nextToSummaryBtn = document.getElementById('next-to-summary-btn');
+            const addStepBtn = document.getElementById('add-step-btn');
+            const suggestStepBtn = document.getElementById('suggest-step-btn');
+            const saveToLogBtn = document.getElementById('save-to-log-btn');
+            const exportPdfBtn = document.getElementById('export-pdf-btn');
+            // Inputs & Containers
+            const challengeActionInput = document.getElementById('challenge-action');
+            const customBeliefInput = document.getElementById('custom-belief-text');
+            const beliefCheckboxes = document.querySelectorAll('.belief-list input[type="checkbox"]');
+            const ladderBuilderContainer = document.getElementById('ladder-builder');
+            const summaryContainer = document.getElementById('export-preview-container');
+            const logContainer = document.getElementById('log-entries');
+            const badgeContainer = document.getElementById('badge-grid');
+
+            // --- State Management ---
+            let currentState = {};
+            let experimentLog = [];
+            
+            const initialState = {
+                id: null,
+                challenge: '',
+                beliefs: [],
+                ladder: [],
+                status: 'active'
+            };
+
+            const exampleState = {
+                id: 'example-1',
+                challenge: '在團隊會議中提出自己的點子',
+                beliefs: ['我這樣會不會被討厭？', '別人都比我更懂。'],
+                ladder: [
+                    { action: '在會議後，私下找一位信任的同事，分享我的想法。', prediction: 20, outcome: '', actual: null },
+                    { action: '在人數較少的內部討論中，提出一個補充性質的建議。', prediction: 50, outcome: '', actual: null },
+                    { action: '在正式的團隊會議中，對現有議題提出一個疑問或想法。', prediction: 80, outcome: '', actual: null }
+                ],
+                status: 'active'
+            };
+
+            // --- Core Functions ---
+            function navigateTo(step) {
+                // Hide all tooltips when navigating
+                document.querySelectorAll('.tooltip').forEach(t => t.remove());
+                
+                // Update progress bar
+                const steps = ['intro', 'input', 'ladder', 'summary'];
+                const currentIdx = steps.indexOf(step);
+                progressSteps.forEach((pStep, idx) => {
+                    pStep.classList.remove('active', 'completed');
+                    if (idx < currentIdx) pStep.classList.add('completed');
+                    if (idx === currentIdx) pStep.classList.add('active');
+                });
+
+                contentSections.forEach(s => s.classList.remove('active'));
+                document.getElementById(`${step.includes('step') ? step : 'step' + (currentIdx + 1) + '-' + step}`).classList.add('active');
+                
+                // Special rendering logic
+                if (step === 'ladder') renderLadderBuilder();
+                if (step === 'summary') renderSummary();
+            }
+
+            function startNewExperiment() {
+                currentState = JSON.parse(JSON.stringify(initialState));
+                currentState.id = Date.now();
+                navigateTo('input');
+                renderUI();
+            }
+            
+            function startExample() {
+                currentState = JSON.parse(JSON.stringify(exampleState));
+                navigateTo('input');
+                renderUI();
+                // Show tooltips for example
+                showTooltip(challengeActionInput, '這是一個明確、可執行的目標。');
+                showTooltip(document.getElementById('belief1').parentElement, '寫下阻礙你行動的內在擔憂。');
+                setTimeout(() => nextToLadderBtn.focus(), 100);
+            }
+
+            function renderUI() {
+                // Step 2
+                challengeActionInput.value = currentState.challenge || '';
+                beliefCheckboxes.forEach(checkbox => {
+                    if (checkbox.id === 'belief5') {
+                        const customBelief = currentState.beliefs.find(b => !["我這樣會不會被討厭？", "我還沒準備好。", "萬一我失敗了怎麼辦？", "別人都比我更懂。"].includes(b));
+                        customBeliefInput.value = customBelief || '';
+                        checkbox.checked = !!customBelief;
+                    } else {
+                        checkbox.checked = currentState.beliefs.includes(checkbox.value);
+                    }
+                });
+                checkStep2Validity();
+                
+                // Step 3
+                if (document.getElementById('step3-ladder').classList.contains('active')) {
+                    renderLadderBuilder();
+                }
+            }
+
+            // --- Step 2: Input ---
+            function handleInputUpdate() {
+                currentState.challenge = challengeActionInput.value;
+                currentState.beliefs = getSelectedBeliefs();
+                checkStep2Validity();
+            }
+            function getSelectedBeliefs() {
+                const beliefs = [];
+                beliefCheckboxes.forEach(checkbox => {
+                    if (checkbox.checked) {
+                        if (checkbox.id === 'belief5' && customBeliefInput.value.trim()) {
+                            beliefs.push(customBeliefInput.value.trim());
+                        } else if (checkbox.id !== 'belief5') {
+                            beliefs.push(checkbox.value);
+                        }
+                    }
+                });
+                return beliefs;
+            }
+            function checkStep2Validity() {
+                nextToLadderBtn.disabled = !challengeActionInput.value.trim();
+            }
+
+            // --- Step 3: Ladder Builder ---
+            function renderLadderBuilder() {
+                ladderBuilderContainer.innerHTML = '';
+                currentState.ladder.forEach((step, index) => {
+                    const stepElement = document.createElement('div');
+                    stepElement.className = 'ladder-step';
+                    stepElement.draggable = true;
+                    stepElement.dataset.index = index;
+                    stepElement.innerHTML = `
+                        <i class="fas fa-grip-vertical step-handle"></i>
+                        <div class="ladder-info">
+                            <label>階層 ${index + 1}: 行動描述</label>
+                            <input type="text" data-field="action" placeholder="一個具體、可執行的小步驟" value="${step.action || ''}">
+                            <div class="prediction-section">
+                                <label>預測擔憂成真的機率：</label>
+                                <div class="slider-container">
+                                    <input type="range" data-field="prediction" min="0" max="100" step="5" value="${step.prediction || 0}">
+                                    <span class="slider-value">${step.prediction || 0}%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="remove-step-btn"><i class="fas fa-times"></i></button>
+                    `;
+                    ladderBuilderContainer.appendChild(stepElement);
+                });
+                setupDragAndDrop();
+                checkStep3Validity();
+            }
+            function addLadderStep() {
+                if (currentState.ladder.length < 5) {
+                    currentState.ladder.push({ action: '', prediction: 0, outcome: '', actual: null });
+                    renderLadderBuilder();
+                } else {
+                    showToast('最多只能建立 5 個階層', 'info');
+                }
+            }
+            function suggestStep() {
+                if (!currentState.challenge) {
+                    showToast('請先在第一步設定您的最終挑戰目標。', 'info');
+                    return;
+                }
+                const lastStep = currentState.ladder.length > 0 ? currentState.ladder[currentState.ladder.length - 1].action : "一個小步驟";
+                const suggestion = `將「${currentState.challenge}」這個大目標，拆解成比「${lastStep}」更容易的一小步。例如：只是先觀察別人怎麼做，或寫下草稿。`;
+                
+                const newStep = { action: suggestion, prediction: 10, outcome: '', actual: null };
+                currentState.ladder.push(newStep);
+                renderLadderBuilder();
+                showToast('已為您新增一個靈感建議！', 'success');
+            }
+            function checkStep3Validity() {
+                nextToSummaryBtn.disabled = currentState.ladder.length < 1 || currentState.ladder.some(step => !step.action.trim());
+            }
+
+            // --- Step 4: Summary ---
+            function renderSummary() {
+                summaryContainer.innerHTML = `
+                    <div class="summary-header">
+                        <h2><i class="fas fa-bullseye"></i> 挑戰行動</h2>
+                        <p>${currentState.challenge}</p>
+                    </div>
+                    <div class="summary-details">
+                        <h3><i class="fas fa-brain"></i> 相關信念</h3>
+                        <p>${currentState.beliefs.length > 0 ? currentState.beliefs.join('；') : '無'}</p>
+                    </div>
+                    <div class="summary-details">
+                        <h3><i class="fas fa-stairs"></i> 行動階梯</h3>
+                        <div id="summary-ladder" class="summary-ladder"></div>
+                    </div>
+                `;
+                const summaryLadderContainer = document.getElementById('summary-ladder');
+                currentState.ladder.forEach((step, index) => {
+                    const stepElement = document.createElement('div');
+                    stepElement.className = 'summary-step';
+                    stepElement.innerHTML = `
+                        <h4>階層 ${index + 1}: ${step.action}</h4>
+                        <p><span>預測擔憂機率：</span>${step.prediction}%</p>
+                        <div class="outcome-section">
+                            <label>實際結果紀錄：</label>
+                            <textarea data-index="${index}" data-field="outcome" placeholder="完成後，記錄下實際發生的情況...">${step.outcome || ''}</textarea>
+                            <label>擔憂實際發生機率：</label>
+                            <div class="slider-container">
+                                <input type="range" data-index="${index}" data-field="actual" min="0" max="100" step="5" value="${step.actual || 0}">
+                                <span class="slider-value">${step.actual || 0}%</span>
+                            </div>
+                        </div>
+                    `;
+                    summaryLadderContainer.appendChild(stepElement);
+                });
+            }
+            
+            // --- Log & Badges ---
+            function saveToLog() {
+                currentState.status = 'completed';
+                const existingIndex = experimentLog.findIndex(item => item.id === currentState.id);
+                if (existingIndex > -1) {
+                    experimentLog[existingIndex] = JSON.parse(JSON.stringify(currentState));
+                } else {
+                    experimentLog.push(JSON.parse(JSON.stringify(currentState)));
+                }
+                localStorage.setItem('behaviouralLadderLog', JSON.stringify(experimentLog));
+                showToast('實驗已儲存至日誌！', 'success');
+                renderLog();
+                renderBadges();
+            }
+            function renderLog() {
+                logContainer.innerHTML = '';
+                if (experimentLog.length === 0) {
+                    logContainer.innerHTML = '<p>您的實驗日誌目前是空的。</p>';
+                    return;
+                }
+                experimentLog.forEach(log => {
+                    const entry = document.createElement('div');
+                    entry.className = 'log-entry';
+                    entry.innerHTML = `
+                        <h4>${log.challenge}</h4>
+                        <p>完成了 ${log.ladder.length} 個階梯實驗。</p>
+                        <small>建立日期: ${new Date(log.id).toLocaleDateString()}</small>
+                    `;
+                    logContainer.appendChild(entry);
+                });
+            }
+            function renderBadges() {
+                badgeContainer.innerHTML = '';
+                const badges = [
+                    { id: 'first_step', label: '踏出第一步', earned: experimentLog.length > 0 }
+                ];
+                badges.forEach(badge => {
+                    const badgeEl = document.createElement('div');
+                    badgeEl.className = `badge ${badge.earned ? 'earned' : ''}`;
+                    badgeEl.innerHTML = `
+                        <div class="badge-icon"><i class="fas fa-shoe-prints"></i></div>
+                        <div class="badge-label">${badge.label}</div>
+                    `;
+                    badgeContainer.appendChild(badgeEl);
+                });
+            }
+
+            // --- Helpers ---
+            function showTooltip(element, text) {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = text;
+                document.body.appendChild(tooltip);
+                const rect = element.getBoundingClientRect();
+                tooltip.style.left = `${rect.left}px`;
+                tooltip.style.top = `${rect.bottom + 10}px`;
+            }
+            function showToast(message, type = 'info') {
+                const toast = document.createElement('div');
+                toast.className = `toast ${type}`;
+                toast.innerHTML = `<span>${message}</span>`;
+                document.getElementById('toast-container').appendChild(toast);
+                setTimeout(() => toast.classList.add('visible'), 10);
+                setTimeout(() => {
+                    toast.classList.remove('visible');
+                    toast.addEventListener('transitionend', () => toast.remove());
+                }, 3000);
+            }
+            function setupDragAndDrop() { /* ... implementation ... */ }
+            async function exportAsPDF() {
+                saveToLog(); // Ensure latest data is captured
+                const container = summaryContainer;
+                const originalTitle = document.querySelector('h2');
+                originalTitle.textContent = "我的行為實驗階梯";
+                
+                showToast('正在生成 PDF...', 'info');
+
+                const canvas = await html2canvas(container, { scale: 2 });
+                const imgData = canvas.toDataURL('image/png');
+                
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = pdf.internal.pageSize.getHeight();
+                const imgProps= pdf.getImageProperties(imgData);
+                const imgHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, imgHeight);
+
+                // Add reflection page
+                pdf.addPage();
+                pdf.setFontSize(18);
+                pdf.text("我的實驗反思頁", pdfWidth / 2, 20, { align: 'center' });
+                pdf.setFontSize(12);
+                const reflectionText = [
+                    '1. 在這次實驗中，我最大的發現是什麼？',
+                    '2. 哪個步驟比我想像的更容易/更困難？為什麼？',
+                    '3. 我的「自我限制信念」在實驗後有什麼變化？',
+                    '4. 預測的擔憂機率和實際發生的機率，兩者之間有什麼差距？這告訴我什麼？',
+                    '5. 下一次，我可以做什麼讓實驗更順利？'
+                ];
+                pdf.text(reflectionText.join('\n\n'), 15, 40);
+
+                pdf.save('我的行為實驗階梯.pdf');
+                showToast('PDF 匯出成功！', 'success');
+                originalTitle.textContent = "你的行動階梯已完成！";
+            }
+
+            // --- Event Listeners ---
+            startBtn.addEventListener('click', startNewExperiment);
+            exampleBtn.addEventListener('click', startExample);
+            nextToLadderBtn.addEventListener('click', () => navigateTo('ladder'));
+            nextToSummaryBtn.addEventListener('click', () => navigateTo('summary'));
+            addStepBtn.addEventListener('click', addLadderStep);
+            suggestStepBtn.addEventListener('click', suggestStep);
+            saveToLogBtn.addEventListener('click', saveToLog);
+            exportPdfBtn.addEventListener('click', exportAsPDF);
+            
+            challengeActionInput.addEventListener('input', handleInputUpdate);
+            customBeliefInput.addEventListener('input', handleInputUpdate);
+            beliefCheckboxes.forEach(cb => cb.addEventListener('change', handleInputUpdate));
+            
+            ladderBuilderContainer.addEventListener('input', (e) => {
+                const input = e.target;
+                const field = input.dataset.field;
+                const index = parseInt(input.closest('.ladder-step').dataset.index);
+                const value = input.type === 'range' ? parseInt(input.value) : input.value;
+
+                if (currentState.ladder[index]) {
+                    currentState.ladder[index][field] = value;
+                    if (input.type === 'range') {
+                        input.nextElementSibling.textContent = `${value}%`;
+                    }
+                }
+                checkStep3Validity();
+            });
+            ladderBuilderContainer.addEventListener('click', (e) => {
+                if (e.target.closest('.remove-step-btn')) {
+                    const index = parseInt(e.target.closest('.ladder-step').dataset.index);
+                    currentState.ladder.splice(index, 1);
+                    renderLadderBuilder();
+                }
+            });
+            summaryContainer.addEventListener('input', (e) => {
+                 const input = e.target;
+                 const field = input.dataset.field;
+                 const index = parseInt(input.dataset.index);
+                 const value = input.type === 'range' ? parseInt(input.value) : input.value;
+                 if (currentState.ladder[index]) {
+                    currentState.ladder[index][field] = value;
+                    if (input.type === 'range') {
+                        input.nextElementSibling.textContent = `${value}%`;
+                    }
+                }
+            });
+
+            // --- Initialization ---
+            function init() {
+                const savedLog = localStorage.getItem('behaviouralLadderLog');
+                if (savedLog) {
+                    experimentLog = JSON.parse(savedLog);
+                }
+                startNewExperiment(); // Start with a fresh slate
+                navigateTo('intro');
+                renderLog();
+                renderBadges();
+            }
+
+            init();
+        });
+    </script>
+</body>
+</html>

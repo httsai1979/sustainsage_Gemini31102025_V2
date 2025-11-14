@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自我對話重塑卡 - 進階版本</title>
+    <!-- 引入 Google Fonts Noto Sans & Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- 引入 Font Awesome 6.4.0 圖示庫 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS 變數定義，方便管理顏色與樣式 */
+        :root {
+            --primary-color: #7B68EE; /* Soft Purple */
+            --secondary-color: #FFDAB9; /* Soft Peach */
+            --background-color: #f0f2f5;
+            --card-front-bg: #fff;
+            --card-back-bg: #F0F8FF; /* Light Blue */
+            --text-dark: #333;
+            --text-light: #555;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --border-color: rgba(0, 0, 0, 0.05);
+            --font-family-zh: 'Noto Sans TC', sans-serif;
+            --font-family-en: 'Roboto', sans-serif;
+        }
+
+        /* 全域樣式 */
+        body {
+            font-family: var(--font-family-zh), var(--font-family-en);
+            background-color: var(--background-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* 調整為頂部對齊以適應行動裝置 */
+            min-height: 100vh;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* 主容器 */
+        .container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+            padding-top: 20px;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        /* 翻牌卡片區塊 */
+        .card-container {
+            perspective: 1000px;
+            width: 100%;
+            height: 350px;
+            max-width: 500px;
+            margin: 0 auto 20px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            cursor: pointer;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .front {
+            background-color: var(--card-front-bg);
+            z-index: 2;
+        }
+
+        .back {
+            background-color: var(--card-back-bg);
+            transform: rotateY(180deg);
+            position: relative;
+        }
+
+        .back .prompt-text {
+            font-size: 1.2em;
+            line-height: 1.5;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        /* 語音朗讀圖示 */
+        .speak-icon {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+        .speak-icon:hover {
+            transform: scale(1.1);
+        }
+        .speak-icon.speaking {
+            animation: pulse 1s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.2); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* 使用者輸入區塊 */
+        .user-input {
+            margin-top: 25px;
+            width: 100%;
+            position: relative;
+        }
+
+        .user-input textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 15px;
+            padding-right: 50px; /* 留出空間給語音輸入按鈕 */
+            border-radius: 15px;
+            border: 2px solid var(--border-color);
+            background-color: #fff;
+            font-size: 1.1em;
+            font-family: inherit;
+            resize: vertical;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .user-input textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 4px rgba(123, 104, 238, 0.1);
+        }
+
+        /* 語音輸入按鈕與視覺化波紋 */
+        .voice-input-btn {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.2s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .voice-input-btn:hover {
+            background-color: #6a5acd;
+        }
+
+        .voice-input-btn.listening {
+            background-color: #dc3545;
+        }
+
+        .voice-input-btn.listening i {
+            animation: voice-pulse 1.2s infinite;
+        }
+
+        @keyframes voice-pulse {
+            0% { transform: scale(0.8); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(0.8); }
+        }
+        
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            animation: ripple-effect 1.5s infinite;
+        }
+
+        @keyframes ripple-effect {
+            from {
+                transform: scale(0);
+                opacity: 1;
+            }
+            to {
+                transform: scale(2);
+                opacity: 0;
+            }
+        }
+        
+        /* 提示語句區塊 */
+        .hint-section {
+            margin-top: 15px;
+            text-align: left;
+            display: none;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .hint-section.visible {
+            display: block;
+            animation: slideDown 0.4s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hint-section p {
+            margin: 0;
+            font-size: 0.95em;
+            color: var(--text-light);
+        }
+        
+        .hint-section ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            list-style: none;
+        }
+
+        .hint-section ul li {
+            position: relative;
+            margin-bottom: 8px;
+            padding-left: 15px;
+            color: var(--text-light);
+        }
+        
+        .hint-section ul li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 1.2em;
+        }
+
+        /* 按鈕區塊 */
+        .button-group {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .action-button, .nav-button {
+            background-color: #fff;
+            color: var(--text-dark);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 4px 15px var(--shadow-color);
+        }
+
+        .action-button:hover, .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow-color);
+        }
+        
+        .action-button:active, .nav-button:active {
+            transform: translateY(1px) scale(0.98);
+        }
+
+        .main-action-button {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+        }
+
+        .main-action-button:hover {
+            background-color: #6a5acd;
+        }
+
+        .download-button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+        }
+        
+        .skip-button {
+            background-color: #ffc107;
+            color: var(--text-dark);
+            border: none;
+        }
+
+        /* 模態視窗 */
+        .modal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .modal-container.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transform: translateY(-50px);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal-container.visible .modal {
+            transform: translateY(0);
+        }
+
+        .modal-buttons {
+            margin-top: 25px;
+            display: flex;
+            justify-content: space-around;
+            gap: 15px;
+        }
+
+        .modal-buttons button {
+            flex: 1;
+        }
+
+        /* 訊息提示 (Toast) */
+        #toast-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1001;
+        }
+
+        .toast {
+            background-color: var(--text-dark);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: all 0.3s ease-out;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .toast.success { background-color: #28a745; }
+        .toast.info { background-color: #17a2b8; }
+        .toast.error { background-color: #dc3545; }
+
+        /* 行動裝置適應 */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                align-items: flex-start;
+            }
+
+            .container {
+                padding-top: 10px;
+            }
+
+            h1 {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .card-container {
+                height: 300px;
+            }
+
+            .card-face {
+                font-size: 1.2em;
+                padding: 15px;
+            }
+
+            .back .prompt-text {
+                font-size: 1em;
+            }
+
+            .user-input textarea {
+                min-height: 60px;
+                padding: 12px;
+                font-size: 1em;
+                padding-right: 45px;
+            }
+            
+            .voice-input-btn {
+                width: 30px;
+                height: 30px;
+            }
+
+            .button-group {
+                gap: 8px;
+            }
+
+            .action-button, .nav-button {
+                font-size: 0.9em;
+                padding: 10px 15px;
+            }
+            .speak-icon {
+                top: 15px;
+                right: 20px;
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-heart"></i> 自我對話重塑卡</h1>
+        
+        <!-- 翻牌卡片區塊 -->
+        <div class="card-container">
+            <div id="card" class="card">
+                <div id="card-front" class="card-face front">
+                    <p id="negative-belief"></p>
+                </div>
+                <div id="card-back" class="card-face back">
+                    <p id="prompt-question" class="prompt-text"></p>
+                    <!-- 語音朗讀按鈕 -->
+                    <i id="speak-icon" class="fas fa-volume-up speak-icon"></i>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 使用者輸入區塊 -->
+        <div class="user-input">
+            <textarea id="reframe-input" placeholder="在這裡輸入你的溫和重塑語句..."></textarea>
+            <!-- 語音輸入按鈕 -->
+            <button id="voice-input-btn" class="voice-input-btn"><i class="fas fa-microphone"></i></button>
+        </div>
+        
+        <!-- 提示語句區塊 -->
+        <div id="hint-section" class="hint-section">
+            <p>參考範例：</p>
+            <ul id="hint-list"></ul>
+        </div>
+        
+        <!-- 行動按鈕區塊 -->
+        <div class="button-group">
+            <button id="flip-btn" class="action-button main-action-button"><i class="fas fa-sync-alt"></i> 翻牌</button>
+            <button id="save-btn" class="action-button"><i class="fas fa-heart"></i> 收藏</button>
+            <button id="hint-btn" class="action-button"><i class="fas fa-lightbulb"></i> 提示</button>
+            <button id="skip-btn" class="action-button skip-button"><i class="fas fa-forward"></i> 跳過</button>
+            <button id="next-btn" class="action-button main-action-button nav-button" style="display: none;"><i class="fas fa-arrow-right"></i> 下一張卡</button>
+        </div>
+        <div class="button-group">
+            <button id="download-btn" class="action-button download-button"><i class="fas fa-download"></i> 下載收藏</button>
+        </div>
+
+    </div>
+
+    <!-- 下載模態視窗 -->
+    <div id="download-modal-container" class="modal-container">
+        <div class="modal">
+            <h3>選擇下載格式</h3>
+            <div class="modal-buttons">
+                <button id="download-txt-btn" class="action-button">.txt</button>
+                <button id="download-json-btn" class="action-button">.json</button>
+                <button id="close-modal-btn" class="action-button">取消</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 訊息提示 (Toast) -->
+    <div id="toast-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 自我對話卡片清單
+            const cards = [
+                {
+                    negative: "我總是把事情搞砸。",
+                    prompt: "如果你的朋友說了這句話，你會如何回應他？",
+                    hints: ["這只是一次挫折，不代表你總是這樣。", "試著從這次經驗中學到東西，而不是責怪自己。", "你過去也有許多成功的時刻，別忘了它們。"]
+                },
+                {
+                    negative: "我覺得自己不夠好。",
+                    prompt: "你的價值來自於什麼？是你做的事，還是你這個人本身？",
+                    hints: ["我的價值並非來自於我做了什麼，而是我本來的樣子。", "我不需要完美，我只需要盡力而為。", "我正走在成長的路上，這就夠好了。"]
+                },
+                {
+                    negative: "我又失敗了。",
+                    prompt: "「失敗」對你來說意味著什麼？它是一個終點還是一個過程？",
+                    hints: ["每次嘗試都是一次學習的機會，而不是失敗。", "我允許自己犯錯，這是人類成長的必經之路。", "我會重新站起來，再次嘗試。"]
+                },
+                {
+                    negative: "我是別人的負擔。",
+                    prompt: "誰最近讓你感到被支持？那種感覺是什麼？",
+                    hints: ["尋求幫助是勇敢的表現，這讓我更強大。", "我不是負擔，我值得被愛與支持。", "當我幫助別人時，我感到很快樂，我相信別人也一樣。"]
+                },
+                {
+                    negative: "我應該要做得更多。",
+                    prompt: "這個想法是幫助你，還是傷害你？",
+                    hints: ["我已經做得夠多了，我值得休息。", "我會設定合理的期望，並且為自己感到驕傲。", "我會給予自己應得的讚美。"]
+                },
+                {
+                    negative: "沒有人欣賞我所做的一切。",
+                    prompt: "最近有什麼小事讓你有被感謝的感覺嗎？",
+                    hints: ["我的價值不依賴於他人的認可。", "即使沒有人看到，我仍然為自己的努力感到驕傲。", "我會專注於那些讓自己感到滿足的事。"]
+                },
+                {
+                    negative: "我永遠不可能達到我的目標。",
+                    prompt: "如果這句話是真的，那下一步是什麼？",
+                    hints: ["我會把目標分解成小步驟，一次只專注於一個。", "我正在朝著正確的方向前進，即使進度緩慢也沒關係。", "我會慶祝每個小小的進步。"]
+                },
+                {
+                    negative: "我不值得擁有幸福。",
+                    prompt: "你會對一個你所愛的人說這樣的話嗎？",
+                    hints: ["我值得擁有快樂、成功和幸福。", "我會像愛護朋友一樣愛護自己。", "我會善待自己，因為我是獨一無二的。"]
+                },
+                {
+                    negative: "我的想法不重要。",
+                    prompt: "試著找出你今天表達的一個想法，並回想它是否對某人產生了積極影響？",
+                    hints: ["我的觀點是獨特的，它們很重要。", "我會大聲說出我的想法，因為它們有價值。", "我的聲音值得被聽見。"]
+                },
+                {
+                    negative: "我只是在浪費時間。",
+                    prompt: "你今天的哪些行動讓你感到有意義？",
+                    hints: ["我正在學習和成長，這從來不是浪費時間。", "休息是為了走更長遠的路，這對我來說很重要。", "我會專注於當下的行動，而不是未來的結果。"]
+                },
+                {
+                    negative: "我太慢了，別人都在進步。",
+                    prompt: "你是否正在比較自己與他人的進度？你自己的進度是什麼？",
+                    hints: ["每個人的節奏都不同，我會專注在自己的旅程上。", "我會慶祝我自己的進步，而不是和別人比較。", "我的成長速度是由我自己定義的。"]
+                },
+                {
+                    negative: "這一切都太難了。",
+                    prompt: "這句話是在描述你的感覺，還是在陳述一個事實？",
+                    hints: ["我允許自己感到困難，並會尋求幫助。", "我會把困難分解成更小的部分，然後一次解決一個。", "我有能力應對挑戰。"]
+                }
+            ];
+
+            // DOM 元素選取
+            const cardElement = document.getElementById('card');
+            const negativeBeliefElement = document.getElementById('negative-belief');
+            const promptQuestionElement = document.getElementById('prompt-question');
+            const reframeInput = document.getElementById('reframe-input');
+            const hintSection = document.getElementById('hint-section');
+            const hintList = document.getElementById('hint-list');
+            
+            const flipBtn = document.getElementById('flip-btn');
+            const saveBtn = document.getElementById('save-btn');
+            const hintBtn = document.getElementById('hint-btn');
+            const skipBtn = document.getElementById('skip-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const downloadBtn = document.getElementById('download-btn');
+            const speakIcon = document.getElementById('speak-icon');
+            const voiceInputBtn = document.getElementById('voice-input-btn');
+
+            const downloadModalContainer = document.getElementById('download-modal-container');
+            const downloadTxtBtn = document.getElementById('download-txt-btn');
+            const downloadJsonBtn = document.getElementById('download-json-btn');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            
+            const toastContainer = document.getElementById('toast-container');
+            
+            // 狀態管理
+            let currentCardIndex = 0;
+            let isFlipped = false;
+            let savedResponses = JSON.parse(localStorage.getItem('selfTalkResponses')) || [];
+            let isSpeaking = false;
+            let isListening = false;
+            let recognition;
+
+            // 檢查瀏覽器是否支援語音輸入
+            const hasSpeechRecognition = 'webkitSpeechRecognition' in window || 'SpeechRecognition' in window;
+            if (!hasSpeechRecognition) {
+                voiceInputBtn.style.display = 'none';
+                console.warn('您的瀏覽器不支援語音輸入。');
+            } else {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+                recognition.lang = 'zh-TW';
+                recognition.interimResults = false;
+                recognition.maxAlternatives = 1;
+                
+                // 語音輸入開始
+                recognition.onstart = () => {
+                    isListening = true;
+                    voiceInputBtn.classList.add('listening');
+                    reframeInput.placeholder = "請開始說話...";
+                    showToast("正在聆聽您的聲音...", 'info');
+                };
+
+                // 語音輸入結果
+                recognition.onresult = (event) => {
+                    const speechResult = event.results[0][0].transcript;
+                    reframeInput.value = speechResult;
+                    reframeInput.focus();
+                    showToast("語音輸入完成！", 'success');
+                };
+
+                // 語音輸入結束
+                recognition.onend = () => {
+                    isListening = false;
+                    voiceInputBtn.classList.remove('listening');
+                    reframeInput.placeholder = "在這裡輸入你的溫和重塑語句...";
+                };
+
+                // 語音輸入錯誤
+                recognition.onerror = (event) => {
+                    isListening = false;
+                    voiceInputBtn.classList.remove('listening');
+                    reframeInput.placeholder = "在這裡輸入你的溫和重塑語句...";
+                    console.error('語音輸入錯誤:', event.error);
+                    showToast(`語音辨識錯誤: ${event.error}`, 'error');
+                };
+            }
+
+            // 函式：顯示訊息提示 (Toast)
+            function showToast(message, type = 'info') {
+                const toast = document.createElement('div');
+                toast.className = `toast ${type}`;
+                toast.innerHTML = `<i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-triangle' : 'fa-info-circle'}"></i> <span>${message}</span>`;
+                toastContainer.appendChild(toast);
+                setTimeout(() => toast.classList.add('show'), 10);
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    toast.addEventListener('transitionend', () => toast.remove());
+                }, 3000);
+            }
+
+            // 函式：顯示當前卡片內容
+            function renderCard() {
+                if (currentCardIndex >= cards.length) {
+                    currentCardIndex = 0; // 循環播放卡片
+                }
+                const currentCard = cards[currentCardIndex];
+                
+                negativeBeliefElement.textContent = currentCard.negative;
+                promptQuestionElement.textContent = currentCard.prompt;
+                reframeInput.value = '';
+                
+                // 渲染提示語句
+                hintList.innerHTML = currentCard.hints.map(hint => `<li>${hint}</li>`).join('');
+
+                // 重設卡片狀態
+                cardElement.classList.remove('flipped');
+                isFlipped = false;
+                hintSection.classList.remove('visible');
+                
+                // 顯示/隱藏按鈕
+                nextBtn.style.display = 'none';
+                flipBtn.style.display = 'inline-flex';
+
+                // 停止語音朗讀
+                if (isSpeaking) {
+                    window.speechSynthesis.cancel();
+                    isSpeaking = false;
+                    speakIcon.classList.remove('speaking');
+                }
+            }
+
+            // 函式：翻轉卡片
+            function flipCard() {
+                cardElement.classList.add('flipped');
+                isFlipped = true;
+                flipBtn.style.display = 'none';
+                nextBtn.style.display = 'inline-flex';
+            }
+
+            // 函式：切換提示語句的顯示狀態
+            function toggleHints() {
+                hintSection.classList.toggle('visible');
+            }
+
+            // 函式：收藏使用者語句
+            function saveResponse() {
+                const responseText = reframeInput.value.trim();
+                if (responseText === '') {
+                    showToast("請先輸入你的重塑語句", 'error');
+                    return;
+                }
+
+                const currentCard = cards[currentCardIndex];
+                const newResponse = {
+                    negativeBelief: currentCard.negative,
+                    promptQuestion: currentCard.prompt,
+                    userReframe: responseText,
+                    timestamp: new Date().toISOString()
+                };
+
+                // 檢查是否已收藏過此卡片，若有則更新
+                const existingIndex = savedResponses.findIndex(res => res.negativeBelief === newResponse.negativeBelief);
+                if (existingIndex > -1) {
+                    savedResponses[existingIndex] = newResponse;
+                    showToast("已更新收藏語句！", 'success');
+                } else {
+                    savedResponses.push(newResponse);
+                    showToast("已收藏！", 'success');
+                }
+                
+                localStorage.setItem('selfTalkResponses', JSON.stringify(savedResponses));
+            }
+
+            // 函式：跳過並進入下一張卡片
+            function skipCard() {
+                currentCardIndex++;
+                showToast("已跳過此卡", 'info');
+                renderCard();
+            }
+
+            // 函式：進入下一張卡片
+            function nextCard() {
+                currentCardIndex++;
+                renderCard();
+                reframeInput.value = '';
+            }
+
+            // 函式：朗讀提問
+            function speakPrompt() {
+                if ('speechSynthesis' in window) {
+                    if (isSpeaking) {
+                        window.speechSynthesis.cancel();
+                        isSpeaking = false;
+                        speakIcon.classList.remove('speaking');
+                    } else {
+                        const utterance = new SpeechSynthesisUtterance(promptQuestionElement.textContent);
+                        utterance.lang = 'zh-TW';
+                        utterance.onstart = () => {
+                            isSpeaking = true;
+                            speakIcon.classList.add('speaking');
+                        };
+                        utterance.onend = () => {
+                            isSpeaking = false;
+                            speakIcon.classList.remove('speaking');
+                        };
+                        window.speechSynthesis.speak(utterance);
+                    }
+                } else {
+                    showToast('您的瀏覽器不支援語音朗讀功能！', 'error');
+                }
+            }
+
+            // 函式：開啟/關閉語音輸入
+            function toggleVoiceInput() {
+                if (isListening) {
+                    recognition.stop();
+                } else {
+                    recognition.start();
+                }
+            }
+
+            // 函式：顯示下載模態視窗
+            function showDownloadModal() {
+                if (savedResponses.length === 0) {
+                    showToast("你還沒有任何收藏喔！", 'error');
+                    return;
+                }
+                downloadModalContainer.classList.add('visible');
+            }
+
+            // 函式：下載收藏資料
+            function downloadData(format) {
+                let data = '';
+                let filename = '';
+                let mimeType = '';
+
+                if (format === 'txt') {
+                    data = savedResponses.map(res => 
+                        `負面信念: ${res.negativeBelief}\n` +
+                        `提問: ${res.promptQuestion}\n` +
+                        `我的重塑語句: ${res.userReframe}\n` +
+                        `收藏時間: ${new Date(res.timestamp).toLocaleString()}\n` +
+                        `--------------------------\n`
+                    ).join('\n');
+                    filename = '我的自我對話重塑.txt';
+                    mimeType = 'text/plain';
+                } else if (format === 'json') {
+                    data = JSON.stringify(savedResponses, null, 2);
+                    filename = '我的自我對話重塑.json';
+                    mimeType = 'application/json';
+                }
+
+                const blob = new Blob([data], { type: mimeType });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                
+                showToast(`已下載為 ${filename}`, 'success');
+                downloadModalContainer.classList.remove('visible');
+            }
+
+            // 事件監聽器
+            cardElement.addEventListener('click', () => {
+                if (!isFlipped) flipCard();
+            });
+            flipBtn.addEventListener('click', flipCard);
+            saveBtn.addEventListener('click', saveResponse);
+            hintBtn.addEventListener('click', toggleHints);
+            skipBtn.addEventListener('click', skipCard);
+            nextBtn.addEventListener('click', nextCard);
+            downloadBtn.addEventListener('click', showDownloadModal);
+            speakIcon.addEventListener('click', (e) => {
+                e.stopPropagation(); // 避免點擊朗讀圖示時同時觸發卡片翻轉
+                speakPrompt();
+            });
+            voiceInputBtn.addEventListener('click', toggleVoiceInput);
+            
+            downloadTxtBtn.addEventListener('click', () => downloadData('txt'));
+            downloadJsonBtn.addEventListener('click', () => downloadData('json'));
+            closeModalBtn.addEventListener('click', () => downloadModalContainer.classList.remove('visible'));
+
+            // 初始化應用程式
+            renderCard();
+        });
+    </script>
+</body>
+</html>
