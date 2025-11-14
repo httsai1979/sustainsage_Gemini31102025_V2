@@ -12,6 +12,10 @@
       "href": "/legal/coaching-boundaries"
     }
   },
+  "faqLink": {
+    "label": "还有疑问？前往 FAQ。",
+    "href": "/faq"
+  },
   "pathways": {
     "title": "选择适合你的教练路径",
     "description": "四条最常被询问的路径，都会依你的情境弹性调整。",

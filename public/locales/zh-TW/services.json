@@ -12,6 +12,10 @@
       "href": "/legal/coaching-boundaries"
     }
   },
+  "faqLink": {
+    "label": "還有問題嗎？前往 FAQ。",
+    "href": "/faq"
+  },
   "pathways": {
     "title": "選擇適合你的教練路徑",
     "description": "四條最常被詢問的路徑，都會依你的情境彈性調整。",

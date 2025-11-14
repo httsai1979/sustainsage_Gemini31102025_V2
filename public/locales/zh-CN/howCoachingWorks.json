@@ -1,76 +1,76 @@
 {
   "seo": {
-    "title": "How coaching works | SustainSage",
-    "description": "Understand how SustainSage coaching aligns with ICF standards, what happens in a session, and how it differs from mentoring or therapy."
+    "title": "教练如何进行｜SustainSage",
+    "description": "了解 SustainSage 的教练如何遵循 ICF 伦理、会谈会发生什么，以及它与导师或治疗的差异。"
   },
   "hero": {
-    "title": "What coaching with us actually looks like",
-    "subtitle": "We follow International Coaching Federation (ICF) ethics: you stay in authorship; we provide structure, reflection and consent-based experiments.",
-    "imageAlt": "Coach and client exploring possibilities"
+    "title": "在 SustainSage 的教练合作长什么样子",
+    "subtitle": "我们遵守国际教练联盟 (ICF) 伦理：你始终握有决定权，我们提供结构、反思与基于同意的小实验。",
+    "imageAlt": "教练与来谈者一起探索可能性"
   },
   "definition": {
-    "title": "Coaching, defined",
+    "title": "我们对教练的定义",
     "paragraphs": [
-      "ICF describes coaching as a partnership that sparks clients’ thinking and creativity. In practice, it is a series of confidential conversations where you lead the agenda and we hold structure, questions and accountability.",
-      "We do not advise, diagnose or sell quick fixes. We co-design experiments so you can make informed choices that respect your context."
+      "ICF 认为教练是一段激发来谈者思考与创造力的合作关系。实务上，就是一连串保密的对话，由你决定议程，我们守住节奏、提问与回馈。",
+      "我们不会给出快速解方或诊断，而是共同设计实验，让你根据自己的脉络做出有根据的选择。"
     ]
   },
   "session": {
-    "title": "Inside a typical session",
-    "intro": "Sessions last 55–60 minutes (longer for Deepening). We work online unless otherwise agreed.",
+    "title": "一场典型会谈会做的事",
+    "intro": "会谈通常 55–60 分钟（Deepening 方案会更长），预设为线上，如需线下会事先协商。",
     "items": [
-      "We begin by naming what feels most alive or urgent today.",
-      "Together we map systems, emotions, assumptions and options.",
-      "We reflect themes back, celebrate wins and pause when discomfort needs tending.",
-      "You end with choices or experiments you consent to."
+      "先点出此刻最真实、最需要照顾的议题。",
+      "一起梳理系统、情绪、假设与选项，必要时会用图像化工具。",
+      "我们会回映看到的主题、肯定已有的进展，也会在需要停顿时放慢。",
+      "最后由你挑选愿意尝试或观察的小实验，并约定下次要回顾的内容。"
     ]
   },
   "comparison": {
-    "title": "Coaching vs mentoring vs therapy",
-    "caption": "This overview helps you choose the right support. They can complement each other, and we will signpost alternatives when needed.",
-    "headers": ["Aspect", "Coaching", "Mentoring", "Therapy"],
+    "title": "教练、导师与治疗的差别",
+    "caption": "这份对照表帮助你挑选合适的支持。三者可以互相搭配，我们也会在需要时转介其他资源。",
+    "headers": ["面向", "教练", "导师", "治疗"],
     "rows": [
       {
-        "aspect": "Primary focus",
-        "coaching": "Future-oriented goals, behaviour and decision-making.",
-        "mentoring": "Passing on experience, advice and networks.",
-        "therapy": "Healing past or present mental health concerns."
+        "aspect": "主要焦点",
+        "coaching": "面向未来的行动、行为与决策。",
+        "mentoring": "传承经验、人脉与建议。",
+        "therapy": "处理过去或当下的心理健康议题。"
       },
       {
-        "aspect": "Who leads the agenda",
-        "coaching": "You set the agenda; coach reflects and questions.",
-        "mentoring": "Mentor often suggests topics and solutions.",
-        "therapy": "Collaborative; therapist assesses and guides clinical care."
+        "aspect": "谁主导议题",
+        "coaching": "你设定议题，教练协助反思与整理。",
+        "mentoring": "导师常会主动安排主题或方向。",
+        "therapy": "共同讨论，但由治疗师进行专业评估并带领。"
       },
       {
-        "aspect": "Scope & boundaries",
-        "coaching": "Non-directive, non-clinical. Stops when trauma or safety concerns surface.",
-        "mentoring": "Experience-based tips within agreed boundaries.",
-        "therapy": "Clinical diagnosis and treatment delivered by licensed professionals."
+        "aspect": "范围与界线",
+        "coaching": "非指导式、非临床；若出现创伤或安全疑虑会暂停并转介。",
+        "mentoring": "在约定范围内分享自身经验。",
+        "therapy": "由具执照的专业人员进行临床诊断与治疗。"
       }
     ]
   },
   "ethics": {
-    "title": "Boundaries and confidentiality",
-    "intro": "We honour ICF ethics and UK safeguarding law. It means:",
+    "title": "界线与保密",
+    "intro": "我们遵循 ICF 伦理与英国 safeguarding 规范，意味着：",
     "items": [
-      "We keep conversations confidential unless there is risk of harm or legal obligation to disclose.",
-      "We obtain consent before sharing stories externally or inviting collaborators into a session.",
-      "We pause and signpost when issues require therapy, legal, medical or financial expertise."
+      "除非法律要求或存在危险风险，所有对话都会保密。",
+      "若需要对外分享故事或邀请协作者加入，会先取得你的同意。",
+      "当议题需要治疗、法律、医疗或财务专家时，我们会暂停并指向适合的资源。"
     ]
   },
   "expectations": {
-    "title": "What we ask of clients",
+    "title": "我们对来谈者的期待",
     "bullets": [
-      "Arrive with something real to explore, even if it feels messy or incomplete.",
-      "Tell us when pace, language or cultural framing needs adjusting.",
-      "Protect time after sessions to integrate insights, celebrate wins or rest.",
-      "Let us know early if circumstances change so we can re-contract."
+      "带着真实的情况来谈，即使还没想清楚也没关系。",
+      "若节奏、语言或文化框架需要调整，请直接告诉我们。",
+      "会谈后留一些时间整合、庆祝或休息。",
+      "情况有变化时尽早通知，好一起重新确认合作。"
     ]
   },
   "cta": {
-    "body": "If this way of working resonates, browse the packages or book the intro call so we can confirm fit together.",
-    "primary": "Compare packages",
-    "secondary": "Book a 20-min intro call"
+    "body": "如果这样的方式让你安心，欢迎先比较方案，或预约 20 分钟聊一聊，确认是否合适。",
+    "primary": "比较方案",
+    "secondary": "预约 20 分钟聊一聊"
   }
 }

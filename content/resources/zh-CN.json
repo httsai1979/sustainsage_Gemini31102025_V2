@@ -1,0 +1,28 @@
+[
+  {
+    "id": "behaviour-ladder",
+    "title": "行为实验阶梯",
+    "desc": "用安全的小实验在本周就得到回馈。",
+    "href": "/resources/behaviour-ladder",
+    "img": "/images/resources/behaviour-ladder.jpg",
+    "alt": "行为实验阶梯",
+    "downloadable": true,
+    "download": "/docs/behaviour-experiment-ladder.pdf"
+  },
+  {
+    "id": "selftalk-cards",
+    "title": "自我对话改写卡片",
+    "desc": "把苛刻语句换成更温柔且有用的提醒。",
+    "img": "/images/resources/selftalk.jpg",
+    "alt": "自我对话卡片",
+    "comingSoon": true
+  },
+  {
+    "id": "emotion-triangle",
+    "title": "情绪三角练习",
+    "desc": "从感受 → 需求 → 下一步，5 分钟理清。",
+    "img": "/images/resources/emotion-triangle.jpg",
+    "alt": "情绪三角",
+    "comingSoon": true
+  }
+]
