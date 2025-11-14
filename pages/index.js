@@ -101,7 +101,7 @@ export default function Home({
     {
       title: 'Initial conversation',
       description:
-        'A short chat to understand what is changing and share the boundaries we work within.',
+        'A 20-minute chat to understand what is changing and share the boundaries we work within.',
     },
     {
       title: 'Goal setting',
@@ -182,7 +182,7 @@ export default function Home({
             </div>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link href={hero?.primaryCta?.href ?? '/contact'} className="ss-btn-primary">
-                {hero?.primaryCta?.label ?? hero?.primaryCta ?? 'Book a chat'}
+                {hero?.primaryCta?.label ?? hero?.primaryCta ?? 'Book a 20-minute chat'}
               </Link>
               <Link href={hero?.secondaryCta?.href ?? '/services'} className="ss-btn-secondary text-sustain-text">
                 {hero?.secondaryCta?.label ?? hero?.secondaryCta ?? 'Who we help'}
@@ -329,7 +329,7 @@ export default function Home({
               {faqContent.ctaLabel}
             </Link>
             <Link href="/contact" className="ss-btn-primary">
-              Book a conversation
+              Book a 20-minute chat
             </Link>
           </div>
         </div>
