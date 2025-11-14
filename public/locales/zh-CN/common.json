@@ -8,7 +8,88 @@
     "navBlog": "博客",
     "navContact": "联系",
     "openMenu": "打开导航",
-    "closeMenu": "关闭导航"
+    "closeMenu": "关闭导航",
+    "languageSwitcherLabel": "切换语言",
+    "languages": {
+      "en-GB": "英文",
+      "zh-TW": "繁体中文",
+      "zh-CN": "简体中文"
+    },
+    "mega": {
+      "mobileCta": "查看服务",
+      "columns": [
+        {
+          "title": "教练选项",
+          "links": [
+            {
+              "label": "一对一教练",
+              "href": "/services",
+              "description": "有结构的客制化旅程。"
+            },
+            {
+              "label": "小型团体",
+              "href": "/services#group",
+              "description": "与经历相近的人一起前进。"
+            },
+            {
+              "label": "自学资源",
+              "href": "/resources",
+              "description": "随时可用的讲义与提问。"
+            }
+          ]
+        },
+        {
+          "title": "适合你的支持",
+          "links": [
+            {
+              "label": "中段职业调整",
+              "href": "/services#mid-career",
+              "description": "重新对齐最重要的优先顺序。"
+            },
+            {
+              "label": "新到英国",
+              "href": "/services#new-to-uk",
+              "description": "把你的故事翻译成跨文化语言。"
+            },
+            {
+              "label": "毕业生与重新出发者",
+              "href": "/services#graduates",
+              "description": "踏入新阶段时建立信心。"
+            }
+          ]
+        },
+        {
+          "title": "探索主题",
+          "links": [
+            {
+              "label": "职业转换",
+              "href": "/#topics",
+              "description": "用不匆忙的方式测试方向。"
+            },
+            {
+              "label": "信心与界线",
+              "href": "/#topics",
+              "description": "在休息与清晰之间取得平衡。"
+            },
+            {
+              "label": "在英国生活",
+              "href": "/#topics",
+              "description": "在新制度里建立归属感。"
+            }
+          ]
+        }
+      ],
+      "highlight": {
+        "title": "无论你身在何处都能得到温柔支持",
+        "description": "双语线上教练，兼顾伦理、结构与务实的善意。",
+        "ctaLabel": "探索服务",
+        "ctaHref": "/services"
+      }
+    }
+  },
+  "actions": {
+    "bookChat": "预约 20 分钟聊一聊",
+    "exploreServices": "探索服务"
   },
   "footer": {
     "philosophy": "用沉稳的对话看清方向。",
@@ -18,7 +99,15 @@
     "privacyPolicy": "隐私政策",
     "boundariesTitle": "教练范围与同意",
     "boundariesNotice": "教练聚焦面向未来的支持，不能替代治疗或其他专业建议。",
-    "boundariesLink": "阅读教练范围与同意"
+    "boundariesLink": "阅读教练范围与同意",
+    "ctaTitle": "需要更贴身的支持吗？",
+    "ctaBody": "预约 20 分钟聊一聊，看看 SustainSage 的教练节奏是否适合你。",
+    "companyName": "SustainSage Group Ltd.",
+    "companyDescription": "总部在 Portsmouth / Southsea 的双语转变教练服务。",
+    "locations": "Portsmouth · Southsea · 线上",
+    "quickLinksTitle": "快速链接",
+    "supportTitle": "支持",
+    "coachingApproach": "教练方法"
   },
   "stickyCta": {
     "title": "准备试个小实验吗？",
@@ -30,11 +119,7 @@
     "paragraph1": "我们遵循国际教练联盟 (ICF) 伦理守则。教练是一段合作、由来谈者主导的过程，用来支持你自主的学习与改变。这不是治疗、咨询、医疗、法律或财务建议；你仍对自己的选择与行动负责。",
     "paragraph2": "除非法律要求或存在危害风险，我们会保护你的保密性。开始之前会与你一起建立清楚的合作约定、目标与界线，并取得你对工作方式与资料处理的知情同意。"
   },
-  "errorPages": {
-    "notFoundTitle": "找不到这个页面",
-    "notFoundSubtitle": "链接可能已过期或页面已移动，我们一起回到更有用的页面。",
-    "serverErrorTitle": "系统出现状况",
-    "serverErrorSubtitle": "发生了意外错误，请稍后再试，或告知我们协助处理。",
-    "cta": "返回首页"
+  "testimonials": {
+    "heading": "客户回馈"
   }
 }

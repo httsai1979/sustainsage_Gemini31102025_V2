@@ -4,8 +4,9 @@
     "description": "SustainSage 精選的教練式工作紙、提問與播放清單。以 ICF 倫理為底，邀請你在同意與自我照顧中調整使用。"
   },
   "hero": {
+    "eyebrow": "資源",
     "title": "按照自己的節奏停下來看看",
-    "subtitle": "這些雙語資源陪你在會談之間持續實驗。沒有強迫下載或留下資料，只是提醒你在適合的時刻停一停。"
+    "subtitle": "這些雙語資源陪你在會談之間持續實驗。沒有強迫下載或留下資料，只是提醒你在適合的時刻停一停。你也可以探索一組引導式的自助工具，陪你在空檔裡整理思緒。"
   },
   "featured": {
     "title": "推薦工具",
@@ -70,6 +71,19 @@
     "title": "想有人陪你一起走過嗎？",
     "body": "歡迎預約相互了解，一起看看哪些資源適合你，或為團隊量身打造新工具。",
     "primaryCta": "與教練聊聊",
-    "secondaryCta": "聯絡我們"
+    "primaryHref": "/contact",
+    "secondaryCta": "聯絡我們",
+    "secondaryHref": "/services"
+  },
+  "labels": {
+    "comingSoon": "即將推出"
+  },
+  "actions": {
+    "view": "查看資源",
+    "download": "下載"
+  },
+  "interactive": {
+    "title": "互動自助工具",
+    "intro": "可以在自己的步調裡完成的引導式練習。"
   }
 }

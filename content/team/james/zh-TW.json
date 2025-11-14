@@ -1,25 +1,20 @@
 {
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
+  "fallbackNotice": "如有尚未翻譯的段落，會暫以英文顯示。",
   "name": "James Ng",
-  "title": "Team Coach & Operations Partner",
-  "location": "Singapore · Remote",
+  "title": "團隊教練與營運夥伴",
+  "location": "新加坡 · 遠端",
   "bio": [
-    "James builds trauma-sensitive coaching containers for bilingual product and operations teams navigating growth.",
-    "He brings a decade of experience leading analytics, people operations, and risk reviews across Southeast Asia.",
-    "Clients appreciate how he holds calm structure while translating technical context for non-technical leaders."
+    "James 為雙語產品與營運團隊建立創傷知情的教練空間。",
+    "擁有十年資料分析、人資營運與風險審查經驗，橫跨東南亞。",
+    "客戶欣賞他在翻譯技術脈絡時仍能維持沉穩結構。"
   ],
   "focus": [
-    "Coaching operations leads through cross-border scale-up",
-    "Designing data care agreements between product, policy, and legal teams",
-    "Supporting managers who hold both people leadership and caregiving responsibilities"
+    "陪伴跨國擴張中的營運主管",
+    "協助產品、政策、法務團隊訂定資料照護協議",
+    "支持同時肩負管理與照護責任的主管"
   ],
   "credentials": [
-    "ICF Associate Certified Coach (ACC)",
-    "Certified Scrum Product Owner",
-    "Former Head of Operations at a climate-tech startup"
+    "ICF ACC", "Certified Scrum Product Owner", "前氣候科技新創營運主管"
   ],
-  "cta": {
-    "label": "Work with James",
-    "href": "/contact"
-  }
+  "cta": {"label": "聯絡 James", "href": "/contact"}
 }

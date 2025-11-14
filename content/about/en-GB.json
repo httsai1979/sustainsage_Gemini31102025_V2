@@ -13,6 +13,11 @@
     "eyebrow": "Our approach",
     "title": "Experiments that respect pace and context",
     "description": "Every partnership begins with informed consent, shared language, and clarity on how we will work together.",
+    "pillarsEyebrow": "Professional background",
+    "pillarsTitle": "Structures that keep our practice steady",
+    "pillarsDescription": "Training, supervision, and bilingual partnerships that keep our work grounded and accountable.",
+    "casesTitle": "Composite coaching glimpses",
+    "casesDescription": "Merged, anonymised stories that honour confidentiality while showing what coaching can feel like.",
     "pillars": [
       {
         "title": "Context before action",
@@ -31,15 +36,7 @@
       "Graduate → clearer story, 2 callbacks within one cycle.",
       "Returner → 3-month ramp plan, part-time to full-time.",
       "Switcher → portfolio reframing, first project in 6 weeks.",
-      {
-        "title": "Graduate → clearer story, 2 callbacks within one cycle."
-      },
-      {
-        "title": "Returner → 3-month ramp plan, part-time to full-time."
-      },
-      {
-        "title": "Switcher → portfolio reframing, first project in 6 weeks."
-      },
+      "Parent relocating to the UK → calmer scheduling boundaries, first local contract secured.",
       {
         "title": "Founder aligning a cross-border team",
         "context": "Series A founder scaling operations between Taipei and London with clashing expectations.",
@@ -77,7 +74,9 @@
     ]
   },
   "key_points": {
-    "title": "What guides our coaching",
+    "eyebrow": "What guides our coaching",
+    "title": "Values that shape every partnership",
+    "description": "Gentle, ICF-aligned principles that keep each conversation calm, transparent, and culturally aware.",
     "items": [
       "ICF-aligned practice keeps agreements, data care, and supervision transparent.",
       "Lived experience across Asia-Pacific and the UK keeps culture and policy context in view.",
@@ -107,12 +106,6 @@
     "title": "What coaching looks like with SustainSage",
     "description": "Coaching is a structured, future-focused partnership where you stay in charge of direction and pace.",
     "scenarios": [
-      "You’re returning to work after a break and want a kinder ramp back.",
-      "You’ve applied widely but struggle to turn interviews into offers.",
-      "You got an offer but aren’t sure it fits your real priorities.",
-      "You’re switching fields and feel you’re starting from zero.",
-      "You’re in the UK with overseas experience and need local proof points.",
-      "You lead a small team and want steadier 1:1 conversations.",
       {
         "title": "You’re returning to work after a break and want a kinder ramp back."
       },
@@ -134,9 +127,6 @@
       {
         "title": "Launching a role across cultures",
         "description": "Clarify decision rights, agreements, and handoffs before expectations fracture."
-      },
-      {
-        "title": "You lead a small team and want steadier 1:1 conversations."
       },
       {
         "title": "Untangling stakeholder dynamics",

@@ -1,76 +1,76 @@
 {
   "seo": {
-    "title": "How coaching works | SustainSage",
-    "description": "Understand how SustainSage coaching aligns with ICF standards, what happens in a session, and how it differs from mentoring or therapy."
+    "title": "教練如何進行｜SustainSage",
+    "description": "了解 SustainSage 的教練如何對齊 ICF 倫理、每次會談的實際流程，以及與導師或治療的差異。"
   },
   "hero": {
-    "title": "What coaching with us actually looks like",
-    "subtitle": "We follow International Coaching Federation (ICF) ethics: you stay in authorship; we provide structure, reflection and consent-based experiments.",
-    "imageAlt": "Coach and client exploring possibilities"
+    "title": "在 SustainSage 的教練合作長什麼樣子",
+    "subtitle": "我們遵循國際教練聯盟 (ICF) 倫理：你保有決定權，我們提供結構、反思與基於同意的小實驗。",
+    "imageAlt": "教練與個案一起探索下一步"
   },
   "definition": {
-    "title": "Coaching, defined",
+    "title": "我們眼中的教練",
     "paragraphs": [
-      "ICF describes coaching as a partnership that sparks clients’ thinking and creativity. In practice, it is a series of confidential conversations where you lead the agenda and we hold structure, questions and accountability.",
-      "We do not advise, diagnose or sell quick fixes. We co-design experiments so you can make informed choices that respect your context."
+      "ICF 將教練定義為一種引導來談者思考與創造力的合作關係。實務上，就是一連串保密的對話，由你設定議題，我們守住節奏、提問與回饋。",
+      "我們不提供一步到位的建議或診斷，而是一起設計實驗，好讓你依自身脈絡做出知情的選擇。"
     ]
   },
   "session": {
-    "title": "Inside a typical session",
-    "intro": "Sessions last 55–60 minutes (longer for Deepening). We work online unless otherwise agreed.",
+    "title": "一次典型會談會做的事",
+    "intro": "會談多半為 55–60 分鐘（若為 Deepening 方案會更長），預設為線上進行，如需實體會事先討論。",
     "items": [
-      "We begin by naming what feels most alive or urgent today.",
-      "Together we map systems, emotions, assumptions and options.",
-      "We reflect themes back, celebrate wins and pause when discomfort needs tending.",
-      "You end with choices or experiments you consent to."
+      "先確認此刻最需要談的是什麼，可能是情緒、決策或待釐清的對話。",
+      "一起梳理系統、情緒、假設與選項，必要時會用視覺化工具。",
+      "我們會回應你看見的主題、肯定已完成的步驟，也會在需要停下時放慢。",
+      "最後由你決定想採取或觀察的小實驗，我們記錄下次要回顧的內容。"
     ]
   },
   "comparison": {
-    "title": "Coaching vs mentoring vs therapy",
-    "caption": "This overview helps you choose the right support. They can complement each other, and we will signpost alternatives when needed.",
-    "headers": ["Aspect", "Coaching", "Mentoring", "Therapy"],
+    "title": "教練、導師與治療的差別",
+    "caption": "這份對照表幫助你挑選最合適的支持。三者可以互相搭配，我們也會在需要時轉介其他資源。",
+    "headers": ["面向", "教練", "導師", "治療"],
     "rows": [
       {
-        "aspect": "Primary focus",
-        "coaching": "Future-oriented goals, behaviour and decision-making.",
-        "mentoring": "Passing on experience, advice and networks.",
-        "therapy": "Healing past or present mental health concerns."
+        "aspect": "主要焦點",
+        "coaching": "朝向未來的行動、行為與決策。",
+        "mentoring": "傳承經驗、人脈與具體建議。",
+        "therapy": "處理過去或現在的心理健康議題。"
       },
       {
-        "aspect": "Who leads the agenda",
-        "coaching": "You set the agenda; coach reflects and questions.",
-        "mentoring": "Mentor often suggests topics and solutions.",
-        "therapy": "Collaborative; therapist assesses and guides clinical care."
+        "aspect": "誰主導議題",
+        "coaching": "你設定議題，教練協助反思與梳理。",
+        "mentoring": "導師常會主動提出主題與方法。",
+        "therapy": "共同討論，但由治療師進行專業評估與引導。"
       },
       {
-        "aspect": "Scope & boundaries",
-        "coaching": "Non-directive, non-clinical. Stops when trauma or safety concerns surface.",
-        "mentoring": "Experience-based tips within agreed boundaries.",
-        "therapy": "Clinical diagnosis and treatment delivered by licensed professionals."
+        "aspect": "範圍與界線",
+        "coaching": "非指導式、非臨床；若有創傷或安全議題會停止並轉介。",
+        "mentoring": "在約定範圍內分享自身經驗。",
+        "therapy": "由合格專業人員提供臨床診斷與治療。"
       }
     ]
   },
   "ethics": {
-    "title": "Boundaries and confidentiality",
-    "intro": "We honour ICF ethics and UK safeguarding law. It means:",
+    "title": "界線與保密",
+    "intro": "我們遵守 ICF 倫理與英國的 safeguarding 規範，實際做法包括：",
     "items": [
-      "We keep conversations confidential unless there is risk of harm or legal obligation to disclose.",
-      "We obtain consent before sharing stories externally or inviting collaborators into a session.",
-      "We pause and signpost when issues require therapy, legal, medical or financial expertise."
+      "除非有法律義務或危害風險，會談內容都會保密。",
+      "若需與第三方分享故事或邀請合作者進入會談，會先取得你的同意。",
+      "當議題需要治療、法律、醫療或財務專業時，我們會暫停並指向合適的資源。"
     ]
   },
   "expectations": {
-    "title": "What we ask of clients",
+    "title": "我們希望來談者做到的事",
     "bullets": [
-      "Arrive with something real to explore, even if it feels messy or incomplete.",
-      "Tell us when pace, language or cultural framing needs adjusting.",
-      "Protect time after sessions to integrate insights, celebrate wins or rest.",
-      "Let us know early if circumstances change so we can re-contract."
+      "帶著真實的情境來談，即使尚未整理好也沒關係。",
+      "如果節奏、語言或文化框架需要調整，請直接說。",
+      "在會談後留一些時間整合、慶祝或休息。",
+      "情況有變時及早告訴我們，好重新確認合作。"
     ]
   },
   "cta": {
-    "body": "If this way of working resonates, browse the packages or book the intro call so we can confirm fit together.",
-    "primary": "Compare packages",
-    "secondary": "Book a 20-min intro call"
+    "body": "如果這樣的合作方式讓你安心，歡迎先看看方案或預約 20 分鐘聊聊，一起確認是否適合。",
+    "primary": "比較方案",
+    "secondary": "預約 20 分鐘聊聊"
   }
 }

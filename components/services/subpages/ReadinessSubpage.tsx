@@ -29,18 +29,18 @@ const { Page } = createServiceSubpage({
     const contactHref = `/contact?from=${contactSource}`;
     const microLinks = [
       { href: `${basePath}/pricing`, label: 'Review pricing' },
-      { href: contactHref, label: 'Talk to a coach' },
+      { href: contactHref, label: 'Book a 20-minute chat' },
     ];
 
     if (checklist.length === 0 && prepare.length === 0 && signals.length === 0) {
       return (
         <div className="space-y-6">
           <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 text-sm leading-6 text-slate-700 shadow-sm">
-            We will publish readiness guidance soon. Meanwhile, feel free to reach out for a quick check-in call.
+            We will publish readiness guidance soon. Meanwhile, feel free to reach out for a quick 20-minute chat.
           </div>
           <MicroCTA
             title="Take the next step when you are ready"
-            description="Compare pricing or start a chemistry chat to see if this service fits your moment."
+            description="Compare pricing or start a 20-minute chat to see if this service fits your moment."
             links={microLinks}
           />
         </div>
@@ -67,7 +67,7 @@ const { Page } = createServiceSubpage({
         {signals.length ? renderList('Signals', signals) : null}
         <MicroCTA
           title="Take the next step when you are ready"
-          description="Compare pricing or start a chemistry chat to see if this service fits your moment."
+          description="Compare pricing or start a 20-minute chat to see if this service fits your moment."
           links={microLinks}
         />
       </div>

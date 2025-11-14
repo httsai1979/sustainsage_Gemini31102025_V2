@@ -3,6 +3,7 @@ import path from 'path';
 
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 
 import { CaseDetail, type CaseDetailContent } from '@/components/cases/CaseDetail';
 import { StickyCTA } from '@/components/common/StickyCTA';
@@ -116,10 +117,33 @@ export default function ServiceCaseDetailPage({
   caseDetail,
   caseUsesFallback,
 }: ServiceCaseDetailProps) {
+  const { t } = useTranslation('serviceDetails');
   const hero = service.hero ?? {};
   const basePath = `/services/${slug}`;
-  const fallbackMessage = service.fallbackNotice ??
-    'Temporarily showing English content while we complete this translation.';
+  const fallbackMessage =
+    service.fallbackNotice ??
+    t('subpage.fallbackNotice', 'Temporarily showing English content while we complete this translation.');
+  const tabLabels = (t('tabs', { returnObjects: true }) ?? {}) as Record<string, string>;
+  const casesCopy = (t('casesPage', { returnObjects: true }) ?? {}) as Record<string, unknown>;
+  const sidebarCopy = (casesCopy?.sidebar as Record<string, unknown>) ?? {};
+  const sidebarTitle =
+    typeof sidebarCopy?.title === 'string' ? (sidebarCopy.title as string) : 'Need a different example?';
+  const sidebarBody =
+    typeof sidebarCopy?.body === 'string'
+      ? (sidebarCopy.body as string)
+      : 'Browse other cases or email us so we can share the closest-fit anonymised story.';
+  const sidebarBack =
+    typeof sidebarCopy?.back === 'string' ? (sidebarCopy.back as string) : 'Back to cases';
+  const sidebarContact =
+    typeof sidebarCopy?.contact === 'string' ? (sidebarCopy.contact as string) : 'Contact SustainSage';
+  const casesBackLabel =
+    typeof casesCopy?.backLink === 'string' ? (casesCopy.backLink as string) : 'Back to cases overview';
+  const caseFallbackEnglish =
+    typeof casesCopy?.fallbackEnglish === 'string'
+      ? (casesCopy.fallbackEnglish as string)
+      : 'Case available in English while we prepare this translation.';
+  const detailEyebrow =
+    typeof casesCopy?.detailEyebrow === 'string' ? (casesCopy.detailEyebrow as string) : 'Case detail';
 
   return (
     <>
@@ -139,18 +163,21 @@ export default function ServiceCaseDetailPage({
       <section className="bg-sustain-bg py-16">
         <div className="ss-container flex flex-col gap-10 lg:grid lg:grid-cols-[minmax(0,260px)_1fr]">
           <aside className="space-y-6">
-            <ServiceSubnav base={basePath} tabs={getSubnavTabs(basePath)} active={CASES_SUBNAV_SLUG} orientation="vertical" />
+            <ServiceSubnav
+              base={basePath}
+              tabs={getSubnavTabs(basePath, tabLabels)}
+              active={CASES_SUBNAV_SLUG}
+              orientation="vertical"
+            />
             <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
-              <p className="text-sm font-semibold text-sustain-text">Need a different example?</p>
-              <p className="mt-2 text-sm leading-6 text-slate-700">
-                Browse other cases or email us so we can share the closest-fit anonymised story.
-              </p>
+              <p className="text-sm font-semibold text-sustain-text">{sidebarTitle}</p>
+              <p className="mt-2 text-sm leading-6 text-slate-700">{sidebarBody}</p>
               <div className="mt-4 flex flex-col gap-3">
                 <Link href={`${basePath}/cases`} className="ss-btn-secondary text-center">
-                  Back to cases
+                  {sidebarBack}
                 </Link>
                 <Link href={`/contact?from=${slug}-case`} className="ss-btn-primary text-center">
-                  Contact SustainSage
+                  {sidebarContact}
                 </Link>
               </div>
             </div>
@@ -160,14 +187,14 @@ export default function ServiceCaseDetailPage({
             <div className="rounded-3xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
               <Link href={`${basePath}/cases`} className="inline-flex items-center text-sm font-medium text-sustain-green">
                 <span aria-hidden className="mr-2">&larr;</span>
-                Back to cases overview
+                {casesBackLabel}
               </Link>
               {showFallbackNotice ? (
                 <p className="mt-4 text-xs leading-5 text-slate-500">{fallbackMessage}</p>
               ) : null}
               {caseUsesFallback ? (
                 <p className="mt-2 text-xs leading-5 text-slate-500">
-                  Case available in English while we prepare this translation.
+                  {caseFallbackEnglish}
                 </p>
               ) : null}
             </div>
@@ -177,7 +204,7 @@ export default function ServiceCaseDetailPage({
                 {...caseDetail}
                 header={
                   <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green">
-                    Case detail
+                    {detailEyebrow}
                   </p>
                 }
               />
@@ -190,14 +217,14 @@ export default function ServiceCaseDetailPage({
   );
 }
 
-function getSubnavTabs(base: string) {
+function getSubnavTabs(base: string, labels?: Record<string, string>) {
   return [
-    { slug: 'overview', label: 'Overview', href: base },
-    { slug: 'pricing', label: 'Pricing' },
-    { slug: 'readiness', label: 'Readiness' },
-    { slug: 'process', label: 'Process' },
-    { slug: 'agreement', label: 'Agreement' },
-    { slug: 'faq', label: 'FAQ' },
-    { slug: 'cases', label: 'Cases' },
+    { slug: 'overview', label: labels?.overview ?? 'Overview', href: base },
+    { slug: 'pricing', label: labels?.pricing ?? 'Pricing' },
+    { slug: 'readiness', label: labels?.readiness ?? 'Readiness' },
+    { slug: 'process', label: labels?.process ?? 'Process' },
+    { slug: 'agreement', label: labels?.agreement ?? 'Agreement' },
+    { slug: 'faq', label: labels?.faq ?? 'FAQ' },
+    { slug: 'cases', label: labels?.cases ?? 'Cases' },
   ];
 }
