@@ -1,20 +1,16 @@
 {
-  "title": "Back after 3 years, worried about gaps",
-  "context": "Composite of professionals returning after extended caregiving who feared CV gaps would erase prior leadership.",
+  "title": "离开三年、担心空窗",
+  "context": "综合多位照护者的情境：休息三年后在英国重新求职，担心如何谈照护空窗。",
   "session_flow": [
-    "Sketched a \"first week back\" simulation to surface transferable strengths and confidence triggers.",
-    "Rewrote key CV bullets using challenge-action-result language that honoured the caregiving period.",
-    "Role-played conversations for naming boundaries and asking for context without apologising."
+    "用 30 分钟模拟“回到第一天”的情境，确认节奏与界线。",
+    "以 CAR 结构改写履历段落，聚焦行动与成果。",
+    "排演界线语句，让照护安排能被尊重。"
   ],
-  "tools_used": [
-    "Values map",
-    "CAR bullet rewrites",
-    "Boundary scripts"
-  ],
-  "boundary_and_consent": "Set a rule that we would only reference family details at the depth they authorised before each exercise.",
-  "timeframe": "7 sessions over 12 weeks with two async reviews of applications.",
-  "shift": "They could articulate break learnings without shrinking past achievements and sent outreach messages sooner.",
-  "outcome": "Entered interviews with language that acknowledged the gap while reinforcing leadership identity.",
-  "disclaimer": "Composite illustration; experiences will differ per person.",
-  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。"
+  "tools_used": ["Values Map", "Self-talk Reframe", "Behavior Ladder"],
+  "boundary_and_consent": "学员决定哪些家庭细节保留私密，并可在任何时候暂停模拟。",
+  "timeframe": "5 周内 4 次会谈并穿插语音回馈。",
+  "shift": "更能清楚描述空窗，也敢主动发出两封联络讯息。",
+  "outcome": "获得两场面试并建立可复制的跟进节奏。",
+  "disclaimer": "示意并已匿名；成果不保证。",
+  "fallbackNotice": "如有未翻译段落会暂以英文显示。"
 }

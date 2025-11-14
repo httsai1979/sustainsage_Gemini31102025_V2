@@ -5,7 +5,7 @@
   },
   "hero": {
     "title": "Tools for reflection at your own pace",
-    "subtitle": "Curated bilingual resources to support your experiments between sessions. No email gate, no pressure—just invitations to pause and notice."
+    "subtitle": "Curated bilingual resources to support your experiments between sessions. No email gate, no pressure—just invitations to pause and notice. You can also explore a set of guided self-reflection tools designed to support your thinking between sessions."
   },
   "featured": {
     "title": "Featured tools",
@@ -68,8 +68,12 @@
   },
   "cta": {
     "title": "Want a guided walkthrough?",
-    "body": "Book a chemistry chat to explore how these tools can support your goals, or ask for a custom resource for your team.",
+    "body": "Book a 20-minute chat to explore how these tools can support your goals, or ask for a custom resource for your team.",
     "primaryCta": "Talk with a coach",
     "secondaryCta": "Contact us"
+  },
+  "interactive": {
+    "title": "Interactive tools",
+    "intro": "Guided self-reflection tools you can use in your own time."
   }
 }

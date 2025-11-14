@@ -1,23 +1,16 @@
 {
-  "title": "Securing sponsorship with clarity",
-  "context": "Composite of internationally trained analysts navigating Skilled Worker sponsorship conversations while fielding opaque recruiter guidance.",
+  "title": "厘清签证对话",
+  "context": "多位申请者担心一提签证就被拒，于是干脆不谈。",
   "session_flow": [
-    "Mapped current visa timelines and identified non-negotiables for the household.",
-    "Drafted outreach language that states sponsorship requirements without apologising.",
-    "Planned weekly follow-up blocks and rehearsed holding boundaries when timelines slipped."
+    "写出两句式签证说明，包含身份、时间表与可行方案。",
+    "依政策分类目标公司，标记哪些愿意赞助。",
+    "规划 10 天主动联繫行动并设定追踪节奏。"
   ],
-  "tools_used": [
-    "Visa timeline map",
-    "Sponsorship outreach scripts",
-    "Follow-up tracker"
-  ],
-  "boundary_and_consent": [
-    "Agreed to pause when conversations triggered immigration-related anxiety spikes.",
-    "Confirmed we would only role-play scenarios they explicitly opted into."
-  ],
-  "timeframe": "6 sessions over 10 weeks with check-in notes between meetings.",
-  "shift": "Client practised naming visa parameters early and stopped investing in employers who could not sponsor.",
-  "outcome": "Within two months they negotiated a written sponsorship timeline and a relocation allowance that respected family needs.",
-  "disclaimer": "Composite scenario blending details across several clients to protect confidentiality.",
-  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。"
+  "tools_used": ["Decision Scorecard", "Outreach Tracker"],
+  "boundary_and_consent": "不提供法律建议；仅协助整理公开资讯并鼓励自行确认。",
+  "timeframe": "4 周 3 次会谈＋非同步讯息回馈。",
+  "shift": "更快拿到明确的 yes/no，减少石沉大海。",
+  "outcome": "锁定 6 间愿意赞助的公司并安排两场面试。",
+  "disclaimer": "示意并已匿名；成果不保证。",
+  "fallbackNotice": "如有未翻译段落会暂以英文显示。"
 }

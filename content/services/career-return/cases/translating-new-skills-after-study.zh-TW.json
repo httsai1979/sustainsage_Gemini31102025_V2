@@ -1,20 +1,16 @@
 {
-  "title": "Translating new skills after study",
-  "context": "Composite of returners who retrained during their break and needed to connect coursework to hybrid roles.",
+  "title": "把進修成果轉成證據",
+  "context": "綜合多位在休息期間取得證照的人，想轉成混合型職務。",
   "session_flow": [
-    "Mapped coursework projects to employer language and clarified preferred problem spaces.",
-    "Designed networking experiments to test positioning with alumni, peers and hiring managers.",
-    "Rehearsed interviews that wove caregiving, study and prior career into one coherent arc."
+    "重整學習故事，凸顯問題、貢獻與結果。",
+    "設計拓展人脈訊息與追問清單，降低主動聯繫的壓力。",
+    "排演常見面試提問並練習自信談論新價值。"
   ],
-  "tools_used": [
-    "Portfolio map",
-    "Experiment planner",
-    "Interview rehearsal"
-  ],
-  "boundary_and_consent": "Coachee chose which personal caregiving moments could appear in stories and could veto any transcript before reuse.",
-  "timeframe": "5 sessions across 7 weeks with async feedback on portfolio drafts.",
-  "shift": "They stopped downplaying previous experience and sounded energised about hybrid roles.",
-  "outcome": "Landed conversations with organisations open to flexible arrangements and showcased recent credentials confidently.",
-  "disclaimer": "Composite illustration; results depend on each person's context.",
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。"
+  "tools_used": ["Story Library", "Interview Rehearsal"],
+  "boundary_and_consent": "只在學員同意下分享證照細節，所有錄音於 30 天內刪除。",
+  "timeframe": "6 週 4 次會談＋兩次文件批註。",
+  "shift": "更自在地說明新技能如何補足舊經驗，也能清楚談界線。",
+  "outcome": "進入 3 場面試並獲得一個混合型專案。",
+  "disclaimer": "示意並已匿名；成果不保證。",
+  "fallbackNotice": "如有未翻譯段落會暫以英文顯示。"
 }

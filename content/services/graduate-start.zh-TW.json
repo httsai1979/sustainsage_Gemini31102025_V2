@@ -1,62 +1,56 @@
 {
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
+  "fallbackNotice": "如有尚未翻譯的段落，會暫以英文顯示。",
   "pricing": {
     "packages": [
       {
-        "name": "4-session starter",
-        "duration": "4×60–75min over ~6–8 weeks",
-        "scope": "Decision scorecard, tiny tests, basic portfolio/CV review.",
-        "price_note": "Student-friendly fees on request."
+        "name": "4 週起步包",
+        "duration": "4 × 60–75 分鐘／約 6–8 週",
+        "scope": "決策評分表、小實驗計畫、作品集／履歷基礎修訂。",
+        "price_note": "可提供學生友善費用。"
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One decision or interview prep with a clear action note.",
-        "price_note": "Good for assessment centre or first interviews."
+        "name": "單次聚焦會談",
+        "duration": "60–75 分鐘",
+        "scope": "針對一場面試或一個抉擇，產出清楚行動筆記。",
+        "price_note": "適合 assessment centre 或首輪面試前。"
       }
     ],
     "policies": [
-      {
-        "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
-      },
-      {
-        "title": "No guarantees",
-        "body": "We support experiments; outcomes depend on your effort and timing."
-      }
+      {"title": "改期", "body": "需提前 24 小時；否則視同使用一次會談。"},
+      {"title": "不保證結果", "body": "我們專注實驗與證據，成果取決於你的投入與時機。"}
     ]
   },
   "readiness": {
     "checklist": [
       "可安排 50–60 分鐘線上會談，能配合英國時段。",
       "有大致方向（角色或產業）。",
-      "理解教練服務範圍（非就業媒合／治療／法律）。",
+      "理解教練服務範圍（非媒合／治療／法律）。",
       "願意在會談間完成一個小實驗。",
       "準備好最新 CV 或 LinkedIn 連結。"
     ],
     "what_to_prepare": [
       "你的 LinkedIn 連結或最近期的 CV（PDF）。",
-      "兩個課堂／工作專案，能在 60–90 秒說清楚。",
-      "目標職缺／公司清單或限制條件。",
+      "兩個課程／專案範例，能在 60–90 秒說清楚。",
+      "目標職缺或條件限制清單。",
       "前兩次會談想釐清的三個問題。"
     ],
     "signals": [
-      "偏好英國在地、務實而不誇大的指引。",
+      "偏好英國在地、務實又不誇大的指引。",
       "喜歡小步走、用可見證據累積信心。",
       "能維持每週節奏並做短回顧。"
     ]
   },
   "process": {
-    "title": "Process & pace",
-    "description": "A six to eight week sprint with optional monthly check-ins as you transition into your role.",
+    "title": "流程與節奏",
+    "description": "6–8 週的加速期，若進入新職位可視需要每月回訪。",
     "steps": [
-      "盤點強項 → 小證據：技能、專案、可見成果。",
+      "盤點強項並設計可見證據（迷你專案／樣本）。",
       "對齊英國 CV/LinkedIn：清楚條列、動詞精準、結果可見。",
       "作品集或樣本：一頁一故事一連結。",
-      "主動聯繫腳本＋輕量面試演練。",
+      "主動聯繫腳本與輕量面試演練。",
       "追蹤 → 回顧 → 調整：保持小步且可見。"
     ],
-    "note": "Optional aftercare check-ins help you translate offers into confident starts."
+    "note": "必要時可安排短回訪，協助你把錄取轉成穩定起步。"
   },
   "agreement": {
     "sections": [
@@ -71,13 +65,13 @@
         "title": "保密",
         "paragraphs": [
           "預設保密；最少必要紀錄；可要求刪除。",
-          "品質督導可能討論匿名化模式，不含可識別資訊。"
+          "品質督導僅討論匿名化模式，不含可識別資訊。"
         ]
       },
       {
         "title": "時程與改期",
         "paragraphs": [
-          "單次約 50 分鐘，線上、以英國時段為主。",
+          "單次約 50–75 分鐘，線上、以英國時段為主。",
           "改期需提前 24 小時；逾時視同使用一次會談。"
         ]
       },
@@ -98,7 +92,7 @@
       {
         "title": "合理使用與界線",
         "paragraphs": [
-          "會談間可輕量回報；大量審稿／代做不在範圍內。",
+          "會談間可輕量回報；大量審稿或代做不在範圍內。",
           "不代為聯絡雇主。"
         ]
       }
@@ -106,85 +100,55 @@
   },
   "faq": {
     "items": [
-      {
-        "q": "你們會直接幫我找到工作嗎？",
-        "a": "不會。教練不是媒合。我們協助你產出英國看得懂的證據與清楚敘事；由你投遞並追蹤。"
-      },
-      {
-        "q": "你會代寫我的 CV/LinkedIn 嗎？",
-        "a": "不代寫；你仍是作者。我們協助結構與清楚度，並在 Google Docs 共同修訂。"
-      },
-      {
-        "q": "我幾乎沒有實務經驗怎麼辦？",
-        "a": "把課程、志工、小專案轉成證據：說清楚貢獻與結果，最好能附連結。"
-      },
-      {
-        "q": "兩次會談間要投入多少時間？",
-        "a": "通常每週 30–60 分鐘，完成 1 個小實驗或一輪修訂；保持小而可見。"
-      },
-      {
-        "q": "談話會保密嗎？",
-        "a": "預設保密；最少必要紀錄；可要求刪除。詳見邊界頁。"
-      },
-      {
-        "q": "你會代我聯絡雇主嗎？",
-        "a": "不會。我們協助你準備聯繫腳本與信心；由你親自發送。"
-      },
-      {
-        "q": "改期與退費怎麼處理？",
-        "a": "改期需提前 24 小時；逾時視同使用一次會談。已完成會談不退費。"
-      }
+      {"q": "你們會直接幫我找到工作嗎？", "a": "不會。教練不是媒合。我們協助你產出英國看得懂的證據與敘事；由你投遞並追蹤。"},
+      {"q": "你會代寫我的 CV/LinkedIn 嗎？", "a": "不代寫；你仍是作者。我們協助結構與清楚度，並在 Google Docs 共同修訂。"},
+      {"q": "幾乎沒有實務經驗怎麼辦？", "a": "把課程、志工或 side project 轉成證據：說清楚角色、貢獻、結果並附連結。"},
+      {"q": "會談間要投入多少時間？", "a": "通常每週 30–60 分鐘，完成 1 個小實驗或一輪修訂，保持小而可見。"},
+      {"q": "談話會保密嗎？", "a": "預設保密；最少必要紀錄；可要求刪除。詳見邊界說明。"},
+      {"q": "可以代我聯絡雇主嗎？", "a": "不會。我們協助你準備聯繫腳本並在你準備好時親自發送。"},
+      {"q": "改期與退費怎麼處理？", "a": "改期需提前 24 小時；逾時視同使用一次會談。已完成會談不退費。"}
     ]
   },
   "cases": {
-    "title": "Composite coaching glimpses",
-    "description": "Stories merged from graduates and early-career professionals to keep individuals anonymous.",
+    "title": "匿名情境速寫",
+    "description": "綜合畢業生與初階職場者的情境，保護個人資料。",
     "items": [
       {
-        "title": "Too many choices, no criteria",
-        "context": "Three sectors look appealing but overwhelm decisions.",
-        "coaching_moves": "Built decision scorecard; set 2-week micro-test per sector.",
-        "shift": "Made next pick using data rather than mood.",
-        "tools_used": [
-          "Decision Scorecard",
-          "Experiment Log"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "選項太多、沒有判準",
+        "context": "三個產業都想試，卻不知道怎麼選。",
+        "coaching_moves": "一起建立決策評分表；每個產業排 2 週微型實驗。",
+        "shift": "用資料而非心情決定下一步。",
+        "tools_used": ["Decision Scorecard", "Experiment Log"],
+        "disclaimer": "示意並已匿名，成果不保證。",
         "slug": "too-many-choices-no-criteria"
       },
       {
-        "title": "Interview stories flat",
-        "context": "Projects sound generic; feedback: 'lack of impact'.",
-        "coaching_moves": "Refined two STAR stories; rehearsed follow-ups; trimmed jargon.",
-        "shift": "Stories felt concrete and paced; fewer ramble moments.",
-        "tools_used": [
-          "STAR Builder",
-          "Interview Rehearsal"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "面試故事太平",
+        "context": "專案描述太制式，回饋是「感覺沒影響力」。",
+        "coaching_moves": "精修兩個 STAR 故事、練習追問、刪掉行話。",
+        "shift": "故事節奏更清楚，少了離題。",
+        "tools_used": ["STAR Builder", "Interview Rehearsal"],
+        "disclaimer": "示意並已匿名，成果不保證。",
         "slug": "interview-stories-flat"
       },
       {
-        "title": "Portfolio without context",
-        "context": "Screenshots with no 'why/so-what'.",
-        "coaching_moves": "Added problem-goal-result captions; linked constraints; ordered by learning.",
-        "shift": "Reviewers grasped thinking, not just visuals.",
-        "tools_used": [
-          "Story Library",
-          "Portfolio Map"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "作品集缺乏脈絡",
+        "context": "只有截圖，沒有為什麼與結果。",
+        "coaching_moves": "為每頁加上問題－目標－成果摘要，補上限制並依學習排序。",
+        "shift": "審稿者看到思考過程，而不只是畫面。",
+        "tools_used": ["Story Library", "Portfolio Map"],
+        "disclaimer": "示意並已匿名，成果不保證。",
         "slug": "portfolio-without-context"
       }
     ]
   },
   "key_points": {
     "items": [
-      "把分散的努力整合成一條清楚的故事，並且有可見的證據。",
+      "把分散的努力整合成一條清楚的故事並伴隨證據。",
       "每週固定節奏；兩次會談之間做小實驗（咖啡聊、迷你專案）。",
-      "CV／作品集以「成果與證據」為主，而不是只列課程。",
+      "CV／作品集以成果與證據為主，而不是只列課程。",
       "面試演練追求清楚與適配——不教話術、不背模板。",
-      "簡單定價；套組之間可暫停；預設保密。"
+      "定價簡單；套組之間可暫停；預設保密。"
     ]
   },
   "title": "畢業求職 — 教練路徑",

@@ -17,7 +17,7 @@ export default function Card({
   return (
     <Component
       className={cn(
-        'rounded-card rounded-2xl border border-slate-100 bg-white p-6 shadow-md transition-colors md:p-8',
+        'rounded-card rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:-translate-y-1 focus-within:shadow-lg md:p-8',
         'flex flex-col gap-3',
         className,
       )}
