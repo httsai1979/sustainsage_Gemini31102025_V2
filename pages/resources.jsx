@@ -10,7 +10,7 @@ import { loadJSON } from '@/lib/content';
 import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
-export default function ResourcesPage({ items = [] }) {
+export default function ResourcesPage({ downloads = [], interactiveTools = [] }) {
   const { t } = useTranslation('resources');
   const hero = t('hero', { returnObjects: true }) ?? {};
   const featured = t('featured', { returnObjects: true }) ?? {};
@@ -18,6 +18,7 @@ export default function ResourcesPage({ items = [] }) {
   const ctaCopy = t('cta', { returnObjects: true }) ?? {};
   const labels = t('labels', { returnObjects: true }) ?? {};
   const actions = t('actions', { returnObjects: true }) ?? {};
+  const interactiveCopy = t('interactive', { returnObjects: true }) ?? {};
 
   const curatedResources = Array.isArray(featured?.tools)
     ? featured.tools.map((tool) => ({
@@ -34,8 +35,70 @@ export default function ResourcesPage({ items = [] }) {
       }))
     : [];
 
-  const resourceItems = dedupeBy(items, (item) => item.id ?? item.title);
+  const resourceItems = dedupeBy(downloads, (item) => item.id ?? item.title);
   const resolvedResources = resourceItems.length ? resourceItems : curatedResources;
+  const interactiveItems = dedupeBy(interactiveTools, (item) => item.id ?? item.title);
+
+  const renderResourceCard = (item, index) => {
+    const actionHref = !item.comingSoon ? item.href || item.download || '/blog' : null;
+    const actionLabel = !item.comingSoon
+      ? item.actionLabel || (item.download ? actions?.download : actions?.view)
+      : null;
+    const badge = item.type ?? item.tag ?? item.category ?? (item.download ? 'Download' : null);
+    const card = (
+      <article className="ss-card h-full overflow-hidden bg-white">
+        <div className="relative">
+          <div className="relative h-48 w-full overflow-hidden rounded-2xl">
+            <Image
+              src={item.img ?? '/images/placeholder-hero.jpg'}
+              alt={item.alt ?? item.title}
+              fill
+              sizes="(min-width: 1280px) 360px, (min-width: 768px) 45vw, 90vw"
+              className="object-cover"
+            />
+            {item.comingSoon ? <div className="absolute inset-0 bg-sustain-text/20" aria-hidden /> : null}
+          </div>
+          {badge ? (
+            <span className="absolute right-4 top-4 rounded-full bg-sustain-green px-3 py-1 text-xs font-semibold text-white">
+              {badge}
+            </span>
+          ) : null}
+        </div>
+        <div className="mt-5 space-y-3">
+          <h3 className="text-lg font-semibold text-sustain-text">{item.title}</h3>
+          <p className="text-sm text-slate-600">{item.desc}</p>
+          {item.comingSoon ? (
+            <Tag>{labels?.comingSoon ?? 'Coming soon'}</Tag>
+          ) : (
+            actionHref && (
+              <div className="inline-flex items-center gap-2 font-semibold text-sustain-green">
+                {actionLabel}
+                <span aria-hidden>→</span>
+              </div>
+            )
+          )}
+        </div>
+      </article>
+    );
+
+    const delay = (index % 3) * 0.1;
+
+    if (actionHref && !item.comingSoon) {
+      return (
+        <RevealSection key={`${item.id ?? item.title}-${index}`} delay={delay}>
+          <Link href={actionHref} className="block h-full" aria-label={actionLabel ?? item.title}>
+            {card}
+          </Link>
+        </RevealSection>
+      );
+    }
+
+    return (
+      <RevealSection key={`${item.id ?? item.title}-${index}`} delay={delay}>
+        <div className="block h-full">{card}</div>
+      </RevealSection>
+    );
+  };
   return (
     <main className="ss-container">
       <section className="ss-section">
@@ -55,68 +118,23 @@ export default function ResourcesPage({ items = [] }) {
           {featured?.intro ? <p className="text-base text-slate-700">{featured.intro}</p> : null}
         </RevealSection>
         <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {resolvedResources.map((item, index) => {
-            const actionHref = !item.comingSoon ? item.href || item.download || '/blog' : null;
-            const actionLabel = !item.comingSoon
-              ? item.actionLabel || (item.download ? actions?.download : actions?.view)
-              : null;
-            const badge = item.type ?? item.tag ?? item.category ?? (item.download ? 'Download' : null);
-            const card = (
-              <article className="ss-card h-full overflow-hidden bg-white">
-                <div className="relative">
-                  <div className="relative h-48 w-full overflow-hidden rounded-2xl">
-                    <Image
-                      src={item.img ?? '/images/placeholder-hero.jpg'}
-                      alt={item.alt ?? item.title}
-                      fill
-                      sizes="(min-width: 1280px) 360px, (min-width: 768px) 45vw, 90vw"
-                      className="object-cover"
-                    />
-                    {item.comingSoon ? (
-                      <div className="absolute inset-0 bg-sustain-text/20" aria-hidden />
-                    ) : null}
-                  </div>
-                  {badge ? (
-                    <span className="absolute right-4 top-4 rounded-full bg-sustain-green px-3 py-1 text-xs font-semibold text-white">
-                      {badge}
-                    </span>
-                  ) : null}
-                </div>
-                <div className="mt-5 space-y-3">
-                  <h3 className="text-lg font-semibold text-sustain-text">{item.title}</h3>
-                  <p className="text-sm text-slate-600">{item.desc}</p>
-                  {item.comingSoon ? (
-                    <Tag>{labels?.comingSoon ?? 'Coming soon'}</Tag>
-                  ) : (
-                    actionHref && (
-                      <div className="inline-flex items-center gap-2 font-semibold text-sustain-green">
-                        {actionLabel}
-                        <span aria-hidden>→</span>
-                      </div>
-                    )
-                  )}
-                </div>
-              </article>
-            );
-
-            if (actionHref && !item.comingSoon) {
-              return (
-                <RevealSection key={item.id} delay={(index % 3) * 0.1}>
-                  <Link href={actionHref} className="block h-full" aria-label={actionLabel ?? item.title}>
-                    {card}
-                  </Link>
-                </RevealSection>
-              );
-            }
-
-            return (
-              <RevealSection key={item.id} delay={(index % 3) * 0.1}>
-                <div className="block h-full">{card}</div>
-              </RevealSection>
-            );
-          })}
+          {resolvedResources.map((item, index) => renderResourceCard(item, index))}
         </div>
       </section>
+
+      {interactiveItems.length ? (
+        <section className="ss-section">
+          <RevealSection className="space-y-4 text-center md:text-left">
+            <h2 className="text-2xl font-semibold text-sustain-text">
+              {interactiveCopy?.title ?? 'Interactive tools'}
+            </h2>
+            {interactiveCopy?.intro ? <p className="text-base text-slate-700">{interactiveCopy.intro}</p> : null}
+          </RevealSection>
+          <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+            {interactiveItems.map((item, index) => renderResourceCard(item, index))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="ss-section">
         <RevealSection>
@@ -174,12 +192,19 @@ ResourcesPage.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps({ locale }) {
-  const items = loadJSON('resources', locale);
+  const data = loadJSON('resources', locale);
+  const downloads = Array.isArray(data)
+    ? data
+    : Array.isArray(data?.downloads)
+    ? data.downloads
+    : [];
+  const interactiveTools = !Array.isArray(data) && Array.isArray(data?.interactiveTools) ? data.interactiveTools : [];
   const { loadNamespace } = await import('@/lib/server/loadNamespace');
   const namespaceCopy = loadNamespace(locale, 'resources');
   return toSerializable({
     props: {
-      items,
+      downloads,
+      interactiveTools,
       seo: namespaceCopy?.seo ?? null,
       ...(await serverSideTranslations(locale, ['common', 'resources'])),
     },
