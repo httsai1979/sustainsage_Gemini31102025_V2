@@ -82,6 +82,27 @@ export default function ServicesPage({
 
   const uniqueCards = dedupeBy(cards, (card) => card.slug ?? card.title);
 
+  const gettingStartedSteps = [
+    {
+      title: 'Book your free chat',
+      description: 'We talk for 20 minutes to understand what is changing and answer scope questions.',
+    },
+    {
+      title: 'Explore together',
+      description: 'We map priorities, access needs, and the rhythm that keeps you steady.',
+    },
+    {
+      title: 'Choose your path',
+      description: 'Select one of the coaching pathways or co-design something bespoke.',
+    },
+    {
+      title: 'Begin your journey',
+      description: 'We meet online every 2–3 weeks, review progress, and adjust agreements as needed.',
+    },
+  ];
+
+  const uniqueCards = dedupeBy(cards, (card) => card.slug ?? card.title);
+
   return (
     <main className="ss-container">
       <Head>
