@@ -6,6 +6,7 @@ import SectionContainer from '@/components/sections/SectionContainer';
 import PageSection from '@/components/ui/PageSection';
 import ServiceSubnav from '@/components/services/ServiceSubnav';
 import { sectionizeServiceOverview } from '@/lib/sectionize';
+import { dedupeBy } from '@/lib/dedupe';
 
 export type ServiceHero = {
   eyebrow?: string;
@@ -85,8 +86,8 @@ function KeyCard({ title, description }: ServiceKeyPoint) {
   }
 
   return (
-    <article className="rounded-3xl border border-emerald-100 bg-white/90 p-6 shadow-sm">
-      {title ? <h3 className="text-lg font-semibold text-slate-900">{title}</h3> : null}
+    <article className="rounded-card border border-sustain-cardBorder bg-white p-6 shadow-card">
+      {title ? <h3 className="text-lg font-semibold text-sustain-text">{title}</h3> : null}
       {description ? <p className="mt-3 text-sm leading-6 text-slate-700">{description}</p> : null}
     </article>
   );
@@ -100,13 +101,13 @@ function OverviewCTA({ cta }: { cta?: ServiceOverview['cta'] }) {
   return (
     <SectionContainer variant="surface" tone="muted">
       <div className="text-center">
-        {cta.title ? <h2 className="text-2xl font-semibold text-slate-900">{cta.title}</h2> : null}
+        {cta.title ? <h2 className="text-2xl font-semibold text-sustain-text">{cta.title}</h2> : null}
         {cta.description ? <p className="mt-3 text-base leading-7 text-slate-700">{cta.description}</p> : null}
         <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
           {cta.primary?.href && cta.primary?.label ? (
             <Link
               href={cta.primary.href}
-              className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="inline-flex items-center justify-center rounded-full bg-sustain-green px-5 py-3 text-sm font-semibold text-white transition hover:bg-sustain-green/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-green"
             >
               {cta.primary.label}
             </Link>
@@ -114,7 +115,7 @@ function OverviewCTA({ cta }: { cta?: ServiceOverview['cta'] }) {
           {cta.secondary?.href && cta.secondary?.label ? (
             <Link
               href={cta.secondary.href}
-              className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+              className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-sustain-green ring-1 ring-inset ring-sustain-cardBorder transition hover:bg-sustain-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-green"
             >
               {cta.secondary.label}
             </Link>
@@ -127,12 +128,18 @@ function OverviewCTA({ cta }: { cta?: ServiceOverview['cta'] }) {
 
 export function ServiceOverviewPage({ service, showFallbackNotice = false }: ServiceOverviewPageProps) {
   const hero = service.hero ?? {};
-  const keyCards = Array.isArray(service.key_points?.items)
-    ? service.key_points?.items.filter((item) => item && (item.title || item.description))
-    : [];
-  const cases = Array.isArray(service.cases?.items)
-    ? service.cases?.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
-    : [];
+  const keyCards = dedupeBy(
+    Array.isArray(service.key_points?.items)
+      ? service.key_points?.items.filter((item) => item && (item.title || item.description))
+      : [],
+    (item, index) => item?.title ?? item?.description ?? index
+  );
+  const cases = dedupeBy(
+    Array.isArray(service.cases?.items)
+      ? service.cases?.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
+      : [],
+    (item, index) => item?.title ?? item?.slug ?? item?.context ?? index
+  );
   const sections = sectionizeServiceOverview(service);
 
   const subnavTabs = [
@@ -151,12 +158,12 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
     <PageLayoutV2
       header={
       <div className="space-y-4">
-        {hero.eyebrow ? <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.eyebrow}</p> : null}
+        {hero.eyebrow ? <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sustain-green">{hero.eyebrow}</p> : null}
           <div className="space-y-3">
-            <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">
+            <h1 className="text-3xl font-semibold leading-tight text-sustain-text md:text-4xl">
               {hero.title ?? service.title ?? 'Service overview'}
             </h1>
-            {hero.subtitle ? <p className="text-base leading-7 text-slate-600">{hero.subtitle}</p> : null}
+            {hero.subtitle ? <p className="text-base leading-7 text-slate-700">{hero.subtitle}</p> : null}
             {showFallbackNotice ? (
               <p className="text-xs font-medium text-slate-500">{fallbackNotice}</p>
             ) : null}
@@ -165,7 +172,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
             {hero.primaryCta?.href && hero.primaryCta?.label ? (
               <Link
                 href={hero.primaryCta.href}
-                className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+                className="inline-flex items-center justify-center rounded-full bg-sustain-green px-5 py-3 text-sm font-semibold text-white transition hover:bg-sustain-green/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-green"
               >
                 {hero.primaryCta.label}
               </Link>
@@ -173,7 +180,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
             {hero.secondaryCta?.href && hero.secondaryCta?.label ? (
               <Link
                 href={hero.secondaryCta.href}
-                className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-emerald-800 ring-1 ring-inset ring-emerald-200 transition hover:bg-emerald-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-700"
+                className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-sustain-green ring-1 ring-inset ring-sustain-cardBorder transition hover:bg-sustain-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-green"
               >
                 {hero.secondaryCta.label}
               </Link>
@@ -183,7 +190,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
       }
       subnav={<ServiceSubnav base={`/services/${service.slug}`} tabs={subnavTabs} active="overview" />}
     >
-      <div className="space-y-12">
+      <div className="space-y-10 md:space-y-12">
         {sections.map((section, index) => {
           const isCases = section.items === service.cases?.items;
           const isKeyPoints = section.items === service.key_points?.items;
@@ -217,7 +224,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
             return (
               <PageSection key={`cases-${index}`} title={metaTitle} lead={metaLead}>
                 {cases.length > 0 ? (
-                  <div className="grid gap-6 md:grid-cols-3">
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {cases.map((item) => (
                       <CaseCard
                         key={item.title ?? item.context ?? item.shift}
@@ -239,7 +246,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
             return (
               <PageSection key={`key-points-${index}`} title={metaTitle} lead={metaLead}>
                 {keyCards.length > 0 ? (
-                  <div className="grid gap-6 md:grid-cols-3">
+                  <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {keyCards.map((item) => (
                       <KeyCard key={item.title ?? item.description} title={item.title} description={item.description} />
                     ))}
@@ -260,11 +267,11 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
                       const description = typeof step === 'string' ? step : step?.description;
                       return (
                         <li key={title ?? description ?? stepIndex} className="flex gap-4">
-                          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-700 text-sm font-semibold text-white">
+                          <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-sustain-green text-sm font-semibold text-white">
                             {stepIndex + 1}
                           </span>
-                          <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-                            {title ? <h3 className="text-base font-semibold text-slate-900">{title}</h3> : null}
+                          <div className="rounded-card border border-sustain-cardBorder bg-white p-6 shadow-card">
+                            {title ? <h3 className="text-base font-semibold text-sustain-text">{title}</h3> : null}
                             {description ? (
                               <p className="mt-2 text-sm leading-6 text-slate-700">{description}</p>
                             ) : null}
@@ -293,9 +300,9 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
                   return (
                     <div
                       key={title ?? description ?? itemIndex}
-                      className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm"
+                      className="rounded-card border border-sustain-cardBorder bg-white p-6 shadow-card"
                     >
-                      {title ? <h3 className="text-base font-semibold text-slate-900">{title}</h3> : null}
+                      {title ? <h3 className="text-base font-semibold text-sustain-text">{title}</h3> : null}
                       {description && typeof description === 'string' ? (
                         <p className="mt-2 text-sm leading-6 text-slate-700">{description}</p>
                       ) : null}

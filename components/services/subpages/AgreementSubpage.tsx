@@ -8,7 +8,7 @@ const { Page } = createServiceSubpage({
   heading: (service) => service.agreement?.title ?? 'Coaching agreement & boundaries',
   intro: (service) =>
     service.agreement?.description ? (
-      <p className="text-base leading-7 text-slate-600">{service.agreement.description}</p>
+      <p className="text-base leading-7 text-slate-700">{service.agreement.description}</p>
     ) : null,
   renderContent: (service) => {
     const agreement = service.agreement ?? {};
@@ -61,7 +61,7 @@ const { Page } = createServiceSubpage({
 
             return (
               <PageSection key={title ?? index}>
-                {title ? <h2 className="text-xl font-semibold text-emerald-900">{title}</h2> : null}
+                {title ? <h2 className="text-xl font-semibold text-sustain-text">{title}</h2> : null}
                 {paragraphs.length > 0 ? (
                   <div className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
                     {paragraphs.map((text, paragraphIndex) => (
