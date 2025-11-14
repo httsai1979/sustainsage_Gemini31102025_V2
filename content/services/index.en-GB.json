@@ -21,10 +21,10 @@
     }
   ],
   "hero": {
-    "title": "Find your path by real cases, not slogans.",
-    "subtitle": "Three steady pathways. Start from examples; add structure when ready."
+    "title": "Start from the pathway that sounds most like you.",
+    "subtitle": "Career return, graduate start, or navigating the UK market — each pathway explains who it serves and the structure you can expect."
   },
-  "pathways_intro": "Choose a pathway that matches your situation.",
+  "pathways_intro": "See where you recognise yourself first. If you are weighing up whether coaching is the right container, the Readiness guide explains what helps the work land.",
   "cta": {
     "primary_label": "Try free tools",
     "primary_href": "/resources",
@@ -32,5 +32,5 @@
     "secondary_href": "/contact"
   },
   "title": "Services — Pathways you can start today",
-  "description": "Three clear pathways: career return, immigrant job search, and graduate start. Short steps, visible outcomes."
+  "description": "Three focused pathways show who they support, how we meet, and how we get started together."
 }
