@@ -8,19 +8,38 @@ export default function FAQAccordion({ items = [], className = '' } = {}) {
   }
 
   return (
-    <div className={cn('grid gap-3', className)}>
+    <div className={cn('grid gap-4', className)}>
       {items.map((item, index) => {
         const title = item?.question ?? item?.q ?? item?.title;
         const answer = item?.answer ?? item?.a ?? item?.content ?? item?.body;
         return (
-          <details key={title ?? index} className="rounded-2xl bg-white p-5 shadow-soft">
-            <summary className="flex cursor-pointer list-none items-center gap-2 text-base font-semibold text-ink">
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-sage/10 text-xs font-semibold text-sage">
-                {index + 1}
-              </span>
-              {title}
+          <details
+            key={title ?? index}
+            className="group border border-sustain-cardBorder rounded-card bg-white shadow-sm"
+          >
+            <summary className="flex w-full cursor-pointer list-none items-center justify-between gap-3 px-4 py-3 text-left md:px-5 md:py-4">
+              <div className="flex items-center gap-3">
+                <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-sustain-green/10 text-xs font-semibold text-sustain-green">
+                  {index + 1}
+                </span>
+                <span className="font-medium text-sustain-text">{title}</span>
+              </div>
+              <svg
+                className="h-5 w-5 text-sustain-green transition-transform duration-200 group-open:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                aria-hidden="true"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
             </summary>
-            {answer ? <div className="mt-3 text-[15px] leading-7 text-slate-600">{answer}</div> : null}
+            {answer ? (
+              <div className="px-4 pb-4 text-sm text-slate-700 leading-relaxed md:px-5 md:pb-5 md:text-base">
+                {answer}
+              </div>
+            ) : null}
           </details>
         );
       })}

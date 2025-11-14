@@ -12,8 +12,8 @@ type CaseCardProps = {
 
 export function CaseCard({ title, context, coaching_moves, shift, tools_used, disclaimer, href }: CaseCardProps) {
   const card = (
-    <article className="rounded-2xl border bg-white p-5 transition hover:border-emerald-300 hover:shadow-sm">
-      {title ? <h3 className="text-lg font-semibold text-slate-900">{title}</h3> : null}
+    <article className="rounded-card border border-sustain-cardBorder bg-white p-6 shadow-card transition hover:-translate-y-0.5 hover:border-sustain-green/60">
+      {title ? <h3 className="text-lg font-semibold text-sustain-text">{title}</h3> : null}
       {context ? (
         <p className="mt-2 text-sm text-slate-700">
           <b>Context:</b> {context}
@@ -40,7 +40,10 @@ export function CaseCard({ title, context, coaching_moves, shift, tools_used, di
 
   if (href) {
     return (
-      <Link href={href} className="block h-full focus:outline-none focus-visible:ring focus-visible:ring-emerald-500">
+      <Link
+        href={href}
+        className="block h-full focus:outline-none focus-visible:ring focus-visible:ring-sustain-green/60"
+      >
         {card}
       </Link>
     );
