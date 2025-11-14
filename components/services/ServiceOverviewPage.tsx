@@ -225,7 +225,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
             <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
               <p className="text-sm font-semibold text-sustain-text">Need a gentle sounding board?</p>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Book a chemistry chat or email a few lines about what is shifting right now.
+                Book a 20-minute chat or email a few lines about what is shifting right now.
               </p>
               <div className="mt-4 flex flex-col gap-3">
                 {hero.primaryCta?.href && hero.primaryCta?.label ? (
