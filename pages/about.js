@@ -6,14 +6,13 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
 import { H1 } from '@/components/ui/H';
-import PageSection from '@/components/ui/PageSection';
 import Card from '@/components/ui/Card';
-import CardGrid from '@/components/ui/CardGrid';
 import Icon from '@/components/ui/Icon';
 import StepList from '@/components/ui/StepList';
 import Callout from '@/components/ui/Callout';
 import { orderSections } from '@/lib/orderSections';
 import { loadContent } from '@/lib/loadContent';
+import { dedupeBy } from '@/lib/dedupe';
 import { sanitizeProps } from '@/lib/toSerializable';
 
 const SCENARIO_ICONS = ['compass', 'target', 'calendar', 'clock', 'handshake', 'book'];
@@ -21,20 +20,37 @@ const SCENARIO_ICONS = ['compass', 'target', 'calendar', 'clock', 'handshake', '
 function Hero({ intro, showFallbackNotice, fallbackMessage }) {
   if (!intro) return null;
   return (
-    <PageSection background="paper">
-      <div className="max-w-3xl space-y-6">
-        {intro.eyebrow ? (
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">{intro.eyebrow}</p>
-        ) : null}
-        {intro.title ? <H1>{intro.title}</H1> : null}
-        {intro.body ? (
-          <p className="text-base leading-7 text-slate-600">{intro.body}</p>
-        ) : null}
-        {showFallbackNotice ? (
-          <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
-        ) : null}
+    <section className="ss-section">
+      <div className="grid gap-10 md:grid-cols-2 md:items-center">
+        <div className="space-y-6">
+          {intro.eyebrow ? (
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{intro.eyebrow}</p>
+          ) : null}
+          {intro.title ? <H1>{intro.title}</H1> : null}
+          {intro.body ? <p className="text-base leading-relaxed text-slate-700">{intro.body}</p> : null}
+          {showFallbackNotice ? (
+            <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+          ) : null}
+        </div>
+        <div className="mt-8 md:mt-0">
+          {intro.image?.src ? (
+            <div className="overflow-hidden rounded-card border border-sustain-cardBorder bg-white shadow-card">
+              <Image
+                src={intro.image.src}
+                alt={intro.image.alt ?? intro.title ?? ''}
+                width={800}
+                height={600}
+                className="h-full w-full object-cover"
+              />
+            </div>
+          ) : (
+            <div className="flex h-full min-h-[240px] items-center justify-center rounded-card border border-sustain-cardBorder bg-sustain-green/5 p-10 text-center text-sustain-green">
+              <p className="text-base font-medium">Coaching grounded in care, culture, and structure.</p>
+            </div>
+          )}
+        </div>
       </div>
-    </PageSection>
+    </section>
   );
 }
 
@@ -50,42 +66,44 @@ Hero.propTypes = {
 
 function TeamSection({ team }) {
   const list = Array.isArray(team?.members) && team.members.length > 0 ? team.members : team?.people ?? [];
-  if (!list.length) return null;
+  const members = dedupeBy(list, (member, index) => member?.name ?? member?.title ?? member?.id ?? index);
+  if (!members.length) return null;
   return (
-    <PageSection title={team?.title} lead={team?.description} eyebrow={team?.eyebrow}>
-      <CardGrid columns={{ base: 1, md: 2, lg: 3 }}>
-        {list.map((member) => (
-          <Card
-            key={member.name ?? member.title}
-            title={member.name}
-            subtitle={member.title}
-          >
-            <div className="flex items-start gap-4">
+    <section className="ss-section">
+      <div className="space-y-4 text-center md:text-left">
+        {team?.eyebrow ? (
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{team.eyebrow}</p>
+        ) : null}
+        <h2 className="text-3xl font-semibold text-sustain-text">{team?.title}</h2>
+        {team?.description ? <p className="text-base text-slate-700">{team.description}</p> : null}
+      </div>
+      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {members.map((member) => (
+          <Card key={member.name ?? member.title} title={member.name} subtitle={member.title}>
+            <div className="flex flex-col gap-4 text-sm leading-relaxed text-slate-700">
               {member.image?.src ? (
-                <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full border border-slate-200">
-                  <Image
-                    src={member.image.src}
-                    alt={member.image.alt ?? member.name ?? ''}
-                    fill
-                    sizes="64px"
-                    className="object-cover"
-                  />
+                <div className="flex items-center gap-4">
+                  <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full border border-sustain-cardBorder">
+                    <Image
+                      src={member.image.src}
+                      alt={member.image.alt ?? member.name ?? ''}
+                      fill
+                      sizes="64px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="text-xs uppercase tracking-wide text-slate-500">
+                    {member.languages?.join(' · ')}
+                  </div>
                 </div>
               ) : null}
-              <div className="space-y-2 text-sm text-slate-600">
-                {member.bio ? <p>{member.bio}</p> : null}
-                {member.languages?.length ? (
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                    {member.languages.join(' · ')}
-                  </p>
-                ) : null}
-                {member.location ? <p className="text-xs text-slate-500">{member.location}</p> : null}
-              </div>
+              {member.bio ? <p>{member.bio}</p> : null}
+              {member.location ? <p className="text-xs text-slate-500">{member.location}</p> : null}
             </div>
           </Card>
         ))}
-      </CardGrid>
-    </PageSection>
+      </div>
+    </section>
   );
 }
 
@@ -100,50 +118,50 @@ TeamSection.propTypes = {
 };
 
 function ScenarioGrid({ data }) {
-  const scenarios = Array.isArray(data?.scenarios) ? data.scenarios.filter(Boolean) : [];
+  const scenarios = dedupeBy(
+    Array.isArray(data?.scenarios) ? data.scenarios.filter(Boolean) : [],
+    (scenario, index) =>
+      typeof scenario === 'string'
+        ? scenario
+        : scenario?.title ?? scenario?.description ?? index
+  );
   if (!scenarios.length) return null;
   return (
-    <PageSection eyebrow={data?.eyebrow} title={data?.title} lead={data?.description}>
-      <CardGrid columns={{ base: 1, md: 2, lg: 3 }}>
+    <section className="ss-section">
+      <div className="space-y-4 text-center md:text-left">
+        {data?.eyebrow ? (
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{data.eyebrow}</p>
+        ) : null}
+        <h2 className="text-3xl font-semibold text-sustain-text">{data?.title}</h2>
+        {data?.description ? <p className="text-base text-slate-700">{data.description}</p> : null}
+      </div>
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {scenarios.map((scenario, index) => {
           const normalized = typeof scenario === 'string' ? { title: scenario } : scenario;
           const iconName = normalized.icon ?? SCENARIO_ICONS[index % SCENARIO_ICONS.length];
           return (
-            <Card
-              key={normalized.title ?? normalized.description ?? index}
-              title={normalized.title}
-              icon={<Icon name={iconName} />}
-              prose
-            >
-              {normalized.description ? <p className="text-sm text-slate-600">{normalized.description}</p> : null}
+            <Card key={normalized.title ?? normalized.description ?? index} title={normalized.title} icon={<Icon name={iconName} />}>
+              {normalized.description ? <p className="text-sm text-slate-700">{normalized.description}</p> : null}
             </Card>
           );
         })}
-      </CardGrid>
+      </div>
       {(data?.cta?.href && data?.cta?.label) || (data?.secondaryCta?.href && data?.secondaryCta?.label) ? (
-        <div className="mt-8 flex flex-wrap gap-3 text-sm font-semibold">
+        <div className="mt-8 flex flex-wrap gap-3">
           {data?.cta?.href && data?.cta?.label ? (
-            <Link
-              href={data.cta.href}
-              className="inline-flex items-center justify-center rounded-full bg-sage px-5 py-3 text-white"
-            >
+            <Link href={data.cta.href} className="ss-btn-primary">
               {data.cta.label}
             </Link>
           ) : null}
           {data?.secondaryCta?.href && data?.secondaryCta?.label ? (
-            <Link
-              href={data.secondaryCta.href}
-              className="inline-flex items-center justify-center rounded-full border border-sage/40 px-5 py-3 text-sage"
-            >
+            <Link href={data.secondaryCta.href} className="ss-btn-secondary">
               {data.secondaryCta.label}
             </Link>
           ) : null}
         </div>
       ) : null}
-      {data?.disclaimer ? (
-        <p className="mt-6 text-xs leading-5 text-slate-500">{data.disclaimer}</p>
-      ) : null}
-    </PageSection>
+      {data?.disclaimer ? <p className="mt-6 text-xs leading-5 text-slate-500">{data.disclaimer}</p> : null}
+    </section>
   );
 }
 
@@ -166,24 +184,30 @@ ScenarioGrid.propTypes = {
 };
 
 function Principles({ title, items = [] }) {
-  if (!items.length) return null;
+  const uniqueItems = dedupeBy(
+    items,
+    (item, index) =>
+      typeof item === 'string'
+        ? item
+        : item?.title ?? item?.description ?? index
+  );
+  if (!uniqueItems.length) return null;
   return (
-    <PageSection title={title}>
-      <CardGrid columns={{ base: 1, md: 2, lg: 3 }}>
-        {items.map((item, index) => {
+    <section className="ss-section">
+      <div className="space-y-4 text-center md:text-left">
+        <h2 className="text-3xl font-semibold text-sustain-text">{title}</h2>
+      </div>
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        {uniqueItems.map((item, index) => {
           const normalized = typeof item === 'string' ? { description: item } : item;
           return (
-            <Card
-              key={normalized.title ?? normalized.description ?? index}
-              title={normalized.title}
-              prose
-            >
-              {normalized.description ? <p className="text-sm text-slate-600">{normalized.description}</p> : null}
+            <Card key={normalized.title ?? normalized.description ?? index} title={normalized.title}>
+              {normalized.description ? <p className="text-sm text-slate-700">{normalized.description}</p> : null}
             </Card>
           );
         })}
-      </CardGrid>
-    </PageSection>
+      </div>
+    </section>
   );
 }
 
@@ -193,12 +217,21 @@ Principles.propTypes = {
 };
 
 function BoundariesSection({ boundaries }) {
-  const items = orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []);
+  const items = dedupeBy(
+    orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []),
+    (item, index) => item?.question ?? item?.title ?? item?.answer ?? index
+  );
   if (!items.length) return null;
   return (
-    <PageSection title={boundaries?.title} lead={boundaries?.description}>
-      <FAQAccordion items={items} className="mt-6" />
-    </PageSection>
+    <section className="ss-section">
+      <div className="space-y-4 text-center md:text-left">
+        <h2 className="text-3xl font-semibold text-sustain-text">{boundaries?.title}</h2>
+        {boundaries?.description ? <p className="text-base text-slate-700">{boundaries.description}</p> : null}
+      </div>
+      <div className="mt-8 rounded-card border border-sustain-cardBorder bg-white p-4 shadow-card">
+        <FAQAccordion items={items} />
+      </div>
+    </section>
   );
 }
 
@@ -216,7 +249,10 @@ export default function AboutPage({
   showFallbackNotice = false,
   fallbackNotice = undefined,
 } = {}) {
-  const keyPointItems = orderSections(Array.isArray(copy?.key_points?.items) ? copy.key_points.items : []);
+  const keyPointItems = dedupeBy(
+    orderSections(Array.isArray(copy?.key_points?.items) ? copy.key_points.items : []),
+    (item, index) => item?.title ?? item?.description ?? index
+  );
   const processSteps = orderSections(Array.isArray(copy?.process?.steps) ? copy.process.steps : []);
   const callout = copy?.callout ?? {};
   const fallbackMessage =
@@ -226,16 +262,22 @@ export default function AboutPage({
     'Temporarily showing English content while we complete this translation.';
 
   return (
-    <>
+    <main className="ss-container">
       <Hero intro={copy?.intro} showFallbackNotice={showFallbackNotice} fallbackMessage={fallbackMessage} />
       <TeamSection team={team} />
       <ScenarioGrid data={copy?.whatIsCoaching} />
       <Principles title={copy?.key_points?.title ?? 'Guiding principles'} items={keyPointItems} />
-      <PageSection title={copy?.process?.title} lead={copy?.process?.description}>
-        <StepList steps={processSteps} />
-      </PageSection>
+      <section className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <h2 className="text-3xl font-semibold text-sustain-text">{copy?.process?.title}</h2>
+          {copy?.process?.description ? <p className="text-base text-slate-700">{copy.process.description}</p> : null}
+        </div>
+        <div className="mt-8">
+          <StepList steps={processSteps} className="mx-auto max-w-3xl md:mx-0" />
+        </div>
+      </section>
       <BoundariesSection boundaries={copy?.boundaries} />
-      <PageSection>
+      <section className="ss-section">
         <Callout
           title={callout?.title}
           body={callout?.body}
@@ -244,8 +286,8 @@ export default function AboutPage({
             callout?.secondary,
           ].filter((link) => link?.href && link?.label)}
         />
-      </PageSection>
-    </>
+      </section>
+    </main>
   );
 }
 

@@ -14,16 +14,16 @@ type ServiceSubnavProps = {
 
 export default function ServiceSubnav({ base, tabs = [], active }: ServiceSubnavProps) {
   return (
-    <nav className="border-b border-slate-200 bg-white">
-      <ul className="mx-auto flex max-w-5xl items-center gap-4 overflow-x-auto px-6 py-3 sm:px-8 sm:py-4 text-sm sm:text-[15px] leading-6 font-medium">
+    <nav className="border-b border-sustain-cardBorder bg-white/95">
+      <ul className="mx-auto flex max-w-6xl flex-wrap items-center justify-start gap-4 overflow-x-auto px-4 py-3 text-sm font-medium leading-6 text-sustain-text sm:px-6 sm:text-[15px]">
         {tabs.map((tab) => {
           const href = tab.href ?? (tab.slug === 'overview' ? base : `${base}/${tab.slug}`);
           const isActive = active === tab.slug;
-          const className = `inline-flex border-b-2 pb-2 ${
+          const className = `inline-flex border-b-2 pb-2 transition-colors ${
             isActive
-              ? 'border-emerald-600 text-emerald-700'
-              : 'border-transparent text-slate-600 transition-colors hover:text-emerald-700'
-          }`;
+              ? 'border-sustain-green text-sustain-green'
+              : 'border-transparent text-slate-500 hover:text-sustain-green'
+          } whitespace-nowrap`;
           const commonProps = {
             'data-active': isActive ? 'true' : undefined,
             className,
