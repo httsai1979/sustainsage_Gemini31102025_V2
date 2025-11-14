@@ -118,7 +118,7 @@ export default function FAQPage({
           <p className="mt-4 text-base text-slate-700">{cta?.body}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link href="/contact" className="ss-btn-primary">
-              {cta?.primary ?? 'Book a call'}
+              {cta?.primary ?? 'Book a 20-minute chat'}
             </Link>
             <Link href="/services" className="ss-btn-secondary">
               {cta?.secondary ?? 'Explore coaching pathways'}

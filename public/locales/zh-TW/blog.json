@@ -4,6 +4,7 @@
     "description": "SustainSage 的教練式反思與故事。閱讀雙語文章，陪你走過職涯轉換、文化橋接與溫柔領導。"
   },
   "hero": {
+    "eyebrow": "部落格",
     "title": "停一停，看看自己在哪裡",
     "subtitle": "短篇文章與提問，邀請你呼吸、思考，並設計下一個實驗。"
   },
@@ -42,6 +43,10 @@
     "primaryHref": "/services",
     "secondary": "預約初談",
     "secondaryHref": "/contact"
+  },
+  "labels": {
+    "readArticle": "閱讀文章",
+    "readArticleAria": "閱讀《{{title}}》"
   },
   "post1": {
     "slug": "making-room-for-slow-transition",

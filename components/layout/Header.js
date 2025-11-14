@@ -1,23 +1,22 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 import { Bars3Icon, ChevronDownIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 import cn from '@/lib/cn';
 
-const NAV_STRUCTURE = [
-  { type: 'link', href: '/', label: 'Home' },
-  { type: 'link', href: '/about', label: 'About' },
+const DEFAULT_NAV_STRUCTURE = [
+  { type: 'link', href: '/', labelKey: 'header.navHome' },
+  { type: 'link', href: '/about', labelKey: 'header.navAbout' },
   { type: 'services' },
-  { type: 'link', href: '/resources', label: 'Resources' },
-  { type: 'link', href: '/blog', label: 'Blog' },
-  { type: 'link', href: '/faq', label: 'FAQ' },
-  { type: 'link', href: '/contact', label: 'Contact' },
+  { type: 'link', href: '/resources', labelKey: 'header.navResources' },
+  { type: 'link', href: '/blog', labelKey: 'header.navBlog' },
+  { type: 'link', href: '/faq', labelKey: 'header.navFaq' },
+  { type: 'link', href: '/contact', labelKey: 'header.navContact' },
 ];
 
-const NAV_LINKS = NAV_STRUCTURE.filter((item) => item.type === 'link');
-
-const MEGA_COLUMNS = [
+const DEFAULT_MEGA_COLUMNS = [
   {
     title: 'Coaching options',
     links: [
@@ -44,32 +43,69 @@ const MEGA_COLUMNS = [
   },
 ];
 
-const MEGA_HIGHLIGHT = {
+const DEFAULT_MEGA_HIGHLIGHT = {
   title: 'Gentle support, wherever you are',
   description: 'Bilingual online coaching grounded in ethics, structure, and practical kindness.',
   ctaLabel: 'Explore services',
   ctaHref: '/services',
 };
 
-function LocaleToggle({ variant = 'desktop', onToggle }) {
-  const buttonClasses =
+const LANGUAGE_OPTIONS = [
+  { value: 'en-GB', fallbackLabel: 'English' },
+  { value: 'zh-TW', fallbackLabel: '繁體中文' },
+  { value: 'zh-CN', fallbackLabel: '简体中文' },
+];
+
+function LocaleToggle({ variant = 'desktop', value, onChange, label, options = [] }) {
+  if (!options.length) {
+    return null;
+  }
+
+  const wrapperClasses =
     variant === 'desktop'
-      ? 'hidden items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700 md:inline-flex'
-      : 'inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-base font-semibold text-slate-700 shadow-sm transition hover:border-emerald-300 hover:text-emerald-700';
+      ? 'relative hidden md:inline-flex'
+      : 'relative inline-flex w-full';
+
+  const selectClasses =
+    'appearance-none rounded-full border border-slate-200 bg-white px-4 py-2 pr-10 text-sm font-semibold text-slate-700 shadow-sm transition focus:border-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400';
+
+  const iconClasses =
+    'pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-500';
+
+  const handleChange = (event) => {
+    const nextLocale = event.target.value;
+    if (nextLocale && nextLocale !== value) {
+      onChange(nextLocale);
+    }
+  };
 
   return (
-    <button type="button" className={buttonClasses} onClick={onToggle}>
-      <span aria-hidden>EN ⇄ 繁中</span>
-      <span className="sr-only">Toggle language</span>
-    </button>
+    <label className={`${wrapperClasses} items-center`}>
+      <span className="sr-only">{label}</span>
+      <select className={selectClasses} value={value} onChange={handleChange}>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      <ChevronDownIcon className={iconClasses} aria-hidden />
+    </label>
   );
 }
 
 export default function Header() {
   const router = useRouter();
+  const { t } = useTranslation('common');
   const [menuOpen, setMenuOpen] = useState(false);
   const [megaOpen, setMegaOpen] = useState(false);
   const servicesMenuRef = useRef(null);
+  const currentLocale = typeof router.locale === 'string' && router.locale.length ? router.locale : 'en-GB';
+  const availableLocales = Array.isArray(router.locales) && router.locales.length ? router.locales : LANGUAGE_OPTIONS.map((option) => option.value);
+  const localeOptions = LANGUAGE_OPTIONS.filter((option) => availableLocales.includes(option.value)).map((option) => ({
+    value: option.value,
+    label: t(`header.languages.${option.value}`, option.fallbackLabel),
+  }));
 
   const isActive = (href) => {
     const path = router.asPath.split('#')[0];
@@ -80,10 +116,7 @@ export default function Header() {
     return path.startsWith(href);
   };
 
-  const handleToggleLocale = () => {
-    const currentLocale = router.locale === 'zh-TW' ? 'zh-TW' : 'en';
-    const nextLocale = currentLocale === 'zh-TW' ? 'en' : 'zh-TW';
-
+  const handleLocaleChange = (nextLocale) => {
     router.push(router.asPath, router.asPath, { locale: nextLocale });
   };
 
@@ -124,6 +157,30 @@ export default function Header() {
     }
   };
 
+  const navStructure = DEFAULT_NAV_STRUCTURE.map((item) =>
+    item.type === 'link'
+      ? {
+          ...item,
+          label: t(item.labelKey),
+        }
+      : item
+  );
+
+  const navLinks = navStructure.filter((item) => item.type === 'link');
+
+  const megaColumns = t('header.mega.columns', { returnObjects: true });
+  const resolvedMegaColumns = Array.isArray(megaColumns) && megaColumns.length ? megaColumns : DEFAULT_MEGA_COLUMNS;
+  const highlight = t('header.mega.highlight', { returnObjects: true });
+  const resolvedHighlight =
+    highlight && typeof highlight === 'object'
+      ? { ...DEFAULT_MEGA_HIGHLIGHT, ...highlight }
+      : DEFAULT_MEGA_HIGHLIGHT;
+  const mobileServicesLabel = t('header.mega.mobileCta', t('actions.exploreServices'));
+  const bookChatLabel = t('actions.bookChat');
+  const openMenuLabel = t('header.openMenu');
+  const closeMenuLabel = t('header.closeMenu');
+  const localeLabel = t('header.languageSwitcherLabel', 'Choose language');
+
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-paper/95 backdrop-blur">
       <div className="ss-container flex items-center justify-between py-4">
@@ -131,8 +188,8 @@ export default function Header() {
           SustainSage Group
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-semibold lg:flex">
-          {NAV_STRUCTURE.map((item, index) => {
+        <nav className="hidden items-center gap-6 lg:flex">
+          {navStructure.map((item, index) => {
             if (item.type === 'services') {
               return (
                 <div
@@ -145,22 +202,20 @@ export default function Header() {
                   <button
                     type="button"
                     className={cn(
-                      'inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold transition',
-                      megaOpen || isActive('/services')
-                        ? 'bg-sustain-green/10 text-primary'
-                        : 'text-ink/70 hover:text-primary',
+                      'nav-link rounded-full px-4 py-2 transition-colors',
+                      megaOpen || isActive('/services') ? 'bg-sustain-green/10 nav-link--active' : 'hover:text-primary',
                     )}
                     aria-expanded={megaOpen}
                     aria-haspopup="true"
                     onClick={() => setMegaOpen((prev) => !prev)}
                   >
-                    Services
+                    {t('header.navServices')}
                     <ChevronDownIcon className={cn('h-4 w-4 transition', megaOpen ? 'rotate-180' : '')} />
                   </button>
                   {megaOpen ? (
                     <div className="absolute left-1/2 top-full z-30 mt-4 hidden w-[min(1000px,calc(100vw-2rem))] -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-8 shadow-2xl lg:block">
                       <div className="grid gap-8 lg:grid-cols-[repeat(3,minmax(0,1fr))_minmax(0,1.2fr)]">
-                        {MEGA_COLUMNS.map((column) => (
+                        {resolvedMegaColumns.map((column) => (
                           <div key={column.title}>
                             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sustain-green/80">
                               {column.title}
@@ -183,14 +238,14 @@ export default function Header() {
                         ))}
                         <div className="rounded-2xl bg-sustain-text p-6 text-white">
                           <p className="text-sm font-semibold uppercase tracking-[0.25em] text-white/60">SustainSage</p>
-                          <h3 className="mt-3 text-2xl font-semibold">{MEGA_HIGHLIGHT.title}</h3>
-                          <p className="mt-3 text-sm text-white/80">{MEGA_HIGHLIGHT.description}</p>
+                          <h3 className="mt-3 text-2xl font-semibold">{resolvedHighlight.title}</h3>
+                          <p className="mt-3 text-sm text-white/80">{resolvedHighlight.description}</p>
                           <Link
-                            href={MEGA_HIGHLIGHT.ctaHref}
+                            href={resolvedHighlight.ctaHref}
                             className="mt-6 inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-semibold text-sustain-text"
                             onClick={() => setMegaOpen(false)}
                           >
-                            {MEGA_HIGHLIGHT.ctaLabel}
+                            {resolvedHighlight.ctaLabel}
                           </Link>
                         </div>
                       </div>
@@ -204,11 +259,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={
-                  isActive(item.href)
-                    ? 'text-primary'
-                    : 'text-ink/70 transition-colors hover:text-primary'
-                }
+                className={cn('nav-link', isActive(item.href) && 'nav-link--active')}
               >
                 {item.label}
               </Link>
@@ -221,14 +272,19 @@ export default function Header() {
             href="/contact"
             className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
           >
-            Book a conversation
+            {bookChatLabel}
           </Link>
-          <LocaleToggle onToggle={handleToggleLocale} />
+          <LocaleToggle
+            value={currentLocale}
+            onChange={handleLocaleChange}
+            label={localeLabel}
+            options={localeOptions}
+          />
           <button
             type="button"
             className="inline-flex items-center justify-center rounded-full p-2 text-ink transition hover:bg-slate-100 lg:hidden"
             onClick={() => setMenuOpen(true)}
-            aria-label="Open navigation"
+            aria-label={openMenuLabel}
           >
             <Bars3Icon className="h-6 w-6" />
           </button>
@@ -242,7 +298,7 @@ export default function Header() {
               type="button"
               className="rounded-full p-2 text-ink transition hover:bg-slate-100"
               onClick={() => setMenuOpen(false)}
-              aria-label="Close navigation"
+              aria-label={closeMenuLabel}
             >
               <XMarkIcon className="h-6 w-6" />
             </button>
@@ -254,9 +310,9 @@ export default function Header() {
                 onClick={handleNavClick}
                 className="block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-base font-semibold"
               >
-                Explore services
+                {mobileServicesLabel}
               </Link>
-              {MEGA_COLUMNS.map((column) => (
+              {resolvedMegaColumns.map((column) => (
                 <div key={column.title}>
                   <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sustain-green/80">
                     {column.title}
@@ -279,16 +335,12 @@ export default function Header() {
               ))}
             </div>
             <div className="space-y-2 text-base">
-              {NAV_LINKS.map((item) => (
+              {navLinks.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   onClick={handleNavClick}
-                  className={
-                    isActive(item.href)
-                      ? 'text-primary'
-                      : 'text-ink transition-colors hover:text-primary'
-                  }
+                  className={cn('nav-link text-lg w-fit', isActive(item.href) && 'nav-link--active')}
                 >
                   {item.label}
                 </Link>
@@ -299,9 +351,15 @@ export default function Header() {
               onClick={handleNavClick}
               className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white"
             >
-              Book a conversation
+              {bookChatLabel}
             </Link>
-            <LocaleToggle variant="mobile" onToggle={handleToggleLocale} />
+            <LocaleToggle
+              variant="mobile"
+              value={currentLocale}
+              onChange={handleLocaleChange}
+              label={localeLabel}
+              options={localeOptions}
+            />
           </div>
         </div>
       ) : null}

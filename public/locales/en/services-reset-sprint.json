@@ -7,7 +7,7 @@
     "title": "Reset Sprint – 3 sessions",
     "subtitle": "For when life is “a bit much”, but you don’t want a 6-month programme.",
     "imageAlt": "Illustration of pausing and choosing next steps",
-    "primaryCta": "Book an intro call",
+    "primaryCta": "Book a 20-minute chat",
     "secondaryCta": "Back to services"
   },
   "sections": {
@@ -44,9 +44,9 @@
     },
     "cta": {
       "body": [
-        { "type": "text", "value": "Use the intro call to see whether a short sprint is the right container. If another type of support fits better, we’ll say so." }
+        { "type": "text", "value": "Use the 20-minute chat to see whether a short sprint is the right container. If another type of support fits better, we’ll say so." }
       ],
-      "primaryCta": "Book an intro call",
+      "primaryCta": "Book a 20-minute chat",
       "secondaryCta": "Explore all services"
     }
   }

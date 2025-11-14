@@ -12,6 +12,10 @@
       "href": "/legal/coaching-boundaries"
     }
   },
+  "faqLink": {
+    "label": "还有疑问？前往 FAQ。",
+    "href": "/faq"
+  },
   "pathways": {
     "title": "选择适合你的教练路径",
     "description": "四条最常被询问的路径，都会依你的情境弹性调整。",
@@ -67,7 +71,13 @@
         ],
         "icon": "/images/services/leadership.svg"
       }
-    ]
+    ],
+    "eyebrow": "服务选项",
+    "badges": {
+      "who": "适合对象",
+      "focus": "聚焦重点",
+      "format": "进行方式"
+    }
   },
   "cta": {
     "title": "还不确定怎么开始？",
@@ -707,5 +717,42 @@
         "secondaryHref": "/services"
       }
     }
+  },
+  "gettingStarted": {
+    "eyebrow": "开始方式",
+    "title": "从初谈到合作的稳定流程",
+    "steps": [
+      {
+        "title": "预约 20 分钟聊聊",
+        "description": "先了解你的情境，厘清教练范围与合作可行性。"
+      },
+      {
+        "title": "一起盘点现况",
+        "description": "讨论目标、资源与可及性需求，确认节奏怎么安排。"
+      },
+      {
+        "title": "选择路径或客制",
+        "description": "挑一条现成路径，或依情境混搭设计。"
+      },
+      {
+        "title": "开始合作",
+        "description": "每 2–3 周线上会谈并穿插回顾，必要时调整协议。"
+      }
+    ]
+  },
+  "approach": {
+    "eyebrow": "合作风格",
+    "title": "务实、个性化、可持续",
+    "description": "我们用文化敏感、善待步调的方式设计实验，让你安心测试。",
+    "cards": [
+      {
+        "title": "个人化又有弹性",
+        "body": "会谈语言、节奏与协议一起设计，确保能配合你的责任与生活。"
+      },
+      {
+        "title": "务实又照顾能量",
+        "body": "每次会谈都收敛成可实作的小步骤或脚本，累积而不烧尽。"
+      }
+    ]
   }
 }

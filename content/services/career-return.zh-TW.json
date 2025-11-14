@@ -60,8 +60,8 @@
     ]
   },
   "process": {
-    "title": "How the process works",
-    "description": "A three to four month container with 60-minute sessions and light touch check-ins between calls.",
+    "title": "流程怎麼走",
+    "description": "通常為期 3–4 個月，每次 60 分鐘並在會談間穿插輕量回報。",
     "steps": [
       "重整與界線：目標、限制，哪些主題較適合留在教練之外。",
       "重建訊號：一個可被看見的證據點（迷你專案／推薦人／復習練習）。",
@@ -69,7 +69,7 @@
       "面試適配：重返職場情境、節奏、照護安排與溝通。",
       "投遞與回顧：追蹤、20 分鐘復盤，調整下一小步。"
     ],
-    "note": "Optional asynchronous feedback through voice notes or docs helps you integrate between sessions."
+    "note": "若需要，也可透過語音或文件回饋在會談間獲得輕量指引。"
   },
   "agreement": {
     "sections": [
@@ -168,45 +168,34 @@
     ]
   },
   "cases": {
-    "title": "Composite coaching glimpses",
-    "description": "Real situations blended from multiple returners so identities stay confidential.",
+    "title": "匿名情境速寫",
+    "description": "以下為多位重返職場者的綜合案例，保護身份並僅作參考。",
     "items": [
       {
-        "title": "Back after 3 years, worried about gaps",
-        "context": "UK job search after a 3-year break; unsure how to frame caregiving.",
-        "coaching_moves": "Mapped a 30-min 'first day' simulation; rewrote 4 CV bullets with CAR; rehearsed boundary language.",
-        "shift": "Clearer language for gaps; sent 2 outreach messages with less avoidance.",
-        "tools_used": [
-          "Values Map",
-          "Self-Talk Reframe",
-          "Behavior Ladder"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "離開 3 年後回到求職市場",
+        "context": "暫離職場三年在英國重新投遞，擔心如何談照護空窗。",
+        "coaching_moves": "設計 30 分鐘的『回到第一天』模擬；用 CAR 結構改寫 4 個履歷段落；排演界線語句。",
+        "shift": "描述空窗的語言更踏實，也勇於發出 2 封主動訊息。",
+        "tools_used": ["價值地圖", "自我對話重寫", "行為實驗階梯"],
+        "disclaimer": "為示意用途且經過匿名處理，成果不保證。",
         "slug": "back-after-3-years-worried-about-gaps"
       },
       {
-        "title": "Rebuilding confidence post-burnout",
-        "context": "Returning after burnout leave; anxious about pace and expectations.",
-        "coaching_moves": "Designed gentle energy audit; practised asking for support; set weekly review ritual.",
-        "shift": "Communicated capacity cleanly; reported growing steadiness instead of bracing.",
-        "tools_used": [
-          "Energy Audit",
-          "Weekly Reflection",
-          "Boundary Scripts"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "倦怠後重新建立信心",
+        "context": "因倦怠請假，回歸時對節奏與期待感到焦慮。",
+        "coaching_moves": "規畫溫和的能量盤點；練習開口求助；建立每週回顧儀式。",
+        "shift": "能清楚說明自己的容量，從防備轉為穩定。",
+        "tools_used": ["能量盤點", "週回顧", "界線語句"],
+        "disclaimer": "為示意用途且經過匿名處理，成果不保證。",
         "slug": "rebuilding-confidence-post-burnout"
       },
       {
-        "title": "Translating new skills after study",
-        "context": "Certification during break; needs hybrid-role repositioning.",
-        "coaching_moves": "Reframed experience stories; prototyped networking outreach; tested answers.",
-        "shift": "Entered conversations confident about naming boundaries and new value.",
-        "tools_used": [
-          "Story Library",
-          "Interview Rehearsal"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "把進修成果轉成證據",
+        "context": "休息期間完成證照，想轉向混合型職務。",
+        "coaching_moves": "重整經驗故事；試寫拓展人脈訊息；演練常見追問。",
+        "shift": "更能說清楚新價值與界線，帶著信心進入對話。",
+        "tools_used": ["故事資料庫", "面試排演"],
+        "disclaimer": "為示意用途且經過匿名處理，成果不保證。",
         "slug": "translating-new-skills-after-study"
       }
     ]

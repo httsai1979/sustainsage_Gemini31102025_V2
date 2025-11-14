@@ -1,23 +1,16 @@
 {
-  "title": "Partner rebuilding identity",
-  "context": "Composite of trailing spouses balancing caregiving, identity shifts and UK job search expectations after relocating.",
+  "title": "伴侶身份的重新定位",
+  "context": "隨伴侶移居的家庭照護者，希望重建專業與社群。",
   "session_flow": [
-    "Named practical constraints (school runs, limited childcare) alongside desired role criteria.",
-    "Co-designed micro-experiments to test confidence in low-stakes conversations and asynchronous outreach.",
-    "Introduced voice-note accountability between sessions to sustain momentum without increasing overwhelm."
+    "設計社群探詢腳本與自我介紹，降低尷尬感。",
+    "安排資訊性對談並設定後續聯絡節奏。",
+    "建立小型專案或志工實驗，讓新身份有可見證據。"
   ],
-  "tools_used": [
-    "Experiment planner",
-    "Energy check-in prompts",
-    "Accountability voice notes"
-  ],
-  "boundary_and_consent": [
-    "Set limits on how much personal history would be shared in reflective exercises.",
-    "Agreed that any family-related logistics would be anonymised before entering shared documents."
-  ],
-  "timeframe": "8 sessions across 4 months while the family settled into new routines.",
-  "shift": "They rebuilt a sustainable rhythm for outreach that respected caregiving realities.",
-  "outcome": "Secured two flexible interview processes and articulated non-negotiables without guilt.",
-  "disclaimer": "Composite scenario anonymised for confidentiality; outcomes vary by individual.",
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。"
+  "tools_used": ["Values Map", "Conversation Scripts"],
+  "boundary_and_consent": "清楚界定伴侶會談不會涉及的私人內容，並尊重家庭節奏。",
+  "timeframe": "10 週 5 次會談＋共作筆記。",
+  "shift": "能坦然談自己的專業與照護角色，也建立新的支援網絡。",
+  "outcome": "與兩個在地社群建立合作並接下一個自由接案。",
+  "disclaimer": "示意並已匿名；成果不保證。",
+  "fallbackNotice": "如有未翻譯段落會暫以英文顯示。"
 }

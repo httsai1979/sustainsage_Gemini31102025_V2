@@ -8,7 +8,88 @@
     "navBlog": "Blog",
     "navContact": "Contact",
     "openMenu": "Open navigation",
-    "closeMenu": "Close navigation"
+    "closeMenu": "Close navigation",
+    "languageSwitcherLabel": "Choose language",
+    "languages": {
+      "en-GB": "English",
+      "zh-TW": "繁體中文",
+      "zh-CN": "简体中文"
+    },
+    "mega": {
+      "mobileCta": "Explore services",
+      "columns": [
+        {
+          "title": "Coaching options",
+          "links": [
+            {
+              "label": "1:1 Coaching",
+              "href": "/services",
+              "description": "Bespoke coaching journeys rooted in structure."
+            },
+            {
+              "label": "Small groups",
+              "href": "/services#group",
+              "description": "Gather peers navigating similar turning points."
+            },
+            {
+              "label": "Self-paced resources",
+              "href": "/resources",
+              "description": "Worksheets and prompts you can start today."
+            }
+          ]
+        },
+        {
+          "title": "Support for you",
+          "links": [
+            {
+              "label": "Mid-career reset",
+              "href": "/services#mid-career",
+              "description": "Realign your work with new priorities."
+            },
+            {
+              "label": "New to the UK",
+              "href": "/services#new-to-uk",
+              "description": "Translate your story across cultures."
+            },
+            {
+              "label": "Graduates & returners",
+              "href": "/services#graduates",
+              "description": "Build confidence entering new chapters."
+            }
+          ]
+        },
+        {
+          "title": "Explore topics",
+          "links": [
+            {
+              "label": "Career change",
+              "href": "/#topics",
+              "description": "Test directions without rushing decisions."
+            },
+            {
+              "label": "Confidence & boundaries",
+              "href": "/#topics",
+              "description": "Hold space for rest and clarity."
+            },
+            {
+              "label": "Living in the UK",
+              "href": "/#topics",
+              "description": "Belonging while adapting to systems."
+            }
+          ]
+        }
+      ],
+      "highlight": {
+        "title": "Gentle support, wherever you are",
+        "description": "Bilingual online coaching grounded in ethics, structure, and practical kindness.",
+        "ctaLabel": "Explore services",
+        "ctaHref": "/services"
+      }
+    }
+  },
+  "actions": {
+    "bookChat": "Book a 20-minute chat",
+    "exploreServices": "Explore services"
   },
   "footer": {
     "philosophy": "Calm clarity through conversation.",
@@ -18,7 +99,15 @@
     "privacyPolicy": "Privacy policy",
     "boundariesTitle": "Coaching boundaries",
     "boundariesNotice": "Coaching provides forward-looking support and does not replace therapy or specialist advice.",
-    "boundariesLink": "Read coaching boundaries"
+    "boundariesLink": "Read coaching boundaries",
+    "ctaTitle": "Need more personalised support?",
+    "ctaBody": "Book a 20-minute chat to see whether coaching with SustainSage is the right pace for you.",
+    "companyName": "SustainSage Group Ltd.",
+    "companyDescription": "Bilingual coaching for transitions, based in Portsmouth / Southsea, UK.",
+    "locations": "Portsmouth · Southsea · Online",
+    "quickLinksTitle": "Quick links",
+    "supportTitle": "Support",
+    "coachingApproach": "Coaching approach"
   },
   "stickyCta": {
     "title": "Ready for a small experiment?",
@@ -29,13 +118,6 @@
     "ariaLabel": "Coaching ethics and scope",
     "paragraph1": "We coach in line with the International Coaching Federation Code of Ethics. Coaching is a collaborative, client-led partnership that supports your self-directed learning and change. It is not therapy, counselling, medical, legal or financial advice. You remain responsible for your choices and actions.",
     "paragraph2": "We maintain confidentiality except where required by law or where there is a risk of harm. Together we set clear agreements, goals, and boundaries before we begin, and we obtain your informed consent for how we work and how your information is handled."
-  },
-  "errorPages": {
-    "notFoundTitle": "That page isn’t here",
-    "notFoundSubtitle": "The link may be outdated or the page has moved. Let’s head back to somewhere useful.",
-    "serverErrorTitle": "Something went wrong",
-    "serverErrorSubtitle": "An unexpected error occurred. Please try again soon or contact us if the issue continues.",
-    "cta": "Return home"
   },
   "testimonials": {
     "heading": "What clients say"
