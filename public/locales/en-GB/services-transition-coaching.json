@@ -6,7 +6,7 @@
   "hero": {
     "title": "Steady your relocation or role shift without losing yourself.",
     "subtitle": "We co-design structure around visas, careers, and community so you can move with clarity.",
-    "primaryCta": "Book a 20-minute intro call",
+    "primaryCta": "Book a 20-minute chat",
     "primaryHref": "/contact?service=transition-coaching",
     "secondaryCta": "Back to services",
     "secondaryHref": "/services"
@@ -77,9 +77,9 @@
     },
     "cta": {
       "title": "Ready to explore your next move with steadiness?",
-      "body": "Book an intro conversation so we can hear your context and confirm the fit.",
+      "body": "Book a 20-minute chat so we can hear your context and confirm the fit.",
       "primary": {
-        "label": "Book an intro call",
+        "label": "Book a 20-minute chat",
         "href": "/contact?service=transition-coaching"
       },
       "secondary": {

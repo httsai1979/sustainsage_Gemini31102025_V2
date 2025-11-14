@@ -63,8 +63,8 @@
       }
     ],
     "cta": {
-      "body": "Curious whether Transition fits? Book an intro call and note ‘Transition’. We will confirm scope before you commit.",
-      "primary": "Book the intro call",
+      "body": "Curious whether Transition fits? Book a 20-minute chat and note ‘Transition’. We will confirm scope before you commit.",
+      "primary": "Book a 20-minute chat",
       "secondary": "Compare packages"
     }
   },
@@ -162,8 +162,8 @@
       }
     ],
     "cta": {
-      "body": "Ready for a gentler reset? Book the intro call and mention ‘Reset’. We will confirm scope and timing together.",
-      "primary": "Book the intro call",
+      "body": "Ready for a gentler reset? Book a 20-minute chat and mention ‘Reset’. We will confirm scope and timing together.",
+      "primary": "Book a 20-minute chat",
       "secondary": "Compare packages"
     }
   },
@@ -215,8 +215,8 @@
       }
     ],
     "cta": {
-      "body": "Deepening is a longer commitment. Book an intro call and mention ‘Deepening’ so we can confirm fit and scheduling.",
-      "primary": "Book the intro call",
+      "body": "Deepening is a longer commitment. Book a 20-minute chat and mention ‘Deepening’ so we can confirm fit and scheduling.",
+      "primary": "Book a 20-minute chat",
       "secondary": "Compare packages"
     }
   },
