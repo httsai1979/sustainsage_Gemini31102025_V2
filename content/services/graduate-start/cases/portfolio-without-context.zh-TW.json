@@ -1,20 +1,16 @@
 {
-  "title": "Portfolio without context",
-  "context": "Composite of early-career designers and analysts whose portfolios showcased visuals but not reasoning.",
+  "title": "作品集缺乏脈絡",
+  "context": "作品只剩截圖，缺少為什麼與結果。",
   "session_flow": [
-    "Reviewed existing portfolio and highlighted where problem, role and result were missing.",
-    "Created captions that linked constraints, metrics and learning for each project.",
-    "Practised walkthroughs to build confidence explaining choices live."
+    "為每個案例加上問題－目標－成果摘要。",
+    "補上限制條件並用學習收穫重新排序。",
+    "建立「一頁一故事一連結」的說明方式。"
   ],
-  "tools_used": [
-    "Portfolio map",
-    "Story library",
-    "Walkthrough rehearsal"
-  ],
-  "boundary_and_consent": "Coachee determined which client details needed masking before case studies were shared or rehearsed.",
-  "timeframe": "4 sessions over 5 weeks with async feedback on slides and scripts.",
-  "shift": "They could articulate thinking and trade-offs rather than leaning on visuals alone.",
-  "outcome": "Reviewers commented on clarity of process and invited them to deeper portfolio interviews.",
-  "disclaimer": "Composite illustration; results depend on opportunity context.",
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。"
+  "tools_used": ["Story Library", "Portfolio Map"],
+  "boundary_and_consent": "所有客戶名稱以假名呈現；敏感資料以模糊化處理。",
+  "timeframe": "5 週 3 次會談＋共作審稿。",
+  "shift": "審稿者能看見思考過程，而不只是畫面。",
+  "outcome": "作品集開場時間從 10 分鐘降到 4 分鐘，回饋聚焦在決策品質。",
+  "disclaimer": "示意並已匿名；成果不保證。",
+  "fallbackNotice": "如有未翻譯段落會暫以英文顯示。"
 }

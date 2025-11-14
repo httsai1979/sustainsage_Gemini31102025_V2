@@ -1,112 +1,88 @@
 {
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
+  "fallbackNotice": "如有尚未翻譯的段落，會暫以英文顯示。",
   "pricing": {
     "packages": [
       {
         "name": "入門 — 3 次會談",
-        "duration": "3 × 50 分鐘／4–6 週內完成",
-        "scope": "每次會談之間 1 個小實驗；CV／LinkedIn 以英國常見格式快速校正。",
-        "price_note": "費用以 GBP 計價。"
+        "duration": "3 × 50 分鐘／4–6 週",
+        "scope": "每次會談之間 1 個小實驗；CV／LinkedIn 以英國格式快速校正。",
+        "price_note": "以 GBP 計價。"
       },
       {
         "name": "聚焦 — 6 次會談",
         "duration": "6 × 50 分鐘／8–12 週",
-        "scope": "作品集／履歷重構，強化可見的證據點；面試演練聚焦清楚與適配。",
-        "price_note": "費用以 GBP 計價。"
+        "scope": "作品集／履歷重構，凸顯在地可見的證據點；面試演練聚焦清楚與適配。",
+        "price_note": "以 GBP 計價。"
       },
       {
         "name": "延伸 — 12 次會談",
         "duration": "12 × 50 分鐘／3–6 個月",
-        "scope": "深度練習文化適配與主管對話；客製練習題與節奏回顧。",
-        "price_note": "費用以 GBP 計價。"
+        "scope": "深入練習文化適配與主管對話；客製練習題與節奏回顧。",
+        "price_note": "以 GBP 計價。"
       }
     ],
     "policies": [
-      {
-        "title": "改期",
-        "body": "需提前 24 小時；逾時視同使用一次會談。"
-      },
-      {
-        "title": "頻率",
-        "body": "第一堂確立節奏；套組之間可暫停。"
-      },
-      {
-        "title": "保密",
-        "body": "預設保密；最少必要紀錄；可要求刪除。"
-      },
-      {
-        "title": "範圍",
-        "body": "教練而非治療；若有需要會提供轉介資訊。"
-      },
-      {
-        "title": "時差與費用",
-        "body": "線上時段以英國時間為主；帳款以 GBP 計價。"
-      }
+      {"title": "改期", "body": "需提前 24 小時；逾時視同使用一次會談。"},
+      {"title": "頻率", "body": "第一堂確立節奏；套組之間可暫停。"},
+      {"title": "保密", "body": "預設保密；最少必要紀錄；可要求刪除。"},
+      {"title": "範圍", "body": "教練而非治療或法律；必要時提供轉介資訊。"},
+      {"title": "時差與費用", "body": "線上時段以英國時間為主；以 GBP 開立發票。"}
     ]
   },
   "readiness": {
     "checklist": [
-      "可安排 50–60 分鐘；有安靜空間與穩定網路。",
-      "可配合英國時段；日曆可安排每週固定節奏。",
-      "帶一個想測試的情境（職位／領域／城市）或你在意的問題。",
-      "理解教練邊界；避免危機或治療性主題。",
-      "願意在下一次會談前完成 1 個小實驗。",
-      "準備好 LinkedIn 連結或最新的 CV。",
-      "同意最少必要紀錄與資料處理（依政策）。",
-      "若英文非母語：可接受放慢、澄清。",
+      "可安排 50–60 分鐘、安靜且網路穩定的空間。",
+      "能配合英國時段，並在日曆上預留每週節奏。",
+      "帶一個想測試的情境（職位／產業／城市）或優先問題。",
+      "理解教練邊界；急性危機或治療性議題不在範圍內。",
+      "願意在兩次會談間完成 1 個小實驗。",
+      "準備好 LinkedIn 連結或最新 CV。",
+      "同意最少必要紀錄與資料處理。",
+      "若英文非母語：能接受放慢、澄清、共同寫作。",
       "會使用 Google Docs/Sheets 與 Zoom/Meet。",
-      "可使用英鎊 (GBP) 付款與開立發票。"
+      "可使用英鎊 (GBP) 付款與收取發票。"
     ],
     "what_to_prepare": [
-      "你的 LinkedIn 連結或最近期的 CV（PDF）。",
+      "LinkedIn 連結或最近期 CV。",
       "兩個讓你有成就感的短實例——做了什麼、為何重要。",
-      "限制清單（簽證、育兒、排班、地點）。",
-      "一個你可行的每週節奏（粗略即可）。",
+      "限制清單（簽證、照護、排班、地點）。",
+      "每週可行節奏（粗略即可）。",
       "前兩次會談最想釐清的三個問題。"
     ],
     "signals": [
-      "偏好冷靜、誠實的引導，不需要話術與包裝。",
-      "能接受小實驗可能失敗，但可學到東西。",
-      "需要英國在地的「可被看見的證據點」，而非空泛建議。",
+      "偏好沉穩、誠實、不過度包裝的指引。",
+      "需要英國在地「可被看見的證據點」，而非空泛建議。",
+      "能接受小實驗可能不完美，但願意回顧調整。",
       "願意維持每週節奏並做短回顧。",
-      "能接受「教練而非治療」的服務範圍。"
+      "能接受「教練而非治療／法律」的範圍。"
     ]
   },
   "process": {
-    "title": "Process & milestones",
-    "description": "We usually partner for eight to ten sessions across three months with optional co-working sprints.",
+    "title": "流程與里程碑",
+    "description": "常見為期 3 個月、8–10 次會談，可視需要插入共作衝刺或文件審閱。",
     "steps": [
-      {
-        "title": "Map the hiring landscape",
-        "description": "We unpack sector norms, sponsorship realities and what evidence UK employers seek."
-      },
-      {
-        "title": "Build your narrative toolkit",
-        "description": "We co-write scripts, portfolio stories and Q&A to use with recruiters, hiring managers and networks."
-      },
-      {
-        "title": "Sustain the search",
-        "description": "We monitor energy, iterate weekly plans and celebrate momentum so you do not burn out."
-      }
+      {"title": "看懂市場", "description": "釐清產業規則、簽證政策與英國雇主想看的證據。"},
+      {"title": "建立敘事工具箱", "description": "共同寫作腳本、作品集故事與 Q&A，用於獵頭、主管與人脈對話。"},
+      {"title": "維持動能", "description": "追蹤能量與節奏，調整每週計畫，讓進展可見又不燒盡。"}
     ],
-    "note": "You can add document reviews or mock interviews between sessions when deadlines appear."
+    "note": "若有突發面試或文件需求，可在會談間加上 mock interview 或文件審閱。"
   },
   "agreement": {
     "sections": [
       {
         "title": "服務範圍與適配",
         "paragraphs": [
-          "本服務為教練，不是心理治療、諮商、移民或法律建議。",
-          "我們專注於英國在地可被看見的證據點、清楚敘事、準備與節奏。",
-          "若治療或法律諮詢更合適，將協助指引至合適資源。"
+          "本服務為教練，不提供心理治療、移民或法律建議。",
+          "聚焦英國在地證據點、敘事清楚、準備與節奏。",
+          "若治療或法律資源更適合，會協助指引。"
         ]
       },
       {
         "title": "保密",
         "paragraphs": [
           "會談預設保密。",
-          "僅保留最少必要紀錄；你可隨時要求刪除。",
-          "為品質目的可能於督導中討論匿名化的模式，不含可識別資訊。"
+          "僅保留最少必要紀錄；可隨時要求刪除。",
+          "品質督導僅討論匿名化模式，不含可識別資訊。"
         ]
       },
       {
@@ -114,29 +90,29 @@
         "paragraphs": [
           "單次約 50 分鐘，線上進行，以英國時段為主。",
           "改期需提前 24 小時；逾時視同使用一次會談。",
-          "為保護節奏與休息，雙方同意下可在會談間暫停套組。"
+          "經雙方同意，套組可在會談間暫停。"
         ]
       },
       {
         "title": "費用與發票",
         "paragraphs": [
-          "費用以英鎊 (GBP) 計價；依套組或雙方約定開立發票。",
-          "已完成之會談不退費；未使用之會談可暫停保留。",
-          "如有匯款或平台手續費，除另有約定，原則上由客戶負擔。"
+          "以英鎊 (GBP) 計價；依套組或雙方約定開立發票。",
+          "已完成會談不退費；未使用會談可暫停保留。",
+          "匯款或平台手續費除另有約定，原則由客戶負擔。"
         ]
       },
       {
         "title": "個資與紀錄",
         "paragraphs": [
           "僅保存執行會談與開立發票所需的最少資料。",
-          "你可依法律限制範圍，申請調閱或刪除個人資料。",
-          "常用工具（如 Google Docs/Sheets、Email、視訊平台）將以合理注意使用。"
+          "你可依法律範圍申請調閱或刪除個資。",
+          "常用工具（Google Docs/Sheets、Email、視訊）將以合理注意使用。"
         ]
       },
       {
         "title": "合理使用與界線",
         "paragraphs": [
-          "會談之間可輕量回報；大量審稿或代做內容不在服務範圍內。",
+          "會談間可輕量回報；大量審稿或代做不在範圍內。",
           "不代為聯絡雇主，也不提供簽證／法律建議。",
           "若出現危害風險，為保護安全，保密義務可能被解除。"
         ]
@@ -144,110 +120,67 @@
       {
         "title": "爭議處理",
         "paragraphs": [
-          "若有爭議，優先透過 Email 與短通話及早處理。",
-          "仍無法解決者，將提出簡要書面方案，必要時暫停服務。",
-          "除法律另有強制規定外，原則適用英國法與司法管轄。"
+          "優先透過 Email 與短通話及早處理。",
+          "若仍無法解決，將提出書面方案並視情況暫停服務。",
+          "除法律另有規定外，原則適用英國法與司法管轄。"
         ]
       }
     ]
   },
   "faq": {
     "items": [
-      {
-        "q": "你們保證工作或面試嗎？",
-        "a": "不保證。教練服務不是仲介。我們協助你建立「在英國看得懂」的證據點與清楚敘事，接著由你投遞並追蹤結果。"
-      },
-      {
-        "q": "會談使用哪種語言？",
-        "a": "英文。需要時可放慢、釐清、共同寫作；對較難表達的概念可短暫切換中文輔助。"
-      },
-      {
-        "q": "你們提供簽證或移民法規的建議嗎？",
-        "a": "不提供法律意見。我們在你的限制條件下工作，必要時提供官方資訊的方向。"
-      },
-      {
-        "q": "你們會幫我寫 CV 或 LinkedIn 嗎？",
-        "a": "內容仍由你擁有。我們協助結構、清楚度與英國常見格式，可在 Google Docs 共同編修。"
-      },
-      {
-        "q": "你們會代我聯絡雇主或獵頭嗎？",
-        "a": "不會。我們協助你準備聯絡腳本並提升信心，但由你親自發送。"
-      },
-      {
-        "q": "兩次會談之間需要花多少時間？",
-        "a": "通常每週 30–60 分鐘（1 個小實驗：資訊性聊天、試做任務、志工嘗試）。保持小步、可見。"
-      },
-      {
-        "q": "談話是保密的嗎？",
-        "a": "預設保密；最少必要紀錄；可要求刪除。詳見邊界與政策頁。"
-      },
-      {
-        "q": "改期與退費怎麼處理？",
-        "a": "改期需提前 24 小時；逾時視同使用一次會談。已完成會談不退費；套組可在會談間暫停。"
-      }
+      {"q": "你們保證能拿到工作或面試嗎？", "a": "不保證。教練不是仲介。我們協助你建立英國看得懂的證據與敘事；由你投遞並追蹤。"},
+      {"q": "會談使用哪種語言？", "a": "主要使用英文；必要時可放慢、澄清、一起寫作，遇到較難表達的概念可短暫切換中文。"},
+      {"q": "你們提供簽證或移民法規建議嗎？", "a": "不提供法律意見。我們在你的限制條件下工作，必要時提供官方資訊方向。"},
+      {"q": "會代寫 CV 或 LinkedIn 嗎？", "a": "不代寫。內容屬於你。我們協助結構與清楚度，並在 Google Docs 共同編修。"},
+      {"q": "會代我聯絡雇主或獵頭嗎？", "a": "不會。我們協助你準備聯絡腳本並提升信心，由你親自發送。"},
+      {"q": "兩次會談間需要多少時間？", "a": "通常每週 30–60 分鐘，如資訊性聊天、試做任務或志工，保持小步且可見。"},
+      {"q": "談話會保密嗎？", "a": "預設保密；最少必要紀錄；可要求刪除。詳見邊界與政策頁。"},
+      {"q": "改期與退費怎麼處理？", "a": "改期需提前 24 小時；逾時視同使用一次會談。已完成會談不退費；套組可在會談間暫停。"}
     ]
   },
   "cases": {
-    "title": "Composite coaching glimpses",
-    "description": "Examples anonymised across internationally trained professionals navigating the UK market.",
+    "title": "匿名情境速寫",
+    "description": "綜合多位在英國求職的國際人才，保護個資。",
     "items": [
       {
-        "title": "Sponsorship status anxiety",
-        "context": "Non-UK degree; unsure how to address visa sponsorship early.",
-        "coaching_moves": "Built a 2-line sponsorship script; prioritised target firms by policy; planned 10-day outreach.",
-        "shift": "Fewer ghosted threads; clearer yes/no signals faster.",
-        "tools_used": [
-          "Decision Scorecard",
-          "Outreach Tracker"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "擔心簽證被拒",
+        "context": "非英國學歷，害怕一開口談簽證就被刷掉。",
+        "coaching_moves": "寫出兩句式簽證說明；依政策排序目標公司；規劃 10 天主動聯繫。",
+        "shift": "更快拿到明確的 yes/no 回應，減少石沉大海。",
+        "tools_used": ["Decision Scorecard", "Outreach Tracker"],
+        "disclaimer": "示意並已匿名，成果不保證。",
         "slug": "securing-sponsorship-with-clarity"
       },
       {
-        "title": "Translating overseas wins",
-        "context": "Strong results abroad not mapping to UK bullets.",
-        "coaching_moves": "Converted two projects to UK-style metrics; created proof links; rehearsed succinct framing.",
-        "shift": "Hiring managers understood scope without over-explaining.",
-        "tools_used": [
-          "CAR Bullets",
-          "Portfolio Map"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "海外資歷難以說服",
+        "context": "在亞洲帶過團隊，但英國主管聽不懂。",
+        "coaching_moves": "重寫 3 個案例，加入規模、風險與決策權；練習主管對話。",
+        "shift": "更敢以領導者身分發言，面試回饋聚焦在適配而非資歷不足。",
+        "tools_used": ["Story Library", "Interview Rehearsal"],
+        "disclaimer": "示意並已匿名，成果不保證。",
         "slug": "translating-overseas-leadership"
       },
       {
-        "title": "Accent & confidence",
-        "context": "Avoids phone screens due to accent worries.",
-        "coaching_moves": "Practised slow-first phrasing; scripted clarifying questions; built pause habits.",
-        "shift": "Entered calls with steadier pace and fewer rush-talk loops.",
-        "tools_used": [
-          "Pacing Cues",
-          "Question Bank"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
+        "title": "身為配偶的身份轉換",
+        "context": "隨伴侶移居，想重新建立專業與社群。",
+        "coaching_moves": "設計社群探詢腳本、安排資訊性對談、練習自我介紹。",
+        "shift": "找到新的專案合作夥伴，也更自在談自己的專業。",
+        "tools_used": ["Values Map", "Conversation Scripts"],
+        "disclaimer": "示意並已匿名，成果不保證。",
         "slug": "partner-rebuilding-identity"
       }
     ]
   },
   "key_points": {
     "items": [
-      {
-        "title": "把海外經驗轉譯為英國職場能理解的例子與語彙。"
-      },
-      {
-        "title": "每週節奏；兩次會談間做小實驗（資訊性聊天、試做任務、志工嘗試）。"
-      },
-      {
-        "title": "CV／LinkedIn 調整為英國常見格式與期待；展示最近的證據點。"
-      },
-      {
-        "title": "面試演練聚焦文化與適配；不教話術、不背模板。"
-      },
-      {
-        "title": "簡單定價；套組之間可暫停；預設保密。"
-      }
+      "把海外經驗轉成在地可信的證據點。",
+      "以英國常見格式整理 CV／LinkedIn／作品集。",
+      "練習界線語言：如何談簽證、照護與節奏限制。",
+      "面試演練聚焦清楚與適配，不教話術。",
+      "定價簡單；套組之間可暫停；預設保密。"
     ]
   },
-  "title": "移民求職 — 教練路徑",
-  "description": "把經驗轉成英國在地證據點。CV/LinkedIn 清楚度、主動聯繫腳本、面試練習。"
+  "title": "英國職場新起點 — 教練路徑",
+  "description": "把跨國經驗轉成英國可理解的證據，找到節奏、界線與新的支持系統。"
 }

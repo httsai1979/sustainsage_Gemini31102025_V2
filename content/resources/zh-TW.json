@@ -1,5 +1,28 @@
 [
-  { "id":"behaviour-ladder","title":"行為實驗階梯","desc":"設計一個小而安全的實驗，本週就開始動起來。","href":"/resources/behaviour-ladder","img":"/images/resources/behaviour-ladder.jpg","alt":"行為實驗階梯","downloadable":true,"download":"/docs/behaviour-experiment-ladder.pdf" },
-  { "id":"selftalk-cards","title":"自我對話調整卡","desc":"把苛刻語句換成更友善也更有用的說法。","img":"/images/resources/selftalk.jpg","alt":"自我對話調整卡","comingSoon":true },
-  { "id":"emotion-triangle","title":"情緒三角","desc":"由感受→需要→下一步；5 分鐘找到方向。","img":"/images/resources/emotion-triangle.jpg","alt":"情緒三角","comingSoon":true }
+  {
+    "id": "behaviour-ladder",
+    "title": "行為實驗階梯",
+    "desc": "用安全的小實驗在本週就得到回饋。",
+    "href": "/resources/behaviour-ladder",
+    "img": "/images/resources/behaviour-ladder.jpg",
+    "alt": "行為實驗階梯",
+    "downloadable": true,
+    "download": "/docs/behaviour-experiment-ladder.pdf"
+  },
+  {
+    "id": "selftalk-cards",
+    "title": "自我對話重寫卡片",
+    "desc": "把嚴苛語句換成更溫柔且有用的提醒。",
+    "img": "/images/resources/selftalk.jpg",
+    "alt": "自我對話卡片",
+    "comingSoon": true
+  },
+  {
+    "id": "emotion-triangle",
+    "title": "情緒三角練習",
+    "desc": "從感受 → 需求 → 下一步，5 分鐘釐清。",
+    "img": "/images/resources/emotion-triangle.jpg",
+    "alt": "情緒三角",
+    "comingSoon": true
+  }
 ]

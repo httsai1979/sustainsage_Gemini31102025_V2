@@ -1,20 +1,16 @@
 {
-  "title": "Too many choices, no criteria",
-  "context": "Composite of graduates excited by multiple sectors but paralysed without clear decision filters.",
+  "title": "選項太多沒有判準",
+  "context": "多位畢業生的綜合情境：對多個產業都有興趣，但沒有清楚的決策依據。",
   "session_flow": [
-    "Externalised hopes, constraints and non-negotiables into a shared decision board.",
-    "Designed two-week experiments to test energy and learning in each shortlisted path.",
-    "Debriefed experiments to evolve criteria and notice when FOMO was masking preferences."
+    "把期待、限制與不可妥協條件寫在共用決策板上。",
+    "為每個備選產業設計 2 週的小實驗，觀察能量與學習。",
+    "回顧實驗並調整判準，辨識 FOMO 何時掩蓋了真正的偏好。"
   ],
-  "tools_used": [
-    "Decision scorecard",
-    "Experiment log",
-    "Reflection prompts"
-  ],
-  "boundary_and_consent": "Student chose which personal or family pressures stayed off the shared board and could pause any experiment that spiked anxiety.",
-  "timeframe": "4 sessions across 6 weeks with async check-ins after each experiment.",
-  "shift": "They shifted from rumination to structured testing and made decisions with clearer evidence.",
-  "outcome": "Committed to one path with a defined next action list and felt less reactive to peer comparisons.",
-  "disclaimer": "Composite illustration; each person's journey is unique.",
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。"
+  "tools_used": ["Decision Scorecard", "Experiment Log", "Reflection Prompts"],
+  "boundary_and_consent": "學員自行決定哪些家庭壓力不放上決策板，如實驗造成焦慮可立即暫停。",
+  "timeframe": "6 週內 4 次會談，每次實驗後提供非同步回饋。",
+  "shift": "從反覆思考轉成結構化測試，決策依據更清楚。",
+  "outcome": "鎖定一條路徑並列出下一步，對同儕比較也較不焦慮。",
+  "disclaimer": "示意並已匿名；每個人的旅程仍獨一無二。",
+  "fallbackNotice": "如有未翻譯段落會暫以英文顯示。"
 }

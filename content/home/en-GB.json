@@ -9,10 +9,10 @@
     "description": "Work with an ICF-aligned coach to map your next step without burning out or losing what matters to you.",
     "image": {
       "src": "/images/hero/main.jpg",
-      "alt": "Rashi Anand coaching a client in a bright room"
+      "alt": "Coach and client in a calm conversation by the window"
     },
     "primaryCta": {
-      "label": "Book an intro call",
+      "label": "Book a 20-minute chat",
       "href": "/contact"
     },
     "secondaryCta": {
@@ -45,6 +45,26 @@
       }
     ]
   },
+  "audiences": [
+    {
+      "title": "Mid-career professionals",
+      "description": "People with 8–15 years of experience who need a reflective space to decide what stays, what shifts, and how to pace change.",
+      "href": "/for/mid-career-returners",
+      "linkLabel": "See the mid-career guide"
+    },
+    {
+      "title": "Career changers",
+      "description": "Professionals translating experience between countries or industries who want calm structure to test new directions.",
+      "href": "/for/newcomers-to-uk",
+      "linkLabel": "See the newcomers guide"
+    },
+    {
+      "title": "Parents and community builders",
+      "description": "Graduates, working parents, or carers aligning work with values while balancing caregiving and leadership.",
+      "href": "/for/parents-returning-to-work",
+      "linkLabel": "See the parents guide"
+    }
+  ],
   "key_points": {
     "title": "What you will notice in early sessions",
     "description": "Example-led conversations keep decisions grounded before we layer on more structure.",
@@ -124,8 +144,8 @@
   "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "cta": {
     "primary_label": "Try free tools",
-    "primary_href": "/#tools",
-    "secondary_label": "Book a 20-min conversation",
+    "primary_href": "/resources",
+    "secondary_label": "Book a 20-minute chat",
     "secondary_href": "/contact"
   },
   "title": "SustainSage Coaching — UK bilingual career coaching",
