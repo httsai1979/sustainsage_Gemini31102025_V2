@@ -12,7 +12,7 @@
       "alt": "Rashi Anand coaching a client in a bright room"
     },
     "primaryCta": {
-      "label": "Book an intro call",
+      "label": "Book a 20-minute chat",
       "href": "/contact"
     },
     "secondaryCta": {
@@ -124,8 +124,8 @@
   "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "cta": {
     "primary_label": "Try free tools",
-    "primary_href": "/#tools",
-    "secondary_label": "Book a 20-min conversation",
+    "primary_href": "/resources",
+    "secondary_label": "Book a 20-minute chat",
     "secondary_href": "/contact"
   },
   "title": "SustainSage Coaching — UK bilingual career coaching",

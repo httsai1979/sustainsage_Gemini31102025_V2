@@ -6,7 +6,7 @@
   "hero": {
     "title": "Translate who you are into the UK workplace with confidence.",
     "subtitle": "We unpack cultural codes, communication, and systems so you can land well without losing yourself.",
-    "primaryCta": "Book a 20-minute intro call",
+    "primaryCta": "Book a 20-minute chat",
     "primaryHref": "/contact?service=uk-newcomer-coaching",
     "secondaryCta": "Back to services",
     "secondaryHref": "/services"
@@ -77,9 +77,9 @@
     },
     "cta": {
       "title": "Need a grounded partner as you settle in the UK?",
-      "body": "Schedule an intro call so we can understand your context and decide the next step together.",
+      "body": "Book a 20-minute chat so we can understand your context and decide the next step together.",
       "primary": {
-        "label": "Book an intro call",
+        "label": "Book a 20-minute chat",
         "href": "/contact?service=uk-newcomer-coaching"
       },
       "secondary": {
