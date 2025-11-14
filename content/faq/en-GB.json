@@ -18,7 +18,7 @@
       },
       {
         "href": "/contact",
-        "label": "Book an intro chat"
+        "label": "Book a 20-minute chat"
       }
     ]
   },
@@ -61,7 +61,7 @@
         },
         {
           "question": "What are your fees?",
-          "answer": "Personal packages range from £420 to £1,200 depending on length. Organisation-sponsored coaching starts from £1,800 for a three-month engagement. Sliding scale options are discussed during the intro chat."
+          "answer": "Personal packages range from £420 to £1,200 depending on length. Organisation-sponsored coaching starts from £1,800 for a three-month engagement. Sliding scale options are discussed during the 20-minute chat."
         },
         {
           "question": "What is your cancellation policy?",
@@ -111,7 +111,7 @@
   "cta": {
     "title": "Still unsure?",
     "body": "Share your context and we will confirm whether coaching, a referral, or another resource will serve you best. Your clarity matters more than filling a slot.",
-    "primary": "Book a call",
+    "primary": "Book a 20-minute chat",
     "secondary": "Explore coaching pathways"
   },
   "fallbackNotice": "Temporarily showing English content while we complete this translation."

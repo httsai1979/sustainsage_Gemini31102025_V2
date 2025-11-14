@@ -91,7 +91,7 @@ export default function ResourcesPage({ items = [] }) {
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link href="/contact" className="ss-btn-primary">
-              Book a free chat
+              Book a 20-minute chat
             </Link>
             <Link href="/services" className="ss-btn-secondary">
               Explore coaching
