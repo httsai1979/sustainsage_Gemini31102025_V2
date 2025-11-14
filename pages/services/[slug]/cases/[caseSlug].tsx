@@ -6,8 +6,6 @@ import Link from 'next/link';
 
 import { CaseDetail, type CaseDetailContent } from '@/components/cases/CaseDetail';
 import { StickyCTA } from '@/components/common/StickyCTA';
-import PageLayoutV2 from '@/components/layout/PageLayoutV2';
-import SectionContainer from '@/components/sections/SectionContainer';
 import ServiceSubnav from '@/components/services/ServiceSubnav';
 import { loadContent } from '@/lib/loadContent';
 import type { ServiceContent, ServiceSlug } from '@/lib/serviceContentTypes';
@@ -125,50 +123,68 @@ export default function ServiceCaseDetailPage({
 
   return (
     <>
-      <PageLayoutV2
-        header={
-          <div className="space-y-4">
-            {hero.eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">{hero.eyebrow}</p>
-            ) : null}
-            <div className="space-y-2">
-              <h1 className="text-3xl font-extrabold leading-tight text-slate-900 md:text-4xl">
-                {hero.title ?? service.title ?? 'Service detail'}
-              </h1>
-              {hero.subtitle ? <p className="text-base leading-7 text-slate-600">{hero.subtitle}</p> : null}
-            </div>
+      <div className="bg-gradient-to-br from-sustain-green/15 via-sustain-bg to-slate-50">
+        <div className="ss-container py-12 space-y-3">
+          {hero.eyebrow ? (
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green">{hero.eyebrow}</p>
+          ) : null}
+          <div className="space-y-2">
+            <h1 className="text-3xl font-semibold leading-tight text-sustain-text md:text-4xl">
+              {hero.title ?? service.title ?? 'Service detail'}
+            </h1>
+            {hero.subtitle ? <p className="text-base leading-7 text-slate-700">{hero.subtitle}</p> : null}
           </div>
-        }
-        subnav={<ServiceSubnav base={basePath} tabs={getSubnavTabs(basePath)} active={CASES_SUBNAV_SLUG} />}
-      >
-        <div className="space-y-10">
-          <SectionContainer>
-            <div className="space-y-3">
-              <Link href={`${basePath}/cases`} className="inline-flex items-center text-sm font-medium text-emerald-700">
+        </div>
+      </div>
+      <section className="bg-sustain-bg py-16">
+        <div className="ss-container flex flex-col gap-10 lg:grid lg:grid-cols-[minmax(0,260px)_1fr]">
+          <aside className="space-y-6">
+            <ServiceSubnav base={basePath} tabs={getSubnavTabs(basePath)} active={CASES_SUBNAV_SLUG} orientation="vertical" />
+            <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
+              <p className="text-sm font-semibold text-sustain-text">Need a different example?</p>
+              <p className="mt-2 text-sm leading-6 text-slate-700">
+                Browse other cases or email us so we can share the closest-fit anonymised story.
+              </p>
+              <div className="mt-4 flex flex-col gap-3">
+                <Link href={`${basePath}/cases`} className="ss-btn-secondary text-center">
+                  Back to cases
+                </Link>
+                <Link href={`/contact?from=${slug}-case`} className="ss-btn-primary text-center">
+                  Contact SustainSage
+                </Link>
+              </div>
+            </div>
+          </aside>
+
+          <div className="space-y-8">
+            <div className="rounded-3xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
+              <Link href={`${basePath}/cases`} className="inline-flex items-center text-sm font-medium text-sustain-green">
                 <span aria-hidden className="mr-2">&larr;</span>
                 Back to cases overview
               </Link>
               {showFallbackNotice ? (
-                <p className="text-xs leading-5 text-slate-500">{fallbackMessage}</p>
+                <p className="mt-4 text-xs leading-5 text-slate-500">{fallbackMessage}</p>
               ) : null}
               {caseUsesFallback ? (
-                <p className="text-xs leading-5 text-slate-500">Case available in English while we prepare this translation.</p>
+                <p className="mt-2 text-xs leading-5 text-slate-500">
+                  Case available in English while we prepare this translation.
+                </p>
               ) : null}
             </div>
-          </SectionContainer>
 
-          <SectionContainer variant="surface" wide>
-            <CaseDetail
-              {...caseDetail}
-              header={
-                <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">
-                  Case detail
-                </p>
-              }
-            />
-          </SectionContainer>
+            <div className="rounded-3xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
+              <CaseDetail
+                {...caseDetail}
+                header={
+                  <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green">
+                    Case detail
+                  </p>
+                }
+              />
+            </div>
+          </div>
         </div>
-      </PageLayoutV2>
+      </section>
       <StickyCTA />
     </>
   );

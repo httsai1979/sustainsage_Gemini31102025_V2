@@ -1,7 +1,7 @@
 import { MicroCTA } from '@/components/common/MicroCTA';
-import PageSection from '@/components/ui/PageSection';
-import { sectionizeSubpage } from '@/lib/sectionize';
+import Card from '@/components/ui/Card';
 import { createServiceSubpage } from '@/lib/serviceSubpagePage';
+import { dedupeBy } from '@/lib/dedupe';
 
 const { Page } = createServiceSubpage({
   subSlug: 'readiness',
@@ -12,12 +12,18 @@ const { Page } = createServiceSubpage({
     ) : null,
   renderContent: (service) => {
     const readiness = service.readiness ?? {};
-    const checklist = Array.isArray(readiness.checklist) ? readiness.checklist.filter(Boolean) : [];
-    const prepare = Array.isArray(readiness.what_to_prepare)
-      ? readiness.what_to_prepare.filter(Boolean)
-      : [];
-    const signals = Array.isArray(readiness.signals) ? readiness.signals.filter(Boolean) : [];
-    const sections = sectionizeSubpage('readiness', readiness);
+    const checklist = dedupeBy(
+      Array.isArray(readiness.checklist) ? readiness.checklist.filter(Boolean) : [],
+      (item, index) => item ?? index
+    );
+    const prepare = dedupeBy(
+      Array.isArray(readiness.what_to_prepare) ? readiness.what_to_prepare.filter(Boolean) : [],
+      (item, index) => item ?? index
+    );
+    const signals = dedupeBy(
+      Array.isArray(readiness.signals) ? readiness.signals.filter(Boolean) : [],
+      (item, index) => item ?? index
+    );
     const basePath = `/services/${service.slug}`;
     const contactSource = encodeURIComponent(`${service.slug}-readiness`);
     const contactHref = `/contact?from=${contactSource}`;
@@ -26,14 +32,12 @@ const { Page } = createServiceSubpage({
       { href: contactHref, label: 'Talk to a coach' },
     ];
 
-    if (sections.length === 0) {
+    if (checklist.length === 0 && prepare.length === 0 && signals.length === 0) {
       return (
         <div className="space-y-6">
-          <PageSection>
-            <p className="text-sm leading-6 text-slate-700">
-              We will publish readiness guidance soon. Meanwhile, feel free to reach out for a quick check-in call.
-            </p>
-          </PageSection>
+          <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 text-sm leading-6 text-slate-700 shadow-sm">
+            We will publish readiness guidance soon. Meanwhile, feel free to reach out for a quick check-in call.
+          </div>
           <MicroCTA
             title="Take the next step when you are ready"
             description="Compare pricing or start a chemistry chat to see if this service fits your moment."
@@ -43,50 +47,24 @@ const { Page } = createServiceSubpage({
       );
     }
 
-    const renderList = (items: string[]) => (
-      <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-700">
-        {items.map((item, index) => (
-          <li key={item ?? index} className="flex gap-3">
-            <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-600" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+    const renderList = (title: string, items: string[]) => (
+      <Card key={title} title={title}>
+        <ul className="space-y-3 text-sm leading-6 text-slate-700">
+          {items.map((item, index) => (
+            <li key={item ?? index} className="flex gap-3">
+              <span aria-hidden className="mt-2 h-2 w-2 flex-shrink-0 rounded-full bg-sustain-green" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </Card>
     );
 
     return (
-      <div className="space-y-10">
-        {sections.map((section, index) => {
-          if (section.items === checklist) {
-            return (
-              <PageSection key={`checklist-${index}`}>
-                <h2 className="text-xl font-semibold text-emerald-900">Checklist before starting</h2>
-                {renderList(checklist)}
-              </PageSection>
-            );
-          }
-
-          if (section.items === prepare) {
-            return (
-              <PageSection key={`prepare-${index}`}>
-                <h2 className="text-xl font-semibold text-emerald-900">Helpful to prepare</h2>
-                {renderList(prepare)}
-              </PageSection>
-            );
-          }
-
-          if (section.items === signals) {
-            return (
-              <PageSection key={`signals-${index}`}>
-                <h2 className="text-xl font-semibold text-emerald-900">Signals</h2>
-                {renderList(signals)}
-              </PageSection>
-            );
-          }
-
-          return null;
-        })}
-
+      <div className="space-y-6">
+        {checklist.length ? renderList('Checklist before starting', checklist) : null}
+        {prepare.length ? renderList('Helpful to prepare', prepare) : null}
+        {signals.length ? renderList('Signals', signals) : null}
         <MicroCTA
           title="Take the next step when you are ready"
           description="Compare pricing or start a chemistry chat to see if this service fits your moment."
