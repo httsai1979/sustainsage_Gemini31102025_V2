@@ -2,9 +2,9 @@
   "title": "找不到该页面",
   "body": "链接可能已经失效，或者页面已被移动。我们先回到更有用的地方吧。",
   "returnHome": "返回首页",
-  "supportTitle": "在找教练资源吗？",
-  "supportBody": "如果你想找教练服务、资源或预约聊聊，可以通过下面的连结重新进入。",
-  "supportLinkLabel": "查看服务",
+  "supportTitle": "在找教练或相关资源吗？",
+  "supportBody": "如果你原本是想了解教练服务、免费资源，或预约沟通，可以从下面的链接重新开始。",
+  "supportLinkLabel": "查看教练服务",
   "supportLinkHref": "/services",
   "serverErrorTitle": "系统出现状况",
   "serverErrorBody": "发生了意外错误，请稍后再试，或告知我们协助处理。"

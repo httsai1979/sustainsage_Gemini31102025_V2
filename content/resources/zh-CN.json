@@ -29,66 +29,87 @@
   "interactiveTools": [
     {
       "id": "self-talk-reframe",
-      "title": "自我对话重塑卡",
-      "desc": "把苛刻的内在对话换成更稳妥、温柔的提醒。",
+      "title": "自我对话重构卡",
+      "desc": "温和地留意那些对自己过于苛责的内心独白，练习换成更有同理心、能支持自己的说法。",
+      "description": "温和地留意那些对自己过于苛责的内心独白，练习换成更有同理心、能支持自己的说法。",
       "href": "/tools/self-talk-reframe.html",
       "img": "/images/resources/selftalk.jpg",
       "alt": "自我对话练习",
-      "tag": "互动工具"
+      "badge": "互动工具",
+      "tag": "互动工具",
+      "isExternal": false
     },
     {
       "id": "behaviour-ladder",
       "title": "行为实验阶梯",
-      "desc": "按步骤规划一个小实验，温和测试新的行为。",
+      "desc": "通过小步、低风险的实验来尝试新行为，而不是一次把自己逼到极限。",
+      "description": "通过小步、低风险的实验来尝试新行为，而不是一次把自己逼到极限。",
       "href": "/tools/behaviour-ladder.html",
       "img": "/images/resources/behaviour-ladder-hero.jpg",
       "alt": "行为实验工具",
-      "tag": "互动工具"
+      "badge": "互动工具",
+      "tag": "互动工具",
+      "isExternal": false
     },
     {
       "id": "values-map",
       "title": "自我价值地图",
-      "desc": "标记支撑你的价值与信号，让决策对齐真正的重心。",
+      "desc": "梳理对你真正重要的事情，看看现在的选择是否与核心价值保持一致。",
+      "description": "梳理对你真正重要的事情，看看现在的选择是否与核心价值保持一致。",
       "href": "/tools/values-map.html",
       "img": "/images/resources/values-worksheet.svg",
       "alt": "价值地图",
-      "tag": "互动工具"
-    },
-    {
-      "id": "emotion-triangle",
-      "title": "情绪三角卡",
-      "desc": "说出感受、看见需要，再想一个可行的小步。",
-      "href": "/tools/emotion-triangle.html",
-      "img": "/images/resources/emotion-triangle.jpg",
-      "alt": "情绪三角卡",
-      "tag": "互动工具"
-    },
-    {
-      "id": "thought-log",
-      "title": "思维记录仪",
-      "desc": "记录反复出现的念头、收集证据，练习更平衡的回应。",
-      "href": "/tools/thought-log.html",
-      "img": "/images/resources/grounding-audio.svg",
-      "alt": "思维记录",
-      "tag": "互动工具"
+      "badge": "工作表",
+      "tag": "工作表",
+      "isExternal": false
     },
     {
       "id": "role-separation",
       "title": "角色分化练习",
-      "desc": "厘清不同角色与责任，决定自己要握着或交棒。",
+      "desc": "区分「我是怎样的人」和「我在这个角色里的表现」，让批评不再等于否定整个人。",
+      "description": "区分「我是怎样的人」和「我在这个角色里的表现」，让批评不再等于否定整个人。",
       "href": "/tools/role-separation.html",
       "img": "/images/resources/culture-checklist.svg",
       "alt": "角色分化",
-      "tag": "互动工具"
+      "badge": "反思练习",
+      "tag": "反思练习",
+      "isExternal": false
     },
     {
       "id": "choice-clarifier",
-      "title": "选择困境厘清器",
-      "desc": "在做决定前列出取舍、界限与需要。",
+      "title": "选择困境澄清器",
+      "desc": "把不同选项、成本和需求摊开来看，让决策不再只是一团混乱。",
+      "description": "把不同选项、成本和需求摊开来看，让决策不再只是一团混乱。",
       "href": "/tools/choice-clarifier.html",
       "img": "/images/resources/imposter-reading.svg",
-      "alt": "决策厘清",
-      "tag": "互动工具"
+      "alt": "决策澄清",
+      "badge": "决策工具",
+      "tag": "决策工具",
+      "isExternal": false
+    },
+    {
+      "id": "thought-log",
+      "title": "思维记录仪",
+      "desc": "记录触发情绪的情境、想法与感受，帮助你看见反复出现的模式。",
+      "description": "记录触发情绪的情境、想法与感受，帮助你看见反复出现的模式。",
+      "href": "/tools/thought-log.html",
+      "img": "/images/resources/grounding-audio.svg",
+      "alt": "思维记录",
+      "badge": "记录工具",
+      "tag": "记录工具",
+      "isExternal": false
+    },
+    {
+      "id": "emotion-triangle",
+      "title": "情绪三角卡",
+      "desc": "连结事件、情绪和行动，慢慢发现自己其实还有其他可能的反应方式。",
+      "description": "连结事件、情绪和行动，慢慢发现自己其实还有其他可能的反应方式。",
+      "href": "/tools/emotion-triangle.html",
+      "img": "/images/resources/emotion-triangle.jpg",
+      "alt": "情绪三角卡",
+      "badge": "反思练习",
+      "tag": "反思练习",
+      "isExternal": false
     }
   ]
 }

@@ -2,9 +2,9 @@
   "title": "找不到這個頁面",
   "body": "連結可能已經失效，或是頁面被移動了。我們先回到比較有用的地方吧。",
   "returnHome": "回到首頁",
-  "supportTitle": "想找教練資源嗎？",
-  "supportBody": "如果你想找教練服務、資源或預約聊聊，可以從下方連結重新進入。",
-  "supportLinkLabel": "看看服務",
+  "supportTitle": "在找教練或資源的資訊嗎？",
+  "supportBody": "如果你原本是想了解教練服務、免費資源，或預約對談，可以從下面的連結重新出發。",
+  "supportLinkLabel": "查看教練服務",
   "supportLinkHref": "/services",
   "serverErrorTitle": "系統發生狀況",
   "serverErrorBody": "發生了非預期的錯誤，請稍後再試，或通知我們協助處理。"
