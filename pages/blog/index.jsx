@@ -3,61 +3,52 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
-import CardGrid from '@/components/ui/CardGrid';
-import Icon from '@/components/ui/Icon';
-import PageSection from '@/components/ui/PageSection';
-import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import Tag from '@/components/ui/Tag';
 import { getAllPosts } from '@/lib/content';
+import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
 export default function BlogPage({ posts = [] }) {
+  const blogPosts = dedupeBy(posts, (post) => post.slug ?? post.title);
   return (
-    <>
-      <PageSection background="paper">
+    <main className="ss-container">
+      <section className="ss-section">
         <div className="max-w-3xl text-center md:text-left">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary/80">Blog</p>
-          <h1 className="mt-3 text-4xl font-semibold text-ink">Notes from our coaching practice</h1>
-          <p className="mt-4 text-base text-ink/80">Short reflections on transitions, coaching craft, and grounded tools.</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sustain-green/80">Blog</p>
+          <h1 className="mt-3 text-4xl font-semibold text-sustain-text">Notes from our coaching practice</h1>
+          <p className="mt-4 text-base text-slate-700">Short reflections on transitions, coaching craft, and grounded tools.</p>
         </div>
-      </PageSection>
-      <PageSection>
-        <CardGrid columns={{ base: 1, md: 2, lg: 3 }}>
-          {posts.map((post) => (
+      </section>
+      <section className="ss-section">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {blogPosts.map((post) => (
             <Card
               key={post.slug}
-              title={
-                <span className="inline-flex items-center gap-2">
-                  <Icon name="arrowRight" className="h-5 w-5 text-primary" />
-                  {post.title}
-                </span>
-              }
+              title={post.title}
               subtitle={post.description}
               footer={
-                <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-semibold text-primary">
-                  Read
+                <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
+                  Read article
                   <span aria-hidden>→</span>
                 </Link>
               }
-              className="flex h-full flex-col gap-4"
             >
-              <ResponsiveImage
-                src={post.img ?? '/images/placeholder-hero.jpg'}
-                alt={post.alt || post.title || ''}
-                width={1200}
-                height={675}
-                className="mt-2 rounded-2xl"
-              />
+              <div className="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-wide text-sustain-green">
+                {post.category ? <Tag>{post.category}</Tag> : null}
+                {post.readingTime || post.reading_time ? (
+                  <span className="text-slate-500">{post.readingTime ?? post.reading_time}</span>
+                ) : null}
+              </div>
               {post.comingSoon ? (
-                <div>
+                <div className="mt-3">
                   <Tag>Coming soon</Tag>
                 </div>
               ) : null}
             </Card>
           ))}
-        </CardGrid>
-      </PageSection>
-    </>
+        </div>
+      </section>
+    </main>
   );
 }
 

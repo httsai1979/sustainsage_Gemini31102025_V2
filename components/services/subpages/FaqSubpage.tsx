@@ -7,7 +7,7 @@ const { Page } = createServiceSubpage({
   heading: (service) => service.faq?.title ?? 'Frequently asked questions',
   intro: (service) =>
     service.faq?.description ? (
-      <p className="text-base leading-7 text-slate-600">{service.faq.description}</p>
+      <p className="text-base leading-7 text-slate-700">{service.faq.description}</p>
     ) : null,
   renderContent: (service) => {
     const faq = service.faq ?? {};
@@ -32,9 +32,9 @@ const { Page } = createServiceSubpage({
           if (section.items === items && items.length > 0) {
             return (
               <PageSection key={`faq-${index}`}>
-                <h2 className="text-xl font-semibold text-emerald-900">{service.faq?.title ?? 'Frequently asked questions'}</h2>
+                <h2 className="text-xl font-semibold text-sustain-text">{service.faq?.title ?? 'Frequently asked questions'}</h2>
                 {service.faq?.description ? (
-                  <p className="mt-2 text-base leading-7 text-slate-600">{service.faq.description}</p>
+                  <p className="mt-2 text-base leading-7 text-slate-700">{service.faq.description}</p>
                 ) : null}
                 <dl className="mt-6 space-y-6">
                   {items.map((item, itemIndex) => {
@@ -44,9 +44,9 @@ const { Page } = createServiceSubpage({
                     return (
                       <div
                         key={question ?? itemIndex}
-                        className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm"
+                        className="rounded-card border border-sustain-cardBorder bg-white p-6 shadow-card"
                       >
-                        {question ? <dt className="text-base font-semibold text-slate-900">{question}</dt> : null}
+                        {question ? <dt className="text-base font-semibold text-sustain-text">{question}</dt> : null}
                         {answer ? <dd className="mt-3 text-sm leading-6 text-slate-700">{answer}</dd> : null}
                       </div>
                     );

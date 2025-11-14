@@ -8,7 +8,7 @@ const { Page } = createServiceSubpage({
   heading: (service) => service.process?.title ?? 'Process & pacing',
   intro: (service) =>
     service.process?.description ? (
-      <p className="text-base leading-7 text-slate-600">{service.process.description}</p>
+      <p className="text-base leading-7 text-slate-700">{service.process.description}</p>
     ) : null,
   renderContent: (service) => {
     const process = service.process ?? {};
@@ -47,15 +47,15 @@ const { Page } = createServiceSubpage({
           if (section.items === steps && steps.length > 0) {
             return (
               <PageSection key={`process-${index}`}>
-                <h2 className="text-xl font-semibold text-emerald-900">Process</h2>
+                <h2 className="text-xl font-semibold text-sustain-text">Process</h2>
                 <ol className="mt-4 list-decimal space-y-4 pl-6 text-slate-800">
                   {steps.map((step, stepIndex) => {
                     const title = typeof step === 'string' ? null : step?.title;
                     const description = typeof step === 'string' ? step : step?.description;
                     return (
                       <li key={title ?? description ?? stepIndex}>
-                        <div className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-                          {title ? <h3 className="text-base font-semibold text-slate-900">{title}</h3> : null}
+                        <div className="rounded-card border border-sustain-cardBorder bg-white p-6 shadow-card">
+                          {title ? <h3 className="text-base font-semibold text-sustain-text">{title}</h3> : null}
                           {description ? (
                             <p className="mt-3 text-sm leading-6 text-slate-700">{description}</p>
                           ) : null}
