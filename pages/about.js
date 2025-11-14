@@ -14,6 +14,46 @@ import { loadContent } from '@/lib/loadContent';
 import { dedupeBy } from '@/lib/dedupe';
 import { sanitizeProps } from '@/lib/toSerializable';
 
+const VALUE_CARD_TEMPLATES = [
+  {
+    key: 'authenticity',
+    title: 'Authenticity',
+    fallback:
+      'ICF-aligned practice keeps agreements, data care, and supervision transparent so trust can grow.',
+  },
+  {
+    key: 'gentleness',
+    title: 'Gentleness',
+    fallback: 'We keep a calm cadence so experimentation feels kind, slow enough, and sustainable.',
+  },
+  {
+    key: 'structure',
+    title: 'Structure',
+    fallback: 'Clear agreements, review points, and data boundaries help every partnership stay grounded.',
+  },
+  {
+    key: 'cultural-sensitivity',
+    title: 'Cultural sensitivity',
+    fallback: 'Lived experience across Asia-Pacific and the UK keeps multilingual nuance and policy context in view.',
+  },
+];
+
+function buildValueCards(copy = {}) {
+  const keyPointItems = Array.isArray(copy?.key_points?.items) ? copy.key_points.items : [];
+  const valueEntries = Array.isArray(copy?.values?.items) ? copy.values.items : [];
+  return VALUE_CARD_TEMPLATES.map((template, index) => {
+    const source = keyPointItems[index] ?? valueEntries[index];
+    const description =
+      typeof source === 'string'
+        ? source
+        : source?.description ?? source?.body ?? source?.text ?? source?.title;
+    return {
+      ...template,
+      description: description ?? template.fallback,
+    };
+  });
+}
+
 function TeamSection({ team }) {
   const list = Array.isArray(team?.members) && team.members.length > 0 ? team.members : team?.people ?? [];
   const members = dedupeBy(list, (member, index) => member?.name ?? member?.title ?? member?.id ?? index);
@@ -62,18 +102,17 @@ TeamSection.propTypes = {
 };
 
 function ValueGrid({ items = [] }) {
-  const values = dedupeBy(items, (item, index) => item?.title ?? item ?? index).slice(0, 3);
-  if (!values.length) return null;
+  if (!items.length) return null;
   return (
     <section className="ss-section">
       <div className="space-y-4 text-center md:text-left">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">What guides my work</p>
-        <h2 className="text-3xl font-semibold text-sustain-text">Principles behind SustainSage</h2>
+        <h2 className="text-3xl font-semibold text-sustain-text">Values that shape every partnership</h2>
       </div>
-      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-        {values.map((value) => (
-          <Card key={value?.title ?? value} title={value?.title ?? 'Guiding principle'} icon={<Icon name="spark" />}>
-            <p className="text-sm text-slate-700">{value?.description ?? value}</p>
+      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {items.map((value) => (
+          <Card key={value?.key ?? value?.title} title={value?.title ?? 'Guiding principle'} icon={<Icon name="spark" />}>
+            <p className="text-sm text-slate-700">{value?.description ?? value?.body}</p>
           </Card>
         ))}
       </div>
@@ -87,41 +126,49 @@ ValueGrid.propTypes = {
 
 function StoryCards({ stories = [] }) {
   const successStories = dedupeBy(
-    stories.filter((story) => typeof story === 'object' && story?.context),
-    (story) => story.title ?? story.context
+    stories.filter((story) => typeof story === 'object' && story?.title),
+    (story) => story.title
   ).slice(0, 3);
   if (!successStories.length) return null;
   return (
     <section className="ss-section">
       <div className="space-y-4 text-center md:text-left">
         <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Client success stories</p>
-        <h2 className="text-3xl font-semibold text-sustain-text">Composite scenarios drawn from coaching</h2>
+        <h2 className="text-3xl font-semibold text-sustain-text">Composite coaching glimpses</h2>
       </div>
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {successStories.map((story) => (
-          <Card key={story.title} title={story.title} tag={story.duration ?? story.timeline}>
-            <div className="space-y-3 text-sm text-slate-700">
-              {story.context ? (
-                <p>
-                  <span className="font-semibold text-sustain-text">Challenge: </span>
-                  {story.context}
-                </p>
-              ) : null}
-              {story.coaching_moves ? (
-                <p>
-                  <span className="font-semibold text-sustain-text">Journey: </span>
-                  {story.coaching_moves}
-                </p>
-              ) : null}
-              {story.shift ? (
-                <p>
-                  <span className="font-semibold text-sustain-text">Outcome: </span>
-                  {story.shift}
-                </p>
-              ) : null}
-            </div>
-          </Card>
-        ))}
+        {successStories.map((story) => {
+          const badge = story.category ?? story.segment ?? 'Coaching story';
+          const duration = story.duration ?? story.timeline ?? story.length;
+          return (
+            <Card key={story.title} title={story.title}>
+              <div className="space-y-4 text-sm leading-relaxed text-slate-700">
+                <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-sustain-green/80">
+                  <span>{badge}</span>
+                  {duration ? <span className="text-slate-500 normal-case">{duration}</span> : null}
+                </div>
+                {story.context ? (
+                  <p>
+                    <span className="font-semibold text-sustain-text">Challenge: </span>
+                    {story.context}
+                  </p>
+                ) : null}
+                {story.coaching_moves ? (
+                  <p>
+                    <span className="font-semibold text-sustain-text">Journey: </span>
+                    {story.coaching_moves}
+                  </p>
+                ) : null}
+                {story.shift ? (
+                  <p>
+                    <span className="font-semibold text-sustain-text">Outcome: </span>
+                    {story.shift}
+                  </p>
+                ) : null}
+              </div>
+            </Card>
+          );
+        })}
       </div>
     </section>
   );
@@ -175,28 +222,41 @@ export default function AboutPage({
     Array.isArray(copy?.approach?.pillars) ? copy.approach.pillars : [],
     (item, index) => item?.title ?? item?.description ?? index
   ).slice(0, 3);
+  const heroParagraphs = [copy?.intro?.body, copy?.approach?.description].filter(Boolean);
+  const valueCards = buildValueCards(copy);
+  const approachDescription = copy?.process?.description ?? copy?.approach?.description;
+  const personalNoteText =
+    copy?.callout?.note ??
+    copy?.callout?.body ??
+    'Coaching is how we create steady space for bilingual, bicultural stories to be heard without urgency.';
 
   return (
     <main className="ss-container">
       <section className="ss-section">
-        <div className="grid gap-10 md:grid-cols-2 md:items-start">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-start">
           <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">My journey</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
+              {copy?.intro?.eyebrow ?? 'My journey'}
+            </p>
             <h1 className="text-4xl font-semibold text-sustain-text">
               {copy?.intro?.title ?? 'Coaching for complex transitions'}
             </h1>
-            <p className="text-base leading-relaxed text-slate-700">
-              {copy?.intro?.body ?? 'SustainSage keeps coaching steady, culturally aware, and grounded in practical experiments.'}
-            </p>
+            <div className="space-y-4 text-base leading-relaxed text-slate-700">
+              {heroParagraphs.length
+                ? heroParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
+                : (
+                    <p>
+                      SustainSage keeps coaching steady, culturally aware, and grounded in practical experiments so you
+                      can move at a humane pace.
+                    </p>
+                  )}
+            </div>
             {showFallbackNotice ? (
               <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
             ) : null}
           </div>
           <Card title="A personal note" subtitle="Why this work matters">
-            <p className="text-sm leading-relaxed text-slate-700">
-              {copy?.callout?.body ??
-                'Coaching is how we create steady space for bilingual, bicultural stories to be heard without urgency.'}
-            </p>
+            <p className="text-sm leading-relaxed text-slate-700">{personalNoteText}</p>
             <div className="mt-4 flex flex-wrap gap-3">
               {copy?.callout?.primary?.href ? (
                 <Link href={copy.callout.primary.href} className="ss-btn-primary">
@@ -213,9 +273,11 @@ export default function AboutPage({
         </div>
       </section>
 
-      <ValueGrid items={copy?.key_points?.items} />
+      <ValueGrid items={valueCards} />
 
       <TeamSection team={team} />
+
+      <StoryCards stories={copy?.approach?.cases ?? []} />
 
       <section className="ss-section">
         <div className="space-y-4 text-center md:text-left">
@@ -231,19 +293,17 @@ export default function AboutPage({
         </div>
       </section>
 
-      <StoryCards stories={copy?.approach?.cases ?? []} />
-
       <section className="ss-section">
-        <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-8 shadow-md">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">My coaching approach</p>
-          <h2 className="mt-3 text-3xl font-semibold text-sustain-text">{copy?.process?.title}</h2>
-          {copy?.process?.description ? (
-            <p className="mt-4 text-base text-slate-700">{copy.process.description}</p>
+        <Card title={copy?.process?.title ?? 'My coaching approach'}>
+          {approachDescription ? (
+            <p className="text-base leading-relaxed text-slate-700">{approachDescription}</p>
           ) : null}
-          <div className="mt-8">
-            <StepList steps={processSteps} />
-          </div>
-        </div>
+          {processSteps.length ? (
+            <div className="mt-8">
+              <StepList steps={processSteps} />
+            </div>
+          ) : null}
+        </Card>
       </section>
 
       <BoundariesSection boundaries={copy?.boundaries} />
