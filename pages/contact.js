@@ -7,13 +7,14 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
+import Icon from '@/components/ui/Icon';
 import StepList from '@/components/ui/StepList';
 import { orderSections } from '@/lib/content/normalize';
 import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
 const INPUT_CLASSNAME =
-  'w-full rounded-card border border-sustain-cardBorder bg-white px-4 py-3 text-sustain-text placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sustain-green/40';
+  'w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sustain-text placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sustain-green/40';
 
 function BulletCard({ title, description, items }) {
   if (!items?.length) return null;
@@ -64,6 +65,29 @@ export default function ContactPage() {
   );
 
   const journeySteps = journeyItems.map((item) => ({ title: item.summary ?? item.q, description: item.detail ?? item.a }));
+
+  const contactMethods = [
+    {
+      title: 'Email',
+      description: 'Send context any time. We reply within three UK working days.',
+      detail: 'contact@sustainsage.com',
+    },
+    {
+      title: 'Phone',
+      description: 'Leave a voicemail or WhatsApp note for slower-paced replies.',
+      detail: '+44 (0)20 8638 7870',
+    },
+    {
+      title: 'Office hours',
+      description: 'Weekdays 09:00–17:00 UK time · Online and Southsea, Portsmouth.',
+      detail: 'GMT / BST',
+    },
+    {
+      title: 'Post',
+      description: 'For agreements or paperwork, please email for the correct postal address first.',
+      detail: 'Portsmouth · Southsea',
+    },
+  ];
 
   const handleChange = (event) => {
     const { name, type, value, checked } = event.target;
@@ -122,32 +146,40 @@ export default function ContactPage() {
       </Head>
 
       <section className="ss-section">
-        <div className="space-y-6">
+        <div className="max-w-3xl space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Get in touch, no rush</p>
           <h1 className="text-4xl font-semibold text-sustain-text">{hero?.title}</h1>
           <p className="text-base leading-relaxed text-slate-700">{hero?.body}</p>
           {hero?.bullets?.length ? (
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{hero?.bulletsTitle}</p>
-              <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                {hero.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3">
-                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sustain-green" aria-hidden />
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="mt-4 grid gap-2 text-sm text-slate-700 md:grid-cols-3">
+              {hero.bullets.map((bullet) => (
+                <li key={bullet} className="rounded-2xl border border-slate-200 bg-white px-4 py-3">
+                  {bullet}
+                </li>
+              ))}
+            </ul>
           ) : null}
         </div>
       </section>
 
       <section className="ss-section">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {contactMethods.map((method) => (
+            <Card key={method.title} title={method.title} icon={<Icon name="info" />}>
+              <p className="text-sm text-slate-700">{method.description}</p>
+              <p className="mt-3 text-sm font-semibold text-sustain-text">{method.detail}</p>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <section className="ss-section">
         <div className="space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{journey?.title}</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{journey?.title}</p>
           {journey?.intro ? <p className="text-base text-slate-700">{journey.intro}</p> : null}
         </div>
         <div className="mt-8">
-          <StepList steps={journeySteps} className="mx-auto max-w-3xl md:mx-0" />
+          <StepList steps={journeySteps} />
         </div>
       </section>
 
@@ -240,7 +272,7 @@ export default function ContactPage() {
                 </div>
                 {status ? (
                   <div
-                    className={`rounded-card px-4 py-3 text-sm ${
+                    className={`rounded-2xl px-4 py-3 text-sm ${
                       status === 'success'
                         ? 'bg-sustain-green/10 text-sustain-green'
                         : 'bg-red-50 text-red-700'
@@ -254,7 +286,7 @@ export default function ContactPage() {
                 </button>
               </form>
             </Card>
-            <div className="mt-6 rounded-card border border-sustain-cardBorder bg-white p-6 shadow-card">
+            <div className="mt-6 rounded-card rounded-2xl border border-slate-100 bg-white p-6 shadow-md">
               <p className="text-sm font-semibold text-sustain-text">{sidebar?.responseTitle}</p>
               <p className="mt-2 text-sm text-slate-700">{sidebar?.responseCopy}</p>
               <p className="mt-4 text-sm font-semibold text-sustain-text">Reply within 2–3 UK working days.</p>
@@ -270,7 +302,8 @@ export default function ContactPage() {
 
       <section className="ss-section">
         <div className="space-y-4 text-center md:text-left">
-          <h2 className="text-3xl font-semibold text-sustain-text">Quick answers</h2>
+          <h2 className="text-3xl font-semibold text-sustain-text">{miniFaq?.title ?? 'Quick answers'}</h2>
+          {miniFaq?.intro ? <p className="text-base text-slate-700">{miniFaq.intro}</p> : null}
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {miniFaqItems.map((item) => (

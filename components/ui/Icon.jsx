@@ -52,7 +52,7 @@ export default function Icon({ name = 'info', className } = {}) {
   return (
     <span
       className={cn(
-        'inline-flex h-10 w-10 items-center justify-center rounded-full bg-sustain-green/10 text-sustain-green',
+        'inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-600',
         className,
       )}
     >

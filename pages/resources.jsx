@@ -14,10 +14,10 @@ export default function ResourcesPage({ items = [] }) {
   return (
     <main className="ss-container">
       <section className="ss-section">
-        <div className="max-w-3xl text-center md:text-left">
+        <div className="max-w-3xl space-y-4 text-center md:text-left">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sustain-green/80">Resources</p>
-          <h1 className="mt-3 text-4xl font-semibold text-sustain-text">Tools to use between sessions</h1>
-          <p className="mt-4 text-base text-slate-700">
+          <h1 className="text-4xl font-semibold text-sustain-text">Tools to use between sessions</h1>
+          <p className="text-base text-slate-700">
             Print-friendly A4 PDFs and simple worksheets. Use them on your own or alongside coaching conversations.
           </p>
         </div>
@@ -50,6 +50,23 @@ export default function ResourcesPage({ items = [] }) {
               </Card>
             );
           })}
+        </div>
+      </section>
+
+      <section className="ss-section">
+        <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-md">
+          <h2 className="text-3xl font-semibold text-sustain-text">Need more personalised support?</h2>
+          <p className="mt-4 text-base text-slate-700">
+            Coaching conversations help you translate these tools into real-life experiments.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href="/contact" className="ss-btn-primary">
+              Book a free chat
+            </Link>
+            <Link href="/services" className="ss-btn-secondary">
+              Explore coaching
+            </Link>
+          </div>
         </div>
       </section>
     </main>

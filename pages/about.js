@@ -1,68 +1,18 @@
 import PropTypes from 'prop-types';
-import Image from 'next/image';
 import Link from 'next/link';
+import Image from 'next/image';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
-import { H1 } from '@/components/ui/H';
 import Card from '@/components/ui/Card';
-import Icon from '@/components/ui/Icon';
 import StepList from '@/components/ui/StepList';
 import Callout from '@/components/ui/Callout';
+import Icon from '@/components/ui/Icon';
 import { orderSections } from '@/lib/orderSections';
 import { loadContent } from '@/lib/loadContent';
 import { dedupeBy } from '@/lib/dedupe';
 import { sanitizeProps } from '@/lib/toSerializable';
-
-const SCENARIO_ICONS = ['compass', 'target', 'calendar', 'clock', 'handshake', 'book'];
-
-function Hero({ intro, showFallbackNotice, fallbackMessage }) {
-  if (!intro) return null;
-  return (
-    <section className="ss-section">
-      <div className="grid gap-10 md:grid-cols-2 md:items-center">
-        <div className="space-y-6">
-          {intro.eyebrow ? (
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{intro.eyebrow}</p>
-          ) : null}
-          {intro.title ? <H1>{intro.title}</H1> : null}
-          {intro.body ? <p className="text-base leading-relaxed text-slate-700">{intro.body}</p> : null}
-          {showFallbackNotice ? (
-            <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
-          ) : null}
-        </div>
-        <div className="mt-8 md:mt-0">
-          {intro.image?.src ? (
-            <div className="overflow-hidden rounded-card border border-sustain-cardBorder bg-white shadow-card">
-              <Image
-                src={intro.image.src}
-                alt={intro.image.alt ?? intro.title ?? ''}
-                width={800}
-                height={600}
-                className="h-full w-full object-cover"
-              />
-            </div>
-          ) : (
-            <div className="flex h-full min-h-[240px] items-center justify-center rounded-card border border-sustain-cardBorder bg-sustain-green/5 p-10 text-center text-sustain-green">
-              <p className="text-base font-medium">Coaching grounded in care, culture, and structure.</p>
-            </div>
-          )}
-        </div>
-      </div>
-    </section>
-  );
-}
-
-Hero.propTypes = {
-  intro: PropTypes.shape({
-    eyebrow: PropTypes.string,
-    title: PropTypes.string,
-    body: PropTypes.string,
-  }),
-  showFallbackNotice: PropTypes.bool,
-  fallbackMessage: PropTypes.string,
-};
 
 function TeamSection({ team }) {
   const list = Array.isArray(team?.members) && team.members.length > 0 ? team.members : team?.people ?? [];
@@ -72,29 +22,23 @@ function TeamSection({ team }) {
     <section className="ss-section">
       <div className="space-y-4 text-center md:text-left">
         {team?.eyebrow ? (
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{team.eyebrow}</p>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{team.eyebrow}</p>
         ) : null}
-        <h2 className="text-3xl font-semibold text-sustain-text">{team?.title}</h2>
+        <h2 className="text-3xl font-semibold text-sustain-text">{team?.title ?? 'Meet the team'}</h2>
         {team?.description ? <p className="text-base text-slate-700">{team.description}</p> : null}
       </div>
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {members.map((member) => (
           <Card key={member.name ?? member.title} title={member.name} subtitle={member.title}>
-            <div className="flex flex-col gap-4 text-sm leading-relaxed text-slate-700">
+            <div className="space-y-3 text-sm leading-relaxed text-slate-700">
               {member.image?.src ? (
-                <div className="flex items-center gap-4">
-                  <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full border border-sustain-cardBorder">
-                    <Image
-                      src={member.image.src}
-                      alt={member.image.alt ?? member.name ?? ''}
-                      fill
-                      sizes="64px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="text-xs uppercase tracking-wide text-slate-500">
-                    {member.languages?.join(' · ')}
-                  </div>
+                <div className="relative h-32 w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={member.image.src}
+                    alt={member.image.alt ?? member.name ?? ''}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               ) : null}
               {member.bio ? <p>{member.bio}</p> : null}
@@ -117,103 +61,74 @@ TeamSection.propTypes = {
   }),
 };
 
-function ScenarioGrid({ data }) {
-  const scenarios = dedupeBy(
-    Array.isArray(data?.scenarios) ? data.scenarios.filter(Boolean) : [],
-    (scenario, index) =>
-      typeof scenario === 'string'
-        ? scenario
-        : scenario?.title ?? scenario?.description ?? index
-  );
-  if (!scenarios.length) return null;
+function ValueGrid({ items = [] }) {
+  const values = dedupeBy(items, (item, index) => item?.title ?? item ?? index).slice(0, 3);
+  if (!values.length) return null;
   return (
     <section className="ss-section">
       <div className="space-y-4 text-center md:text-left">
-        {data?.eyebrow ? (
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{data.eyebrow}</p>
-        ) : null}
-        <h2 className="text-3xl font-semibold text-sustain-text">{data?.title}</h2>
-        {data?.description ? <p className="text-base text-slate-700">{data.description}</p> : null}
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">What guides my work</p>
+        <h2 className="text-3xl font-semibold text-sustain-text">Principles behind SustainSage</h2>
       </div>
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {scenarios.map((scenario, index) => {
-          const normalized = typeof scenario === 'string' ? { title: scenario } : scenario;
-          const iconName = normalized.icon ?? SCENARIO_ICONS[index % SCENARIO_ICONS.length];
-          return (
-            <Card key={normalized.title ?? normalized.description ?? index} title={normalized.title} icon={<Icon name={iconName} />}>
-              {normalized.description ? <p className="text-sm text-slate-700">{normalized.description}</p> : null}
-            </Card>
-          );
-        })}
+      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
+        {values.map((value) => (
+          <Card key={value?.title ?? value} title={value?.title ?? 'Guiding principle'} icon={<Icon name="spark" />}>
+            <p className="text-sm text-slate-700">{value?.description ?? value}</p>
+          </Card>
+        ))}
       </div>
-      {(data?.cta?.href && data?.cta?.label) || (data?.secondaryCta?.href && data?.secondaryCta?.label) ? (
-        <div className="mt-8 flex flex-wrap gap-3">
-          {data?.cta?.href && data?.cta?.label ? (
-            <Link href={data.cta.href} className="ss-btn-primary">
-              {data.cta.label}
-            </Link>
-          ) : null}
-          {data?.secondaryCta?.href && data?.secondaryCta?.label ? (
-            <Link href={data.secondaryCta.href} className="ss-btn-secondary">
-              {data.secondaryCta.label}
-            </Link>
-          ) : null}
-        </div>
-      ) : null}
-      {data?.disclaimer ? <p className="mt-6 text-xs leading-5 text-slate-500">{data.disclaimer}</p> : null}
     </section>
   );
 }
 
-ScenarioGrid.propTypes = {
-  data: PropTypes.shape({
-    eyebrow: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    scenarios: PropTypes.array,
-    cta: PropTypes.shape({
-      href: PropTypes.string,
-      label: PropTypes.string,
-    }),
-    secondaryCta: PropTypes.shape({
-      href: PropTypes.string,
-      label: PropTypes.string,
-    }),
-    disclaimer: PropTypes.string,
-  }),
+ValueGrid.propTypes = {
+  items: PropTypes.array,
 };
 
-function Principles({ title, items = [] }) {
-  const uniqueItems = dedupeBy(
-    items,
-    (item, index) =>
-      typeof item === 'string'
-        ? item
-        : item?.title ?? item?.description ?? index
-  );
-  if (!uniqueItems.length) return null;
+function StoryCards({ stories = [] }) {
+  const successStories = dedupeBy(
+    stories.filter((story) => typeof story === 'object' && story?.context),
+    (story) => story.title ?? story.context
+  ).slice(0, 3);
+  if (!successStories.length) return null;
   return (
     <section className="ss-section">
       <div className="space-y-4 text-center md:text-left">
-        <h2 className="text-3xl font-semibold text-sustain-text">{title}</h2>
+        <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Client success stories</p>
+        <h2 className="text-3xl font-semibold text-sustain-text">Composite scenarios drawn from coaching</h2>
       </div>
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2">
-        {uniqueItems.map((item, index) => {
-          const normalized = typeof item === 'string' ? { description: item } : item;
-          return (
-            <Card key={normalized.title ?? normalized.description ?? index} title={normalized.title}>
-              {normalized.description ? <p className="text-sm text-slate-700">{normalized.description}</p> : null}
-            </Card>
-          );
-        })}
+      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {successStories.map((story) => (
+          <Card key={story.title} title={story.title} tag={story.duration ?? story.timeline}>
+            <div className="space-y-3 text-sm text-slate-700">
+              {story.context ? (
+                <p>
+                  <span className="font-semibold text-sustain-text">Challenge: </span>
+                  {story.context}
+                </p>
+              ) : null}
+              {story.coaching_moves ? (
+                <p>
+                  <span className="font-semibold text-sustain-text">Journey: </span>
+                  {story.coaching_moves}
+                </p>
+              ) : null}
+              {story.shift ? (
+                <p>
+                  <span className="font-semibold text-sustain-text">Outcome: </span>
+                  {story.shift}
+                </p>
+              ) : null}
+            </div>
+          </Card>
+        ))}
       </div>
     </section>
   );
 }
 
-Principles.propTypes = {
-  title: PropTypes.string,
-  items: PropTypes.array,
+StoryCards.propTypes = {
+  stories: PropTypes.array,
 };
 
 function BoundariesSection({ boundaries }) {
@@ -228,7 +143,7 @@ function BoundariesSection({ boundaries }) {
         <h2 className="text-3xl font-semibold text-sustain-text">{boundaries?.title}</h2>
         {boundaries?.description ? <p className="text-base text-slate-700">{boundaries.description}</p> : null}
       </div>
-      <div className="mt-8 rounded-card border border-sustain-cardBorder bg-white p-4 shadow-card">
+      <div className="mt-8 rounded-card rounded-2xl border border-slate-100 bg-white p-4 shadow-md">
         <FAQAccordion items={items} />
       </div>
     </section>
@@ -249,41 +164,97 @@ export default function AboutPage({
   showFallbackNotice = false,
   fallbackNotice = undefined,
 } = {}) {
-  const keyPointItems = dedupeBy(
-    orderSections(Array.isArray(copy?.key_points?.items) ? copy.key_points.items : []),
-    (item, index) => item?.title ?? item?.description ?? index
-  );
   const processSteps = orderSections(Array.isArray(copy?.process?.steps) ? copy.process.steps : []);
-  const callout = copy?.callout ?? {};
   const fallbackMessage =
     fallbackNotice ??
     copy?.fallbackNotice ??
     team?.fallbackNotice ??
     'Temporarily showing English content while we complete this translation.';
 
+  const backgroundHighlights = dedupeBy(
+    Array.isArray(copy?.approach?.pillars) ? copy.approach.pillars : [],
+    (item, index) => item?.title ?? item?.description ?? index
+  ).slice(0, 3);
+
   return (
     <main className="ss-container">
-      <Hero intro={copy?.intro} showFallbackNotice={showFallbackNotice} fallbackMessage={fallbackMessage} />
-      <TeamSection team={team} />
-      <ScenarioGrid data={copy?.whatIsCoaching} />
-      <Principles title={copy?.key_points?.title ?? 'Guiding principles'} items={keyPointItems} />
       <section className="ss-section">
-        <div className="space-y-4 text-center md:text-left">
-          <h2 className="text-3xl font-semibold text-sustain-text">{copy?.process?.title}</h2>
-          {copy?.process?.description ? <p className="text-base text-slate-700">{copy.process.description}</p> : null}
-        </div>
-        <div className="mt-8">
-          <StepList steps={processSteps} className="mx-auto max-w-3xl md:mx-0" />
+        <div className="grid gap-10 md:grid-cols-2 md:items-start">
+          <div className="space-y-6">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">My journey</p>
+            <h1 className="text-4xl font-semibold text-sustain-text">
+              {copy?.intro?.title ?? 'Coaching for complex transitions'}
+            </h1>
+            <p className="text-base leading-relaxed text-slate-700">
+              {copy?.intro?.body ?? 'SustainSage keeps coaching steady, culturally aware, and grounded in practical experiments.'}
+            </p>
+            {showFallbackNotice ? (
+              <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+            ) : null}
+          </div>
+          <Card title="A personal note" subtitle="Why this work matters">
+            <p className="text-sm leading-relaxed text-slate-700">
+              {copy?.callout?.body ??
+                'Coaching is how we create steady space for bilingual, bicultural stories to be heard without urgency.'}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {copy?.callout?.primary?.href ? (
+                <Link href={copy.callout.primary.href} className="ss-btn-primary">
+                  {copy.callout.primary.label}
+                </Link>
+              ) : null}
+              {copy?.callout?.secondary?.href ? (
+                <Link href={copy.callout.secondary.href} className="ss-btn-secondary">
+                  {copy.callout.secondary.label}
+                </Link>
+              ) : null}
+            </div>
+          </Card>
         </div>
       </section>
+
+      <ValueGrid items={copy?.key_points?.items} />
+
+      <TeamSection team={team} />
+
+      <section className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Professional background</p>
+          <h2 className="text-3xl font-semibold text-sustain-text">Structures that keep our practice steady</h2>
+        </div>
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+          {backgroundHighlights.map((item) => (
+            <Card key={item.title} title={item.title}>
+              <p className="text-sm text-slate-700">{item.description}</p>
+            </Card>
+          ))}
+        </div>
+      </section>
+
+      <StoryCards stories={copy?.approach?.cases ?? []} />
+
+      <section className="ss-section">
+        <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-8 shadow-md">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">My coaching approach</p>
+          <h2 className="mt-3 text-3xl font-semibold text-sustain-text">{copy?.process?.title}</h2>
+          {copy?.process?.description ? (
+            <p className="mt-4 text-base text-slate-700">{copy.process.description}</p>
+          ) : null}
+          <div className="mt-8">
+            <StepList steps={processSteps} />
+          </div>
+        </div>
+      </section>
+
       <BoundariesSection boundaries={copy?.boundaries} />
+
       <section className="ss-section">
         <Callout
-          title={callout?.title}
-          body={callout?.body}
+          title={copy?.callout?.title ?? 'Let’s have a conversation'}
+          body={copy?.callout?.body ?? 'Browse our coaching services or read the full coaching boundaries we uphold.'}
           actions={[
-            callout?.primary,
-            callout?.secondary,
+            copy?.callout?.primary,
+            copy?.callout?.secondary ?? { label: 'Explore services', href: '/services' },
           ].filter((link) => link?.href && link?.label)}
         />
       </section>
