@@ -44,12 +44,15 @@ export default function Home({
   showFallbackNotice = false,
   fallbackNotice = null,
 } = {}) {
-  const hero = content?.hero ?? {};
-  const services = content?.services ?? {};
-  const process = content?.process ?? {};
-  const faqTeaser = content?.faqTeaser ?? null;
-  const recogniseContent = content?.recognise ?? {};
-  const boundaries = content?.boundaries ?? {};
+  const {
+    hero = {},
+    services = {},
+    process = {},
+    faqTeaser = null,
+    recognise: recogniseContent = {},
+    boundaries = {},
+    audiences: contentAudiences,
+  } = content ?? {};
 
   const faqContent = {
     title: faqTeaser?.title ?? 'Questions about coaching?',
@@ -82,8 +85,8 @@ export default function Home({
     fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   const audiences = dedupeBy(
-    Array.isArray(content?.audiences) && content.audiences.length
-      ? content.audiences
+    Array.isArray(contentAudiences) && contentAudiences.length
+      ? contentAudiences
       : DEFAULT_WHO_CARDS,
     (item) => item?.title ?? item?.description ?? ''
   );
