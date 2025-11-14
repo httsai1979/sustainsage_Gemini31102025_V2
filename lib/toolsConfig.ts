@@ -58,7 +58,7 @@ export const toolsConfig: ToolConfig[] = [
     iframeSrc: '/tools/self-talk-reframe.html',
   },
   {
-    slug: 'behaviour-experiment-ladder',
+    slug: 'behaviour-ladder',
     title: localizedField('Behaviour Experiment Ladder', {
       'zh-TW': '行為實驗階梯',
       'zh-CN': '行为实验阶梯',
@@ -68,7 +68,7 @@ export const toolsConfig: ToolConfig[] = [
       'zh-CN': '按步骤规划一个小实验，温和测试新的行为。',
     }),
     category: INTERACTIVE_CATEGORY,
-    iframeSrc: '/tools/behaviour-experiment-ladder.html',
+    iframeSrc: '/tools/behaviour-ladder.html',
   },
   {
     slug: 'values-map',
@@ -123,7 +123,7 @@ export const toolsConfig: ToolConfig[] = [
     iframeSrc: '/tools/role-separation.html',
   },
   {
-    slug: 'decision-clarity-helper',
+    slug: 'choice-clarifier',
     title: localizedField('Decision Clarity Helper', {
       'zh-TW': '選擇困境釐清器',
       'zh-CN': '选择困境厘清器',
@@ -133,7 +133,7 @@ export const toolsConfig: ToolConfig[] = [
       'zh-CN': '在做决定前列出取舍、界限与需要。',
     }),
     category: INTERACTIVE_CATEGORY,
-    iframeSrc: '/tools/decision-clarity-helper.html',
+    iframeSrc: '/tools/choice-clarifier.html',
   },
 ];
 

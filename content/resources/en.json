@@ -37,10 +37,10 @@
       "tag": "Interactive tool"
     },
     {
-      "id": "behaviour-experiment-ladder-tool",
+      "id": "behaviour-ladder-tool",
       "title": "Behaviour Experiment Ladder",
       "desc": "Step through a micro-experiment so you can test one behaviour with care.",
-      "href": "/tools/behaviour-experiment-ladder",
+      "href": "/tools/behaviour-ladder",
       "img": "/images/resources/behaviour-ladder-hero.jpg",
       "alt": "Behaviour experiment ladder",
       "tag": "Interactive tool"
@@ -82,10 +82,10 @@
       "tag": "Interactive tool"
     },
     {
-      "id": "decision-clarity",
+      "id": "choice-clarifier",
       "title": "Decision Clarity Helper",
       "desc": "Lay out trade-offs, boundaries, and needs before you commit to the next step.",
-      "href": "/tools/decision-clarity-helper",
+      "href": "/tools/choice-clarifier",
       "img": "/images/resources/imposter-reading.svg",
       "alt": "Decision helper",
       "tag": "Interactive tool"

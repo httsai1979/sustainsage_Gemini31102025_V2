@@ -37,10 +37,10 @@
       "tag": "互动工具"
     },
     {
-      "id": "behaviour-experiment-ladder-tool",
+      "id": "behaviour-ladder-tool",
       "title": "行为实验阶梯",
       "desc": "按步骤规划一个小实验，温和测试新的行为。",
-      "href": "/tools/behaviour-experiment-ladder",
+      "href": "/tools/behaviour-ladder",
       "img": "/images/resources/behaviour-ladder-hero.jpg",
       "alt": "行为实验工具",
       "tag": "互动工具"
@@ -82,10 +82,10 @@
       "tag": "互动工具"
     },
     {
-      "id": "decision-clarity",
+      "id": "choice-clarifier",
       "title": "选择困境厘清器",
       "desc": "在做决定前列出取舍、界限与需要。",
-      "href": "/tools/decision-clarity-helper",
+      "href": "/tools/choice-clarifier",
       "img": "/images/resources/imposter-reading.svg",
       "alt": "决策厘清",
       "tag": "互动工具"
