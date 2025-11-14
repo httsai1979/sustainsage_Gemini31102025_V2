@@ -71,21 +71,27 @@ export default function ContactPage() {
       title: 'Email',
       description: 'Send context any time. We reply within three UK working days.',
       detail: 'contact@sustainsage.com',
+      href: 'mailto:contact@sustainsage.com',
+      icon: 'mail',
     },
     {
       title: 'Phone',
       description: 'Leave a voicemail or WhatsApp note for slower-paced replies.',
       detail: '+44 (0)20 8638 7870',
+      href: 'tel:+442086387870',
+      icon: 'phone',
     },
     {
       title: 'Office hours',
       description: 'Weekdays 09:00–17:00 UK time · Online and Southsea, Portsmouth.',
       detail: 'GMT / BST',
+      icon: 'clock',
     },
     {
       title: 'Post',
       description: 'For agreements or paperwork, please email for the correct postal address first.',
       detail: 'Portsmouth · Southsea',
+      icon: 'map',
     },
   ];
 
@@ -165,9 +171,20 @@ export default function ContactPage() {
       <section className="ss-section">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {contactMethods.map((method) => (
-            <Card key={method.title} title={method.title} icon={<Icon name="info" />}>
+            <Card key={method.title} title={method.title} icon={<Icon name={method.icon ?? 'info'} />}>
               <p className="text-sm text-slate-700">{method.description}</p>
-              <p className="mt-3 text-sm font-semibold text-sustain-text">{method.detail}</p>
+              {method.detail ? (
+                method.href ? (
+                  <a
+                    href={method.href}
+                    className="mt-3 inline-flex text-sm font-semibold text-sustain-green underline-offset-2 hover:underline"
+                  >
+                    {method.detail}
+                  </a>
+                ) : (
+                  <p className="mt-3 text-sm font-semibold text-sustain-text">{method.detail}</p>
+                )
+              ) : null}
             </Card>
           ))}
         </div>

@@ -9,6 +9,21 @@ import { orderSections } from '@/lib/content/normalize';
 import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
+const DEFAULT_FAQ_COPY = {
+  session:
+    'Coaching is a collaborative, future-leaning conversation. You set the agenda, we ask reflective questions, and we co-design experiments.',
+  difference:
+    'Therapy diagnoses or treats mental health needs, while mentors or consultants provide directive plans—those stay outside coaching. We follow the International Coaching Federation Code of Ethics.',
+  cadence:
+    'Individuals often start with six sessions over two to three months. You can pause or extend after each review.',
+  online:
+    'Sessions run on Zoom by default. We coach in English and Mandarin, and you can switch languages mid-session if that helps you express nuance.',
+  global:
+    'Yes. We work with teams across Europe and Asia-Pacific using online sessions, shared notes, and agreed review points.',
+  fees:
+    'Personal packages range from £420 to £1,200 depending on length. Organisation-sponsored coaching starts from £1,800 for a three-month engagement.',
+};
+
 export default function FAQPage({
   content = {},
   showFallbackNotice = false,
@@ -32,6 +47,40 @@ export default function FAQPage({
     ),
     (item, index) => item?.question ?? index
   );
+
+  const findAnswer = (keywords = [], fallbackKey = 'session') => {
+    const match = faqItems.find((item) =>
+      keywords.some((keyword) => item.question?.toLowerCase().includes(keyword))
+    );
+    return match?.answer ?? DEFAULT_FAQ_COPY[fallbackKey];
+  };
+
+  const curatedFaqItems = [
+    {
+      question: 'What happens in a coaching session?',
+      answer: findAnswer(['what is coaching', 'session'], 'session'),
+    },
+    {
+      question: 'How is coaching different from therapy or mentoring?',
+      answer: findAnswer(['therapy', 'consulting'], 'difference'),
+    },
+    {
+      question: 'How often do we meet?',
+      answer: findAnswer(['how many sessions'], 'cadence'),
+    },
+    {
+      question: 'Do you offer online sessions?',
+      answer: findAnswer(['formats', 'languages', 'zoom'], 'online'),
+    },
+    {
+      question: 'Do you work with clients outside the UK?',
+      answer: findAnswer(['time zones', 'teams across'], 'global'),
+    },
+    {
+      question: 'How do fees work?',
+      answer: findAnswer(['fees'], 'fees'),
+    },
+  ];
 
   return (
     <main className="ss-container">
@@ -59,7 +108,7 @@ export default function FAQPage({
 
       <section className="ss-section">
         <div className="rounded-card border border-sustain-cardBorder bg-white p-4 shadow-card">
-          <FAQAccordion items={faqItems} />
+          <FAQAccordion items={curatedFaqItems} />
         </div>
       </section>
 

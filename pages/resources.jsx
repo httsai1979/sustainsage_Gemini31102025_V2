@@ -9,8 +9,36 @@ import { loadJSON } from '@/lib/content';
 import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
+const DEFAULT_RESOURCES = [
+  {
+    id: 'self-reflection-questions',
+    title: 'Self-reflection questions',
+    desc: 'Gentle prompts to help you untangle thoughts before or after a coaching session.',
+    icon: 'spark',
+    href: '/blog',
+    actionLabel: 'View questions',
+  },
+  {
+    id: 'time-audit-sheet',
+    title: 'Time audit sheet',
+    desc: 'A one-page worksheet to notice where energy goes during a typical week.',
+    icon: 'clock',
+    href: '/blog',
+    actionLabel: 'Download sheet',
+  },
+  {
+    id: 'values-map',
+    title: 'Values map',
+    desc: 'Plot what steadies you when work or life shifts. Use it to guide decisions.',
+    icon: 'map',
+    href: '/blog',
+    actionLabel: 'View map',
+  },
+];
+
 export default function ResourcesPage({ items = [] }) {
   const resourceItems = dedupeBy(items, (item) => item.id ?? item.title);
+  const resolvedResources = resourceItems.length ? resourceItems : DEFAULT_RESOURCES;
   return (
     <main className="ss-container">
       <section className="ss-section">
@@ -24,9 +52,11 @@ export default function ResourcesPage({ items = [] }) {
       </section>
       <section className="ss-section">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {resourceItems.map((item) => {
-            const actionHref = !item.comingSoon ? item.href || item.download : null;
-            const actionLabel = !item.comingSoon ? (item.href ? 'Open resource' : 'Download') : null;
+          {resolvedResources.map((item) => {
+            const actionHref = !item.comingSoon ? item.href || item.download || '/blog' : null;
+            const actionLabel = !item.comingSoon
+              ? item.actionLabel || (item.download ? 'Download' : 'View resource')
+              : null;
             return (
               <Card
                 key={item.id}

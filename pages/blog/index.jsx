@@ -8,8 +8,33 @@ import { getAllPosts } from '@/lib/content';
 import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
+const DEFAULT_POSTS = [
+  {
+    slug: 'career-transitions-with-care',
+    title: 'Career transitions with care',
+    description: 'How to make space for experimentation when routines shift faster than confidence.',
+    category: 'Career transitions',
+    readingTime: '5 min read',
+  },
+  {
+    slug: 'living-in-the-uk',
+    title: 'Living in the UK, rebuilding rhythm',
+    description: 'Ideas for settling into new systems, finding anchors, and trusting your pace.',
+    category: 'Living in the UK',
+    readingTime: '4 min read',
+  },
+  {
+    slug: 'working-as-a-parent',
+    title: 'Working as a parent without burning out',
+    description: 'What boundaries and experiments help when caregiving overlaps with career shifts.',
+    category: 'Working as a parent',
+    readingTime: '6 min read',
+  },
+];
+
 export default function BlogPage({ posts = [] }) {
   const blogPosts = dedupeBy(posts, (post) => post.slug ?? post.title);
+  const resolvedPosts = blogPosts.length ? blogPosts : DEFAULT_POSTS;
   return (
     <main className="ss-container">
       <section className="ss-section">
@@ -21,7 +46,7 @@ export default function BlogPage({ posts = [] }) {
       </section>
       <section className="ss-section">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.map((post) => (
+          {resolvedPosts.map((post) => (
             <Card
               key={post.slug}
               title={post.title}
