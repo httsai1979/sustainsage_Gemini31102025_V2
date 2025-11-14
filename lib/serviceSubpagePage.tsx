@@ -18,6 +18,22 @@ export type ServiceSubpageProps = {
 
 type SubnavSlug = 'overview' | 'pricing' | 'readiness' | 'process' | 'agreement' | 'faq' | 'cases';
 
+type ServiceCTA = {
+  title?: string;
+  description?: string;
+  note?: string;
+  primary?: { href: string; label: string };
+  secondary?: { href: string; label: string };
+};
+
+type ServiceSubnavTab = {
+  slug: SubnavSlug;
+  label: string;
+  href?: string;
+  id?: string;
+  cta?: ServiceCTA;
+};
+
 type CreateServiceSubpageOptions = {
   subSlug: Exclude<SubnavSlug, 'overview'>;
   heading: string | ((service: ServiceContent) => string);
@@ -147,6 +163,22 @@ function ServiceSubpageLayout({
   const caseCards = cases.slice(0, 3);
   const fallbackMessage =
     service.fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
+  const activeTab = tabs.find((tab) => tab.id === active || tab.slug === active);
+  const defaultCta: ServiceCTA = {
+    title: 'Next steps',
+    description:
+      'Compare pricing or start a short conversation to see if this coaching pathway fits your moment.',
+    primary: {
+      href: `${basePath}/pricing`,
+      label: 'Review pricing',
+    },
+    secondary: {
+      href: '/contact',
+      label: 'Talk to a coach',
+    },
+  };
+  const resolvedCta: ServiceCTA =
+    activeTab?.cta ?? (service as ServiceContent & { cta?: ServiceCTA })?.cta ?? defaultCta;
 
   return (
     <>
@@ -167,33 +199,33 @@ function ServiceSubpageLayout({
         <div className="ss-container flex flex-col gap-10 lg:grid lg:grid-cols-[minmax(0,260px)_1fr]">
           <aside className="space-y-6">
             <ServiceSubnav base={basePath} tabs={tabs} active={active} orientation="vertical" />
-            <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
-              <p className="text-sm font-semibold text-sustain-text">{resolvedCta.title}</p>
-              {resolvedCta.description ? (
-                <p className="mt-2 text-sm leading-6 text-slate-700">{resolvedCta.description}</p>
-              ) : null}
-              <div className="mt-4 flex flex-col gap-3">
-                {resolvedCta.primary?.href && resolvedCta.primary?.label ? (
-                  <Link
-                    href={resolvedCta.primary.href}
-                    className="ss-btn-primary text-center"
-                  >
-                    {resolvedCta.primary.label}
-                  </Link>
+            {resolvedCta ? (
+              <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
+                {resolvedCta.title ? (
+                  <p className="text-sm font-semibold text-sustain-text">{resolvedCta.title}</p>
                 ) : null}
-                {resolvedCta.secondary?.href && resolvedCta.secondary?.label ? (
-                  <Link
-                    href={resolvedCta.secondary.href}
-                    className="ss-btn-secondary text-center"
-                  >
-                    {resolvedCta.secondary.label}
-                  </Link>
+                {resolvedCta.description ? (
+                  <p className="mt-2 text-sm leading-6 text-slate-700">{resolvedCta.description}</p>
+                ) : null}
+                {resolvedCta.primary || resolvedCta.secondary ? (
+                  <div className="mt-4 flex flex-col gap-3">
+                    {resolvedCta.primary?.href && resolvedCta.primary?.label ? (
+                      <Link href={resolvedCta.primary.href} className="ss-btn-primary text-center">
+                        {resolvedCta.primary.label}
+                      </Link>
+                    ) : null}
+                    {resolvedCta.secondary?.href && resolvedCta.secondary?.label ? (
+                      <Link href={resolvedCta.secondary.href} className="ss-btn-secondary text-center">
+                        {resolvedCta.secondary.label}
+                      </Link>
+                    ) : null}
+                  </div>
+                ) : null}
+                {resolvedCta.note ? (
+                  <p className="mt-4 text-xs leading-5 text-slate-500">{resolvedCta.note}</p>
                 ) : null}
               </div>
-              {resolvedCta.note ? (
-                <p className="mt-4 text-xs leading-5 text-slate-500">{resolvedCta.note}</p>
-              ) : null}
-            </div>
+            ) : null}
           </aside>
 
           <div className="space-y-10">
@@ -245,8 +277,8 @@ function ServiceSubpageLayout({
   );
 }
 
-function getSubnavTabs(base: string) {
-  const tabs: { slug: SubnavSlug; label: string; href?: string }[] = [
+function getSubnavTabs(base: string): ServiceSubnavTab[] {
+  const tabs: ServiceSubnavTab[] = [
     { slug: 'overview', label: 'Overview', href: base },
     { slug: 'pricing', label: 'Pricing' },
     { slug: 'readiness', label: 'Readiness' },
