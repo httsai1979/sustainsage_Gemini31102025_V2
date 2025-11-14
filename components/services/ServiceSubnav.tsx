@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 
 type ServiceSubnavTab = {
   slug: string;
@@ -16,12 +17,18 @@ type ServiceSubnavProps = {
 };
 
 export default function ServiceSubnav({ base, tabs = [], active, orientation = 'horizontal' }: ServiceSubnavProps) {
+  const { t } = useTranslation('serviceDetails');
+  const exploreLabel = t('subpage.exploreLabel', 'Explore');
+  const resolvedTabs = tabs.map((tab) => ({
+    ...tab,
+    label: tab.label ?? t(`tabs.${tab.slug}`, tab.slug),
+  }));
   if (orientation === 'vertical') {
     return (
       <nav className="rounded-2xl border border-sustain-cardBorder bg-white p-5 shadow-sm">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Explore</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{exploreLabel}</p>
         <ul className="mt-4 flex gap-2 overflow-x-auto text-sm font-medium text-slate-500 lg:flex-col lg:gap-1">
-          {tabs.map((tab) => {
+          {resolvedTabs.map((tab) => {
             const href = tab.href ?? (tab.slug === 'overview' ? base : `${base}/${tab.slug}`);
             const isActive = active === tab.slug;
             const className = `flex w-full items-center justify-between rounded-full px-4 py-2 transition ${
@@ -51,7 +58,7 @@ export default function ServiceSubnav({ base, tabs = [], active, orientation = '
   return (
     <nav className="border-b border-sustain-cardBorder bg-white/95">
       <ul className="mx-auto flex max-w-6xl flex-wrap items-center justify-start gap-4 overflow-x-auto px-4 py-3 text-sm font-medium leading-6 text-sustain-text sm:px-6 sm:text-[15px]">
-        {tabs.map((tab) => {
+        {resolvedTabs.map((tab) => {
           const href = tab.href ?? (tab.slug === 'overview' ? base : `${base}/${tab.slug}`);
           const isActive = active === tab.slug;
           const className = `inline-flex border-b-2 pb-2 transition-colors ${

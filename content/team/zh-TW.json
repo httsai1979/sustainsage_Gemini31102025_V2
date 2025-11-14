@@ -1,40 +1,29 @@
 {
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
-  "eyebrow": "Team",
-  "title": "Meet the bilingual coaches behind SustainSage",
-  "description": "We bring supervision-informed coaching, policy literacy, and multilingual lived experience to every partnership.",
+  "fallbackNotice": "如有尚未翻譯的段落，會暫以英文顯示。",
+  "eyebrow": "團隊",
+  "title": "認識 SustainSage 的雙語教練",
+  "description": "我們結合督導經驗、政策素養與多語背景，讓每段合作都兼顧文化與節奏。",
   "members": [
     {
       "name": "Maggie Lin",
-      "title": "ICF PCC Coach & Co-founder",
-      "location": "Taipei · Singapore",
-      "bio": "Maggie designs trauma-informed coaching containers for founders, sustainability leaders, and policy teams navigating uncertainty.",
-      "languages": [
-        "English",
-        "Traditional Chinese",
-        "Simplified Chinese"
-      ]
+      "title": "ICF PCC 教練、共同創辦人",
+      "location": "台北 · 新加坡",
+      "bio": "擅長為創業者、永續領導者與政策團隊設計創傷知情的教練空間。",
+      "languages": ["英文", "繁體中文", "簡體中文"]
     },
     {
       "name": "Sarah Chen",
-      "title": "Career Transitions Coach",
-      "location": "Singapore · London",
-      "bio": "Sarah supports mission-driven professionals as they move between sectors, stewarding ethical risk assessments and pacing change experiments.",
-      "languages": [
-        "English",
-        "Mandarin"
-      ]
+      "title": "職涯轉換教練",
+      "location": "新加坡 · 倫敦",
+      "bio": "陪伴使命導向的專業人士在跨產業移動時，守住倫理風險評估與節奏。",
+      "languages": ["英文", "中文"]
     },
     {
       "name": "Jonas Wu",
-      "title": "Systems & Strategy Coach",
-      "location": "London · Remote",
-      "bio": "Jonas partners with cross-border teams to align governance, stakeholder engagement, and data care so decisions stay grounded in shared context.",
-      "languages": [
-        "English",
-        "Mandarin",
-        "Hokkien"
-      ]
+      "title": "系統與策略教練",
+      "location": "倫敦 · 遠端",
+      "bio": "支援跨境團隊對齊治理、利害關係人溝通與資料照護，讓決策建立在共享脈絡上。",
+      "languages": ["英文", "中文", "閩南語"]
     }
   ]
 }

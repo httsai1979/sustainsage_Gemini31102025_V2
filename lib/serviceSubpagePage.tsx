@@ -1,5 +1,6 @@
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import type { ReactElement, ReactNode } from 'react';
+import { useTranslation } from 'next-i18next';
 
 import Link from 'next/link';
 
@@ -151,9 +152,11 @@ function ServiceSubpageLayout({
   showFallbackNotice = false,
   children,
 }: ServiceSubpageLayoutProps) {
+  const { t } = useTranslation('serviceDetails');
   const hero = service.hero ?? {};
   const basePath = `/services/${service.slug}`;
-  const tabs = getSubnavTabs(basePath);
+  const tabLabels = (t('tabs', { returnObjects: true }) ?? {}) as Record<string, string>;
+  const tabs = getSubnavTabs(basePath, tabLabels);
   const cases = dedupeBy(
     Array.isArray(service.cases?.items)
       ? service.cases?.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
@@ -162,20 +165,23 @@ function ServiceSubpageLayout({
   );
   const caseCards = cases.slice(0, 3);
   const fallbackMessage =
-    service.fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
+    service.fallbackNotice ??
+    t('subpage.fallbackNotice', 'Temporarily showing English content while we complete this translation.');
   const activeTab = tabs.find((tab) => tab.id === active || tab.slug === active);
   const defaultCta: ServiceCTA = {
-    title: 'Next steps',
+    title: t('subpage.defaultCta.title', 'Next steps'),
     description:
-      'Compare pricing or start a short conversation to see if this coaching pathway fits your moment.',
+      t('subpage.defaultCta.description',
+        'Compare pricing or start a 20-minute chat to see if this coaching pathway fits your moment.'),
     primary: {
       href: `${basePath}/pricing`,
-      label: 'Review pricing',
+      label: t('subpage.defaultCta.primary', 'Review pricing'),
     },
     secondary: {
       href: '/contact',
-      label: 'Talk to a coach',
+      label: t('subpage.defaultCta.secondary', 'Book a 20-minute chat'),
     },
+    note: t('subpage.defaultCta.note', ''),
   };
   const resolvedCta: ServiceCTA =
     activeTab?.cta ?? (service as ServiceContent & { cta?: ServiceCTA })?.cta ?? defaultCta;
@@ -277,15 +283,15 @@ function ServiceSubpageLayout({
   );
 }
 
-function getSubnavTabs(base: string): ServiceSubnavTab[] {
+function getSubnavTabs(base: string, labels?: Record<string, string>): ServiceSubnavTab[] {
   const tabs: ServiceSubnavTab[] = [
-    { slug: 'overview', label: 'Overview', href: base },
-    { slug: 'pricing', label: 'Pricing' },
-    { slug: 'readiness', label: 'Readiness' },
-    { slug: 'process', label: 'Process' },
-    { slug: 'agreement', label: 'Agreement' },
-    { slug: 'faq', label: 'FAQ' },
-    { slug: 'cases', label: 'Cases' },
+    { slug: 'overview', label: labels?.overview ?? 'Overview', href: base },
+    { slug: 'pricing', label: labels?.pricing ?? 'Pricing' },
+    { slug: 'readiness', label: labels?.readiness ?? 'Readiness' },
+    { slug: 'process', label: labels?.process ?? 'Process' },
+    { slug: 'agreement', label: labels?.agreement ?? 'Agreement' },
+    { slug: 'faq', label: labels?.faq ?? 'FAQ' },
+    { slug: 'cases', label: labels?.cases ?? 'Cases' },
   ];
 
   return tabs;

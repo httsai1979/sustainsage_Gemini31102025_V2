@@ -1,118 +1,109 @@
 {
   "seo": {
-    "title": "FAQ | SustainSage",
-    "description": "Clear answers about coaching scope, logistics, ethics, and organisational partnerships with SustainSage."
+    "title": "常見問題｜SustainSage",
+    "description": "整理教練範圍、合作節奏、倫理與與組織合作時的注意事項。"
   },
   "hero": {
-    "kicker": "Frequently asked questions",
-    "title": "Honest answers so you can decide what support fits now.",
-    "body": "We stay within ICF ethics: no promises, no pressure, and referrals when coaching is not the right container.",
+    "kicker": "常見提問",
+    "title": "先把疑問說清楚，再決定是否需要這份支持。",
+    "body": "我們依循 ICF 倫理：不做保證、不施壓，若教練不適合就協助轉介。",
     "links": [
-      {
-        "href": "/services/how-coaching-works",
-        "label": "How coaching works"
-      },
-      {
-        "href": "/about",
-        "label": "Meet our practice"
-      },
-      {
-        "href": "/contact",
-        "label": "Book an intro chat"
-      }
+      {"href": "/services/how-coaching-works", "label": "教練怎麼進行"},
+      {"href": "/about", "label": "認識我們"},
+      {"href": "/contact", "label": "預約 20 分鐘聊聊"}
     ]
   },
   "categories": [
     {
       "icon": "question",
-      "title": "About coaching",
-      "intro": "Scope, boundaries, and who tends to benefit from working with us.",
+      "title": "關於教練",
+      "intro": "合作範圍、界線與適合的情境。",
       "items": [
         {
-          "question": "What is coaching and how is it different from therapy or consulting?",
-          "answer": "Coaching is a collaborative, future-leaning conversation. You set the agenda, we ask reflective questions, and we co-design experiments. Therapy diagnoses or treats mental health needs, while consultants provide directive plans—those stay outside coaching."
+          "question": "教練與治療、顧問有何不同？",
+          "answer": "教練是面向未來的對話，你決定議題，我們透過提問與小實驗支持你。治療聚焦於診斷與臨床治療，顧問提供指令式方案，兩者都不在教練範圍內。"
         },
         {
-          "question": "What does it mean that your work is ICF-aligned?",
-          "answer": "We follow the International Coaching Federation Code of Ethics. That means informed consent, confidentiality with clear limits, data care, and regular check-ins on how our partnership is working for you."
+          "question": "ICF 對齊代表什麼？",
+          "answer": "我們遵循國際教練聯盟倫理守則，包含知情同意、清楚的保密界線、資料照護，以及定期檢視合作是否仍對你有幫助。"
         },
         {
-          "question": "Who usually benefits from coaching with you?",
-          "answer": "Clients are often navigating relocation, career rebuilds, care responsibilities, or cross-cultural leadership. They want space to think, experiment, and name boundaries without being told what to do."
+          "question": "哪些人最常與你們合作？",
+          "answer": "多半在經歷搬遷、職涯重建、照護責任或跨文化領導，想要冷靜空間釐清界線、做實驗，而不是被告知要怎麼做。"
         },
         {
-          "question": "When might coaching not be the right support?",
-          "answer": "If you need crisis intervention, clinical treatment, legal or financial advice, coaching is not sufficient. We can pause, signpost other professionals, or suggest resources that better match the support you need."
+          "question": "什麼情況下不建議找教練？",
+          "answer": "若需要危機處理、臨床治療、法律或財務建議，教練不足以支撐。這時我們會暫停、提供轉介或建議其他資源。"
         }
       ]
     },
     {
       "icon": "clock",
-      "title": "Practicalities",
-      "intro": "What sessions look like, how often we meet, and how we handle logistics.",
+      "title": "合作細節",
+      "intro": "會談節奏、語言與行政流程。",
       "items": [
         {
-          "question": "How many sessions do people usually book?",
-          "answer": "Individuals often start with six sessions over two to three months. Organisations may commission three or six-month programmes. You can pause or extend after each review."
+          "question": "通常會談安排幾次？",
+          "answer": "個人多半先進行 6 週期（約 2–3 個月）。組織合作則可能是 3 或 6 個月的方案。每次回顧後都能暫停或延伸。"
         },
         {
-          "question": "What formats and languages do you offer?",
-          "answer": "Sessions run on Zoom by default. We coach in English and Mandarin, and you can switch languages in the moment if that helps you express nuance."
+          "question": "提供哪些形式與語言？",
+          "answer": "預設使用 Zoom，也可討論其他線上平台。可使用英文、繁體中文與簡體中文，必要時會談中隨時切換。"
         },
         {
-          "question": "What are your fees?",
-          "answer": "Personal packages range from £420 to £1,200 depending on length. Organisation-sponsored coaching starts from £1,800 for a three-month engagement. Sliding scale options are discussed during the intro chat."
+          "question": "費用怎麼計算？",
+          "answer": "定價與套組列在 Pricing 頁，包含系列、顧問式保留方案與常見費用，方便你先比較。最終協議會依範圍、節奏與可及性需求調整；沒有銷售指標或限時優惠，你也可以視情況暫停。"
         },
         {
-          "question": "What is your cancellation policy?",
-          "answer": "You can reschedule with 24 hours’ notice. Late cancellations or no-shows count as a session so we can protect time for all clients."
+          "question": "改期政策是什麼？",
+          "answer": "需於 24 小時前改期；臨時取消或未出席會視同使用一次會談，以保護所有客戶的時間。"
         }
       ]
     },
     {
       "icon": "shield",
-      "title": "Ethics & safety",
-      "intro": "How we hold confidentiality, handle risk, and care for your information.",
+      "title": "倫理與安全",
+      "intro": "保密、風險管理與資料照護。",
       "items": [
         {
-          "question": "How confidential are our sessions?",
-          "answer": "Sessions stay between us except when there is risk of harm or a legal duty to disclose. We agree on how notes are stored, who can access them, and when they are deleted."
+          "question": "會談有多保密？",
+          "answer": "除非有危害風險或法律義務，內容僅在我們之間。開始前會約定筆記存放方式、誰可以存取，以及多久刪除。"
         },
         {
-          "question": "What happens if mental health concerns show up?",
-          "answer": "We pause, name what we are noticing, and co-create a plan. That could involve referrals to therapists, crisis services, or other professionals alongside—or instead of—coaching."
+          "question": "若出現心理健康議題怎麼辦？",
+          "answer": "我們會暫停、說明觀察到的狀況，並與你一起規劃：可能包含轉介治療師、危機服務或其他專業支援，必要時取代教練。"
         },
         {
-          "question": "Do you work with safeguarding or legal obligations?",
-          "answer": "Yes. We comply with UK safeguarding guidance and the ICF Code of Ethics. If a disclosure meets reporting thresholds, we inform you of the steps we must take and support you through the process."
+          "question": "是否遵循英國的保護與法律義務？",
+          "answer": "是。我們遵守英國 safeguarding 指引與 ICF 倫理。若達到通報門檻，會先告知需要的步驟並陪你完成。"
         }
       ]
     },
     {
       "icon": "safety",
-      "title": "For organisations",
-      "intro": "How we partner with employers, schools, and sponsors while protecting coachee autonomy.",
+      "title": "組織合作",
+      "intro": "與企業、學校或贊助方合作時如何守住學員自主。",
       "items": [
         {
-          "question": "How do you structure organisation-sponsored coaching?",
-          "answer": "We start with a three-way meeting to confirm goals, boundaries, and feedback loops. The coachee leads session agendas while sponsors receive high-level progress updates agreed in advance."
+          "question": "組織贊助的教練怎麼安排？",
+          "answer": "先進行三方會議，確認目標、界線與回饋節奏。學員主導每次議程，贊助方僅收到事前同意的高層次更新。"
         },
         {
-          "question": "What information do sponsors receive?",
-          "answer": "Sponsors hear themes, not session detail. No personal stories are shared without written consent, and safeguarding or risk concerns are handled directly with the coachee first wherever possible."
+          "question": "贊助方會拿到哪些資訊？",
+          "answer": "只分享主題與進展，不提供個別故事；除非書面同意，所有細節都保密。若有風險議題會優先與學員直接處理。"
         },
         {
-          "question": "Can you support teams across time zones?",
-          "answer": "Yes. We work with teams across Europe and Asia-Pacific using online sessions, shared notes, and agreed review points. Time zones are planned collaboratively during onboarding."
+          "question": "可以支援跨時區團隊嗎？",
+          "answer": "可以。我們與歐洲、亞太團隊合作，以線上會談、共享筆記與約定回顧節奏搭配；時區會在啟動時共同規劃。"
         }
       ]
     }
   ],
   "cta": {
-    "title": "Still unsure?",
-    "body": "Share your context and we will confirm whether coaching, a referral, or another resource will serve you best. Your clarity matters more than filling a slot.",
-    "primary": "Book a call",
-    "secondary": "Explore coaching pathways"
+    "title": "還在觀望？",
+    "body": "歡迎分享你的處境，我們會坦白告訴你是教練、轉介還是其他資源比較適合。",
+    "primary": "預約 20 分鐘聊聊",
+    "secondary": "查看教練路徑"
   },
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。"
+  "fallbackNotice": "如有尚未翻譯的段落，會暫以英文顯示。"
 }

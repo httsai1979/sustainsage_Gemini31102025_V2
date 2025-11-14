@@ -1,5 +1,115 @@
-[
-  { "id":"behaviour-ladder","title":"行為實驗階梯","desc":"設計一個小而安全的實驗，本週就開始動起來。","href":"/resources/behaviour-ladder","img":"/images/resources/behaviour-ladder.jpg","alt":"行為實驗階梯","downloadable":true,"download":"/docs/behaviour-experiment-ladder.pdf" },
-  { "id":"selftalk-cards","title":"自我對話調整卡","desc":"把苛刻語句換成更友善也更有用的說法。","img":"/images/resources/selftalk.jpg","alt":"自我對話調整卡","comingSoon":true },
-  { "id":"emotion-triangle","title":"情緒三角","desc":"由感受→需要→下一步；5 分鐘找到方向。","img":"/images/resources/emotion-triangle.jpg","alt":"情緒三角","comingSoon":true }
-]
+{
+  "downloads": [
+    {
+      "id": "behaviour-ladder",
+      "title": "行為實驗階梯",
+      "desc": "用安全的小實驗在本週就得到回饋。",
+      "img": "/images/resources/behaviour-ladder.jpg",
+      "alt": "行為實驗階梯",
+      "downloadable": true,
+      "download": "/docs/behaviour-experiment-ladder.pdf"
+    },
+    {
+      "id": "selftalk-cards",
+      "title": "自我對話重寫卡片",
+      "desc": "把嚴苛語句換成更溫柔且有用的提醒。",
+      "img": "/images/resources/selftalk.jpg",
+      "alt": "自我對話卡片",
+      "comingSoon": true
+    },
+    {
+      "id": "emotion-triangle",
+      "title": "情緒三角練習",
+      "desc": "從感受 → 需求 → 下一步，5 分鐘釐清。",
+      "img": "/images/resources/emotion-triangle.jpg",
+      "alt": "情緒三角",
+      "comingSoon": true
+    }
+  ],
+  "interactiveTools": [
+    {
+      "id": "self-talk-reframe",
+      "title": "自我對話重塑卡",
+      "desc": "溫和地覺察那些對自己過於苛責的內心對話，練習換成更有同理與支持感的說法。",
+      "description": "溫和地覺察那些對自己過於苛責的內心對話，練習換成更有同理與支持感的說法。",
+      "href": "/tools/self-talk-reframe.html",
+      "img": "/images/resources/selftalk.jpg",
+      "alt": "自我對話練習",
+      "badge": "互動工具",
+      "tag": "互動工具",
+      "isExternal": false
+    },
+    {
+      "id": "behaviour-ladder",
+      "title": "行為實驗階梯",
+      "desc": "用小步驟、低風險的實驗來測試新的行為，而不是一次把自己推到極限。",
+      "description": "用小步驟、低風險的實驗來測試新的行為，而不是一次把自己推到極限。",
+      "href": "/tools/behaviour-ladder.html",
+      "img": "/images/resources/behaviour-ladder-hero.jpg",
+      "alt": "行為實驗工具",
+      "badge": "互動工具",
+      "tag": "互動工具",
+      "isExternal": false
+    },
+    {
+      "id": "values-map",
+      "title": "自我價值地圖",
+      "desc": "整理對你真正重要的事情，對照現在的選擇是否與核心價值一致。",
+      "description": "整理對你真正重要的事情，對照現在的選擇是否與核心價值一致。",
+      "href": "/tools/values-map.html",
+      "img": "/images/resources/values-worksheet.svg",
+      "alt": "價值地圖",
+      "badge": "工作紙",
+      "tag": "工作紙",
+      "isExternal": false
+    },
+    {
+      "id": "role-separation",
+      "title": "角色分化練習",
+      "desc": "區分「我是怎樣的人」和「我在這個角色裡的表現」，讓批評不再等於否定整個自己。",
+      "description": "區分「我是怎樣的人」和「我在這個角色裡的表現」，讓批評不再等於否定整個自己。",
+      "href": "/tools/role-separation.html",
+      "img": "/images/resources/culture-checklist.svg",
+      "alt": "角色分化",
+      "badge": "反思練習",
+      "tag": "反思練習",
+      "isExternal": false
+    },
+    {
+      "id": "choice-clarifier",
+      "title": "選擇困境釐清器",
+      "desc": "把不同選項、成本與需要攤開來看，讓決定不再只是腦海裡一團霧。",
+      "description": "把不同選項、成本與需要攤開來看，讓決定不再只是腦海裡一團霧。",
+      "href": "/tools/choice-clarifier.html",
+      "img": "/images/resources/imposter-reading.svg",
+      "alt": "決策釐清",
+      "badge": "決策工具",
+      "tag": "決策工具",
+      "isExternal": false
+    },
+    {
+      "id": "thought-log",
+      "title": "思維紀錄儀",
+      "desc": "記錄觸發情緒的情境、想法與感受，幫助你看見反覆出現的模式。",
+      "description": "記錄觸發情緒的情境、想法與感受，幫助你看見反覆出現的模式。",
+      "href": "/tools/thought-log.html",
+      "img": "/images/resources/grounding-audio.svg",
+      "alt": "思維紀錄",
+      "badge": "紀錄工具",
+      "tag": "紀錄工具",
+      "isExternal": false
+    },
+    {
+      "id": "emotion-triangle",
+      "title": "情緒三角卡",
+      "desc": "連結事件、情緒與行動，慢慢看見自己還有其他可能的反應方式。",
+      "description": "連結事件、情緒與行動，慢慢看見自己還有其他可能的反應方式。",
+      "href": "/tools/emotion-triangle.html",
+      "img": "/images/resources/emotion-triangle.jpg",
+      "alt": "情緒三角卡",
+      "badge": "反思練習",
+      "tag": "反思練習",
+      "isExternal": false
+    }
+  ]
+}

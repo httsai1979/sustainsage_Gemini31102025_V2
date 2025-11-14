@@ -1,25 +1,45 @@
 {
-  "fallbackNotice": "目前暂以英文内容呈现，完整翻译即将补上。",
+  "fallbackNotice": "如有尚未翻译的段落，会暂以英文显示。",
   "pathways": [
     {
       "slug": "career-return",
-      "title": "Return to work with steady support",
-      "excerpt": "Rebuild confidence and routines after a career pause with bilingual coaching paced to your capacity.",
-      "ctaLabel": "Explore career return coaching"
-    },
-    {
-      "slug": "immigrant-job",
-      "title": "Navigate UK job searches as a newcomer",
-      "excerpt": "Map job search steps, language, and cultural nuance so you can show up prepared and grounded in interviews.",
-      "ctaLabel": "See newcomer job coaching"
+      "title": "重返职场",
+      "teaser": "12 周稳稳拉回节奏：轻量结构、小实验、诚实界线。",
+      "audience": "因为照护、健康、进修或搬迁而暂别，如今准备回到职场的专业者。",
+      "focus": "重新建立节奏、更新叙事，并练习守得住的界线。",
+      "format": "1:1 线上教练｜12 周｜每次 60–75 分钟",
+      "cta_label": "查看路径"
     },
     {
       "slug": "graduate-start",
-      "title": "Launch your first role with clarity",
-      "excerpt": "Build momentum after graduation with structure for applications, networking, and sustainable routines.",
-      "ctaLabel": "Discover graduate start coaching"
+      "title": "毕业起步",
+      "teaser": "把故事说清楚，转成可被看见、可被测试的小步骤。",
+      "audience": "正在摸索第一份英国工作的毕业生或新人。",
+      "focus": "把专案转成证据点、测试选项，并累积可以带回现场的语言。",
+      "format": "1:1 线上教练｜8–10 周｜每次 60 分钟",
+      "cta_label": "查看路径"
+    },
+    {
+      "slug": "immigrant-job",
+      "title": "英国职场新起点",
+      "teaser": "把海外经验翻成当地可信的证据点。",
+      "audience": "带着海外经验、需要转换成英国叙事与签证可行性的专业者。",
+      "focus": "翻译履历、盘点网络与可近性需求，并练习稳健的沟通语言。",
+      "format": "1:1 线上教练｜8–12 周｜每次 60–75 分钟",
+      "cta_label": "查看路径"
     }
   ],
-  "title": "服务 — 你可以立即开始的路径",
-  "description": "三条清晰路径：重返职场、移民求职、毕业求职。小步走、看得到成果。"
+  "hero": {
+    "title": "先找到最像你的路径。",
+    "subtitle": "重返职场、毕业起步或英国市场，每条路径都会说明服务对象、合作结构与如何开始。"
+  },
+  "pathways_intro": "先看看自己最像哪条。如果还在评估教练是否合适，可以到 Readiness 指南了解什么情境最能发挥效果。",
+  "cta": {
+    "primary_label": "先试用免费工具",
+    "primary_href": "/resources",
+    "secondary_label": "预约 20 分钟聊一聊",
+    "secondary_href": "/contact"
+  },
+  "title": "服务｜可以立即启动的三条路径",
+  "description": "三个聚焦情境，让你先确认适配，再了解节奏与费用。"
 }
