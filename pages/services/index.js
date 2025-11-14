@@ -4,44 +4,48 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import PageSection from '@/components/ui/PageSection';
 import Card from '@/components/ui/Card';
-import CardGrid from '@/components/ui/CardGrid';
-import Callout from '@/components/ui/Callout';
-import { H1 } from '@/components/ui/H';
+import Icon from '@/components/ui/Icon';
+import StepList from '@/components/ui/StepList';
 import { loadContent } from '@/lib/loadContent';
+import { dedupeBy } from '@/lib/dedupe';
 import { sanitizeProps } from '@/lib/toSerializable';
 
-function PathwayCard({ card, viewDetailsLabel }) {
-  return (
-    <Card
-      className="flex h-full flex-col"
-      title={card.title}
-      subtitle={card.excerpt}
-      footer={
-        <Link href={`/services/${card.slug}`} className="inline-flex items-center gap-2 font-semibold text-sage">
-          {card.ctaLabel ?? viewDetailsLabel}
-          <span aria-hidden="true">→</span>
-        </Link>
-      }
-    >
-      {card.eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">{card.eyebrow}</p>
-      ) : null}
-    </Card>
-  );
-}
-
-PathwayCard.propTypes = {
-  card: PropTypes.shape({
-    slug: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    eyebrow: PropTypes.string,
-    excerpt: PropTypes.string,
-    ctaLabel: PropTypes.string,
-  }).isRequired,
-  viewDetailsLabel: PropTypes.string.isRequired,
+const PACKAGE_DETAILS = {
+  'career-return': {
+    who: 'Professionals returning to work after a pause or relocation.',
+    focus: 'Rebuild routines, communicate boundaries, and design a sustainable ramp-up.',
+    format: '1:1 online coaching · 12 weeks · 60–75 minute sessions.',
+  },
+  'graduate-start': {
+    who: 'Graduates and early-career hires figuring out their story.',
+    focus: 'Clarify strengths, build proof points, and test pathways safely.',
+    format: '1:1 online coaching · 8–10 weeks · 60-minute sessions.',
+  },
+  'immigrant-job': {
+    who: 'People new to the UK job market translating overseas experience.',
+    focus: 'Localise your narrative, map networks, and rehearse confident interviews.',
+    format: '1:1 online coaching · 8–12 weeks · 60–75 minute sessions.',
+  },
 };
+
+const APPROACH_CARDS = [
+  {
+    title: 'Personalised & flexible',
+    body:
+      'We co-design agreements, cadence, and language preferences so the coaching rhythm fits your life and responsibilities.',
+  },
+  {
+    title: 'Practical & sustainable',
+    body:
+      'Every session ends with right-sized experiments, reflections, or scripts you can use immediately without burning out.',
+  },
+];
+
+const CTA_LINKS = [
+  { href: '/contact', label: 'Book a free chat', variant: 'primary' },
+  { href: '/services', label: 'Explore services', variant: 'secondary' },
+];
 
 export default function ServicesPage({
   cards = [],
@@ -53,86 +57,163 @@ export default function ServicesPage({
   const hero = t('hero', { returnObjects: true });
   const pathways = t('pathways', { returnObjects: true });
   const cta = t('cta', { returnObjects: true });
-  const faqLink = t('faqLink', { returnObjects: true });
   const fallbackMessage = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
+  const primaryCta = hero?.primaryCta ?? { href: '/contact', label: 'Book a chat' };
+  const secondaryCta = hero?.secondaryCta ?? { href: '#support', label: 'Who we support' };
+
+  const gettingStartedSteps = [
+    {
+      title: 'Book your free chat',
+      description: 'We talk for 20 minutes to understand what is changing and answer scope questions.',
+    },
+    {
+      title: 'Explore together',
+      description: 'We map priorities, access needs, and the rhythm that keeps you steady.',
+    },
+    {
+      title: 'Choose your path',
+      description: 'Select one of the coaching pathways or co-design something bespoke.',
+    },
+    {
+      title: 'Begin your journey',
+      description: 'We meet online every 2–3 weeks, review progress, and adjust agreements as needed.',
+    },
+  ];
+
+  const uniqueCards = dedupeBy(cards, (card) => card.slug ?? card.title);
 
   return (
-    <>
+    <main className="ss-container">
       <Head>
         <title>{seo?.title}</title>
         {seo?.description ? <meta name="description" content={seo?.description} /> : null}
       </Head>
 
-      <PageSection background="paper">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-start">
-          <div className="space-y-6">
-            {hero?.eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sage">{hero.eyebrow}</p>
+      <section className="ss-section">
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="relative min-h-[320px] overflow-hidden rounded-3xl border border-sustain-cardBorder bg-gradient-to-br from-sustain-green/20 via-sustain-green/5 to-slate-100 p-1 shadow-md">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(74,108,86,0.25),_transparent_60%)]" aria-hidden />
+            <div className="absolute inset-4 rounded-3xl border border-white/60 bg-white/20 backdrop-blur-sm" aria-hidden />
+            <div className="relative flex h-full flex-col justify-between rounded-[1.75rem] p-6 text-sustain-text">
+              <p className="text-sm font-semibold text-sustain-green">{hero?.eyebrow ?? 'Coaching services'}</p>
+              <p className="text-lg font-medium text-sustain-text/70">
+                {hero?.highlight ?? 'Calm, card-based containers for transitions, restarts, and experimentation.'}
+              </p>
+            </div>
+          </div>
+          <div className="rounded-3xl border border-sustain-cardBorder bg-white p-8 shadow-xl">
+            {hero?.title ? (
+              <h1 className="text-3xl font-semibold tracking-tight text-sustain-text md:text-4xl">{hero.title}</h1>
+            ) : (
+              <h1 className="text-3xl font-semibold tracking-tight text-sustain-text md:text-4xl">Coaching services</h1>
+            )}
+            {hero?.subtitle ? (
+              <p className="mt-4 text-base leading-relaxed text-slate-700">{hero.subtitle}</p>
             ) : null}
-            {hero?.title ? <H1>{hero.title}</H1> : null}
-            {hero?.subtitle ? <p className="text-base leading-7 text-slate-600">{hero.subtitle}</p> : null}
-            {hero?.highlight ? (
-              <p className="text-base font-semibold text-slate-900">{hero.highlight}</p>
-            ) : null}
+            {hero?.body ? <p className="mt-4 text-base leading-relaxed text-slate-700">{hero.body}</p> : null}
             {showFallbackNotice ? (
-              <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
+              <p className="mt-4 text-xs font-medium text-slate-500">{fallbackMessage}</p>
             ) : null}
-            <div className="flex flex-wrap gap-4 text-sm font-semibold text-sage">
-              {hero?.boundariesLink?.label ? (
-                <Link href={hero.boundariesLink.href} className="inline-flex items-center gap-2 hover:underline">
-                  {hero.boundariesLink.label}
-                  <span aria-hidden>→</span>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {primaryCta?.href ? (
+                <Link href={primaryCta.href} className="ss-btn-primary">
+                  {primaryCta.label ?? 'Book a chat'}
                 </Link>
               ) : null}
-              {faqLink?.label ? (
-                <Link href={faqLink.href} className="inline-flex items-center gap-2 hover:underline">
-                  {faqLink.label}
-                  <span aria-hidden>→</span>
+              {secondaryCta?.href ? (
+                <Link href={secondaryCta.href} className="ss-btn-secondary">
+                  {secondaryCta.label ?? 'Who we help'}
                 </Link>
               ) : null}
             </div>
           </div>
-          <Callout
-            title={pathways?.sidebarTitle ?? 'Where to begin'}
-            body={pathways?.sidebar ?? pathways?.description}
-          />
         </div>
-      </PageSection>
+      </section>
 
-      <PageSection title={pathways?.title} lead={pathways?.description}>
-        {pathways?.highlight ? (
-          <p className="mb-8 text-base font-semibold text-slate-900">{pathways.highlight}</p>
-        ) : null}
-        <CardGrid>
-          {cards.map((card) => (
-            <PathwayCard key={card.slug} card={card} viewDetailsLabel={pathways?.viewDetails ?? 'View details'} />
+      <section id="support" className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Support options</p>
+          <h2 className="text-3xl font-semibold text-sustain-text">How I can support you</h2>
+          {pathways?.description ? <p className="text-base text-slate-700">{pathways.description}</p> : null}
+        </div>
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {uniqueCards.map((card) => {
+            const detail = PACKAGE_DETAILS[card.slug] ?? {};
+            return (
+              <Card
+                key={card.slug}
+                title={card.title}
+                subtitle={card.excerpt}
+                icon={<Icon name="spark" />}
+                footer={
+                  <Link href={`/services/${card.slug}`} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
+                    {card.ctaLabel ?? pathways?.viewDetails ?? 'View details'}
+                    <span aria-hidden>→</span>
+                  </Link>
+                }
+              >
+                <div className="space-y-4 text-sm leading-relaxed text-slate-700">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Who it’s for</p>
+                    <p className="mt-1">{detail.who ?? card.audience ?? 'Designed for people navigating complex transitions.'}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Focus</p>
+                    <p className="mt-1">{detail.focus ?? card.excerpt}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Format</p>
+                    <p className="mt-1">{detail.format ?? 'Online coaching · 60–75 minutes per session'}</p>
+                  </div>
+                </div>
+              </Card>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Getting started is simple</p>
+          <h2 className="text-3xl font-semibold text-sustain-text">A steady process from first chat to ongoing sessions</h2>
+        </div>
+        <div className="mt-8">
+          <StepList steps={gettingStartedSteps} />
+        </div>
+      </section>
+
+      <section className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">My approach</p>
+          <h2 className="text-3xl font-semibold text-sustain-text">Practical, personalised, sustainable</h2>
+        </div>
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {APPROACH_CARDS.map((card) => (
+            <Card key={card.title} title={card.title}>
+              <p className="text-sm leading-relaxed text-slate-700">{card.body}</p>
+            </Card>
           ))}
-        </CardGrid>
-      </PageSection>
+        </div>
+      </section>
 
-      <PageSection>
-        <Card className="text-center" title={cta?.title} subtitle={cta?.body}>
+      <section className="ss-section">
+        <div className="rounded-3xl border border-sustain-cardBorder bg-white p-8 text-center shadow-md">
+          <h2 className="text-3xl font-semibold text-sustain-text">{cta?.title ?? 'Let’s find the right starting point'}</h2>
+          <p className="mt-4 text-base text-slate-700">{cta?.body ?? 'Book a short chat or keep exploring the services in your own time.'}</p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
-            {cta?.primaryHref && cta?.primaryCta ? (
+            {CTA_LINKS.map((link) => (
               <Link
-                href={cta.primaryHref}
-                className="inline-flex items-center justify-center rounded-full bg-sage px-5 py-3 text-sm font-semibold text-white"
+                key={link.href}
+                href={link.href}
+                className={link.variant === 'primary' ? 'ss-btn-primary' : 'ss-btn-secondary'}
               >
-                {cta.primaryCta}
+                {link.label}
               </Link>
-            ) : null}
-            {cta?.secondaryHref && cta?.secondaryCta ? (
-              <Link
-                href={cta.secondaryHref}
-                className="inline-flex items-center justify-center rounded-full border border-sage/40 px-5 py-3 text-sm font-semibold text-sage"
-              >
-                {cta.secondaryCta}
-              </Link>
-            ) : null}
+            ))}
           </div>
-        </Card>
-      </PageSection>
-    </>
+        </div>
+      </section>
+    </main>
   );
 }
 

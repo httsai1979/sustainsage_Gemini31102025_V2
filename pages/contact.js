@@ -4,179 +4,344 @@ import { useState } from 'react';
 import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import ContactForm from '@/components/Sections/ContactForm';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
-import PageSection from '@/components/ui/PageSection';
+import Card from '@/components/ui/Card';
+import Icon from '@/components/ui/Icon';
+import StepList from '@/components/ui/StepList';
 import { orderSections } from '@/lib/content/normalize';
+import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
-function BulletHighlights({ items, title, description }) {
-  if (!items?.length) {
-    return null;
-  }
+const INPUT_CLASSNAME =
+  'w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sustain-text placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sustain-green/40';
 
+function BulletCard({ title, description, items }) {
+  if (!items?.length) return null;
   return (
-    <div className="ssg-card">
-      {title ? <p className="text-sm font-semibold uppercase tracking-wide text-emerald-700">{title}</p> : null}
-      {description ? <p className="mt-2 text-sm leading-6 text-slate-700">{description}</p> : null}
-      <ul className="mt-3 space-y-3 text-sm leading-6 text-slate-700">
+    <Card title={title} subtitle={description}>
+      <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-700">
         {items.map((item) => (
           <li key={item} className="flex gap-3">
-            <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sustain-green" aria-hidden />
             <span>{item}</span>
           </li>
         ))}
       </ul>
-    </div>
-  );
-}
-
-function JourneyCard({ item, index }) {
-  return (
-    <div className="ssg-card flex flex-col gap-3">
-      <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-sm font-semibold text-primary">
-        {index + 1}
-      </div>
-      <div className="space-y-2 text-sm leading-6 text-ink/80">
-        <h3 className="text-base font-semibold text-ink">{item.summary}</h3>
-        {item.detail ? <p>{item.detail}</p> : null}
-      </div>
-    </div>
-  );
-}
-
-function FAQItem({ item }) {
-  return (
-    <div className="ssg-card">
-      <h3 className="text-lg font-semibold text-ink">{item.question}</h3>
-      <p className="mt-3 text-sm leading-6 text-ink/80">{item.answer}</p>
-    </div>
+    </Card>
   );
 }
 
 export default function ContactPage() {
   const { t } = useTranslation('contact');
-  const [hasBoundaryConsent, setHasBoundaryConsent] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', topic: '', message: '', consent: false });
+  const [status, setStatus] = useState(null);
+  const [statusMessage, setStatusMessage] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const seo = t('seo', { returnObjects: true });
   const hero = t('hero', { returnObjects: true });
   const journey = t('journey', { returnObjects: true });
-  const miniFaq = t('miniFaq', { returnObjects: true });
-  const faqLink = t('faqLink', { returnObjects: true });
   const whatYouGet = t('what_you_get', { returnObjects: true });
   const whatWeDontDo = t('what_we_dont_do', { returnObjects: true });
-  const consent = t('consent', { returnObjects: true });
-  const journeyItems = orderSections(Array.isArray(journey?.items) ? journey.items : []);
-  const miniFaqItems = orderSections(Array.isArray(miniFaq?.items) ? miniFaq.items : []);
-  const whatYouGetItems = orderSections(Array.isArray(whatYouGet?.items) ? whatYouGet.items : []);
-  const whatWeDontDoItems = orderSections(Array.isArray(whatWeDontDo?.items) ? whatWeDontDo.items : []);
-  const heroBullets = orderSections(Array.isArray(hero?.bullets) ? hero.bullets : []);
+  const sidebar = t('sidebar', { returnObjects: true });
+  const miniFaq = t('miniFaq', { returnObjects: true });
+  const faqLink = t('faqLink', { returnObjects: true });
+  const journeyItems = dedupeBy(
+    orderSections(Array.isArray(journey?.items) ? journey.items : []),
+    (item, index) => item?.summary ?? item?.q ?? index
+  );
+  const whatYouGetItems = dedupeBy(
+    orderSections(Array.isArray(whatYouGet?.items) ? whatYouGet.items : []),
+    (item, index) => item ?? item?.summary ?? index
+  );
+  const whatWeDontDoItems = dedupeBy(
+    orderSections(Array.isArray(whatWeDontDo?.items) ? whatWeDontDo.items : []),
+    (item, index) => item ?? item?.summary ?? index
+  );
+  const miniFaqItems = dedupeBy(
+    orderSections(Array.isArray(miniFaq?.items) ? miniFaq.items : []),
+    (item, index) => item?.q ?? item?.question ?? index
+  );
+
+  const journeySteps = journeyItems.map((item) => ({ title: item.summary ?? item.q, description: item.detail ?? item.a }));
+
+  const contactMethods = [
+    {
+      title: 'Email',
+      description: 'Send context any time. We reply within three UK working days.',
+      detail: 'contact@sustainsage.com',
+      href: 'mailto:contact@sustainsage.com',
+      icon: 'mail',
+    },
+    {
+      title: 'Phone',
+      description: 'Leave a voicemail or WhatsApp note for slower-paced replies.',
+      detail: '+44 (0)20 8638 7870',
+      href: 'tel:+442086387870',
+      icon: 'phone',
+    },
+    {
+      title: 'Office hours',
+      description: 'Weekdays 09:00–17:00 UK time · Online and Southsea, Portsmouth.',
+      detail: 'GMT / BST',
+      icon: 'clock',
+    },
+    {
+      title: 'Post',
+      description: 'For agreements or paperwork, please email for the correct postal address first.',
+      detail: 'Portsmouth · Southsea',
+      icon: 'map',
+    },
+  ];
+
+  const handleChange = (event) => {
+    const { name, type, value, checked } = event.target;
+    setFormData((previous) => ({
+      ...previous,
+      [name]: type === 'checkbox' ? checked : value,
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setStatus(null);
+    setStatusMessage('');
+
+    if (!formData.name || !formData.email || !formData.message || !formData.consent) {
+      setStatus('error');
+      setStatusMessage(t('form.status.errorRequired'));
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: formData.name,
+          email: formData.email,
+          topic: formData.topic || 'General enquiry',
+          message: formData.message,
+          consent: formData.consent,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network error');
+      }
+
+      setFormData({ name: '', email: '', topic: '', message: '', consent: false });
+      setStatus('success');
+      setStatusMessage(t('form.status.success'));
+    } catch (error) {
+      console.error('Contact form submission failed', error);
+      setStatus('error');
+      setStatusMessage(t('form.status.error'));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <>
+    <main className="ss-container">
       <Head>
         <title>{seo?.title}</title>
         <meta name="description" content={seo?.description} />
       </Head>
 
-      <PageSection background="paper">
-        <div className="typography mx-auto flex max-w-3xl flex-col gap-4 text-center md:text-left">
-          <h1>{hero?.title}</h1>
-          {hero?.body ? <p>{hero.body}</p> : null}
+      <section className="ss-section">
+        <div className="max-w-3xl space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Get in touch, no rush</p>
+          <h1 className="text-4xl font-semibold text-sustain-text">{hero?.title}</h1>
+          <p className="text-base leading-relaxed text-slate-700">{hero?.body}</p>
+          {hero?.bullets?.length ? (
+            <ul className="mt-4 grid gap-2 text-sm text-slate-700 md:grid-cols-3">
+              {hero.bullets.map((bullet) => (
+                <li key={bullet} className="rounded-2xl border border-slate-200 bg-white px-4 py-3">
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
-      </PageSection>
+      </section>
 
-      <PageSection>
-        <div className="typography flex flex-col gap-4">
-          <h2>{journey?.title}</h2>
-          {journey?.intro ? <p>{journey.intro}</p> : null}
-        </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {journeyItems.map((item, index) => (
-            <JourneyCard key={item.summary} item={item} index={index} />
+      <section className="ss-section">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {contactMethods.map((method) => (
+            <Card key={method.title} title={method.title} icon={<Icon name={method.icon ?? 'info'} />}>
+              <p className="text-sm text-slate-700">{method.description}</p>
+              {method.detail ? (
+                method.href ? (
+                  <a
+                    href={method.href}
+                    className="mt-3 inline-flex text-sm font-semibold text-sustain-green underline-offset-2 hover:underline"
+                  >
+                    {method.detail}
+                  </a>
+                ) : (
+                  <p className="mt-3 text-sm font-semibold text-sustain-text">{method.detail}</p>
+                )
+              ) : null}
+            </Card>
           ))}
         </div>
-      </PageSection>
+      </section>
 
-      <PageSection>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-          <div className="space-y-6">
-            {whatYouGetItems.length || whatWeDontDoItems.length ? (
-              <div className="space-y-6">
-                <BulletHighlights items={whatYouGetItems} title={whatYouGet?.title} description={whatYouGet?.description} />
-                <BulletHighlights
-                  items={whatWeDontDoItems}
-                  title={whatWeDontDo?.title}
-                  description={whatWeDontDo?.description}
-                />
-              </div>
-            ) : null}
-            <BulletHighlights items={heroBullets} title={hero?.bulletsTitle} />
-            <div className="ssg-card">
-              <div className="flex items-start gap-3">
-                <input
-                  id="coaching-consent"
-                  name="coaching-consent"
-                  type="checkbox"
-                  checked={hasBoundaryConsent}
-                  onChange={(event) => setHasBoundaryConsent(event.target.checked)}
-                  className="mt-1 h-4 w-4 rounded border-slate-300 text-primary focus:ring-primary"
-                />
-                <label htmlFor="coaching-consent" className="text-sm leading-6 text-ink/80">
-                  <Trans
-                    t={t}
-                    i18nKey="consent.label"
-                    components={{
-                      Link: (
-                        <Link
-                          href="/legal/coaching-boundaries"
-                          className="font-semibold text-primary underline-offset-2 hover:underline"
-                        />
-                      ),
-                    }}
+      <section className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{journey?.title}</p>
+          {journey?.intro ? <p className="text-base text-slate-700">{journey.intro}</p> : null}
+        </div>
+        <div className="mt-8">
+          <StepList steps={journeySteps} />
+        </div>
+      </section>
+
+      <section className="ss-section">
+        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+          <div>
+            <Card title={t('form.title')} subtitle={t('form.subtitle')}>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-sustain-text">
+                    {t('form.name')}
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    className={INPUT_CLASSNAME}
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
                   />
-                </label>
-              </div>
-              {consent?.helper ? (
-                <p className="mt-3 text-xs leading-6 text-ink/60">{consent.helper}</p>
-              ) : null}
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-sustain-text">
+                    {t('form.email')}
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    className={INPUT_CLASSNAME}
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+                <div>
+                  <label htmlFor="topic" className="block text-sm font-semibold text-sustain-text">
+                    How did you find us?
+                  </label>
+                  <input
+                    id="topic"
+                    name="topic"
+                    type="text"
+                    className={INPUT_CLASSNAME}
+                    placeholder="e.g. referral, LinkedIn, workshop"
+                    value={formData.topic}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-sustain-text">
+                    {t('form.help')}
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    className={INPUT_CLASSNAME}
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder={t('form.helpHint')}
+                    required
+                  />
+                </div>
+                <div className="flex items-start gap-3">
+                  <input
+                    id="consent"
+                    name="consent"
+                    type="checkbox"
+                    checked={formData.consent}
+                    onChange={handleChange}
+                    className="mt-1 h-4 w-4 rounded border-sustain-cardBorder text-sustain-green focus:ring-sustain-green"
+                    required
+                  />
+                  <label htmlFor="consent" className="text-sm leading-relaxed text-slate-700">
+                    <Trans
+                      t={t}
+                      i18nKey="consent.label"
+                      components={{
+                        0: (
+                          <Link
+                            href="/legal/coaching-boundaries"
+                            className="font-semibold text-sustain-green underline-offset-2 hover:underline"
+                          />
+                        ),
+                      }}
+                    />
+                  </label>
+                </div>
+                {status ? (
+                  <div
+                    className={`rounded-2xl px-4 py-3 text-sm ${
+                      status === 'success'
+                        ? 'bg-sustain-green/10 text-sustain-green'
+                        : 'bg-red-50 text-red-700'
+                    }`}
+                  >
+                    {statusMessage}
+                  </div>
+                ) : null}
+                <button type="submit" className="ss-btn-primary" disabled={isSubmitting}>
+                  {isSubmitting ? t('form.status.submitting') : t('form.submit')}
+                </button>
+              </form>
+            </Card>
+            <div className="mt-6 rounded-card rounded-2xl border border-slate-100 bg-white p-6 shadow-md">
+              <p className="text-sm font-semibold text-sustain-text">{sidebar?.responseTitle}</p>
+              <p className="mt-2 text-sm text-slate-700">{sidebar?.responseCopy}</p>
+              <p className="mt-4 text-sm font-semibold text-sustain-text">Reply within 2–3 UK working days.</p>
+              <p className="mt-1 text-sm text-slate-700">contact@sustainsage.com · +44 (0)20 8638 7870</p>
             </div>
           </div>
-          <div className="ssg-card">
-            <ContactForm hasBoundaryConsent={hasBoundaryConsent} />
+          <div className="space-y-6">
+            <BulletCard title={whatYouGet?.title} description={whatYouGet?.description} items={whatYouGetItems} />
+            <BulletCard title={whatWeDontDo?.title} description={whatWeDontDo?.description} items={whatWeDontDoItems} />
           </div>
         </div>
-      </PageSection>
+      </section>
 
-      <PageSection>
-        <div className="typography mx-auto flex max-w-3xl flex-col gap-4">
-          <h2>{miniFaq?.title}</h2>
-          {miniFaq?.intro ? <p>{miniFaq.intro}</p> : null}
+      <section className="ss-section">
+        <div className="space-y-4 text-center md:text-left">
+          <h2 className="text-3xl font-semibold text-sustain-text">{miniFaq?.title ?? 'Quick answers'}</h2>
+          {miniFaq?.intro ? <p className="text-base text-slate-700">{miniFaq.intro}</p> : null}
         </div>
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
           {miniFaqItems.map((item) => (
-            <FAQItem key={item.question} item={item} />
+            <Card key={item.q ?? item.question} title={item.q ?? item.question}>
+              <p className="text-sm text-slate-700">{item.a ?? item.answer}</p>
+            </Card>
           ))}
         </div>
-      </PageSection>
-
-      {faqLink?.label ? (
-        <PageSection background="paper">
-          <div className="flex flex-col items-center gap-2 text-center text-sm leading-6 text-ink/80">
-            <p>{faqLink?.text}</p>
-            <Link href={faqLink.href} className="inline-flex items-center gap-2 font-semibold text-primary hover:underline">
+        {faqLink?.label ? (
+          <div className="mt-6">
+            <Link href={faqLink.href} className="ss-btn-secondary">
               {faqLink.label}
-              <span aria-hidden="true">→</span>
             </Link>
           </div>
-        </PageSection>
-      ) : null}
+        ) : null}
+      </section>
 
-      <PageSection>
+      <section className="ss-section">
         <ICFNotice id="icf" className="mx-auto max-w-3xl" />
-      </PageSection>
-    </>
+      </section>
+    </main>
   );
 }
 

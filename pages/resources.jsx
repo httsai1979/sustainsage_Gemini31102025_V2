@@ -3,58 +3,75 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
-import CardGrid from '@/components/ui/CardGrid';
 import Icon from '@/components/ui/Icon';
-import PageSection from '@/components/ui/PageSection';
-import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import Tag from '@/components/ui/Tag';
 import { loadJSON } from '@/lib/content';
+import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
+const DEFAULT_RESOURCES = [
+  {
+    id: 'self-reflection-questions',
+    title: 'Self-reflection questions',
+    desc: 'Gentle prompts to help you untangle thoughts before or after a coaching session.',
+    icon: 'spark',
+    href: '/blog',
+    actionLabel: 'View questions',
+  },
+  {
+    id: 'time-audit-sheet',
+    title: 'Time audit sheet',
+    desc: 'A one-page worksheet to notice where energy goes during a typical week.',
+    icon: 'clock',
+    href: '/blog',
+    actionLabel: 'Download sheet',
+  },
+  {
+    id: 'values-map',
+    title: 'Values map',
+    desc: 'Plot what steadies you when work or life shifts. Use it to guide decisions.',
+    icon: 'map',
+    href: '/blog',
+    actionLabel: 'View map',
+  },
+];
+
 export default function ResourcesPage({ items = [] }) {
+  const resourceItems = dedupeBy(items, (item) => item.id ?? item.title);
+  const resolvedResources = resourceItems.length ? resourceItems : DEFAULT_RESOURCES;
   return (
-    <>
-      <PageSection background="paper">
-        <div className="max-w-3xl text-center md:text-left">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary/80">Resources</p>
-          <h1 className="mt-3 text-4xl font-semibold text-ink">Tools to use between sessions</h1>
-          <p className="mt-4 text-base text-ink/80">
+    <main className="ss-container">
+      <section className="ss-section">
+        <div className="max-w-3xl space-y-4 text-center md:text-left">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sustain-green/80">Resources</p>
+          <h1 className="text-4xl font-semibold text-sustain-text">Tools to use between sessions</h1>
+          <p className="text-base text-slate-700">
             Print-friendly A4 PDFs and simple worksheets. Use them on your own or alongside coaching conversations.
           </p>
         </div>
-      </PageSection>
-      <PageSection>
-        <CardGrid>
-          {items.map((item) => {
-            const actionHref = !item.comingSoon ? item.href || item.download : null;
-            const actionLabel = !item.comingSoon ? (item.href ? 'Open resource' : 'Download') : null;
+      </section>
+      <section className="ss-section">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {resolvedResources.map((item) => {
+            const actionHref = !item.comingSoon ? item.href || item.download || '/blog' : null;
+            const actionLabel = !item.comingSoon
+              ? item.actionLabel || (item.download ? 'Download' : 'View resource')
+              : null;
             return (
               <Card
                 key={item.id}
-                title={
-                  <span className="inline-flex items-center gap-2">
-                    <Icon name="spark" className="h-5 w-5 text-primary" />
-                    {item.title}
-                  </span>
-                }
+                title={item.title}
                 subtitle={item.desc}
+                icon={<Icon name={item.icon ?? 'spark'} />}
                 footer={
                   actionHref ? (
-                    <Link href={actionHref} className="inline-flex items-center gap-2 font-semibold text-primary">
+                    <Link href={actionHref} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
                       {actionLabel}
                       <span aria-hidden>→</span>
                     </Link>
                   ) : null
                 }
-                className="flex h-full flex-col gap-4"
               >
-                <ResponsiveImage
-                  src={item.img ?? '/images/placeholder-hero.jpg'}
-                  alt={item.alt || item.title || ''}
-                  width={1200}
-                  height={675}
-                  className="mt-2 rounded-2xl"
-                />
                 {item.comingSoon ? (
                   <div>
                     <Tag>Coming soon</Tag>
@@ -63,9 +80,26 @@ export default function ResourcesPage({ items = [] }) {
               </Card>
             );
           })}
-        </CardGrid>
-      </PageSection>
-    </>
+        </div>
+      </section>
+
+      <section className="ss-section">
+        <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-md">
+          <h2 className="text-3xl font-semibold text-sustain-text">Need more personalised support?</h2>
+          <p className="mt-4 text-base text-slate-700">
+            Coaching conversations help you translate these tools into real-life experiments.
+          </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href="/contact" className="ss-btn-primary">
+              Book a free chat
+            </Link>
+            <Link href="/services" className="ss-btn-secondary">
+              Explore coaching
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 

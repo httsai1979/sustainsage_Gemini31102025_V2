@@ -4,11 +4,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './components/**/*.{js,ts,jsx,tsx}',
+    './pages/**/*.{js,jsx,ts,tsx}',
+    './components/**/*.{js,jsx,ts,tsx}',
     './content/**/*.{json,md}',
   ],
   theme: {
+    fontFamily: {
+      sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+    },
     extend: {
       colors: {
         primary: '#4A6C56',
@@ -19,11 +22,21 @@ module.exports = {
         inkSoft: '#4B4B4F',
         line: '#E6E6EA',
         accent: '#0070C9',
+        sustain: {
+          green: '#4A6C56',
+          greenDark: '#3A5443',
+          bg: '#F5F5F7',
+          text: '#1D1D1F',
+          accent: '#0070C9',
+          cardBorder: '#E2E4EA',
+        },
       },
       boxShadow: {
-        card: '0 8px 24px rgba(0,0,0,0.08)',
+        card: '0 8px 20px rgba(15, 23, 42, 0.06)',
         soft: '0 2px 10px rgba(0,0,0,0.06)',
         ssgCard: '0 10px 30px rgba(0,0,0,0.04)',
+        sustainCard: '0 8px 20px rgba(15, 23, 42, 0.06)',
+        legacyCard: '0 8px 24px rgba(0,0,0,0.08)',
       },
       borderRadius: {
         xl: '1rem',
@@ -32,12 +45,16 @@ module.exports = {
         '4xl': '2.5rem',
         ssgCard: '16px',
         ssgButton: '9999px',
+        card: '1rem',
       },
       maxWidth: {
         wrap: '1200px',
+        page: '72rem',
       },
       spacing: {
         section: '5rem',
+        'section-y': '4.5rem',
+        'section-y-sm': '3rem',
       },
     },
   },
