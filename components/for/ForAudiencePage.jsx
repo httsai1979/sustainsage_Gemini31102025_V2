@@ -203,7 +203,7 @@ export default function ForAudiencePage({ pageKey }) {
           href="/contact?from=for-page"
           className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
         >
-          {page.cta?.primary || 'Book an intro call'}
+          {page.cta?.primary || 'Book a 20-minute chat'}
         </Link>
         <Link
           href="/services"
@@ -236,7 +236,7 @@ export default function ForAudiencePage({ pageKey }) {
             href="/contact?from=for-page"
             className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
           >
-            {page.cta?.primary || 'Book an intro call'}
+            {page.cta?.primary || 'Book a 20-minute chat'}
           </Link>
           <Link
             href="/services"
