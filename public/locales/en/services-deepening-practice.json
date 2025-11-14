@@ -7,7 +7,7 @@
     "title": "Deepening Practice – 8 sessions",
     "subtitle": "Long-term space to refine how you think, decide, relate and lead.",
     "imageAlt": "Illustration for deepening leadership practice",
-    "primaryCta": "Book an intro call",
+    "primaryCta": "Book a 20-minute chat",
     "secondaryCta": "Back to services"
   },
   "sections": {
@@ -36,9 +36,9 @@
     },
     "cta": {
       "body": [
-        { "type": "text", "value": "Use the intro call to check fit. If a different container or supervision is more appropriate, we will say so plainly." }
+        { "type": "text", "value": "Use the 20-minute chat to check fit. If a different container or supervision is more appropriate, we will say so plainly." }
       ],
-      "primaryCta": "Book an intro call",
+      "primaryCta": "Book a 20-minute chat",
       "secondaryCta": "Explore all services"
     }
   }

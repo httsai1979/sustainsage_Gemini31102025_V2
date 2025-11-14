@@ -13,6 +13,15 @@
         ]
       },
       {
+        "title": "You might not be ready if",
+        "items": [
+          "You need urgent therapeutic, medical or legal support before you can focus on work decisions.",
+          "Immediate needs like housing, food, or safety require all of your attention right now.",
+          "You cannot yet protect 60 minutes every few weeks for yourself without harm to your wellbeing.",
+          "You are looking for prescriptive advice rather than collaborative experimentation."
+        ]
+      },
+      {
         "title": "What you can expect from us",
         "items": [
           "Provocative questions that bring clarity without judgement.",
@@ -23,9 +32,10 @@
       }
     ],
     "signals": [
-      "If you are in acute crisis, we will connect you with therapeutic support first.",
-      "When organisational sponsorship is involved, we agree confidentiality boundaries together.",
-      "Students and job seekers can request reduced-fee places if finances are a barrier."
+      "If you are in acute crisis or worried about harm, contact your GP, Samaritans (116 123) or emergency services before continuing with coaching.",
+      "We pause coaching and point you to therapists, legal advisors or safeguarding teams whenever another professional is better placed to help.",
+      "When organisational sponsorship is involved, we agree confidentiality boundaries and reporting rhythms together.",
+      "Students and job seekers can request reduced-fee places or asynchronous check-ins if finances are a barrier."
     ]
   },
   "career-return": {
