@@ -18,7 +18,7 @@
   },
   "pathways": {
     "title": "Three ways we can work together",
-    "description": "Three focused coaching pathways that you can combine or adapt after our intro call.",
+    "description": "Three focused coaching pathways that you can combine or adapt after our 20-minute chat.",
     "highlight": "Each pathway flexes to your pace and capacity.",
     "sidebar": "We keep sessions reflective, practical and trauma-aware. Pace, language and intensity change once we understand your context.",
     "viewDetails": "Learn more",
@@ -26,9 +26,9 @@
   },
   "cta": {
     "title": "Not sure where to start?",
-    "body": "A 20-minute intro chat lets us hear your context and shape the right mix together.",
+    "body": "A 20-minute chat lets us hear your context and shape the right mix together.",
     "highlight": "Start with a conversation.",
-    "primaryCta": "Book an intro chat",
+    "primaryCta": "Book a 20-minute chat",
     "primaryHref": "/contact",
     "secondaryCta": "Read how coaching works",
     "secondaryHref": "/services/how-coaching-works"
@@ -42,7 +42,7 @@
       "hero": {
         "title": "Support for relocation, role or sector change without losing yourself.",
         "subtitle": "We build calm structure around your move so you can honour commitments in the UK and at home.",
-        "primaryCta": "Book an intro session",
+        "primaryCta": "Book a 20-minute chat",
         "primaryHref": "/contact?topic=transition",
         "secondaryCta": "Back to all services",
         "secondaryHref": "/services"
@@ -120,7 +120,7 @@
       },
       "expect": {
         "title": "What may shift for you",
-        "description": "No guaranteed outcomes—clients often describe these shifts.",
+        "description": "We do not promise specific outcomes—clients often describe these shifts.",
         "items": [
           {
             "summary": "Clearer story for employers and networks.",
@@ -186,8 +186,8 @@
       },
       "cta": {
         "title": "Ready to steady your transition?",
-        "body": "Book an intro session to explore whether this partnership fits your move.",
-        "primaryCta": "Book an intro session",
+        "body": "Book a 20-minute chat to explore whether this partnership fits your move.",
+        "primaryCta": "Book a 20-minute chat",
         "primaryHref": "/contact?topic=transition",
         "secondaryCta": "Back to all services",
         "secondaryHref": "/services"
@@ -201,7 +201,7 @@
       "hero": {
         "title": "A grounded space for students and early-career professionals to test options.",
         "subtitle": "Experiment with directions without pretending you have it all figured out.",
-        "primaryCta": "Book an intro session",
+        "primaryCta": "Book a 20-minute chat",
         "primaryHref": "/contact?topic=early-career",
         "secondaryCta": "Back to all services",
         "secondaryHref": "/services"
@@ -337,8 +337,8 @@
       },
       "cta": {
         "title": "Want to test your next move with support?",
-        "body": "Book an intro session so we can hear your context and see if this pathway fits.",
-        "primaryCta": "Book an intro session",
+        "body": "Book a 20-minute chat so we can hear your context and see if this pathway fits.",
+        "primaryCta": "Book a 20-minute chat",
         "primaryHref": "/contact?topic=early-career",
         "secondaryCta": "Back to all services",
         "secondaryHref": "/services"
@@ -352,7 +352,7 @@
       "hero": {
         "title": "Space for working parents to plan sustainable rhythms.",
         "subtitle": "We hold room for both care and work so you can design weeks that respect capacity.",
-        "primaryCta": "Book an intro session",
+        "primaryCta": "Book a 20-minute chat",
         "primaryHref": "/contact?topic=working-parents",
         "secondaryCta": "Back to all services",
         "secondaryHref": "/services"
@@ -496,8 +496,8 @@
       },
       "cta": {
         "title": "Ready to create a rhythm that holds you too?",
-        "body": "Book an intro session to see whether this coaching fits your family’s season.",
-        "primaryCta": "Book an intro session",
+        "body": "Book a 20-minute chat to see whether this coaching fits your family’s season.",
+        "primaryCta": "Book a 20-minute chat",
         "primaryHref": "/contact?topic=working-parents",
         "secondaryCta": "Back to all services",
         "secondaryHref": "/services"
@@ -511,7 +511,7 @@
       "hero": {
         "title": "Reflective coaching for leaders who want clarity without theatre.",
         "subtitle": "Think through cross-cultural leadership, influence, and boundaries with a grounded partner.",
-        "primaryCta": "Book an intro session",
+        "primaryCta": "Book a 20-minute chat",
         "primaryHref": "/contact?topic=leadership",
         "secondaryCta": "Back to all services",
         "secondaryHref": "/services"
@@ -655,8 +655,8 @@
       },
       "cta": {
         "title": "Want a reflective partner for your leadership context?",
-        "body": "Book an intro session so we can understand your landscape and see whether the fit is right.",
-        "primaryCta": "Book an intro session",
+        "body": "Book a 20-minute chat so we can understand your landscape and see whether the fit is right.",
+        "primaryCta": "Book a 20-minute chat",
         "primaryHref": "/contact?topic=leadership",
         "secondaryCta": "Back to all services",
         "secondaryHref": "/services"

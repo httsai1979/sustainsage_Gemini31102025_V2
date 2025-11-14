@@ -67,7 +67,7 @@ export default function DeepeningPracticePage() {
           href="/contact?from=deepening-practice"
           className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
         >
-          {hero?.primaryCta ?? 'Book an intro call'}
+          {hero?.primaryCta ?? 'Book a 20-minute chat'}
         </Link>
         <Link
           href="/services"
@@ -106,7 +106,7 @@ export default function DeepeningPracticePage() {
               href="/contact?from=deepening-practice"
               className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
             >
-              {cta?.primaryCta ?? hero?.primaryCta ?? 'Book an intro call'}
+              {cta?.primaryCta ?? hero?.primaryCta ?? 'Book a 20-minute chat'}
             </Link>
             <Link
               href="/services"
