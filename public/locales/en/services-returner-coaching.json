@@ -6,7 +6,7 @@
   "hero": {
     "title": "Return to work with steadiness and self-trust.",
     "subtitle": "We rebuild rhythms, narratives, and support systems so your next chapter feels sustainable.",
-    "primaryCta": "Book a 20-minute intro call",
+    "primaryCta": "Book a 20-minute chat",
     "primaryHref": "/contact?service=returner-coaching",
     "secondaryCta": "Back to services",
     "secondaryHref": "/services"
@@ -77,9 +77,9 @@
     },
     "cta": {
       "title": "Want support as you re-enter work?",
-      "body": "Book an intro chat so we can understand your timeline and design the right level of support.",
+      "body": "Book a 20-minute chat so we can understand your timeline and design the right level of support.",
       "primary": {
-        "label": "Book an intro call",
+        "label": "Book a 20-minute chat",
         "href": "/contact?service=returner-coaching"
       },
       "secondary": {
