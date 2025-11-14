@@ -61,6 +61,7 @@ export default function ServicesPage({
   const primaryCta = hero?.primaryCta ?? { href: '/contact', label: 'Book a chat' };
   const secondaryCta = hero?.secondaryCta ?? { href: '#support', label: 'Who we support' };
 
+  // Single source of truth for the onboarding steps to avoid duplicate declarations.
   const gettingStartedSteps = [
     {
       title: 'Book your free chat',
@@ -80,6 +81,7 @@ export default function ServicesPage({
     },
   ];
 
+  // Deduplicate CMS cards once so each package renders exactly once.
   const uniqueCards = dedupeBy(cards, (card) => card.slug ?? card.title);
 
   return (
