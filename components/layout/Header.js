@@ -131,7 +131,7 @@ export default function Header() {
           SustainSage Group
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-semibold lg:flex">
+        <nav className="hidden items-center gap-6 lg:flex">
           {NAV_STRUCTURE.map((item, index) => {
             if (item.type === 'services') {
               return (
@@ -145,10 +145,8 @@ export default function Header() {
                   <button
                     type="button"
                     className={cn(
-                      'inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-semibold transition',
-                      megaOpen || isActive('/services')
-                        ? 'bg-sustain-green/10 text-primary'
-                        : 'text-ink/70 hover:text-primary',
+                      'nav-link rounded-full px-4 py-2 transition-colors',
+                      megaOpen || isActive('/services') ? 'bg-sustain-green/10 nav-link--active' : 'hover:text-primary',
                     )}
                     aria-expanded={megaOpen}
                     aria-haspopup="true"
@@ -204,11 +202,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={
-                  isActive(item.href)
-                    ? 'text-primary'
-                    : 'text-ink/70 transition-colors hover:text-primary'
-                }
+                className={cn('nav-link', isActive(item.href) && 'nav-link--active')}
               >
                 {item.label}
               </Link>
@@ -221,7 +215,7 @@ export default function Header() {
             href="/contact"
             className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
           >
-            Book a conversation
+            Book a 20-minute chat
           </Link>
           <LocaleToggle onToggle={handleToggleLocale} />
           <button
@@ -284,11 +278,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={handleNavClick}
-                  className={
-                    isActive(item.href)
-                      ? 'text-primary'
-                      : 'text-ink transition-colors hover:text-primary'
-                  }
+                  className={cn('nav-link text-lg w-fit', isActive(item.href) && 'nav-link--active')}
                 >
                   {item.label}
                 </Link>
@@ -299,7 +289,7 @@ export default function Header() {
               onClick={handleNavClick}
               className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white"
             >
-              Book a conversation
+              Book a 20-minute chat
             </Link>
             <LocaleToggle variant="mobile" onToggle={handleToggleLocale} />
           </div>

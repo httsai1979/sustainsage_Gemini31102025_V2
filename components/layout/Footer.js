@@ -21,11 +21,11 @@ export default function Footer() {
         <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-6 shadow-md md:flex md:items-center md:justify-between md:p-8">
           <div className="max-w-2xl space-y-2">
             <p className="text-lg font-semibold text-sustain-text">Need more personalised support?</p>
-            <p className="text-sm text-slate-600">Book a calm conversation to see whether coaching with SustainSage is the right pace for you.</p>
+            <p className="text-sm text-slate-600">Book a 20-minute chat to see whether coaching with SustainSage is the right pace for you.</p>
           </div>
           <div className="mt-4 flex flex-wrap gap-3 md:mt-0">
             <Link href="/contact" className="ss-btn-primary">
-              Book a chat
+              Book a 20-minute chat
             </Link>
             <Link href="/services" className="ss-btn-secondary">
               Explore services

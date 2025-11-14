@@ -146,7 +146,7 @@ export default function ServiceDetailPage({ serviceKey, heroImage, heroAlt }) {
   const pageTitle = detail.title ? `${detail.title} | SustainSage` : 'SustainSage coaching service';
   const description = detail.tagline || detail.summary || '';
   const heroSubtitle = detail.tagline || detail.summary || '';
-  const buttonLabel = detail.ctaButton || t('defaultCta', { defaultValue: 'Book a 20-min intro call' });
+  const buttonLabel = detail.ctaButton || t('defaultCta', { defaultValue: 'Book a 20-minute chat' });
 
   const modernSuitable = safeArray(detail?.suitable?.bullets);
   const modernProcess = safeArray(detail?.process?.steps || detail?.process);

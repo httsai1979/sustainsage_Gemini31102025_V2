@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import type { ComponentType } from 'react';
 
 import { CaseCard } from '@/components/cases/CaseCard';
 import ServiceSubnav from '@/components/services/ServiceSubnav';
@@ -7,6 +8,8 @@ import StepList from '@/components/ui/StepList';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import { sectionizeServiceOverview } from '@/lib/sectionize';
 import { dedupeBy } from '@/lib/dedupe';
+
+const SimpleCard = Card as ComponentType<any>;
 
 export type ServiceHero = {
   eyebrow?: string;
@@ -124,7 +127,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
     Array.isArray(service.cases?.items)
       ? service.cases?.items.filter((item) => item && (item.title || item.context || item.coaching_moves || item.shift))
       : [],
-    (item, index) => item?.title ?? item?.slug ?? item?.context ?? index
+    (item, index) => item?.title ?? item?.context ?? index
   );
   const sections = sectionizeServiceOverview(service);
 
@@ -164,9 +167,9 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
           const description =
             item?.description ?? item?.answer ?? item?.body ?? item?.summary ?? item?.context ?? item ?? '';
           return (
-            <Card key={`${keyPrefix}-${title ?? index}`} title={title ?? undefined}>
+            <SimpleCard key={`${keyPrefix}-${title ?? index}`} title={title ?? undefined}>
               {description ? <p>{description}</p> : null}
-            </Card>
+            </SimpleCard>
           );
         })}
       </div>
@@ -225,7 +228,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
             <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
               <p className="text-sm font-semibold text-sustain-text">Need a gentle sounding board?</p>
               <p className="mt-2 text-sm leading-6 text-slate-700">
-                Book a chemistry chat or email a few lines about what is shifting right now.
+                Book a 20-minute chat or email a few lines about what is shifting right now.
               </p>
               <div className="mt-4 flex flex-col gap-3">
                 {hero.primaryCta?.href && hero.primaryCta?.label ? (
@@ -302,9 +305,9 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
                     {keyCards.length > 0 ? (
                       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                         {keyCards.map((item) => (
-                          <Card key={item.title ?? item.description} title={item.title}>
+                          <SimpleCard key={item.title ?? item.description} title={item.title}>
                             {item.description ? <p>{item.description}</p> : null}
-                          </Card>
+                          </SimpleCard>
                         ))}
                       </div>
                     ) : null}
