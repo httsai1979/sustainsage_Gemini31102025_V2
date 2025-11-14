@@ -1,17 +1,8 @@
 {
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
+  "fallbackNotice": "如有尚未翻譯的段落，會暫以英文顯示。",
   "sections": [
-    {
-      "heading": "Integrity in Action",
-      "body": "We align our work with community priorities and openly communicate trade-offs."
-    },
-    {
-      "heading": "Guardianship",
-      "body": "Stewardship of natural resources guides every recommendation we make."
-    },
-    {
-      "heading": "Shared Prosperity",
-      "body": "We design programmes that create lasting value for partners, residents, and ecosystems alike."
-    }
+    {"heading": "誠實實踐", "body": "所有合作都以社群需求為優先，並坦誠說明取捨。"},
+    {"heading": "守護責任", "body": "每項建議都會考量自然資源的照護與再生。"},
+    {"heading": "共享價值", "body": "設計能讓夥伴、居民與環境都獲得長遠益處的方案。"}
   ]
 }

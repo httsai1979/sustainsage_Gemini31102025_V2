@@ -1,133 +1,94 @@
 {
   "seo": {
-    "title": "Career coaching for sustainable change",
-    "description": "SustainSage offers thoughtful coaching for people navigating transitions, relocations, and re-entry moments."
+    "title": "SustainSage 職涯教練｜穩定陪你過渡",
+    "description": "為正在轉換、搬遷或重返職場的人提供沉穩、保密的教練空間。"
   },
   "hero": {
-    "eyebrow": "Navigate change sustainably",
-    "title": "Coaching to help you move forward with clarity",
-    "description": "Work with an ICF-aligned coach to map your next step without burning out or losing what matters to you.",
+    "eyebrow": "面對改變，可以慢慢來",
+    "title": "一步步釐清下一個行動",
+    "description": "與符合 ICF 標準的教練合作，在不燒盡自己的前提下看清楚優先順序與下一步。",
     "image": {
       "src": "/images/hero/main.jpg",
-      "alt": "Rashi Anand coaching a client in a bright room"
+      "alt": "教練與來談者在窗邊沉穩對談"
     },
     "primaryCta": {
-      "label": "Book a 20-minute chat",
+      "label": "預約 20 分鐘聊聊",
       "href": "/contact"
     },
     "secondaryCta": {
-      "label": "Browse services",
+      "label": "看看服務內容",
       "href": "/services"
     }
   },
   "services": {
     "eyebrow": "服務",
-    "title": "先看哪些方案符合你的情境",
-    "description": "先用情境與範例確認是否合適，再進一步了解流程、定價與協議。",
+    "title": "先找出最貼近你的路徑",
+    "description": "先看情境與案例，確認合適後再深入流程、定價與協議。",
     "cards": [
       {
         "title": "重返職場",
-        "description": "12 週溫和回到節奏—輕量結構，友善督導。",
+        "description": "12 週溫和拉回節奏，保留彈性又有結構。",
         "href": "/services/career-return",
-        "linkLabel": "查看方案"
+        "linkLabel": "查看路徑"
       },
       {
         "title": "畢業起步",
-        "description": "把分散努力轉成清楚敘事與可測的小步驟。",
+        "description": "把分散的努力轉成可見故事與可測試的小步驟。",
         "href": "/services/graduate-start",
-        "linkLabel": "查看方案"
+        "linkLabel": "查看路徑"
       },
       {
         "title": "英國職場新起點",
-        "description": "把海外經驗轉成在地可信的證據點。",
+        "description": "把海外經驗翻成在地可信的證據點。",
         "href": "/services/immigrant-job",
-        "linkLabel": "查看方案"
+        "linkLabel": "查看路徑"
       }
     ]
   },
   "key_points": {
-    "title": "前期會談可以期待什麼",
-    "description": "用情境先確認需求，再逐步建立節奏與結構。",
+    "title": "前幾次會談會長這樣",
+    "description": "用真實情境討論，再慢慢加上節奏與工具。",
     "items": [
-      {
-        "title": "冷靜、實作導向；不誇大、不保證結果。"
-      },
-      {
-        "title": "先用免費工具，留下對你有用的。"
-      },
-      {
-        "title": "每週節奏；兩次會談間做小實驗。"
-      },
-      {
-        "title": "清楚邊界與保密，事前說明。"
-      },
-      {
-        "title": "簡單定價；套組之間可暫停。"
-      }
+      {"title": "語氣沉穩、務實，不做保證也不催促。"},
+      {"title": "可以先用免費工具，留下真正有用的。"},
+      {"title": "維持每週節奏，會談間做小實驗。"},
+      {"title": "事前說清楚保密與合作邊界。"},
+      {"title": "定價簡單，可在套組之間暫停。"}
     ]
   },
   "process": {
-    "title": "確認合適後會怎麼合作",
-    "description": "維持情境優先，同時把節奏、協議與回顧頻率說清楚。",
+    "title": "確認適合後的合作流程",
+    "description": "維持情境優先，同步說清節奏、協議與回顧方式。",
     "steps": [
-      {
-        "title": "探索",
-        "description": "釐清現在重要的是什麼、為何是現在、期待的改變。"
-      },
-      {
-        "title": "試談",
-        "description": "20 分鐘對談，確認節奏、需求與可及性。"
-      },
-      {
-        "title": "對齊",
-        "description": "付費前先對齊目標、邊界與合作頻率。"
-      },
-      {
-        "title": "實作",
-        "description": "每週會談，兩次之間有短回顧與小實驗。"
-      }
+      {"title": "探索", "description": "釐清現在最重要的是什麼、為什麼是現在、期待的成果。"},
+      {"title": "試談", "description": "20 分鐘聊聊化學反應、需求與可近性。"},
+      {"title": "對齊", "description": "付費前先確認目標、邊界、節奏與資料處理。"},
+      {"title": "實作", "description": "每週會談＋短回顧與小實驗，累積看得見的證據。"}
     ]
   },
   "boundaries": {
-    "title": "我們會守住的邊界",
-    "description": "這些約定讓節奏、身心安全與保密都在掌握中。",
+    "title": "我們會守住的界線",
+    "description": "這些約定保護節奏、身心安全與保密。",
     "items": [
-      {
-        "question": "這是教練還是治療？",
-        "answer": "這裡是教練服務—若治療更安全，我們會協助轉介。"
-      },
-      {
-        "question": "時間上有什麼約定？",
-        "answer": "準時開始、準時結束，讓你能安排其他行程。"
-      },
-      {
-        "question": "會留下哪些紀錄？",
-        "answer": "只保留必要紀錄，如有需要可依約定刪除。"
-      },
-      {
-        "question": "合作節奏由誰決定？",
-        "answer": "節奏由你決定，我們守住結構與節拍。"
-      }
+      {"question": "這裡是教練還是治療？", "answer": "這裡是教練；若治療更安全，我們會協助轉介。"},
+      {"question": "時間怎麼安排？", "answer": "準時開始、準時結束，讓你可放心安排其他行程。"},
+      {"question": "會留下哪些紀錄？", "answer": "只保留最少必要紀錄，需要時可依約刪除。"},
+      {"question": "誰決定節奏？", "answer": "你決定節奏，我們提供結構與誠實的提醒。"}
     ]
   },
   "faqTeaser": {
-    "title": "Questions about how coaching works?",
-    "body": "Read about session rhythms, pricing, ethics, and how we tailor support for individuals and organisations.",
-    "cta": {
-      "label": "Read the FAQs",
-      "href": "/faq"
-    }
+    "title": "想先了解合作細節？",
+    "body": "FAQ 會整理節奏、定價、倫理與常見的合作調整方式。",
+    "cta": {"label": "查看 FAQ", "href": "/faq"}
   },
-  "testimonials": {
-    "title": "Trusted by people navigating change"
-  },
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
+  "testimonials": {"title": "在轉換中的人給予的信任"},
+  "fallbackNotice": "如有尚未翻成中文的段落，會暫以英文顯示。",
   "cta": {
     "primary_label": "先試用免費工具",
     "primary_href": "/resources",
-    "secondary_label": "預約 20 分鐘對談",
+    "secondary_label": "預約 20 分鐘聊聊",
     "secondary_href": "/contact"
   },
   "title": "SustainSage 雙語教練（英國）",
-  "description": "冷靜、以證據為核心的職涯教練：重返職場、移民求職、畢業求職。小步走、可見成果、誠實引導。"
+  "description": "冷靜、以證據為基礎的職涯教練：重返職場、移民求職與畢業起步都能找到對應路徑。"
 }

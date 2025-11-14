@@ -1,238 +1,147 @@
 {
-  "fallbackNotice": "目前暫以英文內容呈現，完整翻譯即將補上。",
+  "fallbackNotice": "如有尚未完成的翻譯段落，會暫以英文顯示。",
   "seo": {
-    "title": "About SustainSage | Bilingual coaching grounded in ethics",
-    "description": "Meet the bilingual coaches behind SustainSage, the transitions we support, and the boundaries that keep every partnership safe."
+    "title": "關於 SustainSage｜以倫理為核心的雙語教練",
+    "description": "認識 SustainSage 的雙語教練團隊、我們擅長陪伴的轉換，以及守護每段合作的界線。"
   },
   "intro": {
-    "eyebrow": "About",
-    "title": "Coaching for complex transitions",
-    "body": "SustainSage is led by bilingual coaches who have moved between Taiwan, Singapore, and the UK. We keep coaching steady, culturally aware, and grounded in practical experiments."
+    "eyebrow": "關於我們",
+    "title": "陪伴複雜轉換的教練夥伴",
+    "body": "SustainSage 由長期往返台灣、新加坡與英國的雙語教練共同經營。我們以文化敏感度與務實實驗，陪你穿越轉職、搬遷與重新定位。"
   },
   "approach": {
-    "eyebrow": "Our approach",
-    "title": "Experiments that respect pace and context",
-    "description": "Every partnership begins with informed consent, shared language, and clarity on how we will work together.",
+    "eyebrow": "合作方式",
+    "title": "尊重節奏與脈絡的實驗設計",
+    "description": "每段合作都從充分告知、共用語言與清楚的工作方式開始。",
     "pillars": [
       {
-        "title": "Context before action",
-        "description": "We map systems, constraints, and access needs before suggesting experiments."
+        "title": "先理解脈絡再行動",
+        "description": "在提出任何建議前，我們會先釐清系統、限制與可近性需求。"
       },
       {
-        "title": "Bilingual collaboration",
-        "description": "Sessions move between English, Traditional Chinese, and Simplified Chinese so nuance survives translation."
+        "title": "雙語協作",
+        "description": "會談可在英文、繁體中文與簡體中文之間切換，保留細膩的語意。"
       },
       {
-        "title": "Reflective practice",
-        "description": "Monthly supervision and pause points keep bias, risk, and wellbeing in view."
+        "title": "持續自我督導",
+        "description": "每月督導與停看聽的節點，讓偏誤、風險與身心狀態都被看見。"
       }
     ],
     "cases": [
-      "應屆畢業生 → 故事線更清楚，同梯次獲得 2 次回撥。",
-      "重返職場者 → 3 個月漸進計畫，從兼職到全職。",
-      "轉職者 → 作品集重構，6 週內拿到第一個專案。",
+      "畢業生 → 故事線更清楚，同一輪就獲得兩次回撥。",
+      "重返職場者 → 3 個月漸進計畫，從兼職回到全職。",
+      "轉職者 → 重整作品集，6 週內接到第一個專案。",
+      "搬到英國的父母 → 安排清楚的照護界線，簽下第一個在地合約。",
       {
-        "title": "應屆畢業生 → 故事線更清楚，同梯次獲得 2 次回撥。"
+        "title": "跨國團隊需要一致節奏",
+        "context": "A 輪創業者在台北與倫敦之間協調作業，期待值頻頻衝突。",
+        "coaching_moves": "共同訂出雙語協議、釐清決策權、排演雙語回饋語句。",
+        "shift": "會議重新聚焦，團隊回報責任更清楚、升級流程更平穩。",
+        "tools_used": ["利害關係人地圖", "決策矩陣", "ICF 團隊教練協議"],
+        "disclaimer": "內容經過匿名化並混合多位客戶情境。"
       },
       {
-        "title": "重返職場者 → 3 個月漸進計畫，從兼職到全職。"
+        "title": "永續夥伴關係重談範疇",
+        "context": "NGO 與投資方領導層更動，需要重新對齊合作期待。",
+        "coaching_moves": "攤開隱含假設、練習界線語言並試做新的共享路線圖。",
+        "shift": "雙方以具體的資料分享節奏與升級節點重新承諾合作。",
+        "tools_used": ["情境階梯", "價值對齊畫布"],
+        "disclaimer": "為保護各方隱私，案例為綜合情境。"
       },
       {
-        "title": "轉職者 → 作品集重構，6 週內拿到第一個專案。"
-      },
-      {
-        "title": "應屆畢業生 → 故事線更清楚，同梯次獲得 2 次回撥。"
-      },
-      {
-        "title": "應屆畢業生 → 故事線更清楚，同梯次獲得 2 次回撥。"
-      },
-      {
-        "title": "重返職場者 → 3 個月漸進計畫，從兼職到全職。"
-      },
-      {
-        "title": "轉職者 → 作品集重構，6 週內拿到第一個專案。"
-      },
-      {
-        "title": "Founder aligning a cross-border team",
-        "context": "Series A founder scaling operations between Taipei and London with clashing expectations.",
-        "coaching_moves": "Co-created bilingual agreements, clarified decision rights, rehearsed feedback in both languages.",
-        "shift": "Meetings regained focus, with teammates reporting clearer ownership and calmer escalation paths.",
-        "tools_used": [
-          "Stakeholder map",
-          "Decision matrix",
-          "ICF team coaching agreements"
-        ],
-        "disclaimer": "Details blended from multiple engagements to protect confidentiality."
-      },
-      {
-        "title": "Climate partnership renegotiating scope",
-        "context": "NGO and investor partnership needed to reset expectations after leadership changes.",
-        "coaching_moves": "Surfaced assumptions, rehearsed boundary language, and prototyped a revised shared roadmap.",
-        "shift": "Both parties recommitted with defined data-sharing cadence and clearer escalation checkpoints.",
-        "tools_used": [
-          "Scenario ladder",
-          "Values alignment canvas"
-        ],
-        "disclaimer": "Composite scenario respecting privacy of all clients."
-      },
-      {
-        "title": "Policy lead rebuilding stamina",
-        "context": "Public policy advisor juggling multilingual briefs and caregiver duties.",
-        "coaching_moves": "Mapped energy audits, simplified reporting rituals, and negotiated realistic stakeholder updates.",
-        "shift": "Client reported steadier workload and regained confidence presenting in both Mandarin and English.",
-        "tools_used": [
-          "Energy inventory",
-          "Boundary scripts"
-        ],
-        "disclaimer": "Case anonymised and blended to remove identifying details."
+        "title": "公共政策主管恢復續航力",
+        "context": "跨語簡報與照護責任並行，身心與節奏失衡。",
+        "coaching_moves": "設計能量盤點、簡化回報儀式、協商更實際的利害關係人更新。",
+        "shift": "工作量回到可承受狀態，也重新找回以中英雙語簡報的信心。",
+        "tools_used": ["能量盤點", "界線語句"],
+        "disclaimer": "案例經過匿名處理並混合多位客戶的經驗。"
       }
     ]
   },
   "key_points": {
-    "title": "What guides our coaching",
+    "title": "指引我們的原則",
     "items": [
-      "ICF-aligned practice keeps agreements, data care, and supervision transparent.",
-      "Lived experience across Asia-Pacific and the UK keeps culture and policy context in view.",
-      "No-drama experiments help you build momentum without burning out."
+      "依循 ICF 實務，讓協議、資料照護與督導透明。",
+      "橫跨亞太與英國的生活經驗，讓文化與政策脈絡被看見。",
+      "不煽動的實驗方式，幫你累積動能又不會燒盡。"
     ]
   },
   "process": {
-    "title": "How partnerships unfold",
-    "description": "Every engagement starts with context, informed consent, and clarity on how we will work together.",
+    "title": "合作會怎麼展開",
+    "description": "每段合作都先釐清脈絡、取得充分告知同意，並約定清楚的工作方式。",
     "steps": [
-      {
-        "title": "Set shared agreements",
-        "description": "We confirm goals, roles, confidentiality boundaries, cadence, and data retention before sessions begin."
-      },
-      {
-        "title": "Work bilingually",
-        "description": "Coaching flows between English, Traditional Chinese, and Simplified Chinese so nuance stays intact."
-      },
-      {
-        "title": "Reflect and adapt",
-        "description": "Monthly supervision and reflective practice help us surface blind spots and adjust support early."
-      }
+      {"title": "設定共識", "description": "開案前先確認目標、角色、保密範圍、節奏與資料保存。"},
+      {"title": "雙語進行", "description": "需要時可在英、中之間切換，確保細節不被翻譯遺漏。"},
+      {"title": "回顧與調整", "description": "每月督導與反思，及早看見盲點並調整支援方式。"}
     ]
   },
   "whatIsCoaching": {
-    "eyebrow": "What is coaching",
-    "title": "What coaching looks like with SustainSage",
-    "description": "Coaching is a structured, future-focused partnership where you stay in charge of direction and pace.",
+    "eyebrow": "教練的樣貌",
+    "title": "在 SustainSage 的教練合作",
+    "description": "教練是一段著眼未來的結構化夥伴關係，你仍掌握方向與節奏。",
     "scenarios": [
-      "中斷一段時間準備重返職場，需要一個友善的回到軌道方式。",
-      "投遞很多履歷，但面試很難轉成錄取或下一步。",
-      "拿到 Offer，卻不確定是否符合真正的優先順序。",
-      "準備跨領域轉職，覺得自己像從零開始。",
-      "人在英國、經歷在海外，需要建立在地可信的證據點。",
-      "帶領小團隊，希望 1:1 對話更穩定、更有節奏。",
+      {"title": "你在休息後重返職場，想要更溫和的起跑。"},
+      {"title": "你投了很多履歷，卻常卡在面試無法轉成錄取。"},
+      {"title": "你拿到一個邀約，但還不確定是否符合優先順序。"},
+      {"title": "你想轉換領域，覺得自己像從零開始。"},
+      {"title": "你帶著海外資歷在英國求職，需要在地證據點。"},
+      {"title": "你領導小型團隊，希望 1:1 對話更穩定。"},
       {
-        "title": "中斷一段時間準備重返職場，需要一個友善的回到軌道方式。"
+        "title": "跨文化啟動角色",
+        "description": "在期待破裂前，先釐清決策權、交接與約定。"
       },
       {
-        "title": "投遞很多履歷，但面試很難轉成錄取或下一步。"
-      },
-      {
-        "title": "拿到 Offer，卻不確定是否符合真正的優先順序。"
-      },
-      {
-        "title": "準備跨領域轉職，覺得自己像從零開始。"
-      },
-      {
-        "title": "人在英國、經歷在海外，需要建立在地可信的證據點。"
-      },
-      {
-        "title": "帶領小團隊，希望 1:1 對話更穩定、更有節奏。"
-      },
-      {
-        "title": "中斷一段時間準備重返職場，需要一個友善的回到軌道方式。"
-      },
-      {
-        "title": "投遞很多履歷，但面試很難轉成錄取或下一步。"
-      },
-      {
-        "title": "拿到 Offer，卻不確定是否符合真正的優先順序。"
-      },
-      {
-        "title": "準備跨領域轉職，覺得自己像從零開始。"
-      },
-      {
-        "title": "人在英國、經歷在海外，需要建立在地可信的證據點。"
-      },
-      {
-        "title": "帶領小團隊，希望 1:1 對話更穩定、更有節奏。"
-      },
-      {
-        "title": "Launching a role across cultures",
-        "description": "Clarify decision rights, agreements, and handoffs before expectations fracture."
-      },
-      {
-        "title": "Needing accountability for experiments",
-        "description": "Design lightweight trials, data care plans, and check-ins that keep momentum without burnout."
-      },
-      {
-        "title": "Untangling stakeholder dynamics",
-        "description": "Surface power dynamics, accessibility needs, and language you can safely bring back to the room."
+        "title": "梳理利害關係人",
+        "description": "看見權力動態、可近性需求，並練習可以帶回現場的語言。"
       }
     ],
-    "cta": {
-      "label": "Explore our coaching approach",
-      "href": "/about/approach"
-    },
-    "secondaryCta": {
-      "label": "Read our ethics commitments",
-      "href": "/about/ethics"
-    },
-    "disclaimer": "Coaching does not replace therapy, legal advice, or crisis response. We will pause and refer when specialised care is required."
+    "cta": {"label": "了解我們的教練方法", "href": "/about/approach"},
+    "secondaryCta": {"label": "閱讀倫理承諾", "href": "/about/ethics"},
+    "disclaimer": "教練無法取代治療、法律或緊急支援；若這些資源更適合，我們會暫停並協助轉介。"
   },
   "ethics": {
-    "eyebrow": "Ethics & boundaries",
-    "title": "ICF-aligned boundaries that protect your data",
-    "summary": "We anchor every engagement in the International Coaching Federation (ICF) Code of Ethics and document how data is cared for from day one.",
+    "eyebrow": "倫理與界線",
+    "title": "ICF 對齊的邊界，守護你的資料",
+    "summary": "每段合作都以國際教練聯盟（ICF）倫理守則為基礎，並記錄資料從第一天起如何被保護。",
     "principles": [
-      "Set informed consent, confidentiality boundaries, and escalation paths before sessions begin.",
-      "Check accessibility, safeguarding, and wellbeing every few sessions to adjust support early.",
-      "Pause or refer when therapeutic, legal, or crisis support is more appropriate than coaching."
+      "啟動前就設定知情同意、保密範圍與升級路徑。",
+      "每幾次會談就檢視可近性、風險與身心狀態，及早調整支援。",
+      "當治療、法律或危機支援更適合時，立即暫停或轉介。"
     ],
     "dataPractices": {
-      "title": "How we handle your data",
+      "title": "資料如何被照護",
       "items": [
-        "Store session notes in encrypted, access-controlled systems with time-bound retention.",
-        "Share summaries only with people named in the original agreement, never external parties without consent.",
-        "Delete recordings or artefacts immediately when they are no longer required for the coaching goal."
+        "會談筆記儲存在加密且權限控管的系統，並設定保存期限。",
+        "只與協議中被點名的人分享摘要，不會在未經同意下對外提供。",
+        "錄音與素材在不再需要時立即刪除。"
       ]
     },
-    "icfReference": "Review the ICF Code of Ethics to see the standards we commit to in every partnership."
+    "icfReference": "可閱讀 ICF 倫理守則，了解我們在每段合作中的承諾。"
   },
   "boundaries": {
-    "title": "Boundaries we uphold",
-    "description": "These commitments protect your agency, safety, and consent.",
+    "title": "我們守住的界線",
+    "description": "這些約定保護你的自主權、安全與同意。",
     "items": [
       {
-        "question": "What scope does coaching cover?",
-        "answer": "We stay future-focused and collaborative. When therapeutic or legal support is needed, we pause and signpost trusted professionals."
+        "question": "教練涵蓋哪些範圍？",
+        "answer": "我們維持面向未來、合作式的對話；若治療或法律更適合，會暫停並提供指引。"
       },
       {
-        "question": "How do you monitor ethics?",
-        "answer": "We follow the International Coaching Federation Code of Ethics and maintain supervision to stay accountable."
+        "question": "如何確保倫理？",
+        "answer": "依循 ICF 倫理守則並持續接受督導，維持外部責信。"
       },
       {
-        "question": "What if accessibility needs change?",
-        "answer": "We revisit agreements every few sessions to check progress, accessibility, and safeguarding requirements."
+        "question": "若可近性需求改變？",
+        "answer": "每隔幾次會談就重訪協議，檢查進展、可近性與安全需求。"
       }
     ]
   },
   "callout": {
-    "title": "Ready to map your next step?",
-    "body": "Browse our coaching services or read the full coaching boundaries we uphold.",
-    "primary": {
-      "label": "See services",
-      "href": "/services"
-    },
-    "secondary": {
-      "label": "Read coaching boundaries",
-      "href": "/services/how-coaching-works"
-    }
+    "title": "想一起描繪下一步嗎？",
+    "body": "可以先瀏覽服務頁面，或閱讀我們守護的合作邊界。",
+    "primary": {"label": "查看服務", "href": "/services"},
+    "secondary": {"label": "閱讀教練邊界", "href": "/services/how-coaching-works"}
   },
-  "title": "關於我們 — SustainSage Group",
-  "description": "英國在地雙語教練。ICF 對齊，預設保密，務實且理解文化差異。"
+  "title": "關於 SustainSage",
+  "description": "總部位於英國的雙語教練團隊，依循 ICF 標準、預設保密，務實又懂文化差異。"
 }
