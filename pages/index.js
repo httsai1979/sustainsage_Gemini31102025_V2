@@ -48,7 +48,7 @@ export default function Home({
   const services = content?.services ?? {};
   const process = content?.process ?? {};
   const faqTeaser = content?.faqTeaser ?? null;
-  const recognise = content?.recognise ?? {};
+  const recogniseContent = content?.recognise ?? {};
   const boundaries = content?.boundaries ?? {};
 
   const faqContent = {
@@ -113,8 +113,8 @@ export default function Home({
     },
   ]).slice(0, 4);
 
-  const recogniseItems = dedupeBy(
-    orderSections(Array.isArray(recognise?.items) ? recognise.items : []),
+  const topicItems = dedupeBy(
+    orderSections(Array.isArray(recogniseContent?.items) ? recogniseContent.items : []),
     (item, index) => (typeof item === 'string' ? item : item?.title ?? item?.description ?? index)
   );
 
@@ -124,16 +124,6 @@ export default function Home({
   const coachingIsNotBullets = [boundaries?.description, boundaries?.note]
     .filter(Boolean)
     .slice(0, 3);
-
-  const recognise = content?.recognise ?? {};
-  const recogniseItems = dedupeBy(
-    orderSections(Array.isArray(recognise?.items) ? recognise.items : []),
-    (item) => (typeof item === 'string' ? item : item?.title ?? item?.description ?? '')
-  );
-  const whatCoachingIs = process?.description ??
-    'Sessions stay calm, structured, and paced around what is happening in your real life.';
-  const whatCoachingIsNot = boundaries?.description ??
-    'We hold ICF-aligned boundaries, refer to specialists when needed, and avoid one-size-fits-all advice.';
 
   return (
     <main className="ss-container">
@@ -251,18 +241,22 @@ export default function Home({
       </section>
 
       <TopicsHero
-        eyebrow={recognise?.eyebrow ?? 'Areas we can explore together'}
-        title={recognise?.title ?? 'Coaching topics we cover'}
-        description={recognise?.intro ?? 'Surface the themes that matter—career transitions, leadership, belonging, and boundaries.'}
+        eyebrow={recogniseContent?.eyebrow ?? 'Areas we can explore together'}
+        title={recogniseContent?.title ?? 'Coaching topics we cover'}
+        description={
+          recogniseContent?.intro ?? 'Surface the themes that matter—career transitions, leadership, belonging, and boundaries.'
+        }
         ctaLabel="See topics"
         ctaHref="#topics"
-        backgroundImage={recognise?.image?.src ?? '/images/coach-topics.jpg'}
-        backgroundAlt={recognise?.image?.alt ?? recognise?.title ?? 'Coaching topics background'}
+        backgroundImage={recogniseContent?.image?.src ?? '/images/coach-topics.jpg'}
+        backgroundAlt={
+          recogniseContent?.image?.alt ?? recogniseContent?.title ?? 'Coaching topics background'
+        }
       />
 
       <section id="topics" className="ss-section">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {recogniseItems.map((item, index) => (
+          {topicItems.map((item, index) => (
             <Card key={item?.title ?? item ?? index} title={item?.title ?? item}>
               <p className="text-sm text-slate-700">{item?.description ?? item}</p>
             </Card>
