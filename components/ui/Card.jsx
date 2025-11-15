@@ -17,7 +17,7 @@ export default function Card({
   return (
     <Component
       className={cn(
-        'rounded-card rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:-translate-y-1 focus-within:shadow-lg md:p-8',
+        'rounded-card rounded-2xl border border-sustain-cardBorder bg-sustain-surface p-6 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:-translate-y-1 focus-within:shadow-lg md:p-8 dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark',
         'flex flex-col gap-3',
         className,
       )}
@@ -36,19 +36,19 @@ export default function Card({
               </div>
             ) : null}
             {title ? (
-              <h3 className="text-base font-semibold tracking-tight text-sustain-text md:text-lg">{title}</h3>
+              <h3 className="text-base font-semibold tracking-tight text-sustain-text dark:text-sustain-text-dark md:text-lg">{title}</h3>
             ) : null}
-            {subtitle ? <p className="text-sm text-slate-600 md:text-base">{subtitle}</p> : null}
+            {subtitle ? <p className="text-sm text-slate-600 dark:text-sustain-text-dark/80 md:text-base">{subtitle}</p> : null}
           </div>
         )}
         {prose ? (
-          <Prose className="space-y-4 text-sm leading-relaxed text-slate-700 md:text-base">{children}</Prose>
+          <Prose className="space-y-4 text-sm leading-relaxed text-slate-700 dark:text-sustain-text-dark/90 md:text-base">{children}</Prose>
         ) : (
-          <div className="text-sm leading-relaxed text-slate-700 md:text-base">{children}</div>
+          <div className="text-sm leading-relaxed text-slate-700 dark:text-sustain-text-dark/90 md:text-base">{children}</div>
         )}
       </div>
       {footer ? (
-        <div className="mt-6 border-t border-sustain-cardBorder/70 pt-4 text-sm text-slate-600">
+        <div className="mt-6 border-t border-sustain-cardBorder/70 pt-4 text-sm text-slate-600 dark:border-sustain-cardBorder-dark/70 dark:text-sustain-text-dark/80">
           {footer}
         </div>
       ) : null}

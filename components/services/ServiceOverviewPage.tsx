@@ -90,9 +90,9 @@ function OverviewCTA({ cta }: { cta?: ServiceOverview['cta'] }) {
   }
 
   return (
-    <div className="rounded-3xl border border-sustain-cardBorder bg-white p-8 text-center shadow-md">
-      {cta.title ? <h2 className="text-2xl font-semibold text-sustain-text">{cta.title}</h2> : null}
-      {cta.description ? <p className="mt-3 text-base leading-7 text-slate-700">{cta.description}</p> : null}
+    <div className="rounded-3xl border border-sustain-cardBorder bg-white p-8 text-center shadow-md dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark">
+      {cta.title ? <h2 className="text-2xl font-semibold text-sustain-text dark:text-sustain-text-dark">{cta.title}</h2> : null}
+      {cta.description ? <p className="mt-3 text-base leading-7 text-slate-700 dark:text-sustain-text-dark/80">{cta.description}</p> : null}
       <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
         {cta.primary?.href && cta.primary?.label ? (
           <Link
@@ -105,7 +105,7 @@ function OverviewCTA({ cta }: { cta?: ServiceOverview['cta'] }) {
         {cta.secondary?.href && cta.secondary?.label ? (
           <Link
             href={cta.secondary.href}
-            className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-sustain-green ring-1 ring-inset ring-sustain-cardBorder transition hover:bg-sustain-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-green"
+            className="inline-flex items-center justify-center rounded-full bg-white px-5 py-3 text-sm font-semibold text-sustain-green ring-1 ring-inset ring-sustain-cardBorder transition hover:bg-sustain-bg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-green dark:bg-sustain-surface-dark dark:text-sustain-text-dark dark:ring-sustain-cardBorder-dark dark:hover:bg-sustain-surface-dark/80"
           >
             {cta.secondary.label}
           </Link>
@@ -174,8 +174,8 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
     }
     return (
       <div className="space-y-2">
-        {title ? <h2 className="text-2xl font-semibold text-sustain-text">{title}</h2> : null}
-        {lead ? <p className="text-base leading-7 text-slate-700">{lead}</p> : null}
+        {title ? <h2 className="text-2xl font-semibold text-sustain-text dark:text-sustain-text-dark">{title}</h2> : null}
+        {lead ? <p className="text-base leading-7 text-slate-700 dark:text-sustain-text-dark/80">{lead}</p> : null}
       </div>
     );
   };
@@ -202,8 +202,8 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
   };
 
   return (
-    <div className="bg-sustain-bg">
-      <div className="bg-gradient-to-br from-sustain-green/15 via-sustain-bg to-slate-50">
+    <div className="bg-sustain-bg dark:bg-sustain-bg-dark">
+      <div className="bg-gradient-to-br from-sustain-green/15 via-sustain-bg to-slate-50 dark:via-sustain-bg-dark dark:to-sustain-surface-dark">
         <div className="ss-container py-16">
           <div className="grid gap-10 lg:grid-cols-2">
             <div className="space-y-4">
@@ -211,12 +211,12 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green">{hero.eyebrow}</p>
               ) : null}
               <div className="space-y-3">
-                <h1 className="text-3xl font-semibold leading-tight text-sustain-text md:text-4xl">
+                <h1 className="text-3xl font-semibold leading-tight text-sustain-text dark:text-sustain-text-dark md:text-4xl">
                   {hero.title ?? service.title ?? 'Service overview'}
                 </h1>
-                {hero.subtitle ? <p className="text-base leading-7 text-slate-700">{hero.subtitle}</p> : null}
+                {hero.subtitle ? <p className="text-base leading-7 text-slate-700 dark:text-sustain-text-dark/80">{hero.subtitle}</p> : null}
                 {showFallbackNotice ? (
-                  <p className="text-xs font-medium text-slate-500">{fallbackNotice}</p>
+                  <p className="text-xs font-medium text-slate-500 dark:text-sustain-text-dark/70">{fallbackNotice}</p>
                 ) : null}
               </div>
               <div className="flex flex-wrap gap-3">
@@ -235,9 +235,9 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
                 ) : null}
               </div>
             </div>
-            <div className="rounded-3xl border border-sustain-cardBorder bg-white/80 p-8 shadow-lg">
+            <div className="rounded-3xl border border-sustain-cardBorder bg-white/80 p-8 shadow-lg dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark/80">
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{sidebarLabel}</p>
-              <p className="mt-4 text-base leading-relaxed text-slate-700">
+              <p className="mt-4 text-base leading-relaxed text-slate-700 dark:text-sustain-text-dark/80">
                 {service.who?.description ?? service.key_points?.description ?? sidebarFallback}
               </p>
             </div>
@@ -249,9 +249,9 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
         <div className="ss-container flex flex-col gap-10 lg:grid lg:grid-cols-[minmax(0,260px)_1fr]">
           <aside className="space-y-6">
             <ServiceSubnav base={basePath} tabs={subnavTabs} active="overview" orientation="vertical" />
-            <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
-              <p className="text-sm font-semibold text-sustain-text">{contactTitle}</p>
-              <p className="mt-2 text-sm leading-6 text-slate-700">{contactBody}</p>
+            <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark">
+              <p className="text-sm font-semibold text-sustain-text dark:text-sustain-text-dark">{contactTitle}</p>
+              <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-sustain-text-dark/80">{contactBody}</p>
               <div className="mt-4 flex flex-col gap-3">
                 {hero.primaryCta?.href && hero.primaryCta?.label ? (
                   <Link href={hero.primaryCta.href} className="ss-btn-primary">
@@ -265,7 +265,7 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
                 ) : null}
               </div>
               {contactNote ? (
-                <p className="mt-4 text-xs leading-5 text-slate-500">{contactNote}</p>
+                <p className="mt-4 text-xs leading-5 text-slate-500 dark:text-sustain-text-dark/70">{contactNote}</p>
               ) : null}
             </div>
           </aside>

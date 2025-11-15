@@ -8,6 +8,7 @@ import '@/styles/globals.css';
 import MainLayout from '@/components/layout/MainLayout';
 import CookieConsent, { getStoredConsent, storeConsent } from '@/components/CookieConsent';
 import { GA_MEASUREMENT_ID, hasGa, pageview } from '@/lib/ga';
+import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
 import nextI18NextConfig from '../next-i18next.config.js';
 
@@ -47,26 +48,28 @@ function MyApp({ Component, pageProps }) {
   const content = Component.getLayout ? Component.getLayout(page) : <MainLayout>{page}</MainLayout>;
 
   return (
-    <>
-      {hasGa && consent === 'granted' && (
-        <>
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){window.dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_MEASUREMENT_ID}', { page_path: window.location.pathname });
-            `}
-          </Script>
-        </>
-      )}
-      {content}
-      <CookieConsent consent={consent} onConsent={handleConsent} />
-    </>
+    <ThemeProvider>
+      <>
+        {hasGa && consent === 'granted' && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){window.dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}', { page_path: window.location.pathname });
+              `}
+            </Script>
+          </>
+        )}
+        {content}
+        <CookieConsent consent={consent} onConsent={handleConsent} />
+      </>
+    </ThemeProvider>
   );
 }
 

@@ -3,6 +3,7 @@
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: 'class',
   content: [
     './pages/**/*.{js,jsx,ts,tsx}',
     './components/**/*.{js,jsx,ts,tsx}',
@@ -26,9 +27,18 @@ module.exports = {
           green: '#4A6C56',
           greenDark: '#3A5443',
           bg: '#F5F5F7',
+          'bg-dark': '#050816',
           text: '#1D1D1F',
+          'text-dark': '#E5E7EB',
           accent: '#0070C9',
           cardBorder: '#E2E4EA',
+          'cardBorder-dark': '#374151',
+          surface: '#FFFFFF',
+          'surface-dark': '#111827',
+          'surface-muted': '#F9FAFB',
+          'surface-muted-dark': '#1F2937',
+          'surface-elevated': '#FDFDFE',
+          'surface-elevated-dark': '#1F2937',
         },
       },
       boxShadow: {

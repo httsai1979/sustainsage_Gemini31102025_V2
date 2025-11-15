@@ -160,7 +160,7 @@ export default function ServiceCaseDetailPage({
           </div>
         </div>
       </div>
-      <section className="bg-sustain-bg py-16">
+      <section className="bg-sustain-bg py-16 dark:bg-sustain-bg-dark">
         <div className="ss-container flex flex-col gap-10 lg:grid lg:grid-cols-[minmax(0,260px)_1fr]">
           <aside className="space-y-6">
             <ServiceSubnav

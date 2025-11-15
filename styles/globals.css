@@ -15,6 +15,25 @@
     --color-accent: #0070C9;
     --color-error: #D70022;
     --color-success: #28A745;
+    --ssg-bg: #F5F5F7;
+    --ssg-text: #1D1D1F;
+    --ssg-surface: #FFFFFF;
+    --ssg-border: #E2E4EA;
+    --ssg-muted: #4B4B4F;
+}
+
+.dark {
+    --color-paper: #111827;
+    --color-background: #050816;
+    --color-ink: #E5E7EB;
+    --color-ink-soft: #C7D2DF;
+    --color-accent: #4A6C56;
+    --color-success: #28A745;
+    --ssg-bg: #050816;
+    --ssg-text: #E5E7EB;
+    --ssg-surface: #111827;
+    --ssg-border: #374151;
+    --ssg-muted: #B0B8C8;
 }
 
 /* 1.2 排版 - 字體家族 */
@@ -26,12 +45,13 @@ body {
 body {
     /* 字體已在 tailwind.config.js 中設為 'font-sans' */
     @apply font-sans;
-    background-color: theme('colors.sustain.bg');
-    color: theme('colors.sustain.text');
+    background-color: var(--ssg-bg);
+    color: var(--ssg-text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: theme('fontFamily.sans');
     line-height: 1.6;
+    transition: background-color 200ms ease, color 200ms ease;
 }
 
 /* 全站容器與段落間距 */
@@ -113,18 +133,18 @@ h3 {
 
 /* 1.2.1 排版 - 全站標準文字系統 */
 .typography {
-    @apply text-slate-700 leading-relaxed tracking-tight;
+    @apply text-slate-700 leading-relaxed tracking-tight dark:text-sustain-text-dark;
 }
 
 .typography h1,
 .typography h2,
 .typography h3,
 .typography h4 {
-    @apply text-slate-900 font-semibold;
+    @apply text-slate-900 font-semibold dark:text-white;
 }
 
 .typography p {
-    @apply text-base leading-7 text-slate-700;
+    @apply text-base leading-7 text-slate-700 dark:text-sustain-text-dark/90;
 }
 
 .typography p + p {
@@ -235,7 +255,7 @@ h3 {
 }
 .card,
 .ssg-card {
-    background: var(--color-paper);
+    background: var(--ssg-surface);
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.04);
     padding: 1.75rem;
@@ -248,7 +268,7 @@ h3 {
 }
 
 .ss-card {
-    @apply rounded-3xl border border-slate-100 bg-white p-6 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:-translate-y-1 focus-within:shadow-lg md:p-8;
+    @apply rounded-3xl border border-sustain-cardBorder bg-sustain-surface p-6 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:-translate-y-1 focus-within:shadow-lg md:p-8 dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark;
 }
 
 .ss-btn-primary {
@@ -257,7 +277,7 @@ h3 {
     justify-content: center;
     padding: 0.6rem 1.4rem;
     border-radius: 9999px;
-    background-color: #4A6C56;
+    background-color: var(--color-primary);
     color: #FFFFFF;
     font-weight: 500;
     font-size: 0.95rem;
@@ -278,9 +298,9 @@ h3 {
     justify-content: center;
     padding: 0.6rem 1.4rem;
     border-radius: 9999px;
-    border: 1px solid #D0D4DF;
-    background-color: #FFFFFF;
-    color: #1D1D1F;
+    border: 1px solid var(--ssg-border);
+    background-color: var(--ssg-surface);
+    color: var(--ssg-text);
     font-weight: 500;
     font-size: 0.95rem;
     text-decoration: none;
@@ -290,8 +310,21 @@ h3 {
 .ss-btn-secondary:hover,
 .ss-btn-secondary:focus-visible {
     background-color: rgba(74,108,86,0.08);
-    border-color: #4A6C56;
-    color: #4A6C56;
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.dark .ss-btn-secondary {
+    background-color: var(--ssg-surface);
+    color: var(--ssg-text);
+    border-color: var(--ssg-border);
+}
+
+.dark .ss-btn-secondary:hover,
+.dark .ss-btn-secondary:focus-visible {
+    background-color: rgba(74,108,86,0.15);
+    border-color: var(--color-primary);
+    color: #F8FAFC;
 }
 
 .nav-link {
@@ -302,7 +335,7 @@ h3 {
     padding-bottom: 0.35rem;
     font-size: 0.95rem;
     font-weight: 600;
-    color: rgba(29,29,31,0.7);
+    color: var(--ssg-muted);
     transition: color 150ms ease;
 }
 
