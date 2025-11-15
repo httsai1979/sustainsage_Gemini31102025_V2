@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
@@ -51,13 +52,21 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-paper/90 backdrop-blur">
-      <div className="ssg-container flex items-center justify-between py-4">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-ink">
-          SustainSage Group
+    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-paper/90 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-4 py-3">
+        <Link href="/" className="flex items-center gap-3">
+          <Image
+            src="/icon-192x192.png"
+            alt="SustainSage icon"
+            width={32}
+            height={32}
+            className="h-8 w-8 rounded-full"
+            priority
+          />
+          <span className="text-lg font-semibold tracking-tight text-ink">SustainSage</span>
         </Link>
 
-        <nav className="hidden items-center gap-6 text-sm font-semibold md:flex">
+        <nav className="hidden items-center gap-6 text-sm text-ink/70 md:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
@@ -65,7 +74,7 @@ export default function Header() {
               className={
                 isActive(item.href)
                   ? 'text-primary'
-                  : 'text-ink/70 transition-colors hover:text-primary'
+                  : 'transition-colors hover:text-primary'
               }
             >
               {item.label}
@@ -73,17 +82,15 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <Link
-            href="/contact"
-            className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
-          >
-            Book a 20-minute chat
-          </Link>
+        <div className="hidden items-center gap-3 md:flex">
           <LocaleToggle onToggle={handleToggleLocale} />
+        </div>
+
+        <div className="flex items-center gap-3 md:hidden">
+          <LocaleToggle variant="mobile" onToggle={handleToggleLocale} />
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-full p-2 text-ink transition hover:bg-slate-100 md:hidden"
+            className="inline-flex items-center justify-center rounded-md border border-slate-200 p-2 text-ink transition hover:bg-slate-100"
             onClick={() => setMenuOpen(true)}
             aria-label="Open navigation"
           >
@@ -119,13 +126,6 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/contact"
-              onClick={handleNavClick}
-              className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white"
-            >
-              Book a 20-minute chat
-            </Link>
             <LocaleToggle variant="mobile" onToggle={handleToggleLocale} />
           </div>
         </div>
