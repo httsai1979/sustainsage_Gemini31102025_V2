@@ -40,6 +40,13 @@ module.exports = {
           'surface-elevated': '#FDFDFE',
           'surface-elevated-dark': '#1F2937',
         },
+        brand: {
+          bg: '#F6F2EA',
+          primary: '#C7A87A',
+          primaryDark: '#B18F5F',
+          sage: '#4A6C56',
+          ink: '#1F2933',
+        },
       },
       boxShadow: {
         card: '0 8px 20px rgba(15, 23, 42, 0.06)',

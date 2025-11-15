@@ -7,18 +7,26 @@
 
 :root {
     /* 1.1 色彩配置 - 與 tailwind.config.js 保持一致 */
-    --color-primary: #4A6C56; /* SustainSage Green */
+    --color-brand-bg: #F6F2EA;
+    --color-brand-primary: #C7A87A;
+    --color-brand-primary-dark: #B18F5F;
+    --color-brand-sage: #4A6C56;
+    --color-brand-ink: #1F2933;
+    --color-brand-border: #E5E7EB;
+
+    --color-primary: var(--color-brand-sage);
     --color-paper: #FFFFFF;
-    --color-background: #F5F5F7;
-    --color-ink: #1D1D1F;
+    --color-background: var(--color-brand-bg);
+    --color-ink: var(--color-brand-ink);
     --color-ink-soft: #4B4B4F;
-    --color-accent: #0070C9;
+    --color-text-secondary: #4B4B4F;
+    --color-accent: var(--color-brand-primary);
     --color-error: #D70022;
     --color-success: #28A745;
-    --ssg-bg: #F5F5F7;
-    --ssg-text: #1D1D1F;
+    --ssg-bg: var(--color-brand-bg);
+    --ssg-text: var(--color-brand-ink);
     --ssg-surface: #FFFFFF;
-    --ssg-border: #E2E4EA;
+    --ssg-border: var(--color-brand-border);
     --ssg-muted: #4B4B4F;
 }
 
@@ -45,8 +53,8 @@ body {
 body {
     /* 字體已在 tailwind.config.js 中設為 'font-sans' */
     @apply font-sans;
-    background-color: var(--ssg-bg);
-    color: var(--ssg-text);
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-ink);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: theme('fontFamily.sans');
@@ -238,8 +246,14 @@ h3 {
 
 /* 按鈕樣式 */
 .btn-primary {
-    @apply bg-[var(--color-primary)] text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300;
-    @apply hover:scale-[1.03] hover:shadow-lg;
+    background-color: var(--color-brand-sage);
+    color: #fff;
+    border-radius: 9999px;
+    @apply inline-flex items-center justify-center px-6 py-3 font-semibold transition-all duration-300 shadow-sm;
+}
+.btn-primary:hover {
+    background-color: var(--color-brand-primary-dark);
+    @apply scale-[1.03] shadow-lg;
 }
 .btn-secondary {
     @apply border border-[var(--color-primary)] text-[var(--color-primary)] px-6 py-3 rounded-lg font-semibold transition-all duration-300;
@@ -277,7 +291,7 @@ h3 {
     justify-content: center;
     padding: 0.6rem 1.4rem;
     border-radius: 9999px;
-    background-color: var(--color-primary);
+    background-color: var(--color-brand-sage);
     color: #FFFFFF;
     font-weight: 500;
     font-size: 0.95rem;
@@ -287,8 +301,8 @@ h3 {
 
 .ss-btn-primary:hover,
 .ss-btn-primary:focus-visible {
-    background-color: #3A5443;
-    box-shadow: 0 10px 20px rgba(58, 84, 67, 0.25);
+    background-color: var(--color-brand-primary-dark);
+    box-shadow: 0 10px 20px rgba(185, 152, 103, 0.35);
     transform: scale(1.03);
 }
 
@@ -346,7 +360,7 @@ h3 {
     right: 0;
     bottom: 0;
     height: 2px;
-    background: #4A6C56;
+    background: var(--color-brand-sage);
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 150ms ease;
@@ -354,7 +368,7 @@ h3 {
 
 .nav-link:hover,
 .nav-link:focus-visible {
-    color: #4A6C56;
+    color: var(--color-brand-sage);
 }
 
 .nav-link:hover::after,
@@ -364,7 +378,7 @@ h3 {
 }
 
 .nav-link--active {
-    color: #4A6C56;
+    color: var(--color-brand-sage);
 }
 
 /* 1.4 導航欄滾動效果 */
