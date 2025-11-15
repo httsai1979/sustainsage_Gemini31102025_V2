@@ -4,8 +4,8 @@ import cn from '@/lib/cn';
 
 const BACKGROUND_MAP = {
   default: 'bg-transparent',
-  muted: 'bg-slate-50',
-  sage: 'bg-sustain-green/5',
+  muted: 'bg-slate-50 dark:bg-sustain-surface-muted-dark',
+  sage: 'bg-sustain-green/5 dark:bg-sustain-surface-muted-dark/80',
 };
 
 export default function Section({

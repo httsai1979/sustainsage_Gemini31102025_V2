@@ -169,7 +169,7 @@ export default function Home({
     hero?.image?.alt ?? hero?.imageAlt ?? hero?.title ?? 'Coach and client in a calm conversation';
 
   return (
-    <main className="bg-sustain-bg">
+    <main className="bg-sustain-bg dark:bg-sustain-bg-dark">
       <Section>
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
           <RevealSection>
@@ -190,7 +190,7 @@ export default function Home({
                 <Link href={hero?.primaryCta?.href ?? '/contact'} className="ss-btn-primary">
                   {hero?.primaryCta?.label ?? hero?.primaryCta ?? 'Book a 20-minute chat'}
                 </Link>
-                <Link href={hero?.secondaryCta?.href ?? '/services'} className="ss-btn-secondary text-sustain-text">
+                <Link href={hero?.secondaryCta?.href ?? '/services'} className="ss-btn-secondary text-sustain-text dark:text-sustain-text-dark">
                   {hero?.secondaryCta?.label ?? hero?.secondaryCta ?? 'Who we help'}
                 </Link>
               </div>

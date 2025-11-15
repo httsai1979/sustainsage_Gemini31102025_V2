@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { Bars3Icon, ChevronDownIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 import cn from '@/lib/cn';
+import ThemeToggle from '@/components/theme/ThemeToggle';
 
 const DEFAULT_NAV_STRUCTURE = [
   { type: 'link', href: '/', labelKey: 'header.navHome' },
@@ -63,14 +64,14 @@ function LocaleToggle({ variant = 'desktop', value, onChange, label, options = [
 
   const wrapperClasses =
     variant === 'desktop'
-      ? 'relative hidden items-center md:inline-flex'
-      : 'relative inline-flex w-full items-center';
+      ? 'relative hidden items-center text-sustain-text dark:text-sustain-text-dark md:inline-flex'
+      : 'relative inline-flex w-full items-center text-sustain-text dark:text-sustain-text-dark';
 
   const selectClasses =
-    'appearance-none rounded-full border border-slate-200 bg-white px-3 py-1.5 pr-6 text-sm font-semibold leading-tight text-slate-700 shadow-sm transition focus:border-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400';
+    'appearance-none rounded-full border border-sustain-cardBorder bg-white px-3 py-1.5 pr-6 text-sm font-semibold leading-tight text-slate-700 shadow-sm transition focus:border-emerald-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark dark:text-sustain-text-dark';
 
   const iconClasses =
-    'pointer-events-none absolute right-2 top-1/2 h-2.5 w-2.5 -translate-y-1/2 text-slate-500';
+    'pointer-events-none absolute right-2 top-1/2 h-2.5 w-2.5 -translate-y-1/2 text-slate-500 dark:text-sustain-text-dark/70';
 
   const handleChange = (event) => {
     const nextLocale = event.target.value;
@@ -182,9 +183,9 @@ export default function Header() {
   const localeLabel = t('header.languageSwitcherLabel', 'Choose language');
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-paper/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-sustain-cardBorder/70 bg-paper/95 text-sustain-text transition-colors duration-300 backdrop-blur dark:border-sustain-cardBorder-dark/60 dark:bg-sustain-surface-dark/90 dark:text-sustain-text-dark">
       <div className="ss-container flex items-center justify-between py-4">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-ink">
+        <Link href="/" className="text-lg font-semibold tracking-tight text-sustain-text dark:text-sustain-text-dark">
           SustainSage Group
         </Link>
 
@@ -202,8 +203,10 @@ export default function Header() {
                   <button
                     type="button"
                     className={cn(
-                      'nav-link rounded-full px-4 py-2 transition-colors',
-                      megaOpen || isActive('/services') ? 'bg-sustain-green/10 nav-link--active' : 'hover:text-primary',
+                      'nav-link rounded-full px-4 py-2 transition-colors dark:text-sustain-text-dark',
+                      megaOpen || isActive('/services')
+                        ? 'bg-sustain-green/10 nav-link--active'
+                        : 'hover:text-primary dark:hover:text-white',
                     )}
                     aria-expanded={megaOpen}
                     aria-haspopup="true"
@@ -259,7 +262,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={cn('nav-link', isActive(item.href) && 'nav-link--active')}
+                className={cn('nav-link dark:text-sustain-text-dark', isActive(item.href) && 'nav-link--active')}
               >
                 {item.label}
               </Link>
@@ -267,22 +270,24 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 md:gap-3">
           <Link
             href="/contact"
             className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
           >
             {bookChatLabel}
           </Link>
+          <ThemeToggle className="hidden md:inline-flex" />
           <LocaleToggle
             value={currentLocale}
             onChange={handleLocaleChange}
             label={localeLabel}
             options={localeOptions}
           />
+          <ThemeToggle variant="compact" className="md:hidden" />
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-full p-2 text-ink transition hover:bg-slate-100 lg:hidden"
+            className="inline-flex items-center justify-center rounded-full p-2 text-sustain-text transition hover:bg-sustain-surface/80 dark:text-sustain-text-dark dark:hover:bg-sustain-surface-dark/70 lg:hidden"
             onClick={() => setMenuOpen(true)}
             aria-label={openMenuLabel}
           >
@@ -292,11 +297,11 @@ export default function Header() {
       </div>
 
       {menuOpen ? (
-        <div className="fixed inset-0 z-50 bg-paper/95 backdrop-blur-sm lg:hidden">
+        <div className="fixed inset-0 z-50 bg-paper/95 text-sustain-text backdrop-blur-sm dark:bg-sustain-surface-dark/95 dark:text-sustain-text-dark lg:hidden">
           <div className="flex justify-end p-4">
             <button
               type="button"
-              className="rounded-full p-2 text-ink transition hover:bg-slate-100"
+              className="rounded-full p-2 text-sustain-text transition hover:bg-sustain-surface/80 dark:text-sustain-text-dark dark:hover:bg-sustain-surface-dark/70"
               onClick={() => setMenuOpen(false)}
               aria-label={closeMenuLabel}
             >
@@ -308,7 +313,7 @@ export default function Header() {
               <Link
                 href="/services"
                 onClick={handleNavClick}
-                className="block w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-left text-base font-semibold"
+                className="block w-full rounded-2xl border border-sustain-cardBorder bg-white px-4 py-3 text-left text-base font-semibold dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark"
               >
                 {mobileServicesLabel}
               </Link>
@@ -322,7 +327,7 @@ export default function Header() {
                       <li key={link.href}>
                         <Link
                           href={link.href}
-                          className="block rounded-xl bg-white/60 px-4 py-3 text-ink transition hover:bg-sustain-green/10"
+                          className="block rounded-xl bg-white/60 px-4 py-3 text-sustain-text transition hover:bg-sustain-green/10 dark:bg-sustain-surface-dark/80 dark:text-sustain-text-dark"
                           onClick={handleNavClick}
                         >
                           <p className="font-semibold">{link.label}</p>
@@ -340,7 +345,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={handleNavClick}
-                  className={cn('nav-link text-lg w-fit', isActive(item.href) && 'nav-link--active')}
+                  className={cn('nav-link text-lg w-fit dark:text-sustain-text-dark', isActive(item.href) && 'nav-link--active')}
                 >
                   {item.label}
                 </Link>
@@ -353,6 +358,7 @@ export default function Header() {
             >
               {bookChatLabel}
             </Link>
+            <ThemeToggle className="w-fit" />
             <LocaleToggle
               variant="mobile"
               value={currentLocale}

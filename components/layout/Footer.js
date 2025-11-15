@@ -20,12 +20,12 @@ export default function Footer() {
   const navLinks = NAV_LINKS(t);
   const supportLinks = SUPPORT_LINKS(t);
   return (
-    <footer className="mt-16 bg-slate-100 text-slate-600">
+    <footer className="mt-16 bg-sustain-surface text-slate-600 transition-colors dark:bg-sustain-surface-dark dark:text-sustain-text-dark/80">
       <div className="ss-container space-y-10 py-12">
-        <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-6 shadow-md md:flex md:items-center md:justify-between md:p-8">
+        <div className="rounded-card rounded-2xl border border-sustain-cardBorder bg-sustain-surface p-6 shadow-md transition-colors dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark md:flex md:items-center md:justify-between md:p-8">
           <div className="max-w-2xl space-y-2">
-            <p className="text-lg font-semibold text-sustain-text">{t('footer.ctaTitle')}</p>
-            <p className="text-sm text-slate-600">{t('footer.ctaBody')}</p>
+            <p className="text-lg font-semibold text-sustain-text dark:text-sustain-text-dark">{t('footer.ctaTitle')}</p>
+            <p className="text-sm text-slate-600 dark:text-sustain-text-dark/80">{t('footer.ctaBody')}</p>
           </div>
           <div className="mt-4 flex flex-wrap gap-3 md:mt-0">
             <Link href="/contact" className="ss-btn-primary">
@@ -40,8 +40,8 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-[minmax(0,2fr)_repeat(2,minmax(0,1fr))]">
           <div className="space-y-4">
             <div>
-              <p className="text-base font-semibold text-sustain-text">{t('footer.companyName')}</p>
-              <p className="text-sm text-slate-600">{t('footer.companyDescription')}</p>
+              <p className="text-base font-semibold text-sustain-text dark:text-sustain-text-dark">{t('footer.companyName')}</p>
+              <p className="text-sm text-slate-600 dark:text-sustain-text-dark/80">{t('footer.companyDescription')}</p>
             </div>
             <div className="space-y-2 text-sm">
               <a href="mailto:contact@sustainsage.com" className="font-semibold text-sustain-green transition hover:text-sustain-greenDark">
@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-200 pt-6 text-xs text-slate-500">
+        <div className="border-t border-sustain-cardBorder pt-6 text-xs text-slate-500 dark:border-sustain-cardBorder-dark dark:text-sustain-text-dark/70">
           {t('footer.copyright', { year })}
         </div>
       </div>

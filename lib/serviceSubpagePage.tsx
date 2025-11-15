@@ -188,30 +188,30 @@ function ServiceSubpageLayout({
 
   return (
     <>
-      <div className="bg-gradient-to-br from-sustain-green/15 via-sustain-bg to-slate-50">
+      <div className="bg-gradient-to-br from-sustain-green/15 via-sustain-bg to-slate-50 dark:via-sustain-bg-dark dark:to-sustain-surface-dark">
         <div className="ss-container py-12 space-y-3">
           {hero.eyebrow ? (
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green">{hero.eyebrow}</p>
           ) : null}
           <div className="space-y-2">
-            <h1 className="text-3xl font-semibold leading-tight text-sustain-text md:text-4xl">
+            <h1 className="text-3xl font-semibold leading-tight text-sustain-text dark:text-sustain-text-dark md:text-4xl">
               {hero.title ?? service.title ?? 'Service detail'}
             </h1>
-            {hero.subtitle ? <p className="text-base leading-7 text-slate-700">{hero.subtitle}</p> : null}
+            {hero.subtitle ? <p className="text-base leading-7 text-slate-700 dark:text-sustain-text-dark/80">{hero.subtitle}</p> : null}
           </div>
         </div>
       </div>
-      <section className="bg-sustain-bg py-16">
+      <section className="bg-sustain-bg py-16 dark:bg-sustain-bg-dark">
         <div className="ss-container flex flex-col gap-10 lg:grid lg:grid-cols-[minmax(0,260px)_1fr]">
           <aside className="space-y-6">
             <ServiceSubnav base={basePath} tabs={tabs} active={active} orientation="vertical" />
             {resolvedCta ? (
-              <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
+              <div className="rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-sm dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark">
                 {resolvedCta.title ? (
-                  <p className="text-sm font-semibold text-sustain-text">{resolvedCta.title}</p>
+                  <p className="text-sm font-semibold text-sustain-text dark:text-sustain-text-dark">{resolvedCta.title}</p>
                 ) : null}
                 {resolvedCta.description ? (
-                  <p className="mt-2 text-sm leading-6 text-slate-700">{resolvedCta.description}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-sustain-text-dark/80">{resolvedCta.description}</p>
                 ) : null}
                 {resolvedCta.primary || resolvedCta.secondary ? (
                   <div className="mt-4 flex flex-col gap-3">
@@ -228,22 +228,22 @@ function ServiceSubpageLayout({
                   </div>
                 ) : null}
                 {resolvedCta.note ? (
-                  <p className="mt-4 text-xs leading-5 text-slate-500">{resolvedCta.note}</p>
+                  <p className="mt-4 text-xs leading-5 text-slate-500 dark:text-sustain-text-dark/70">{resolvedCta.note}</p>
                 ) : null}
               </div>
             ) : null}
           </aside>
 
           <div className="space-y-10">
-            <div className="rounded-3xl border border-sustain-cardBorder bg-white p-6 shadow-sm">
+            <div className="rounded-3xl border border-sustain-cardBorder bg-white p-6 shadow-sm dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark">
               <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{heading}</p>
               {intro ? (
-                <div className="mt-3 text-sm leading-6 text-slate-700">
+                <div className="mt-3 text-sm leading-6 text-slate-700 dark:text-sustain-text-dark/80">
                   {intro}
                 </div>
               ) : null}
               {showFallbackNotice ? (
-                <p className="mt-4 text-xs font-medium text-slate-500">{fallbackMessage}</p>
+                <p className="mt-4 text-xs font-medium text-slate-500 dark:text-sustain-text-dark/70">{fallbackMessage}</p>
               ) : null}
             </div>
 
@@ -252,11 +252,11 @@ function ServiceSubpageLayout({
             {caseCards.length > 0 ? (
               <section className="space-y-4">
                 <div>
-                  <h2 className="text-xl font-semibold text-sustain-text">
+                  <h2 className="text-xl font-semibold text-sustain-text dark:text-sustain-text-dark">
                     {service.cases?.title ?? 'Composite coaching glimpses'}
                   </h2>
                   {service.cases?.description ? (
-                    <p className="mt-2 text-sm leading-6 text-slate-700">{service.cases.description}</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-sustain-text-dark/80">{service.cases.description}</p>
                   ) : null}
                 </div>
                 <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
