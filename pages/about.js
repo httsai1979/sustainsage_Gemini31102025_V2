@@ -298,6 +298,34 @@ export default function AboutPage({
         </div>
       </section>
 
+      <section className="ss-section">
+        <RevealSection className="space-y-4 text-base leading-relaxed text-slate-700">
+          <h2 className="text-3xl font-semibold text-sustain-text">From factories to quiet conversations</h2>
+          <p>
+            Before I became a coach, I spent years in manufacturing – leading three factories and around 1,400 people across
+            Mainland China and Taiwan. My days were full of KPIs, quality issues, night-shift problems and the thousand quiet
+            decisions that never make it into annual reports.
+          </p>
+          <p>
+            Looking back from the UK now, what stays with me is not the targets we hit, but the moments in between: the plant
+            manager who closed the door and admitted he was not sleeping, the HR colleague who asked whether she had become
+            someone she did not recognise, the engineer who wondered if moving country had actually moved him closer to the life
+            he wanted.
+          </p>
+          <p>
+            Those conversations rarely had a name. They were not ‘sessions’ or ‘programmes’. They were simply human beings,
+            carrying responsibility between different worlds, trying to make choices they could live with. Coaching, for me, is a
+            way to make that kind of space intentional – especially for leaders in China–UK organisations who are asked to stand
+            in two systems at once.
+          </p>
+          <p>
+            Today, as a Taiwan-born, UK-based coach who has lived the pressure of cross-border factory leadership, I work with
+            mid-career individuals and with China–UK corporate leaders. The tools may be coaching, but the work is the same: to
+            slow down enough for you to hear yourself clearly, before you decide what to do next.
+          </p>
+        </RevealSection>
+      </section>
+
       <ValueGrid
         items={valueCards}
         eyebrow={copy?.key_points?.eyebrow}

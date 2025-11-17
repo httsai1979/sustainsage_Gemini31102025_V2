@@ -203,6 +203,10 @@ export default function ContactPage() {
       <section className="ss-section">
         <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
           <div>
+            <p className="mb-6 text-sm leading-relaxed text-slate-700">
+              If you represent a company or China–UK corporate site, please mention this in your message so I can respond with
+              options tailored to your context.
+            </p>
             <Card title={t('form.title')} subtitle={t('form.subtitle')}>
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
