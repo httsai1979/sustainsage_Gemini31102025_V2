@@ -12,6 +12,153 @@ import { loadContent } from '@/lib/loadContent';
 import { dedupeBy } from '@/lib/dedupe';
 import { sanitizeProps } from '@/lib/toSerializable';
 
+const SERVICE_ICON_MAP = {
+  'career-return': 'clock',
+  'graduate-start': 'book',
+  'immigrant-job': 'compass',
+};
+
+const SERVICE_LAYERS = [
+  {
+    id: 'strategic-leadership',
+    icon: 'target',
+    title: 'Strategic leadership development',
+    description:
+      'A bilingual, discreet partnership for senior leaders balancing China–UK contexts, stakeholder care, and people decisions.',
+    links: [
+      {
+        href: '/services/leadership',
+        label: 'Leadership partnership',
+        description: 'Monthly advisory container for CEOs, founders, and site leaders navigating board, HQ, and plant realities.',
+        highlights: ['Quarterly prioritisation labs', 'Sponsor-ready bilingual summaries'],
+      },
+      {
+        href: '/services/working-parents',
+        label: 'Sustainable working parent leadership',
+        description: 'Strengthen boundaries and flexible playbooks so caregivers in senior roles stay resourced.',
+        highlights: ['Values-based decision rehearsals', 'Safety plans for crunch seasons'],
+      },
+      {
+        href: '/corporate',
+        label: 'Corporate collaborations',
+        description: 'Bespoke support for China–UK leadership teams, bridge roles, and sponsor groups.',
+        highlights: ['Bilingual synthesis of themes', 'Clear escalation paths'],
+      },
+    ],
+  },
+  {
+    id: 'foundations-for-clarity',
+    icon: 'compass',
+    title: 'Foundations for clarity',
+    description:
+      'Reset rhythms, map constraints, and practise kinder scripts before big decisions or launches.',
+    links: [
+      {
+        href: '/services/transition',
+        label: 'Transition steadiness series',
+        description: 'Structure reflection across identity, logistics, and story so change feels paced.',
+        highlights: ['Session-by-session journey map', 'Experiments that fit your access needs'],
+      },
+      {
+        href: '/services/reset-sprint',
+        label: 'Reset sprint',
+        description: 'A focused 4-week container to triage energy leaks and rebuild simple agreements.',
+        highlights: ['Weekly micro-assignments', 'Accountability check-ins'],
+      },
+      {
+        href: '/services/how-coaching-works',
+        label: 'Readiness & scope walkthrough',
+        description: 'Understand ethics, accessibility, and how we co-design your coaching contract.',
+        highlights: ['Inclusion practices', 'Data and privacy guardrails'],
+      },
+    ],
+  },
+  {
+    id: 'sustainable-growth',
+    icon: 'handshake',
+    title: 'Sustainable growth partnership',
+    description:
+      'Build momentum over a quarter or more with clear review points and supportive experimentation.',
+    links: [
+      {
+        href: '/services/deepening-practice',
+        label: 'Deepening practice lab',
+        description: 'Designed for coaches, facilitators, and HR partners who want supervision-style reflection.',
+        highlights: ['Recorded reflection prompts', 'Ethics and scope checkpoints'],
+      },
+      {
+        href: '/services/mid-career-coaching',
+        label: 'Mid-career calibration',
+        description: 'Reconnect your story, proof points, and ambition with thoughtful experiments.',
+        highlights: ['Narrative rehearsals', 'Gentle accountability rhythms'],
+      },
+      {
+        href: '/services/returner-coaching',
+        label: 'Returner partnership',
+        description: 'Support for professionals rebuilding confidence after health, caregiving, or relocation pauses.',
+        highlights: ['Energy-aware planning', 'Sponsor and ally briefings'],
+      },
+    ],
+  },
+  {
+    id: 'mindful-transitions',
+    icon: 'calendar',
+    title: 'Mindful transitions',
+    description:
+      'Persona-specific guides so you can start from the scenario that feels closest to your life.',
+    links: [
+      {
+        href: '/services/for-newcomers-to-uk',
+        label: 'Newcomers to the UK',
+        description: 'Localise experience, manage sponsorship conversations, and ease culture shock.',
+        highlights: ['Accent and language support', 'Policy-aware job search scripts'],
+      },
+      {
+        href: '/services/for-career-returners',
+        label: 'Career returners',
+        description: 'Blend self-trust rebuilding with practical plans for childcare, pacing, and communication.',
+        highlights: ['Flexible pacing menu', 'Boundaries rehearsed in-session'],
+      },
+      {
+        href: '/services/for-parents-returning',
+        label: 'Parents returning to work',
+        description: 'Translate family care seasons into confident workplace narratives.',
+        highlights: ['Micro-celebrations toolkit', 'Employer-ready updates'],
+      },
+    ],
+  },
+];
+
+const CLIENT_CASES = [
+  {
+    id: 'leadership-transformation',
+    icon: 'handshake',
+    tag: 'Manufacturing leader · 9 months',
+    title: 'Leadership transformation',
+    challenge: 'Site lead juggling HQ demands, union negotiations, and family care in two countries.',
+    approach: 'Bi-weekly bilingual coaching plus asynchronous check-ins for sponsor alignment.',
+    shift: 'Clearer stakeholder scripts, steadier delegation, and a calmer handover plan.',
+  },
+  {
+    id: 'career-pivot-success',
+    icon: 'compass',
+    tag: 'Career pivot · 4 months',
+    title: 'Career pivot success',
+    challenge: 'Senior analyst moving sectors after redundancy and feeling stuck translating experience.',
+    approach: 'Values mapping, interview labs, and portfolio experiments grounded in access needs.',
+    shift: 'Secured a sustainable hybrid role with boundaries rehearsed with their new manager.',
+  },
+  {
+    id: 'community-breakthrough',
+    icon: 'spark',
+    tag: 'Community builder · 3 months',
+    title: 'Community breakthrough',
+    challenge: 'Grassroots organiser burning out while scaling programmes across languages.',
+    approach: 'Reset sprint plus co-created delegation scripts for volunteers and funders.',
+    shift: 'More rested leadership, multi-lingual documentation, and a confident funding story.',
+  },
+];
+
 export default function ServicesPage({
   cards = [],
   showFallbackNotice = false,
@@ -52,7 +199,10 @@ export default function ServicesPage({
       ];
 
   // Deduplicate CMS cards once so each package renders exactly once.
-  const uniqueCards = dedupeBy(cards, (card) => card.slug ?? card.title);
+  const uniqueCards = dedupeBy(cards, (card) => card.slug ?? card.title).map((card) => ({
+    ...card,
+    iconName: card?.iconName ?? SERVICE_ICON_MAP[card?.slug] ?? 'spark',
+  }));
 
   return (
     <main className="ss-container">
@@ -106,6 +256,56 @@ export default function ServicesPage({
         </div>
       </section>
 
+      <section className="ss-section" aria-labelledby="service-layers-heading">
+        <RevealSection className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Layered pathways</p>
+          <h2 id="service-layers-heading" className="text-3xl font-semibold text-sustain-text">
+            How I can support you
+          </h2>
+          <p className="text-base text-slate-700">
+            Start with the card that matches your context, then follow the links to see detailed second- and third-layer pages
+            with full outlines.
+          </p>
+        </RevealSection>
+        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {SERVICE_LAYERS.map((layer, index) => (
+            <RevealSection key={layer.id} delay={(index % 2) * 0.1}>
+              <Card icon={<Icon name={layer.icon} />} title={layer.title} subtitle={layer.description}>
+                <ul className="space-y-5">
+                  {layer.links.map((link) => (
+                    <li key={link.href} className="rounded-2xl border border-sustain-cardBorder/70 bg-white/70 p-4">
+                      <div className="flex items-start gap-3">
+                        <div className="flex-1">
+                          <Link href={link.href} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
+                            {link.label}
+                            <span aria-hidden>→</span>
+                          </Link>
+                          <p className="mt-2 text-sm text-slate-700">{link.description}</p>
+                          {Array.isArray(link.highlights) && link.highlights.length ? (
+                            <ul className="mt-3 space-y-1 text-xs font-medium text-slate-500">
+                              {link.highlights.map((point) => (
+                                <li key={point} className="flex items-center gap-2">
+                                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-sustain-green/10 text-sustain-green">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5" stroke="currentColor" strokeWidth="2" fill="none">
+                                      <path d="M5 12l4 4 10-10" />
+                                    </svg>
+                                  </span>
+                                  <span>{point}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          ) : null}
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </Card>
+            </RevealSection>
+          ))}
+        </div>
+      </section>
+
       <section id="support" className="ss-section">
         <RevealSection className="space-y-4 text-center md:text-left">
           {pathways?.eyebrow ? (
@@ -126,7 +326,7 @@ export default function ServicesPage({
                 <Card
                   title={card.title}
                   subtitle={card.excerpt}
-                  icon={<Icon name="spark" />}
+                  icon={<Icon name={card.iconName} />}
                   footer={
                     <Link href={`/services/${card.slug}`} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
                       {card.ctaLabel ?? pathways?.viewDetails ?? 'View details'}
@@ -194,6 +394,40 @@ export default function ServicesPage({
             <RevealSection key={card.title} delay={index * 0.1}>
               <Card title={card.title}>
                 <p className="text-sm leading-relaxed text-slate-700">{card.body}</p>
+              </Card>
+            </RevealSection>
+          ))}
+        </div>
+      </section>
+
+      <section className="ss-section" aria-labelledby="client-stories-heading">
+        <RevealSection className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Client transformations</p>
+          <h2 id="client-stories-heading" className="text-3xl font-semibold text-sustain-text">
+            Real client transformations
+          </h2>
+          <p className="text-base text-slate-700">
+            Every partnership protects confidentiality; the composites below show how layered pathways play out in real life.
+          </p>
+        </RevealSection>
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {CLIENT_CASES.map((story, index) => (
+            <RevealSection key={story.id} delay={(index % 3) * 0.1}>
+              <Card icon={<Icon name={story.icon} />} tag={story.tag} title={story.title}>
+                <div className="space-y-3 text-sm leading-relaxed text-slate-700">
+                  <p>
+                    <span className="font-semibold text-sustain-text">Challenge: </span>
+                    {story.challenge}
+                  </p>
+                  <p>
+                    <span className="font-semibold text-sustain-text">Approach: </span>
+                    {story.approach}
+                  </p>
+                  <p>
+                    <span className="font-semibold text-sustain-text">Shift: </span>
+                    {story.shift}
+                  </p>
+                </div>
               </Card>
             </RevealSection>
           ))}
