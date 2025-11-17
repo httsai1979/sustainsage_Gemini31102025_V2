@@ -347,9 +347,9 @@ h3 {
     align-items: center;
     gap: 0.15rem;
     padding-bottom: 0.35rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    color: var(--ssg-muted);
+    color: var(--ssg-text);
     transition: color 150ms ease;
 }
 

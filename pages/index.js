@@ -213,6 +213,25 @@ export default function Home({
         </div>
       </Section>
 
+      <Section>
+        <RevealSection>
+          <div className="rounded-card rounded-2xl border border-sustain-cardBorder bg-white p-6 shadow-md md:p-8">
+            <div className="space-y-4 text-center md:text-left">
+              <h2 className="text-3xl font-semibold text-sustain-text">For China–UK corporate leaders</h2>
+              <p className="text-base leading-relaxed text-slate-700">
+                If you lead a China-invested business in the UK and feel pulled between head office and local realities, there is
+                a quiet place to talk it through.
+              </p>
+              <div>
+                <Link href="/corporate" className="ss-btn-primary">
+                  Learn more
+                </Link>
+              </div>
+            </div>
+          </div>
+        </RevealSection>
+      </Section>
+
       <Section id="who-we-work-with">
         <RevealSection className="space-y-4 text-center md:text-left">
           <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
