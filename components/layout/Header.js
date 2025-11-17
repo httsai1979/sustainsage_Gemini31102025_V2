@@ -10,47 +10,62 @@ import ThemeToggle from '@/components/theme/ThemeToggle';
 
 const DEFAULT_NAV_STRUCTURE = [
   { type: 'link', href: '/', labelKey: 'header.navHome' },
-  { type: 'link', href: '/about', labelKey: 'header.navAbout' },
   { type: 'services' },
-  { type: 'link', href: '/resources', labelKey: 'header.navResources' },
   { type: 'link', href: '/corporate', labelKey: 'header.navCorporate' },
-  { type: 'link', href: '/blog', labelKey: 'header.navBlog' },
-  { type: 'link', href: '/faq', labelKey: 'header.navFaq' },
-  { type: 'link', href: '/contact', labelKey: 'header.navContact' },
+  { type: 'link', href: '/resources', labelKey: 'header.navResources' },
+  { type: 'link', href: '/about', labelKey: 'header.navAbout' },
 ];
+
+const HEADER_CTA = { href: '/contact', labelKey: 'header.navContact' };
 
 const DEFAULT_MEGA_COLUMNS = [
   {
-    title: 'Coaching options',
+    title: 'Individuals & teams',
     links: [
       { label: '1:1 Coaching', href: '/services', description: 'Bespoke coaching journeys rooted in structure.' },
       { label: 'Small groups', href: '/services#group', description: 'Gather peers navigating similar turning points.' },
-      { label: 'Self-paced resources', href: '/resources', description: 'Worksheets and prompts you can start today.' },
+      {
+        label: 'Newcomers & returners',
+        href: '/for/mid-career-returners',
+        description: 'Guides for people changing countries or industries.',
+      },
     ],
   },
   {
-    title: 'Support for you',
+    title: 'Corporate & co-operate',
     links: [
-      { label: 'Mid-career reset', href: '/services#mid-career', description: 'Realign your work with new priorities.' },
-      { label: 'New to the UK', href: '/services#new-to-uk', description: 'Translate your story across cultures.' },
-      { label: 'Graduates & returners', href: '/services#graduates', description: 'Build confidence entering new chapters.' },
+      {
+        label: 'China–UK co-operate',
+        href: '/corporate',
+        description: 'Stabilise HQ and UK sites with a discreet bilingual program.',
+      },
+      {
+        label: 'Leadership partnerships',
+        href: '/services/leadership',
+        description: 'Targeted support for executives and cross-border teams.',
+      },
+      {
+        label: 'Talk to the practice',
+        href: '/contact',
+        description: 'Share what is happening across your site or HQ.',
+      },
     ],
   },
   {
-    title: 'Explore topics',
+    title: 'Learn & prepare',
     links: [
-      { label: 'Career change', href: '/#topics', description: 'Test directions without rushing decisions.' },
-      { label: 'Confidence & boundaries', href: '/#topics', description: 'Hold space for rest and clarity.' },
-      { label: 'Living in the UK', href: '/#topics', description: 'Belonging while adapting to systems.' },
+      { label: 'Resource library', href: '/resources', description: 'Worksheets and prompts you can start today.' },
+      { label: 'Articles & notes', href: '/blog', description: 'Examples-first writing on change and belonging.' },
+      { label: 'FAQ', href: '/faq', description: 'Practical answers before booking a session.' },
     ],
   },
 ];
 
 const DEFAULT_MEGA_HIGHLIGHT = {
-  title: 'Gentle support, wherever you are',
-  description: 'Bilingual online coaching grounded in ethics, structure, and practical kindness.',
-  ctaLabel: 'Explore services',
-  ctaHref: '/services',
+  title: 'Co-operate keeps China–UK sites steady',
+  description: 'Bilingual coaching for HQ sponsors, HRDs and UK leaders carrying pressure on both sides.',
+  ctaLabel: 'See the co-operate layers',
+  ctaHref: '/corporate',
 };
 
 const LANGUAGE_OPTIONS = [
@@ -182,6 +197,7 @@ export default function Header() {
   const openMenuLabel = t('header.openMenu');
   const closeMenuLabel = t('header.closeMenu');
   const localeLabel = t('header.languageSwitcherLabel', 'Choose language');
+  const navCtaLabel = t(HEADER_CTA.labelKey);
 
   const navLinkStyle = { fontSize: '0.85rem', letterSpacing: '-0.01em' };
 
@@ -191,7 +207,7 @@ export default function Header() {
         <div className="flex shrink-0 items-center">
           <Link href="/" className="flex items-center gap-3">
             <span className="relative block h-10 w-10">
-              <Image src="/brand/ssg-logo-mark.svg" alt="SustainSage Group logo" fill className="object-contain" priority />
+              <Image src="/logo.png" alt="SustainSage Group logo" fill className="object-contain" priority />
             </span>
             <span className="text-[0.95rem] font-semibold leading-tight tracking-tight text-brand-ink dark:text-sustain-text-dark">
               SustainSage
@@ -292,6 +308,12 @@ export default function Header() {
         </div>
 
         <div className="flex shrink-0 items-center gap-2 text-brand-ink md:gap-3 dark:text-sustain-text-dark">
+          <Link
+            href={HEADER_CTA.href}
+            className="hidden rounded-full border border-brand-primary/50 bg-brand-sage px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:bg-brand-primaryDark lg:inline-flex"
+          >
+            {navCtaLabel}
+          </Link>
           <ThemeToggle className="hidden md:inline-flex" />
           <LocaleToggle
             value={currentLocale}
@@ -366,6 +388,13 @@ export default function Header() {
                 </Link>
               ))}
             </div>
+            <Link
+              href={HEADER_CTA.href}
+              onClick={handleNavClick}
+              className="block rounded-2xl border border-brand-primary/60 bg-brand-sage/90 px-4 py-3 text-center text-base font-semibold text-white shadow-soft transition hover:bg-brand-sage"
+            >
+              {navCtaLabel}
+            </Link>
             <ThemeToggle className="w-fit" />
             <LocaleToggle
               variant="mobile"
