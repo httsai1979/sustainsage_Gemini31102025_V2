@@ -9,7 +9,8 @@
     "navBlog": "博客",
     "navContact": "联系",
     "openMenu": "打开导航",
-    "closeMenu": "关闭导航"
+    "closeMenu": "关闭导航",
+    "toggleServicesMenu": "切换服务选单"
   },
   "footer": {
     "philosophy": "用沉稳的对话看清方向。",

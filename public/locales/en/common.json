@@ -10,6 +10,7 @@
     "navContact": "Contact",
     "openMenu": "Open navigation",
     "closeMenu": "Close navigation",
+    "toggleServicesMenu": "Toggle services menu",
     "languageSwitcherLabel": "Choose language",
     "languages": {
       "en-GB": "English",

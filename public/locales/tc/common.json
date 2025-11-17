@@ -9,7 +9,8 @@
     "navBlog": "部落格",
     "navContact": "聯絡",
     "openMenu": "開啟導覽",
-    "closeMenu": "關閉導覽"
+    "closeMenu": "關閉導覽",
+    "toggleServicesMenu": "切換服務選單"
   },
   "footer": {
     "philosophy": "以穩定的對話釐清方向。",

@@ -10,6 +10,7 @@
     "navContact": "聯絡",
     "openMenu": "開啟導覽",
     "closeMenu": "關閉導覽",
+    "toggleServicesMenu": "切換服務選單",
     "languageSwitcherLabel": "切換語言",
     "languages": {
       "en-GB": "英文",
