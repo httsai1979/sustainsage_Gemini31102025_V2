@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,12 +20,12 @@
 
     <style>
         :root {
-            --primary-color: #3b82f6; /* blue-500 */
-            --secondary-color: #8b5cf6; /* violet-500 */
-            --accent-color: #10b981; /* emerald-500 */
-            --bg-light: #f1f5f9; /* slate-100 */
-            --text-dark: #1e293b; /* slate-800 */
-            --border-color: #e2e8f0; /* slate-200 */
+            --primary-color: #4A6C56;
+            --secondary-color: #C7A87A;
+            --accent-color: #7DA781;
+            --bg-light: #F6F2EA;
+            --text-dark: #1F2933;
+            --border-color: #E5DED0;
             --card-bg: #fff;
             --font-family: 'Noto Sans TC', 'Inter', sans-serif;
         }
@@ -54,7 +54,7 @@
         }
         .trap-card.selected {
             border-color: var(--secondary-color);
-            background-color: #f5f3ff; /* violet-50 */
+            background-color: #F3EBDA;
             transform: scale(1.03);
         }
         
@@ -73,7 +73,7 @@
         
         /* Toast Notification */
         #toast {
-            visibility: hidden; min-width: 250px; background-color: #333;
+            visibility: hidden; min-width: 250px; background-color: var(--text-dark);
             color: #fff; text-align: center; border-radius: 1rem;
             padding: 1rem; position: fixed; z-index: 1001; bottom: 2rem;
             left: 50%; transform: translateX(-50%); font-weight: bold;
