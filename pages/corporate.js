@@ -1,7 +1,5 @@
-import Head from 'next/head';
 import Link from 'next/link';
-import { useMemo } from 'react';
-import { useRouter } from 'next/router';
+import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
@@ -586,18 +584,10 @@ function ListWithDots({ items }) {
   );
 }
 
-export default function CorporatePage() {
-  const router = useRouter();
-  const copy = useMemo(() => getCorporateCopy(router.locale), [router.locale]);
-
+export default function CorporatePage({ copy }) {
   return (
-    <MainLayout>
-      <Head>
-        <title>{copy.meta.title}</title>
-        <meta name="description" content={copy.meta.description} />
-      </Head>
-      <main className="bg-brand-bg text-brand-ink">
-        <div className="ss-container space-y-16 py-12 lg:py-16">
+    <div className="bg-brand-bg text-brand-ink">
+      <div className="ss-container space-y-16 py-12 lg:py-16">
           <section className="rounded-[32px] border border-brand-primary/40 bg-gradient-to-br from-brand-bg via-white to-white/90 p-8 shadow-sustainCard lg:p-12">
             <div className="space-y-6">
               <p className="text-xs font-semibold uppercase tracking-[0.35em] text-brand-sage/80">{copy.hero.tag}</p>
@@ -747,15 +737,57 @@ export default function CorporatePage() {
               </p>
             </div>
           </section>
-        </div>
-      </main>
-    </MainLayout>
+      </div>
+    </div>
   );
 }
 
+CorporatePage.propTypes = {
+  copy: PropTypes.shape({
+    meta: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+    }),
+    hero: PropTypes.object,
+    audiencesHeading: PropTypes.string,
+    audiences: PropTypes.arrayOf(PropTypes.object),
+    pressuresHeading: PropTypes.string,
+    pressures: PropTypes.arrayOf(PropTypes.object),
+    layersHeading: PropTypes.string,
+    layers: PropTypes.arrayOf(PropTypes.object),
+    processHeading: PropTypes.string,
+    processIntro: PropTypes.string,
+    process: PropTypes.arrayOf(PropTypes.object),
+    cta: PropTypes.object,
+  }).isRequired,
+};
+
+CorporatePage.getLayout = function getLayout(page) {
+  const seo = page.props?.seo ?? {};
+  return (
+    <MainLayout
+      seo={{
+        title: seo.title,
+        description: seo.description,
+      }}
+    >
+      {page}
+    </MainLayout>
+  );
+};
+
 export async function getStaticProps({ locale }) {
   const currentLocale = locale ?? FALLBACK_LOCALE;
+  const copy = getCorporateCopy(currentLocale);
+
   return {
-    props: await serverSideTranslations(currentLocale, ['common']),
+    props: {
+      copy,
+      seo: {
+        title: copy.meta.title,
+        description: copy.meta.description,
+      },
+      ...(await serverSideTranslations(currentLocale, ['common'])),
+    },
   };
 }
