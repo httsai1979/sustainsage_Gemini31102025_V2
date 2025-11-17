@@ -202,6 +202,8 @@ export default function Header() {
   const localeLabel = t('header.languageSwitcherLabel', 'Choose language');
   const navCtaLabel = t(HEADER_CTA.labelKey);
   const toggleServicesLabel = t('header.toggleServicesMenu', 'Toggle services menu');
+  const megaHeadingLabel = t('header.mega.headingLabel', 'Services overview');
+  const openServicesLabel = t('header.mega.openServicesLink', t('actions.viewServices', 'Open services overview'));
 
   const navLinkClasses =
     'nav-link inline-flex items-center rounded-full px-4 py-2 text-sm font-semibold text-brand-ink transition-colors dark:text-sustain-text-dark';
@@ -241,39 +243,42 @@ export default function Header() {
                       onMouseLeave={() => setMegaOpen(false)}
                       onBlur={handleMegaBlur}
                     >
-                      <div className="inline-flex items-center gap-1 rounded-full border border-transparent bg-transparent">
-                        <Link
-                          href={item.href || '/services'}
-                          className={cn(
-                            navLinkClasses,
-                            megaOpen && 'bg-brand-primary/10 text-brand-sage',
-                            isActive('/services') ? navLinkActiveClasses : navLinkHoverClasses
-                          )}
-                          onClick={() => setMegaOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
-                        <button
-                          type="button"
-                          className={cn(
-                            'inline-flex h-8 w-8 items-center justify-center rounded-full text-brand-ink transition dark:text-sustain-text-dark',
-                            megaOpen ? 'bg-brand-primary/10 text-brand-sage' : 'hover:text-brand-sage dark:hover:text-white'
-                          )}
-                          aria-expanded={megaOpen}
-                          aria-haspopup="true"
-                          aria-label={toggleServicesLabel}
-                          aria-controls={megaMenuId}
-                          onClick={() => setMegaOpen((prev) => !prev)}
-                        >
-                          <ChevronDownIcon className={cn('h-4 w-4 transition', megaOpen ? 'rotate-180' : '')} aria-hidden />
-                        </button>
-                      </div>
+                      <button
+                        type="button"
+                        className={cn(
+                          navLinkClasses,
+                          'gap-2 pr-3',
+                          megaOpen ? 'bg-brand-primary/10 text-brand-sage' : navLinkHoverClasses,
+                          isActive('/services') && navLinkActiveClasses
+                        )}
+                        aria-expanded={megaOpen}
+                        aria-haspopup="true"
+                        aria-controls={megaMenuId}
+                        aria-label={toggleServicesLabel}
+                        onClick={() => setMegaOpen((prev) => !prev)}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronDownIcon className={cn('h-4 w-4 transition', megaOpen ? 'rotate-180' : '')} aria-hidden />
+                      </button>
                       {megaOpen ? (
                         <div
                           id={megaMenuId}
                           className="absolute left-1/2 top-full z-30 mt-4 hidden w-[min(1000px,calc(100vw-2rem))] -translate-x-1/2 rounded-3xl border border-brand-primary/40 bg-brand-bg/95 p-8 text-brand-ink shadow-2xl lg:block dark:border-sustain-cardBorder-dark/60 dark:bg-sustain-surface-dark"
                         >
-                          <div className="grid gap-8 lg:grid-cols-[repeat(3,minmax(0,1fr))_minmax(0,1.2fr)]">
+                          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-primary/20 pb-4">
+                            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-brand-sage/90">
+                              {megaHeadingLabel}
+                            </p>
+                            <Link
+                              href={item.href || '/services'}
+                              className="inline-flex items-center gap-2 rounded-full border border-brand-primary/40 bg-white/80 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-brand-ink transition hover:border-brand-primary hover:text-brand-sage dark:bg-sustain-surface-dark/70"
+                              onClick={() => setMegaOpen(false)}
+                            >
+                              <span>{openServicesLabel}</span>
+                              <ChevronDownIcon className="h-3.5 w-3.5 -rotate-90" aria-hidden />
+                            </Link>
+                          </div>
+                          <div className="mt-6 grid gap-8 lg:grid-cols-[repeat(3,minmax(0,1fr))_minmax(0,1.2fr)]">
                             {resolvedMegaColumns.map((column) => (
                               <div key={column.title}>
                                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-brand-sage/90">
