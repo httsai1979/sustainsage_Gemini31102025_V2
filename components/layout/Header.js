@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
@@ -12,6 +13,7 @@ const DEFAULT_NAV_STRUCTURE = [
   { type: 'link', href: '/about', labelKey: 'header.navAbout' },
   { type: 'services' },
   { type: 'link', href: '/resources', labelKey: 'header.navResources' },
+  { type: 'link', href: '/corporate', labelKey: 'header.navCorporate' },
   { type: 'link', href: '/blog', labelKey: 'header.navBlog' },
   { type: 'link', href: '/faq', labelKey: 'header.navFaq' },
   { type: 'link', href: '/contact', labelKey: 'header.navContact' },
@@ -177,19 +179,24 @@ export default function Header() {
       ? { ...DEFAULT_MEGA_HIGHLIGHT, ...highlight }
       : DEFAULT_MEGA_HIGHLIGHT;
   const mobileServicesLabel = t('header.mega.mobileCta', t('actions.exploreServices'));
-  const bookChatLabel = t('actions.bookChat');
   const openMenuLabel = t('header.openMenu');
   const closeMenuLabel = t('header.closeMenu');
   const localeLabel = t('header.languageSwitcherLabel', 'Choose language');
 
   return (
-    <header className="sticky top-0 z-40 border-b border-sustain-cardBorder/70 bg-paper/95 text-sustain-text transition-colors duration-300 backdrop-blur dark:border-sustain-cardBorder-dark/60 dark:bg-sustain-surface-dark/90 dark:text-sustain-text-dark">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/95 text-brand-ink backdrop-blur-[10px] transition-colors duration-300 dark:border-sustain-cardBorder-dark/60 dark:bg-sustain-surface-dark/90 dark:text-sustain-text-dark">
       <div className="ss-container flex items-center justify-between py-4">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-sustain-text dark:text-sustain-text-dark">
-          SustainSage Group
+        <Link href="/" className="flex items-center gap-3">
+          <span className="relative block h-8 w-8">
+            <Image src="/brand/ssg-logo-mark.png" alt="SustainSage Group logo" fill className="object-contain" priority />
+          </span>
+          <span className="text-base font-semibold tracking-tight text-brand-ink dark:text-sustain-text-dark">
+            SustainSage
+            <br className="hidden sm:inline" /> Group
+          </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 lg:flex">
+        <nav className="hidden flex-nowrap items-center gap-5 whitespace-nowrap lg:flex">
           {navStructure.map((item, index) => {
             if (item.type === 'services') {
               return (
@@ -271,12 +278,6 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2 md:gap-3">
-          <Link
-            href="/contact"
-            className="hidden rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white transition hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary md:inline-flex"
-          >
-            {bookChatLabel}
-          </Link>
           <ThemeToggle className="hidden md:inline-flex" />
           <LocaleToggle
             value={currentLocale}
@@ -351,13 +352,6 @@ export default function Header() {
                 </Link>
               ))}
             </div>
-            <Link
-              href="/contact"
-              onClick={handleNavClick}
-              className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2 text-sm font-semibold text-white"
-            >
-              {bookChatLabel}
-            </Link>
             <ThemeToggle className="w-fit" />
             <LocaleToggle
               variant="mobile"

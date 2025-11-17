@@ -220,6 +220,20 @@ export default function ServicesPage({
           </div>
         </RevealSection>
       </section>
+
+      <section className="ss-section">
+        <div className="rounded-card rounded-2xl border border-sustain-cardBorder bg-white p-6 text-center shadow-md md:p-10">
+          <h2 className="text-3xl font-semibold text-sustain-text">Support for China–UK corporate leaders</h2>
+          <p className="mt-4 text-base leading-relaxed text-slate-700">
+            Alongside individual coaching, I also work with leaders and HQ teams in China–UK businesses who manage UK sites and teams.
+          </p>
+          <div className="mt-6 flex justify-center">
+            <Link href="/corporate" className="ss-btn-primary">
+              See corporate leaders page
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
