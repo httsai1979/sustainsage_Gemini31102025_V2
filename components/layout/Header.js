@@ -12,6 +12,7 @@ const DEFAULT_NAV_STRUCTURE = [
   { type: 'link', href: '/about', labelKey: 'header.navAbout' },
   { type: 'services' },
   { type: 'link', href: '/resources', labelKey: 'header.navResources' },
+  { type: 'link', href: '/corporate', labelKey: 'header.navCorporate' },
   { type: 'link', href: '/blog', labelKey: 'header.navBlog' },
   { type: 'link', href: '/faq', labelKey: 'header.navFaq' },
   { type: 'link', href: '/contact', labelKey: 'header.navContact' },
