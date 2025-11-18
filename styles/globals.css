@@ -14,29 +14,33 @@
     --color-brand-ink: #1F2933;
     --color-brand-border: #E5E7EB;
 
-    --color-primary: var(--color-brand-sage);
-    --color-paper: #FFFFFF;
-    --color-background: var(--color-brand-bg);
-    --color-ink: var(--color-brand-ink);
-    --color-ink-soft: #4B4B4F;
-    --color-text-secondary: #4B4B4F;
-    --color-accent: var(--color-brand-primary);
+    --color-page-bg: #F5F5F7;
+    --color-card-bg: #FFFFFF;
+    --color-primary: #4A6C56;
+    --color-primary-soft: #6B8872;
+    --color-ink: #1D1D1F;
+    --color-ink-soft: #4B5563;
+    --color-text-secondary: #4B5563;
+    --color-accent: #0070C9;
     --color-error: #D70022;
     --color-success: #28A745;
-    --ssg-bg: var(--color-brand-bg);
-    --ssg-text: var(--color-brand-ink);
-    --ssg-surface: #FFFFFF;
-    --ssg-border: var(--color-brand-border);
-    --ssg-muted: #4B4B4F;
+    --color-border-subtle: #E5E7EB;
+    --ssg-bg: var(--color-page-bg);
+    --ssg-text: var(--color-ink);
+    --ssg-surface: var(--color-card-bg);
+    --ssg-border: var(--color-border-subtle);
+    --ssg-muted: var(--color-text-secondary);
 }
 
 .dark {
     --color-paper: #111827;
-    --color-background: #050816;
+    --color-page-bg: #050816;
+    --color-card-bg: #111827;
     --color-ink: #E5E7EB;
     --color-ink-soft: #C7D2DF;
     --color-accent: #4A6C56;
     --color-success: #28A745;
+    --color-border-subtle: #374151;
     --ssg-bg: #050816;
     --ssg-text: #E5E7EB;
     --ssg-surface: #111827;
@@ -53,8 +57,8 @@ body {
 body {
     /* 字體已在 tailwind.config.js 中設為 'font-sans' */
     @apply font-sans;
-    background-color: var(--color-brand-bg);
-    color: var(--color-brand-ink);
+    background-color: var(--color-page-bg);
+    color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-family: theme('fontFamily.sans');
@@ -141,18 +145,18 @@ h3 {
 
 /* 1.2.1 排版 - 全站標準文字系統 */
 .typography {
-    @apply text-slate-700 leading-relaxed tracking-tight dark:text-sustain-text-dark;
+    @apply text-sustain-textMuted leading-relaxed tracking-tight dark:text-sustain-text-dark;
 }
 
 .typography h1,
 .typography h2,
 .typography h3,
 .typography h4 {
-    @apply text-slate-900 font-semibold dark:text-white;
+    @apply text-sustain-textMain font-semibold dark:text-white;
 }
 
 .typography p {
-    @apply text-base leading-7 text-slate-700 dark:text-sustain-text-dark/90;
+    @apply text-base leading-7 text-sustain-textMuted dark:text-sustain-text-dark/90;
 }
 
 .typography p + p {
@@ -173,7 +177,7 @@ h3 {
 }
 
 .typography blockquote {
-    @apply border-l-4 border-sage/40 pl-6 italic text-slate-800;
+    @apply border-l-4 border-sustain-primary/40 pl-6 italic text-sustain-textMain;
 }
 
 .typography strong {

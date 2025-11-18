@@ -1,0 +1,71 @@
+{
+  "seo": {
+    "title": "Contact | SustainSage",
+    "description": "Reach out for a calm, ICF-aligned exploratory chat. Share your context, understand our boundaries, and decide whether coaching is the right next step."
+  },
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "hero": {
+    "eyebrow": "Get in touch, no rush",
+    "title": "If you’re not sure where to start, that’s okay.",
+    "intro": [
+      "Share a few lines about what is changing. We respond with clarity and respect your pace.",
+      "You can share as much or as little as you like; we usually reply within three UK working days.",
+      "A low-pressure way to see if working together makes sense."
+    ],
+    "chips": [
+      "Free exploratory call",
+      "Reply within 2–3 UK working days",
+      "No mailing list"
+    ]
+  },
+  "form": {
+    "title": "Send us a note",
+    "description": [
+      "Short bullet points are enough. You stay in control of what you disclose.",
+      "We read every note and reply within three UK working days with a few options for the exploratory call."
+    ],
+    "responseNote": "Replies land within two to three UK working days.",
+    "fields": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "you@example.com"
+      },
+      "howFound": {
+        "label": "How did you find this site?",
+        "placeholder": "e.g. referral, LinkedIn, web search"
+      },
+      "message": {
+        "label": "What would you like to talk about?",
+        "placeholder": "Examples: relocating to the UK, returning to work after caregiving, cross-cultural leadership, feeling unsure about next steps."
+      }
+    },
+    "consent": {
+      "labelBeforeLink": "I have reviewed the",
+      "linkLabel": "Coaching Boundaries",
+      "labelAfterLink": "and consent to SustainSage contacting me about coaching.",
+      "helper": "This confirms the coaching scope and how we handle your information."
+    },
+    "submitLabel": "Send message",
+    "submittingLabel": "Sending…",
+    "successMessage": "Thank you. We’ll reply within two to three UK working days.",
+    "errorMessage": "Something went wrong. Please try again or email contact@sustainsage.com.",
+    "errorRequired": "Please complete the required fields and confirm consent."
+  },
+  "directContact": {
+    "title": "Prefer email or phone?",
+    "body": [
+      "Email or call if the form doesn’t work for you. We respond with the same care and keep conversations confidential.",
+      "Leave a voicemail or WhatsApp note for slower-paced replies."
+    ],
+    "emailLabel": "Email",
+    "email": "contact@sustainsage.com",
+    "phoneLabel": "Phone (UK)",
+    "phone": "+44 (0)20 8638 7870",
+    "note": "Weekdays 09:00–17:00 UK time. Leave a voicemail or WhatsApp note if we miss you.",
+    "iconName": "chat"
+  }
+}

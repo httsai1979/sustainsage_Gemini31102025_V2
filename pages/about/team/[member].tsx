@@ -126,7 +126,7 @@ export async function getStaticProps({ params, locale = 'en-GB' }) {
     usedLocale: memberContent.locale,
     locale,
     fallbackNotice: memberContent.data?.fallbackNotice ?? null,
-    ...(await serverSideTranslations(locale, ['common'])),
+    ...(await serverSideTranslations(locale, ['common', 'nav'])),
   };
 
   return {

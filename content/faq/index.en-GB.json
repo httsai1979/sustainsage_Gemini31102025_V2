@@ -1,0 +1,181 @@
+{
+  "hero": {
+    "eyebrow": "Questions you might have",
+    "title": "FAQ",
+    "intro": [
+      "Honest answers so you can decide what support fits now.",
+      "We stay within ICF ethics: no promises, no pressure, and referrals when coaching is not the right container."
+    ]
+  },
+  "sections": [
+    {
+      "id": "about-coaching",
+      "title": "About coaching",
+      "lead": "Scope, boundaries, and who tends to benefit from working with us.",
+      "iconName": "compass",
+      "faqs": [
+        {
+          "id": "what-happens-in-session",
+          "question": "What happens in a coaching session?",
+          "answer": [
+            "Coaching is a collaborative, future-leaning conversation.",
+            "You set the agenda, we ask reflective questions, and we co-design experiments."
+          ]
+        },
+        {
+          "id": "coaching-vs-therapy",
+          "question": "How is coaching different from therapy or mentoring?",
+          "answer": [
+            "Therapy diagnoses or treats mental health needs, while mentors or consultants provide directive plans—those stay outside coaching.",
+            "We follow the International Coaching Federation Code of Ethics."
+          ]
+        },
+        {
+          "id": "icf-aligned",
+          "question": "What does it mean that your work is ICF-aligned?",
+          "answer": [
+            "We follow the International Coaching Federation Code of Ethics.",
+            "That means informed consent, confidentiality with clear limits, data care, and regular check-ins on how our partnership is working for you."
+          ]
+        },
+        {
+          "id": "who-benefits",
+          "question": "Who usually benefits from coaching with you?",
+          "answer": [
+            "Clients are often navigating relocation, career rebuilds, care responsibilities, or cross-cultural leadership.",
+            "They want space to think, experiment, and name boundaries without being told what to do."
+          ]
+        },
+        {
+          "id": "when-not-right",
+          "question": "When might coaching not be the right support?",
+          "answer": [
+            "If you need crisis intervention, clinical treatment, legal or financial advice, coaching is not sufficient.",
+            "We can pause, signpost other professionals, or suggest resources that better match the support you need."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practicalities",
+      "title": "Practicalities",
+      "lead": "What sessions look like, how often we meet, and how we handle logistics.",
+      "iconName": "calendar",
+      "faqs": [
+        {
+          "id": "how-often-do-we-meet",
+          "question": "How often do we meet?",
+          "answer": [
+            "Individuals often start with six sessions over two to three months.",
+            "Organisations may commission three or six-month programmes, and you can pause or extend after each review."
+          ]
+        },
+        {
+          "id": "online-sessions",
+          "question": "Do you offer online sessions?",
+          "answer": [
+            "Sessions run on Zoom by default.",
+            "We coach in English and Mandarin, and you can switch languages in the moment if that helps you express nuance."
+          ]
+        },
+        {
+          "id": "outside-uk",
+          "question": "Do you work with clients outside the UK?",
+          "answer": [
+            "Yes. We work with teams across Europe and Asia-Pacific using online sessions, shared notes, and agreed review points.",
+            "Time zones are planned collaboratively during onboarding."
+          ]
+        },
+        {
+          "id": "cancellation",
+          "question": "What is your cancellation policy?",
+          "answer": [
+            "You can reschedule with 24 hours' notice.",
+            "Late cancellations or no-shows count as a session so we can protect time for all clients."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ethics",
+      "title": "Ethics & safety",
+      "lead": "How we hold confidentiality, handle risk, and care for your information.",
+      "iconName": "privacy",
+      "faqs": [
+        {
+          "id": "confidentiality",
+          "question": "How confidential are our sessions?",
+          "answer": [
+            "Sessions stay between us except when there is risk of harm or a legal duty to disclose.",
+            "We agree on how notes are stored, who can access them, and when they are deleted."
+          ]
+        },
+        {
+          "id": "mental-health",
+          "question": "What happens if mental health concerns show up?",
+          "answer": [
+            "We pause, name what we are noticing, and co-create a plan.",
+            "That could involve referrals to therapists, crisis services, or other professionals alongside—or instead of—coaching."
+          ]
+        },
+        {
+          "id": "safeguarding",
+          "question": "Do you work with safeguarding or legal obligations?",
+          "answer": [
+            "Yes. We comply with UK safeguarding guidance and the ICF Code of Ethics.",
+            "If a disclosure meets reporting thresholds, we inform you of the steps we must take and support you through the process."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fees",
+      "title": "Fees & agreements",
+      "lead": "How we handle pricing, organisational sponsors, and agreements.",
+      "iconName": "note",
+      "faqs": [
+        {
+          "id": "how-fees-work",
+          "question": "How do fees work?",
+          "answer": [
+            "The Pricing and packages page shows the current series, retainers, and typical fees so you can review options before we speak.",
+            "Final agreements depend on scope, session rhythm, and any access needs, so we confirm the details during your 20-minute chat.",
+            "We do not set sales targets or run deadline-driven offers, and you are free to pause or stop if circumstances change."
+          ]
+        },
+        {
+          "id": "sponsored-series",
+          "question": "How do organisation-sponsored coaching agreements work?",
+          "answer": [
+            "We start with a three-way meeting to confirm goals, boundaries, and feedback loops.",
+            "The coachee leads session agendas while sponsors receive high-level progress updates agreed in advance."
+          ]
+        },
+        {
+          "id": "sponsor-updates",
+          "question": "What information do sponsors receive?",
+          "answer": [
+            "Sponsors hear themes, not session detail.",
+            "No personal stories are shared without written consent, and safeguarding or risk concerns are handled directly with the coachee first wherever possible."
+          ]
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Still unsure?",
+    "body": [
+      "Share your context and we will confirm whether coaching, a referral, or another resource will serve you best.",
+      "Your clarity matters more than filling a slot."
+    ],
+    "primaryCta": {
+      "href": "/contact",
+      "label": "Book a 20-minute chat"
+    },
+    "secondaryCta": {
+      "href": "/services",
+      "label": "Explore coaching pathways"
+    }
+  },
+  "fallbackNotice": "Temporarily showing English content while we complete this translation."
+}
