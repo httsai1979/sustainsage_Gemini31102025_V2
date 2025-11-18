@@ -1,3 +1,9 @@
+/**
+ * Typography: wrap each article in the `.blog-article` container so the markdown body stays centered,
+ * capped at a readable width, and inherits the shared `.typography` rhythm (line-height, spacing, headings).
+ * Links & clickability: render the HTML inside `.blog-article__body` so anchors keep default pointer events
+ * and pick up the dedicated typography link rules (brand colour, underline, focus outline) for clarity.
+ */
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
@@ -10,8 +16,8 @@ import { toSerializable } from '@/lib/toSerializable';
 export default function BlogPost({ fm, html }) {
   return (
     <Section>
-      <Container>
-        <article className="prose prose-slate mx-auto max-w-3xl">
+      <Container className="flex justify-center">
+        <article className="blog-article">
           <h1>{fm.title}</h1>
           {fm.hero ? (
             <ResponsiveImage
@@ -23,7 +29,7 @@ export default function BlogPost({ fm, html }) {
               priority
             />
           ) : null}
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="blog-article__body typography" dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </Container>
     </Section>
