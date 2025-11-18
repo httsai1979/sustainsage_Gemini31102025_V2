@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ContentHero from '@/components/content/ContentHero';
 import RevealSection from '@/components/common/RevealSection';
 import MainLayout from '@/components/layout/MainLayout';
+import Button from '@/components/ui/Button';
 import CardShell from '@/components/ui/CardShell';
 import PageSection from '@/components/ui/PageSection';
 import { getBlogIndexContent } from '@/lib/blogContent';
@@ -94,7 +95,7 @@ export default function BlogPage({ content, posts = [], locale = 'en-GB', isFall
                   meta={post.meta}
                 >
                   {post.summary?.length ? (
-                    <div className="space-y-2">
+                    <div className="space-y-2 text-base leading-relaxed text-ink/70">
                       {post.summary.map((paragraph) => (
                         <p key={paragraph}>{paragraph}</p>
                       ))}
@@ -117,7 +118,7 @@ export default function BlogPage({ content, posts = [], locale = 'en-GB', isFall
       {cta?.title ? (
         <PageSection id="blog-cta" title={cta.title} background="paper">
           {Array.isArray(cta.body) ? (
-            <div className="space-y-4 text-base leading-relaxed text-sustain-textMuted">
+            <div className="space-y-4 text-base leading-relaxed text-ink/70">
               {cta.body.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -125,14 +126,14 @@ export default function BlogPage({ content, posts = [], locale = 'en-GB', isFall
           ) : null}
           <div className="mt-6 flex flex-wrap gap-3">
             {cta?.primaryCta?.href ? (
-              <Link href={cta.primaryCta.href} className="ss-btn-primary">
+              <Button href={cta.primaryCta.href}>
                 {cta.primaryCta.label ?? 'Explore services'}
-              </Link>
+              </Button>
             ) : null}
             {cta?.secondaryCta?.href ? (
-              <Link href={cta.secondaryCta.href} className="ss-btn-secondary">
+              <Button href={cta.secondaryCta.href} variant="secondary">
                 {cta.secondaryCta.label ?? 'Book a 20-minute chat'}
-              </Link>
+              </Button>
             ) : null}
           </div>
         </PageSection>
