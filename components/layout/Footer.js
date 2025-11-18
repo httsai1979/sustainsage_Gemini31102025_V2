@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
+import Button from '@/components/ui/Button';
+
 const NAV_LINKS = (t) => [
   { href: '/about', label: t('header.navAbout') },
   { href: '/services', label: t('header.navServices') },
@@ -30,12 +32,12 @@ export default function Footer() {
             <p className="text-sm text-slate-600 dark:text-sustain-text-dark/80">{t('footer.ctaBody')}</p>
           </div>
           <div className="mt-4 flex flex-wrap gap-3 md:mt-0">
-            <Link href="/contact" className="ss-btn-primary">
+            <Button href="/contact">
               {t('actions.bookChat')}
-            </Link>
-            <Link href="/services" className="ss-btn-secondary">
+            </Button>
+            <Button href="/services" variant="secondary">
               {t('actions.exploreServices')}
-            </Link>
+            </Button>
           </div>
         </div>
 

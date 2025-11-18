@@ -1,7 +1,7 @@
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import ResponsiveImage from '@/components/ui/ResponsiveImage';
+import Button from '@/components/ui/Button';
 import Section from '@/components/ui/Section';
 
 export default function TopicsHero({
@@ -35,9 +35,7 @@ export default function TopicsHero({
               {description ? <p className="mt-4 text-base leading-relaxed text-slate-700">{description}</p> : null}
               {ctaLabel && ctaHref ? (
                 <div className="mt-6">
-                  <Link href={ctaHref} className="ss-btn-primary">
-                    {ctaLabel}
-                  </Link>
+                  <Button href={ctaHref}>{ctaLabel}</Button>
                 </div>
               ) : null}
             </div>
