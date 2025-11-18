@@ -622,19 +622,6 @@ h3 {
     margin-top: 0.4rem;
 }
 
-.ssg-blog-article a {
-    color: var(--color-primary, #4a6c56);
-    text-decoration: underline;
-    text-underline-offset: 0.12em;
-    cursor: pointer;
-}
-
-.ssg-blog-article a:hover,
-.ssg-blog-article a:focus-visible {
-    text-decoration: none;
-    opacity: 0.85;
-}
-
 .ssg-blog-article,
 .ssg-blog-article * {
     pointer-events: auto;
@@ -645,22 +632,81 @@ h3 {
     color: var(--color-ink-soft, #555);
 }
 
-/* Scenario cards (Part 4) */
+.typography :where(hr){border:0;border-top:1px solid #e2e8f0;margin:1.75rem 0}
+
+/* [SSG BLOG] Card layout for Part 4 / Part 6 / Part 7 lists (h2 + p + ul and h2 + ul) */
+.ssg-blog-article a {
+    color: var(--color-primary, #4a6c56);
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.ssg-blog-article a:hover,
+.ssg-blog-article a:focus-visible {
+    text-decoration: none;
+    opacity: 0.85;
+}
+
+.ssg-blog-article h2 {
+    font-size: 1.4rem;
+    margin-top: 2.75rem;
+    margin-bottom: 0.9rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.ssg-blog-article h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 1.75rem;
+}
+
+.ssg-blog-article h2 + p + ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    margin-top: 0.75rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.ssg-blog-article h2 + p + ul > li {
+    padding: 1rem 1.2rem;
+    border-radius: 1rem;
+    background: var(--color-paper, #f5f5f7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+.ssg-blog-article h2 + p + ul > li strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
 .ssg-blog-article h2 + ul {
     list-style: none;
     padding-left: 0;
     margin-left: 0;
+    margin-top: 0.75rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
 }
 
 .ssg-blog-article h2 + ul > li {
-    padding: 1rem 1.15rem;
+    padding: 1rem 1.2rem;
     border-radius: 1rem;
-    background: var(--color-card-bg, #ffffff);
-    border: 1px solid rgba(0,0,0,0.05);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    background: var(--color-paper, #f5f5f7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    font-size: 0.98rem;
+    line-height: 1.6;
 }
 
 .ssg-blog-article h2 + ul > li strong {
@@ -669,31 +715,13 @@ h3 {
     font-weight: 600;
 }
 
-/* Tool & related reading quote cards */
-.ssg-blog-article blockquote {
-    margin: 0.75rem 0 1.1rem;
-    padding: 0.9rem 1.1rem;
-    border-radius: 1rem;
-    background: var(--color-card-bg, #ffffff);
-    border-left: 3px solid var(--color-primary, #4a6c56);
-    box-shadow: 0 3px 8px rgba(0,0,0,0.02);
-    font-size: 0.98rem;
+.ssg-blog-article h2 + p {
+    margin-bottom: 0.4rem;
 }
 
-.ssg-blog-article blockquote p {
-    margin: 0.1rem 0;
+@media (max-width: 640px) {
+    .ssg-blog-article h2 + p + ul,
+    .ssg-blog-article h2 + ul {
+        grid-template-columns: 1fr;
+    }
 }
-
-.ssg-blog-article blockquote a {
-    font-weight: 500;
-}
-
-.ssg-blog-article h2 + p + blockquote,
-.ssg-blog-article h2 + blockquote {
-    margin-top: 0.75rem;
-}
-
-.ssg-blog-article h2 + blockquote + blockquote {
-    margin-top: 0.5rem;
-}
-.typography :where(hr){border:0;border-top:1px solid #e2e8f0;margin:1.75rem 0}
