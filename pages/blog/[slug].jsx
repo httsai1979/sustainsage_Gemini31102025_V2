@@ -1,3 +1,9 @@
+/**
+ * Typography: blog posts now sit inside a dedicated `.blog-article` wrapper so the content width, spacing,
+ * and readable rhythm come from the shared `.typography` rules instead of default prose styles.
+ * Links: anchors inside the markdown body inherit the refreshed `.typography` link styling and are no longer
+ * covered by extra wrappers, ensuring they look and behave like interactive elements.
+ */
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
@@ -10,8 +16,8 @@ import { toSerializable } from '@/lib/toSerializable';
 export default function BlogPost({ fm, html }) {
   return (
     <Section>
-      <Container>
-        <article className="prose prose-slate mx-auto max-w-3xl">
+      <Container className="flex justify-center">
+        <article className="blog-article">
           <h1>{fm.title}</h1>
           {fm.hero ? (
             <ResponsiveImage
@@ -23,7 +29,7 @@ export default function BlogPost({ fm, html }) {
               priority
             />
           ) : null}
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="blog-article__body typography" dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </Container>
     </Section>

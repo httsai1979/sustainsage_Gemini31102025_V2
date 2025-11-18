@@ -6,6 +6,7 @@ import ContentHero from '@/components/content/ContentHero';
 import RevealSection from '@/components/common/RevealSection';
 import MainLayout from '@/components/layout/MainLayout';
 import Accordion from '@/components/ui/Accordion';
+import Button from '@/components/ui/Button';
 import Icon from '@/components/ui/Icon';
 import PageSection from '@/components/ui/PageSection';
 import { getFAQPageContent } from '@/lib/faqContent';
@@ -31,7 +32,7 @@ function FAQSection({ section }) {
   const items = faqs.map((faq, index) => {
     const paragraphs = toParagraphs(faq?.answer);
     const answer = paragraphs.length ? (
-      <div className="space-y-3 text-sm leading-relaxed text-sustain-textMuted">
+      <div className="space-y-3 text-base leading-relaxed text-ink/70">
         {paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
@@ -87,7 +88,7 @@ function CTASection({ cta }) {
   return (
     <PageSection id={cta?.id ?? 'faq-cta'} title={cta.title} background="paper">
       {body.length ? (
-        <div className="space-y-4 text-base leading-relaxed text-sustain-textMuted">
+        <div className="space-y-4 text-base leading-relaxed text-ink/70">
           {body.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -95,14 +96,14 @@ function CTASection({ cta }) {
       ) : null}
       <div className="mt-6 flex flex-wrap gap-3">
         {cta?.primaryCta?.href ? (
-          <Link href={cta.primaryCta.href} className="ss-btn-primary">
+          <Button href={cta.primaryCta.href}>
             {cta.primaryCta.label ?? 'Book a 20-minute chat'}
-          </Link>
+          </Button>
         ) : null}
         {cta?.secondaryCta?.href ? (
-          <Link href={cta.secondaryCta.href} className="ss-btn-secondary">
+          <Button href={cta.secondaryCta.href} variant="secondary">
             {cta.secondaryCta.label ?? 'Explore services'}
-          </Link>
+          </Button>
         ) : null}
       </div>
     </PageSection>

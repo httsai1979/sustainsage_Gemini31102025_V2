@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import type { ReactNode } from 'react';
 
-import cn from '@/lib/cn';
-
-import { H2 } from './H';
 import Prose from './Prose';
+import SectionContainer from './SectionContainer';
+import SectionHeading from './SectionHeading';
 
 interface PageSectionProps {
   id?: string;
@@ -27,22 +26,11 @@ export default function PageSection({
   prose = false,
   background = 'default',
 }: PageSectionProps) {
-  const backgroundClass = background === 'paper' ? 'bg-paper' : '';
   return (
-    <section id={id} className={cn('ssg-section', backgroundClass, className)}>
-      <div className="ssg-container">
-        {(eyebrow || title || lead) && (
-          <header className="mb-10 max-w-3xl space-y-3">
-            {eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary/80">{eyebrow}</p>
-            ) : null}
-            {title ? <H2 className="text-ink">{title}</H2> : null}
-            {lead ? <p className="text-base leading-7 text-ink/80">{lead}</p> : null}
-          </header>
-        )}
-        {prose ? <Prose className="text-ink/80">{children}</Prose> : children}
-      </div>
-    </section>
+    <SectionContainer id={id} className={className} background={background === 'paper' ? 'muted' : 'default'}>
+      {(eyebrow || title || lead) && <SectionHeading eyebrow={eyebrow} title={title} subtitle={lead} />}
+      {prose ? <Prose className="mt-8 text-ink/80">{children}</Prose> : <div className="mt-10">{children}</div>}
+    </SectionContainer>
   );
 }
 
