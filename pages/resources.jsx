@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ContentHero from '@/components/content/ContentHero';
 import MainLayout from '@/components/layout/MainLayout';
 import ServicesSectionRenderer from '@/components/services/ServicesSectionRenderer';
+import Button from '@/components/ui/Button';
 import CardShell from '@/components/ui/CardShell';
 import PageSection from '@/components/ui/PageSection';
 import { getResourcesPageContent } from '@/lib/resourcesContent';
@@ -29,31 +30,34 @@ function ToolsSection({ section }) {
 
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} lead={section?.lead}>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {tools.map((tool) => {
           const paragraphs = normalizeSummary(tool?.summary);
           const hasHref = typeof tool?.href === 'string' && tool.href.trim().length > 0;
           const ctaLabel = tool?.ctaLabel ?? fallbackCtaLabel;
           const openInNewTab = tool?.openInNewTab ?? true;
-          const Tag = hasHref ? 'a' : 'div';
           return (
             <CardShell
               key={tool?.id ?? tool?.slug ?? tool?.title}
-              as={Tag}
-              href={hasHref ? tool.href : undefined}
-              target={hasHref && openInNewTab ? '_blank' : undefined}
-              rel={hasHref && openInNewTab ? 'noreferrer noopener' : undefined}
               iconName={tool?.iconName}
               eyebrow={tool?.eyebrow}
               title={tool?.title}
             >
               {paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph} className="text-base leading-relaxed text-ink/70">
+                  {paragraph}
+                </p>
               ))}
               {hasHref && ctaLabel ? (
-                <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-sustain-primary">
-                  {ctaLabel}
-                  <span aria-hidden>→</span>
+                <div className="mt-4">
+                  <Button
+                    href={tool.href}
+                    target={openInNewTab ? '_blank' : undefined}
+                    rel={openInNewTab ? 'noreferrer noopener' : undefined}
+                    variant="secondary"
+                  >
+                    {ctaLabel}
+                  </Button>
                 </div>
               ) : null}
             </CardShell>
