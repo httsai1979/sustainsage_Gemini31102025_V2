@@ -1,7 +1,7 @@
 import RevealBase from './Reveal';
 
 export const Reveal = ({ children, className = '', threshold }) => (
-  <RevealBase className={className} threshold={threshold}>
+  <RevealBase className={className} delay={threshold}>
     {children}
   </RevealBase>
 );

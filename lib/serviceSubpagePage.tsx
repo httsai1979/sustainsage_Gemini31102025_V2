@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { CaseCard } from '@/components/cases/CaseCard';
 import { StickyCTA } from '@/components/common/StickyCTA';
 import ServiceSubnav from '@/components/services/ServiceSubnav';
+import Button from '@/components/ui/Button';
 import { SERVICE_SLUGS, type ServiceContent, type ServiceSlug } from '@/lib/serviceContentTypes';
 import { sanitizeProps } from '@/lib/toSerializable';
 import { dedupeBy } from '@/lib/dedupe';
@@ -216,14 +217,12 @@ function ServiceSubpageLayout({
                 {resolvedCta.primary || resolvedCta.secondary ? (
                   <div className="mt-4 flex flex-col gap-3">
                     {resolvedCta.primary?.href && resolvedCta.primary?.label ? (
-                      <Link href={resolvedCta.primary.href} className="ss-btn-primary text-center">
-                        {resolvedCta.primary.label}
-                      </Link>
+                      <Button href={resolvedCta.primary.href}>{resolvedCta.primary.label}</Button>
                     ) : null}
                     {resolvedCta.secondary?.href && resolvedCta.secondary?.label ? (
-                      <Link href={resolvedCta.secondary.href} className="ss-btn-secondary text-center">
+                      <Button href={resolvedCta.secondary.href} variant="secondary">
                         {resolvedCta.secondary.label}
-                      </Link>
+                      </Button>
                     ) : null}
                   </div>
                 ) : null}

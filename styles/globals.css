@@ -54,16 +54,17 @@ body {
     height: 100%;
 }
 
-body {
-    /* 字體已在 tailwind.config.js 中設為 'font-sans' */
-    @apply font-sans;
-    background-color: var(--color-page-bg);
-    color: var(--color-ink);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-family: theme('fontFamily.sans');
-    line-height: 1.6;
-    transition: background-color 200ms ease, color 200ms ease;
+@layer base {
+    body {
+        @apply bg-background text-foreground font-sans;
+        background-color: var(--color-page-bg);
+        color: var(--color-ink);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: theme('fontFamily.sans');
+        line-height: 1.6;
+        transition: background-color 200ms ease, color 200ms ease;
+    }
 }
 
 /* 全站容器與段落間距 */
@@ -88,16 +89,17 @@ body {
 }
 
 .ssg-container {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    max-width: min(100rem, 100%);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 @media (min-width: 640px) {
     .ssg-container {
-        padding-left: 1.75rem;
-        padding-right: 1.75rem;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 
@@ -111,6 +113,20 @@ body {
 .ssg-section {
     padding-top: 4rem;
     padding-bottom: 4rem;
+}
+
+@media (min-width: 768px) {
+    .ssg-section {
+        padding-top: 4.5rem;
+        padding-bottom: 4.5rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .ssg-section {
+        padding-top: 5.5rem;
+        padding-bottom: 5.5rem;
+    }
 }
 
 .ssg-stack > * + * {

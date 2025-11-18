@@ -6,6 +6,7 @@ import ContentHero from '@/components/content/ContentHero';
 import ServicesSectionRenderer from '@/components/services/ServicesSectionRenderer';
 import MainLayout from '@/components/layout/MainLayout';
 import PageSection from '@/components/ui/PageSection';
+import Button from '@/components/ui/Button';
 import CardShell from '@/components/ui/CardShell';
 import { getServicesPageContent } from '@/lib/servicesContent';
 
@@ -15,7 +16,7 @@ function WhoSection({ sectionMeta = {}, cards = [] }) {
   if (!cards.length) return null;
   return (
     <PageSection id="services-who" eyebrow={sectionMeta?.eyebrow} title={sectionMeta?.title} lead={sectionMeta?.lead}>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {cards.map((card) => {
           const paragraphs = Array.isArray(card?.body) ? card.body : [card?.body].filter(Boolean);
           const cardProps = card?.href ? { as: Link, href: card.href } : {};
@@ -30,6 +31,13 @@ function WhoSection({ sectionMeta = {}, cards = [] }) {
               {paragraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
+              {card?.href ? (
+                <div className="mt-4">
+                  <Button href={card.href} variant="secondary">
+                    {card?.ctaLabel ?? 'Explore pathway'}
+                  </Button>
+                </div>
+              ) : null}
             </CardShell>
           );
         })}

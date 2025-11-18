@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import PropTypes from 'prop-types';
 
+import Button from '@/components/ui/Button';
 import PageSection from '@/components/ui/PageSection';
 
 export default function AboutCTA({ cta }) {
@@ -11,13 +11,9 @@ export default function AboutCTA({ cta }) {
       {actions.length ? (
         <div className="flex flex-wrap gap-3">
           {actions.map((action, index) => (
-            <Link
-              key={action.href}
-              href={action.href}
-              className={index === 0 ? 'ss-btn-primary' : 'ss-btn-secondary'}
-            >
+            <Button key={action.href} href={action.href} variant={index === 0 ? 'primary' : 'secondary'}>
               {action.label}
-            </Link>
+            </Button>
           ))}
         </div>
       ) : null}

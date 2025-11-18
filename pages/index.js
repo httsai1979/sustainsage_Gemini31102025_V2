@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -8,6 +7,8 @@ import Testimonials from '@/components/Testimonials';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
 import CardShell from '@/components/ui/CardShell';
+import Button from '@/components/ui/Button';
+import HeroShell from '@/components/ui/HeroShell';
 import PageSection from '@/components/ui/PageSection';
 import StepList from '@/components/ui/StepList';
 import Icon from '@/components/ui/Icon';
@@ -17,7 +18,7 @@ import { toSerializable } from '@/lib/toSerializable';
 
 const DEFAULT_NOTICE = 'Temporarily showing English content while we complete this translation.';
 
-const CARD_PARAGRAPH_CLASS = 'text-sm leading-relaxed text-sustain-textMuted';
+const CARD_PARAGRAPH_CLASS = 'text-base leading-relaxed text-ink/70';
 
 const SECTION_COMPONENTS = {
   personas: PersonasSection,
@@ -101,66 +102,17 @@ Home.getLayout = function getLayout(page) {
 function HomeHero({ hero = {}, showFallbackNotice = false, fallbackNotice = DEFAULT_NOTICE }) {
   const chips = arrayify(hero?.chips);
   return (
-    <section id="home-hero" className="ssg-section bg-sustain-pageBg">
-      <div className="ssg-container grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:items-center">
-        <RevealSection>
-          <div className="space-y-5">
-            {hero?.eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-primary/80">{hero.eyebrow}</p>
-            ) : null}
-            {hero?.title ? <h1 className="text-4xl font-semibold text-sustain-textMain md:text-5xl">{hero.title}</h1> : null}
-            {hero?.subtitle ? (
-              <p className="text-base leading-7 text-sustain-textMuted">{hero.subtitle}</p>
-            ) : null}
-            {chips.length ? (
-              <div className="flex flex-wrap gap-3">
-                {chips.map((chip, index) => (
-                  <span
-                    key={`${chip}-${index}`}
-                    className="rounded-full border border-sustain-cardBorder bg-white/80 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-sustain-textMuted"
-                  >
-                    {chip}
-                  </span>
-                ))}
-              </div>
-            ) : null}
-            <div className="flex flex-wrap gap-3">
-              <Link href={hero?.primaryCta?.href ?? '/contact'} className="ss-btn-primary">
-                {hero?.primaryCta?.label ?? 'Book a 20-minute chat'}
-              </Link>
-              {hero?.secondaryLink?.href ? (
-                <Link href={hero.secondaryLink.href} className="ss-btn-secondary">
-                  {hero.secondaryLink.label ?? 'Learn more'}
-                </Link>
-              ) : null}
-            </div>
-            {hero?.secondaryText ? (
-              <p className="text-sm font-medium text-sustain-textMuted">{hero.secondaryText}</p>
-            ) : null}
-            {showFallbackNotice ? (
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-textMuted">{fallbackNotice}</p>
-            ) : null}
-          </div>
-        </RevealSection>
-        <RevealSection delay={0.1}>
-          <div className="relative overflow-hidden rounded-3xl border border-white/40 bg-white shadow-xl">
-            <Image
-              src={hero?.image?.src ?? '/images/hero/main.jpg'}
-              alt={hero?.image?.alt ?? hero?.title ?? 'Coach and client in a calm conversation'}
-              width={960}
-              height={960}
-              priority
-              sizes="(min-width: 1024px) 420px, 90vw"
-              className="h-full w-full object-cover"
-            />
-            <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-sustain-text/10 via-transparent to-white/30"
-              aria-hidden="true"
-            />
-          </div>
-        </RevealSection>
-      </div>
-    </section>
+    <HeroShell
+      eyebrow={hero?.eyebrow}
+      title={hero?.title}
+      subtitle={hero?.subtitle}
+      chips={chips}
+      primaryCta={hero?.primaryCta ?? { href: '/contact', label: 'Book a 20-minute chat' }}
+      secondaryCta={hero?.secondaryLink}
+      meta={hero?.secondaryText}
+      notice={showFallbackNotice ? fallbackNotice : null}
+      image={hero?.image ?? { src: '/images/hero/main.jpg', alt: hero?.title }}
+    />
   );
 }
 
@@ -169,7 +121,7 @@ function PersonasSection({ section }) {
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-7 text-sustain-textMuted">{renderParagraphs(intro, section?.id)}</div> : null}
+      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(intro, section?.id)}</div> : null}
       <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
         {cards.map((card, index) => (
           <RevealSection key={card?.id ?? card?.title ?? index} delay={(index % 3) * 0.08}>
@@ -199,9 +151,9 @@ function PromoSection({ section }) {
           {renderParagraphs(arrayify(section?.body), `${section?.id}-body`, { className: CARD_PARAGRAPH_CLASS })}
           {section?.cta?.href ? (
             <div className="mt-4">
-              <Link href={section.cta.href} className="ss-btn-primary">
+              <Button href={section.cta.href}>
                 {section?.cta?.label ?? 'Learn more'}
-              </Link>
+              </Button>
             </div>
           ) : null}
         </CardShell>
@@ -215,14 +167,14 @@ function ComparisonSection({ section }) {
   const cards = [section?.leftCard, section?.rightCard].filter(Boolean);
   return (
     <PageSection id={section?.id} title={section?.title}>
-      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-7 text-sustain-textMuted">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
+      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
       <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
         {cards.map((card, index) => (
           <RevealSection key={card?.title ?? index} delay={index * 0.08}>
             <CardShell iconName={card?.iconName} title={card?.title}>
               <ul className="space-y-2">
                 {arrayify(card?.bullets).map((bullet, bulletIndex) => (
-                  <li key={`${card?.title ?? 'card'}-bullet-${bulletIndex}`} className="flex gap-3 text-sm leading-relaxed text-sustain-textMuted">
+                  <li key={`${card?.title ?? 'card'}-bullet-${bulletIndex}`} className="flex gap-3 text-base leading-relaxed text-ink/70">
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sustain-primary" aria-hidden />
                     <span>{bullet}</span>
                   </li>
@@ -248,7 +200,7 @@ function StepsSection({ section }) {
     : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-7 text-sustain-textMuted">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
+      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
       <div className="mt-8">
         <RevealSection>
           <StepList steps={steps} />
@@ -262,7 +214,7 @@ function TopicsSection({ section }) {
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {section?.intro ? <div className="max-w-3xl space-y-3 text-base leading-7 text-sustain-textMuted">{renderParagraphs(arrayify(section.intro), `${section?.id}-intro`)}</div> : null}
+      {section?.intro ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(arrayify(section.intro), `${section?.id}-intro`)}</div> : null}
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {cards.map((card, index) => (
           <RevealSection key={card?.id ?? card?.title ?? index} delay={(index % 4) * 0.08}>
@@ -281,7 +233,7 @@ function ServicesSection({ section }) {
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-7 text-sustain-textMuted">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
+      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((card, index) => (
           <RevealSection key={card?.id ?? card?.title ?? index} delay={(index % 3) * 0.08}>
@@ -321,12 +273,12 @@ function SplitSection({ section }) {
                     >
                       <Icon name={item?.iconName} />
                       <div className="flex-1">
-                        <p className="font-semibold text-sustain-textMain">{item?.title}</p>
+                        <p className="font-semibold text-ink">{item?.title}</p>
                         {item?.summary ? (
-                          <p className="text-sm text-sustain-textMuted">{item.summary}</p>
+                          <p className="text-base text-ink/70">{item.summary}</p>
                         ) : null}
                         {item?.meta ? (
-                          <p className="text-xs text-sustain-textMuted">{item.meta}</p>
+                          <p className="text-xs text-ink/60">{item.meta}</p>
                         ) : null}
                       </div>
                       {item?.href ? (
@@ -341,9 +293,9 @@ function SplitSection({ section }) {
               ) : null}
               {column?.link?.href ? (
                 <div className="mt-5">
-                  <Link href={column.link.href} className="ss-btn-secondary">
+                  <Button href={column.link.href} variant="secondary">
                     {column.link.label ?? 'Learn more'}
-                  </Link>
+                  </Button>
                 </div>
               ) : null}
             </CardShell>
@@ -364,7 +316,7 @@ function AccordionSection({ section }) {
     : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-7 text-sustain-textMuted">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
+      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
       <div className="mt-8">
         <RevealSection>
           <FAQAccordion items={items} />
@@ -378,19 +330,19 @@ function FaqCtaSection({ section }) {
   return (
     <PageSection id={section?.id}>
       <RevealSection>
-        <div className="rounded-3xl border border-sustain-cardBorder bg-white p-6 text-center shadow-sm md:p-8">
-          {section?.title ? <h2 className="text-2xl font-semibold text-sustain-textMain">{section.title}</h2> : null}
+        <div className="rounded-[32px] border border-white/70 bg-white/95 p-8 text-center shadow-card">
+          {section?.title ? <h2 className="text-3xl font-semibold text-ink">{section.title}</h2> : null}
           {renderParagraphs(arrayify(section?.body), `${section?.id}-body`)}
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {section?.primaryCta?.href ? (
-              <Link href={section.primaryCta.href} className="ss-btn-secondary">
+              <Button href={section.primaryCta.href} variant="secondary">
                 {section.primaryCta.label ?? 'Read more'}
-              </Link>
+              </Button>
             ) : null}
             {section?.secondaryCta?.href ? (
-              <Link href={section.secondaryCta.href} className="ss-btn-primary">
+              <Button href={section.secondaryCta.href}>
                 {section.secondaryCta.label ?? 'Contact us'}
-              </Link>
+              </Button>
             ) : null}
           </div>
         </div>
@@ -403,18 +355,18 @@ function SoftCTASection({ section }) {
   return (
     <PageSection id={section?.id} background="paper" title={section?.title}>
       <RevealSection>
-        <div className="rounded-3xl border border-sustain-cardBorder bg-white/95 p-6 shadow-sm md:p-8">
+        <div className="rounded-[32px] border border-white/70 bg-white/95 p-8 shadow-card">
           {renderParagraphs(arrayify(section?.body), `${section?.id}-body`)}
           <div className="mt-6 flex flex-wrap gap-3">
             {section?.primaryCta?.href ? (
-              <Link href={section.primaryCta.href} className="ss-btn-primary">
+              <Button href={section.primaryCta.href}>
                 {section.primaryCta.label ?? 'Book a chat'}
-              </Link>
+              </Button>
             ) : null}
             {section?.secondaryLink?.href ? (
-              <Link href={section.secondaryLink.href} className="ss-btn-secondary">
+              <Button href={section.secondaryLink.href} variant="secondary">
                 {section.secondaryLink.label ?? 'Read more'}
-              </Link>
+              </Button>
             ) : null}
           </div>
         </div>
@@ -431,7 +383,7 @@ function arrayify(value) {
 
 function renderParagraphs(paragraphs = [], keyPrefix = 'paragraph', options = {}) {
   if (!Array.isArray(paragraphs) || !paragraphs.length) return null;
-  const className = options?.className ?? 'text-base leading-7 text-sustain-textMuted';
+  const className = options?.className ?? 'text-base leading-relaxed text-ink/70';
   return paragraphs.map((paragraph, index) => (
     <p key={`${keyPrefix}-${index}`} className={className}>
       {paragraph}
