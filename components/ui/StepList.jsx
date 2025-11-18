@@ -2,7 +2,8 @@ import PropTypes from 'prop-types';
 
 import cn from '@/lib/cn';
 import CardShell from '@/components/ui/CardShell';
-import { getIconComponent } from '@/components/icons/map';
+import IconBadge from '@/components/ui/IconBadge';
+import { getLucideIcon } from '@/components/ui/icons';
 
 function resolveIcon(icon) {
   if (!icon) {
@@ -17,24 +18,16 @@ function resolveIcon(icon) {
     const IconComponent = icon;
     return {
       iconName: null,
-      iconNode: (
-        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sustain-primary/10 text-sustain-primary">
-          <IconComponent className="h-5 w-5" aria-hidden />
-        </span>
-      ),
+      iconNode: <IconComponent className="h-5 w-5" aria-hidden />,
     };
   }
 
-  const IconComponent = getIconComponent(icon?.name ?? icon?.icon);
+  const IconComponent = getLucideIcon(icon?.name ?? icon?.icon);
 
   if (IconComponent) {
     return {
       iconName: null,
-      iconNode: (
-        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sustain-primary/10 text-sustain-primary">
-          <IconComponent className="h-5 w-5" aria-hidden />
-        </span>
-      ),
+      iconNode: <IconComponent className="h-5 w-5" aria-hidden />,
     };
   }
 
@@ -50,7 +43,7 @@ export default function StepList({ steps = [], className = '' }) {
   return (
     <ol
       className={cn(
-        'flex gap-4 overflow-x-auto pb-4 sm:grid sm:grid-cols-2 sm:gap-5 lg:grid-cols-4',
+        'grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4',
         className,
       )}
     >
@@ -72,8 +65,13 @@ export default function StepList({ steps = [], className = '' }) {
             className="min-w-[240px] flex-1 md:min-w-0"
           >
             <CardShell
-              iconName={iconName ?? 'calendar'}
-              icon={iconNode}
+              icon={
+                <IconBadge
+                  iconName={iconName ?? 'calendar'}
+                  icon={iconNode}
+                  className="bg-primary/10"
+                />
+              }
               eyebrow={`Step ${String(stepNumber).padStart(2, '0')}`}
               title={title ?? `Step ${stepNumber}`}
               className="h-full"
