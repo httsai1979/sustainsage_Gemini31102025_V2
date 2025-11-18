@@ -495,12 +495,17 @@ h3 {
 .blog-article{
     max-width:45rem;
     width:100%;
+    margin-left:auto;
+    margin-right:auto;
+    display:flex;
+    flex-direction:column;
+    gap:1.5rem;
     padding:2rem 1.5rem 3.5rem;
 }
 @media (min-width:768px){
     .blog-article{padding:2.5rem 2rem 4rem}
 }
-.blog-article__body{margin-top:2rem}
+.blog-article__body{margin-top:2rem;width:100%}
 .typography{--ssg-leading:1.8;--ssg-space:1.15rem;font-size:1.0625rem;color:#1f2937}
 .typography :where(p){margin-top:calc(var(--ssg-space)*.75);margin-bottom:calc(var(--ssg-space)*.75);line-height:var(--ssg-leading);color:inherit}
 .typography :where(h1){margin:0 0 1.5rem 0;font-weight:700;font-size:2.25rem;line-height:1.2;color:#0f172a}

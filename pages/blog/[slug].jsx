@@ -1,8 +1,8 @@
 /**
- * Typography: blog posts now sit inside a dedicated `.blog-article` wrapper so the content width, spacing,
- * and readable rhythm come from the shared `.typography` rules instead of default prose styles.
- * Links: anchors inside the markdown body inherit the refreshed `.typography` link styling and are no longer
- * covered by extra wrappers, ensuring they look and behave like interactive elements.
+ * Typography: wrap each article in the `.blog-article` container so the markdown body stays centered,
+ * capped at a readable width, and inherits the shared `.typography` rhythm (line-height, spacing, headings).
+ * Links & clickability: render the HTML inside `.blog-article__body` so anchors keep default pointer events
+ * and pick up the dedicated typography link rules (brand colour, underline, focus outline) for clarity.
  */
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
