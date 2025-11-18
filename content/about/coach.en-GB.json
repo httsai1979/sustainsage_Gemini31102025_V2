@@ -1,0 +1,131 @@
+{
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "seo": {
+    "title": "Meet the bilingual coaches behind SustainSage",
+    "description": "We bring supervision-informed coaching, policy literacy, and multilingual lived experience to every partnership."
+  },
+  "hero": {
+    "eyebrow": "Team",
+    "title": "Meet the bilingual coaches behind SustainSage",
+    "intro": [
+      "We bring supervision-informed coaching, policy literacy, and multilingual lived experience to every partnership."
+    ]
+  },
+  "sections": [
+    {
+      "id": "snapshot",
+      "style": "cards",
+      "title": "Coaching for complex transitions",
+      "cards": [
+        {
+          "id": "background",
+          "title": "Before coaching",
+          "iconName": "briefcase",
+          "body": [
+            "Before I became a coach, I spent years in manufacturing – leading three factories and around 1,400 people across Mainland China and Taiwan."
+          ]
+        },
+        {
+          "id": "moments-between",
+          "title": "Listening between the targets",
+          "iconName": "chat",
+          "body": [
+            "Looking back from the UK now, what stays with me is not the targets we hit, but the moments in between: the plant manager who closed the door and admitted he was not sleeping, the HR colleague who asked whether she had become someone she did not recognise, the engineer who wondered if moving country had actually moved him closer to the life he wanted."
+          ]
+        },
+        {
+          "id": "focus-today",
+          "title": "Focus today",
+          "iconName": "target",
+          "body": [
+            "Today, as a Taiwan-born, UK-based coach who has lived the pressure of cross-border factory leadership, I work with mid-career individuals and with China–UK corporate leaders."
+          ]
+        },
+        {
+          "id": "languages",
+          "title": "Languages we coach in",
+          "iconName": "globe",
+          "body": [
+            "Coaching flows between English, Traditional Chinese, and Simplified Chinese so nuance stays intact."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "session-attention",
+      "style": "cards",
+      "title": "How partnerships unfold",
+      "lead": "Every engagement starts with context, informed consent, and clarity on how we will work together.",
+      "cards": [
+        {
+          "id": "agreements",
+          "title": "Set shared agreements",
+          "iconName": "consent",
+          "body": [
+            "We confirm goals, roles, confidentiality boundaries, cadence, and data retention before sessions begin."
+          ]
+        },
+        {
+          "id": "bilingual",
+          "title": "Work bilingually",
+          "iconName": "chat",
+          "body": [
+            "Coaching flows between English, Traditional Chinese, and Simplified Chinese so nuance stays intact."
+          ]
+        },
+        {
+          "id": "reflect",
+          "title": "Reflect and adapt",
+          "iconName": "note",
+          "body": [
+            "Monthly supervision and reflective practice help us surface blind spots and adjust support early."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries",
+      "style": "cards",
+      "title": "Boundaries we uphold",
+      "lead": "These commitments protect your agency, safety, and consent.",
+      "cards": [
+        {
+          "id": "scope",
+          "title": "What scope does coaching cover?",
+          "iconName": "question",
+          "body": [
+            "We stay future-focused and collaborative. When therapeutic or legal support is needed, we pause and signpost trusted professionals."
+          ]
+        },
+        {
+          "id": "ethics",
+          "title": "How do you monitor ethics?",
+          "iconName": "privacy",
+          "body": [
+            "We follow the International Coaching Federation Code of Ethics and maintain supervision to stay accountable."
+          ]
+        },
+        {
+          "id": "access",
+          "title": "What if accessibility needs change?",
+          "iconName": "calendar",
+          "body": [
+            "We revisit agreements every few sessions to check progress, accessibility, and safeguarding requirements."
+          ]
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ready to map your next step?",
+    "body": "Browse our coaching services or read the full coaching boundaries we uphold.",
+    "primary": {
+      "label": "Book a 20-minute chat",
+      "href": "/contact"
+    },
+    "secondary": {
+      "label": "See services",
+      "href": "/services"
+    }
+  }
+}

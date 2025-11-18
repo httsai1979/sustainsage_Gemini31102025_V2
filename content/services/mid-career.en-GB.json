@@ -1,0 +1,172 @@
+{
+  "seo": {
+    "title": "Coaching for career returners | SustainSage",
+    "description": "Support for professionals returning after a career break or relocation—regain momentum without ignoring capacity."
+  },
+  "hero": {
+    "eyebrow": "Coaching for career returners",
+    "title": "Coaching for career returners",
+    "intro": [
+      "Rebuild momentum after a break without pretending the last chapter did not happen.",
+      "You’ve done this before, yet the landscape changed. Let’s rebuild momentum with care."
+    ],
+    "chips": [
+      "Support for professionals returning after a career break or relocation—regain momentum without ignoring capacity."
+    ]
+  },
+  "sections": [
+    {
+      "id": "challenges",
+      "title": "What tends to show up",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "story-gaps",
+          "title": "Story gaps on your CV",
+          "iconName": "note",
+          "body": [
+            "Wondering how to speak about a break without shrinking experience or oversharing personal reasons."
+          ]
+        },
+        {
+          "id": "confidence",
+          "title": "Confidence wobble",
+          "iconName": "question",
+          "body": [
+            "Old strengths are still there, yet interviews or networking feel sharper than expected."
+          ]
+        },
+        {
+          "id": "priorities",
+          "title": "Changed priorities",
+          "iconName": "target",
+          "body": [
+            "You want to re-enter with purpose, not slide into the first offer that arrives."
+          ]
+        },
+        {
+          "id": "logistics",
+          "title": "Logistics plus emotions",
+          "iconName": "calendar",
+          "body": [
+            "Balancing job search tasks with family care, health needs, or new city admin."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "How coaching can help",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "integrate-break",
+          "title": "Integrate your break into a coherent narrative",
+          "iconName": "briefcase",
+          "body": [
+            "Clarify what you learned, how it shapes your work now, and how you choose to share it."
+          ]
+        },
+        {
+          "id": "practice-conversations",
+          "title": "Practice grounded conversations",
+          "iconName": "chat",
+          "body": [
+            "Rehearse interviews, networking, or boundary-setting chats so you can show up steady and curious."
+          ]
+        },
+        {
+          "id": "humane-pace",
+          "title": "Design a humane pace",
+          "iconName": "clock",
+          "body": [
+            "Break the return into experiments and agreements that respect your capacity and financial realities."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette",
+      "title": "A short vignette",
+      "style": "prose",
+      "body": [
+        "“R” had managed teams across Asia before pausing work to relocate and care for an elder. Two years later she wanted to re-enter consulting but worried the gap would eclipse her track record. Coaching helped her surface the skills she used while caregiving, map what kind of firm would respect her boundaries, and practice a narrative that felt honest. Within four sessions she chose a consultancy that welcomed her portfolio of community work as part of her leadership story."
+      ]
+    },
+    {
+      "id": "packages",
+      "title": "Which package fits?",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "transition",
+          "title": "Transition package",
+          "iconName": "target",
+          "body": [
+            "Most returners choose the Transition package to map their new chapter, practice conversations, and design a paced comeback."
+          ],
+          "href": "/services/transition-coaching"
+        },
+        {
+          "id": "reset",
+          "title": "Reset package",
+          "iconName": "clock",
+          "body": [
+            "If you need a shorter container while juggling care, the Reset package holds four sessions to steady confidence and set sustainable rhythms."
+          ],
+          "href": "/services/reset-sprint"
+        },
+        {
+          "id": "process",
+          "title": "Coaching process",
+          "iconName": "note",
+          "body": [
+            "Not sure where to start? Explore the coaching process or book a call to see if coaching matches your stage."
+          ],
+          "href": "/services/how-coaching-works"
+        }
+      ]
+    },
+    {
+      "id": "boundaries",
+      "title": "What this page is not promising",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "no-guarantees",
+          "title": "We do not promise job offers or fast-tracked promotions.",
+          "iconName": "privacy",
+          "body": []
+        },
+        {
+          "id": "no-done-for-you",
+          "title": "No done-for-you CV writing or recruiter outreach.",
+          "iconName": "note",
+          "body": []
+        },
+        {
+          "id": "not-therapy",
+          "title": "No replacement for therapy if trauma or burnout needs clinical care.",
+          "iconName": "consent",
+          "body": []
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "style": "cta",
+      "title": "Curious how this could look for you?",
+      "body": [
+        "Book a 20-minute chat and we’ll explore pace, scope and readiness together."
+      ],
+      "primaryCta": {
+        "href": "/contact",
+        "label": "Book 20-minute chat"
+      },
+      "secondaryCta": {
+        "href": "/services",
+        "label": "Compare services"
+      }
+    }
+  ]
+}

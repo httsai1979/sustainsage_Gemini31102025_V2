@@ -7,13 +7,13 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import i18nConfig from '../../next-i18next.config';
 
 const NAV_ITEMS = [
-  { href: '/', label: 'header.navHome' },
-  { href: '/services', label: 'header.navServices' },
-  { href: '/resources', label: 'header.navResources' },
-  { href: '/blog', label: 'header.navBlog' },
-  { href: '/about', label: 'header.navAbout' },
-  { href: '/contact', label: 'header.navContact' },
-  { href: '/faq', label: 'header.navFaq' },
+  { href: '/', label: 'home' },
+  { href: '/services', label: 'services' },
+  { href: '/resources', label: 'resources' },
+  { href: '/blog', label: 'blog' },
+  { href: '/about', label: 'about' },
+  { href: '/contact', label: 'contact' },
+  { href: '/faq', label: 'faq' },
 ];
 
 const LOCALE_LABELS = {
@@ -43,8 +43,8 @@ function LocaleSwitcher({ activeLocale, onChange, variant = 'desktop', localeOpt
             onClick={() => onChange(locale.code)}
             className={`${baseClasses} ${
               isActive
-                ? 'bg-emerald-700 text-white shadow-sm'
-                : 'bg-white text-slate-600 ring-1 ring-inset ring-slate-200 hover:bg-emerald-50 hover:text-emerald-700'
+                ? 'bg-sustain-primary text-white shadow-sm'
+                : 'bg-sustain-cardBg text-sustain-navTextMuted ring-1 ring-inset ring-sustain-navBorder hover:bg-sustain-primary/10 hover:text-sustain-primary'
             }`}
           >
             {locale.label}
@@ -57,6 +57,7 @@ function LocaleSwitcher({ activeLocale, onChange, variant = 'desktop', localeOpt
 
 export default function SiteHeader() {
   const { t } = useTranslation('common');
+  const { t: tNav } = useTranslation('nav');
   const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -87,14 +88,16 @@ export default function SiteHeader() {
   };
 
   const headerClasses = [
-    'fixed inset-x-0 top-0 z-40 border-b border-transparent transition-colors duration-300',
-    isScrolled ? 'bg-white/90 backdrop-blur border-slate-200 shadow-sm' : 'bg-white',
+    'fixed inset-x-0 top-0 z-40 border-b transition-colors duration-300',
+    isScrolled
+      ? 'bg-sustain-navBg/95 backdrop-blur border-sustain-navBorder/80 shadow-sm'
+      : 'bg-sustain-navBg border-transparent',
   ].join(' ');
 
   return (
     <header className={headerClasses}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8 sm:py-5">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-slate-900">
+        <Link href="/" className="text-lg font-semibold tracking-tight text-sustain-navText">
           SustainSage
         </Link>
 
@@ -105,11 +108,11 @@ export default function SiteHeader() {
               href={item.href}
               className={
                 isActive(item.href)
-                  ? 'text-emerald-700'
-                  : 'text-slate-600 transition-colors hover:text-emerald-700'
+                  ? 'text-sustain-primary'
+                  : 'text-sustain-navTextMuted transition-colors hover:text-sustain-primary'
               }
             >
-              {t(item.label)}
+              {tNav(item.label)}
             </Link>
           ))}
         </nav>
@@ -122,7 +125,7 @@ export default function SiteHeader() {
           />
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-xl p-2 text-slate-700 md:hidden"
+            className="inline-flex items-center justify-center rounded-xl p-2 text-sustain-navText md:hidden"
             onClick={() => setMenuOpen(true)}
             aria-label={t('header.openMenu')}
           >
@@ -132,11 +135,11 @@ export default function SiteHeader() {
       </div>
 
       {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-white/95 backdrop-blur-sm md:hidden">
+        <div className="fixed inset-0 z-50 bg-sustain-navBg/95 backdrop-blur-sm md:hidden">
           <div className="flex justify-end p-4">
             <button
               type="button"
-              className="rounded-xl p-2 text-slate-700"
+              className="rounded-xl p-2 text-sustain-navText"
               onClick={() => setMenuOpen(false)}
               aria-label={t('header.closeMenu')}
             >
@@ -151,11 +154,11 @@ export default function SiteHeader() {
                 onClick={() => setMenuOpen(false)}
                 className={
                   isActive(item.href)
-                    ? 'text-emerald-700'
-                    : 'text-slate-900 transition-colors hover:text-emerald-700'
+                    ? 'text-sustain-primary'
+                    : 'text-sustain-navText transition-colors hover:text-sustain-primary'
                 }
               >
-                {t(item.label)}
+                {tNav(item.label)}
               </Link>
             ))}
             <LocaleSwitcher

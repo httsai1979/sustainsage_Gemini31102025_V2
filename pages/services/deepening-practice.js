@@ -123,7 +123,7 @@ export default function DeepeningPracticePage() {
 
 export async function getStaticProps({ locale = 'en' }) {
   const props = {
-    ...(await serverSideTranslations(locale, ['common', 'services-deepening-practice'], nextI18NextConfig)),
+    ...(await serverSideTranslations(locale, ['common', 'nav', 'services-deepening-practice'], nextI18NextConfig)),
   };
 
   return {
