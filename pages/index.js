@@ -464,7 +464,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       testimonials,
       showFallbackNotice,
       fallbackNotice,
-      ...(await serverSideTranslations(locale, ['common', 'home', 'faq'])),
+      ...(await serverSideTranslations(locale, ['common', 'nav', 'home', 'faq'])),
     },
   });
 }

@@ -442,7 +442,7 @@ export async function getStaticProps({ locale }) {
     team,
     showFallbackNotice,
     fallbackNotice,
-    ...(await serverSideTranslations(currentLocale, ['common'])),
+    ...(await serverSideTranslations(currentLocale, ['common', 'nav'])),
   };
 
   return {

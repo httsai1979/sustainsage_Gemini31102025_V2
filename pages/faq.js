@@ -198,7 +198,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       content,
       showFallbackNotice,
       fallbackNotice,
-      ...(await serverSideTranslations(locale, ['common', 'faq'])),
+      ...(await serverSideTranslations(locale, ['common', 'nav', 'faq'])),
     },
   });
 }

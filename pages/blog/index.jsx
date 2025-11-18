@@ -144,7 +144,7 @@ export async function getStaticProps({ locale }) {
       posts,
       locale,
       seo: namespaceCopy?.seo ?? null,
-      ...(await serverSideTranslations(locale, ['common', 'blog'])),
+      ...(await serverSideTranslations(locale, ['common', 'nav', 'blog'])),
     },
   });
 }

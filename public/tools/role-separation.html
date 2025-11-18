@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>角色分化練習 | Self-Distancing Dialogue</title>
+    <title>角色分化練習</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts - Inter & Noto Sans TC -->
@@ -19,8 +19,8 @@
         /* Custom Styles to enhance Tailwind */
         body {
             font-family: 'Noto Sans TC', 'Inter', sans-serif;
-            background-color: #f0f4f8;
-            color: #1a457c;
+            background-color: #F6F2EA;
+            color: #1F2933;
         }
         .container {
             max-width: 800px;
@@ -28,35 +28,35 @@
             background: #fff;
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 4px 20px rgba(52, 117, 207, 0.1);
+            box-shadow: 0 8px 30px rgba(31, 41, 51, 0.08);
         }
         .input-field {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid #d1d5db;
+            border: 1px solid #E5DED0;
             border-radius: 0.5rem;
             transition: all 0.2s ease-in-out;
-            color: #1a457c;
+            color: #1F2933;
         }
         .input-field:focus {
             outline: none;
-            border-color: #3475cf;
-            box-shadow: 0 0 0 3px rgba(52, 117, 207, 0.2);
+            border-color: #4A6C56;
+            box-shadow: 0 0 0 3px rgba(74, 108, 86, 0.2);
         }
         .btn-primary {
-            background-color: #3475cf;
+            background-color: #4A6C56;
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 9999px;
             transition: all 0.3s ease;
         }
         .btn-primary:hover:not(:disabled) {
-            background-color: #2b63ac;
+            background-color: #3B5444;
             transform: translateY(-2px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .btn-primary:disabled {
-            background-color: #b5c7e1;
+            background-color: #CBD5C0;
             cursor: not-allowed;
         }
         .voice-card {
@@ -66,10 +66,10 @@
             transform: scale(1);
         }
         .voice-card.selected {
-            border-color: #3475cf;
-            background-color: #e0f0ff;
+            border-color: #4A6C56;
+            background-color: #E3EAE3;
             transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(52, 117, 207, 0.1);
+            box-shadow: 0 4px 12px rgba(74, 108, 86, 0.15);
         }
         .chat-bubble {
             border-radius: 1.25rem;
