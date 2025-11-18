@@ -136,7 +136,7 @@ export default function ForParentsReturningPage() {
 
 export async function getStaticProps({ locale = 'en' }) {
   const props = {
-    ...(await serverSideTranslations(locale, ['common', 'services-personas'], nextI18NextConfig)),
+    ...(await serverSideTranslations(locale, ['common', 'nav', 'services-personas'], nextI18NextConfig)),
   };
 
   return {

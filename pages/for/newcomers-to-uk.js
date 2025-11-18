@@ -11,7 +11,7 @@ function NewcomersToUkPage() {
 export async function getStaticProps({ locale = 'en' }) {
   return toSerializable({
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'forPages'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common', 'nav', 'forPages'], nextI18NextConfig)),
     },
   });
 }

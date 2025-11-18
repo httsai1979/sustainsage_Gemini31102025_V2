@@ -1,3 +1,5 @@
+// DEPRECATED: This footer implementation is no longer used.
+// Please render pages through MainLayout with SiteFooter instead.
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 

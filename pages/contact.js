@@ -356,7 +356,7 @@ ContactPage.getLayout = function getLayout(page) {
 export async function getStaticProps({ locale }) {
   return toSerializable({
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'contact'])),
+      ...(await serverSideTranslations(locale, ['common', 'nav', 'contact'])),
     },
   });
 }
