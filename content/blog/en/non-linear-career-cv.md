@@ -29,8 +29,9 @@ A three-year gap that still feels hard to explain in one sentence.
 Perhaps you find yourself scrolling other people’s LinkedIn profiles, wondering how their paths look so straight, while yours seems to zigzag across cities, industries, and life events.
 
 No one is criticising you out loud.  
-But there is a very persistent inner voice, asking:  
-“Who is going to take this seriously?”
+But there is a very persistent inner voice, asking:
+
+> “Who is going to take this seriously?”
 
 ---
 
@@ -39,14 +40,15 @@ But there is a very persistent inner voice, asking:
 From a coaching perspective, nothing here is a character flaw.  
 It’s a very human response to uncertainty and comparison.
 
-A lot of us grew up with the idea that a “good career” is:
+Many of us grew up with the idea that a “good career” is:
 
 - linear  
 - upward  
 - explainable in two neat paragraphs
 
-So when life doesn’t follow that pattern — maybe because of migration, health, caring responsibilities, redundancy, or simply curiosity — the story quietly becomes:  
-“I’ve broken the rules. My CV is now evidence of that.”
+So when life doesn’t follow that pattern — maybe because of migration, health, caring responsibilities, redundancy, or simply curiosity — the story quietly becomes:
+
+> “I’ve broken the rules. My CV is now evidence of that.”
 
 Common misunderstandings often include:
 
@@ -121,7 +123,7 @@ What it can offer is a quieter, structured space to:
   Without overselling, without apologising — just stating clearly what you bring.
 
 - **Plan gentle next steps**  
-  Maybe that’s updating one section of your CV, talking to one person, or applying for one role that feels slightly uncomfortable but not overwhelming.
+  Updating one section of your CV, talking to one person, or applying for one role that feels slightly uncomfortable but not overwhelming.
 
 It’s not about a dramatic makeover.  
 It’s about giving you enough clarity and self-respect to take the next small step.
@@ -130,27 +132,29 @@ It’s about giving you enough clarity and self-respect to take the next small s
 
 ## Part 6 — Tools & Supporting Resources
 
-If you’d like to sit with this on your own before speaking to anyone, these tools may be helpful:
+If you’d like to sit with this on your own before speaking to anyone, these tools may be helpful.
 
-> 🧩 **Self-talk Reframe（自我對話重塑卡）**  
-> Notice how you talk to yourself when you look at your CV, and try out a version that is honest *and* kinder.  
-> 👉 [前往工具頁](/tools/self-talk-reframe)
+### Coaching tools you can try
 
-> 🧠 **Thought Log（思維紀錄儀）**  
-> Record the automatic thoughts that show up — “too messy”, “too late”, “no one will hire me” — so you can see them more clearly.  
-> 👉 [前往工具頁](/tools/thought-log)
+- **Self-talk Reframe（自我對話重塑卡）**  
+  Notice how you talk to yourself when you look at your CV, and try out a version that is honest *and* kinder.  
+  👉 [前往工具頁](/tools/self-talk-reframe)
 
-> 🔺 **Emotion Triangle（情緒三角）**  
-> Explore what really sits underneath the discomfort: fear, grief, hope, or perhaps a quiet desire for something different.  
-> 👉 [前往工具頁](/tools/emotion-triangle)
+- **Thought Log（思維紀錄儀）**  
+  Record the automatic thoughts that show up — “too messy”, “too late”, “no one will hire me” — so you can see them more clearly.  
+  👉 [前往工具頁](/tools/thought-log)
 
-> 🌱 **Values Map（自我價值地圖）**  
-> Map the values that now matter most to you, so your next step is guided by what’s important now, not by old expectations.  
-> 👉 [前往工具頁](/tools/values-map)
+- **Emotion Triangle（情緒三角）**  
+  Explore what really sits underneath the discomfort: fear, grief, hope, or perhaps a quiet desire for something different.  
+  👉 [前往工具頁](/tools/emotion-triangle)
 
-> 🪜 **Behavioural Experiment Ladder（行為實驗階梯）**  
-> Break “fix my whole career” into smaller experiments: a rewritten summary, a conversation with a friend, one low-pressure application.  
-> 👉 [前往工具頁](/tools/behaviour-ladder)
+- **Values Map（自我價值地圖）**  
+  Map the values that now matter most to you, so your next step is guided by what’s important now, not by old expectations.  
+  👉 [前往工具頁](/tools/values-map)
+
+- **Behavioural Experiment Ladder（行為實驗階梯）**  
+  Break “fix my whole career” into smaller experiments: a rewritten summary, a conversation with a friend, one low-pressure application.  
+  👉 [前往工具頁](/tools/behaviour-ladder)
 
 ---
 
@@ -158,40 +162,33 @@ If you’d like to sit with this on your own before speaking to anyone, these to
 
 You might also like:
 
-**Related blogs**
+### Related blogs
 
-> 📄 *For Career Returners*  
-> **Coming Back After a Long Break: Working Again Without Losing Yourself**  
-> On returning to work without pretending the last few years didn’t happen.  
-> 👉 [Read the article](/blog/returning-after-break)
+- **Coming Back After a Long Break: Working Again Without Losing Yourself**  
+  On returning to work without pretending the last few years didn’t happen.  
+  👉 [Read the article](/blog/returning-after-break)
 
-> 📄 *For Newcomers in the UK*  
-> **Looking for Work in a New Country When Nothing Seems to Move**  
-> For those sending applications in a new language and culture, wondering if anyone is reading.  
-> 👉 [Read the article](/blog/job-search-new-country)
+- **Looking for Work in a New Country When Nothing Seems to Move**  
+  For those sending applications in a new language and culture, wondering if anyone is reading.  
+  👉 [Read the article](/blog/job-search-new-country)
 
-**Services & FAQ**
+### Services & FAQ
 
-> 🧭 *Service – Career & Life Transitions*  
-> **Coaching for mid-career change and returning to work**  
-> A space to think through what you want your next chapter to look like, at a pace that respects your life.  
-> 👉 [See coaching services](/services)
+- **Coaching for Career & Life Transitions**  
+  A space to think through what you want your next chapter to look like, at a pace that respects your life.  
+  👉 [See coaching services](/services)
 
-> ❓ *FAQ – About Coaching*  
-> **“Is my situation too complicated for coaching?”**  
-> A gentle answer to one of the most common worries people bring.  
-> 👉 [Read this FAQ](/faq#is-my-situation-too-complicated)
+- **FAQ – “Is my situation too complicated for coaching?”**  
+  A gentle answer to one of the most common worries people bring.  
+  👉 [Read this FAQ](/faq#is-my-situation-too-complicated)
 
-> 👤 *About / Meet the Coach*  
-> **Why I care about non-linear careers**  
-> A bit of my own story, so you can decide if my approach feels right for you.  
-> 👉 [About SustainSage Group](/about)
+- **About SustainSage Group**  
+  A bit of my own story, so you can decide if my approach feels right for you.  
+  👉 [About SustainSage Group](/about)
 
 ---
 
 ## Part 8 — Soft CTA
 
 If you’d like a calm place to think about your path — without being rushed or judged —  
-you’re welcome to start with a short 20-minute chat and see whether it feels supportive.
-
-👉 [Book a quiet 20-minute conversation](/contact)
+you’re welcome to start with a short 20-minute chat and see
