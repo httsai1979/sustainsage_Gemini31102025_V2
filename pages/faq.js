@@ -1,160 +1,145 @@
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import ContentHero from '@/components/content/ContentHero';
+import RevealSection from '@/components/common/RevealSection';
 import MainLayout from '@/components/layout/MainLayout';
-import CardShell from '@/components/ui/CardShell';
-import { loadJSON } from '@/lib/content';
-import { orderSections } from '@/lib/content/normalize';
-import { dedupeBy } from '@/lib/dedupe';
+import Accordion from '@/components/ui/Accordion';
+import Icon from '@/components/ui/Icon';
+import PageSection from '@/components/ui/PageSection';
+import { getFAQPageContent } from '@/lib/faqContent';
 import { toSerializable } from '@/lib/toSerializable';
 
-const DEFAULT_FAQ_COPY = {
-  session: {
-    question: 'What happens in a coaching session?',
-    answer:
-      'Coaching is a collaborative, future-leaning conversation. You set the agenda, we ask reflective questions, and we co-design experiments.',
-  },
-  difference: {
-    question: 'How is coaching different from therapy or mentoring?',
-    answer:
-      'Therapy diagnoses or treats mental health needs, while mentors or consultants provide directive plans—those stay outside coaching. We follow the International Coaching Federation Code of Ethics.',
-  },
-  cadence: {
-    question: 'How often do we meet?',
-    answer: 'Individuals often start with six sessions over two to three months. You can pause or extend after each review.',
-  },
-  online: {
-    question: 'Do you offer online sessions?',
-    answer:
-      'Sessions run on Zoom by default. We coach in English and Mandarin, and you can switch languages mid-session if that helps you express nuance.',
-  },
-  global: {
-    question: 'Do you work with clients outside the UK?',
-    answer:
-      'Yes. We work with teams across Europe and Asia-Pacific using online sessions, shared notes, and agreed review points.',
-  },
-  fees: {
-    question: 'How do fees work?',
-    answer:
-      'Personal packages range from £420 to £1,200 depending on length. Organisation-sponsored coaching starts from £1,800 for a three-month engagement.',
-  },
-};
+const DEFAULT_NOTICE = 'Temporarily showing English content while we complete this translation.';
 
-export default function FAQPage({
-  content = {},
-  showFallbackNotice = false,
-  fallbackNotice = null,
-} = {}) {
-  const { t } = useTranslation('faq');
-  const hero = content?.hero ?? {};
-  const categories = content?.categories ?? [];
-  const cta = content?.cta ?? {};
-  const orderedCategories = orderSections(Array.isArray(categories) ? categories : []);
-  const fallbackMessage =
-    fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
-  const accordionFallback = t('accordion', { returnObjects: true }) ?? {};
+function toParagraphs(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) {
+    return value.filter((paragraph) => typeof paragraph === 'string' && paragraph.trim().length > 0);
+  }
+  if (typeof value === 'string' && value.trim().length > 0) {
+    return [value];
+  }
+  return [];
+}
 
-  const faqItems = dedupeBy(
-    orderedCategories.flatMap((category) =>
-      Array.isArray(category?.items)
-        ? category.items.map((item) => ({
-            question: item.question,
-            answer: item.answer,
-          }))
-        : []
-    ),
-    (item, index) => item?.question ?? index
-  );
+function FAQSection({ section }) {
+  const faqs = Array.isArray(section?.faqs) ? section.faqs : [];
+  if (!faqs.length) return null;
 
-  const getFallback = (fallbackKey = 'session') => {
-    const localized = accordionFallback?.[fallbackKey];
-    if (localized && typeof localized === 'object') {
-      return {
-        question: localized.question ?? DEFAULT_FAQ_COPY[fallbackKey]?.question,
-        answer: localized.answer ?? DEFAULT_FAQ_COPY[fallbackKey]?.answer,
-      };
-    }
+  const items = faqs.map((faq, index) => {
+    const paragraphs = toParagraphs(faq?.answer);
+    const answer = paragraphs.length ? (
+      <div className="space-y-3 text-sm leading-relaxed text-sustain-textMuted">
+        {paragraphs.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+      </div>
+    ) : null;
 
-    return DEFAULT_FAQ_COPY[fallbackKey] ?? { question: '', answer: '' };
-  };
-
-  const findAnswer = (keywords = [], fallbackKey = 'session') => {
-    const match = faqItems.find((item) =>
-      keywords.some((keyword) => item.question?.toLowerCase().includes(keyword))
-    );
-    if (match) {
-      return { question: match.question, answer: match.answer };
-    }
-
-    return getFallback(fallbackKey);
-  };
-
-  const curatedFaqItems = [
-    { fallbackKey: 'session', keywords: ['what is coaching', 'session'] },
-    { fallbackKey: 'difference', keywords: ['therapy', 'consulting'] },
-    { fallbackKey: 'cadence', keywords: ['how many sessions'] },
-    { fallbackKey: 'online', keywords: ['formats', 'languages', 'zoom'] },
-    { fallbackKey: 'global', keywords: ['time zones', 'teams across'] },
-    { fallbackKey: 'fees', keywords: ['fees'] },
-  ].map(({ fallbackKey, keywords }) => {
-    const result = findAnswer(keywords, fallbackKey);
-    const fallbackValue = getFallback(fallbackKey);
     return {
-      question: result.question ?? fallbackValue.question,
-      answer: result.answer ?? fallbackValue.answer,
+      id: faq?.id ?? `${section?.id ?? 'faq'}-${index}`,
+      q: faq?.question ?? '',
+      a: answer,
     };
   });
 
-  return (
-    <main className="ss-container">
-      <section className="ss-section">
-        <div className="space-y-6 text-center md:text-left">
-          {hero?.kicker ? (
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{hero.kicker}</p>
-          ) : null}
-          <h1 className="text-4xl font-semibold text-sustain-text">{hero?.title}</h1>
-          {hero?.body ? <p className="text-base text-slate-700">{hero.body}</p> : null}
-          {showFallbackNotice ? (
-            <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
-          ) : null}
-          {hero?.links?.length ? (
-            <div className="flex flex-wrap gap-3">
-              {hero.links.map((link) => (
-                <Link key={link.href} href={link.href} className="ss-btn-secondary">
-                  {link.label}
-                </Link>
-              ))}
-            </div>
-          ) : null}
-        </div>
-      </section>
+  const titleNode = (
+    <span className="inline-flex items-center gap-3">
+      <Icon name={section?.iconName ?? 'question'} />
+      <span>{section?.title}</span>
+    </span>
+  );
 
-      <section className="ss-section">
-        <div className="grid gap-6 md:grid-cols-2">
-          {curatedFaqItems.map((item, index) => (
-            <CardShell key={item.question ?? index} iconName="question" title={item.question} className="h-full">
-              <p>{item.answer}</p>
-            </CardShell>
+  return (
+    <PageSection id={section?.id} title={titleNode} lead={section?.lead} className="pt-4">
+      <RevealSection>
+        <Accordion items={items} />
+      </RevealSection>
+    </PageSection>
+  );
+}
+
+FAQSection.propTypes = {
+  section: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    lead: PropTypes.string,
+    iconName: PropTypes.string,
+    faqs: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        question: PropTypes.string,
+        answer: PropTypes.oneOfType([
+          PropTypes.arrayOf(PropTypes.string),
+          PropTypes.string,
+        ]),
+      }),
+    ),
+  }),
+};
+
+function CTASection({ cta }) {
+  if (!cta?.title) return null;
+  const body = toParagraphs(cta?.body);
+
+  return (
+    <PageSection id={cta?.id ?? 'faq-cta'} title={cta.title} background="paper">
+      {body.length ? (
+        <div className="space-y-4 text-base leading-relaxed text-sustain-textMuted">
+          {body.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
           ))}
         </div>
-      </section>
+      ) : null}
+      <div className="mt-6 flex flex-wrap gap-3">
+        {cta?.primaryCta?.href ? (
+          <Link href={cta.primaryCta.href} className="ss-btn-primary">
+            {cta.primaryCta.label ?? 'Book a 20-minute chat'}
+          </Link>
+        ) : null}
+        {cta?.secondaryCta?.href ? (
+          <Link href={cta.secondaryCta.href} className="ss-btn-secondary">
+            {cta.secondaryCta.label ?? 'Explore services'}
+          </Link>
+        ) : null}
+      </div>
+    </PageSection>
+  );
+}
 
-      <section className="ss-section">
-        <div className="rounded-card border border-sustain-cardBorder bg-white p-8 text-center shadow-card">
-          <h2 className="text-3xl font-semibold text-sustain-text">{cta?.title}</h2>
-          <p className="mt-4 text-base text-slate-700">{cta?.body}</p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <Link href="/contact" className="ss-btn-primary">
-              {cta?.primary ?? 'Book a 20-minute chat'}
-            </Link>
-            <Link href="/services" className="ss-btn-secondary">
-              {cta?.secondary ?? 'Explore coaching pathways'}
-            </Link>
-          </div>
-        </div>
-      </section>
+CTASection.propTypes = {
+  cta: PropTypes.shape({
+    id: PropTypes.string,
+    title: PropTypes.string,
+    body: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.string),
+      PropTypes.string,
+    ]),
+    primaryCta: PropTypes.shape({
+      href: PropTypes.string,
+      label: PropTypes.string,
+    }),
+    secondaryCta: PropTypes.shape({
+      href: PropTypes.string,
+      label: PropTypes.string,
+    }),
+  }),
+};
+
+function FAQPage({ content, showFallbackNotice = false, fallbackNotice = DEFAULT_NOTICE }) {
+  const hero = content?.hero ?? {};
+  const sections = Array.isArray(content?.sections) ? content.sections : [];
+  const cta = content?.cta ?? null;
+
+  return (
+    <main>
+      <ContentHero hero={hero} showFallbackNotice={showFallbackNotice} fallbackNotice={fallbackNotice} />
+      {sections.map((section) => (
+        <FAQSection key={section?.id ?? section?.title} section={section} />
+      ))}
+      <CTASection cta={cta} />
     </main>
   );
 }
@@ -162,25 +147,20 @@ export default function FAQPage({
 FAQPage.propTypes = {
   content: PropTypes.shape({
     hero: PropTypes.object,
-    categories: PropTypes.array,
+    sections: PropTypes.arrayOf(PropTypes.object),
     cta: PropTypes.object,
-    seo: PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-    }),
   }),
   showFallbackNotice: PropTypes.bool,
   fallbackNotice: PropTypes.string,
 };
 
-
 FAQPage.getLayout = function getLayout(page) {
-  const seo = page.props?.content?.seo ?? {};
+  const seo = page.props?.seo ?? {};
   return (
     <MainLayout
       seo={{
-        title: seo.title,
-        description: seo.description,
+        title: seo?.title ?? 'FAQ',
+        description: seo?.description ?? null,
       }}
     >
       {page}
@@ -189,20 +169,21 @@ FAQPage.getLayout = function getLayout(page) {
 };
 
 export async function getStaticProps({ locale = 'en-GB' }) {
-  const content = loadJSON('faq', locale);
-  const fallbackNotice =
-    typeof content?.fallbackNotice === 'string' && content.fallbackNotice.length > 0
-      ? content.fallbackNotice
-      : null;
-  const isEnglishLocale = typeof locale === 'string' && locale.toLowerCase().startsWith('en');
-  const showFallbackNotice = !isEnglishLocale && Boolean(fallbackNotice);
+  const resolvedLocale = typeof locale === 'string' ? locale : 'en-GB';
+  const { content, isFallback } = getFAQPageContent(resolvedLocale);
+  const fallbackNotice = content?.fallbackNotice ?? DEFAULT_NOTICE;
+  const { loadNamespace } = await import('@/lib/server/loadNamespace');
+  const namespaceCopy = loadNamespace(resolvedLocale, 'faq');
 
   return toSerializable({
     props: {
       content,
-      showFallbackNotice,
+      showFallbackNotice: isFallback,
       fallbackNotice,
-      ...(await serverSideTranslations(locale, ['common', 'nav', 'faq'])),
+      seo: namespaceCopy?.seo ?? null,
+      ...(await serverSideTranslations(resolvedLocale, ['common', 'nav', 'faq'])),
     },
   });
 }
+
+export default FAQPage;
