@@ -5,8 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import RevealSection from '@/components/common/RevealSection';
-import Card from '@/components/ui/Card';
-import Icon from '@/components/ui/Icon';
+import CardShell from '@/components/ui/CardShell';
 import StepList from '@/components/ui/StepList';
 import { loadContent } from '@/lib/loadContent';
 import { dedupeBy } from '@/lib/dedupe';
@@ -270,37 +269,33 @@ export default function ServicesPage({
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {SERVICE_LAYERS.map((layer, index) => (
             <RevealSection key={layer.id} delay={(index % 2) * 0.1}>
-              <Card icon={<Icon name={layer.icon} />} title={layer.title} subtitle={layer.description}>
-                <ul className="space-y-5">
+              <CardShell iconName={layer.icon} title={layer.title} meta={layer.description} className="h-full">
+                <ul className="mt-4 space-y-4">
                   {layer.links.map((link) => (
-                    <li key={link.href} className="rounded-2xl border border-sustain-cardBorder/70 bg-white/70 p-4">
-                      <div className="flex items-start gap-3">
-                        <div className="flex-1">
-                          <Link href={link.href} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
-                            {link.label}
-                            <span aria-hidden>→</span>
-                          </Link>
-                          <p className="mt-2 text-sm text-slate-700">{link.description}</p>
-                          {Array.isArray(link.highlights) && link.highlights.length ? (
-                            <ul className="mt-3 space-y-1 text-xs font-medium text-slate-500">
-                              {link.highlights.map((point) => (
-                                <li key={point} className="flex items-center gap-2">
-                                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-sustain-green/10 text-sustain-green">
-                                    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5" stroke="currentColor" strokeWidth="2" fill="none">
-                                      <path d="M5 12l4 4 10-10" />
-                                    </svg>
-                                  </span>
-                                  <span>{point}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          ) : null}
-                        </div>
-                      </div>
+                    <li key={link.href} className="rounded-2xl border border-sustain-cardBorder/70 bg-white/80 p-4">
+                      <Link href={link.href} className="inline-flex items-center gap-2 font-semibold text-sustain-primary">
+                        {link.label}
+                        <span aria-hidden>→</span>
+                      </Link>
+                      <p className="mt-2 text-sm text-sustain-textMuted">{link.description}</p>
+                      {Array.isArray(link.highlights) && link.highlights.length ? (
+                        <ul className="mt-3 space-y-1 text-xs font-medium text-sustain-textMuted">
+                          {link.highlights.map((point) => (
+                            <li key={point} className="flex items-center gap-2">
+                              <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-sustain-primary/10 text-sustain-primary">
+                                <svg viewBox="0 0 24 24" aria-hidden="true" className="h-3.5 w-3.5" stroke="currentColor" strokeWidth="2" fill="none">
+                                  <path d="M5 12l4 4 10-10" />
+                                </svg>
+                              </span>
+                              <span>{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
                     </li>
                   ))}
                 </ul>
-              </Card>
+              </CardShell>
             </RevealSection>
           ))}
         </div>
@@ -323,38 +318,34 @@ export default function ServicesPage({
             const format = card.format ?? 'Online coaching · 60–75 minutes per session';
             return (
               <RevealSection key={card.slug} delay={(index % 3) * 0.1}>
-                <Card
-                  title={card.title}
-                  subtitle={card.excerpt}
-                  icon={<Icon name={card.iconName} />}
-                  footer={
-                    <Link href={`/services/${card.slug}`} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
-                      {card.ctaLabel ?? pathways?.viewDetails ?? 'View details'}
-                      <span aria-hidden>→</span>
-                    </Link>
-                  }
-                >
-                  <div className="space-y-4 text-sm leading-relaxed text-slate-700">
+                <CardShell title={card.title} meta={card.excerpt} iconName={card.iconName} className="h-full">
+                  <div className="space-y-4 text-sm leading-relaxed text-sustain-textMuted">
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-textMuted">
                         {badges?.who ?? 'Who it’s for'}
                       </p>
                       <p className="mt-1">{audience ?? 'Designed for people navigating complex transitions.'}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-textMuted">
                         {badges?.focus ?? 'Focus'}
                       </p>
                       <p className="mt-1">{focus ?? card.excerpt}</p>
                     </div>
                     <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-green/80">
+                      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-textMuted">
                         {badges?.format ?? 'Format'}
                       </p>
                       <p className="mt-1">{format}</p>
                     </div>
                   </div>
-                </Card>
+                  <div className="mt-5">
+                    <Link href={`/services/${card.slug}`} className="inline-flex items-center gap-2 font-semibold text-sustain-primary">
+                      {card.ctaLabel ?? pathways?.viewDetails ?? 'View details'}
+                      <span aria-hidden>→</span>
+                    </Link>
+                  </div>
+                </CardShell>
               </RevealSection>
             );
           })}
@@ -392,9 +383,40 @@ export default function ServicesPage({
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
           {approachCards.map((card, index) => (
             <RevealSection key={card.title} delay={index * 0.1}>
-              <Card title={card.title}>
-                <p className="text-sm leading-relaxed text-slate-700">{card.body}</p>
-              </Card>
+              <CardShell title={card.title} className="h-full">
+                <p>{card.body}</p>
+              </CardShell>
+            </RevealSection>
+          ))}
+        </div>
+      </section>
+
+      <section className="ss-section" aria-labelledby="client-stories-heading">
+        <RevealSection className="space-y-4 text-center md:text-left">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Client transformations</p>
+          <h2 id="client-stories-heading" className="text-3xl font-semibold text-sustain-text">
+            Real client transformations
+          </h2>
+          <p className="text-base text-slate-700">
+            Every partnership protects confidentiality; the composites below show how layered pathways play out in real life.
+          </p>
+        </RevealSection>
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {CLIENT_CASES.map((story, index) => (
+            <RevealSection key={story.id} delay={(index % 3) * 0.1}>
+              <CardShell iconName={story.icon} title={story.title} meta={story.tag} className="h-full">
+                <div className="space-y-3">
+                  <p>
+                    <span className="font-semibold">Challenge:</span> {story.challenge}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Approach:</span> {story.approach}
+                  </p>
+                  <p>
+                    <span className="font-semibold">Shift:</span> {story.shift}
+                  </p>
+                </div>
+              </CardShell>
             </RevealSection>
           ))}
         </div>

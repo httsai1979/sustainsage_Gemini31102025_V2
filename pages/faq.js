@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
-import FAQAccordion from '@/components/faq/FAQAccordion';
+import CardShell from '@/components/ui/CardShell';
 import { loadJSON } from '@/lib/content';
 import { orderSections } from '@/lib/content/normalize';
 import { dedupeBy } from '@/lib/dedupe';
@@ -132,8 +132,12 @@ export default function FAQPage({
       </section>
 
       <section className="ss-section">
-        <div className="rounded-card border border-sustain-cardBorder bg-white p-4 shadow-card">
-          <FAQAccordion items={curatedFaqItems} />
+        <div className="grid gap-6 md:grid-cols-2">
+          {curatedFaqItems.map((item, index) => (
+            <CardShell key={item.question ?? index} iconName="question" title={item.question} className="h-full">
+              <p>{item.answer}</p>
+            </CardShell>
+          ))}
         </div>
       </section>
 

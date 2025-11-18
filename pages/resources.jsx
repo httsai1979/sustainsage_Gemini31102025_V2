@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
 import RevealSection from '@/components/common/RevealSection';
+import CardShell from '@/components/ui/CardShell';
 import Tag from '@/components/ui/Tag';
 import { loadJSON } from '@/lib/content';
 import { dedupeBy } from '@/lib/dedupe';
@@ -45,6 +45,8 @@ export default function ResourcesPage({ downloads = [], interactiveTools = [] })
       ? item.actionLabel || (item.download ? actions?.download : actions?.view)
       : null;
     const badge = item.type ?? item.tag ?? item.category ?? (item.download ? 'Download' : null);
+    const iconName =
+      item.iconName ?? (item.download ? 'book' : badge?.toLowerCase().includes('tool') ? 'tool' : 'note');
     const shouldOpenInNewTab =
       typeof actionHref === 'string' &&
       (actionHref.startsWith('http') ||
@@ -53,39 +55,25 @@ export default function ResourcesPage({ downloads = [], interactiveTools = [] })
         actionHref.includes('notion.so') ||
         actionHref.includes('docs.google'));
     const card = (
-      <article className="ss-card h-full overflow-hidden bg-white">
-        <div className="relative">
-          <div className="relative h-48 w-full overflow-hidden rounded-2xl">
-            <Image
-              src={item.img ?? '/images/placeholder-hero.jpg'}
-              alt={item.alt ?? item.title}
-              fill
-              sizes="(min-width: 1280px) 360px, (min-width: 768px) 45vw, 90vw"
-              className="object-cover"
-            />
-            {item.comingSoon ? <div className="absolute inset-0 bg-sustain-text/20" aria-hidden /> : null}
-          </div>
-          {badge ? (
-            <span className="absolute right-4 top-4 rounded-full bg-sustain-green px-3 py-1 text-xs font-semibold text-white">
-              {badge}
-            </span>
-          ) : null}
-        </div>
-        <div className="mt-5 space-y-3">
-          <h3 className="text-lg font-semibold text-sustain-text">{item.title}</h3>
-          <p className="text-sm text-slate-600">{item.desc}</p>
-          {item.comingSoon ? (
+      <CardShell
+        as="article"
+        className="h-full"
+        iconName={iconName}
+        eyebrow={badge}
+        title={item.title}
+      >
+        <p>{item.desc}</p>
+        {item.comingSoon ? (
+          <div className="mt-4">
             <Tag>{labels?.comingSoon ?? 'Coming soon'}</Tag>
-          ) : (
-            actionHref && (
-              <div className="inline-flex items-center gap-2 font-semibold text-sustain-green">
-                {actionLabel}
-                <span aria-hidden>→</span>
-              </div>
-            )
-          )}
-        </div>
-      </article>
+          </div>
+        ) : actionHref ? (
+          <div className="mt-4 inline-flex items-center gap-2 font-semibold text-sustain-primary">
+            {actionLabel}
+            <span aria-hidden>→</span>
+          </div>
+        ) : null}
+      </CardShell>
     );
 
     const delay = (index % 3) * 0.1;
@@ -94,7 +82,7 @@ export default function ResourcesPage({ downloads = [], interactiveTools = [] })
       const isExternalLink =
         shouldOpenInNewTab || !actionHref.startsWith('/') || actionHref.endsWith('.pdf');
       const commonProps = {
-        className: 'block h-full',
+        className: 'block h-full focus-visible:outline-none',
         'aria-label': actionLabel ?? item.title,
       };
 

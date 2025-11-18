@@ -2,18 +2,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { AcademicCapIcon, ArrowsRightLeftIcon, BriefcaseIcon } from '@heroicons/react/24/outline';
-
 import RevealSection from '@/components/common/RevealSection';
 import Testimonials from '@/components/Testimonials';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import TopicsHero from '@/components/sections/TopicsHero';
 import MainLayout from '@/components/layout/MainLayout';
-import Card from '@/components/ui/Card';
-import Icon from '@/components/ui/Icon';
+import CardShell from '@/components/ui/CardShell';
 import Section from '@/components/ui/Section';
-import StepList from '@/components/ui/StepList';
-import { getIconComponent } from '@/components/icons/map';
 import { loadJSON } from '@/lib/content';
 import { orderSections } from '@/lib/content/normalize';
 import { dedupeBy } from '@/lib/dedupe';
@@ -24,7 +19,7 @@ const DEFAULT_WHO_CARDS = [
     title: 'Professionals seeking growth',
     description:
       'Mid-career people who want a thoughtful space to decide what stays, what shifts, and how to move without burning out.',
-    icon: BriefcaseIcon,
+    iconName: 'briefcase',
     href: '/for/mid-career-returners',
     linkLabel: 'See the mid-career guide',
   },
@@ -32,7 +27,7 @@ const DEFAULT_WHO_CARDS = [
     title: 'Career changers',
     description:
       'Those translating experience between countries or industries and needing calm structure to test new directions.',
-    icon: ArrowsRightLeftIcon,
+    iconName: 'globe',
     href: '/for/newcomers-to-uk',
     linkLabel: 'See the newcomers guide',
   },
@@ -40,7 +35,7 @@ const DEFAULT_WHO_CARDS = [
     title: 'Purpose-driven individuals',
     description:
       'Graduates, working parents, and community builders who want support aligning their work with their values.',
-    icon: AcademicCapIcon,
+    iconName: 'family',
     href: '/for/parents-returning-to-work',
     linkLabel: 'See the parents guide',
   },
@@ -110,7 +105,7 @@ export default function Home({
       title: override?.title ?? card.title,
       href: override?.href ?? card.href,
       linkLabel: override?.linkLabel ?? card.linkLabel,
-      icon: card.icon,
+      iconName: override?.iconName ?? card.iconName,
     };
   });
 
@@ -153,10 +148,27 @@ export default function Home({
       };
     });
 
+  const structuredProcessCards = processCards.map((step, index) => ({
+    ...step,
+    iconName: typeof step.icon === 'string' ? step.icon : typeof step.iconName === 'string' ? step.iconName : stepIcons[index],
+    stepNumber: step?.stepNumber ?? index + 1,
+  }));
+
   const topicItems = dedupeBy(
     orderSections(Array.isArray(recogniseContent?.items) ? recogniseContent.items : []),
     (item, index) => (typeof item === 'string' ? item : item?.title ?? item?.description ?? index)
   );
+
+  const topicIconFallbacks = ['target', 'note', 'handshake', 'globe', 'calendar', 'book', 'briefcase', 'family'];
+  const topicCards = topicItems.map((item, index) => ({
+    ...item,
+    iconName:
+      typeof item?.icon === 'string'
+        ? item.icon
+        : typeof item?.iconName === 'string'
+        ? item.iconName
+        : topicIconFallbacks[index % topicIconFallbacks.length],
+  }));
 
   const coachingIsBullets = [process?.description, process?.note, hero?.subheadline]
     .filter(Boolean)
@@ -244,25 +256,26 @@ export default function Home({
         </RevealSection>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {whoCards.map((card, index) => {
-            const IconComponent = card.icon;
             return (
               <RevealSection key={card.title} delay={index * 0.1}>
-                <Card
+                <CardShell
                   title={card.title}
-                  subtitle={card.description}
-                  icon={IconComponent ? <IconComponent className="h-6 w-6" aria-hidden /> : null}
-                  footer={
-                    card.href ? (
+                  iconName={card.iconName}
+                  className="h-full"
+                >
+                  <p>{card.description}</p>
+                  {card.href ? (
+                    <div className="mt-4">
                       <Link
                         href={card.href}
-                        className="inline-flex items-center gap-2 font-semibold text-sustain-green"
+                        className="inline-flex items-center gap-2 font-semibold text-sustain-primary"
                       >
                         {card.linkLabel ?? 'Read the detailed guide'}
                         <span aria-hidden>→</span>
                       </Link>
-                    ) : null
-                  }
-                />
+                    </div>
+                  ) : null}
+                </CardShell>
               </RevealSection>
             );
           })}
@@ -273,23 +286,24 @@ export default function Home({
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {[coachingIsBullets, coachingIsNotBullets].map((list, index) => (
             <RevealSection key={index} delay={index * 0.1}>
-              <Card
+              <CardShell
                 title={
                   index === 0
                     ? coachingDefinition?.isTitle ?? 'What coaching is'
                     : coachingDefinition?.isNotTitle ?? 'What coaching isn’t'
                 }
-                icon={<Icon name={index === 0 ? 'spark' : 'info'} />}
+                iconName={index === 0 ? 'chat' : 'privacy'}
+                className="h-full"
               >
-                <ul className="space-y-2 text-sm leading-relaxed text-slate-700">
+                <ul className="space-y-2">
                   {list.map((bullet) => (
-                    <li key={bullet} className="flex gap-3">
-                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sustain-green" aria-hidden />
+                    <li key={bullet} className="flex gap-3 text-sm leading-relaxed text-sustain-textMuted">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sustain-primary" aria-hidden />
                       <span>{bullet}</span>
                     </li>
                   ))}
                 </ul>
-              </Card>
+              </CardShell>
             </RevealSection>
           ))}
         </div>
@@ -304,7 +318,19 @@ export default function Home({
           {process?.description ? <p className="text-body">{process.description}</p> : null}
         </RevealSection>
         <RevealSection delay={0.1} className="mt-8">
-          <StepList steps={processCards} />
+          <div className="flex gap-4 overflow-x-auto pb-4 md:grid md:grid-cols-4 md:gap-5">
+            {structuredProcessCards.map((step, index) => (
+              <CardShell
+                key={step.title ?? step.description ?? index}
+                iconName={step.iconName}
+                eyebrow={`Step ${String(step.stepNumber).padStart(2, '0')}`}
+                title={step.title}
+                className="min-w-[240px] md:min-w-0"
+              >
+                <p>{step.description}</p>
+              </CardShell>
+            ))}
+          </div>
         </RevealSection>
       </Section>
 
@@ -327,11 +353,11 @@ export default function Home({
 
       <Section id="topics">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {topicItems.map((item, index) => (
+          {topicCards.map((item, index) => (
             <RevealSection key={item?.title ?? item ?? index} delay={(index % 4) * 0.1}>
-              <Card title={item?.title ?? item}>
-                <p className="text-sm text-slate-700">{item?.description ?? item}</p>
-              </Card>
+              <CardShell title={item?.title ?? item} iconName={item.iconName} className="h-full">
+                <p>{item?.description ?? item}</p>
+              </CardShell>
             </RevealSection>
           ))}
         </div>
@@ -348,22 +374,29 @@ export default function Home({
           </RevealSection>
           <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {serviceCards.slice(0, 3).map((card, index) => {
-              const IconComponent = getIconComponent(card.icon);
+              const iconName =
+                typeof card.icon === 'string'
+                  ? card.icon
+                  : typeof card.iconName === 'string'
+                  ? card.iconName
+                  : typeof card.icon?.name === 'string'
+                  ? card.icon.name
+                  : 'handshake';
               return (
                 <RevealSection key={card.href ?? card.title} delay={(index % 3) * 0.1}>
-                  <Card
-                    title={card.title}
-                    subtitle={card.description}
-                    icon={IconComponent ? <IconComponent className="h-6 w-6" aria-hidden /> : null}
-                    footer={
-                      card.href ? (
-                        <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
+                  <CardShell title={card.title} meta={card.description} iconName={iconName} className="h-full">
+                    {card.href ? (
+                      <div className="mt-4">
+                        <Link
+                          href={card.href}
+                          className="inline-flex items-center gap-2 font-semibold text-sustain-primary"
+                        >
                           {card.linkLabel ?? 'Explore service'}
                           <span aria-hidden>→</span>
                         </Link>
-                      ) : null
-                    }
-                  />
+                      </div>
+                    ) : null}
+                  </CardShell>
                 </RevealSection>
               );
             })}
