@@ -197,7 +197,8 @@ h3 {
 }
 
 .typography blockquote {
-    @apply border-l-4 border-sustain-primary/40 pl-6 italic text-sustain-textMain;
+    @apply border-l-4 pl-6 italic text-sustain-textMain;
+    border-color: rgba(189, 167, 137, 0.4);
 }
 
 .typography strong {
