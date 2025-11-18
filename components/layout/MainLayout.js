@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import SkipLink from '@/components/common/SkipLink';
-import Header from './Header';
-import Footer from './Footer';
+import SiteHeader from '@/components/site/SiteHeader';
+import SiteFooter from '@/components/site/SiteFooter';
 import SEO from './SEO';
 
 const DEFAULT_SEO = {};
@@ -36,13 +36,13 @@ export default function MainLayout({ children, seo = DEFAULT_SEO } = {}) {
   return (
     <>
       <SEO {...resolvedSeo} />
-      <div className="flex min-h-screen flex-col bg-brand-bg text-brand-ink transition-colors duration-300 dark:bg-sustain-bg-dark dark:text-sustain-text-dark">
+      <div className="flex min-h-screen flex-col bg-sustain-pageBg text-sustain-textMain transition-colors duration-300 dark:bg-sustain-bg-dark dark:text-sustain-text-dark">
         <SkipLink />
-        <Header />
+        <SiteHeader />
         <main id="content" className="typography flex-1 focus:outline-none">
           {children}
         </main>
-        <Footer />
+        <SiteFooter />
       </div>
     </>
   );
