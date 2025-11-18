@@ -258,7 +258,10 @@ export default function Header() {
                         onClick={() => setMegaOpen((prev) => !prev)}
                       >
                         <span>{item.label}</span>
-                        <ChevronDownIcon className={cn('h-4 w-4 transition', megaOpen ? 'rotate-180' : '')} aria-hidden />
+                        <ChevronDownIcon
+                          className={cn('h-4 w-4 transition-transform duration-200', megaOpen ? 'rotate-180' : '')}
+                          aria-hidden
+                        />
                       </button>
                       {megaOpen ? (
                         <div
