@@ -630,7 +630,6 @@ h3 {
     margin: 0 auto;
     font-size: 1.02rem;
     line-height: 1.8;
-    color: var(--color-ink, #111);
 }
 
 .ssg-blog-article p {
@@ -639,8 +638,16 @@ h3 {
 
 .ssg-blog-article h2 {
     font-size: 1.4rem;
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
+    margin-top: 2.75rem;
+    margin-bottom: 0.9rem;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.ssg-blog-article h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 1.75rem;
 }
 
 .ssg-blog-article h3 {
@@ -652,11 +659,10 @@ h3 {
 .ssg-blog-article ul,
 .ssg-blog-article ol {
     margin: 0.75rem 0 1.25rem;
-    padding-left: 1.25rem;
 }
 
 .ssg-blog-article li + li {
-    margin-top: 0.4rem;
+    margin-top: 0.35rem;
 }
 
 .ssg-blog-article,
@@ -666,12 +672,9 @@ h3 {
 
 .ssg-blog-article > p:first-of-type {
     font-style: italic;
-    color: var(--color-ink-soft, #555);
+    opacity: 0.8;
 }
 
-.typography :where(hr){border:0;border-top:1px solid #e2e8f0;margin:1.75rem 0}
-
-/* [SSG BLOG] Card layout for Part 4 / Part 6 / Part 7 lists (h2 + p + ul and h2 + ul) */
 .ssg-link,
 .ssg-blog-article a {
     color: var(--color-primary, #4a6c56);
@@ -689,18 +692,11 @@ h3 {
     opacity: 0.85;
 }
 
-.ssg-blog-article h2 {
-    font-size: 1.4rem;
-    margin-top: 2.75rem;
-    margin-bottom: 0.9rem;
-    padding-top: 1.75rem;
-    border-top: 1px solid rgba(0, 0, 0, 0.04);
-}
+.typography :where(hr){border:0;border-top:1px solid #e2e8f0;margin:1.75rem 0}
 
-.ssg-blog-article h2:first-of-type {
-    border-top: none;
-    padding-top: 0;
-    margin-top: 1.75rem;
+/* [SSG BLOG] Card layout for Part 4 / Part 6 / Part 7 lists (h2 + p + ul and h2 + ul) */
+.ssg-blog-article h2 + p {
+    margin-bottom: 0.4rem;
 }
 
 .ssg-blog-article h2 + p + ul {
@@ -753,10 +749,6 @@ h3 {
     display: block;
     margin-bottom: 0.35rem;
     font-weight: 600;
-}
-
-.ssg-blog-article h2 + p {
-    margin-bottom: 0.4rem;
 }
 
 @media (max-width: 640px) {

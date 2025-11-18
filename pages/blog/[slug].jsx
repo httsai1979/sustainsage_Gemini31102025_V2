@@ -1,10 +1,4 @@
-/**
- * [SSG BLOG LAYOUT]
- * - Added a hero shell (breadcrumb, title, summary, meta, optional media) for every post.
- * - Wrapped the markdown output inside `.ssg-blog-article` so typography/link styles stay consistent.
- * - Ensured anchors remain clickable by rendering raw HTML without overlay handlers.
- * - Scenario (Part 4) lists + blockquotes (Parts 6–7) pick up card styling via globals.css.
- */
+// [SSG BLOG] Wrapped rendered article in .ssg-blog-article so global typography + card grids (Part 4 / 6 / 7) apply reliably.
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
