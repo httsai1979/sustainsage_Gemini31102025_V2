@@ -1,99 +1,63 @@
-import Head from 'next/head';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { Trans, useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import ContentHero from '@/components/content/ContentHero';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
-import Card from '@/components/ui/Card';
-import Icon from '@/components/ui/Icon';
-import StepList from '@/components/ui/StepList';
-import { orderSections } from '@/lib/content/normalize';
-import { dedupeBy } from '@/lib/dedupe';
+import CardShell from '@/components/ui/CardShell';
+import PageSection from '@/components/ui/PageSection';
+import { getContactPageContent } from '@/lib/contactContent';
 import { toSerializable } from '@/lib/toSerializable';
 
 const INPUT_CLASSNAME =
-  'w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sustain-text placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-sustain-green/40';
+  'w-full rounded-2xl border border-sustain-cardBorder bg-white px-4 py-3 text-base text-sustain-textMain placeholder:text-sustain-textMuted focus:outline-none focus:ring-2 focus:ring-sustain-primary/40';
+const DEFAULT_NOTICE = 'Temporarily showing English content while we complete this translation.';
 
-function BulletCard({ title, description, items }) {
-  if (!items?.length) return null;
-  return (
-    <Card title={title} subtitle={description}>
-      <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-700">
-        {items.map((item) => (
-          <li key={item} className="flex gap-3">
-            <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sustain-green" aria-hidden />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </Card>
-  );
+function normalizeParagraphs(value) {
+  if (!value) return [];
+  if (Array.isArray(value)) {
+    return value.filter((paragraph) => typeof paragraph === 'string' && paragraph.trim().length > 0);
+  }
+  if (typeof value === 'string' && value.trim().length > 0) {
+    return [value];
+  }
+  return [];
 }
 
-export default function ContactPage() {
-  const { t } = useTranslation('contact');
-  const [formData, setFormData] = useState({ name: '', email: '', topic: '', message: '', consent: false });
+function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
+  const hero = content?.hero ?? {};
+  const formContent = content?.form ?? {};
+  const formFields = formContent?.fields ?? {};
+  const directContact = content?.directContact ?? {};
+
+  const [formData, setFormData] = useState({ name: '', email: '', howFound: '', message: '', consent: false });
   const [status, setStatus] = useState(null);
   const [statusMessage, setStatusMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const seo = t('seo', { returnObjects: true });
-  const hero = t('hero', { returnObjects: true });
-  const journey = t('journey', { returnObjects: true });
-  const whatYouGet = t('what_you_get', { returnObjects: true });
-  const whatWeDontDo = t('what_we_dont_do', { returnObjects: true });
-  const sidebar = t('sidebar', { returnObjects: true });
-  const miniFaq = t('miniFaq', { returnObjects: true });
-  const faqLink = t('faqLink', { returnObjects: true });
-  const journeyItems = dedupeBy(
-    orderSections(Array.isArray(journey?.items) ? journey.items : []),
-    (item, index) => item?.summary ?? item?.q ?? index
-  );
-  const whatYouGetItems = dedupeBy(
-    orderSections(Array.isArray(whatYouGet?.items) ? whatYouGet.items : []),
-    (item, index) => item ?? item?.summary ?? index
-  );
-  const whatWeDontDoItems = dedupeBy(
-    orderSections(Array.isArray(whatWeDontDo?.items) ? whatWeDontDo.items : []),
-    (item, index) => item ?? item?.summary ?? index
-  );
-  const miniFaqItems = dedupeBy(
-    orderSections(Array.isArray(miniFaq?.items) ? miniFaq.items : []),
-    (item, index) => item?.q ?? item?.question ?? index
-  );
-
-  const journeySteps = journeyItems.map((item) => ({ title: item.summary ?? item.q, description: item.detail ?? item.a }));
+  const descriptionParagraphs = normalizeParagraphs(formContent?.description);
+  const directBody = normalizeParagraphs(directContact?.body);
 
   const contactMethods = [
-    {
-      title: 'Email',
-      description: 'Send context any time. We reply within three UK working days.',
-      detail: 'contact@sustainsage.com',
-      href: 'mailto:contact@sustainsage.com',
-      icon: 'mail',
-    },
-    {
-      title: 'Phone',
-      description: 'Leave a voicemail or WhatsApp note for slower-paced replies.',
-      detail: '+44 (0)20 8638 7870',
-      href: 'tel:+442086387870',
-      icon: 'phone',
-    },
-    {
-      title: 'Office hours',
-      description: 'Weekdays 09:00–17:00 UK time · Online and Southsea, Portsmouth.',
-      detail: 'GMT / BST',
-      icon: 'clock',
-    },
-    {
-      title: 'Post',
-      description: 'For agreements or paperwork, please email for the correct postal address first.',
-      detail: 'Portsmouth · Southsea',
-      icon: 'map',
-    },
-  ];
+    directContact?.email
+      ? {
+          key: 'email',
+          label: directContact?.emailLabel ?? 'Email',
+          value: directContact.email,
+          href: `mailto:${directContact.email}`,
+        }
+      : null,
+    directContact?.phone
+      ? {
+          key: 'phone',
+          label: directContact?.phoneLabel ?? 'Phone',
+          value: directContact.phone,
+          href: `tel:${directContact.phone.replace(/\(0\)/g, '').replace(/[^+\d]/g, '')}`,
+        }
+      : null,
+  ].filter(Boolean);
 
   const handleChange = (event) => {
     const { name, type, value, checked } = event.target;
@@ -110,11 +74,12 @@ export default function ContactPage() {
 
     if (!formData.name || !formData.email || !formData.message || !formData.consent) {
       setStatus('error');
-      setStatusMessage(t('form.status.errorRequired'));
+      setStatusMessage(formContent?.errorRequired ?? 'Please complete the required fields.');
       return;
     }
 
     setIsSubmitting(true);
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -122,7 +87,7 @@ export default function ContactPage() {
         body: JSON.stringify({
           fullName: formData.name,
           email: formData.email,
-          topic: formData.topic || 'General enquiry',
+          topic: formData.howFound || 'General enquiry',
           message: formData.message,
           consent: formData.consent,
         }),
@@ -132,231 +97,223 @@ export default function ContactPage() {
         throw new Error('Network error');
       }
 
-      setFormData({ name: '', email: '', topic: '', message: '', consent: false });
+      setFormData({ name: '', email: '', howFound: '', message: '', consent: false });
       setStatus('success');
-      setStatusMessage(t('form.status.success'));
+      setStatusMessage(formContent?.successMessage ?? 'Thank you for reaching out.');
     } catch (error) {
       console.error('Contact form submission failed', error);
       setStatus('error');
-      setStatusMessage(t('form.status.error'));
+      setStatusMessage(formContent?.errorMessage ?? 'Something went wrong. Please try again later.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  return (
-    <main className="ss-container">
-      <Head>
-        <title>{seo?.title}</title>
-        <meta name="description" content={seo?.description} />
-      </Head>
+  const consent = formContent?.consent ?? {};
+  const hasDirectContact = Boolean(directBody.length || contactMethods.length);
 
-      <section className="ss-section">
-        <div className="max-w-3xl space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">Get in touch, no rush</p>
-          <h1 className="text-4xl font-semibold text-sustain-text">{hero?.title}</h1>
-          <p className="text-base leading-relaxed text-slate-700">{hero?.body}</p>
-          {hero?.bullets?.length ? (
-            <ul className="mt-4 grid gap-2 text-sm text-slate-700 md:grid-cols-3">
-              {hero.bullets.map((bullet) => (
-                <li key={bullet} className="rounded-2xl border border-slate-200 bg-white px-4 py-3">
-                  {bullet}
-                </li>
+  return (
+    <>
+      <ContentHero hero={hero} showFallbackNotice={showFallbackNotice} fallbackNotice={fallbackNotice} />
+
+      <PageSection id="contact-form" title={formContent?.title}>
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
+          <div className="rounded-3xl border border-sustain-cardBorder bg-white/95 p-6 shadow-sm md:p-8">
+            {descriptionParagraphs.length ? (
+              <div className="space-y-3 text-sm leading-relaxed text-sustain-textMuted">
+                {descriptionParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            ) : null}
+            {formContent?.responseNote ? (
+              <p className="mt-4 text-xs font-semibold uppercase tracking-[0.25em] text-sustain-textMuted">
+                {formContent.responseNote}
+              </p>
+            ) : null}
+
+            {status && statusMessage ? (
+              <div
+                role="status"
+                aria-live="polite"
+                className={`mt-6 rounded-2xl px-4 py-3 text-sm ${
+                  status === 'success' ? 'bg-sustain-primary/10 text-sustain-primary' : 'bg-red-50 text-red-700'
+                }`}
+              >
+                {statusMessage}
+              </div>
+            ) : null}
+
+            <form onSubmit={handleSubmit} className="mt-6 space-y-5">
+              <div>
+                <label htmlFor="name" className="block text-sm font-semibold text-sustain-textMain">
+                  {formFields?.name?.label ?? 'Name'}
+                </label>
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  placeholder={formFields?.name?.placeholder ?? ''}
+                  className={INPUT_CLASSNAME}
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-sustain-textMain">
+                  {formFields?.email?.label ?? 'Email'}
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  autoComplete="email"
+                  required
+                  placeholder={formFields?.email?.placeholder ?? ''}
+                  className={INPUT_CLASSNAME}
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="howFound" className="block text-sm font-semibold text-sustain-textMain">
+                  {formFields?.howFound?.label ?? 'How did you find this site?'}
+                </label>
+                <input
+                  id="howFound"
+                  name="howFound"
+                  type="text"
+                  placeholder={formFields?.howFound?.placeholder ?? ''}
+                  className={INPUT_CLASSNAME}
+                  value={formData.howFound}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-semibold text-sustain-textMain">
+                  {formFields?.message?.label ?? 'What would you like to talk about?'}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={6}
+                  required
+                  placeholder={formFields?.message?.placeholder ?? ''}
+                  className={`${INPUT_CLASSNAME} min-h-[160px] resize-vertical`}
+                  value={formData.message}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div className="flex items-start gap-3">
+                <input
+                  id="consent"
+                  name="consent"
+                  type="checkbox"
+                  checked={formData.consent}
+                  onChange={handleChange}
+                  required
+                  className="mt-1 h-4 w-4 rounded border-sustain-cardBorder text-sustain-primary focus:ring-sustain-primary"
+                />
+                <div className="space-y-1 text-sm leading-relaxed text-sustain-textMuted">
+                  <p>
+                    {consent?.labelBeforeLink ? `${consent.labelBeforeLink} ` : null}
+                    <Link href="/legal/coaching-boundaries" className="font-semibold text-sustain-primary underline-offset-2 hover:underline">
+                      {consent?.linkLabel ?? 'Coaching Boundaries'}
+                    </Link>
+                    {consent?.labelAfterLink ? ` ${consent.labelAfterLink}` : null}
+                  </p>
+                  {consent?.helper ? <p className="text-xs text-sustain-textMuted/80">{consent.helper}</p> : null}
+                </div>
+              </div>
+
+              <button type="submit" className="ss-btn-primary" disabled={isSubmitting}>
+                {isSubmitting ? formContent?.submittingLabel ?? 'Sending…' : formContent?.submitLabel ?? 'Send message'}
+              </button>
+            </form>
+          </div>
+
+          {hasDirectContact ? (
+            <CardShell
+              iconName={directContact?.iconName ?? 'chat'}
+              title={directContact?.title}
+              bodyClassName="space-y-4 text-sm leading-relaxed"
+            >
+              {directBody.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
               ))}
-            </ul>
+              {contactMethods.length ? (
+                <dl className="space-y-3 text-sm">
+                  {contactMethods.map((method) => (
+                    <div key={method.key}>
+                      <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-textMuted">{method.label}</dt>
+                      <dd className="text-base font-semibold text-sustain-textMain">
+                        <a href={method.href} className="text-sustain-primary underline-offset-2 hover:underline">
+                          {method.value}
+                        </a>
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              ) : null}
+              {directContact?.note ? (
+                <p className="text-xs text-sustain-textMuted">{directContact.note}</p>
+              ) : null}
+            </CardShell>
           ) : null}
         </div>
-      </section>
+      </PageSection>
 
-      <section className="ss-section">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {contactMethods.map((method) => (
-            <Card key={method.title} title={method.title} icon={<Icon name={method.icon ?? 'info'} />}>
-              <p className="text-sm text-slate-700">{method.description}</p>
-              {method.detail ? (
-                method.href ? (
-                  <a
-                    href={method.href}
-                    className="mt-3 inline-flex text-sm font-semibold text-sustain-green underline-offset-2 hover:underline"
-                  >
-                    {method.detail}
-                  </a>
-                ) : (
-                  <p className="mt-3 text-sm font-semibold text-sustain-text">{method.detail}</p>
-                )
-              ) : null}
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      <section className="ss-section">
-        <div className="space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{journey?.title}</p>
-          {journey?.intro ? <p className="text-base text-slate-700">{journey.intro}</p> : null}
-        </div>
-        <div className="mt-8">
-          <StepList steps={journeySteps} />
-        </div>
-      </section>
-
-      <section className="ss-section">
-        <div className="mx-auto grid max-w-5xl gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
-          <div>
-            <p className="mb-6 text-sm leading-relaxed text-slate-700">
-              If you represent a company or China–UK corporate site, please mention this in your message so I can respond with
-              options tailored to your context.
-            </p>
-            <Card title={t('form.title')} subtitle={t('form.subtitle')}>
-              <form onSubmit={handleSubmit} className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-sustain-text">
-                    {t('form.name')}
-                  </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    className={INPUT_CLASSNAME}
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-sustain-text">
-                    {t('form.email')}
-                  </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    className={INPUT_CLASSNAME}
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="topic" className="block text-sm font-semibold text-sustain-text">
-                    How did you find us?
-                  </label>
-                  <input
-                    id="topic"
-                    name="topic"
-                    type="text"
-                    className={INPUT_CLASSNAME}
-                    placeholder="e.g. referral, LinkedIn, workshop"
-                    value={formData.topic}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-sustain-text">
-                    {t('form.help')}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    className={INPUT_CLASSNAME}
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder={t('form.helpHint')}
-                    required
-                  />
-                </div>
-                <div className="flex items-start gap-3">
-                  <input
-                    id="consent"
-                    name="consent"
-                    type="checkbox"
-                    checked={formData.consent}
-                    onChange={handleChange}
-                    className="mt-1 h-4 w-4 rounded border-sustain-cardBorder text-sustain-green focus:ring-sustain-green"
-                    required
-                  />
-                  <label htmlFor="consent" className="text-sm leading-relaxed text-slate-700">
-                    <Trans
-                      t={t}
-                      i18nKey="consent.label"
-                      components={{
-                        0: (
-                          <Link
-                            href="/legal/coaching-boundaries"
-                            className="font-semibold text-sustain-green underline-offset-2 hover:underline"
-                          />
-                        ),
-                      }}
-                    />
-                  </label>
-                </div>
-                {status ? (
-                  <div
-                    className={`rounded-2xl px-4 py-3 text-sm ${
-                      status === 'success'
-                        ? 'bg-sustain-green/10 text-sustain-green'
-                        : 'bg-red-50 text-red-700'
-                    }`}
-                  >
-                    {statusMessage}
-                  </div>
-                ) : null}
-                <button type="submit" className="ss-btn-primary" disabled={isSubmitting}>
-                  {isSubmitting ? t('form.status.submitting') : t('form.submit')}
-                </button>
-              </form>
-            </Card>
-            <div className="mt-6 rounded-card rounded-2xl border border-slate-100 bg-white p-6 shadow-md">
-              <p className="text-sm font-semibold text-sustain-text">{sidebar?.responseTitle}</p>
-              <p className="mt-2 text-sm text-slate-700">{sidebar?.responseCopy}</p>
-              <p className="mt-4 text-sm font-semibold text-sustain-text">Reply within 2–3 UK working days.</p>
-              <p className="mt-1 text-sm text-slate-700">contact@sustainsage.com · +44 (0)20 8638 7870</p>
-            </div>
-          </div>
-          <div className="space-y-6">
-            <BulletCard title={whatYouGet?.title} description={whatYouGet?.description} items={whatYouGetItems} />
-            <BulletCard title={whatWeDontDo?.title} description={whatWeDontDo?.description} items={whatWeDontDoItems} />
-          </div>
-        </div>
-      </section>
-
-      <section className="ss-section">
-        <div className="space-y-4 text-center md:text-left">
-          <h2 className="text-3xl font-semibold text-sustain-text">{miniFaq?.title ?? 'Quick answers'}</h2>
-          {miniFaq?.intro ? <p className="text-base text-slate-700">{miniFaq.intro}</p> : null}
-        </div>
-        <div className="mt-8 grid gap-6 md:grid-cols-2">
-          {miniFaqItems.map((item) => (
-            <Card key={item.q ?? item.question} title={item.q ?? item.question}>
-              <p className="text-sm text-slate-700">{item.a ?? item.answer}</p>
-            </Card>
-          ))}
-        </div>
-        {faqLink?.label ? (
-          <div className="mt-6">
-            <Link href={faqLink.href} className="ss-btn-secondary">
-              {faqLink.label}
-            </Link>
-          </div>
-        ) : null}
-      </section>
-
-      <section className="ss-section">
-        <ICFNotice id="icf" className="mx-auto max-w-3xl" />
-      </section>
-    </main>
+      <PageSection id="icf-notice">
+        <ICFNotice className="mx-auto max-w-3xl" />
+      </PageSection>
+    </>
   );
 }
 
-ContactPage.getLayout = function getLayout(page) {
-  return <MainLayout>{page}</MainLayout>;
+ContactPage.propTypes = {
+  content: PropTypes.shape({
+    hero: PropTypes.object,
+    form: PropTypes.object,
+    directContact: PropTypes.object,
+    seo: PropTypes.object,
+  }),
+  showFallbackNotice: PropTypes.bool,
+  fallbackNotice: PropTypes.string,
 };
 
-export async function getStaticProps({ locale }) {
+ContactPage.getLayout = function getLayout(page) {
+  const seo = page.props?.content?.seo ?? {};
+  return (
+    <MainLayout
+      seo={{
+        title: seo?.title ?? 'Contact',
+        description: seo?.description ?? null,
+      }}
+    >
+      <main>{page}</main>
+    </MainLayout>
+  );
+};
+
+export async function getStaticProps({ locale = 'en-GB' }) {
+  const resolvedLocale = typeof locale === 'string' ? locale : 'en-GB';
+  const { content, isFallback } = getContactPageContent(resolvedLocale);
+  const fallbackNotice = content?.fallbackNotice ?? DEFAULT_NOTICE;
+
   return toSerializable({
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'nav', 'contact'])),
+      content,
+      showFallbackNotice: isFallback,
+      fallbackNotice,
+      ...(await serverSideTranslations(resolvedLocale, ['common', 'nav'])),
     },
   });
 }
+
+export default ContactPage;
