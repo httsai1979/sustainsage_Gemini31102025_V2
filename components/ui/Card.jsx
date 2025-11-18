@@ -26,29 +26,29 @@ export default function Card({
         {(tag || icon || title || subtitle) && (
           <div className="space-y-3">
             {tag ? (
-              <span className="inline-flex items-center rounded-full bg-sustain-green/10 px-3 py-1 text-xs font-semibold text-sustain-green">
+              <span className="inline-flex items-center rounded-full bg-sustain-primary/10 px-3 py-1 text-xs font-semibold text-sustain-primary">
                 {tag}
               </span>
             ) : null}
             {icon ? (
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-sustain-green/10 text-sustain-green">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-sustain-primary/10 text-sustain-primary">
                 {icon}
               </div>
             ) : null}
             {title ? (
               <h3 className="text-base font-semibold tracking-tight text-sustain-text dark:text-sustain-text-dark md:text-lg">{title}</h3>
             ) : null}
-            {subtitle ? <p className="text-sm text-slate-600 dark:text-sustain-text-dark/80 md:text-base">{subtitle}</p> : null}
+            {subtitle ? <p className="text-sm text-sustain-textMuted dark:text-sustain-text-dark/80 md:text-base">{subtitle}</p> : null}
           </div>
         )}
         {prose ? (
-          <Prose className="space-y-4 text-sm leading-relaxed text-slate-700 dark:text-sustain-text-dark/90 md:text-base">{children}</Prose>
+          <Prose className="space-y-4 text-sm leading-relaxed text-sustain-textMuted dark:text-sustain-text-dark/90 md:text-base">{children}</Prose>
         ) : (
-          <div className="text-sm leading-relaxed text-slate-700 dark:text-sustain-text-dark/90 md:text-base">{children}</div>
+          <div className="text-sm leading-relaxed text-sustain-textMuted dark:text-sustain-text-dark/90 md:text-base">{children}</div>
         )}
       </div>
       {footer ? (
-        <div className="mt-6 border-t border-sustain-cardBorder/70 pt-4 text-sm text-slate-600 dark:border-sustain-cardBorder-dark/70 dark:text-sustain-text-dark/80">
+        <div className="mt-6 border-t border-sustain-cardBorder/70 pt-4 text-sm text-sustain-textMuted dark:border-sustain-cardBorder-dark/70 dark:text-sustain-text-dark/80">
           {footer}
         </div>
       ) : null}

@@ -1,0 +1,148 @@
+{
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "seo": {
+    "title": "About — SustainSage Group",
+    "description": "Bilingual coaches based in the UK. ICF-aligned, confidential by default, practical and culture-aware."
+  },
+  "hero": {
+    "eyebrow": "About SustainSage",
+    "title": "Coaching for complex transitions",
+    "intro": [
+      "SustainSage is led by bilingual coaches who have moved between Taiwan, Singapore, and the UK. We keep coaching steady, culturally aware, and grounded in practical experiments.",
+      "Every partnership begins with informed consent, shared language, and clarity on how we will work together."
+    ],
+    "chips": [
+      "ICF-aligned practice keeps agreements, data care, and supervision transparent so trust can grow.",
+      "Lived experience across Asia-Pacific and the UK keeps culture and policy context in view.",
+      "No-drama experiments help you build momentum without burning out."
+    ]
+  },
+  "sections": [
+    {
+      "id": "about-navigation",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "story",
+          "title": "From factories to quiet conversations",
+          "iconName": "book",
+          "body": [
+            "Before I became a coach, I spent years in manufacturing – leading three factories and around 1,400 people across Mainland China and Taiwan."
+          ],
+          "href": "/about/story"
+        },
+        {
+          "id": "coach",
+          "title": "Meet the bilingual coaches behind SustainSage",
+          "iconName": "chat",
+          "body": [
+            "We bring supervision-informed coaching, policy literacy, and multilingual lived experience to every partnership."
+          ],
+          "href": "/about/coach"
+        },
+        {
+          "id": "values",
+          "title": "Values that shape every partnership",
+          "iconName": "consent",
+          "body": [
+            "Gentle, ICF-aligned principles that keep each conversation calm, transparent, and culturally aware."
+          ],
+          "href": "/about/values"
+        },
+        {
+          "id": "approach",
+          "title": "Experiments that respect pace and context",
+          "iconName": "compass",
+          "body": [
+            "Every partnership begins with informed consent, shared language, and clarity on how we will work together."
+          ],
+          "href": "/about/approach"
+        }
+      ]
+    },
+    {
+      "id": "values-preview",
+      "style": "cards",
+      "title": "Values that shape every partnership",
+      "lead": "Gentle, ICF-aligned principles that keep each conversation calm, transparent, and culturally aware.",
+      "cards": [
+        {
+          "id": "authenticity",
+          "title": "Authenticity",
+          "iconName": "consent",
+          "body": [
+            "ICF-aligned practice keeps agreements, data care, and supervision transparent so trust can grow."
+          ]
+        },
+        {
+          "id": "gentleness",
+          "title": "Gentleness",
+          "iconName": "family",
+          "body": [
+            "We keep a calm cadence so experimentation feels kind, slow enough, and sustainable."
+          ]
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "iconName": "note",
+          "body": [
+            "Clear agreements, review points, and data boundaries help every partnership stay grounded."
+          ]
+        },
+        {
+          "id": "cultural-sensitivity",
+          "title": "Cultural sensitivity",
+          "iconName": "globe",
+          "body": [
+            "Lived experience across Asia-Pacific and the UK keeps multilingual nuance and policy context in view."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "practice-pillars",
+      "style": "cards",
+      "title": "Structures that keep our practice steady",
+      "lead": "Training, supervision, and bilingual partnerships that keep our work grounded and accountable.",
+      "cards": [
+        {
+          "id": "context-before-action",
+          "title": "Context before action",
+          "iconName": "target",
+          "body": [
+            "We map systems, constraints, and access needs before suggesting experiments."
+          ]
+        },
+        {
+          "id": "bilingual-collaboration",
+          "title": "Bilingual collaboration",
+          "iconName": "globe",
+          "body": [
+            "Sessions move between English, Traditional Chinese, and Simplified Chinese so nuance survives translation."
+          ]
+        },
+        {
+          "id": "reflective-practice",
+          "title": "Reflective practice",
+          "iconName": "note",
+          "body": [
+            "Monthly supervision and pause points keep bias, risk, and wellbeing in view."
+          ]
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ready to map your next step?",
+    "body": "Browse our coaching services or read the full coaching boundaries we uphold.",
+    "primary": {
+      "label": "See services",
+      "href": "/services"
+    },
+    "secondary": {
+      "label": "Read coaching boundaries",
+      "href": "/services/how-coaching-works"
+    }
+  }
+}

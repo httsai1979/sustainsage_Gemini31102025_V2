@@ -1,0 +1,172 @@
+{
+  "seo": {
+    "title": "Coaching for newcomers to the UK | SustainSage",
+    "description": "Scenario-based coaching for people settling into UK work and life rhythms without having to translate everything from scratch."
+  },
+  "hero": {
+    "eyebrow": "Coaching for newcomers to the UK",
+    "title": "Coaching for newcomers to the UK",
+    "intro": [
+      "Make sense of work, culture, and expectations—without having to translate your whole story from scratch.",
+      "You’re building a life here while honouring who you were before. Coaching can hold the nuance."
+    ],
+    "chips": [
+      "Navigate UK life and work transitions with culturally aware coaching—no assimilation pressure, just honest partnership."
+    ]
+  },
+  "sections": [
+    {
+      "id": "challenges",
+      "title": "What tends to show up",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "stay-or-leave",
+          "title": "Push-pull of staying or leaving",
+          "iconName": "compass",
+          "body": [
+            "Constantly weighing visas, timelines, and whether remaining supports your goals and relationships."
+          ]
+        },
+        {
+          "id": "language-mismatch",
+          "title": "Language and workplace mismatch",
+          "iconName": "chat",
+          "body": [
+            "You can do the job, yet unspoken rules still feel like an exam you never revised for."
+          ]
+        },
+        {
+          "id": "care-across-borders",
+          "title": "Care across borders",
+          "iconName": "family",
+          "body": [
+            "Coordinating family responsibilities, remittances, and time zones while you are still settling."
+          ]
+        },
+        {
+          "id": "belonging",
+          "title": "Belonging without erasing yourself",
+          "iconName": "globe",
+          "body": [
+            "Wanting community while keeping the parts of you that made the move possible."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "How coaching can help",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "name-what-you-want",
+          "title": "Name what you want without rushing decisions",
+          "iconName": "target",
+          "body": [
+            "Map options, boundaries, and risks so your choices honour visas, values, and energy."
+          ]
+        },
+        {
+          "id": "translate-signals",
+          "title": "Translate cultural signals into action",
+          "iconName": "note",
+          "body": [
+            "Slow down workplace dynamics, decode feedback, and plan consent-based conversations."
+          ]
+        },
+        {
+          "id": "design-support",
+          "title": "Design support systems across borders",
+          "iconName": "handshake",
+          "body": [
+            "Clarify who is in your corner, what you can ask for, and how to stay resourced while settling in."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette",
+      "title": "A short vignette",
+      "style": "prose",
+      "body": [
+        "“L” moved from Taipei to London on a partner visa. Her previous leadership role carried weight back home, yet in the UK she felt reduced to “the new one who speaks great English”. Coaching sessions gave her a weekly space to name the grief of starting over, rehearse cross-cultural conversations with her manager, and design check-ins with family in Taiwan so the distance felt less punishing. Within three months she negotiated clearer responsibilities and chose a community project that made the city feel more livable."
+      ]
+    },
+    {
+      "id": "packages",
+      "title": "Which package fits?",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "transition",
+          "title": "Transition package",
+          "iconName": "target",
+          "body": [
+            "Most newcomers start with the Transition package to land gently and keep agency during the first 3–6 months in the UK."
+          ],
+          "href": "/services/transition-coaching"
+        },
+        {
+          "id": "reset",
+          "title": "Reset package",
+          "iconName": "clock",
+          "body": [
+            "If you are already here but feel depleted, the Reset package creates a short, contained space to reorient and make sustainable agreements."
+          ],
+          "href": "/services/reset-sprint"
+        },
+        {
+          "id": "faq",
+          "title": "FAQ",
+          "iconName": "question",
+          "body": [
+            "Still unsure? Browse the FAQ or book a 20-minute chat to see if coaching is the right container right now."
+          ],
+          "href": "/faq"
+        }
+      ]
+    },
+    {
+      "id": "boundaries",
+      "title": "What this space is not",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "no-immigration",
+          "title": "Not immigration advice or legal representation.",
+          "iconName": "privacy",
+          "body": []
+        },
+        {
+          "id": "no-job-placement",
+          "title": "Not job placement or landlord negotiation on your behalf.",
+          "iconName": "briefcase",
+          "body": []
+        },
+        {
+          "id": "not-therapy",
+          "title": "Not therapy for trauma or acute mental health support.",
+          "iconName": "consent",
+          "body": []
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "style": "cta",
+      "title": "Bring your questions to a 20-minute chat",
+      "body": [
+        "We’ll check scope, timing and whether coaching is the best next step."
+      ],
+      "primaryCta": {
+        "href": "/contact",
+        "label": "Book 20-minute chat"
+      },
+      "secondaryCta": {
+        "href": "/services",
+        "label": "Compare services"
+      }
+    }
+  ]
+}

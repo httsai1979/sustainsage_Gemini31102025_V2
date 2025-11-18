@@ -9,7 +9,7 @@ export default function EarlyCareerServicePage() {
 
 export async function getStaticProps({ locale }) {
   const props = {
-    ...(await serverSideTranslations(locale, ['common', 'services'])),
+    ...(await serverSideTranslations(locale, ['common', 'nav', 'services'])),
   };
 
   return {
