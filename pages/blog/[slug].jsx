@@ -1,4 +1,4 @@
-// [SSG BLOG] Wrapped rendered article in .ssg-blog-article so global typography + card grids (Part 4 / 6 / 7) apply reliably.
+// [SSG BLOG] Ensures the rendered article lives inside .ssg-blog-article so new typography + card grids (Part 4 / 6 / 7) apply globally.
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
