@@ -432,9 +432,9 @@ h3 {
     max-width: 960px;
     margin: 0 auto;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 1rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
@@ -542,18 +542,6 @@ h3 {
 .typography :where(blockquote){border-left:4px solid #e2e8f0;padding-left:1rem;color:#334155;font-style:italic}
 
 /* Blog detail layout */
-.ssg-blog-page {
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-}
-
-.ssg-blog-container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-}
-
 .ssg-blog-hero {
     display: flex;
     flex-wrap: wrap;
@@ -627,7 +615,7 @@ h3 {
 
 .typography :where(hr){border:0;border-top:1px solid #e2e8f0;margin:1.75rem 0}
 
-/* [SSG BLOG] Base layout */
+/* [SSG BLOG + BRAND] Added article wrapper, card layout, new colour tokens, and logo usage. */
 .ssg-blog-page {
     padding-top: 3rem;
     padding-bottom: 4rem;
@@ -636,6 +624,8 @@ h3 {
 .ssg-blog-container {
     max-width: 960px;
     margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
 
 .ssg-blog-article {
@@ -681,7 +671,7 @@ h3 {
 /* Links inside blog content */
 .ssg-link,
 .ssg-blog-article a {
-    color: var(--color-primary, #4a6c56);
+    color: var(--color-primary, #BDA789);
     text-decoration: underline;
     text-underline-offset: 0.12em;
     cursor: pointer;
@@ -705,7 +695,7 @@ h3 {
 /* First italic line (intro sentence) slightly softer */
 .ssg-blog-article > p:first-of-type {
     font-style: italic;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 /* Section intro paragraph */

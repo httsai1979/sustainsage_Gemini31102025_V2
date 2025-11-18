@@ -1,4 +1,4 @@
-// [SSG BLOG] Ensures the rendered article lives inside .ssg-blog-article so new typography + card grids (Part 4 / 6 / 7) apply globally.
+// [SSG BLOG + BRAND] Added article wrapper, card layout, new colour tokens, and logo usage.
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
