@@ -19,9 +19,15 @@ module.exports = {
         sage: '#4A6C56',
         paper: '#FFFFFF',
         background: '#F5F5F7',
+        foreground: '#1D1D1F',
         ink: '#1D1D1F',
         inkSoft: '#4B4B4F',
         line: '#E6E6EA',
+        border: '#E6E6EA',
+        card: '#FFFFFF',
+        'card-foreground': '#1D1D1F',
+        muted: '#4B4B4F',
+        'muted-foreground': '#4B4B4F',
         accent: '#0070C9',
         sustain: {
           primary: '#4A6C56',
@@ -61,10 +67,10 @@ module.exports = {
         },
       },
       boxShadow: {
-        card: '0 8px 20px rgba(15, 23, 42, 0.06)',
+        card: '0 20px 55px rgba(15, 23, 42, 0.08)',
         soft: '0 2px 10px rgba(0,0,0,0.06)',
-        ssgCard: '0 10px 30px rgba(0,0,0,0.04)',
-        sustainCard: '0 8px 20px rgba(15, 23, 42, 0.06)',
+        ssgCard: '0 18px 50px rgba(15, 23, 42, 0.08)',
+        sustainCard: '0 12px 40px rgba(15, 23, 42, 0.08)',
         legacyCard: '0 8px 24px rgba(0,0,0,0.08)',
       },
       borderRadius: {
@@ -75,10 +81,12 @@ module.exports = {
         ssgCard: '16px',
         ssgButton: '9999px',
         card: '1rem',
+        pill: '999px',
       },
       maxWidth: {
         wrap: '1200px',
         page: '72rem',
+        'screen-content': '100rem',
       },
       spacing: {
         section: '5rem',
