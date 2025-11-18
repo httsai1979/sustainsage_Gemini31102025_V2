@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps<ServiceOverviewPageProps> = async ({
   const props = {
     service,
     showFallbackNotice: isFallback,
-    ...(await serverSideTranslations(currentLocale, ['common'])),
+    ...(await serverSideTranslations(currentLocale, ['common', 'nav'])),
   };
 
   return {

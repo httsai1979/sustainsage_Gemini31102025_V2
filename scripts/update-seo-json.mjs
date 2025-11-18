@@ -4,7 +4,7 @@ const ROOT = process.cwd();
 
 const LOCALES = ['en-GB','zh-TW','zh-CN'];
 const FILES_BY_LOCALE = (loc) => [
-  `content/home/${loc}.json`,
+  `content/home/index.${loc}.json`,
   `content/about/${loc}.json`,
   `content/services/index.${loc}.json`,
   // three pathways overview

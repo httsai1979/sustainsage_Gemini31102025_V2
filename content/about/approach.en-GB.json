@@ -1,19 +1,124 @@
 {
   "fallbackNotice": "Temporarily showing English content while we complete this translation.",
-  "title": "Our Approach",
-  "intro": "We bring together data-driven insight and community partnerships to deliver sustainable impact.",
-  "pillars": [
+  "seo": {
+    "title": "Experiments that respect pace and context",
+    "description": "Every partnership begins with informed consent, shared language, and clarity on how we will work together."
+  },
+  "hero": {
+    "eyebrow": "Our approach",
+    "title": "Experiments that respect pace and context",
+    "intro": [
+      "Every partnership begins with informed consent, shared language, and clarity on how we will work together."
+    ]
+  },
+  "sections": [
     {
-      "title": "Listen First",
-      "description": "We start by understanding the communities and ecosystems we serve."
+      "id": "definition",
+      "style": "cards",
+      "title": "What coaching looks like with SustainSage",
+      "cards": [
+        {
+          "id": "coaching",
+          "title": "Coaching",
+          "iconName": "chat",
+          "body": [
+            "Coaching is a structured, future-focused partnership where you stay in charge of direction and pace."
+          ]
+        },
+        {
+          "id": "therapy",
+          "title": "Therapy",
+          "iconName": "question",
+          "body": [
+            "Therapy diagnoses or treats mental health needs."
+          ]
+        },
+        {
+          "id": "mentoring",
+          "title": "Mentoring or consulting",
+          "iconName": "briefcase",
+          "body": [
+            "Mentors or consultants provide directive plans—those stay outside coaching.",
+            "We follow the International Coaching Federation Code of Ethics."
+          ]
+        }
+      ]
     },
     {
-      "title": "Act Responsibly",
-      "description": "Every initiative balances environmental, social, and economic priorities."
+      "id": "process",
+      "style": "cards",
+      "title": "How partnerships unfold",
+      "lead": "Every engagement starts with context, informed consent, and clarity on how we will work together.",
+      "cards": [
+        {
+          "id": "agreements",
+          "title": "Set shared agreements",
+          "iconName": "consent",
+          "body": [
+            "We confirm goals, roles, confidentiality boundaries, cadence, and data retention before sessions begin."
+          ]
+        },
+        {
+          "id": "bilingual",
+          "title": "Work bilingually",
+          "iconName": "globe",
+          "body": [
+            "Coaching flows between English, Traditional Chinese, and Simplified Chinese so nuance stays intact."
+          ]
+        },
+        {
+          "id": "reflect",
+          "title": "Reflect and adapt",
+          "iconName": "note",
+          "body": [
+            "Monthly supervision and reflective practice help us surface blind spots and adjust support early."
+          ]
+        }
+      ]
     },
     {
-      "title": "Measure Progress",
-      "description": "Transparent metrics guide continuous improvement and accountability."
+      "id": "boundaries",
+      "style": "cards",
+      "title": "Boundaries we uphold",
+      "lead": "These commitments protect your agency, safety, and consent.",
+      "cards": [
+        {
+          "id": "scope",
+          "title": "What scope does coaching cover?",
+          "iconName": "question",
+          "body": [
+            "We stay future-focused and collaborative. When therapeutic or legal support is needed, we pause and signpost trusted professionals."
+          ]
+        },
+        {
+          "id": "ethics",
+          "title": "How do you monitor ethics?",
+          "iconName": "privacy",
+          "body": [
+            "We follow the International Coaching Federation Code of Ethics and maintain supervision to stay accountable."
+          ]
+        },
+        {
+          "id": "access",
+          "title": "What if accessibility needs change?",
+          "iconName": "calendar",
+          "body": [
+            "We revisit agreements every few sessions to check progress, accessibility, and safeguarding requirements."
+          ]
+        }
+      ]
     }
-  ]
+  ],
+  "cta": {
+    "title": "Ready to map your next step?",
+    "body": "Browse our coaching services or read the full coaching boundaries we uphold.",
+    "primary": {
+      "label": "See services",
+      "href": "/services"
+    },
+    "secondary": {
+      "label": "Book a 20-minute chat",
+      "href": "/contact"
+    }
+  }
 }

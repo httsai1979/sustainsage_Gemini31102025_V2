@@ -150,7 +150,7 @@ export default function ResetSprintPage() {
 
 export async function getStaticProps({ locale = 'en' }) {
   const props = {
-    ...(await serverSideTranslations(locale, ['common', 'services-reset-sprint'], nextI18NextConfig)),
+    ...(await serverSideTranslations(locale, ['common', 'nav', 'services-reset-sprint'], nextI18NextConfig)),
   };
 
   return {

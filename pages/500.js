@@ -24,7 +24,7 @@ function ServerErrorPage() {
 export async function getStaticProps({ locale = 'en' }) {
   return toSerializable({
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'errorPages'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common', 'nav', 'errorPages'], nextI18NextConfig)),
     },
   });
 }

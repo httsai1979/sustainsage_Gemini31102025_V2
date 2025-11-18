@@ -1,0 +1,147 @@
+{
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "seo": {
+    "title": "From factories to quiet conversations",
+    "description": "Before I became a coach, I spent years in manufacturing – leading three factories and around 1,400 people across Mainland China and Taiwan."
+  },
+  "hero": {
+    "eyebrow": "About",
+    "title": "From factories to quiet conversations",
+    "intro": [
+      "Before I became a coach, I spent years in manufacturing – leading three factories and around 1,400 people across Mainland China and Taiwan.",
+      "My days were full of KPIs, quality issues, night-shift problems and the thousand quiet decisions that never make it into annual reports.",
+      "Looking back from the UK now, what stays with me is not the targets we hit, but the moments in between: the plant manager who closed the door and admitted he was not sleeping, the HR colleague who asked whether she had become someone she did not recognise, the engineer who wondered if moving country had actually moved him closer to the life he wanted.",
+      "Those conversations rarely had a name. They were not ‘sessions’ or ‘programmes’. They were simply human beings, carrying responsibility between different worlds, trying to make choices they could live with. Coaching, for me, is a way to make that kind of space intentional – especially for leaders in China–UK organisations who are asked to stand in two systems at once.",
+      "Today, as a Taiwan-born, UK-based coach who has lived the pressure of cross-border factory leadership, I work with mid-career individuals and with China–UK corporate leaders. The tools may be coaching, but the work is the same: to slow down enough for you to hear yourself clearly, before you decide what to do next."
+    ]
+  },
+  "sections": [
+    {
+      "id": "composite-cases",
+      "style": "cards",
+      "title": "Composite coaching glimpses",
+      "lead": "Merged, anonymised stories that honour confidentiality while showing what coaching can feel like.",
+      "cards": [
+        {
+          "id": "graduate-clearer-story",
+          "title": "Graduate → clearer story, 2 callbacks within one cycle.",
+          "iconName": "book"
+        },
+        {
+          "id": "returner-ramp-plan",
+          "title": "Returner → 3-month ramp plan, part-time to full-time.",
+          "iconName": "briefcase"
+        },
+        {
+          "id": "switcher-portfolio",
+          "title": "Switcher → portfolio reframing, first project in 6 weeks.",
+          "iconName": "tool"
+        },
+        {
+          "id": "parent-uk",
+          "title": "Parent relocating to the UK → calmer scheduling boundaries, first local contract secured.",
+          "iconName": "family"
+        },
+        {
+          "id": "founder-aligning",
+          "title": "Founder aligning a cross-border team",
+          "iconName": "handshake",
+          "body": [
+            "Series A founder scaling operations between Taipei and London with clashing expectations.",
+            "Co-created bilingual agreements, clarified decision rights, rehearsed feedback in both languages.",
+            "Meetings regained focus, with teammates reporting clearer ownership and calmer escalation paths.",
+            "Stakeholder map; Decision matrix; ICF team coaching agreements.",
+            "Details blended from multiple engagements to protect confidentiality."
+          ]
+        },
+        {
+          "id": "climate-partnership",
+          "title": "Climate partnership renegotiating scope",
+          "iconName": "target",
+          "body": [
+            "NGO and investor partnership needed to reset expectations after leadership changes.",
+            "Surfaced assumptions, rehearsed boundary language, and prototyped a revised shared roadmap.",
+            "Both parties recommitted with defined data-sharing cadence and clearer escalation checkpoints.",
+            "Scenario ladder; Values alignment canvas.",
+            "Composite scenario respecting privacy of all clients."
+          ]
+        },
+        {
+          "id": "policy-lead",
+          "title": "Policy lead rebuilding stamina",
+          "iconName": "calendar",
+          "body": [
+            "Public policy advisor juggling multilingual briefs and caregiver duties.",
+            "Mapped energy audits, simplified reporting rituals, and negotiated realistic stakeholder updates.",
+            "Client reported steadier workload and regained confidence presenting in both Mandarin and English.",
+            "Energy inventory; Boundary scripts.",
+            "Case anonymised and blended to remove identifying details."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coaching-scenarios",
+      "style": "cards",
+      "title": "What coaching looks like with SustainSage",
+      "lead": "Coaching is a structured, future-focused partnership where you stay in charge of direction and pace.",
+      "cards": [
+        {
+          "id": "story-ramp",
+          "title": "You’re returning to work after a break and want a kinder ramp back.",
+          "iconName": "calendar"
+        },
+        {
+          "id": "interview-offers",
+          "title": "You’ve applied widely but struggle to turn interviews into offers.",
+          "iconName": "briefcase"
+        },
+        {
+          "id": "offer-fit",
+          "title": "You got an offer but aren’t sure it fits your real priorities.",
+          "iconName": "target"
+        },
+        {
+          "id": "switching-fields",
+          "title": "You’re switching fields and feel you’re starting from zero.",
+          "iconName": "tool"
+        },
+        {
+          "id": "uk-proof-points",
+          "title": "You’re in the UK with overseas experience and need local proof points.",
+          "iconName": "globe"
+        },
+        {
+          "id": "team-one-to-ones",
+          "title": "You lead a small team and want steadier 1:1 conversations.",
+          "iconName": "chat"
+        },
+        {
+          "id": "launching-role",
+          "title": "Launching a role across cultures",
+          "iconName": "compass",
+          "body": [
+            "Clarify decision rights, agreements, and handoffs before expectations fracture."
+          ]
+        },
+        {
+          "id": "stakeholder-dynamics",
+          "title": "Untangling stakeholder dynamics",
+          "iconName": "handshake",
+          "body": [
+            "Surface power dynamics, accessibility needs, and language you can safely bring back to the room."
+          ]
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "label": "Explore our coaching approach",
+    "href": "/about/approach"
+  },
+  "secondaryCta": {
+    "label": "Read our ethics commitments",
+    "href": "/about/ethics"
+  },
+  "disclaimer": "Coaching does not replace therapy, legal advice, or crisis response. We will pause and refer when specialised care is required."
+}

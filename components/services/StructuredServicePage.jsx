@@ -40,15 +40,15 @@ function SummaryList({ items = [] } = {}) {
       {normalisedItems.map((item, index) => (
         <li
           key={`${item.summary ?? index}-${index}`}
-          className="flex gap-3 rounded-2xl border border-emerald-100 bg-white/95 p-5 shadow-sm"
+          className="flex gap-3 rounded-2xl border border-sustain-cardBorder bg-sustain-cardBg p-5 shadow-sm"
         >
-          <span aria-hidden="true" className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-emerald-500" />
+          <span aria-hidden="true" className="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-sustain-primary" />
           <div className="space-y-1">
             {item.summary ? (
-              <strong className="block text-sm font-semibold text-slate-900">{item.summary}</strong>
+              <strong className="block text-sm font-semibold text-sustain-textMain">{item.summary}</strong>
             ) : null}
             {item.detail ? (
-              <p className="text-sm leading-6 text-slate-700">{item.detail}</p>
+              <p className="text-sm leading-6 text-sustain-textMuted">{item.detail}</p>
             ) : null}
           </div>
         </li>
@@ -77,9 +77,9 @@ function FAQList({ items = [] } = {}) {
   return (
     <div className="mt-8 grid gap-6 md:grid-cols-3">
       {items.map((item) => (
-        <div key={item.question} className="rounded-3xl border border-emerald-100 bg-white/95 p-6 shadow-sm">
-          <h3 className="text-base font-semibold text-slate-900">{item.question}</h3>
-          <p className="mt-3 text-sm leading-6 text-slate-700">{item.answer}</p>
+        <div key={item.question} className="rounded-3xl border border-sustain-cardBorder bg-sustain-cardBg p-6 shadow-sm">
+          <h3 className="text-base font-semibold text-sustain-textMain">{item.question}</h3>
+          <p className="mt-3 text-sm leading-6 text-sustain-textMuted">{item.answer}</p>
         </div>
       ))}
     </div>
@@ -96,7 +96,7 @@ FAQList.propTypes = {
 };
 
 function Section({ title, description, note, children, background = 'white' } = {}) {
-  const backgroundClass = background === 'tint' ? 'bg-emerald-950/5' : 'bg-white';
+  const backgroundClass = background === 'tint' ? 'bg-sustain-primary/5' : 'bg-sustain-cardBg';
   return (
     <section className={`${backgroundClass} py-16 sm:py-20`}>
       <div className="mx-auto max-w-6xl px-6">
@@ -108,7 +108,7 @@ function Section({ title, description, note, children, background = 'white' } = 
         ) : null}
         {children}
         {note ? (
-          <p className="mt-6 text-xs leading-5 text-slate-500">{note}</p>
+          <p className="mt-6 text-xs leading-5 text-sustain-navTextMuted">{note}</p>
         ) : null}
       </div>
     </section>
@@ -154,7 +154,7 @@ export default function StructuredServicePage({ serviceKey, image }) {
         {hero.primaryCta && hero.primaryHref ? (
           <Link
             href={hero.primaryHref}
-            className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+            className={`${BUTTON_BASE} bg-sustain-primary text-white hover:bg-sustain-primarySoft focus-visible:outline-sustain-primary`}
           >
             {hero.primaryCta}
           </Link>
@@ -162,7 +162,7 @@ export default function StructuredServicePage({ serviceKey, image }) {
         {hero.secondaryCta && hero.secondaryHref ? (
           <Link
             href={hero.secondaryHref}
-            className={`${BUTTON_BASE} bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
+            className={`${BUTTON_BASE} bg-white text-sustain-primary ring-1 ring-inset ring-sustain-cardBorder hover:bg-sustain-primary/10 focus-visible:outline-sustain-primary`}
           >
             {hero.secondaryCta}
           </Link>
@@ -198,17 +198,17 @@ export default function StructuredServicePage({ serviceKey, image }) {
         <FAQList items={faq.items} />
       </Section>
 
-      <section className="bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-4xl rounded-3xl border border-emerald-100 bg-emerald-50/80 px-8 py-12 text-center shadow-sm">
+      <section className="bg-sustain-cardBg py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl rounded-3xl border border-sustain-cardBorder bg-sustain-primary/10 px-8 py-12 text-center shadow-sm">
           {cta.title ? (
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{cta.title}</h2>
+            <h2 className="text-2xl font-semibold tracking-tight text-sustain-textMain sm:text-3xl">{cta.title}</h2>
           ) : null}
-          {cta.body ? <p className="mt-4 text-sm leading-6 text-slate-700">{cta.body}</p> : null}
+          {cta.body ? <p className="mt-4 text-sm leading-6 text-sustain-textMuted">{cta.body}</p> : null}
           <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             {cta.primaryCta && cta.primaryHref ? (
               <Link
                 href={cta.primaryHref}
-                className={`${BUTTON_BASE} bg-emerald-700 text-white hover:bg-emerald-800 focus-visible:outline-emerald-700`}
+                className={`${BUTTON_BASE} bg-sustain-primary text-white hover:bg-sustain-primarySoft focus-visible:outline-sustain-primary`}
               >
                 {cta.primaryCta}
               </Link>
@@ -216,7 +216,7 @@ export default function StructuredServicePage({ serviceKey, image }) {
             {cta.secondaryCta && cta.secondaryHref ? (
               <Link
                 href={cta.secondaryHref}
-                className={`${BUTTON_BASE} bg-white text-emerald-800 ring-1 ring-inset ring-emerald-200 hover:bg-emerald-100 focus-visible:outline-emerald-700`}
+                className={`${BUTTON_BASE} bg-white text-sustain-primary ring-1 ring-inset ring-sustain-cardBorder hover:bg-sustain-primary/10 focus-visible:outline-sustain-primary`}
               >
                 {cta.secondaryCta}
               </Link>
