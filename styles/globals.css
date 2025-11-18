@@ -7,24 +7,31 @@
 
 :root {
     /* 1.1 色彩配置 - 與 tailwind.config.js 保持一致 */
-    --color-brand-bg: #F6F2EA;
-    --color-brand-primary: #C7A87A;
-    --color-brand-primary-dark: #B18F5F;
-    --color-brand-sage: #4A6C56;
-    --color-brand-ink: #1F2933;
-    --color-brand-border: #E5E7EB;
+    --color-primary: #BDA789;        /* warm sand */
+    --color-primary-dark: #97866D;
+    --color-primary-soft: #F4EDE1;
 
-    --color-page-bg: #F5F5F7;
-    --color-card-bg: #FFFFFF;
-    --color-primary: #4A6C56;
-    --color-primary-soft: #6B8872;
-    --color-ink: #1D1D1F;
-    --color-ink-soft: #4B5563;
-    --color-text-secondary: #4B5563;
-    --color-accent: #0070C9;
+    --color-paper: #FAF7F1;
+    --color-surface: #FFFFFF;
+
+    --color-ink: #222222;
+    --color-ink-muted: #5B5B5B;
+
+    --color-brand-bg: var(--color-primary-soft);
+    --color-brand-primary: var(--color-primary);
+    --color-brand-primary-dark: var(--color-primary-dark);
+    --color-brand-sage: #4A6C56;
+    --color-brand-ink: var(--color-ink);
+    --color-brand-border: rgba(0, 0, 0, 0.08);
+
+    --color-page-bg: var(--color-paper);
+    --color-card-bg: var(--color-surface);
+    --color-ink-soft: var(--color-ink-muted);
+    --color-text-secondary: var(--color-ink-muted);
+    --color-accent: var(--color-primary);
     --color-error: #D70022;
     --color-success: #28A745;
-    --color-border-subtle: #E5E7EB;
+    --color-border-subtle: rgba(0, 0, 0, 0.08);
     --ssg-bg: var(--color-page-bg);
     --ssg-text: var(--color-ink);
     --ssg-surface: var(--color-card-bg);
@@ -33,17 +40,14 @@
 }
 
 .dark {
-    --color-paper: #111827;
-    --color-page-bg: #050816;
-    --color-card-bg: #111827;
+    --color-paper: #050816;
+    --color-surface: #111827;
     --color-ink: #E5E7EB;
-    --color-ink-soft: #C7D2DF;
-    --color-accent: #4A6C56;
-    --color-success: #28A745;
+    --color-ink-muted: #C7D2DF;
     --color-border-subtle: #374151;
-    --ssg-bg: #050816;
+    --ssg-bg: var(--color-paper);
     --ssg-text: #E5E7EB;
-    --ssg-surface: #111827;
+    --ssg-surface: var(--color-surface);
     --ssg-border: #374151;
     --ssg-muted: #B0B8C8;
 }
@@ -139,7 +143,7 @@ body {
 
 .ssg-divider {
     height: 1px;
-    background: #E6E6EA;
+    background: var(--color-border-subtle);
 }
 
 h1 {
@@ -266,13 +270,13 @@ h3 {
 
 /* 按鈕樣式 */
 .btn-primary {
-    background-color: var(--color-brand-sage);
+    background-color: var(--color-primary);
     color: #fff;
     border-radius: 9999px;
     @apply inline-flex items-center justify-center px-6 py-3 font-semibold transition-all duration-300 shadow-sm;
 }
 .btn-primary:hover {
-    background-color: var(--color-brand-primary-dark);
+    background-color: var(--color-primary-dark);
     @apply scale-[1.03] shadow-lg;
 }
 .btn-secondary {
@@ -311,7 +315,7 @@ h3 {
     justify-content: center;
     padding: 0.6rem 1.4rem;
     border-radius: 9999px;
-    background-color: var(--color-brand-sage);
+    background-color: var(--color-primary);
     color: #FFFFFF;
     font-weight: 500;
     font-size: 0.95rem;
@@ -321,8 +325,8 @@ h3 {
 
 .ss-btn-primary:hover,
 .ss-btn-primary:focus-visible {
-    background-color: var(--color-brand-primary-dark);
-    box-shadow: 0 10px 20px rgba(185, 152, 103, 0.35);
+    background-color: var(--color-primary-dark);
+    box-shadow: 0 10px 20px rgba(151, 134, 109, 0.35);
     transform: scale(1.03);
 }
 
@@ -343,7 +347,7 @@ h3 {
 
 .ss-btn-secondary:hover,
 .ss-btn-secondary:focus-visible {
-    background-color: rgba(74,108,86,0.08);
+    background-color: var(--color-primary-soft);
     border-color: var(--color-primary);
     color: var(--color-primary);
 }
@@ -356,7 +360,7 @@ h3 {
 
 .dark .ss-btn-secondary:hover,
 .dark .ss-btn-secondary:focus-visible {
-    background-color: rgba(74,108,86,0.15);
+    background-color: rgba(189, 167, 137, 0.12);
     border-color: var(--color-primary);
     color: #F8FAFC;
 }
@@ -398,7 +402,7 @@ h3 {
 }
 
 .nav-link--active {
-    color: var(--color-brand-sage);
+    color: var(--color-primary);
 }
 
 /* 1.4 導航欄滾動效果 */
@@ -407,6 +411,38 @@ h3 {
     @apply bg-white/80 shadow-sm backdrop-blur-[10px];
     border-bottom-width: 1px;
     border-color: rgba(0,0,0,0.05);
+}
+
+.ssg-site-header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(10px);
+    transition: background-color 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.ssg-site-footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 1.5rem 0;
+    margin-top: 4rem;
+}
+
+.ssg-footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .ssg-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 /* 1.5 頁面載入微交互 */
@@ -635,6 +671,7 @@ h3 {
 .typography :where(hr){border:0;border-top:1px solid #e2e8f0;margin:1.75rem 0}
 
 /* [SSG BLOG] Card layout for Part 4 / Part 6 / Part 7 lists (h2 + p + ul and h2 + ul) */
+.ssg-link,
 .ssg-blog-article a {
     color: var(--color-primary, #4a6c56);
     text-decoration: underline;
@@ -643,7 +680,9 @@ h3 {
     font-weight: 500;
 }
 
+.ssg-link:hover,
 .ssg-blog-article a:hover,
+.ssg-link:focus-visible,
 .ssg-blog-article a:focus-visible {
     text-decoration: none;
     opacity: 0.85;
