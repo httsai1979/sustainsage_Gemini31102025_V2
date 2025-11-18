@@ -62,7 +62,7 @@ export async function getStaticProps({ params, locale }) {
     props: {
       fm: frontmatter,
       html,
-      ...(await serverSideTranslations(locale, ['common'])),
+      ...(await serverSideTranslations(locale, ['common', 'nav'])),
     },
   });
 }

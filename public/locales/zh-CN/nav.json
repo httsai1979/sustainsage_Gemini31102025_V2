@@ -1,9 +1,10 @@
 {
   "home": "首页",
-  "about": "关于我们",
-  "service": "服务项目",
+  "services": "教练服务",
   "resources": "资源",
   "blog": "博客",
-  "contact": "联系我们",
-  "cta_contact": "预约咨询"
+  "about": "关于我们",
+  "contact": "联系",
+  "faq": "常见问题",
+  "corporate": "企业与合作"
 }

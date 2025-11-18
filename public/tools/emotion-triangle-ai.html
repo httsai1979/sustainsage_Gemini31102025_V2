@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>情緒三角卡 | Emotion Triangle</title>
+    <title>情緒三角卡</title>
     <!-- 引入 Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- 引入 Google Fonts：Inter 作為基礎字體，Noto Sans TC 作為中文字體 -->
@@ -18,12 +18,12 @@
     <style>
         /* 自定義樣式覆寫 Tailwind */
         :root {
-            --primary-color: #3475cf;
-            --primary-light: #e0f0ff;
-            --text-color: #1a457c;
-            --bg-color: #f0f4f8;
+            --primary-color: #4A6C56;
+            --primary-light: #E3EAE3;
+            --text-color: #1F2933;
+            --bg-color: #F6F2EA;
             --card-bg: #fff;
-            --border-color: #d1d5db;
+            --border-color: #E5DED0;
         }
 
         body {
@@ -38,7 +38,7 @@
             background: var(--card-bg);
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 4px 20px rgba(52, 117, 207, 0.1);
+            box-shadow: 0 8px 30px rgba(31, 41, 51, 0.08);
         }
 
         .input-field {
@@ -52,7 +52,7 @@
         .input-field:focus {
             outline: none;
             border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(52, 117, 207, 0.2);
+            box-shadow: 0 0 0 3px rgba(74, 108, 86, 0.2);
         }
         .input-field::placeholder {
             color: #9ca3af;
@@ -66,12 +66,12 @@
             transition: all 0.3s ease;
         }
         .btn-primary:hover:not(:disabled) {
-            background-color: #2b63ac;
+            background-color: #3B5444;
             transform: translateY(-2px);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         .btn-primary:disabled {
-            background-color: #b5c7e1;
+            background-color: #CBD5C0;
             cursor: not-allowed;
         }
 

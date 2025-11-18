@@ -1,10 +1,10 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
 import RevealSection from '@/components/common/RevealSection';
+import CardShell from '@/components/ui/CardShell';
 import Tag from '@/components/ui/Tag';
 import { getAllPosts } from '@/lib/content';
 import { dedupeBy } from '@/lib/dedupe';
@@ -61,35 +61,32 @@ export default function BlogPage({ posts = [], locale = 'en-GB' }) {
             const href = `/blog/${post.slug}`;
             const dateLabel = formatDate(post.date, locale);
             const author = post.author ?? 'SustainSage';
+            const meta = [dateLabel, author].filter(Boolean).join(' • ');
             return (
               <RevealSection key={post.slug} delay={(index % 3) * 0.1}>
-                <Link href={href} className="block h-full" aria-label={labels?.readArticleAria?.replace('{{title}}', post.title) ?? `Read ${post.title}`}>
-                  <article className="ss-card h-full overflow-hidden">
-                    <div className="relative h-48 w-full overflow-hidden rounded-2xl">
-                      <Image
-                        src={post.img ?? post.hero ?? '/images/placeholder-hero.jpg'}
-                        alt={post.alt ?? post.title}
-                        fill
-                        sizes="(min-width: 1280px) 360px, (min-width: 768px) 45vw, 90vw"
-                        className="object-cover"
-                      />
+                <Link
+                  href={href}
+                  className="block h-full"
+                  aria-label={labels?.readArticleAria?.replace('{{title}}', post.title) ?? `Read ${post.title}`}
+                >
+                  <CardShell
+                    as="article"
+                    className="h-full"
+                    iconName={post.iconName ?? 'book'}
+                    eyebrow={post.category}
+                    title={post.title}
+                    meta={meta}
+                  >
+                    <p>{post.description}</p>
+                    <div className="mt-4 flex flex-wrap items-center gap-2 text-sm font-semibold text-sustain-primary">
+                      <span>{labels?.readArticle ?? 'Read article'}</span>
+                      {post.readingTime || post.reading_time ? (
+                        <span className="text-xs font-normal text-sustain-textMuted">
+                          {post.readingTime ?? post.reading_time}
+                        </span>
+                      ) : null}
                     </div>
-                    <div className="mt-5 space-y-3">
-                      <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
-                        {dateLabel ? <span>{dateLabel}</span> : null}
-                        <span>• {author}</span>
-                      </div>
-                      {post.category ? <Tag>{post.category}</Tag> : null}
-                      <h2 className="text-lg font-semibold text-sustain-text">{post.title}</h2>
-                      <p className="text-sm text-slate-600">{post.description}</p>
-                      <div className="flex items-center gap-2 text-sm font-semibold text-sustain-green">
-                        <span>{labels?.readArticle ?? 'Read article'}</span>
-                        {post.readingTime || post.reading_time ? (
-                          <span className="text-xs font-normal text-slate-500">{post.readingTime ?? post.reading_time}</span>
-                        ) : null}
-                      </div>
-                    </div>
-                  </article>
+                  </CardShell>
                 </Link>
               </RevealSection>
             );
@@ -144,7 +141,7 @@ export async function getStaticProps({ locale }) {
       posts,
       locale,
       seo: namespaceCopy?.seo ?? null,
-      ...(await serverSideTranslations(locale, ['common', 'blog'])),
+      ...(await serverSideTranslations(locale, ['common', 'nav', 'blog'])),
     },
   });
 }
