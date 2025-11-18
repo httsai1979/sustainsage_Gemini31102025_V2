@@ -1,45 +1,185 @@
 {
-  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
-  "pathways": [
+  "seo": {
+    "title": "Coaching services",
+    "description": "Explore SustainSage coaching pathways that support career returners, internationally trained professionals building UK careers, and graduates starting their first roles."
+  },
+  "hero": {
+    "eyebrow": "Coaching services",
+    "title": "Coaching pathways shaped with you",
+    "intro": [
+      "Each pathway is a starting point. We adapt pace, language, and focus once we understand your reality.",
+      "Three focused coaching pathways that you can combine or adapt after our 20-minute chat."
+    ],
+    "chips": [
+      "Choose the starting point that fits right now."
+    ]
+  },
+  "whoThisIsFor": {
+    "eyebrow": "Who coaching is for",
+    "title": "People who find this space helpful",
+    "lead": "These are the contexts we hear every week. Each link shows scenarios, boundaries, and ways to start."
+  },
+  "whoThisIsForCards": [
     {
-      "slug": "career-return",
-      "title": "Returning to work",
-      "teaser": "12-week ramp back: kinder structure, small experiments, honest boundaries.",
-      "audience": "Professionals returning after caregiving, health, study, or relocation.",
-      "focus": "Rebuild routines, update your story, and rehearse boundaries you can actually keep.",
-      "format": "1:1 online coaching · 12 weeks · 60–75 minute sessions.",
-      "cta_label": "See plan"
+      "id": "mid-career",
+      "title": "For mid-career returners",
+      "eyebrow": "Coaching for career returners",
+      "iconName": "briefcase",
+      "body": [
+        "Rebuild momentum after a break without pretending the last chapter did not happen.",
+        "Clarify what you learned, how it shapes your work now, and how you choose to share it."
+      ],
+      "href": "/services/mid-career"
     },
     {
-      "slug": "graduate-start",
-      "title": "Graduate start",
-      "teaser": "Shape a clear story and turn it into testable, visible actions.",
-      "audience": "Graduates and early-career hires shaping their first UK roles.",
-      "focus": "Translate projects into proof points, test options, and build confidence with scripts you trust.",
-      "format": "1:1 online coaching · 8–10 weeks · 60-minute sessions.",
-      "cta_label": "See plan"
+      "id": "newcomers-uk",
+      "title": "For newcomers to the UK",
+      "eyebrow": "Coaching for newcomers to the UK",
+      "iconName": "globe",
+      "body": [
+        "Make sense of work, culture, and expectations—without having to translate your whole story from scratch.",
+        "Map options, boundaries, and risks so your choices honour visas, values, and energy."
+      ],
+      "href": "/services/newcomers-uk"
     },
     {
-      "slug": "immigrant-job",
-      "title": "New to the UK job market",
-      "teaser": "Translate overseas work into local proof points you can show.",
-      "audience": "People who trained or worked overseas and now need UK stories and sponsorship clarity.",
-      "focus": "Localise your narrative, map networks and access needs, and rehearse confident conversations.",
-      "format": "1:1 online coaching · 8–12 weeks · 60–75 minute sessions.",
-      "cta_label": "See plan"
+      "id": "graduates",
+      "title": "For young professionals",
+      "eyebrow": "Coaching for young professionals",
+      "iconName": "book",
+      "body": [
+        "Grow into leadership while staying values-led and resourced.",
+        "Plan and rehearse feedback, expectation-setting, or boundary conversations with curiosity and respect."
+      ],
+      "href": "/services/graduates"
     }
   ],
-  "hero": {
-    "title": "Start from the pathway that sounds most like you.",
-    "subtitle": "Career return, graduate start, or navigating the UK market — each pathway explains who it serves and the structure you can expect."
-  },
-  "pathways_intro": "See where you recognise yourself first. If you are weighing up whether coaching is the right container, the Readiness guide explains what helps the work land.",
-  "cta": {
-    "primary_label": "Try free tools",
-    "primary_href": "/resources",
-    "secondary_label": "Book a 20-minute chat",
-    "secondary_href": "/contact"
-  },
-  "title": "Services — Pathways you can start today",
-  "description": "Three focused pathways show who they support, how we meet, and how we get started together."
+  "sections": [
+    {
+      "id": "coaching-topics",
+      "eyebrow": "Areas we can explore together",
+      "title": "You might recognise these moments",
+      "lead": "Short prompts from real conversations so you can sense whether the rhythm, tone, and care fit what you need.",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "relocating-to-the-uk",
+          "title": "Relocating to the UK",
+          "iconName": "globe",
+          "body": [
+            "You are learning new workplace norms while supporting family in another timezone."
+          ]
+        },
+        {
+          "id": "care-leave",
+          "title": "Re-entering after care leave",
+          "iconName": "family",
+          "body": [
+            "You want to return without losing the agreements that protect your household or health."
+          ]
+        },
+        {
+          "id": "multilingual",
+          "title": "Speaking multiple languages",
+          "iconName": "chat",
+          "body": [
+            "You switch languages mid-sentence to capture nuance and want a coach who can hold that pace."
+          ]
+        },
+        {
+          "id": "visas-and-identity",
+          "title": "Balancing visas and identity",
+          "iconName": "compass",
+          "body": [
+            "You are weighing sponsorship timelines, belonging, and what leadership looks like in a new system."
+          ]
+        },
+        {
+          "id": "burnout",
+          "title": "Catching burnout early",
+          "iconName": "clock",
+          "body": [
+            "You notice signals of exhaustion and want experiments that protect energy before things fracture."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "eyebrow": "My approach",
+      "title": "Practical, personalised, sustainable",
+      "lead": "We co-create experiments that are culturally aware, trauma-informed, and kind to your pace.",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "personalised-flexible",
+          "title": "Personalised & flexible",
+          "iconName": "note",
+          "body": [
+            "We co-design agreements, cadence, and language preferences so the coaching rhythm fits your life and responsibilities."
+          ]
+        },
+        {
+          "id": "practical-sustainable",
+          "title": "Practical & sustainable",
+          "iconName": "target",
+          "body": [
+            "Every session ends with right-sized experiments, reflections, or scripts you can use immediately without burning out."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "how-we-work",
+      "eyebrow": "Getting started",
+      "title": "A steady process from first chat to ongoing sessions",
+      "style": "steps",
+      "steps": [
+        {
+          "id": "book-chat",
+          "title": "Book your 20-minute chat",
+          "body": [
+            "We talk for 20 minutes to understand what is changing and answer scope questions."
+          ]
+        },
+        {
+          "id": "explore",
+          "title": "Explore together",
+          "body": [
+            "We map priorities, access needs, and the rhythm that keeps you steady."
+          ]
+        },
+        {
+          "id": "choose",
+          "title": "Choose your path",
+          "body": [
+            "Select one of the coaching pathways or co-design something bespoke."
+          ]
+        },
+        {
+          "id": "begin",
+          "title": "Begin your journey",
+          "body": [
+            "We meet online every 2–3 weeks, review progress, and adjust agreements as needed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "style": "cta",
+      "title": "Not sure where to start?",
+      "body": [
+        "A 20-minute chat lets us hear your context and shape the right mix together."
+      ],
+      "primaryCta": {
+        "href": "/contact",
+        "label": "Book a 20-minute chat"
+      },
+      "secondaryCta": {
+        "href": "/services/how-coaching-works",
+        "label": "Read how coaching works"
+      }
+    }
+  ]
 }
