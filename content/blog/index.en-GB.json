@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "eyebrow": "Blog",
+    "title": "Reflect, experiment, notice",
+    "lead": "Short reads with coaching questions to help you pause, breathe, and choose your next experiment.",
+    "intro": [
+      "These short reads help you pause, notice patterns and experiment gently between sessions.",
+      "They invite reflection and learning – they are not medical, legal, financial or immigration advice."
+    ],
+    "chips": [
+      "Career transitions",
+      "Culture & belonging",
+      "Leadership & teams",
+      "Wellbeing & pace"
+    ]
+  },
+  "fallbackNotice": "These pieces were written as reflective placeholders while we prepare new stories.",
+  "listTitle": "Latest reflections",
+  "labels": {
+    "readArticle": "Read article",
+    "readArticleAria": "Read {{title}}"
+  },
+  "categories": [
+    { "id": "career-transitions", "label": "Career transitions", "iconName": "briefcase" },
+    { "id": "culture-belonging", "label": "Culture & belonging", "iconName": "globe" },
+    { "id": "leadership-teams", "label": "Leadership & teams", "iconName": "handshake" },
+    { "id": "wellbeing-pace", "label": "Wellbeing & pace", "iconName": "note" }
+  ],
+  "posts": [
+    {
+      "slug": "a-kinder-way-to-restart",
+      "title": "A kinder way to restart",
+      "categoryId": "career-transitions",
+      "iconName": "book",
+      "readingTimeMinutes": 3,
+      "summary": [
+        "When you’re stuck, smaller and gentler beats louder and bigger.",
+        "Momentum returns when actions fit your current capacity."
+      ],
+      "publishedAt": "2025-10-30"
+    }
+  ],
+  "cta": {
+    "title": "Ready to explore this in conversation?",
+    "body": [
+      "Coaching offers a confidential space to turn these reflections into choices you own."
+    ],
+    "primaryCta": {
+      "href": "/services",
+      "label": "Explore services"
+    },
+    "secondaryCta": {
+      "href": "/contact",
+      "label": "Book a 20-minute chat"
+    }
+  }
+}
