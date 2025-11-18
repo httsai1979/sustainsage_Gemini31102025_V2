@@ -1,3 +1,10 @@
+/**
+ * [SSG BLOG LAYOUT]
+ * - Added a hero shell (breadcrumb, title, summary, meta, optional media) for every post.
+ * - Wrapped the markdown output inside `.ssg-blog-article` so typography/link styles stay consistent.
+ * - Ensured anchors remain clickable by rendering raw HTML without overlay handlers.
+ * - Scenario (Part 4) lists + blockquotes (Parts 6–7) pick up card styling via globals.css.
+ */
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
@@ -8,23 +15,45 @@ import { getAllPosts, getPostRendered } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
 
 export default function BlogPost({ fm, html }) {
+  const heroImage = fm.heroImage || fm.hero;
+  const targetAudience = Array.isArray(fm.targetAudience)
+    ? fm.targetAudience.join(' · ')
+    : fm.targetAudience;
+  const formattedDate = formatDate(fm.date);
+  const hasMeta = Boolean(targetAudience || formattedDate || fm.readingTimeMinutes);
+
   return (
-    <Section>
-      <Container>
-        <article className="prose prose-slate mx-auto max-w-3xl">
-          <h1>{fm.title}</h1>
-          {fm.hero ? (
-            <ResponsiveImage
-              src={fm.hero}
-              alt={fm.alt || fm.title || ''}
-              width={1600}
-              height={900}
-              className="my-6"
-              priority
-            />
-          ) : null}
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </article>
+    <Section className="ssg-blog-page">
+      <Container className="ssg-blog-container">
+        <header className="ssg-blog-hero">
+          <div className="ssg-blog-hero-text">
+            <p className="ssg-blog-breadcrumb">Home / Blog / {fm.title}</p>
+            <h1 className="ssg-blog-title">{fm.title}</h1>
+            {fm.summary ? <p className="ssg-blog-summary">{fm.summary}</p> : null}
+            {hasMeta ? (
+              <div className="ssg-blog-meta">
+                {targetAudience ? <span>{targetAudience}</span> : null}
+                {formattedDate ? <span>{formattedDate}</span> : null}
+                {fm.readingTimeMinutes ? <span>{fm.readingTimeMinutes} min read</span> : null}
+              </div>
+            ) : null}
+          </div>
+          <div className="ssg-blog-hero-media">
+            {heroImage ? (
+              <ResponsiveImage
+                src={heroImage}
+                alt={fm.alt || fm.title || ''}
+                width={1600}
+                height={900}
+                className="ssg-blog-hero-image"
+                priority
+              />
+            ) : (
+              <div className="ssg-blog-hero-placeholder" aria-hidden="true" />
+            )}
+          </div>
+        </header>
+        <article className="ssg-blog-article" dangerouslySetInnerHTML={{ __html: html }} />
       </Container>
     </Section>
   );
@@ -65,4 +94,15 @@ export async function getStaticProps({ params, locale }) {
       ...(await serverSideTranslations(locale, ['common', 'nav'])),
     },
   });
+}
+
+function formatDate(dateString) {
+  if (!dateString) return null;
+  const date = new Date(dateString);
+  if (Number.isNaN(date.getTime())) return null;
+  return new Intl.DateTimeFormat('en-GB', {
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric',
+  }).format(date);
 }
