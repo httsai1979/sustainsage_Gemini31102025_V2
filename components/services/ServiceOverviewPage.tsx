@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 import { CaseCard } from '@/components/cases/CaseCard';
 import ServiceSubnav from '@/components/services/ServiceSubnav';
 import Card from '@/components/ui/Card';
+import Button from '@/components/ui/Button';
 import StepList from '@/components/ui/StepList';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import { sectionizeServiceOverview } from '@/lib/sectionize';
@@ -221,17 +222,12 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
               </div>
               <div className="flex flex-wrap gap-3">
                 {hero.primaryCta?.href && hero.primaryCta?.label ? (
-                  <Link
-                    href={hero.primaryCta.href}
-                    className="ss-btn-primary"
-                  >
-                    {hero.primaryCta.label}
-                  </Link>
+                  <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
                 ) : null}
                 {hero.secondaryCta?.href && hero.secondaryCta?.label ? (
-                  <Link href={hero.secondaryCta.href} className="ss-btn-secondary">
+                  <Button href={hero.secondaryCta.href} variant="secondary">
                     {hero.secondaryCta.label}
-                  </Link>
+                  </Button>
                 ) : null}
               </div>
             </div>
@@ -254,14 +250,12 @@ export function ServiceOverviewPage({ service, showFallbackNotice = false }: Ser
               <p className="mt-2 text-sm leading-6 text-slate-700 dark:text-sustain-text-dark/80">{contactBody}</p>
               <div className="mt-4 flex flex-col gap-3">
                 {hero.primaryCta?.href && hero.primaryCta?.label ? (
-                  <Link href={hero.primaryCta.href} className="ss-btn-primary">
-                    {hero.primaryCta.label}
-                  </Link>
+                  <Button href={hero.primaryCta.href}>{hero.primaryCta.label}</Button>
                 ) : null}
                 {hero.secondaryCta?.href && hero.secondaryCta?.label ? (
-                  <Link href={hero.secondaryCta.href} className="ss-btn-secondary">
+                  <Button href={hero.secondaryCta.href} variant="secondary">
                     {hero.secondaryCta.label}
-                  </Link>
+                  </Button>
                 ) : null}
               </div>
               {contactNote ? (
