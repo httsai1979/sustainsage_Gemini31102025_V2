@@ -6,6 +6,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import ContentHero from '@/components/content/ContentHero';
 import ICFNotice from '@/components/legal/ICFNotice';
 import MainLayout from '@/components/layout/MainLayout';
+import Button from '@/components/ui/Button';
 import CardShell from '@/components/ui/CardShell';
 import PageSection from '@/components/ui/PageSection';
 import { getContactPageContent } from '@/lib/contactContent';
@@ -118,9 +119,9 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
 
       <PageSection id="contact-form" title={formContent?.title}>
         <div className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
-          <div className="rounded-3xl border border-sustain-cardBorder bg-white/95 p-6 shadow-sm md:p-8">
+          <div className="rounded-[32px] border border-white/70 bg-white/95 p-6 shadow-card md:p-8">
             {descriptionParagraphs.length ? (
-              <div className="space-y-3 text-sm leading-relaxed text-sustain-textMuted">
+              <div className="space-y-3 text-base leading-relaxed text-ink/70">
                 {descriptionParagraphs.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -232,9 +233,9 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
                 </div>
               </div>
 
-              <button type="submit" className="ss-btn-primary" disabled={isSubmitting}>
+              <Button type="submit" disabled={isSubmitting} className="w-full justify-center md:w-auto">
                 {isSubmitting ? formContent?.submittingLabel ?? 'Sending…' : formContent?.submitLabel ?? 'Send message'}
-              </button>
+              </Button>
             </form>
           </div>
 
@@ -242,17 +243,17 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
             <CardShell
               iconName={directContact?.iconName ?? 'chat'}
               title={directContact?.title}
-              bodyClassName="space-y-4 text-sm leading-relaxed"
+              bodyClassName="space-y-4 text-base leading-relaxed text-ink/70"
             >
               {directBody.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
               {contactMethods.length ? (
-                <dl className="space-y-3 text-sm">
+                <dl className="space-y-3 text-base text-ink/80">
                   {contactMethods.map((method) => (
                     <div key={method.key}>
-                      <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-sustain-textMuted">{method.label}</dt>
-                      <dd className="text-base font-semibold text-sustain-textMain">
+                      <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-ink/60">{method.label}</dt>
+                      <dd className="text-lg font-semibold text-ink">
                         <a href={method.href} className="text-sustain-primary underline-offset-2 hover:underline">
                           {method.value}
                         </a>
@@ -262,7 +263,7 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
                 </dl>
               ) : null}
               {directContact?.note ? (
-                <p className="text-xs text-sustain-textMuted">{directContact.note}</p>
+                <p className="text-sm text-ink/60">{directContact.note}</p>
               ) : null}
             </CardShell>
           ) : null}
