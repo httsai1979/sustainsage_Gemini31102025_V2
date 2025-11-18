@@ -7,9 +7,8 @@ import AboutSectionRenderer from '@/components/about/AboutSectionRenderer';
 import MainLayout from '@/components/layout/MainLayout';
 import { getAboutPageContent } from '@/lib/aboutContent';
 
-function AboutPage({ content, showFallbackNotice, fallbackNotice }) {
+function CoachPage({ content, showFallbackNotice, fallbackNotice }) {
   const sections = Array.isArray(content?.sections) ? content.sections : [];
-
   return (
     <>
       <AboutHero hero={content?.hero} showFallbackNotice={showFallbackNotice} fallbackNotice={fallbackNotice} />
@@ -21,7 +20,7 @@ function AboutPage({ content, showFallbackNotice, fallbackNotice }) {
   );
 }
 
-AboutPage.propTypes = {
+CoachPage.propTypes = {
   content: PropTypes.shape({
     hero: PropTypes.object,
     sections: PropTypes.array,
@@ -35,7 +34,7 @@ AboutPage.propTypes = {
   fallbackNotice: PropTypes.string,
 };
 
-AboutPage.getLayout = function getLayout(page) {
+CoachPage.getLayout = function getLayout(page) {
   const seo = page.props?.content?.seo ?? {};
   return (
     <MainLayout
@@ -51,7 +50,7 @@ AboutPage.getLayout = function getLayout(page) {
 
 export async function getStaticProps({ locale = 'en-GB' }) {
   const resolvedLocale = typeof locale === 'string' ? locale : 'en-GB';
-  const { content, isFallback } = getAboutPageContent('index', resolvedLocale);
+  const { content, isFallback } = getAboutPageContent('coach', resolvedLocale);
   const fallbackNotice = content?.fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return {
@@ -64,4 +63,4 @@ export async function getStaticProps({ locale = 'en-GB' }) {
   };
 }
 
-export default AboutPage;
+export default CoachPage;

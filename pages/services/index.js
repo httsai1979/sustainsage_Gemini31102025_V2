@@ -422,40 +422,6 @@ export default function ServicesPage({
         </div>
       </section>
 
-      <section className="ss-section" aria-labelledby="client-stories-heading">
-        <RevealSection className="space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Client transformations</p>
-          <h2 id="client-stories-heading" className="text-3xl font-semibold text-sustain-text">
-            Real client transformations
-          </h2>
-          <p className="text-base text-slate-700">
-            Every partnership protects confidentiality; the composites below show how layered pathways play out in real life.
-          </p>
-        </RevealSection>
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {CLIENT_CASES.map((story, index) => (
-            <RevealSection key={story.id} delay={(index % 3) * 0.1}>
-              <Card icon={<Icon name={story.icon} />} tag={story.tag} title={story.title}>
-                <div className="space-y-3 text-sm leading-relaxed text-slate-700">
-                  <p>
-                    <span className="font-semibold text-sustain-text">Challenge: </span>
-                    {story.challenge}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-sustain-text">Approach: </span>
-                    {story.approach}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-sustain-text">Shift: </span>
-                    {story.shift}
-                  </p>
-                </div>
-              </Card>
-            </RevealSection>
-          ))}
-        </div>
-      </section>
-
       <section className="ss-section">
         <RevealSection>
           <div className="rounded-3xl border border-sustain-cardBorder bg-white p-8 text-center shadow-md">
