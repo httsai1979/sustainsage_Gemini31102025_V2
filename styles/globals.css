@@ -432,9 +432,9 @@ h3 {
     max-width: 960px;
     margin: 0 auto;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
-    gap: 1.5rem;
+    gap: 1rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
@@ -542,18 +542,6 @@ h3 {
 .typography :where(blockquote){border-left:4px solid #e2e8f0;padding-left:1rem;color:#334155;font-style:italic}
 
 /* Blog detail layout */
-.ssg-blog-page {
-    padding-top: 3rem;
-    padding-bottom: 4rem;
-}
-
-.ssg-blog-container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
-}
-
 .ssg-blog-hero {
     display: flex;
     flex-wrap: wrap;
@@ -625,6 +613,21 @@ h3 {
     }
 }
 
+.typography :where(hr){border:0;border-top:1px solid #e2e8f0;margin:1.75rem 0}
+
+/* [SSG BLOG + BRAND] Added article wrapper, card layout, new colour tokens, and logo usage. */
+.ssg-blog-page {
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+}
+
+.ssg-blog-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+}
+
 .ssg-blog-article {
     max-width: 720px;
     margin: 0 auto;
@@ -665,19 +668,10 @@ h3 {
     margin-top: 0.35rem;
 }
 
-.ssg-blog-article,
-.ssg-blog-article * {
-    pointer-events: auto;
-}
-
-.ssg-blog-article > p:first-of-type {
-    font-style: italic;
-    opacity: 0.8;
-}
-
+/* Links inside blog content */
 .ssg-link,
 .ssg-blog-article a {
-    color: var(--color-primary, #4a6c56);
+    color: var(--color-primary, #BDA789);
     text-decoration: underline;
     text-underline-offset: 0.12em;
     cursor: pointer;
@@ -692,27 +686,38 @@ h3 {
     opacity: 0.85;
 }
 
-.typography :where(hr){border:0;border-top:1px solid #e2e8f0;margin:1.75rem 0}
+/* Make sure nothing disables pointer events */
+.ssg-blog-article,
+.ssg-blog-article * {
+    pointer-events: auto;
+}
 
-/* [SSG BLOG] Card layout for Part 4 / Part 6 / Part 7 lists (h2 + p + ul and h2 + ul) */
+/* First italic line (intro sentence) slightly softer */
+.ssg-blog-article > p:first-of-type {
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* Section intro paragraph */
 .ssg-blog-article h2 + p {
     margin-bottom: 0.4rem;
 }
 
+/* Cards for h2 + p + ul (Part 4, Part 6, Part 7) */
 .ssg-blog-article h2 + p + ul {
     list-style: none;
     padding-left: 0;
     margin-left: 0;
-    margin-top: 0.75rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
+    margin-top: 0.75rem;
 }
 
 .ssg-blog-article h2 + p + ul > li {
     padding: 1rem 1.2rem;
     border-radius: 1rem;
-    background: var(--color-paper, #f5f5f7);
+    background: #f5f5f7;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     font-size: 0.98rem;
@@ -725,30 +730,25 @@ h3 {
     font-weight: 600;
 }
 
+/* Fallback: if some sections do h2 + ul (without a paragraph) */
 .ssg-blog-article h2 + ul {
     list-style: none;
     padding-left: 0;
     margin-left: 0;
-    margin-top: 0.75rem;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1rem;
+    margin-top: 0.75rem;
 }
 
 .ssg-blog-article h2 + ul > li {
     padding: 1rem 1.2rem;
     border-radius: 1rem;
-    background: var(--color-paper, #f5f5f7);
+    background: #f5f5f7;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     font-size: 0.98rem;
     line-height: 1.6;
-}
-
-.ssg-blog-article h2 + ul > li strong {
-    display: block;
-    margin-bottom: 0.35rem;
-    font-weight: 600;
 }
 
 @media (max-width: 640px) {
