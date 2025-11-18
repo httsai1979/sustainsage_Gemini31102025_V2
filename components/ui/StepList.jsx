@@ -14,7 +14,7 @@ function StepIcon({ icon }) {
   if (typeof icon === 'function') {
     const IconComponent = icon;
     return (
-      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sustain-primary/10 text-sustain-primary">
         <IconComponent className="h-5 w-5" aria-hidden />
       </span>
     );
@@ -24,7 +24,7 @@ function StepIcon({ icon }) {
 
   if (IconComponent) {
     return (
-      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sustain-primary/10 text-sustain-primary">
         <IconComponent className="h-5 w-5" aria-hidden />
       </span>
     );
@@ -61,17 +61,17 @@ export default function StepList({ steps = [], className = '' }) {
         return (
           <li
             key={title ?? description ?? index}
-            className="flex h-full w-full flex-col gap-3 rounded-card rounded-2xl border border-slate-100 bg-white p-4 shadow-md md:p-5"
+            className="flex h-full w-full flex-col gap-3 rounded-card rounded-2xl border border-sustain-cardBorder bg-sustain-cardBg p-4 shadow-md md:p-5"
           >
             <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sustain-green text-sm font-semibold text-white">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sustain-primary text-sm font-semibold text-white">
                 {String(stepNumber).padStart(2, '0')}
               </span>
               {iconNode ? iconNode : null}
-              {title ? <p className="font-medium text-sustain-text">{title}</p> : null}
+              {title ? <p className="font-medium text-sustain-textMain">{title}</p> : null}
             </div>
             {description ? (
-              <p className="text-sm leading-relaxed text-slate-700">{description}</p>
+              <p className="text-sm leading-relaxed text-sustain-textMuted">{description}</p>
             ) : null}
           </li>
         );

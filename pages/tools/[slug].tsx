@@ -87,7 +87,7 @@ export const getStaticProps: GetStaticProps<ToolPageProps> = async ({ params, lo
   return {
     props: {
       tool: resolveToolCopy(tool, locale ?? 'en-GB'),
-      ...(await serverSideTranslations(locale ?? 'en-GB', ['common', 'tools'])),
+      ...(await serverSideTranslations(locale ?? 'en-GB', ['common', 'nav', 'tools'])),
     },
   };
 };

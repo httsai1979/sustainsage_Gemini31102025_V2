@@ -193,7 +193,7 @@ export async function getStaticProps({ params, locale }) {
         title: `${subLayer.title} | ${copy.meta.title}`,
         description: subLayer.detail?.intro ?? copy.meta.description,
       },
-      ...(await serverSideTranslations(currentLocale, ['common'])),
+      ...(await serverSideTranslations(currentLocale, ['common', 'nav'])),
     },
   };
 }

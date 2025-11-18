@@ -233,7 +233,7 @@ export async function getStaticProps({ locale }) {
         title: copy.meta.title,
         description: copy.meta.description,
       },
-      ...(await serverSideTranslations(currentLocale, ['common'])),
+      ...(await serverSideTranslations(currentLocale, ['common', 'nav'])),
     },
   };
 }

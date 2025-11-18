@@ -231,7 +231,7 @@ export async function getStaticProps({ locale }) {
       downloads,
       interactiveTools,
       seo: namespaceCopy?.seo ?? null,
-      ...(await serverSideTranslations(locale, ['common', 'resources'])),
+      ...(await serverSideTranslations(locale, ['common', 'nav', 'resources'])),
     },
   });
 }

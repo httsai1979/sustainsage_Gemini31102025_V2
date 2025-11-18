@@ -513,7 +513,7 @@ export async function getStaticProps({ locale }) {
     cards,
     showFallbackNotice: isFallbackLocale,
     fallbackNotice,
-    ...(await serverSideTranslations(currentLocale, ['common', 'services'])),
+    ...(await serverSideTranslations(currentLocale, ['common', 'nav', 'services'])),
   };
 
   return {
