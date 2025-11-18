@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
@@ -22,11 +23,24 @@ const LOCALE_LABELS = {
   'zh-CN': '简体',
 };
 
+function SiteLogo({ className = '' }) {
+  return (
+    <Link href="/" className={`flex items-center gap-3 ${className}`}>
+      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary-soft)]">
+        <Image src="/brand/ssg-logo-mark.png" alt="SustainSage Group logo" width={24} height={24} />
+      </span>
+      <span className="text-sm font-semibold tracking-tight text-[var(--color-ink)] sm:text-base">
+        SustainSage Group
+      </span>
+    </Link>
+  );
+}
+
 function LocaleSwitcher({ activeLocale, onChange, variant = 'desktop', localeOptions = [] }) {
   const baseClasses =
     variant === 'desktop'
-      ? 'rounded-xl px-3 py-2 text-sm font-semibold transition-colors'
-      : 'rounded-xl px-4 py-2 text-base font-semibold transition-colors';
+      ? 'rounded-full px-3 py-1.5 text-sm font-semibold transition-colors'
+      : 'rounded-full px-4 py-2 text-base font-semibold transition-colors';
 
   if (localeOptions.length <= 1) {
     return null;
@@ -43,8 +57,8 @@ function LocaleSwitcher({ activeLocale, onChange, variant = 'desktop', localeOpt
             onClick={() => onChange(locale.code)}
             className={`${baseClasses} ${
               isActive
-                ? 'bg-sustain-primary text-white shadow-sm'
-                : 'bg-sustain-cardBg text-sustain-navTextMuted ring-1 ring-inset ring-sustain-navBorder hover:bg-sustain-primary/10 hover:text-sustain-primary'
+                ? 'bg-[var(--color-primary)] text-white shadow-sm'
+                : 'bg-[var(--color-primary-soft)] text-[var(--color-ink-muted)] ring-1 ring-inset ring-[rgba(0,0,0,0.08)] hover:text-[var(--color-primary)]'
             }`}
           >
             {locale.label}
@@ -88,28 +102,24 @@ export default function SiteHeader() {
   };
 
   const headerClasses = [
-    'fixed inset-x-0 top-0 z-40 border-b transition-colors duration-300',
-    isScrolled
-      ? 'bg-sustain-navBg/95 backdrop-blur border-sustain-navBorder/80 shadow-sm'
-      : 'bg-sustain-navBg border-transparent',
+    'ssg-site-header fixed inset-x-0 top-0 z-40 border-b backdrop-blur-sm transition-all duration-300',
+    isScrolled ? 'bg-[var(--color-surface)]/95 shadow-sm' : 'bg-[var(--color-surface)]',
   ].join(' ');
 
   return (
     <header className={headerClasses}>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 sm:px-8 sm:py-5">
-        <Link href="/" className="text-lg font-semibold tracking-tight text-sustain-navText">
-          SustainSage
-        </Link>
+        <SiteLogo />
 
-        <nav className="hidden items-center gap-6 text-sm sm:text-[15px] leading-6 font-medium md:flex">
+        <nav className="hidden items-center gap-6 text-sm leading-6 font-medium sm:text-[15px] md:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className={
                 isActive(item.href)
-                  ? 'text-sustain-primary'
-                  : 'text-sustain-navTextMuted transition-colors hover:text-sustain-primary'
+                  ? 'text-[var(--color-primary)]'
+                  : 'text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-primary)]'
               }
             >
               {tNav(item.label)}
@@ -125,7 +135,7 @@ export default function SiteHeader() {
           />
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-xl p-2 text-sustain-navText md:hidden"
+            className="inline-flex items-center justify-center rounded-xl p-2 text-[var(--color-ink)] md:hidden"
             onClick={() => setMenuOpen(true)}
             aria-label={t('header.openMenu')}
           >
@@ -135,11 +145,11 @@ export default function SiteHeader() {
       </div>
 
       {menuOpen && (
-        <div className="fixed inset-0 z-50 bg-sustain-navBg/95 backdrop-blur-sm md:hidden">
+        <div className="fixed inset-0 z-50 bg-[var(--color-surface)]/95 backdrop-blur-sm md:hidden">
           <div className="flex justify-end p-4">
             <button
               type="button"
-              className="rounded-xl p-2 text-sustain-navText"
+              className="rounded-xl p-2 text-[var(--color-ink)]"
               onClick={() => setMenuOpen(false)}
               aria-label={t('header.closeMenu')}
             >
@@ -154,13 +164,14 @@ export default function SiteHeader() {
                 onClick={() => setMenuOpen(false)}
                 className={
                   isActive(item.href)
-                    ? 'text-sustain-primary'
-                    : 'text-sustain-navText transition-colors hover:text-sustain-primary'
+                    ? 'text-[var(--color-primary)]'
+                    : 'text-[var(--color-ink)] transition-colors hover:text-[var(--color-primary)]'
                 }
               >
                 {tNav(item.label)}
               </Link>
             ))}
+            <SiteLogo />
             <LocaleSwitcher
               activeLocale={activeLocale}
               onChange={handleLocaleChange}
