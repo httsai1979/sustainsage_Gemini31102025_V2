@@ -1,414 +1,42 @@
 import PropTypes from 'prop-types';
-import Link from 'next/link';
-import Image from 'next/image';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import RevealSection from '@/components/common/RevealSection';
-import FAQAccordion from '@/components/faq/FAQAccordion';
+import AboutCTA from '@/components/about/AboutCTA';
+import AboutHero from '@/components/about/AboutHero';
+import AboutSectionRenderer from '@/components/about/AboutSectionRenderer';
 import MainLayout from '@/components/layout/MainLayout';
-import Card from '@/components/ui/Card';
-import StepList from '@/components/ui/StepList';
-import Callout from '@/components/ui/Callout';
-import Icon from '@/components/ui/Icon';
-import { orderSections } from '@/lib/orderSections';
-import { loadContent } from '@/lib/loadContent';
-import { dedupeBy } from '@/lib/dedupe';
-import { sanitizeProps } from '@/lib/toSerializable';
+import { getAboutPageContent } from '@/lib/aboutContent';
 
-const VALUE_CARD_TEMPLATES = [
-  {
-    key: 'authenticity',
-    title: 'Authenticity',
-    fallback:
-      'ICF-aligned practice keeps agreements, data care, and supervision transparent so trust can grow.',
-  },
-  {
-    key: 'gentleness',
-    title: 'Gentleness',
-    fallback: 'We keep a calm cadence so experimentation feels kind, slow enough, and sustainable.',
-  },
-  {
-    key: 'structure',
-    title: 'Structure',
-    fallback: 'Clear agreements, review points, and data boundaries help every partnership stay grounded.',
-  },
-  {
-    key: 'cultural-sensitivity',
-    title: 'Cultural sensitivity',
-    fallback: 'Lived experience across Asia-Pacific and the UK keeps multilingual nuance and policy context in view.',
-  },
-];
-
-function buildValueCards(copy = {}) {
-  const keyPointItems = Array.isArray(copy?.key_points?.items) ? copy.key_points.items : [];
-  const valueEntries = Array.isArray(copy?.values?.items) ? copy.values.items : [];
-  return VALUE_CARD_TEMPLATES.map((template, index) => {
-    const source = keyPointItems[index] ?? valueEntries[index];
-    const description =
-      typeof source === 'string'
-        ? source
-        : source?.description ?? source?.body ?? source?.text ?? source?.title;
-    return {
-      ...template,
-      description: description ?? template.fallback,
-    };
-  });
-}
-
-function TeamSection({ team }) {
-  const list = Array.isArray(team?.members) && team.members.length > 0 ? team.members : team?.people ?? [];
-  const members = dedupeBy(list, (member, index) => member?.name ?? member?.title ?? member?.id ?? index);
-  if (!members.length) return null;
-  return (
-    <section className="ss-section">
-      <RevealSection className="space-y-4 text-center md:text-left">
-        {team?.eyebrow ? (
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{team.eyebrow}</p>
-        ) : null}
-        <h2 className="text-3xl font-semibold text-sustain-text">{team?.title ?? 'Meet the team'}</h2>
-        {team?.description ? <p className="text-base text-slate-700">{team.description}</p> : null}
-      </RevealSection>
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {members.map((member, index) => (
-          <RevealSection key={member.name ?? member.title} delay={(index % 3) * 0.1}>
-            <Card title={member.name} subtitle={member.title}>
-              <div className="space-y-3 text-sm leading-relaxed text-slate-700">
-                {member.image?.src ? (
-                  <div className="relative h-32 w-full overflow-hidden rounded-2xl">
-                    <Image
-                      src={member.image.src}
-                      alt={member.image.alt ?? member.name ?? ''}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ) : null}
-                {member.bio ? <p>{member.bio}</p> : null}
-                {member.location ? <p className="text-xs text-slate-500">{member.location}</p> : null}
-              </div>
-            </Card>
-          </RevealSection>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-TeamSection.propTypes = {
-  team: PropTypes.shape({
-    eyebrow: PropTypes.string,
-    title: PropTypes.string,
-    description: PropTypes.string,
-    members: PropTypes.array,
-    people: PropTypes.array,
-  }),
-};
-
-function ValueGrid({ items = [], eyebrow, title, description }) {
-  if (!items.length) return null;
-  return (
-    <section className="ss-section">
-      <RevealSection className="space-y-4 text-center md:text-left">
-        {eyebrow ? (
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{eyebrow}</p>
-        ) : null}
-        <h2 className="text-3xl font-semibold text-sustain-text">{title ?? 'Values that shape every partnership'}</h2>
-        {description ? <p className="text-base text-slate-700">{description}</p> : null}
-      </RevealSection>
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {items.map((value, index) => (
-          <RevealSection key={value?.key ?? value?.title ?? index} delay={(index % 4) * 0.1}>
-            <Card title={value?.title ?? 'Guiding principle'} icon={<Icon name="spark" />}>
-              <p className="text-sm text-slate-700">{value?.description ?? value?.body}</p>
-            </Card>
-          </RevealSection>
-        ))}
-      </div>
-    </section>
-  );
-}
-
-ValueGrid.propTypes = {
-  items: PropTypes.array,
-  eyebrow: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
-};
-
-function StoryCards({ stories = [], eyebrow, title, description }) {
-  const successStories = dedupeBy(
-    stories.filter((story) => typeof story === 'object' && story?.title),
-    (story) => story.title
-  ).slice(0, 3);
-  if (!successStories.length) return null;
-  return (
-    <section className="ss-section">
-      <RevealSection className="space-y-4 text-center md:text-left">
-        {eyebrow ? (
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{eyebrow}</p>
-        ) : null}
-        <h2 className="text-3xl font-semibold text-sustain-text">{title ?? 'Client success stories'}</h2>
-        {description ? <p className="text-base text-slate-700">{description}</p> : null}
-      </RevealSection>
-      <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {successStories.map((story, index) => {
-          const badge = story.category ?? story.segment ?? 'Coaching story';
-          const duration = story.duration ?? story.timeline ?? story.length;
-          return (
-            <RevealSection key={story.title} delay={(index % 3) * 0.1}>
-              <Card title={story.title}>
-                <div className="space-y-4 text-sm leading-relaxed text-slate-700">
-                  <div className="flex items-center justify-between text-xs font-semibold uppercase tracking-wide text-sustain-green/80">
-                    <span>{badge}</span>
-                    {duration ? <span className="text-slate-500 normal-case">{duration}</span> : null}
-                  </div>
-                  {story.context ? (
-                    <p>
-                      <span className="font-semibold text-sustain-text">Challenge: </span>
-                      {story.context}
-                    </p>
-                  ) : null}
-                  {story.coaching_moves ? (
-                    <p>
-                      <span className="font-semibold text-sustain-text">Journey: </span>
-                      {story.coaching_moves}
-                    </p>
-                  ) : null}
-                  {story.shift ? (
-                    <p>
-                      <span className="font-semibold text-sustain-text">Outcome: </span>
-                      {story.shift}
-                    </p>
-                  ) : null}
-                </div>
-              </Card>
-            </RevealSection>
-          );
-        })}
-      </div>
-    </section>
-  );
-}
-
-StoryCards.propTypes = {
-  stories: PropTypes.array,
-  eyebrow: PropTypes.string,
-  title: PropTypes.string,
-  description: PropTypes.string,
-};
-
-function BoundariesSection({ boundaries }) {
-  const items = dedupeBy(
-    orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []),
-    (item, index) => item?.question ?? item?.title ?? item?.answer ?? index
-  );
-  if (!items.length) return null;
-  return (
-    <section className="ss-section">
-      <RevealSection className="space-y-4 text-center md:text-left">
-        <h2 className="text-3xl font-semibold text-sustain-text">{boundaries?.title}</h2>
-        {boundaries?.description ? <p className="text-base text-slate-700">{boundaries.description}</p> : null}
-      </RevealSection>
-      <RevealSection delay={0.1} className="mt-8">
-        <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-4 shadow-md">
-          <FAQAccordion items={items} />
-        </div>
-      </RevealSection>
-    </section>
-  );
-}
-
-BoundariesSection.propTypes = {
-  boundaries: PropTypes.shape({
-    title: PropTypes.string,
-    description: PropTypes.string,
-    items: PropTypes.array,
-  }),
-};
-
-export default function AboutPage({
-  copy = {},
-  team = undefined,
-  showFallbackNotice = false,
-  fallbackNotice = undefined,
-} = {}) {
-  const processSteps = orderSections(Array.isArray(copy?.process?.steps) ? copy.process.steps : []);
-  const fallbackMessage =
-    fallbackNotice ??
-    copy?.fallbackNotice ??
-    team?.fallbackNotice ??
-    'Temporarily showing English content while we complete this translation.';
-
-  const backgroundHighlights = dedupeBy(
-    Array.isArray(copy?.approach?.pillars) ? copy.approach.pillars : [],
-    (item, index) => item?.title ?? item?.description ?? index
-  ).slice(0, 3);
-  const heroParagraphs = [copy?.intro?.body, copy?.approach?.description].filter(Boolean);
-  const valueCards = buildValueCards(copy);
-  const approachDescription = copy?.process?.description ?? copy?.approach?.description;
-  const personalNoteText =
-    copy?.callout?.note ??
-    copy?.callout?.body ??
-    'Coaching is how we create steady space for bilingual, bicultural stories to be heard without urgency.';
+function AboutPage({ content, showFallbackNotice, fallbackNotice }) {
+  const sections = Array.isArray(content?.sections) ? content.sections : [];
 
   return (
-    <main className="ss-container">
-      <section className="ss-section">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-start">
-          <RevealSection>
-            <div className="space-y-6">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
-                {copy?.intro?.eyebrow ?? 'My journey'}
-              </p>
-              <h1 className="text-4xl font-semibold text-sustain-text">
-                {copy?.intro?.title ?? 'Coaching for complex transitions'}
-              </h1>
-              <div className="space-y-4 text-base leading-relaxed text-slate-700">
-                {heroParagraphs.length
-                  ? heroParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)
-                  : (
-                      <p>
-                        SustainSage keeps coaching steady, culturally aware, and grounded in practical experiments so you
-                        can move at a humane pace.
-                      </p>
-                    )}
-              </div>
-              {showFallbackNotice ? (
-                <p className="text-xs font-medium text-slate-500">{fallbackMessage}</p>
-              ) : null}
-            </div>
-          </RevealSection>
-          <RevealSection delay={0.1}>
-            <Card title="A personal note" subtitle="Why this work matters">
-              <p className="text-sm leading-relaxed text-slate-700">{personalNoteText}</p>
-              <div className="mt-4 flex flex-wrap gap-3">
-                {copy?.callout?.primary?.href ? (
-                  <Link href={copy.callout.primary.href} className="ss-btn-primary">
-                    {copy.callout.primary.label}
-                  </Link>
-                ) : null}
-                {copy?.callout?.secondary?.href ? (
-                  <Link href={copy.callout.secondary.href} className="ss-btn-secondary">
-                    {copy.callout.secondary.label}
-                  </Link>
-                ) : null}
-              </div>
-            </Card>
-          </RevealSection>
-        </div>
-      </section>
-
-      <section className="ss-section">
-        <RevealSection className="space-y-4 text-base leading-relaxed text-slate-700">
-          <h2 className="text-3xl font-semibold text-sustain-text">From factories to quiet conversations</h2>
-          <p>
-            Before I became a coach, I spent years in manufacturing – leading three factories and around 1,400 people across
-            Mainland China and Taiwan. My days were full of KPIs, quality issues, night-shift problems and the thousand quiet
-            decisions that never make it into annual reports.
-          </p>
-          <p>
-            Looking back from the UK now, what stays with me is not the targets we hit, but the moments in between: the plant
-            manager who closed the door and admitted he was not sleeping, the HR colleague who asked whether she had become
-            someone she did not recognise, the engineer who wondered if moving country had actually moved him closer to the life
-            he wanted.
-          </p>
-          <p>
-            Those conversations rarely had a name. They were not ‘sessions’ or ‘programmes’. They were simply human beings,
-            carrying responsibility between different worlds, trying to make choices they could live with. Coaching, for me, is a
-            way to make that kind of space intentional – especially for leaders in China–UK organisations who are asked to stand
-            in two systems at once.
-          </p>
-          <p>
-            Today, as a Taiwan-born, UK-based coach who has lived the pressure of cross-border factory leadership, I work with
-            mid-career individuals and with China–UK corporate leaders. The tools may be coaching, but the work is the same: to
-            slow down enough for you to hear yourself clearly, before you decide what to do next.
-          </p>
-        </RevealSection>
-      </section>
-
-      <ValueGrid
-        items={valueCards}
-        eyebrow={copy?.key_points?.eyebrow}
-        title={copy?.key_points?.title}
-        description={copy?.key_points?.description}
-      />
-
-      <TeamSection team={team} />
-
-      <StoryCards
-        stories={copy?.approach?.cases ?? []}
-        eyebrow={copy?.approach?.eyebrow}
-        title={copy?.approach?.casesTitle ?? copy?.approach?.title}
-        description={copy?.approach?.casesDescription ?? copy?.approach?.description}
-      />
-
-      <section className="ss-section">
-        <RevealSection className="space-y-4 text-center md:text-left">
-          {copy?.approach?.pillarsEyebrow ? (
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
-              {copy.approach.pillarsEyebrow}
-            </p>
-          ) : null}
-          <h2 className="text-3xl font-semibold text-sustain-text">
-            {copy?.approach?.pillarsTitle ?? 'Structures that keep our practice steady'}
-          </h2>
-          {copy?.approach?.pillarsDescription ? (
-            <p className="text-base text-slate-700">{copy.approach.pillarsDescription}</p>
-          ) : null}
-        </RevealSection>
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {backgroundHighlights.map((item, index) => (
-            <RevealSection key={item.title} delay={(index % 3) * 0.1}>
-              <Card title={item.title}>
-                <p className="text-sm text-slate-700">{item.description}</p>
-              </Card>
-            </RevealSection>
-          ))}
-        </div>
-      </section>
-
-      <section className="ss-section">
-        <RevealSection>
-          <Card title={copy?.process?.title ?? 'My coaching approach'}>
-            {approachDescription ? (
-              <p className="text-base leading-relaxed text-slate-700">{approachDescription}</p>
-            ) : null}
-            {processSteps.length ? (
-              <div className="mt-8">
-                <StepList steps={processSteps} />
-              </div>
-            ) : null}
-          </Card>
-        </RevealSection>
-      </section>
-
-      <BoundariesSection boundaries={copy?.boundaries} />
-
-      <section className="ss-section">
-        <RevealSection>
-          <Callout
-            title={copy?.callout?.title ?? 'Let’s have a conversation'}
-            body={copy?.callout?.body ?? 'Browse our coaching services or read the full coaching boundaries we uphold.'}
-            actions={[
-              copy?.callout?.primary,
-              copy?.callout?.secondary ?? { label: 'Explore services', href: '/services' },
-            ].filter((link) => link?.href && link?.label)}
-          />
-        </RevealSection>
-      </section>
-    </main>
+    <>
+      <AboutHero hero={content?.hero} showFallbackNotice={showFallbackNotice} fallbackNotice={fallbackNotice} />
+      {sections.map((section) => (
+        <AboutSectionRenderer key={section?.id ?? section?.title} section={section} />
+      ))}
+      <AboutCTA cta={content?.cta} />
+    </>
   );
 }
 
 AboutPage.propTypes = {
-  copy: PropTypes.object,
-  team: PropTypes.object,
+  content: PropTypes.shape({
+    hero: PropTypes.object,
+    sections: PropTypes.array,
+    cta: PropTypes.object,
+    seo: PropTypes.shape({
+      title: PropTypes.string,
+      description: PropTypes.string,
+    }),
+  }),
   showFallbackNotice: PropTypes.bool,
   fallbackNotice: PropTypes.string,
 };
 
 AboutPage.getLayout = function getLayout(page) {
-  const seo = page.props?.copy?.seo ?? {};
+  const seo = page.props?.content?.seo ?? {};
   return (
     <MainLayout
       seo={{
@@ -416,36 +44,24 @@ AboutPage.getLayout = function getLayout(page) {
         description: seo.description,
       }}
     >
-      {page}
+      <main>{page}</main>
     </MainLayout>
   );
 };
 
-export async function getStaticProps({ locale }) {
-  const currentLocale = typeof locale === 'string' && locale.length > 0 ? locale : 'en-GB';
-  const aboutContent = loadContent('content/about/{locale}.json', currentLocale);
-  const teamContent = loadContent('content/team/{locale}.json', currentLocale);
-
-  const copy = aboutContent.data ?? {};
-  const team = teamContent.data ?? undefined;
-  const showFallbackNotice = Boolean(
-    (aboutContent.locale && aboutContent.locale !== currentLocale) ||
-      (teamContent.locale && teamContent.locale !== currentLocale)
-  );
-  const fallbackNotice =
-    copy?.fallbackNotice ??
-    team?.fallbackNotice ??
-    'Temporarily showing English content while we complete this translation.';
-
-  const props = {
-    copy,
-    team,
-    showFallbackNotice,
-    fallbackNotice,
-    ...(await serverSideTranslations(currentLocale, ['common'])),
-  };
+export async function getStaticProps({ locale = 'en-GB' }) {
+  const resolvedLocale = typeof locale === 'string' ? locale : 'en-GB';
+  const { content, isFallback } = getAboutPageContent('index', resolvedLocale);
+  const fallbackNotice = content?.fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
 
   return {
-    props: sanitizeProps(props),
+    props: {
+      content,
+      showFallbackNotice: isFallback,
+      fallbackNotice,
+      ...(await serverSideTranslations(resolvedLocale, ['common', 'nav'])),
+    },
   };
 }
+
+export default AboutPage;

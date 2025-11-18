@@ -1,0 +1,147 @@
+{
+  "seo": {
+    "title": "Coaching for young professionals | SustainSage",
+    "description": "Coaching designed for early-career professionals navigating rapid growth, shifting expectations, and self-leadership."
+  },
+  "hero": {
+    "eyebrow": "Coaching for young professionals",
+    "title": "Coaching for young professionals",
+    "intro": [
+      "Grow into leadership while staying values-led and resourced.",
+      "Coaching designed for early-career professionals navigating rapid growth, shifting expectations, and self-leadership."
+    ],
+    "chips": [
+      "Grow into leadership while staying values-led and resourced."
+    ]
+  },
+  "sections": [
+    {
+      "id": "challenges",
+      "title": "What tends to show up",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "leadership-stretch",
+          "title": "First-time leadership stretch",
+          "iconName": "briefcase",
+          "body": [
+            "Being promoted faster than expected and wanting support without looking like you cannot handle it."
+          ]
+        },
+        {
+          "id": "managing-up",
+          "title": "Managing up and across",
+          "iconName": "handshake",
+          "body": [
+            "Navigating stakeholders with competing priorities while still learning the basics of your role."
+          ]
+        },
+        {
+          "id": "self-doubt",
+          "title": "Self-doubt and comparison",
+          "iconName": "question",
+          "body": [
+            "Wondering if you earned your seat at the table or just happened to be there when the door opened."
+          ]
+        },
+        {
+          "id": "logistics",
+          "title": "Life logistics catching up",
+          "iconName": "calendar",
+          "body": [
+            "Visa renewals, housing, family expectations, or health routines needing attention alongside work goals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "title": "How coaching can help",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "clarify-leadership",
+          "title": "Clarify the leadership you want to practice",
+          "iconName": "target",
+          "body": [
+            "Articulate your values, non-negotiables, and what “good” looks like in your context."
+          ]
+        },
+        {
+          "id": "conversational-courage",
+          "title": "Build conversational courage",
+          "iconName": "chat",
+          "body": [
+            "Plan and rehearse feedback, expectation-setting, or boundary conversations with curiosity and respect."
+          ]
+        },
+        {
+          "id": "sustain-pace",
+          "title": "Sustain pace without burnout",
+          "iconName": "clock",
+          "body": [
+            "Design rituals and accountability that fit a busy schedule and honour your wellbeing."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette",
+      "title": "A short vignette",
+      "style": "prose",
+      "body": [
+        "“M” entered a fintech graduate scheme and quickly became the go-to person for urgent projects. She wanted to keep learning yet felt close to burning out. In coaching she mapped what energized her, practiced requesting clearer priorities from senior leaders, and built weekly rituals that protected recovery time. Six months later she was still delivering strong results without the Sunday-night dread."
+      ]
+    },
+    {
+      "id": "packages",
+      "title": "Which package fits?",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "reset",
+          "title": "Reset package",
+          "iconName": "clock",
+          "body": [
+            "Many young professionals start with the Reset package to stabilise routines and strengthen self-leadership."
+          ],
+          "href": "/services/reset-sprint"
+        },
+        {
+          "id": "transition",
+          "title": "Transition package",
+          "iconName": "target",
+          "body": [
+            "When stepping into a new role or planning a promotion, the Transition package offers six sessions to explore identity, expectations, and support systems."
+          ],
+          "href": "/services/transition-coaching"
+        },
+        {
+          "id": "deepening",
+          "title": "Deepening package",
+          "iconName": "note",
+          "body": [
+            "For ongoing development, consider the Deepening package to strengthen leadership presence over eight sessions."
+          ],
+          "href": "/services/deepening-practice"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "style": "cta",
+      "title": "Not sure where to start?",
+      "body": [
+        "A 20-minute chat lets us hear your context and shape the right mix together."
+      ],
+      "primaryCta": {
+        "href": "/contact",
+        "label": "Book a 20-minute chat"
+      },
+      "secondaryCta": {
+        "href": "/services",
+        "label": "Compare services"
+      }
+    }
+  ]
+}

@@ -41,7 +41,7 @@ export default function Accordion({ items = [] }) {
   if (!items.length) return null;
 
   return (
-    <div className="divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white">
+    <div className="divide-y divide-sustain-cardBorder rounded-2xl border border-sustain-cardBorder bg-sustain-cardBg">
       {items.map((item) => {
         const isOpen = openId === item.id;
         return (
@@ -53,11 +53,11 @@ export default function Accordion({ items = [] }) {
               aria-expanded={isOpen}
               aria-controls={`${item.id}-panel`}
             >
-              <span className="text-base font-semibold text-slate-900">{item.q}</span>
-              <span className="ml-4 text-emerald-700">{isOpen ? '−' : '+'}</span>
+              <span className="text-base font-semibold text-sustain-textMain">{item.q}</span>
+              <span className="ml-4 text-sustain-primary">{isOpen ? '−' : '+'}</span>
             </button>
             {isOpen && (
-              <div id={`${item.id}-panel`} className="mt-3 text-sm leading-6 text-slate-600">
+              <div id={`${item.id}-panel`} className="mt-3 text-sm leading-6 text-sustain-textMuted">
                 {item.a}
               </div>
             )}
