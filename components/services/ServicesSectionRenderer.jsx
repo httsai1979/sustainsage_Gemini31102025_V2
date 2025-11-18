@@ -2,14 +2,15 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import PageSection from '@/components/ui/PageSection';
+import Button from '@/components/ui/Button';
 import CardShell from '@/components/ui/CardShell';
 import StepList from '@/components/ui/StepList';
 
 const GRID_MAP = {
-  1: 'grid grid-cols-1 gap-4',
-  2: 'grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6',
-  3: 'grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3',
-  4: 'grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3 xl:grid-cols-4',
+  1: 'grid grid-cols-1 gap-6',
+  2: 'grid grid-cols-1 gap-6 md:grid-cols-2',
+  3: 'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3',
+  4: 'grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4',
 };
 
 function normalizeParagraphs(value) {
@@ -50,12 +51,14 @@ function CardsSection({ section }) {
               rel={card?.rel}
             >
               {paragraphs.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+                <p key={paragraph} className="text-base leading-relaxed text-ink/70">
+                  {paragraph}
+                </p>
               ))}
               {bullets.length ? (
                 <ul className="mt-3 space-y-2">
                   {bullets.map((item) => (
-                    <li key={item} className="flex gap-2 text-sm text-sustain-textMuted">
+                    <li key={item} className="flex gap-2 text-base text-ink/70">
                       <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-sustain-primary" aria-hidden />
                       <span>{item}</span>
                     </li>
@@ -152,9 +155,9 @@ function CTASection({ section }) {
       {actions.length ? (
         <div className="mt-6 flex flex-wrap gap-3">
           {actions.map((action, index) => (
-            <Link key={action.href} href={action.href} className={index === 0 ? 'ss-btn-primary' : 'ss-btn-secondary'}>
+            <Button key={action.href} href={action.href} variant={index === 0 ? 'primary' : 'secondary'}>
               {action.label}
-            </Link>
+            </Button>
           ))}
         </div>
       ) : null}

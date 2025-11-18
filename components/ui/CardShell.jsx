@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import cn from '@/lib/cn';
 
-import Icon from './Icon';
+import IconBadge from './IconBadge';
 
 export default function CardShell({
   as: Tag = 'div',
@@ -19,12 +19,18 @@ export default function CardShell({
   metaClassName = '',
   ...rest
 }) {
-  const resolvedIcon = icon ?? (iconName ? <Icon name={iconName} className={cn('text-sustain-primary', iconClassName)} /> : null);
+  const resolvedIcon = icon
+    ? icon
+    : iconName
+    ? (
+      <IconBadge iconName={iconName} className={iconClassName} />
+    )
+    : null;
 
   return (
     <Tag
       className={cn(
-        'group relative flex h-full flex-col rounded-3xl border border-sustain-cardBorder bg-sustain-cardBg/95 p-5 shadow-sm transition duration-200 ease-out hover:-translate-y-0.5 hover:border-sustain-primary/60 hover:shadow-md focus-within:border-sustain-primary/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-primary md:p-6',
+        'group relative flex h-full flex-col rounded-[32px] border border-white/70 bg-white/95 p-6 shadow-card ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_35px_80px_rgba(15,23,42,0.16)] focus-within:-translate-y-1 focus-within:shadow-[0_35px_80px_rgba(15,23,42,0.2)] md:p-8',
         className,
       )}
       {...rest}
@@ -34,20 +40,20 @@ export default function CardShell({
           {resolvedIcon ? <div className="shrink-0">{resolvedIcon}</div> : null}
           <div className="flex-1 space-y-1">
             {eyebrow ? (
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sustain-textMuted">{eyebrow}</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.35em] text-ink/50">{eyebrow}</p>
             ) : null}
             {title ? (
-              <h3 className={cn('text-base font-semibold text-sustain-textMain md:text-lg', titleClassName)}>{title}</h3>
+              <h3 className={cn('text-lg font-semibold text-ink md:text-xl', titleClassName)}>{title}</h3>
             ) : null}
             {meta ? (
-              <p className={cn('text-xs text-sustain-textMuted', metaClassName)}>{meta}</p>
+              <p className={cn('text-xs text-ink/60', metaClassName)}>{meta}</p>
             ) : null}
           </div>
         </div>
       )}
 
       {children ? (
-        <div className={cn('mt-3 text-sm leading-relaxed text-sustain-textMuted', bodyClassName)}>{children}</div>
+        <div className={cn('mt-4 text-base leading-relaxed text-ink/70', bodyClassName)}>{children}</div>
       ) : null}
     </Tag>
   );

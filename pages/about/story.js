@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import Link from 'next/link';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import AboutHero from '@/components/about/AboutHero';
 import AboutSectionRenderer from '@/components/about/AboutSectionRenderer';
 import MainLayout from '@/components/layout/MainLayout';
+import Button from '@/components/ui/Button';
 import PageSection from '@/components/ui/PageSection';
 import { getAboutPageContent } from '@/lib/aboutContent';
 
@@ -16,18 +16,14 @@ function StoryFooter({ cta, secondaryCta, disclaimer }) {
       {links.length ? (
         <div className="flex flex-wrap gap-3">
           {links.map((action, index) => (
-            <Link
-              key={action.href}
-              href={action.href}
-              className={index === 0 ? 'ss-btn-primary' : 'ss-btn-secondary'}
-            >
+            <Button key={action.href} href={action.href} variant={index === 0 ? 'primary' : 'secondary'}>
               {action.label}
-            </Link>
+            </Button>
           ))}
         </div>
       ) : null}
       {disclaimer ? (
-        <p className="mt-6 text-xs text-sustain-textMuted">{disclaimer}</p>
+        <p className="mt-6 text-sm text-ink/60">{disclaimer}</p>
       ) : null}
     </PageSection>
   );
