@@ -15,13 +15,14 @@ export default function BlogPost({ fm, html }) {
     : fm.targetAudience;
   const formattedDate = formatDate(fm.date);
   const hasMeta = Boolean(targetAudience || formattedDate || fm.readingTimeMinutes);
+  const breadcrumb = fm.breadcrumb ?? fm.localeBreadcrumb ?? '';
 
   return (
     <Section className="ssg-blog-page">
       <Container className="ssg-blog-container">
         <header className="ssg-blog-hero">
           <div className="ssg-blog-hero-text">
-            <p className="ssg-blog-breadcrumb">Home / Blog / {fm.title}</p>
+            {breadcrumb ? <p className="ssg-blog-breadcrumb">{breadcrumb}</p> : null}
             <h1 className="ssg-blog-title">{fm.title}</h1>
             {fm.summary ? <p className="ssg-blog-summary">{fm.summary}</p> : null}
             {hasMeta ? (
@@ -47,7 +48,9 @@ export default function BlogPost({ fm, html }) {
             )}
           </div>
         </header>
-        <article className="ssg-blog-article" dangerouslySetInnerHTML={{ __html: html }} />
+        <article className="ssg-blog-article">
+          <div className="ssg-blog-article-body typography" dangerouslySetInnerHTML={{ __html: html }} />
+        </article>
       </Container>
     </Section>
   );
