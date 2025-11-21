@@ -1,9 +1,19 @@
 import blogIndexEn from '@/content/blog/index.en-GB.json';
+import blogIndexZhCN from '@/content/blog/index.zh-CN.json';
+import blogIndexZhTW from '@/content/blog/index.zh-TW.json';
 
 const FALLBACK_LOCALE = 'en-GB';
 
 const EN_CONTENT = {
   index: blogIndexEn,
+};
+
+const ZH_CN_CONTENT = {
+  index: blogIndexZhCN,
+};
+
+const ZH_TW_CONTENT = {
+  index: blogIndexZhTW,
 };
 
 const LOCALE_ALIASES: Record<string, string> = {
@@ -21,6 +31,8 @@ const LOCALE_ALIASES: Record<string, string> = {
 
 const CONTENT_BY_LOCALE: Record<string, typeof EN_CONTENT> = {
   'en-GB': EN_CONTENT,
+  'zh-CN': ZH_CN_CONTENT,
+  'zh-TW': ZH_TW_CONTENT,
 };
 
 function normalizeLocale(locale?: string | null): string | undefined {

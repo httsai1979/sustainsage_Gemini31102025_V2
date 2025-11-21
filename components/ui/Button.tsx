@@ -27,11 +27,11 @@ type ButtonProps = LinkProps | NativeButtonProps;
 
 const VARIANT_MAP: Record<ButtonVariants, string> = {
   primary:
-    'bg-primary text-white shadow-lg shadow-primary/30 hover:-translate-y-0.5 hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary',
+    'bg-[var(--color-brand-sage)] text-white shadow-lg shadow-emerald-900/25 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-900/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)]',
   secondary:
-    'bg-white/90 text-primary ring-1 ring-inset ring-primary/30 hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary',
+    'bg-white text-[var(--color-brand-sage)] ring-1 ring-inset ring-[color:var(--color-brand-sage)]/40 hover:bg-primary-soft/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)]',
   ghost:
-    'text-primary hover:bg-primary/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary/60',
+    'text-[var(--color-brand-sage)] ring-1 ring-transparent hover:bg-primary/10 hover:ring-[color:var(--color-brand-sage)]/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)]/70',
 };
 
 const SIZE_MAP: Record<ButtonSizes, string> = {

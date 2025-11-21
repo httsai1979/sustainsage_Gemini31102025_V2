@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import PropTypes from 'prop-types';
 
 import cn from '@/lib/cn';
@@ -12,6 +13,8 @@ export default function CardShell({
   eyebrow = null,
   title = null,
   meta = null,
+  imageSrc = null,
+  imageAlt = '',
   children,
   bodyClassName = '',
   iconClassName = '',
@@ -35,6 +38,22 @@ export default function CardShell({
       )}
       {...rest}
     >
+      {imageSrc ? (
+        <div className="relative mb-5 overflow-hidden rounded-2xl border border-black/5 bg-gradient-to-br from-primary/10 via-white to-primary/5">
+          <div className="relative aspect-[16/9] w-full">
+            <Image
+              src={imageSrc}
+              alt={imageAlt || title || ''}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 360px"
+              className="h-full w-full object-cover"
+              priority={false}
+            />
+          </div>
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/25 via-black/10 to-transparent" />
+        </div>
+      ) : null}
+
       {(resolvedIcon || eyebrow || title || meta) && (
         <div className="flex items-start gap-3">
           {resolvedIcon ? <div className="shrink-0">{resolvedIcon}</div> : null}
@@ -67,6 +86,8 @@ CardShell.propTypes = {
   eyebrow: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   meta: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  imageSrc: PropTypes.string,
+  imageAlt: PropTypes.string,
   children: PropTypes.node,
   bodyClassName: PropTypes.string,
   iconClassName: PropTypes.string,
