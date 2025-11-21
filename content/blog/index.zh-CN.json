@@ -1,0 +1,58 @@
+{
+  "hero": {
+    "eyebrow": "博客",
+    "title": "停一停，看看自己在哪里",
+    "lead": "短篇文章和教练式提问，陪你在会谈之间呼吸、对齐，并决定下一个实验。",
+    "intro": [
+      "这些短文陪你在会谈之间停一下，观察模式，尝试温和的实验。",
+      "文章用于反思与学习，不等同于医疗、法律、财务或移民建议。"
+    ],
+    "chips": [
+      "职业转换",
+      "文化与归属",
+      "领导与团队",
+      "步调与身心"
+    ]
+  },
+  "fallbackNotice": "这些文章是过渡期的反思，让你在等待新内容时也有东西可读。",
+  "listTitle": "最新反思",
+  "labels": {
+    "readArticle": "阅读文章",
+    "readArticleAria": "阅读《{{title}}》"
+  },
+  "categories": [
+    { "id": "career-transitions", "label": "职业转换", "iconName": "briefcase" },
+    { "id": "culture-belonging", "label": "文化与归属", "iconName": "globe" },
+    { "id": "leadership-teams", "label": "领导与团队", "iconName": "handshake" },
+    { "id": "wellbeing-pace", "label": "步调与身心", "iconName": "note" }
+  ],
+  "posts": [
+    {
+      "slug": "a-kinder-way-to-restart",
+      "title": "温柔地重新开始",
+      "categoryId": "career-transitions",
+      "iconName": "book",
+      "readingTimeMinutes": 5,
+      "summary": [
+        "卡住时，温柔和小步伐比硬撑更有效。",
+        "让行动符合当下能量，动能才会回来。"
+      ],
+      "publishedAt": "2025-10-30",
+      "image": "/images/blog/kinder.jpg"
+    }
+  ],
+  "cta": {
+    "title": "想把这些想法变成对话吗？",
+    "body": [
+      "教练提供保密空间，让你把反思化成自己负责的选择。"
+    ],
+    "primaryCta": {
+      "href": "/services",
+      "label": "查看服务"
+    },
+    "secondaryCta": {
+      "href": "/contact",
+      "label": "预约初谈"
+    }
+  }
+}

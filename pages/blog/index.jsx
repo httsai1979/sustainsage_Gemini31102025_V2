@@ -32,6 +32,8 @@ const buildManifestCard = (entry, post, categoryMap, categoryIconMap, locale) =>
   const dateSource = entry.publishedAt ?? post?.date;
   const categoryLabel = entry.categoryLabel ?? categoryMap.get(entry.categoryId) ?? post?.category ?? null;
   const iconName = entry.iconName ?? categoryIconMap.get(entry.categoryId) ?? 'book';
+  const image = entry.image ?? post?.img ?? post?.hero ?? null;
+  const alt = post?.alt ?? post?.title ?? entry.title ?? entry.slug;
 
   return {
     slug: entry.slug,
@@ -41,6 +43,8 @@ const buildManifestCard = (entry, post, categoryMap, categoryIconMap, locale) =>
     iconName,
     meta: formatDate(dateSource, locale),
     readingTime,
+    image,
+    alt,
   };
 };
 
@@ -52,6 +56,8 @@ const buildFallbackCard = (post, locale) => ({
   iconName: post.iconName ?? 'book',
   meta: formatDate(post.date, locale),
   readingTime: post.readingTime ?? post.reading_time ?? null,
+  image: post.img ?? post.hero ?? null,
+  alt: post.alt ?? post.title,
 });
 
 export default function BlogPage({ content, posts = [], locale = 'en-GB', isFallback = false }) {
@@ -93,6 +99,8 @@ export default function BlogPage({ content, posts = [], locale = 'en-GB', isFall
                   eyebrow={post.category}
                   title={post.title}
                   meta={post.meta}
+                  imageSrc={post.image}
+                  imageAlt={post.alt}
                 >
                   {post.summary?.length ? (
                     <div className="space-y-2 text-base leading-relaxed text-ink/70">
