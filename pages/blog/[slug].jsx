@@ -48,7 +48,9 @@ export default function BlogPost({ fm, html }) {
             )}
           </div>
         </header>
-        <article className="ssg-blog-article" dangerouslySetInnerHTML={{ __html: html }} />
+        <article className="ssg-blog-article">
+          <div className="ssg-blog-article-body typography" dangerouslySetInnerHTML={{ __html: html }} />
+        </article>
       </Container>
     </Section>
   );
