@@ -9,7 +9,7 @@ import { getAllPosts, getPostRendered } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
 
 export default function BlogPost({ fm, html }) {
-  const heroImage = fm.heroImage || fm.hero;
+  const heroImage = fm.heroImage || fm.hero || '/images/blog/article-default.svg';
   const targetAudience = Array.isArray(fm.targetAudience)
     ? fm.targetAudience.join(' · ')
     : fm.targetAudience;
