@@ -1,0 +1,89 @@
+{
+  "seo": {
+    "title": "資源工具｜SustainSage",
+    "description": "SustainSage 精選的教練式工作紙、提問與播放清單。以 ICF 倫理為底，邀請你在同意與自我照顧中調整使用。"
+  },
+  "hero": {
+    "eyebrow": "資源",
+    "title": "按照自己的節奏停下來看看",
+    "subtitle": "這些雙語資源陪你在會談之間持續實驗。沒有強迫下載或留下資料，只是提醒你在適合的時刻停一停。你也可以探索一組引導式的自助工具，陪你在空檔裡整理思緒。"
+  },
+  "featured": {
+    "title": "推薦工具",
+    "intro": "每項資源都以 ICF 教練原則設計，讓你可以依真實情況調整。",
+    "tools": [
+      {
+        "id": "values-worksheet",
+        "title": "價值與定錨工作紙",
+        "summary": "引導你辨識在陌生職場中帶來穩定的價值與支持。",
+        "format": "PDF 工作紙｜雙語",
+        "cta": "下載工作紙",
+        "status": "已更新"
+      },
+      {
+        "id": "micro-experiments",
+        "title": "小步實驗規劃表",
+        "summary": "協助你設計低風險測試，清楚寫下同意、支持與學習指標。",
+        "format": "Notion 範本｜三語",
+        "cta": "複製範本"
+      },
+      {
+        "id": "culture-bridges",
+        "title": "文化轉譯檢核表",
+        "summary": "用提問串連英國職場規範與華人文化智慧，既不失自己也尊重他人。",
+        "format": "檢核表｜雙語",
+        "cta": "開啟檢核表"
+      },
+      {
+        "id": "conversation-starters",
+        "title": "教練式對話啟動卡",
+        "summary": "幫助你與夥伴、導師或社群展開反思對話的提問。",
+        "format": "提問卡｜雙語",
+        "cta": "查看提問"
+      },
+      {
+        "id": "grounding-audio",
+        "title": "過程中的安定練習音檔",
+        "summary": "短版雙語練習，讓你在重要對話前後重新整頓。",
+        "format": "音訊播放清單｜雙語",
+        "cta": "線上收聽"
+      },
+      {
+        "id": "review-journal",
+        "title": "學習回顧手札",
+        "summary": "輕量的紀錄工具，支持你在每次實驗後整理洞察並規劃下一步。",
+        "format": "Google 文件｜雙語",
+        "cta": "建立副本"
+      }
+    ],
+    "defaultCta": "開啟資源"
+  },
+  "disclaimer": {
+    "title": "使用時請照顧自己",
+    "body": "這些工具是教練對話的延伸，不是治療、法律、移民、醫療或財務建議。請依自己的狀態調整，若感到負擔可隨時停下。",
+    "points": [
+      "你可以選擇要做或不做，沒有必交作業。",
+      "與他人一起使用時，請尊重彼此保密協議，只分享獲得同意的內容。",
+      "若過程中浮現強烈情緒，請尋求可信任的支持或專業協助。"
+    ]
+  },
+  "cta": {
+    "title": "想有人陪你一起走過嗎？",
+    "body": "歡迎預約相互了解，一起看看哪些資源適合你，或為團隊量身打造新工具。",
+    "primaryCta": "與教練聊聊",
+    "primaryHref": "/contact",
+    "secondaryCta": "聯絡我們",
+    "secondaryHref": "/services"
+  },
+  "labels": {
+    "comingSoon": "即將推出"
+  },
+  "actions": {
+    "view": "查看資源",
+    "download": "下載"
+  },
+  "interactive": {
+    "title": "互動自助工具",
+    "intro": "可以在自己的步調裡完成的引導式練習。"
+  }
+}

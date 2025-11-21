@@ -1,0 +1,92 @@
+{
+  "seo": {
+    "title": "How coaching works with SustainSage | ICF-aligned support",
+    "description": "Understand our ICF-aligned coaching partnership: session rhythm, collaboration style, and ethical boundaries."
+  },
+  "hero": {
+    "title": "How coaching works",
+    "subtitle": "What to expect before we start: structure, partnership, and the guardrails that keep coaching ethical.",
+    "primaryCta": "Book a 20-minute chat",
+    "primaryHref": "/contact?from=how-coaching-works",
+    "secondaryCta": "Back to services",
+    "secondaryHref": "/services"
+  },
+  "sections": {
+    "who": {
+      "title": "Who this is for",
+      "items": [
+        "You’re curious about coaching but want clarity on process before committing.",
+        "You need to align with a partner, HR, or sponsor on what coaching covers.",
+        "You’ve worked with mentors or therapists and wonder how coaching differs.",
+        "You value cultural nuance and want to confirm we can switch between English and Chinese."
+      ]
+    },
+    "what": {
+      "title": "What we work on",
+      "items": [
+        "Clarifying outcomes that matter to you—and how we will know progress when we see it.",
+        "Exploring perspectives, tools, and experiments that expand your options.",
+        "Designing accountability that feels supportive rather than surveillance.",
+        "Spotting systemic factors so you don’t blame yourself for structural issues."
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "description": "A partnership grounded in the International Coaching Federation (ICF) core competencies.",
+      "items": [
+        "Six 60-minute sessions over three to four months on Zoom, with flexibility to extend or pause.",
+        "We co-design each agenda; you bring context, we bring questions, frameworks, and reflection.",
+        "Between-session support via secure notes, Loom, or email check-ins when you request it.",
+        "Coaching is future-focused and client-led—we do not guarantee outcomes or replace legal, medical, or immigration advice."
+      ]
+    },
+    "examples": {
+      "title": "Example scenarios",
+      "description": "Composite snapshots based on real client journeys.",
+      "items": [
+        {
+          "title": "Navigating a cross-border promotion",
+          "description": "We balanced stakeholder expectations across three countries, rehearsed difficult conversations, and set boundaries for a sustainable travel rhythm."
+        },
+        {
+          "title": "Designing a values-led pivot",
+          "description": "A senior contributor prototyped portfolio work, refined messaging, and agreed on financial guardrails with their partner before resigning."
+        },
+        {
+          "title": "Re-entering after a health break",
+          "description": "We created phased goals, coordinated with healthcare providers, and built scripts to discuss capacity without oversharing."
+        }
+      ]
+    },
+    "expect": {
+      "title": "What you can expect",
+      "items": [
+        "Space to think and feel without judgement or forced positivity.",
+        "Clear agreements on confidentiality, boundaries, and how we will track progress.",
+        "Support naming systemic barriers alongside personal agency.",
+        "An honest partner who celebrates wins and challenges assumptions when needed."
+      ]
+    },
+    "ethics": {
+      "title": "Ethics & fit",
+      "items": [
+        "We follow the ICF Code of Ethics, including informed consent and confidentiality.",
+        "We refer you to therapy, legal, immigration, or financial professionals when those services are more appropriate.",
+        "You always choose pace, language, and scope; we do not upsell or pressure extensions.",
+        "If the fit isn’t right, we say so and recommend alternatives when possible."
+      ]
+    },
+    "cta": {
+      "title": "Have more questions?",
+      "body": "Let’s talk through your context and decide together whether coaching is the right next step.",
+      "primary": {
+        "label": "Book a 20-minute chat",
+        "href": "/contact?from=how-coaching-works"
+      },
+      "secondary": {
+        "label": "Email us instead",
+        "href": "/contact"
+      }
+    }
+  }
+}

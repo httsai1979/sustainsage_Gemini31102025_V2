@@ -1,0 +1,91 @@
+{
+  "seo": {
+    "title": "Returner coaching to re-enter work with confidence | SustainSage",
+    "description": "ICF-aligned coaching for professionals returning after caregiving, study, illness, or time abroad."
+  },
+  "hero": {
+    "title": "Return to work with steadiness and self-trust.",
+    "subtitle": "We rebuild rhythms, narratives, and support systems so your next chapter feels sustainable.",
+    "primaryCta": "Book a 20-minute chat",
+    "primaryHref": "/contact?service=returner-coaching",
+    "secondaryCta": "Back to services",
+    "secondaryHref": "/services"
+  },
+  "sections": {
+    "who": {
+      "title": "Who this is for",
+      "items": [
+        "You’re returning after parental leave, caregiving, or a family move.",
+        "You’re re-entering after illness, burnout, or a wellbeing pause.",
+        "You’re coming back to the UK workforce after years abroad.",
+        "You’re renegotiating identity as you combine paid and unpaid roles."
+      ]
+    },
+    "what": {
+      "title": "What we work on",
+      "items": [
+        "Rebuilding confidence with updated narratives and realistic pacing.",
+        "Mapping support systems at home and work so you’re not carrying everything alone.",
+        "Designing phased returns, project pilots, or part-time arrangements that fit.",
+        "Setting boundaries that protect health while you rebuild momentum."
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "description": "Gentle structure that respects the season you’re in.",
+      "items": [
+        "Six 60-minute sessions over 3–4 months on Zoom, timed around childcare, health, or study needs.",
+        "Sessions are co-designed to respond to live reintegration wins and hurdles.",
+        "Between-session support through shared notes, voice memos, or Loom when you need quick reflection.",
+        "We offer accountability and compassion without promising specific job offers or timelines."
+      ]
+    },
+    "examples": {
+      "title": "Example scenarios",
+      "items": [
+        {
+          "title": "Phased return after parental leave",
+          "description": "We negotiated workload boundaries, clarified childcare backup plans, and practiced conversations about flexible hours."
+        },
+        {
+          "title": "Re-entry after a health pause",
+          "description": "A consultant designed a gradual rebuild, balancing client work with treatment, and created scripts to discuss capacity honestly."
+        },
+        {
+          "title": "Coming back from overseas",
+          "description": "We reframed international experience for UK employers, mapped a local support network, and staged commitments to avoid overwhelm."
+        }
+      ]
+    },
+    "expect": {
+      "title": "What you can expect",
+      "items": [
+        "Grounded confidence in the story you tell about your return.",
+        "A realistic plan that honours both ambition and care responsibilities.",
+        "Stronger boundaries that keep you from sliding back into burnout.",
+        "Momentum built through small, deliberate actions you choose."
+      ]
+    },
+    "ethics": {
+      "title": "Ethics & fit",
+      "items": [
+        "Confidential, ICF-aligned coaching that respects the vulnerability of returning.",
+        "We collaborate with your therapists or doctors when you invite it and keep roles clear.",
+        "You call the pace; we never push hustle, guilt, or one-size-fits-all paths.",
+        "We refer to specialised career, legal, or wellbeing support when it serves you better."
+      ]
+    },
+    "cta": {
+      "title": "Want support as you re-enter work?",
+      "body": "Book a 20-minute chat so we can understand your timeline and design the right level of support.",
+      "primary": {
+        "label": "Book a 20-minute chat",
+        "href": "/contact?service=returner-coaching"
+      },
+      "secondary": {
+        "label": "See how coaching works",
+        "href": "/services/how-coaching-works"
+      }
+    }
+  }
+}

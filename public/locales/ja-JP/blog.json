@@ -1,0 +1,88 @@
+{
+  "seo": {
+    "title": "Blog | SustainSage",
+    "description": "Reflective coaching prompts and stories from SustainSage. Explore bilingual articles on career transitions, cultural bridges, and gentle leadership."
+  },
+  "hero": {
+    "eyebrow": "Blog",
+    "title": "Reflect, experiment, notice",
+    "subtitle": "Short reads with coaching questions to help you pause, breathe, and choose your next experiment."
+  },
+  "filters": [
+    {
+      "value": "all",
+      "label": "All topics"
+    },
+    {
+      "value": "career",
+      "label": "Career transitions"
+    },
+    {
+      "value": "culture",
+      "label": "Culture & belonging"
+    },
+    {
+      "value": "leadership",
+      "label": "Leadership & teams"
+    },
+    {
+      "value": "wellbeing",
+      "label": "Wellbeing & pace"
+    }
+  ],
+  "listTitle": "Latest reflections",
+  "intro": "These short reads help you pause, notice patterns and experiment gently between sessions.",
+  "notice": "Our articles invite reflection and learning. They are not medical, legal, financial or immigration advice.",
+  "disclaimer": "This article offers reflections, not individual therapeutic, legal, immigration or financial advice.",
+  "emptyState": "We are brewing new reflections. Check back soon or subscribe to our newsletter.",
+  "fallbackNotice": "These pieces were written as reflective placeholders while we prepare new stories.",
+  "articleCta": {
+    "title": "Ready to explore this in conversation?",
+    "body": "Coaching offers a confidential space to turn these reflections into choices you own.",
+    "primary": "Explore services",
+    "primaryHref": "/services",
+    "secondary": "Book a 20-minute chat",
+    "secondaryHref": "/contact"
+  },
+  "labels": {
+    "readArticle": "Read article",
+    "readArticleAria": "Read {{title}}"
+  },
+  "post1": {
+    "slug": "making-room-for-slow-transition",
+    "title": "Making room for a slow transition",
+    "excerpt": "How do you honour family expectations while designing a UK-based career change? Try these questions to choose your own timing.",
+    "category": "career",
+    "image": "/images/blog/slow-transition.svg",
+    "publishedDate": "2024-02-11",
+    "meta": {
+      "date": "11 Feb 2024",
+      "readingTime": "5 min read"
+    },
+    "prompts": [
+      "What part of your story needs to be witnessed before you make another decision?",
+      "Which experiment would feel respectful to your current energy?"
+    ]
+  },
+  "post2": {
+    "slug": "bridging-languages-at-work",
+    "title": "Bridging languages at work",
+    "excerpt": "Using bilingual coaching prompts to align UK workplace norms with Chinese cultural wisdom without burning out.",
+    "category": "culture",
+    "image": "/images/blog/bridging-languages.svg",
+    "publishedDate": "2024-03-19",
+    "meta": {
+      "date": "19 Mar 2024",
+      "readingTime": "6 min read"
+    },
+    "prompts": [
+      "What language helps you express doubt without apology?",
+      "Where do you need a boundary so your multilingual skills stay joyful?"
+    ]
+  },
+  "missingBody": "We could not load this article yet. Please check back soon.",
+  "backToList": "Back to all articles",
+  "errorDetail": "We could not load this article right now. Try another post or come back later.",
+  "notFound": "We could not find that article. It may have been archived.",
+  "error": "We could not load the latest posts just now. Showing our curated stories instead."
+}
