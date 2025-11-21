@@ -1,5 +1,6 @@
+import type { GetStaticProps, NextPage } from 'next';
+import type { ReactElement } from 'react';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import RevealSection from '@/components/common/RevealSection';
@@ -15,12 +16,40 @@ import Icon from '@/components/ui/Icon';
 import { loadJSON } from '@/lib/content';
 import { getHomePageContent } from '@/lib/homeContent';
 import { toSerializable } from '@/lib/toSerializable';
+import type {
+  AccordionSection as AccordionSectionData,
+  ComparisonSection as ComparisonSectionData,
+  FaqCtaSection as FaqCtaSectionData,
+  HomeHero,
+  HomePageContent,
+  HomeSection,
+  PersonasSection as PersonasSectionData,
+  PromoSection as PromoSectionData,
+  SectionComponentMap,
+  ServicesSection as ServicesSectionData,
+  SoftCTASection as SoftCTASectionData,
+  SplitSection as SplitSectionData,
+  StepsSection as StepsSectionData,
+  Testimonial,
+  TopicsSection as TopicsSectionData,
+} from '@/types/home';
 
 const DEFAULT_NOTICE = 'Temporarily showing English content while we complete this translation.';
 
 const CARD_PARAGRAPH_CLASS = 'text-base leading-relaxed text-ink/70';
 
-const SECTION_COMPONENTS = {
+type NextPageWithLayout<P> = NextPage<P> & {
+  getLayout?: (page: ReactElement<P>) => ReactElement;
+};
+
+type HomePageProps = {
+  content: HomePageContent;
+  testimonials: Testimonial[];
+  showFallbackNotice: boolean;
+  fallbackNotice: string | null;
+};
+
+const SECTION_COMPONENTS: SectionComponentMap = {
   personas: PersonasSection,
   promo: PromoSection,
   comparison: ComparisonSection,
@@ -33,25 +62,31 @@ const SECTION_COMPONENTS = {
   cta: SoftCTASection,
 };
 
-export default function Home({
-  content = {},
-  testimonials = [],
-  showFallbackNotice = false,
-  fallbackNotice = null,
-} = {}) {
-  const hero = content?.hero ?? {};
-  const sections = Array.isArray(content?.sections) ? content.sections : [];
+const Home: NextPageWithLayout<HomePageProps> = ({
+  content,
+  testimonials,
+  showFallbackNotice,
+  fallbackNotice,
+}) => {
+  const hero: HomeHero = content?.hero ?? {};
+  const sections: HomeSection[] = Array.isArray(content?.sections) ? content.sections : [];
   const fallbackMessage = fallbackNotice ?? content?.fallbackNotice ?? DEFAULT_NOTICE;
 
   return (
     <main>
-      <HomeHero hero={hero} showFallbackNotice={showFallbackNotice} fallbackNotice={fallbackMessage} />
+      <HomeHero
+        hero={hero}
+        showFallbackNotice={showFallbackNotice}
+        fallbackNotice={fallbackMessage}
+      />
       {sections.map((section, index) => {
-        const Component = SECTION_COMPONENTS[section?.type];
-        if (!Component) {
-          return null;
-        }
-        return <Component key={section?.id ?? section?.title ?? `home-section-${index}`} section={section} />;
+        const Component = SECTION_COMPONENTS[section.type];
+        return (
+          <Component
+            key={section?.id ?? section?.title ?? `home-section-${index}`}
+            section={section}
+          />
+        );
       })}
       {Array.isArray(testimonials) && testimonials.length ? (
         <PageSection id="testimonials" title={content?.testimonialsSection?.title}>
@@ -62,30 +97,9 @@ export default function Home({
       ) : null}
     </main>
   );
-}
-
-Home.propTypes = {
-  content: PropTypes.shape({
-    hero: PropTypes.object,
-    sections: PropTypes.arrayOf(PropTypes.object),
-    testimonialsSection: PropTypes.object,
-    seo: PropTypes.shape({
-      title: PropTypes.string,
-      description: PropTypes.string,
-    }),
-    fallbackNotice: PropTypes.string,
-  }),
-  testimonials: PropTypes.arrayOf(
-    PropTypes.shape({
-      quote: PropTypes.string,
-      attribution: PropTypes.string,
-    })
-  ),
-  showFallbackNotice: PropTypes.bool,
-  fallbackNotice: PropTypes.string,
 };
 
-Home.getLayout = function getLayout(page) {
+Home.getLayout = function getLayout(page: ReactElement<HomePageProps>) {
   const seo = page.props?.content?.seo ?? {};
   return (
     <MainLayout
@@ -99,7 +113,13 @@ Home.getLayout = function getLayout(page) {
   );
 };
 
-function HomeHero({ hero = {}, showFallbackNotice = false, fallbackNotice = DEFAULT_NOTICE }) {
+type HomeHeroProps = {
+  hero?: HomeHero;
+  showFallbackNotice?: boolean;
+  fallbackNotice?: string | null;
+};
+
+function HomeHero({ hero, showFallbackNotice = false, fallbackNotice = DEFAULT_NOTICE }: HomeHeroProps) {
   const chips = arrayify(hero?.chips);
   return (
     <HeroShell
@@ -116,17 +136,27 @@ function HomeHero({ hero = {}, showFallbackNotice = false, fallbackNotice = DEFA
   );
 }
 
-function PersonasSection({ section }) {
+type SectionProps<T extends HomeSection> = {
+  section: T;
+};
+
+function PersonasSection({ section }: SectionProps<PersonasSectionData>) {
   const intro = arrayify(section?.intro);
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(intro, section?.id)}</div> : null}
+      {intro.length ? (
+        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
+          {renderParagraphs(intro, section?.id)}
+        </div>
+      ) : null}
       <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
         {cards.map((card, index) => (
           <RevealSection key={card?.id ?? card?.title ?? index} delay={(index % 3) * 0.08}>
             <CardShell iconName={card?.iconName} title={card?.title} className="h-full">
-              {renderParagraphs(arrayify(card?.summary), `${card?.id}-summary`, { className: CARD_PARAGRAPH_CLASS })}
+              {renderParagraphs(arrayify(card?.summary), `${card?.id}-summary`, {
+                className: CARD_PARAGRAPH_CLASS,
+              })}
               {card?.href ? (
                 <div className="mt-4">
                   <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-sustain-primary">
@@ -143,7 +173,7 @@ function PersonasSection({ section }) {
   );
 }
 
-function PromoSection({ section }) {
+function PromoSection({ section }: SectionProps<PromoSectionData>) {
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
       <RevealSection>
@@ -162,19 +192,26 @@ function PromoSection({ section }) {
   );
 }
 
-function ComparisonSection({ section }) {
+function ComparisonSection({ section }: SectionProps<ComparisonSectionData>) {
   const intro = arrayify(section?.intro);
   const cards = [section?.leftCard, section?.rightCard].filter(Boolean);
   return (
     <PageSection id={section?.id} title={section?.title}>
-      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
+      {intro.length ? (
+        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
+          {renderParagraphs(intro, `${section?.id}-intro`)}
+        </div>
+      ) : null}
       <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
         {cards.map((card, index) => (
           <RevealSection key={card?.title ?? index} delay={index * 0.08}>
             <CardShell iconName={card?.iconName} title={card?.title}>
               <ul className="space-y-2">
                 {arrayify(card?.bullets).map((bullet, bulletIndex) => (
-                  <li key={`${card?.title ?? 'card'}-bullet-${bulletIndex}`} className="flex gap-3 text-base leading-relaxed text-ink/70">
+                  <li
+                    key={`${card?.title ?? 'card'}-bullet-${bulletIndex}`}
+                    className="flex gap-3 text-base leading-relaxed text-ink/70"
+                  >
                     <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sustain-primary" aria-hidden />
                     <span>{bullet}</span>
                   </li>
@@ -188,7 +225,7 @@ function ComparisonSection({ section }) {
   );
 }
 
-function StepsSection({ section }) {
+function StepsSection({ section }: SectionProps<StepsSectionData>) {
   const intro = arrayify(section?.intro);
   const steps = Array.isArray(section?.steps)
     ? section.steps.map((step, index) => ({
@@ -200,7 +237,11 @@ function StepsSection({ section }) {
     : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
+      {intro.length ? (
+        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
+          {renderParagraphs(intro, `${section?.id}-intro`)}
+        </div>
+      ) : null}
       <div className="mt-8">
         <RevealSection>
           <StepList steps={steps} />
@@ -210,11 +251,15 @@ function StepsSection({ section }) {
   );
 }
 
-function TopicsSection({ section }) {
+function TopicsSection({ section }: SectionProps<TopicsSectionData>) {
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {section?.intro ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(arrayify(section.intro), `${section?.id}-intro`)}</div> : null}
+      {section?.intro ? (
+        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
+          {renderParagraphs(arrayify(section.intro), `${section?.id}-intro`)}
+        </div>
+      ) : null}
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {cards.map((card, index) => (
           <RevealSection key={card?.id ?? card?.title ?? index} delay={(index % 4) * 0.08}>
@@ -228,12 +273,16 @@ function TopicsSection({ section }) {
   );
 }
 
-function ServicesSection({ section }) {
+function ServicesSection({ section }: SectionProps<ServicesSectionData>) {
   const intro = arrayify(section?.intro);
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
+      {intro.length ? (
+        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
+          {renderParagraphs(intro, `${section?.id}-intro`)}
+        </div>
+      ) : null}
       <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {cards.map((card, index) => (
           <RevealSection key={card?.id ?? card?.title ?? index} delay={(index % 3) * 0.08}>
@@ -255,7 +304,7 @@ function ServicesSection({ section }) {
   );
 }
 
-function SplitSection({ section }) {
+function SplitSection({ section }: SectionProps<SplitSectionData>) {
   const columns = [section?.left, section?.right].filter(Boolean);
   return (
     <PageSection id={section?.id} title={section?.title}>
@@ -263,7 +312,9 @@ function SplitSection({ section }) {
         {columns.map((column, index) => (
           <RevealSection key={column?.title ?? index} delay={index * 0.08}>
             <CardShell eyebrow={column?.eyebrow} title={column?.title}>
-              {renderParagraphs(arrayify(column?.description), `${section?.id}-${index}-description`, { className: CARD_PARAGRAPH_CLASS })}
+              {renderParagraphs(arrayify(column?.description), `${section?.id}-${index}-description`, {
+                className: CARD_PARAGRAPH_CLASS,
+              })}
               {Array.isArray(column?.items) && column.items.length ? (
                 <div className="mt-4 space-y-3">
                   {column.items.map((item, itemIndex) => (
@@ -274,12 +325,8 @@ function SplitSection({ section }) {
                       <Icon name={item?.iconName} />
                       <div className="flex-1">
                         <p className="font-semibold text-ink">{item?.title}</p>
-                        {item?.summary ? (
-                          <p className="text-base text-ink/70">{item.summary}</p>
-                        ) : null}
-                        {item?.meta ? (
-                          <p className="text-xs text-ink/60">{item.meta}</p>
-                        ) : null}
+                        {item?.summary ? <p className="text-base text-ink/70">{item.summary}</p> : null}
+                        {item?.meta ? <p className="text-xs text-ink/60">{item.meta}</p> : null}
                       </div>
                       {item?.href ? (
                         <Link href={item.href} className="inline-flex items-center gap-1 text-sm font-semibold text-sustain-primary">
@@ -306,7 +353,7 @@ function SplitSection({ section }) {
   );
 }
 
-function AccordionSection({ section }) {
+function AccordionSection({ section }: SectionProps<AccordionSectionData>) {
   const intro = arrayify(section?.intro);
   const items = Array.isArray(section?.faqs)
     ? section.faqs.map((item) => ({
@@ -316,7 +363,11 @@ function AccordionSection({ section }) {
     : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">{renderParagraphs(intro, `${section?.id}-intro`)}</div> : null}
+      {intro.length ? (
+        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
+          {renderParagraphs(intro, `${section?.id}-intro`)}
+        </div>
+      ) : null}
       <div className="mt-8">
         <RevealSection>
           <FAQAccordion items={items} />
@@ -326,7 +377,7 @@ function AccordionSection({ section }) {
   );
 }
 
-function FaqCtaSection({ section }) {
+function FaqCtaSection({ section }: SectionProps<FaqCtaSectionData>) {
   return (
     <PageSection id={section?.id}>
       <RevealSection>
@@ -351,7 +402,7 @@ function FaqCtaSection({ section }) {
   );
 }
 
-function SoftCTASection({ section }) {
+function SoftCTASection({ section }: SectionProps<SoftCTASectionData>) {
   return (
     <PageSection id={section?.id} background="paper" title={section?.title}>
       <RevealSection>
@@ -375,13 +426,13 @@ function SoftCTASection({ section }) {
   );
 }
 
-function arrayify(value) {
+function arrayify(value?: string | string[] | null): string[] {
   if (Array.isArray(value)) return value.filter(Boolean);
   if (typeof value === 'string' && value.trim()) return [value];
   return [];
 }
 
-function renderParagraphs(paragraphs = [], keyPrefix = 'paragraph', options = {}) {
+function renderParagraphs(paragraphs: string[], keyPrefix = 'paragraph', options: { className?: string } = {}) {
   if (!Array.isArray(paragraphs) || !paragraphs.length) return null;
   const className = options?.className ?? 'text-base leading-relaxed text-ink/70';
   return paragraphs.map((paragraph, index) => (
@@ -391,17 +442,20 @@ function renderParagraphs(paragraphs = [], keyPrefix = 'paragraph', options = {}
   ));
 }
 
-export async function getStaticProps({ locale = 'en-GB' }) {
+export const getStaticProps: GetStaticProps<HomePageProps> = async ({ locale = 'en-GB' }) => {
   const { content, isFallback } = getHomePageContent(locale);
-  const testimonials = loadJSON('testimonials', locale);
+  const typedContent = (content ?? {}) as HomePageContent;
+  const testimonials = (loadJSON('testimonials', locale) ?? []) as Testimonial[];
 
   return toSerializable({
     props: {
-      content,
+      content: typedContent,
       testimonials,
       showFallbackNotice: isFallback,
-      fallbackNotice: content?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale, ['common', 'nav', 'home', 'faq'])),
+      fallbackNotice: typedContent?.fallbackNotice ?? null,
+      ...(await serverSideTranslations(locale ?? 'en-GB', ['common', 'nav', 'home', 'faq'])),
     },
   });
-}
+};
+
+export default Home;
