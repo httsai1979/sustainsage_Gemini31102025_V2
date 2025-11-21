@@ -146,7 +146,11 @@
       "success": "收到！我们会在三个英国工作天内回复。",
       "error": "系统发生状况，请再试一次或写信到 contact@sustainsage.com。",
       "errorRequired": "请填写必要栏位并勾选同意。"
-    }
+    },
+    "referral": "How did you find this site?",
+    "referralHint": "e.g. referral, LinkedIn, web search",
+    "responseNote": "Replies land within two to three UK working days.",
+    "boundariesLinkLabel": "Coaching Boundaries"
   },
   "sidebar": {
     "title": "流程会是这样",
@@ -178,5 +182,8 @@
     "text": "还不确定吗？看看我们如何运作教练合作。",
     "label": "阅读 FAQ",
     "href": "/faq"
+  },
+  "contactMethods": {
+    "phone": "Phone"
   }
 }

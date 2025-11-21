@@ -1,7 +1,9 @@
 import Link from 'next/link';
-import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
+import React, { useMemo, useState } from 'react';
+import { z } from 'zod';
 
 import ContentHero from '@/components/content/ContentHero';
 import ICFNotice from '@/components/legal/ICFNotice';
@@ -17,7 +19,80 @@ const INPUT_CLASSNAME =
   'w-full rounded-2xl border border-sustain-cardBorder bg-white px-4 py-3 text-base text-sustain-textMain placeholder:text-sustain-textMuted focus:outline-none focus:ring-2 focus:ring-sustain-primary/40';
 const DEFAULT_NOTICE = 'Temporarily showing English content while we complete this translation.';
 
-function normalizeParagraphs(value) {
+const contactHeroSchema = z
+  .object({
+    eyebrow: z.string().optional(),
+    title: z.string().optional(),
+    intro: z.array(z.string()).optional(),
+    chips: z.array(z.string()).optional(),
+  })
+  .partial();
+
+const contactFormSchema = z.object({
+  title: z.string().optional(),
+  description: z.array(z.string()).optional(),
+  responseNote: z.string().optional(),
+  fields: z
+    .object({
+      name: z.object({ label: z.string().optional(), placeholder: z.string().optional() }).optional(),
+      email: z.object({ label: z.string().optional(), placeholder: z.string().optional() }).optional(),
+      howFound: z.object({ label: z.string().optional(), placeholder: z.string().optional() }).optional(),
+      message: z.object({ label: z.string().optional(), placeholder: z.string().optional() }).optional(),
+    })
+    .optional(),
+  consent: z
+    .object({
+      labelBeforeLink: z.string().optional(),
+      linkLabel: z.string().optional(),
+      labelAfterLink: z.string().optional(),
+      helper: z.string().optional(),
+    })
+    .optional(),
+  submitLabel: z.string().optional(),
+  submittingLabel: z.string().optional(),
+  successMessage: z.string().optional(),
+  errorMessage: z.string().optional(),
+  errorRequired: z.string().optional(),
+});
+
+const contactDirectSchema = z.object({
+  title: z.string().optional(),
+  body: z.array(z.string()).optional(),
+  emailLabel: z.string().optional(),
+  email: z.string().optional(),
+  phoneLabel: z.string().optional(),
+  phone: z.string().optional(),
+  note: z.string().optional(),
+  iconName: z.string().optional(),
+});
+
+const contactPageSchema = z.object({
+  fallbackNotice: z.string().optional(),
+  hero: contactHeroSchema.optional(),
+  form: contactFormSchema.optional(),
+  directContact: contactDirectSchema.optional(),
+  seo: z.record(z.unknown()).optional(),
+});
+
+type ContactPageContent = z.infer<typeof contactPageSchema>;
+
+type ContactPageProps = {
+  content: ContactPageContent;
+  showFallbackNotice: boolean;
+  fallbackNotice: string;
+};
+
+type FormData = {
+  name: string;
+  email: string;
+  howFound: string;
+  message: string;
+  consent: boolean;
+};
+
+type SubmissionStatus = 'success' | 'error' | null;
+
+function normalizeParagraphs(value?: string[] | string | null): string[] {
   if (!value) return [];
   if (Array.isArray(value)) {
     return value.filter((paragraph) => typeof paragraph === 'string' && paragraph.trim().length > 0);
@@ -28,16 +103,48 @@ function normalizeParagraphs(value) {
   return [];
 }
 
-function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
+const ContactPage: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = ({
+  content,
+  showFallbackNotice,
+  fallbackNotice,
+}) => {
+  const { t } = useTranslation('contact');
   const hero = content?.hero ?? {};
   const formContent = content?.form ?? {};
   const formFields = formContent?.fields ?? {};
   const directContact = content?.directContact ?? {};
 
-  const [formData, setFormData] = useState({ name: '', email: '', howFound: '', message: '', consent: false });
-  const [status, setStatus] = useState(null);
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    howFound: '',
+    message: '',
+    consent: false,
+  });
+  const [status, setStatus] = useState<SubmissionStatus>(null);
   const [statusMessage, setStatusMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const translationFallbacks = useMemo(
+    () => ({
+      nameLabel: t('form.name', { defaultValue: 'Name' }),
+      namePlaceholder: t('form.nameHint', { defaultValue: '' }),
+      emailLabel: t('form.email', { defaultValue: 'Email' }),
+      emailPlaceholder: t('form.emailHint', { defaultValue: '' }),
+      howFoundLabel: t('form.referral', { defaultValue: 'How did you find this site?' }),
+      howFoundPlaceholder: t('form.referralHint', { defaultValue: '' }),
+      messageLabel: t('form.help', { defaultValue: 'What would you like to talk about?' }),
+      messagePlaceholder: t('form.helpHint', { defaultValue: '' }),
+      consentLinkLabel: t('form.boundariesLinkLabel', { defaultValue: 'Coaching Boundaries' }),
+      submitLabel: t('form.submit', { defaultValue: 'Send message' }),
+      submittingLabel: t('form.status.submitting', { defaultValue: 'Sending…' }),
+      successMessage: t('form.status.success', { defaultValue: 'Thank you for reaching out.' }),
+      errorMessage: t('form.status.error', { defaultValue: 'Something went wrong. Please try again later.' }),
+      errorRequired: t('form.status.errorRequired', { defaultValue: 'Please complete the required fields.' }),
+      responseNote: t('form.responseNote', { defaultValue: '' }),
+    }),
+    [t]
+  );
 
   const descriptionParagraphs = normalizeParagraphs(formContent?.description);
   const directBody = normalizeParagraphs(directContact?.body);
@@ -46,7 +153,7 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
     directContact?.email
       ? {
           key: 'email',
-          label: directContact?.emailLabel ?? 'Email',
+          label: directContact?.emailLabel ?? t('form.email', { defaultValue: 'Email' }),
           value: directContact.email,
           href: `mailto:${directContact.email}`,
         }
@@ -54,14 +161,19 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
     directContact?.phone
       ? {
           key: 'phone',
-          label: directContact?.phoneLabel ?? 'Phone',
+          label: directContact?.phoneLabel ?? t('contactMethods.phone', { defaultValue: 'Phone' }),
           value: directContact.phone,
           href: `tel:${directContact.phone.replace(/\(0\)/g, '').replace(/[^+\d]/g, '')}`,
         }
       : null,
-  ].filter(Boolean);
+  ].filter(Boolean) as Array<{
+    key: string;
+    label: string;
+    value: string;
+    href: string;
+  }>;
 
-  const handleChange = (event) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, type, value, checked } = event.target;
     setFormData((previous) => ({
       ...previous,
@@ -69,14 +181,14 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
     }));
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus(null);
     setStatusMessage('');
 
     if (!formData.name || !formData.email || !formData.message || !formData.consent) {
       setStatus('error');
-      setStatusMessage(formContent?.errorRequired ?? 'Please complete the required fields.');
+      setStatusMessage(formContent?.errorRequired ?? translationFallbacks.errorRequired);
       return;
     }
 
@@ -101,11 +213,11 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
 
       setFormData({ name: '', email: '', howFound: '', message: '', consent: false });
       setStatus('success');
-      setStatusMessage(formContent?.successMessage ?? 'Thank you for reaching out.');
+      setStatusMessage(formContent?.successMessage ?? translationFallbacks.successMessage);
     } catch (error) {
       console.error('Contact form submission failed', error);
       setStatus('error');
-      setStatusMessage(formContent?.errorMessage ?? 'Something went wrong. Please try again later.');
+      setStatusMessage(formContent?.errorMessage ?? translationFallbacks.errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -118,7 +230,7 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
     <>
       <ContentHero hero={hero} showFallbackNotice={showFallbackNotice} fallbackNotice={fallbackNotice} />
 
-      <PageSection id="contact-form" title={formContent?.title}>
+      <PageSection id="contact-form" title={formContent?.title} lead={translationFallbacks.responseNote}>
         <div className="grid gap-8 lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
           <div className="rounded-[32px] border border-white/70 bg-white/95 p-6 shadow-card md:p-8">
             {descriptionParagraphs.length ? (
@@ -128,9 +240,9 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
                 ))}
               </div>
             ) : null}
-            {formContent?.responseNote ? (
+            {formContent?.responseNote ?? translationFallbacks.responseNote ? (
               <p className="mt-4 text-xs font-semibold uppercase tracking-[0.25em] text-sustain-textMuted">
-                {formContent.responseNote}
+                {formContent?.responseNote ?? translationFallbacks.responseNote}
               </p>
             ) : null}
 
@@ -149,7 +261,7 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
             <form onSubmit={handleSubmit} className="mt-6 space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-sustain-textMain">
-                  {formFields?.name?.label ?? 'Name'}
+                  {formFields?.name?.label ?? translationFallbacks.nameLabel}
                 </label>
                 <input
                   id="name"
@@ -157,7 +269,7 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
                   type="text"
                   autoComplete="name"
                   required
-                  placeholder={formFields?.name?.placeholder ?? ''}
+                  placeholder={formFields?.name?.placeholder ?? translationFallbacks.namePlaceholder}
                   className={INPUT_CLASSNAME}
                   value={formData.name}
                   onChange={handleChange}
@@ -166,7 +278,7 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
 
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold text-sustain-textMain">
-                  {formFields?.email?.label ?? 'Email'}
+                  {formFields?.email?.label ?? translationFallbacks.emailLabel}
                 </label>
                 <input
                   id="email"
@@ -174,7 +286,7 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
                   type="email"
                   autoComplete="email"
                   required
-                  placeholder={formFields?.email?.placeholder ?? ''}
+                  placeholder={formFields?.email?.placeholder ?? translationFallbacks.emailPlaceholder}
                   className={INPUT_CLASSNAME}
                   value={formData.email}
                   onChange={handleChange}
@@ -183,13 +295,13 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
 
               <div>
                 <label htmlFor="howFound" className="block text-sm font-semibold text-sustain-textMain">
-                  {formFields?.howFound?.label ?? 'How did you find this site?'}
+                  {formFields?.howFound?.label ?? translationFallbacks.howFoundLabel}
                 </label>
                 <input
                   id="howFound"
                   name="howFound"
                   type="text"
-                  placeholder={formFields?.howFound?.placeholder ?? ''}
+                  placeholder={formFields?.howFound?.placeholder ?? translationFallbacks.howFoundPlaceholder}
                   className={INPUT_CLASSNAME}
                   value={formData.howFound}
                   onChange={handleChange}
@@ -198,14 +310,14 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
 
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-sustain-textMain">
-                  {formFields?.message?.label ?? 'What would you like to talk about?'}
+                  {formFields?.message?.label ?? translationFallbacks.messageLabel}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   rows={6}
                   required
-                  placeholder={formFields?.message?.placeholder ?? ''}
+                  placeholder={formFields?.message?.placeholder ?? translationFallbacks.messagePlaceholder}
                   className={`${INPUT_CLASSNAME} min-h-[160px] resize-vertical`}
                   value={formData.message}
                   onChange={handleChange}
@@ -226,7 +338,7 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
                   <p>
                     {consent?.labelBeforeLink ? `${consent.labelBeforeLink} ` : null}
                     <Link href="/legal/coaching-boundaries" className="font-semibold text-sustain-primary underline-offset-2 hover:underline">
-                      {consent?.linkLabel ?? 'Coaching Boundaries'}
+                      {consent?.linkLabel ?? translationFallbacks.consentLinkLabel}
                     </Link>
                     {consent?.labelAfterLink ? ` ${consent.labelAfterLink}` : null}
                   </p>
@@ -235,7 +347,7 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
               </div>
 
               <Button type="submit" disabled={isSubmitting} className="w-full justify-center md:w-auto">
-                {isSubmitting ? formContent?.submittingLabel ?? 'Sending…' : formContent?.submitLabel ?? 'Send message'}
+                {isSubmitting ? formContent?.submittingLabel ?? translationFallbacks.submittingLabel : formContent?.submitLabel ?? translationFallbacks.submitLabel}
               </Button>
             </form>
           </div>
@@ -263,9 +375,7 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
                   ))}
                 </dl>
               ) : null}
-              {directContact?.note ? (
-                <p className="text-sm text-ink/60">{directContact.note}</p>
-              ) : null}
+              {directContact?.note ? <p className="text-sm text-ink/60">{directContact.note}</p> : null}
             </CardShell>
           ) : null}
         </div>
@@ -276,26 +386,15 @@ function ContactPage({ content, showFallbackNotice, fallbackNotice }) {
       </PageSection>
     </>
   );
-}
-
-ContactPage.propTypes = {
-  content: PropTypes.shape({
-    hero: PropTypes.object,
-    form: PropTypes.object,
-    directContact: PropTypes.object,
-    seo: PropTypes.object,
-  }),
-  showFallbackNotice: PropTypes.bool,
-  fallbackNotice: PropTypes.string,
 };
 
 ContactPage.getLayout = function getLayout(page) {
-  const seo = page.props?.content?.seo ?? {};
+  const seo = (page as React.ReactElement<{ props?: { content?: ContactPageContent } }>).props?.content?.seo ?? {};
   return (
     <MainLayout
       seo={{
-        title: seo?.title ?? 'Contact',
-        description: seo?.description ?? null,
+        title: (seo as { title?: string })?.title ?? 'Contact',
+        description: (seo as { description?: string })?.description ?? null,
       }}
     >
       <main>{page}</main>
@@ -303,21 +402,30 @@ ContactPage.getLayout = function getLayout(page) {
   );
 };
 
-export async function getStaticProps({ locale = 'en-GB' }) {
+export const getStaticProps: GetStaticProps<ContactPageProps> = async ({ locale = 'en-GB' }) => {
   const resolvedLocale = typeof locale === 'string' ? locale : 'en-GB';
   const { content, isFallback } = getContactPageContent(resolvedLocale);
+  const parsedContent = contactPageSchema.safeParse(content);
+
+  if (!parsedContent.success) {
+    console.error('[contact] Content validation failed', parsedContent.error.flatten());
+  }
+
+  const validatedContent = parsedContent.success
+    ? parsedContent.data
+    : contactPageSchema.parse(getContactPageContent('en-GB').content);
   const commonNamespace = loadNamespace(resolvedLocale, 'common');
   const fallbackNotice =
-    content?.fallbackNotice ?? commonNamespace?.fallbackNotice ?? DEFAULT_NOTICE;
+    validatedContent?.fallbackNotice ?? commonNamespace?.fallbackNotice ?? DEFAULT_NOTICE;
 
   return toSerializable({
     props: {
-      content,
+      content: validatedContent,
       showFallbackNotice: isFallback,
       fallbackNotice,
-      ...(await serverSideTranslations(resolvedLocale, ['common', 'nav'])),
+      ...(await serverSideTranslations(resolvedLocale, ['common', 'nav', 'contact'])),
     },
   });
-}
+};
 
 export default ContactPage;

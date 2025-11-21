@@ -88,20 +88,47 @@
     "focusArea": "Preferred pathway (optional)",
     "focusAreaPlaceholder": "Select a pathway",
     "focusAreaOptions": [
-      { "value": "transition", "label": "Transition coaching" },
-      { "value": "early-career", "label": "Early-career coaching" },
-      { "value": "working-parents", "label": "Working parent coaching" },
-      { "value": "leadership", "label": "Leadership coaching" },
-      { "value": "not-sure", "label": "Not sure yet" }
+      {
+        "value": "transition",
+        "label": "Transition coaching"
+      },
+      {
+        "value": "early-career",
+        "label": "Early-career coaching"
+      },
+      {
+        "value": "working-parents",
+        "label": "Working parent coaching"
+      },
+      {
+        "value": "leadership",
+        "label": "Leadership coaching"
+      },
+      {
+        "value": "not-sure",
+        "label": "Not sure yet"
+      }
     ],
     "focusHint": "Choose the option that feels closest—it is fine to stay uncertain.",
     "language": "Preferred language",
     "languagePlaceholder": "Select a language",
     "languageOptions": [
-      { "value": "en", "label": "English" },
-      { "value": "zh-TW", "label": "Traditional Chinese" },
-      { "value": "zh-CN", "label": "Simplified Chinese" },
-      { "value": "mix", "label": "Mix languages" }
+      {
+        "value": "en",
+        "label": "English"
+      },
+      {
+        "value": "zh-TW",
+        "label": "Traditional Chinese"
+      },
+      {
+        "value": "zh-CN",
+        "label": "Simplified Chinese"
+      },
+      {
+        "value": "mix",
+        "label": "Mix languages"
+      }
     ],
     "languageHint": "Tell us if you prefer English, Mandarin, or a mix—we can switch mid-session.",
     "timezone": "Preferred time zone / availability",
@@ -117,7 +144,11 @@
       "success": "Thank you. We’ll reply within three UK working days.",
       "error": "Something went wrong. Please try again or email contact@sustainsage.com.",
       "errorRequired": "Please complete the required fields and confirm consent."
-    }
+    },
+    "referral": "How did you find this site?",
+    "referralHint": "e.g. referral, LinkedIn, web search",
+    "responseNote": "Replies land within two to three UK working days.",
+    "boundariesLinkLabel": "Coaching Boundaries"
   },
   "sidebar": {
     "title": "What to expect",
@@ -151,5 +182,8 @@
     "text": "Still unsure? Read how coaching with us works.",
     "label": "Explore our FAQ",
     "href": "/faq"
+  },
+  "contactMethods": {
+    "phone": "Phone"
   }
 }
