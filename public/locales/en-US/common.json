@@ -15,7 +15,9 @@
     "languages": {
       "en-GB": "English",
       "zh-TW": "繁體中文",
-      "zh-CN": "简体中文"
+      "zh-CN": "简体中文",
+      "fr-FR": "Français",
+      "es-ES": "Español"
     },
     "mega": {
       "mobileCta": "Explore services",
@@ -123,5 +125,6 @@
   },
   "testimonials": {
     "heading": "What clients say"
-  }
+  },
+  "fallbackNotice": "Temporarily showing English content while we complete this translation."
 }

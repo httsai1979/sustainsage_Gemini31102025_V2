@@ -10,7 +10,11 @@
     "navContact": "聯絡",
     "openMenu": "開啟導覽",
     "closeMenu": "關閉導覽",
-    "toggleServicesMenu": "切換服務選單"
+    "toggleServicesMenu": "切換服務選單",
+    "languages": {
+      "fr-FR": "Français",
+      "es-ES": "Español"
+    }
   },
   "footer": {
     "philosophy": "以穩定的對話釐清方向。",
@@ -41,5 +45,6 @@
   },
   "testimonials": {
     "heading": "客戶回饋"
-  }
+  },
+  "fallbackNotice": "Temporarily showing English content while we complete this translation."
 }

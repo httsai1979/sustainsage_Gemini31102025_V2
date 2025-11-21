@@ -10,6 +10,7 @@ import CardShell from '@/components/ui/CardShell';
 import PageSection from '@/components/ui/PageSection';
 import { getResourcesPageContent } from '@/lib/resourcesContent';
 import { validateResourcesContent } from '@/lib/schema/resourcesSchema';
+import { loadNamespace } from '@/lib/server/loadNamespace';
 import { toSerializable } from '@/lib/toSerializable';
 import type { ResourcesPageContent, ResourcesSection, ToolsSection } from '@/types/resources';
 import type { SeoMeta } from '@/types/home';
@@ -115,9 +116,13 @@ export const getStaticProps: GetStaticProps<ResourcesPageProps> = async ({ local
   const resolvedLocale = typeof locale === 'string' ? locale : 'en-GB';
   const { content, isFallback } = getResourcesPageContent(resolvedLocale);
   const typedContent = validateResourcesContent(content, resolvedLocale);
-  const fallbackNotice = typedContent.fallbackNotice ?? DEFAULT_NOTICE;
-  const { loadNamespace } = await import('@/lib/server/loadNamespace');
   const namespaceCopy = loadNamespace(resolvedLocale, 'resources');
+  const commonNamespace = loadNamespace(resolvedLocale, 'common');
+  const fallbackNotice =
+    typedContent.fallbackNotice ??
+    namespaceCopy?.fallbackNotice ??
+    commonNamespace?.fallbackNotice ??
+    DEFAULT_NOTICE;
 
   return toSerializable({
     props: {

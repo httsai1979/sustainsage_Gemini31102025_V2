@@ -10,6 +10,7 @@ import Button from '@/components/ui/Button';
 import CardShell from '@/components/ui/CardShell';
 import PageSection from '@/components/ui/PageSection';
 import { getContactPageContent } from '@/lib/contactContent';
+import { loadNamespace } from '@/lib/server/loadNamespace';
 import { toSerializable } from '@/lib/toSerializable';
 
 const INPUT_CLASSNAME =
@@ -305,7 +306,9 @@ ContactPage.getLayout = function getLayout(page) {
 export async function getStaticProps({ locale = 'en-GB' }) {
   const resolvedLocale = typeof locale === 'string' ? locale : 'en-GB';
   const { content, isFallback } = getContactPageContent(resolvedLocale);
-  const fallbackNotice = content?.fallbackNotice ?? DEFAULT_NOTICE;
+  const commonNamespace = loadNamespace(resolvedLocale, 'common');
+  const fallbackNotice =
+    content?.fallbackNotice ?? commonNamespace?.fallbackNotice ?? DEFAULT_NOTICE;
 
   return toSerializable({
     props: {

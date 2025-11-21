@@ -15,7 +15,9 @@
     "languages": {
       "en-GB": "英文",
       "zh-TW": "繁體中文",
-      "zh-CN": "簡體中文"
+      "zh-CN": "簡體中文",
+      "fr-FR": "Français",
+      "es-ES": "Español"
     },
     "mega": {
       "mobileCta": "查看服務",
@@ -123,5 +125,6 @@
   },
   "testimonials": {
     "heading": "客戶回饋"
-  }
+  },
+  "fallbackNotice": "Temporarily showing English content while we complete this translation."
 }
