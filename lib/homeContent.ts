@@ -4,6 +4,8 @@ import homeIndexZhCn from '@/content/home/index.zh-CN.json';
 import homeIndexZhTw from '@/content/home/index.zh-TW.json';
 import homeIndexZhHk from '@/content/home/index.zh-HK.json';
 import homeIndexJaJp from '@/content/home/index.ja-JP.json';
+import homeIndexFrFr from '@/content/home/index.fr-FR.json';
+import homeIndexEsEs from '@/content/home/index.es-ES.json';
 import { loadJSON as loadTranslationJSON } from './loadContent';
 
 const FALLBACK_LOCALE = 'en-GB';
@@ -32,6 +34,14 @@ const JA_JP_CONTENT = {
   index: homeIndexJaJp,
 };
 
+const FR_FR_CONTENT = {
+  index: homeIndexFrFr,
+};
+
+const ES_ES_CONTENT = {
+  index: homeIndexEsEs,
+};
+
 type HomeContentResult = {
   content: any;
   usedLocale: string;
@@ -40,6 +50,10 @@ type HomeContentResult = {
 };
 
 type HomeTranslation = {
+  fallbackNotice?: string;
+};
+
+type CommonTranslation = {
   fallbackNotice?: string;
 };
 
@@ -59,6 +73,10 @@ const LOCALE_ALIASES: Record<string, string> = {
   tc: 'zh-TW',
   'ja-jp': 'ja-JP',
   ja: 'ja-JP',
+  fr: 'fr-FR',
+  'fr-fr': 'fr-FR',
+  es: 'es-ES',
+  'es-es': 'es-ES',
 };
 
 const CONTENT_BY_LOCALE: Record<string, typeof EN_CONTENT> = {
@@ -68,6 +86,8 @@ const CONTENT_BY_LOCALE: Record<string, typeof EN_CONTENT> = {
   'zh-TW': ZH_TW_CONTENT,
   'zh-HK': ZH_HK_CONTENT,
   'ja-JP': JA_JP_CONTENT,
+  'fr-FR': FR_FR_CONTENT,
+  'es-ES': ES_ES_CONTENT,
 };
 
 function normalizeLocale(locale?: string | null): string | undefined {
@@ -115,7 +135,12 @@ export function getHomePageContent(locale?: string | null): HomeContentResult {
   }
 
   const translations = loadHomeTranslation(requested);
-  const fallbackNotice = translations.fallbackNotice ?? null;
+  const { data: commonTranslations } = loadTranslationJSON<CommonTranslation>(
+    'public/locales/{locale}/common.json',
+    requested,
+    FALLBACK_LOCALE
+  );
+  const fallbackNotice = translations.fallbackNotice ?? commonTranslations?.fallbackNotice ?? null;
 
   return {
     content,

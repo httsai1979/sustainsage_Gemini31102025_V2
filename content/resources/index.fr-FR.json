@@ -1,0 +1,148 @@
+{
+  "hero": {
+    "eyebrow": "Resources",
+    "title": "Tools for reflection at your own pace",
+    "intro": [
+      "Curated bilingual resources to support your experiments between sessions.",
+      "No email gate, no pressure—just invitations to pause and notice. You can also explore a set of guided self-reflection tools designed to support your thinking between sessions."
+    ],
+    "chips": [
+      "Curated bilingual resources",
+      "No email gate",
+      "Guided self-reflection tools"
+    ]
+  },
+  "sections": [
+    {
+      "id": "tools",
+      "title": "Featured tools",
+      "lead": "Each resource is grounded in ICF-aligned coaching principles and designed to be adapted to your reality.",
+      "style": "cards",
+      "tools": [
+        {
+          "id": "values-map",
+          "slug": "values-map",
+          "title": "Values Map",
+          "eyebrow": "Worksheet",
+          "iconName": "target",
+          "summary": [
+            "Map what truly matters to you and check how your current choices align with your core values."
+          ],
+          "href": "/tools/values-map.html",
+          "ctaLabel": "Open resource"
+        },
+        {
+          "id": "self-talk-reframe",
+          "slug": "self-talk-reframe",
+          "title": "Self-talk Reframe Cards",
+          "eyebrow": "Interactive tool",
+          "iconName": "chat",
+          "summary": [
+            "Gentle prompts to help you notice harsh self-talk and reframe it with more compassionate language."
+          ],
+          "href": "/tools/self-talk-reframe.html",
+          "ctaLabel": "Open resource"
+        },
+        {
+          "id": "behaviour-experiment-ladder",
+          "slug": "behaviour-experiment-ladder",
+          "title": "Behaviour Experiment Ladder",
+          "eyebrow": "Interactive tool",
+          "iconName": "tool",
+          "summary": [
+            "Plan small, low-risk experiments to test new behaviours instead of all-or-nothing change."
+          ],
+          "href": "/tools/behaviour-experiment-ladder.html",
+          "ctaLabel": "Open resource"
+        },
+        {
+          "id": "choice-clarifier",
+          "slug": "choice-clarifier",
+          "title": "Choice Clarifier",
+          "eyebrow": "Decision aid",
+          "iconName": "compass",
+          "summary": [
+            "Lay out your options, costs, and needs so decisions feel less foggy and more grounded."
+          ],
+          "href": "/tools/choice-clarifier.html",
+          "ctaLabel": "Open resource"
+        },
+        {
+          "id": "thought-log",
+          "slug": "thought-log",
+          "title": "Thought Log",
+          "eyebrow": "Tracking tool",
+          "iconName": "note",
+          "summary": [
+            "Capture triggering situations, thoughts, and feelings to spot patterns over time."
+          ],
+          "href": "/tools/thought-log.html",
+          "ctaLabel": "Open resource"
+        },
+        {
+          "id": "role-separation",
+          "slug": "role-separation",
+          "title": "Role Separation Practice",
+          "eyebrow": "Reflection",
+          "iconName": "family",
+          "summary": [
+            "Gently separate 'me as a person' from 'me in this role' so criticism doesn’t feel like an attack on your whole identity."
+          ],
+          "href": "/tools/role-separation.html",
+          "ctaLabel": "Open resource"
+        },
+        {
+          "id": "emotion-triangle",
+          "slug": "emotion-triangle",
+          "title": "Emotion Triangle",
+          "eyebrow": "Reflection",
+          "iconName": "consent",
+          "summary": [
+            "Notice the link between situations, feelings, and actions, and gently explore other options."
+          ],
+          "href": "/tools/emotion-triangle.html",
+          "ctaLabel": "Open resource"
+        },
+        {
+          "id": "emotion-triangle-ai",
+          "slug": "emotion-triangle-ai",
+          "title": "Emotion Triangle (AI companion)",
+          "eyebrow": "Interactive tool",
+          "iconName": "spark",
+          "summary": [
+            "[TODO: Add short description for the AI-supported Emotion Triangle tool from existing copy.]"
+          ],
+          "href": "/tools/emotion-triangle-ai.html",
+          "ctaLabel": "Open resource"
+        }
+      ]
+    },
+    {
+      "id": "how-to-use",
+      "title": "Use with care",
+      "style": "prose",
+      "body": [
+        "These tools complement coaching conversations; they do not replace therapy, legal, immigration, medical, or financial advice. Adapt them kindly and pause if something feels overwhelming.",
+        "You choose what to complete and what to skip—there is no homework requirement.",
+        "Respect confidentiality when working with others and only share what you have consent to share.",
+        "If strong emotions surface, reach out to trusted support or professional services in your region."
+      ]
+    },
+    {
+      "id": "cta",
+      "title": "Want a guided walkthrough?",
+      "style": "cta",
+      "body": [
+        "Book a 20-minute chat to explore how these tools can support your goals, or ask for a custom resource for your team."
+      ],
+      "primaryCta": {
+        "href": "/contact",
+        "label": "Talk with a coach"
+      },
+      "secondaryCta": {
+        "href": "/services",
+        "label": "Contact us"
+      }
+    }
+  ]
+}

@@ -1,0 +1,182 @@
+{
+  "seo": {
+    "title": "Contact | SustainSage",
+    "description": "Reach out for a calm, ICF-aligned exploratory chat. Share your context, understand our boundaries, and decide whether coaching is the right next step."
+  },
+  "hero": {
+    "title": "A low-pressure way to see if working together makes sense.",
+    "body": "Share a few lines about what is changing. We respond with clarity and respect your pace.",
+    "bulletsTitle": "Before we meet, know that:",
+    "bullets": [
+      "We reply within three UK working days.",
+      "We start with a short, no-obligation call.",
+      "You decide what, if anything, you’d like to book."
+    ]
+  },
+  "journey": {
+    "title": "How the first touchpoint unfolds",
+    "intro": "Here is what happens after you press send.",
+    "items": [
+      {
+        "summary": "You send the form or email.",
+        "detail": "We confirm receipt and share a few time options within three UK working days."
+      },
+      {
+        "summary": "We meet for a 20-minute exploratory call.",
+        "detail": "We clarify focus, boundaries, fees, and whether coaching fits—no scripts, no pressure."
+      },
+      {
+        "summary": "You choose the next step.",
+        "detail": "If coaching helps, we co-design agreements. If not, we signpost resources or suggest other providers."
+      }
+    ]
+  },
+  "what_you_get": {
+    "title": "What you get",
+    "description": "When we coach together you can rely on:",
+    "items": [
+      "Confidential, client-led conversations held in English, Mandarin, or both.",
+      "Collaborative experiments, reflections, and tools tailored to your goals.",
+      "Honest signposting if another professional or resource would support you better.",
+      "Written summaries of agreements so you stay in control of next steps."
+    ]
+  },
+  "what_we_dont_do": {
+    "title": "What we don’t do",
+    "description": "To respect coaching ethics, we do not:",
+    "items": [
+      "Diagnose, treat, or provide therapy, counselling, medical, legal, or financial advice.",
+      "Complete immigration, tax, or legal paperwork on your behalf.",
+      "Guarantee job offers, promotions, or specific outcomes.",
+      "Work in situations where there is unmanaged risk of harm—we pause and refer instead."
+    ]
+  },
+  "suitability": {
+    "title": "What you get",
+    "description": "When we coach together you can rely on:",
+    "items": [
+      "Confidential, client-led conversations held in English, Mandarin, or both.",
+      "Collaborative experiments, reflections, and tools tailored to your goals.",
+      "Honest signposting if another professional or resource would support you better.",
+      "Written summaries of agreements so you stay in control of next steps."
+    ]
+  },
+  "redirect": {
+    "title": "What we don’t do",
+    "description": "To respect coaching ethics, we do not:",
+    "items": [
+      "Diagnose, treat, or provide therapy, counselling, medical, legal, or financial advice.",
+      "Complete immigration, tax, or legal paperwork on your behalf.",
+      "Guarantee job offers, promotions, or specific outcomes.",
+      "Work in situations where there is unmanaged risk of harm—we pause and refer instead."
+    ]
+  },
+  "consent": {
+    "label": "I have reviewed the <0>Coaching Boundaries</0> and consent to contact SustainSage about coaching.",
+    "helper": "Check this to confirm the coaching scope and unlock the contact form.",
+    "title": "Consent & data",
+    "text": "By submitting you agree to be contacted about your enquiry. We keep minimal records and respect deletion requests."
+  },
+  "form": {
+    "title": "Send us a note",
+    "subtitle": "Short bullet points are enough. You stay in control of what you disclose.",
+    "highlight": "Share as much or as little as you like.",
+    "name": "Name",
+    "nameHint": "Share the name and pronunciation you’d like us to use.",
+    "email": "Email",
+    "emailHint": "We only use this to reply about coaching.",
+    "help": "What transition or decision is on your mind?",
+    "helpHint": "Examples: relocating to the UK, returning to work after caregiving, cross-cultural leadership, feeling unsure about next steps.",
+    "focusArea": "Preferred pathway (optional)",
+    "focusAreaPlaceholder": "Select a pathway",
+    "focusAreaOptions": [
+      {
+        "value": "transition",
+        "label": "Transition coaching"
+      },
+      {
+        "value": "early-career",
+        "label": "Early-career coaching"
+      },
+      {
+        "value": "working-parents",
+        "label": "Working parent coaching"
+      },
+      {
+        "value": "leadership",
+        "label": "Leadership coaching"
+      },
+      {
+        "value": "not-sure",
+        "label": "Not sure yet"
+      }
+    ],
+    "focusHint": "Choose the option that feels closest—it is fine to stay uncertain.",
+    "language": "Preferred language",
+    "languagePlaceholder": "Select a language",
+    "languageOptions": [
+      {
+        "value": "en",
+        "label": "English"
+      },
+      {
+        "value": "zh-TW",
+        "label": "Traditional Chinese"
+      },
+      {
+        "value": "zh-CN",
+        "label": "Simplified Chinese"
+      },
+      {
+        "value": "mix",
+        "label": "Mix languages"
+      }
+    ],
+    "languageHint": "Tell us if you prefer English, Mandarin, or a mix—we can switch mid-session.",
+    "timezone": "Preferred time zone / availability",
+    "timezonePlaceholder": "e.g. UK mornings, GMT+8 evenings, or flexible",
+    "timezoneHint": "Include your city or time zone plus a rough window for calls.",
+    "consent": "I consent to SustainSage contacting me about coaching.",
+    "boundariesConsent": "I have read and agree to the <0>coaching boundaries</0>.",
+    "scopeAcknowledgement": "I understand this form is for coaching enquiries, not therapy, crisis support, legal, financial, or immigration advice.",
+    "privacyNote": "We store your information only to arrange coaching conversations and delete it if we do not work together, unless law requires otherwise.",
+    "submit": "Send message",
+    "status": {
+      "submitting": "Sending…",
+      "success": "Thank you. We’ll reply within three UK working days.",
+      "error": "Something went wrong. Please try again or email contact@sustainsage.com.",
+      "errorRequired": "Please complete the required fields and confirm consent."
+    }
+  },
+  "sidebar": {
+    "title": "What to expect",
+    "description": "We keep the process transparent and centred on your consent.",
+    "responseTitle": "Reply time",
+    "responseCopy": "We usually reply within three UK working days with a few options for the exploratory chat.",
+    "privacyTitle": "Data care",
+    "privacyCopy": "Your details stay between us unless the law requires disclosure. No marketing lists or surprise emails.",
+    "nextTitle": "After the call",
+    "nextCopy": "You choose whether to continue coaching. We summarise agreements and boundaries so you stay in control."
+  },
+  "miniFaq": {
+    "items": [
+      {
+        "q": "Is this confidential?",
+        "a": "Yes. Confidential by default; minimal notes; deletion on request."
+      },
+      {
+        "q": "What is expected between sessions?",
+        "a": "One small experiment or short reflection (≈30–60 min/week)."
+      },
+      {
+        "q": "Can I reschedule?",
+        "a": "Yes with 24-hour notice; late changes count as used."
+      }
+    ]
+  },
+  "faqLink": {
+    "text": "Still unsure? Read how coaching with us works.",
+    "label": "Explore our FAQ",
+    "href": "/faq"
+  }
+}
