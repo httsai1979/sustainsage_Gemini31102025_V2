@@ -146,7 +146,11 @@
       "success": "Thank you. We’ll reply within three UK working days.",
       "error": "Something went wrong. Please try again or email contact@sustainsage.com.",
       "errorRequired": "Please complete the required fields and confirm consent."
-    }
+    },
+    "referral": "How did you find this site?",
+    "referralHint": "e.g. referral, LinkedIn, web search",
+    "responseNote": "Replies land within two to three UK working days.",
+    "boundariesLinkLabel": "Coaching Boundaries"
   },
   "sidebar": {
     "title": "What to expect",
@@ -178,5 +182,8 @@
     "text": "Still unsure? Read how coaching with us works.",
     "label": "Explore our FAQ",
     "href": "/faq"
+  },
+  "contactMethods": {
+    "phone": "Phone"
   }
 }
