@@ -7,6 +7,9 @@ import RevealSection from '@/components/common/RevealSection';
 import Testimonials from '@/components/Testimonials';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
+import CardGrid from '@/components/home/CardGrid';
+import Paragraphs, { DEFAULT_PARAGRAPH_CLASS, toParagraphs } from '@/components/home/Paragraphs';
+import SectionIntro from '@/components/home/SectionIntro';
 import CardShell from '@/components/ui/CardShell';
 import Button from '@/components/ui/Button';
 import HeroShell from '@/components/ui/HeroShell';
@@ -15,6 +18,7 @@ import StepList from '@/components/ui/StepList';
 import Icon from '@/components/ui/Icon';
 import { loadJSON } from '@/lib/content';
 import { getHomePageContent } from '@/lib/homeContent';
+import { validateHomeContent } from '@/lib/schema/homeSchema';
 import { toSerializable } from '@/lib/toSerializable';
 import type {
   AccordionSection as AccordionSectionData,
@@ -35,8 +39,6 @@ import type {
 } from '@/types/home';
 
 const DEFAULT_NOTICE = 'Temporarily showing English content while we complete this translation.';
-
-const CARD_PARAGRAPH_CLASS = 'text-base leading-relaxed text-ink/70';
 
 type NextPageWithLayout<P> = NextPage<P> & {
   getLayout?: (page: ReactElement<P>) => ReactElement;
@@ -120,7 +122,7 @@ type HomeHeroProps = {
 };
 
 function HomeHero({ hero, showFallbackNotice = false, fallbackNotice = DEFAULT_NOTICE }: HomeHeroProps) {
-  const chips = arrayify(hero?.chips);
+  const chips = toParagraphs(hero?.chips);
   return (
     <HeroShell
       eyebrow={hero?.eyebrow}
@@ -141,34 +143,32 @@ type SectionProps<T extends HomeSection> = {
 };
 
 function PersonasSection({ section }: SectionProps<PersonasSectionData>) {
-  const intro = arrayify(section?.intro);
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? (
-        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
-          {renderParagraphs(intro, section?.id)}
-        </div>
-      ) : null}
-      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
-        {cards.map((card, index) => (
-          <RevealSection key={card?.id ?? card?.title ?? index} delay={(index % 3) * 0.08}>
-            <CardShell iconName={card?.iconName} title={card?.title} className="h-full">
-              {renderParagraphs(arrayify(card?.summary), `${card?.id}-summary`, {
-                className: CARD_PARAGRAPH_CLASS,
-              })}
-              {card?.href ? (
-                <div className="mt-4">
-                  <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-sustain-primary">
-                    {card?.ctaLabel ?? 'Learn more'}
-                    <span aria-hidden>→</span>
-                  </Link>
-                </div>
-              ) : null}
-            </CardShell>
-          </RevealSection>
-        ))}
-      </div>
+      <SectionIntro paragraphs={section?.intro} idPrefix={section?.id} />
+      <CardGrid
+        items={cards}
+        columns="three"
+        getKey={(card, index) => card?.id ?? card?.title ?? index}
+        renderCard={(card) => (
+          <CardShell iconName={card?.iconName} title={card?.title} className="h-full">
+            <Paragraphs
+              paragraphs={card?.summary}
+              idPrefix={`${card?.id}-summary`}
+              paragraphClassName={DEFAULT_PARAGRAPH_CLASS}
+            />
+            {card?.href ? (
+              <div className="mt-4">
+                <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-sustain-primary">
+                  {card?.ctaLabel ?? 'Learn more'}
+                  <span aria-hidden>→</span>
+                </Link>
+              </div>
+            ) : null}
+          </CardShell>
+        )}
+      />
     </PageSection>
   );
 }
@@ -178,7 +178,11 @@ function PromoSection({ section }: SectionProps<PromoSectionData>) {
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
       <RevealSection>
         <CardShell className="bg-white/95">
-          {renderParagraphs(arrayify(section?.body), `${section?.id}-body`, { className: CARD_PARAGRAPH_CLASS })}
+          <Paragraphs
+            paragraphs={section?.body}
+            idPrefix={`${section?.id}-body`}
+            paragraphClassName={DEFAULT_PARAGRAPH_CLASS}
+          />
           {section?.cta?.href ? (
             <div className="mt-4">
               <Button href={section.cta.href}>
@@ -193,40 +197,36 @@ function PromoSection({ section }: SectionProps<PromoSectionData>) {
 }
 
 function ComparisonSection({ section }: SectionProps<ComparisonSectionData>) {
-  const intro = arrayify(section?.intro);
   const cards = [section?.leftCard, section?.rightCard].filter(Boolean);
   return (
     <PageSection id={section?.id} title={section?.title}>
-      {intro.length ? (
-        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
-          {renderParagraphs(intro, `${section?.id}-intro`)}
-        </div>
-      ) : null}
-      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-        {cards.map((card, index) => (
-          <RevealSection key={card?.title ?? index} delay={index * 0.08}>
-            <CardShell iconName={card?.iconName} title={card?.title}>
-              <ul className="space-y-2">
-                {arrayify(card?.bullets).map((bullet, bulletIndex) => (
-                  <li
-                    key={`${card?.title ?? 'card'}-bullet-${bulletIndex}`}
-                    className="flex gap-3 text-base leading-relaxed text-ink/70"
-                  >
-                    <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sustain-primary" aria-hidden />
-                    <span>{bullet}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardShell>
-          </RevealSection>
-        ))}
-      </div>
+      <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
+      <CardGrid
+        columns="two"
+        items={cards}
+        revealGroupSize={2}
+        getKey={(card, index) => card?.title ?? index}
+        renderCard={(card, index) => (
+          <CardShell iconName={card?.iconName} title={card?.title}>
+            <ul className="space-y-2">
+              {toParagraphs(card?.bullets).map((bullet, bulletIndex) => (
+                <li
+                  key={`${card?.title ?? 'card'}-bullet-${bulletIndex}`}
+                  className="flex gap-3 text-base leading-relaxed text-ink/70"
+                >
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sustain-primary" aria-hidden />
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </CardShell>
+        )}
+      />
     </PageSection>
   );
 }
 
 function StepsSection({ section }: SectionProps<StepsSectionData>) {
-  const intro = arrayify(section?.intro);
   const steps = Array.isArray(section?.steps)
     ? section.steps.map((step, index) => ({
         title: step?.title,
@@ -237,11 +237,7 @@ function StepsSection({ section }: SectionProps<StepsSectionData>) {
     : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? (
-        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
-          {renderParagraphs(intro, `${section?.id}-intro`)}
-        </div>
-      ) : null}
+      <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
       <div className="mt-8">
         <RevealSection>
           <StepList steps={steps} />
@@ -255,51 +251,52 @@ function TopicsSection({ section }: SectionProps<TopicsSectionData>) {
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {section?.intro ? (
-        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
-          {renderParagraphs(arrayify(section.intro), `${section?.id}-intro`)}
-        </div>
-      ) : null}
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {cards.map((card, index) => (
-          <RevealSection key={card?.id ?? card?.title ?? index} delay={(index % 4) * 0.08}>
-            <CardShell iconName={card?.iconName} title={card?.title} className="h-full">
-              {renderParagraphs(arrayify(card?.summary), `${card?.id}-summary`, { className: CARD_PARAGRAPH_CLASS })}
-            </CardShell>
-          </RevealSection>
-        ))}
-      </div>
+      <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
+      <CardGrid
+        columns="four"
+        items={cards}
+        getKey={(card, index) => card?.id ?? card?.title ?? index}
+        renderCard={(card) => (
+          <CardShell iconName={card?.iconName} title={card?.title} className="h-full">
+            <Paragraphs
+              paragraphs={card?.summary}
+              idPrefix={`${card?.id}-summary`}
+              paragraphClassName={DEFAULT_PARAGRAPH_CLASS}
+            />
+          </CardShell>
+        )}
+      />
     </PageSection>
   );
 }
 
 function ServicesSection({ section }: SectionProps<ServicesSectionData>) {
-  const intro = arrayify(section?.intro);
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? (
-        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
-          {renderParagraphs(intro, `${section?.id}-intro`)}
-        </div>
-      ) : null}
-      <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {cards.map((card, index) => (
-          <RevealSection key={card?.id ?? card?.title ?? index} delay={(index % 3) * 0.08}>
-            <CardShell iconName={card?.iconName} title={card?.title} className="h-full">
-              {renderParagraphs(arrayify(card?.summary), `${card?.id}-summary`, { className: CARD_PARAGRAPH_CLASS })}
-              {card?.href ? (
-                <div className="mt-4">
-                  <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-sustain-primary">
-                    {card?.ctaLabel ?? 'Explore service'}
-                    <span aria-hidden>→</span>
-                  </Link>
-                </div>
-              ) : null}
-            </CardShell>
-          </RevealSection>
-        ))}
-      </div>
+      <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
+      <CardGrid
+        items={cards}
+        columns="three"
+        getKey={(card, index) => card?.id ?? card?.title ?? index}
+        renderCard={(card) => (
+          <CardShell iconName={card?.iconName} title={card?.title} className="h-full">
+            <Paragraphs
+              paragraphs={card?.summary}
+              idPrefix={`${card?.id}-summary`}
+              paragraphClassName={DEFAULT_PARAGRAPH_CLASS}
+            />
+            {card?.href ? (
+              <div className="mt-4">
+                <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-sustain-primary">
+                  {card?.ctaLabel ?? 'Explore service'}
+                  <span aria-hidden>→</span>
+                </Link>
+              </div>
+            ) : null}
+          </CardShell>
+        )}
+      />
     </PageSection>
   );
 }
@@ -312,9 +309,11 @@ function SplitSection({ section }: SectionProps<SplitSectionData>) {
         {columns.map((column, index) => (
           <RevealSection key={column?.title ?? index} delay={index * 0.08}>
             <CardShell eyebrow={column?.eyebrow} title={column?.title}>
-              {renderParagraphs(arrayify(column?.description), `${section?.id}-${index}-description`, {
-                className: CARD_PARAGRAPH_CLASS,
-              })}
+              <Paragraphs
+                paragraphs={column?.description}
+                idPrefix={`${section?.id}-${index}-description`}
+                paragraphClassName={DEFAULT_PARAGRAPH_CLASS}
+              />
               {Array.isArray(column?.items) && column.items.length ? (
                 <div className="mt-4 space-y-3">
                   {column.items.map((item, itemIndex) => (
@@ -354,7 +353,6 @@ function SplitSection({ section }: SectionProps<SplitSectionData>) {
 }
 
 function AccordionSection({ section }: SectionProps<AccordionSectionData>) {
-  const intro = arrayify(section?.intro);
   const items = Array.isArray(section?.faqs)
     ? section.faqs.map((item) => ({
         question: item?.question,
@@ -363,11 +361,7 @@ function AccordionSection({ section }: SectionProps<AccordionSectionData>) {
     : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
-      {intro.length ? (
-        <div className="max-w-3xl space-y-3 text-base leading-relaxed text-ink/70">
-          {renderParagraphs(intro, `${section?.id}-intro`)}
-        </div>
-      ) : null}
+      <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
       <div className="mt-8">
         <RevealSection>
           <FAQAccordion items={items} />
@@ -383,7 +377,7 @@ function FaqCtaSection({ section }: SectionProps<FaqCtaSectionData>) {
       <RevealSection>
         <div className="rounded-[32px] border border-white/70 bg-white/95 p-8 text-center shadow-card">
           {section?.title ? <h2 className="text-3xl font-semibold text-ink">{section.title}</h2> : null}
-          {renderParagraphs(arrayify(section?.body), `${section?.id}-body`)}
+          <Paragraphs paragraphs={section?.body} idPrefix={`${section?.id}-body`} />
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {section?.primaryCta?.href ? (
               <Button href={section.primaryCta.href} variant="secondary">
@@ -407,7 +401,7 @@ function SoftCTASection({ section }: SectionProps<SoftCTASectionData>) {
     <PageSection id={section?.id} background="paper" title={section?.title}>
       <RevealSection>
         <div className="rounded-[32px] border border-white/70 bg-white/95 p-8 shadow-card">
-          {renderParagraphs(arrayify(section?.body), `${section?.id}-body`)}
+          <Paragraphs paragraphs={section?.body} idPrefix={`${section?.id}-body`} />
           <div className="mt-6 flex flex-wrap gap-3">
             {section?.primaryCta?.href ? (
               <Button href={section.primaryCta.href}>
@@ -426,25 +420,23 @@ function SoftCTASection({ section }: SectionProps<SoftCTASectionData>) {
   );
 }
 
-function arrayify(value?: string | string[] | null): string[] {
-  if (Array.isArray(value)) return value.filter(Boolean);
-  if (typeof value === 'string' && value.trim()) return [value];
-  return [];
-}
-
-function renderParagraphs(paragraphs: string[], keyPrefix = 'paragraph', options: { className?: string } = {}) {
-  if (!Array.isArray(paragraphs) || !paragraphs.length) return null;
-  const className = options?.className ?? 'text-base leading-relaxed text-ink/70';
-  return paragraphs.map((paragraph, index) => (
-    <p key={`${keyPrefix}-${index}`} className={className}>
-      {paragraph}
-    </p>
-  ));
-}
+export {
+  HomeHero,
+  PersonasSection,
+  PromoSection,
+  ComparisonSection,
+  StepsSection,
+  TopicsSection,
+  ServicesSection,
+  SplitSection,
+  AccordionSection,
+  FaqCtaSection,
+  SoftCTASection,
+};
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async ({ locale = 'en-GB' }) => {
-  const { content, isFallback } = getHomePageContent(locale);
-  const typedContent = (content ?? {}) as HomePageContent;
+  const { content, isFallback, usedLocale } = getHomePageContent(locale);
+  const typedContent = validateHomeContent(content, usedLocale);
   const testimonials = (loadJSON('testimonials', locale) ?? []) as Testimonial[];
 
   return toSerializable({
