@@ -1,0 +1,135 @@
+{
+  "seo": {
+    "title": "常見問題 | SustainSage",
+    "description": "清楚說明 SustainSage 的教練範圍、實務安排、倫理與適配判斷。"
+  },
+  "hero": {
+    "kicker": "常見問題",
+    "title": "誠實回答，幫你判斷教練是否適合現在的你。",
+    "body": "所有答覆都依循 ICF 教練倫理：清楚界線、以同意為基礎、尊重你的步調。如果還想了解更多，歡迎閱讀我們的取向或直接聯絡。",
+    "links": [
+      { "href": "/services/how-coaching-works", "label": "教練流程" },
+      { "href": "/about/approach", "label": "我們的取向" },
+      { "href": "/contact", "label": "聯絡我們" }
+    ]
+  },
+  "sections": [
+    {
+      "title": "教練與治療的界線",
+      "items": [
+        {
+          "question": "我需要教練還是治療？",
+          "answer": "教練著重在目標、系統與實驗。若你正處理創傷、急性心理健康議題或需要診斷，持證的治療師會更適合。我們可以在任何時間暫停並協助你連結臨床資源。",
+          "links": [
+            { "href": "/services/how-coaching-works", "label": "教練流程" },
+            { "href": "/contact", "label": "詢問合作範圍" }
+          ]
+        },
+        {
+          "question": "如果我還沒有明確的目標呢？",
+          "answer": "很常見。我們會從當下最重要的議題開始，在會談中共同聚焦。ICF 倫理要求我們讓你掌握議程，因此會定期確認清晰度與同意。",
+          "links": [
+            { "href": "/services/transition-coaching", "label": "看看 Transition 方案" },
+            { "href": "/contact", "label": "預約初談" }
+          ]
+        },
+        {
+          "question": "會談可以談簽證、移民或法律問題嗎？",
+          "answer": "可以討論這些流程帶來的領導與情緒影響，並整理要問給法律顧問的問題。但我們不提供法律或移民建議，若需要專家會直接說明。",
+          "links": [
+            { "href": "/services/for-newcomers-to-uk", "label": "英國新移居者支持" },
+            { "href": "/contact", "label": "分享你的情境" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "實務與安排",
+      "items": [
+        {
+          "question": "付款與取消怎麼進行？",
+          "answer": "方案費用可一次付清或分兩次銀行轉帳。會談前 24 小時內可改期；逾時取消會算作一堂，以保障所有客戶的時間。",
+          "links": [
+            { "href": "/services/reset-sprint", "label": "Reset 方案細節" },
+            { "href": "/contact", "label": "討論付款方式" }
+          ]
+        },
+        {
+          "question": "會談在哪裡、怎麼進行？",
+          "answer": "預設使用 Zoom，如需其他無障礙工具可提出。會後提供共用筆記文件，方便你追蹤行動與約定。",
+          "links": [
+            { "href": "/services/how-coaching-works", "label": "會談流程說明" }
+          ]
+        },
+        {
+          "question": "你會和企業或贊助者合作嗎？",
+          "answer": "會。我們會建立三方協議，確保教練目標由你主導。贊助者僅在你同意下收到高層摘要，不會分享會談內容。",
+          "links": [
+            { "href": "/services/deepening-practice", "label": "領導者深度方案" },
+            { "href": "/contact", "label": "索取贊助簡報" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "倫理與隱私",
+      "items": [
+        {
+          "question": "保密程度如何？",
+          "answer": "遵循 ICF 倫理守則與英國資料法。除非涉及危害或法律義務，會談內容會被保密。開始前會說明資料儲存方式。",
+          "links": [
+            { "href": "/about/approach", "label": "了解我們的取向" }
+          ]
+        },
+        {
+          "question": "如何照顧跨文化、跨語言的安全感？",
+          "answer": "我們一起設定步調、語言切換與界線。回饋與挑戰的方式由你決定，若議題超出教練範圍會立即提醒。",
+          "links": [
+            { "href": "/services/how-coaching-works", "label": "安全協議" },
+            { "href": "/contact", "label": "討論可及性需求" }
+          ]
+        },
+        {
+          "question": "你會保留會談紀錄嗎？",
+          "answer": "僅保留聚焦於目標與行動的簡要加密筆記。除非法律要求保存，你可隨時查看或請我刪除。",
+          "links": [
+            { "href": "/contact", "label": "索取筆記" }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "適配與成果",
+      "items": [
+        {
+          "question": "如果覺得不適合怎麼辦？",
+          "answer": "請直接告訴我們。會一起檢視需求、調整結構或轉介其他資源。是否結束合作永遠由你決定，我們會安排收尾步驟。",
+          "links": [
+            { "href": "/contact", "label": "隨時回饋" }
+          ]
+        },
+        {
+          "question": "多久會看到變化？",
+          "answer": "多數客戶在兩到三次會談後感受到更清晰，因為實驗逐步累積。成果取決於你在會談之間選擇採取的行動。",
+          "links": [
+            { "href": "/services/uk-workplace-confidence", "label": "實驗導向教練" }
+          ]
+        },
+        {
+          "question": "可以和其他支持並行嗎？",
+          "answer": "當然。許多客戶會與治療、督導或同儕圈同時進行。我們會保持透明協調，調整作業讓它補位而不是互相干擾。",
+          "links": [
+            { "href": "/services/reset-sprint", "label": "輕量 Check-in" },
+            { "href": "/contact", "label": "規劃你的支持組合" }
+          ]
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "還是不確定？",
+    "body": "把你的情境告訴我們，我們會誠實告訴你教練、轉介或其他資源何者更適合。比起填滿名額，我們更在意你的清晰。",
+    "primary": "預約通話",
+    "secondary": "探索教練方案"
+  }
+}

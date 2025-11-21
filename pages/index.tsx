@@ -1,6 +1,7 @@
 import type { GetStaticProps, NextPage } from 'next';
 import type { ReactElement } from 'react';
 import Link from 'next/link';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import RevealSection from '@/components/common/RevealSection';
@@ -38,8 +39,6 @@ import type {
   TopicsSection as TopicsSectionData,
 } from '@/types/home';
 
-const DEFAULT_NOTICE = 'Temporarily showing English content while we complete this translation.';
-
 type NextPageWithLayout<P> = NextPage<P> & {
   getLayout?: (page: ReactElement<P>) => ReactElement;
 };
@@ -70,9 +69,10 @@ const Home: NextPageWithLayout<HomePageProps> = ({
   showFallbackNotice,
   fallbackNotice,
 }) => {
+  const { t } = useTranslation('home');
   const hero: HomeHero = content?.hero ?? {};
   const sections: HomeSection[] = Array.isArray(content?.sections) ? content.sections : [];
-  const fallbackMessage = fallbackNotice ?? content?.fallbackNotice ?? DEFAULT_NOTICE;
+  const fallbackMessage = fallbackNotice ?? content?.fallbackNotice ?? t('fallbackNotice');
 
   return (
     <main>
@@ -121,7 +121,7 @@ type HomeHeroProps = {
   fallbackNotice?: string | null;
 };
 
-function HomeHero({ hero, showFallbackNotice = false, fallbackNotice = DEFAULT_NOTICE }: HomeHeroProps) {
+function HomeHero({ hero, showFallbackNotice = false, fallbackNotice = '' }: HomeHeroProps) {
   const chips = toParagraphs(hero?.chips);
   return (
     <HeroShell
@@ -435,7 +435,7 @@ export {
 };
 
 export const getStaticProps: GetStaticProps<HomePageProps> = async ({ locale = 'en-GB' }) => {
-  const { content, isFallback, usedLocale } = getHomePageContent(locale);
+  const { content, isFallback, usedLocale, fallbackNotice } = getHomePageContent(locale);
   const typedContent = validateHomeContent(content, usedLocale);
   const testimonials = (loadJSON('testimonials', locale) ?? []) as Testimonial[];
 
@@ -444,7 +444,7 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async ({ locale = '
       content: typedContent,
       testimonials,
       showFallbackNotice: isFallback,
-      fallbackNotice: typedContent?.fallbackNotice ?? null,
+      fallbackNotice: fallbackNotice ?? typedContent?.fallbackNotice ?? null,
       ...(await serverSideTranslations(locale ?? 'en-GB', ['common', 'nav', 'home', 'faq'])),
     },
   });

@@ -364,5 +364,6 @@
   ],
   "testimonialsSection": {
     "title": "被正在走过改变的人信任"
-  }
+  },
+  "fallbackNotice": "翻译尚未完成，暂时显示英文内容。"
 }

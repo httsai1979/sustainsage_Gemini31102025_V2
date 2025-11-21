@@ -1,0 +1,91 @@
+{
+  "seo": {
+    "title": "Mid-career coaching to realign work and life | SustainSage",
+    "description": "ICF-aligned coaching for experienced professionals recalibrating impact, wellbeing, and meaning."
+  },
+  "hero": {
+    "title": "Realign mid-career decisions with the life you want now.",
+    "subtitle": "Pause, re-evaluate, and design experiments that honour your experience and evolving values.",
+    "primaryCta": "Book a 20-minute chat",
+    "primaryHref": "/contact?service=mid-career-coaching",
+    "secondaryCta": "Back to services",
+    "secondaryHref": "/services"
+  },
+  "sections": {
+    "who": {
+      "title": "Who this is for",
+      "items": [
+        "You’re 10–20 years into your career and questioning what success looks like now.",
+        "You’re balancing leadership responsibilities with caregiving or health needs.",
+        "You’re considering a sabbatical, portfolio work, or a values-led pivot.",
+        "You feel stuck between staying for stability and leaving for purpose."
+      ]
+    },
+    "what": {
+      "title": "What we work on",
+      "items": [
+        "Clarifying non-negotiables across money, time, health, and relationships.",
+        "Designing experiments to test new roles, industries, or business models.",
+        "Renegotiating boundaries, workload, and influence with stakeholders.",
+        "Building narratives that communicate your evolving direction with confidence."
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "description": "A reflective container to steady the middle stretch of your career.",
+      "items": [
+        "Six 60-minute Zoom sessions over 3–4 months, with options to extend if needed.",
+        "Session agendas are co-designed around live decisions, energy levels, and experiments.",
+        "Between-session reflection via shared notes or Loom updates when momentum matters.",
+        "We support clarity and accountability while acknowledging outcomes depend on your context."
+      ]
+    },
+    "examples": {
+      "title": "Example scenarios",
+      "items": [
+        {
+          "title": "Designing a sabbatical-friendly exit",
+          "description": "We mapped finances, stakeholder conversations, and a phased handover so a director could take three months off without burning bridges."
+        },
+        {
+          "title": "Shifting from corporate to mission-led work",
+          "description": "A senior manager explored social impact roles, prototyped board contributions, and reframed leadership stories for purpose-driven organisations."
+        },
+        {
+          "title": "Rebalancing after a health scare",
+          "description": "We rebuilt workload agreements, reset travel expectations, and designed wellbeing rituals that fit a demanding regional role."
+        }
+      ]
+    },
+    "expect": {
+      "title": "What you can expect",
+      "items": [
+        "Clarity on what matters now and how to articulate it.",
+        "Practical experiments that reduce risk while you explore options.",
+        "Stronger boundaries that protect capacity without harming relationships.",
+        "Renewed confidence to make decisions aligned with your values."
+      ]
+    },
+    "ethics": {
+      "title": "Ethics & fit",
+      "items": [
+        "ICF commitments to confidentiality whether you self-fund or have employer support.",
+        "We never push hustle narratives; your pace and capacity lead our work.",
+        "We point you to therapy, legal, or financial advice when specialised expertise is needed.",
+        "No affiliate fees or hidden agendas—recommendations stay client-centred."
+      ]
+    },
+    "cta": {
+      "title": "Want space to redesign the middle of your career?",
+      "body": "Book a 20-minute chat to see whether this partnership supports the decisions ahead.",
+      "primary": {
+        "label": "Book a 20-minute chat",
+        "href": "/contact?service=mid-career-coaching"
+      },
+      "secondary": {
+        "label": "See how coaching works",
+        "href": "/services/how-coaching-works"
+      }
+    }
+  }
+}
