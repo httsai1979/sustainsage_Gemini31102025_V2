@@ -1,9 +1,19 @@
 import homeIndexEn from '@/content/home/index.en-GB.json';
+import homeIndexZhCn from '@/content/home/index.zh-CN.json';
+import homeIndexZhTw from '@/content/home/index.zh-TW.json';
 
 const FALLBACK_LOCALE = 'en-GB';
 
 const EN_CONTENT = {
   index: homeIndexEn,
+};
+
+const ZH_CN_CONTENT = {
+  index: homeIndexZhCn,
+};
+
+const ZH_TW_CONTENT = {
+  index: homeIndexZhTw,
 };
 
 type HomeContentResult = {
@@ -20,13 +30,18 @@ const LOCALE_ALIASES: Record<string, string> = {
   'zh-cn': 'zh-CN',
   'zh-hans': 'zh-CN',
   'zh-sg': 'zh-CN',
+  sc: 'zh-CN',
   'zh-tw': 'zh-TW',
   'zh-hant': 'zh-TW',
   'zh-hk': 'zh-TW',
+  'zh-mo': 'zh-TW',
+  tc: 'zh-TW',
 };
 
 const CONTENT_BY_LOCALE: Record<string, typeof EN_CONTENT> = {
   'en-GB': EN_CONTENT,
+  'zh-CN': ZH_CN_CONTENT,
+  'zh-TW': ZH_TW_CONTENT,
 };
 
 function normalizeLocale(locale?: string | null): string | undefined {
