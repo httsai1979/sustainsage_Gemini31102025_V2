@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
-import SectionContainer from '@/components/sections/SectionContainer';
+import SectionContainer from '@/components/Sections/SectionContainer';
 import PageSection from '@/components/ui/PageSection';
 import { orderSections } from '@/lib/orderSections';
 

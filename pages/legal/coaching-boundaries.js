@@ -6,8 +6,8 @@ import PageSection from '@/components/ui/PageSection';
 import { loadJSON } from '@/lib/content';
 import { toSerializable } from '@/lib/toSerializable';
 import { orderSections } from '@/lib/orderSections';
-import BulletHighlights from '@/components/sections/BulletHighlights';
-import ProseSection from '@/components/sections/ProseSection';
+import BulletHighlights from '@/components/Sections/BulletHighlights';
+import ProseSection from '@/components/Sections/ProseSection';
 
 BulletHighlights.propTypes = {
   block: PropTypes.shape({
