@@ -1,102 +1,368 @@
 {
+  "seo": {
+    "title": "SustainSage 教练 —— 英国双语职涯教练",
+    "description": "沉稳、以证据为基础的教练，陪伴在英回流者、毕业生与新移民。小步前进、看得见的佐证、诚实的指引。"
+  },
   "hero": {
-    "headline": "沉稳、以你为主、符合 ICF 标准的教练陪你度过转变。",
-    "subheadline": "提供稳定的空间，陪你整理思路、做实验，并按自己的节奏前进。",
-    "imageAlt": "桌上放着笔记本与茶杯，象征沉稳的教练场域。",
-    "primaryCta": "预约 20 分钟认识谈",
-    "secondaryCta": "查看教练路径",
-    "highlights": ["符合 ICF 标准", "陪伴跨国移动与回流者"]
+    "eyebrow": "温和地走过改变",
+    "title": "帮助你更清晰前进的教练陪伴",
+    "subtitle": "SustainSage 提供细腻的教练空间，陪你度过转职、搬迁或回流阶段。",
+    "chips": [
+      "中生代职涯者",
+      "初到英国求职市场",
+      "毕业生与年轻人"
+    ],
+    "primaryCta": {
+      "href": "/contact",
+      "label": "预约 20 分钟认识谈"
+    },
+    "secondaryLink": {
+      "href": "/services",
+      "label": "查看教练路径"
+    },
+    "secondaryText": "沉稳而实务的会谈——没有夸大承诺。",
+    "image": {
+      "src": "/images/hero/main.jpg",
+      "alt": "教练与来访者在窗边进行平静对话"
+    }
   },
-  "faqLink": {
-    "label": "还有问题？前往 FAQ。",
-    "href": "/faq"
-  },
-  "forWhom": {
-    "title": "我们常陪伴的对象",
-    "intro": "以下四种情境最常出现。每个链接都会说明服务结构、界线与费用。",
-    "linkLabel": "了解如何进行",
-    "cards": [
-      {
-        "title": "转换与搬迁教练",
-        "audience": "适合正在搬迁或回流的人。",
-        "description": "在英国落脚，同时顾及原有承诺。我们协助你梳理选项，而不是催促你做决定。",
-        "href": "/services/transition",
-        "icon": "globe"
-      },
-      {
-        "title": "早期职涯厘清",
-        "audience": "适合初入职场想探索方向的人。",
-        "description": "先安全地试水再承诺。我们一起检视邀约、导师与你设计的实验。",
-        "href": "/services/early-career",
-        "icon": "compass"
-      },
-      {
-        "title": "照顾者与父母支持",
-        "audience": "适合重建生活节奏的父母与照顾者。",
-        "description": "重新投入工作又想守住照顾协定。我们重视诚实的规划，而不是拼命文化。",
-        "href": "/services/working-parents",
-        "icon": "balance"
-      },
-      {
-        "title": "跨文化领导教练",
-        "audience": "适合跨国协作与带领团队的管理者。",
-        "description": "在不同文化与期待中仍保持清晰。我们练习对话与界线，守住你的承载量。",
-        "href": "/services/leadership",
-        "icon": "signal"
+  "sections": [
+    {
+      "id": "who-this-is-for",
+      "type": "personas",
+      "eyebrow": "这些人会觉得有帮助",
+      "title": "适合来这里的人",
+      "intro": [
+        "这些情境每周都会听到。每个连结都会说明情境、界线与如何开始。"
+      ],
+      "cards": [
+        {
+          "id": "mid-career",
+          "iconName": "briefcase",
+          "title": "中生代职涯者",
+          "summary": [
+            "有 8–15 年经验，需要沉淀的空间来决定什么要留下、什么要调整，以及如何掌握节奏。"
+          ],
+          "href": "/services/mid-career",
+          "ctaLabel": "查看此路径"
+        },
+        {
+          "id": "newcomers-uk",
+          "iconName": "globe",
+          "title": "初到英国",
+          "summary": [
+            "跨国或跨产业转换经验的专业人士，希望用沉稳的结构来测试新方向。"
+          ],
+          "href": "/services/newcomers-uk",
+          "ctaLabel": "查看此路径"
+        },
+        {
+          "id": "graduates",
+          "iconName": "book",
+          "title": "毕业生与年轻人",
+          "summary": [
+            "在保持价值感与资源感的同时成长为领导者。",
+            "带着好奇与尊重去练习回馈、设定期待或界线的对话。"
+          ],
+          "href": "/services/graduates",
+          "ctaLabel": "查看此路径"
+        }
+      ]
+    },
+    {
+      "id": "corporate-preview",
+      "type": "promo",
+      "eyebrow": "给组织的服务",
+      "title": "给中英之间的企业领导",
+      "body": [
+        "如果你带领一家在英的中资企业，常在总部与当地现实之间被拉扯，这里有个安静的空间可以一起梳理。"
+      ],
+      "cta": {
+        "href": "/corporate",
+        "label": "了解更多"
       }
-    ]
-  },
-  "recognise": {
-    "title": "你也许熟悉这些情境",
-    "items": [
-      "搬到英国后，不确定职场要遵循哪些默契。",
-      "想重返职场，但也想守住重要的照顾安排。",
-      "会多种语言，却在快速或细腻的对话中迟疑。",
-      "同时要顾签证、家族期待与自己的领导计划。",
-      "感觉到耗竭讯号，想在崩解前先做小型实验。"
-    ]
-  },
-  "how": {
-    "title": "教练怎么进行",
-    "intro": "随着焦点调整而循环的简单节奏。",
-    "steps": [
-      {
-        "title": "从当下的真实开始",
-        "summary": "以你带来的状况为起点，没有脚本，也不要求你立刻想清楚。"
+    },
+    {
+      "id": "what-coaching-is",
+      "type": "comparison",
+      "title": "教练是什么（与不是什么）",
+      "intro": [
+        "以真实案例为起点，先让决定落地，再逐步加上结构。"
+      ],
+      "leftCard": {
+        "iconName": "chat",
+        "title": "教练是什么",
+        "bullets": [
+          "以实例带路，让决定先落地，再慢慢铺结构。",
+          "每周节奏，并在会谈间做小型实验。",
+          "先用免费的工具，留下真正有用的部分。"
+        ]
       },
-      {
-        "title": "在合意里探索选项",
-        "summary": "你尝试梳理语言、故事与实验，我们守住结构并提出更好的问题。"
-      },
-      {
-        "title": "设计接下来的行动",
-        "summary": "每次会谈结束前，一起确认你要带走的行动、资源或转介。"
+      "rightCard": {
+        "iconName": "privacy",
+        "title": "教练不是什么",
+        "bullets": [
+          "这里是教练，不是治疗——若治疗对你更安全，我们会指引资源。",
+          "准时开始与结束，让你能安心安排日程。",
+          "步调由你决定；我们提供结构与陪伴，不会施压。"
+        ]
       }
-    ],
-    "ownership": "步调与主题永远由你决定。我们的角色是守住结构、提醒界线并提出更精准的提问。",
-    "ctaLabel": "延伸阅读：教练如何运作",
-    "ctaHref": "/services/how-coaching-works"
-  },
-  "realLife": {
-    "title": "真实生活里常听见…",
-    "intro": "以下是混合不同来访者而成的案例，用来保护隐私。",
-    "items": [
-      { "quote": "“我刚搬到英国，觉得自己又从零开始，同时还要支援家乡的家人。”" },
-      { "quote": "“我带领一个小团队，却总觉得自己必须随时撑住所有人。”" },
-      { "quote": "“休息照顾家人后想重返工作，需要一份兼顾收入与负荷的计划。”" }
-    ],
-    "disclaimer": "这些都是综合情境，不是个别客户的推荐，用来说明我们可以一起探索的主题。"
-  },
-  "faqSection": {
-    "title": "预约前先看看",
-    "body": "FAQ 随时让你确认范围、流程与伦理。",
-    "bullets": [
-      "了解教练与治疗或顾问的差异。",
-      "看到常见的会谈节奏、频率与收费范围。",
-      "知道若出现心理健康或风险时，我们会如何处理。"
-    ],
-    "summary": "先读 FAQ，可以在预约前判断要开始、暂缓或先找其他资源。",
-    "ctaLabel": "前往 FAQ",
-    "ctaHref": "/faq"
+    },
+    {
+      "id": "how-we-work",
+      "type": "steps",
+      "eyebrow": "我们怎么合作",
+      "title": "适合沉淀的平稳结构",
+      "intro": [
+        "始终从实例出发，再一起确认协定、节奏与回顾点。"
+      ],
+      "steps": [
+        {
+          "id": "initial-conversation",
+          "title": "步骤 1 – 初步对谈",
+          "description": "20 分钟的谈话，了解正在改变的事，并说明我们工作的界线。",
+          "iconName": "phone"
+        },
+        {
+          "id": "goal-setting",
+          "title": "步骤 2 – 对齐目标",
+          "description": "在开始前，对焦主题、节奏与无障碍需求。",
+          "iconName": "target"
+        },
+        {
+          "id": "regular-sessions",
+          "title": "步骤 3 – 定期会谈",
+          "description": "线上会谈（60–75 分钟），并在会谈间进行实验与反思。",
+          "iconName": "calendar"
+        },
+        {
+          "id": "sustainable-growth",
+          "title": "步骤 4 – 稳定成长",
+          "description": "一起暂停、回顾，并留下有效的做法，让进展稳健且友善。",
+          "iconName": "spark"
+        }
+      ]
+    },
+    {
+      "id": "topics",
+      "type": "topics",
+      "eyebrow": "我们可以一起探讨的主题",
+      "title": "你可能会认出这些片刻",
+      "intro": [
+        "这些提示取自真实对话，帮你感觉我们的节奏、语气与关照是否适合。"
+      ],
+      "cards": [
+        {
+          "id": "relocating-to-the-uk",
+          "iconName": "globe",
+          "title": "搬到英国",
+          "summary": [
+            "学习新的职场默契，同时在另一个时区照顾家人。"
+          ]
+        },
+        {
+          "id": "re-entering-after-care-leave",
+          "iconName": "family",
+          "title": "照护假后回到工作",
+          "summary": [
+            "想要重新投入，又不想失去守护家庭或健康的协定。"
+          ]
+        },
+        {
+          "id": "speaking-multiple-languages",
+          "iconName": "chat",
+          "title": "在多种语言间切换",
+          "summary": [
+            "为了抓住细节，你会在一句话里切换语言，并希望教练跟得上这个节奏。"
+          ]
+        },
+        {
+          "id": "balancing-visas-and-identity",
+          "iconName": "compass",
+          "title": "签证、归属与身份",
+          "summary": [
+            "你在权衡担保时程、归属感，以及在新体系里领导的样子。"
+          ]
+        },
+        {
+          "id": "catching-burnout-early",
+          "iconName": "clock",
+          "title": "及早拦截倦怠",
+          "summary": [
+            "察觉耗竭讯号，希望先做守护能量的实验，避免撑到崩解。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "services-preview",
+      "type": "services",
+      "eyebrow": "教练路径",
+      "title": "与你一起调整的路径",
+      "intro": [
+        "每条路径都是起点。理解你的现实后，再调整节奏、语言与焦点。"
+      ],
+      "cards": [
+        {
+          "id": "mid-career-pathway",
+          "iconName": "briefcase",
+          "title": "给中生代回流者",
+          "summary": [
+            "休息后重建动能，不需要假装上一章节不存在。",
+            "梳理你学到什么、它如何影响现在的工作，以及你选择如何分享。"
+          ],
+          "href": "/services/mid-career"
+        },
+        {
+          "id": "newcomers-pathway",
+          "iconName": "globe",
+          "title": "给初到英国的人",
+          "summary": [
+            "理解工作、文化与期待，而不必从头翻译自己的故事。",
+            "映射选项、界线与风险，让选择同时照顾签证、价值与能量。"
+          ],
+          "href": "/services/newcomers-uk"
+        },
+        {
+          "id": "graduates-pathway",
+          "iconName": "book",
+          "title": "给年轻专业人士",
+          "summary": [
+            "在保持价值感与资源感的同时成长为领导者。",
+            "带着好奇与尊重练习回馈、设定期待或界线的对话。"
+          ],
+          "href": "/services/graduates"
+        }
+      ]
+    },
+    {
+      "id": "resources-and-blog",
+      "type": "split",
+      "title": "资源与书写",
+      "left": {
+        "eyebrow": "自我练习工具",
+        "title": "先试一份自我反思工具",
+        "description": [
+          "整理过的双语资源，陪你在会谈间做实验。",
+          "无需留邮件、没有压力——只是邀请你暂停与觉察。"
+        ],
+        "items": [
+          {
+            "id": "values-map",
+            "iconName": "target",
+            "title": "价值地图",
+            "summary": "描绘真正重要的事，并检查现在的选择是否对得起核心价值。",
+            "href": "/tools/values-map.html"
+          },
+          {
+            "id": "self-talk-reframe",
+            "iconName": "chat",
+            "title": "自我对话重构卡",
+            "summary": "温和的提示，帮你注意严苛的自我对话，并用更慈悲的语言重构。",
+            "href": "/tools/self-talk-reframe.html"
+          },
+          {
+            "id": "behaviour-experiment-ladder",
+            "iconName": "tool",
+            "title": "行为实验阶梯",
+            "summary": "规划小型、低风险的实验来测试新行为，而不是一次性的大改变。",
+            "href": "/tools/behaviour-experiment-ladder.html"
+          }
+        ],
+        "link": {
+          "href": "/resources",
+          "label": "查看全部工具"
+        }
+      },
+      "right": {
+        "eyebrow": "部落格",
+        "title": "读一篇短文",
+        "description": [
+          "这些短文帮你在会谈间暂停、观察模式，并温和地做实验。",
+          "文字邀请反思与学习——而不是医疗、法律、财务或移民建议。"
+        ],
+        "items": [
+          {
+            "id": "a-kinder-way-to-restart",
+            "iconName": "book",
+            "title": "更温和的重新开始",
+            "summary": "当卡住时，小而温和比大而响亮更有效。行动贴合当下的承载量，动力就会回来。",
+            "href": "/blog/a-kinder-way-to-restart",
+            "meta": "3 分钟阅读"
+          }
+        ],
+        "link": {
+          "href": "/blog",
+          "label": "前往部落格"
+        }
+      }
+    },
+    {
+      "id": "boundaries",
+      "type": "accordion",
+      "eyebrow": "我们守住的界线",
+      "title": "保护节奏与安全的协定",
+      "intro": [
+        "这些协定守护节奏、身心与保密。"
+      ],
+      "faqs": [
+        {
+          "id": "coaching-vs-therapy",
+          "question": "这是教练还是治疗？",
+          "answer": "这是教练，不是治疗——若治疗对你更安全，我们会指引资源。"
+        },
+        {
+          "id": "time-expectations",
+          "question": "时间上的期待是什么？",
+          "answer": "准时开始与结束，让你能安心规划其他安排。"
+        },
+        {
+          "id": "notes-and-data",
+          "question": "你们如何处理笔记与资料？",
+          "answer": "仅保留最少的笔记，并在约定的保存期间内，应要求删除。"
+        },
+        {
+          "id": "pace",
+          "question": "谁决定步调？",
+          "answer": "步调由你决定；我们提供结构与陪伴，但不会施压。"
+        }
+      ]
+    },
+    {
+      "id": "faq-teaser",
+      "type": "faq-cta",
+      "title": "想知道教练怎么运作？",
+      "body": [
+        "阅读会谈节奏、价格、伦理，以及我们如何为个人与组织客制支持。"
+      ],
+      "primaryCta": {
+        "href": "/faq",
+        "label": "阅读 FAQ"
+      },
+      "secondaryCta": {
+        "href": "/contact",
+        "label": "预约 20 分钟认识谈"
+      }
+    },
+    {
+      "id": "soft-cta",
+      "type": "cta",
+      "title": "如果你想先谈谈",
+      "body": [
+        "写几行正在改变的事。我们会用清晰回应，并尊重你的节奏。",
+        "你可以写多或少；我们通常在三个英国工作天内回复。"
+      ],
+      "primaryCta": {
+        "href": "/contact",
+        "label": "预约 20 分钟认识谈"
+      },
+      "secondaryLink": {
+        "href": "/faq",
+        "label": "想先看 FAQ"
+      }
+    }
+  ],
+  "testimonialsSection": {
+    "title": "被正在走过改变的人信任"
   }
 }

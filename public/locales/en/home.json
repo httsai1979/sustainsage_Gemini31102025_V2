@@ -1,102 +1,369 @@
 {
+  "seo": {
+    "title": "SustainSage Coaching — UK bilingual career coaching",
+    "description": "Calm, evidence-led coaching for returners, graduates, and immigrants in the UK. Small steps, visible proof, honest guidance."
+  },
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "hero": {
-    "headline": "Calm, client-led, ICF-aligned coaching for real transitions.",
-    "subheadline": "Grounded space to regroup, experiment, and move forward on your terms.",
-    "imageAlt": "Notebook, tea, and sunlight suggesting a calm coaching space.",
-    "primaryCta": "Book a 20-minute chat",
-    "secondaryCta": "See coaching pathways",
-    "highlights": ["ICF-aligned coaching", "For internationals & returners"]
+    "eyebrow": "Navigate change sustainably",
+    "title": "Coaching to help you move forward with clarity",
+    "subtitle": "SustainSage offers thoughtful coaching for people navigating transitions, relocations, and re-entry moments.",
+    "chips": [
+      "Mid-career professionals",
+      "Newcomers to the UK job market",
+      "Graduates & young adults"
+    ],
+    "primaryCta": {
+      "href": "/contact",
+      "label": "Book a 20-minute chat"
+    },
+    "secondaryLink": {
+      "href": "/services",
+      "label": "See coaching pathways"
+    },
+    "secondaryText": "Calm, practical sessions—no hype, no guarantees.",
+    "image": {
+      "src": "/images/hero/main.jpg",
+      "alt": "Coach and client in a calm conversation by the window"
+    }
   },
-  "faqLink": {
-    "label": "More questions? See our FAQ.",
-    "href": "/faq"
-  },
-  "forWhom": {
-    "title": "Who we work with",
-    "intro": "Four contexts we meet every week. Each link shows the service structure, boundaries, and fees.",
-    "linkLabel": "See how this works",
-    "cards": [
-      {
-        "title": "Transition coaching",
-        "audience": "For people relocating or returning.",
-        "description": "Settle into the UK while honouring commitments elsewhere. Sessions help you map choices without rushing decisions.",
-        "href": "/services/transition",
-        "icon": "globe"
-      },
-      {
-        "title": "Early career clarity",
-        "audience": "For early professionals testing direction.",
-        "description": "Try options safely before you commit. We reality-check offers, mentors, and experiments you design.",
-        "href": "/services/early-career",
-        "icon": "compass"
-      },
-      {
-        "title": "Working parent support",
-        "audience": "For parents and carers rebuilding rhythm.",
-        "description": "Re-enter work without losing the care agreements that matter. Expect honest planning, not hustle culture.",
-        "href": "/services/working-parents",
-        "icon": "balance"
-      },
-      {
-        "title": "Cross-cultural leadership",
-        "audience": "For managers across borders and teams.",
-        "description": "Lead with clarity across cultures and expectations. We practise conversations and boundaries that protect your capacity.",
-        "href": "/services/leadership",
-        "icon": "signal"
+  "sections": [
+    {
+      "id": "who-this-is-for",
+      "type": "personas",
+      "eyebrow": "Who coaching is for",
+      "title": "People who find this space helpful",
+      "intro": [
+        "These are the contexts we hear every week. Each link shows scenarios, boundaries, and ways to start."
+      ],
+      "cards": [
+        {
+          "id": "mid-career",
+          "iconName": "briefcase",
+          "title": "Mid-career professionals",
+          "summary": [
+            "People with 8–15 years of experience who need a reflective space to decide what stays, what shifts, and how to pace change."
+          ],
+          "href": "/services/mid-career",
+          "ctaLabel": "See this pathway"
+        },
+        {
+          "id": "newcomers-uk",
+          "iconName": "globe",
+          "title": "New to the UK",
+          "summary": [
+            "Professionals translating experience between countries or industries who want calm structure to test new directions."
+          ],
+          "href": "/services/newcomers-uk",
+          "ctaLabel": "See this pathway"
+        },
+        {
+          "id": "graduates",
+          "iconName": "book",
+          "title": "Graduates & young adults",
+          "summary": [
+            "Grow into leadership while staying values-led and resourced.",
+            "Plan and rehearse feedback, expectation-setting, or boundary conversations with curiosity and respect."
+          ],
+          "href": "/services/graduates",
+          "ctaLabel": "See this pathway"
+        }
+      ]
+    },
+    {
+      "id": "corporate-preview",
+      "type": "promo",
+      "eyebrow": "For organisations",
+      "title": "For China–UK corporate leaders",
+      "body": [
+        "If you lead a China-invested business in the UK and feel pulled between head office and local realities, there is a quiet place to talk it through."
+      ],
+      "cta": {
+        "href": "/corporate",
+        "label": "Learn more"
       }
-    ]
-  },
-  "recognise": {
-    "title": "You might recognise this",
-    "items": [
-      "You moved to the UK and are unsure which workplace norms to follow.",
-      "You want to return to work without losing the care agreements that matter at home.",
-      "You speak multiple languages yet hesitate when conversations turn fast or nuanced.",
-      "You are balancing visas, family expectations, and your own leadership plans.",
-      "You sense burnout signals and want to experiment before things fracture."
-    ]
-  },
-  "how": {
-    "title": "How coaching works",
-    "intro": "A simple rhythm that loops as your focus evolves.",
-    "steps": [
-      {
-        "title": "Arrive with what is real",
-        "summary": "We start with the situation you name—no scripts, no pressure to have it figured out."
+    },
+    {
+      "id": "what-coaching-is",
+      "type": "comparison",
+      "title": "What coaching is (and isn’t)",
+      "intro": [
+        "Example-led conversations keep decisions grounded before we layer on more structure."
+      ],
+      "leftCard": {
+        "iconName": "chat",
+        "title": "What coaching is",
+        "bullets": [
+          "Example-led conversations keep decisions grounded before we layer on more structure.",
+          "Weekly rhythm with small experiments between sessions.",
+          "Try free tools first and keep what genuinely helps."
+        ]
       },
-      {
-        "title": "Explore options with consent",
-        "summary": "You test language, stories, and experiments while we hold structure and ask sharper questions."
-      },
-      {
-        "title": "Design what happens next",
-        "summary": "We close each session with actions, supports, or referrals you choose to carry forward."
+      "rightCard": {
+        "iconName": "privacy",
+        "title": "What coaching isn’t",
+        "bullets": [
+          "Coaching, not therapy—we will signpost therapy when that is safer for you.",
+          "We start and end on time so you can plan around sessions with confidence.",
+          "You set the pace; we provide structure and accountability without pressure."
+        ]
       }
-    ],
-    "ownership": "You are always in charge of pace and topic. Our role is to hold structure, flag boundaries, and ask better questions.",
-    "ctaLabel": "Read how coaching works in detail",
-    "ctaHref": "/services/how-coaching-works"
-  },
-  "realLife": {
-    "title": "In real life, this often sounds like…",
-    "intro": "Composite scenarios drawn from different clients so privacy stays protected.",
-    "items": [
-      { "quote": "\u201cI\u2019ve moved to the UK and feel I\u2019m starting from zero while my family still needs support back home.\u201d" },
-      { "quote": "\u201cI lead a small team and I\u2019m tired of being \u2018on\u2019 all the time for everyone else.\u201d" },
-      { "quote": "\u201cI\u2019m re-entering work after care leave and want a plan that respects both income and my capacity.\u201d" }
-    ],
-    "disclaimer": "These are blended examples, not single-client testimonials. They show the types of topics we can explore together."
-  },
-  "faqSection": {
-    "title": "Before we meet",
-    "body": "You can self-check scope, logistics, and ethics any time.",
-    "bullets": [
-      "Understand how coaching differs from therapy or consulting.",
-      "See typical session rhythms, frequency, and fee ranges.",
-      "Know what happens if mental health or safeguarding needs appear."
-    ],
-    "summary": "Use the FAQ to get practical answers before you book. It helps you decide whether to start, pause, or request a referral.",
-    "ctaLabel": "Visit the FAQ",
-    "ctaHref": "/faq"
+    },
+    {
+      "id": "how-we-work",
+      "type": "steps",
+      "eyebrow": "How we work together",
+      "title": "A calm structure for reflective work",
+      "intro": [
+        "We stay example-first while moving into agreements, cadence, and review points."
+      ],
+      "steps": [
+        {
+          "id": "initial-conversation",
+          "title": "Step 1 – Initial conversation",
+          "description": "A 20-minute chat to understand what is changing and share the boundaries we work within.",
+          "iconName": "phone"
+        },
+        {
+          "id": "goal-setting",
+          "title": "Step 2 – Goal setting",
+          "description": "We agree the focus, cadence, and accessibility needs before sessions begin.",
+          "iconName": "target"
+        },
+        {
+          "id": "regular-sessions",
+          "title": "Step 3 – Regular sessions",
+          "description": "Online conversations (60–75 minutes) with experiments and reflections between sessions.",
+          "iconName": "calendar"
+        },
+        {
+          "id": "sustainable-growth",
+          "title": "Step 4 – Sustainable growth",
+          "description": "We pause, review, and keep what works so progress feels steady and kind.",
+          "iconName": "spark"
+        }
+      ]
+    },
+    {
+      "id": "topics",
+      "type": "topics",
+      "eyebrow": "Areas we can explore together",
+      "title": "You might recognise these moments",
+      "intro": [
+        "Short prompts from real conversations so you can sense whether the rhythm, tone, and care fit what you need."
+      ],
+      "cards": [
+        {
+          "id": "relocating-to-the-uk",
+          "iconName": "globe",
+          "title": "Relocating to the UK",
+          "summary": [
+            "You are learning new workplace norms while supporting family in another timezone."
+          ]
+        },
+        {
+          "id": "re-entering-after-care-leave",
+          "iconName": "family",
+          "title": "Re-entering after care leave",
+          "summary": [
+            "You want to return without losing the agreements that protect your household or health."
+          ]
+        },
+        {
+          "id": "speaking-multiple-languages",
+          "iconName": "chat",
+          "title": "Speaking multiple languages",
+          "summary": [
+            "You switch languages mid-sentence to capture nuance and want a coach who can hold that pace."
+          ]
+        },
+        {
+          "id": "balancing-visas-and-identity",
+          "iconName": "compass",
+          "title": "Balancing visas and identity",
+          "summary": [
+            "You are weighing sponsorship timelines, belonging, and what leadership looks like in a new system."
+          ]
+        },
+        {
+          "id": "catching-burnout-early",
+          "iconName": "clock",
+          "title": "Catching burnout early",
+          "summary": [
+            "You notice signals of exhaustion and want experiments that protect energy before things fracture."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "services-preview",
+      "type": "services",
+      "eyebrow": "Coaching pathways",
+      "title": "Coaching pathways shaped with you",
+      "intro": [
+        "Each pathway is a starting point. We adapt pace, language, and focus once we understand your reality."
+      ],
+      "cards": [
+        {
+          "id": "mid-career-pathway",
+          "iconName": "briefcase",
+          "title": "For mid-career returners",
+          "summary": [
+            "Rebuild momentum after a break without pretending the last chapter did not happen.",
+            "Clarify what you learned, how it shapes your work now, and how you choose to share it."
+          ],
+          "href": "/services/mid-career"
+        },
+        {
+          "id": "newcomers-pathway",
+          "iconName": "globe",
+          "title": "For newcomers to the UK",
+          "summary": [
+            "Make sense of work, culture, and expectations—without having to translate your whole story from scratch.",
+            "Map options, boundaries, and risks so your choices honour visas, values, and energy."
+          ],
+          "href": "/services/newcomers-uk"
+        },
+        {
+          "id": "graduates-pathway",
+          "iconName": "book",
+          "title": "For young professionals",
+          "summary": [
+            "Grow into leadership while staying values-led and resourced.",
+            "Plan and rehearse feedback, expectation-setting, or boundary conversations with curiosity and respect."
+          ],
+          "href": "/services/graduates"
+        }
+      ]
+    },
+    {
+      "id": "resources-and-blog",
+      "type": "split",
+      "title": "Resources & reflections",
+      "left": {
+        "eyebrow": "Self-guided tools",
+        "title": "Try a simple self-reflection tool",
+        "description": [
+          "Curated bilingual resources to support your experiments between sessions.",
+          "No email gate, no pressure—just invitations to pause and notice."
+        ],
+        "items": [
+          {
+            "id": "values-map",
+            "iconName": "target",
+            "title": "Values Map",
+            "summary": "Map what truly matters to you and check how your current choices align with your core values.",
+            "href": "/tools/values-map.html"
+          },
+          {
+            "id": "self-talk-reframe",
+            "iconName": "chat",
+            "title": "Self-talk Reframe Cards",
+            "summary": "Gentle prompts to help you notice harsh self-talk and reframe it with more compassionate language.",
+            "href": "/tools/self-talk-reframe.html"
+          },
+          {
+            "id": "behaviour-experiment-ladder",
+            "iconName": "tool",
+            "title": "Behaviour Experiment Ladder",
+            "summary": "Plan small, low-risk experiments to test new behaviours instead of all-or-nothing change.",
+            "href": "/tools/behaviour-experiment-ladder.html"
+          }
+        ],
+        "link": {
+          "href": "/resources",
+          "label": "See all tools"
+        }
+      },
+      "right": {
+        "eyebrow": "Blog",
+        "title": "Read a short article",
+        "description": [
+          "These short reads help you pause, notice patterns, and experiment gently between sessions.",
+          "They invite reflection and learning – they are not medical, legal, financial or immigration advice."
+        ],
+        "items": [
+          {
+            "id": "a-kinder-way-to-restart",
+            "iconName": "book",
+            "title": "A kinder way to restart",
+            "summary": "When you’re stuck, smaller and gentler beats louder and bigger. Momentum returns when actions fit your current capacity.",
+            "href": "/blog/a-kinder-way-to-restart",
+            "meta": "3 min read"
+          }
+        ],
+        "link": {
+          "href": "/blog",
+          "label": "Visit the blog"
+        }
+      }
+    },
+    {
+      "id": "boundaries",
+      "type": "accordion",
+      "eyebrow": "Boundaries we keep visible",
+      "title": "Agreements that protect pace and safety",
+      "intro": [
+        "These agreements protect pace, wellbeing, and confidentiality."
+      ],
+      "faqs": [
+        {
+          "id": "coaching-vs-therapy",
+          "question": "Is this coaching or therapy?",
+          "answer": "Coaching, not therapy—we will signpost therapy when that is safer for you."
+        },
+        {
+          "id": "time-expectations",
+          "question": "What are our time expectations?",
+          "answer": "We start and end on time so you can plan around sessions with confidence."
+        },
+        {
+          "id": "notes-and-data",
+          "question": "How do you handle notes and data?",
+          "answer": "We keep minimal notes and delete them on request within agreed retention windows."
+        },
+        {
+          "id": "pace",
+          "question": "Who sets the pace?",
+          "answer": "You set the pace; we provide structure and accountability without pressure."
+        }
+      ]
+    },
+    {
+      "id": "faq-teaser",
+      "type": "faq-cta",
+      "title": "Questions about how coaching works?",
+      "body": [
+        "Read about session rhythms, pricing, ethics, and how we tailor support for individuals and organisations."
+      ],
+      "primaryCta": {
+        "href": "/faq",
+        "label": "Read the FAQs"
+      },
+      "secondaryCta": {
+        "href": "/contact",
+        "label": "Book a 20-minute chat"
+      }
+    },
+    {
+      "id": "soft-cta",
+      "type": "cta",
+      "title": "If you would like to talk things through",
+      "body": [
+        "Share a few lines about what is changing. We respond with clarity and respect your pace.",
+        "You can share as much or as little as you like; we usually reply within three UK working days."
+      ],
+      "primaryCta": {
+        "href": "/contact",
+        "label": "Book a 20-minute chat"
+      },
+      "secondaryLink": {
+        "href": "/faq",
+        "label": "Read the FAQ first"
+      }
+    }
+  ],
+  "testimonialsSection": {
+    "title": "Trusted by people navigating change"
   }
 }
