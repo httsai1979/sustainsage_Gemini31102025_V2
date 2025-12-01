@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
@@ -51,6 +52,7 @@ export default function Home({
   testimonials = [],
   showFallbackNotice = false,
   fallbackNotice = null,
+  locale = 'en-GB',
 } = {}) {
   const {
     hero = {},
@@ -168,13 +170,62 @@ export default function Home({
   const heroImageAlt =
     hero?.image?.alt ?? hero?.imageAlt ?? hero?.title ?? 'Coach and client in a calm conversation';
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sustainsage.com';
+  const localizedPath = locale === 'en-GB' ? '/' : `/${locale}`;
+  const canonicalUrl = `${siteUrl}${localizedPath}`;
+
+  const faqStructuredData =
+    boundaryItems.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: boundaryItems
+            .slice(0, 6)
+            .map((item) => ({
+              '@type': 'Question',
+              name: item?.question ?? item?.title ?? '',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: item?.answer ?? item?.body ?? item?.description ?? '',
+              },
+            }))
+            .filter((item) => item.name && item.acceptedAnswer?.text),
+        }
+      : null;
+
+  const serviceStructuredData =
+    serviceCards.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          itemListElement: serviceCards
+            .slice(0, 3)
+            .map((card, index) => ({
+              '@type': 'Service',
+              name: card.title,
+              description: card.description,
+              url: card.href ? `${siteUrl}${card.href}` : canonicalUrl,
+              position: index + 1,
+            }))
+            .filter((item) => item.name),
+        }
+      : null;
+
+  const structuredData = [faqStructuredData, serviceStructuredData].filter(Boolean);
+
   return (
-    <main className="bg-sustain-bg dark:bg-sustain-bg-dark">
-      <Section>
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
-          <RevealSection>
-            <div className="space-y-4">
-              {hero?.eyebrow ? (
+    <>
+      <Head>
+        {structuredData.map((data, index) => (
+          <script key={`ld-json-${index}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+        ))}
+      </Head>
+      <main className="bg-sustain-bg dark:bg-sustain-bg-dark">
+        <Section>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
+            <RevealSection>
+              <div className="space-y-4">
+                {hero?.eyebrow ? (
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{hero.eyebrow}</p>
               ) : null}
               <h1 className="text-h1">
@@ -408,7 +459,8 @@ export default function Home({
           <Testimonials items={testimonials ?? []} />
         </RevealSection>
       </Section>
-    </main>
+      </main>
+    </>
   );
 }
 
@@ -432,15 +484,25 @@ Home.propTypes = {
   ),
   showFallbackNotice: PropTypes.bool,
   fallbackNotice: PropTypes.string,
+  locale: PropTypes.string,
 };
 
 Home.getLayout = function getLayout(page) {
   const seo = page.props?.content?.seo ?? {};
+  const locale = page.props?.locale ?? 'en-GB';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sustainsage.com';
+  const localizedPath = locale === 'en-GB' ? '/' : `/${locale}`;
+  const alternates = ['en-GB', 'zh-TW', 'zh-CN'].map((localeCode) => ({
+    hrefLang: localeCode,
+    href: `${siteUrl}${localeCode === 'en-GB' ? '' : `/${localeCode}`}`,
+  }));
   return (
     <MainLayout
       seo={{
         title: seo.title,
         description: seo.description,
+        canonical: `${siteUrl}${localizedPath}`,
+        alternates,
       }}
     >
       {page}
@@ -464,6 +526,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       testimonials,
       showFallbackNotice,
       fallbackNotice,
+      locale,
       ...(await serverSideTranslations(locale, ['common', 'home', 'faq'])),
     },
   });
