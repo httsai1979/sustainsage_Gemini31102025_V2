@@ -8,7 +8,7 @@ const DEFAULT_SEO = {};
 
 export default function MainLayout({ children, seo = DEFAULT_SEO } = {}) {
   const normalizedSeo = typeof seo === 'object' && seo !== null ? seo : DEFAULT_SEO;
-  const { title, description, desc, noIndex, noindex, og, ogImage } = normalizedSeo;
+  const { title, description, desc, noIndex, noindex, og, ogImage, canonical, alternates, twitter } = normalizedSeo;
 
   const openGraphImages = [];
 
@@ -31,6 +31,9 @@ export default function MainLayout({ children, seo = DEFAULT_SEO } = {}) {
     desc: description ?? desc,
     noindex: typeof noIndex === 'boolean' ? noIndex : noindex,
     og: openGraph,
+    canonical,
+    alternates,
+    twitter,
   };
 
   return (
@@ -58,5 +61,23 @@ MainLayout.propTypes = {
     noindex: PropTypes.bool,
     og: PropTypes.object,
     ogImage: PropTypes.string,
+    canonical: PropTypes.string,
+    alternates: PropTypes.arrayOf(
+      PropTypes.shape({
+        hrefLang: PropTypes.string,
+        href: PropTypes.string,
+        url: PropTypes.string,
+        path: PropTypes.string,
+        locale: PropTypes.string,
+      })
+    ),
+    twitter: PropTypes.shape({
+      card: PropTypes.string,
+      site: PropTypes.string,
+      creator: PropTypes.string,
+      title: PropTypes.string,
+      description: PropTypes.string,
+      image: PropTypes.string,
+    }),
   }),
 };
