@@ -78,9 +78,13 @@ export default function ResourcesPage({ downloads = [], interactiveTools = [] })
             <Tag>{labels?.comingSoon ?? 'Coming soon'}</Tag>
           ) : (
             actionHref && (
-              <div className="inline-flex items-center gap-2 font-semibold text-sustain-green">
-                {actionLabel}
-                <span aria-hidden>→</span>
+              <div className="inline-flex">
+                <span className="ss-card-action">
+                  <span>{actionLabel}</span>
+                  <span className="ss-card-action__icon" aria-hidden>
+                    →
+                  </span>
+                </span>
               </div>
             )
           )}
