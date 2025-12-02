@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -176,6 +177,7 @@ export default function ServicesPage({
   const fallbackMessage = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
   const primaryCta = hero?.primaryCta ?? { href: '/contact', label: 'Book a 20-minute chat' };
   const secondaryCta = hero?.secondaryCta ?? { href: '#support', label: 'Who we support' };
+  const router = useRouter();
 
   const gettingStartedSteps = Array.isArray(gettingStartedCopy?.steps) && gettingStartedCopy.steps.length
     ? gettingStartedCopy.steps
@@ -276,10 +278,15 @@ export default function ServicesPage({
                     <li key={link.href} className="rounded-2xl border border-sustain-cardBorder/70 bg-white/70 p-4">
                       <div className="flex items-start gap-3">
                         <div className="flex-1">
-                          <Link href={link.href} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
+                          <button
+                            type="button"
+                            onClick={() => router.push(link.href)}
+                            className="inline-flex items-center gap-2 font-semibold text-sustain-green underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-green"
+                            aria-label={link.label}
+                          >
                             {link.label}
                             <span aria-hidden>→</span>
-                          </Link>
+                          </button>
                           <p className="mt-2 text-sm text-slate-700">{link.description}</p>
                           {Array.isArray(link.highlights) && link.highlights.length ? (
                             <ul className="mt-3 space-y-1 text-xs font-medium text-slate-500">
@@ -328,10 +335,15 @@ export default function ServicesPage({
                   subtitle={card.excerpt}
                   icon={<Icon name={card.iconName} />}
                   footer={
-                    <Link href={`/services/${card.slug}`} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
+                    <button
+                      type="button"
+                      onClick={() => router.push(`/services/${card.slug}`)}
+                      className="inline-flex items-center gap-2 font-semibold text-sustain-green underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-green"
+                      aria-label={card.ctaLabel ?? pathways?.viewDetails ?? 'View details'}
+                    >
                       {card.ctaLabel ?? pathways?.viewDetails ?? 'View details'}
                       <span aria-hidden>→</span>
-                    </Link>
+                    </button>
                   }
                 >
                   <div className="space-y-4 text-sm leading-relaxed text-slate-700">
