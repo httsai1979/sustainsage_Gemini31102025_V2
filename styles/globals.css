@@ -306,6 +306,11 @@ h3 {
     transform: scale(1.03);
 }
 
+.ss-btn-primary:focus-visible {
+    outline: 2px solid var(--color-brand-primary-dark);
+    outline-offset: 3px;
+}
+
 .ss-btn-secondary {
     display: inline-flex;
     align-items: center;
@@ -330,7 +335,8 @@ h3 {
 
 .ss-card-action {
     @apply inline-flex items-center gap-2 rounded-full bg-sustain-green/10 px-4 py-2 text-sm font-semibold text-sustain-green transition-all duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sustain-green/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white;
-    box-shadow: inset 0 0 0 1px rgba(74,108,86,0.15);
+    box-shadow: inset 0 0 0 1px rgba(74,108,86,0.18), 0 10px 25px rgba(0,0,0,0.06);
+    letter-spacing: 0.01em;
 }
 
 .ss-card-action__icon {
@@ -340,6 +346,13 @@ h3 {
 .ss-card-action:hover .ss-card-action__icon,
 .ss-card-action:focus-visible .ss-card-action__icon {
     @apply translate-x-1;
+}
+
+.ss-card-action:hover,
+.ss-card-action:focus-visible {
+    @apply translate-y-[-1px];
+    background-color: rgba(74,108,86,0.14);
+    color: var(--color-brand-primary-dark);
 }
 
 .dark .ss-btn-secondary {
