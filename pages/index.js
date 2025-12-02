@@ -88,6 +88,7 @@ export default function Home({
     hero = {},
     services = {},
     process = {},
+    fitChecklist = {},
     faqTeaser = null,
     recognise: recogniseContent = {},
     boundaries = {},
@@ -116,6 +117,11 @@ export default function Home({
       typeof step === 'string'
         ? step
         : step?.title ?? step?.description ?? `${step?.tag ?? ''}`
+  );
+
+  const fitChecklistItems = dedupeBy(
+    orderSections(Array.isArray(fitChecklist?.items) ? fitChecklist.items : []),
+    (item, index) => item?.question ?? item?.title ?? item?.description ?? index
   );
 
   const boundaryItems = dedupeBy(
@@ -474,6 +480,29 @@ export default function Home({
         </Section>
       ) : null}
 
+      {fitChecklistItems.length ? (
+        <Section>
+          <RevealSection className="space-y-4 text-center md:text-left">
+            {fitChecklist?.eyebrow ? (
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
+                {fitChecklist.eyebrow}
+              </p>
+            ) : null}
+            <h2 className="text-h2">{fitChecklist?.title ?? '我真的需要教練嗎？10 個務實檢核'}</h2>
+            {fitChecklist?.description ? <p className="text-body">{fitChecklist.description}</p> : null}
+          </RevealSection>
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {fitChecklistItems.map((item, index) => (
+              <RevealSection key={item.question ?? index} delay={(index % 2) * 0.1}>
+                <Card title={item.question ?? item.title}>
+                  <p className="text-sm leading-relaxed text-slate-700">{item.answer ?? item.body ?? item.description}</p>
+                </Card>
+              </RevealSection>
+            ))}
+          </div>
+        </Section>
+      ) : null}
+
       {boundaryItems.length ? (
         <Section>
           <RevealSection className="space-y-4 text-center md:text-left">
@@ -521,6 +550,7 @@ Home.propTypes = {
     hero: PropTypes.object,
     services: PropTypes.object,
     process: PropTypes.object,
+    fitChecklist: PropTypes.object,
     boundaries: PropTypes.object,
     faqTeaser: PropTypes.object,
     seo: PropTypes.shape({
