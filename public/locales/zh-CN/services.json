@@ -12,9 +12,201 @@
       "href": "/legal/coaching-boundaries"
     }
   },
+  "serviceLayers": {
+    "eyebrow": "路径分层",
+    "title": "先对应情境，再往下展开细节",
+    "description": "先选一张最像你当前处境的卡片，再点进第二、第三层页面查看完整流程与行动示例。",
+    "items": [
+      {
+        "id": "strategic-leadership",
+        "icon": "target",
+        "title": "领导决策伙伴",
+        "description": "给在中英之间带队的领导者：兼顾总部、工厂、利益相关者与照护责任。",
+        "links": [
+          {
+            "href": "/services/leadership",
+            "label": "领导教练伙伴",
+            "description": "每月与 CEO／站点负责人同行，处理董事会、总部与在地团队的拉扯。",
+            "highlights": ["季度优先排序工作坊", "双语摘要、可直接给赞助者"]
+          },
+          {
+            "href": "/services/working-parents",
+            "label": "可持续的职场父母",
+            "description": "帮带领者设计守得住的界线与弹性节奏，避免在高峰期耗尽。",
+            "highlights": ["基于价值观的对话排演", "危机季节的安全预案"]
+          },
+          {
+            "href": "/corporate",
+            "label": "企业合作",
+            "description": "客制支持中英领导团队、桥接角色与赞助者群。",
+            "highlights": ["双语整理主题与动向", "清晰的升级通道"]
+          }
+        ]
+      },
+      {
+        "id": "foundations-for-clarity",
+        "icon": "compass",
+        "title": "回到清晰的基础",
+        "description": "在重大决策或启动前，先重整节奏、看清限制、练习温和脚本。",
+        "links": [
+          {
+            "href": "/services/transition",
+            "label": "转换稳定系列",
+            "description": "在身份、物流与故事之间架桥，让变化有节奏。",
+            "highlights": ["每次会谈都有旅程地图", "照顾可及性的实验"]
+          },
+          {
+            "href": "/services/reset-sprint",
+            "label": "Reset 冲刺",
+            "description": "4 周专注容器，修补能量漏点、重建简单协议。",
+            "highlights": ["每周微任务", "责任感检核"]
+          },
+          {
+            "href": "/services/how-coaching-works",
+            "label": "准备度与范围",
+            "description": "清楚伦理、可及性与我们怎么共同设计教练合约。",
+            "highlights": ["包容性做法", "数据与隐私护栏"]
+          }
+        ]
+      },
+      {
+        "id": "sustainable-growth",
+        "icon": "handshake",
+        "title": "可持续成长伙伴",
+        "description": "季度以上的合作，内建回顾点与支撑式实验。",
+        "links": [
+          {
+            "href": "/services/deepening-practice",
+            "label": "深化实践实验室",
+            "description": "给教练、引导者、HR 伙伴的反思／督导式空间。",
+            "highlights": ["录制的反思提示", "伦理与范围检核"]
+          },
+          {
+            "href": "/services/mid-career-coaching",
+            "label": "职业中段校准",
+            "description": "用实验连接故事、证据点与抱负。",
+            "highlights": ["叙事排演", "温和的责任感节奏"]
+          },
+          {
+            "href": "/services/returner-coaching",
+            "label": "Returner 伙伴",
+            "description": "支持因健康、照护或搬迁暂停后重建信心的专业者。",
+            "highlights": ["能量敏感的规划", "赞助者与盟友简报"]
+          }
+        ]
+      },
+      {
+        "id": "mindful-transitions",
+        "icon": "calendar",
+        "title": "情境导向引导",
+        "description": "从最贴近你生活的场景开始。",
+        "links": [
+          {
+            "href": "/services/for-newcomers-to-uk",
+            "label": "英国新移民",
+            "description": "在地化经验、谈赞助协议、缓解文化冲击。",
+            "highlights": ["口音与语言支持", "考量政策的求职脚本"]
+          },
+          {
+            "href": "/services/for-career-returners",
+            "label": "重返职场者",
+            "description": "兼顾自我信任重建与育儿、步调、沟通安排。",
+            "highlights": ["弹性节奏选单", "会谈内就排演界线"]
+          },
+          {
+            "href": "/services/for-parents-returning",
+            "label": "父母返工",
+            "description": "把照护历程翻成职场叙事，稳住信心。",
+            "highlights": ["微庆祝工具包", "雇主可用的更新稿"]
+          }
+        ]
+      }
+    ]
+  },
   "faqLink": {
     "label": "还有疑问？前往 FAQ。",
     "href": "/faq"
+  },
+  "fitChecklist": {
+    "eyebrow": "教练是否真的适合？",
+    "title": "10 个务实提问，确认你需要的支持",
+    "description": "每题都对应真实客户的顾虑：不是卖梦，而是帮你在限制里做出稳健决策。",
+    "items": [
+      {
+        "question": "如果没有教练，你会怎么做？",
+        "answer": "可以自学、看影片或跟朋友聊；教练的价值在于：当你已经想改变，却卡在语言、身份、家庭或年纪等现实限制，需要有人结构化陪你走。"
+      },
+      {
+        "question": "为什么找我，而不是 generic coach？",
+        "answer": "我活在英国移民与家庭的现实，不卖梦、不催促，用表格把金钱、时间、身份、家庭责任拆清楚，陪你做稳健决策。"
+      },
+      {
+        "question": "与其他华人教练有何不同？",
+        "answer": "聚焦中高年、returner、跨文化的复杂组合，重视不过度承诺，吸引对成功学过敏但愿意踏实行动的人。"
+      },
+      {
+        "question": "3 个月后看得见的成果是什么？",
+        "answer": "（1）决策地图与代价清单；（2）可执行的节奏与界线句型；（3）被写下来的自我定义，而不只是“更有自信”。"
+      },
+      {
+        "question": "定价为何合理？",
+        "answer": "你买的不是时数，而是 3–6 个月的关键过渡期支持。对正在做重大决策的人，决策品质与陪走比短期省钱更重要。"
+      },
+      {
+        "question": "我的风格谁会喜欢、谁可能不适合？",
+        "answer": "风格：稳、深、结构化，承认限制、不吹捧结果。只想被激励或追求速成的人可能不适合；想要坦白对话的人会感到安心。"
+      },
+      {
+        "question": "有哪些可验证的信任点？",
+        "answer": "台湾与英国工作、家庭、移民与创业经验，加上实际设计的工具（界线练习、时间记录、情绪地图等）都可被看见、下载、使用。"
+      },
+      {
+        "question": "只能讲三句 USP 会是什么？",
+        "answer": "跨文化＋中高年＋家庭责任的真实场景；不卖梦、承认限制但仍行动；结构化思考与具体工具，而不是只聊天。"
+      },
+      {
+        "question": "若另一位教练背景类似，我怎么补强？",
+        "answer": "用长期内容与透明流程建立信任：说清楚会谈节奏、作业与工具，也诚实说明教练做不到的情况并提供转介，吸引理性客户。"
+      },
+      {
+        "question": "最坦白的提醒与下一步？",
+        "answer": "没有人会因为努力就付费；只有在他生命阶段你能帮他做出更稳健决策时才会合作。先写清三种典型客户的痛点、恐惧与 3–6 个月后想要的具体改变，放进网站、服务说明与首次开场。"
+      }
+    ]
+  },
+  "clientStories": {
+    "eyebrow": "客户改变",
+    "title": "真实情境的合成案例",
+    "description": "每段合作都保密；以下案例是常见主题的合成，让你知道分层路径在现场怎么运作。",
+    "items": [
+      {
+        "id": "leadership-transformation",
+        "icon": "handshake",
+        "tag": "制造业领导 · 9 个月",
+        "title": "领导力转向",
+        "challenge": "站点负责人同时面对总部要求、工会协商，以及两地家庭照护。",
+        "approach": "双周双语教练＋非同步检核，确保与赞助者保持一致。",
+        "shift": "更清晰的利害关系人脚本、稳定授权节奏、更安心的交棒计划。"
+      },
+      {
+        "id": "career-pivot-success",
+        "icon": "compass",
+        "tag": "职业转向 · 4 个月",
+        "title": "职业重组成功",
+        "challenge": "资深分析师裁员后换行业，难以翻译过往经验。",
+        "approach": "价值观盘点、面试排演、依可及性设计的作品集实验。",
+        "shift": "取得可持续的混合办公角色，并在新主管前排演好界线。"
+      },
+      {
+        "id": "community-breakthrough",
+        "icon": "spark",
+        "tag": "社群领导 · 3 个月",
+        "title": "社群推进突破",
+        "challenge": "草根组织者在多语环境扩张计划时濒临倦怠。",
+        "approach": "Reset 冲刺＋与志工、募资对话的委派脚本共创。",
+        "shift": "更有余裕的领导、双语文件与稳定的募资叙事。"
+      }
+    ]
   },
   "pathways": {
     "title": "选择适合你的教练路径",
