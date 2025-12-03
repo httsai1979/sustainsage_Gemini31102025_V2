@@ -676,24 +676,6 @@ h3 {
     line-height: var(--ssg-leading)
 }
 
-.typography :where(a) {
-    color: var(--color-primary, #4a6c56);
-    text-decoration: underline;
-    text-underline-offset: 0.25em;
-    text-decoration-thickness: 1.5px;
-    transition: color .15s ease, text-decoration-color .15s ease
-}
-
-.typography :where(a:hover, a:focus-visible) {
-    color: var(--color-primary-dark, #365040);
-    text-decoration-color: currentColor
-}
-
-.typography :where(a:focus-visible) {
-    outline: 2px solid var(--color-primary, #4a6c56);
-    outline-offset: 2px
-}
-
 .typography :where(blockquote) {
     border-left: 4px solid #e2e8f0;
     padding-left: 1rem;

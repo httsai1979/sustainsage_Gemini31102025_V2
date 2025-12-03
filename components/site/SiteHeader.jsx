@@ -18,7 +18,7 @@ const NAV_ITEMS = [
 ];
 
 const LOCALE_LABELS = {
-  en: 'EN',
+  'en-GB': 'EN',
   'zh-TW': '繁體',
   'zh-CN': '简体',
 };
@@ -55,11 +55,10 @@ function LocaleSwitcher({ activeLocale, onChange, variant = 'desktop', localeOpt
             key={locale.code}
             type="button"
             onClick={() => onChange(locale.code)}
-            className={`${baseClasses} ${
-              isActive
+            className={`${baseClasses} ${isActive
                 ? 'bg-[var(--color-primary)] text-white shadow-sm'
                 : 'bg-[var(--color-primary-soft)] text-[var(--color-ink-muted)] ring-1 ring-inset ring-[rgba(0,0,0,0.08)] hover:text-[var(--color-primary)]'
-            }`}
+              }`}
           >
             {locale.label}
           </button>
