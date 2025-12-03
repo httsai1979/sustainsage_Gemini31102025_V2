@@ -5,6 +5,7 @@ import { useTranslation } from 'next-i18next';
 
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
+import FitChecklistSection from '@/components/common/FitChecklistSection';
 import SectionContainer from '@/components/sections/SectionContainer';
 import PageSection from '@/components/ui/PageSection';
 import { orderSections } from '@/lib/orderSections';
@@ -90,6 +91,7 @@ export default function ForAudiencePage({ pageKey }) {
   const partnershipItems = safeArray(page.partnership?.items);
   const boundaries = safeArray(page.boundaries?.items || page.boundaries);
   const caseStudy = page.case || {};
+  const fitChecklist = t('fitChecklist', { ns: 'common', returnObjects: true });
   const seoTitle = page.seo?.title || `${page.hero.title} | SustainSage`;
   const seoDesc = page.seo?.description || page.hero.subtitle || '';
 
@@ -228,6 +230,13 @@ export default function ForAudiencePage({ pageKey }) {
           {restBlocks.map((block, idx) => renderBlock(block, idx))}
         </PageSection>
       ) : null}
+
+      <FitChecklistSection
+        eyebrow={fitChecklist?.eyebrow}
+        title={fitChecklist?.title}
+        description={fitChecklist?.description}
+        items={fitChecklist?.items}
+      />
 
       <SectionContainer variant="surface" tone="muted">
         {page.cta?.body && <p className="text-base leading-7 text-slate-700">{page.cta.body}</p>}

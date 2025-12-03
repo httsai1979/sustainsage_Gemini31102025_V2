@@ -3,6 +3,7 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 
+import FitChecklistSection from '@/components/common/FitChecklistSection';
 import MainLayout from '@/components/layout/MainLayout';
 import { resolveToolCopy, toolsConfig, type LocalizedTool } from '@/lib/toolsConfig';
 
@@ -40,6 +41,10 @@ function ToolPage({ tool }: ToolPageProps) {
           </div>
         </div>
       </section>
+
+      <div className="mt-16">
+        <FitChecklistSection />
+      </div>
     </main>
   );
 }

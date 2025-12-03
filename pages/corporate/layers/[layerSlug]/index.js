@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import IconBadge from '@/components/corporate/IconBadge';
 import ListWithDots from '@/components/corporate/ListWithDots';
+import FitChecklistSection from '@/components/common/FitChecklistSection';
 import MainLayout from '@/components/layout/MainLayout';
 import {
   CONTACT_EMAIL,
@@ -122,6 +123,8 @@ function CorporateLayerPage({ layer, heroTag, cta }) {
             </p>
           </div>
         </section>
+
+        <FitChecklistSection />
       </div>
     </div>
   );

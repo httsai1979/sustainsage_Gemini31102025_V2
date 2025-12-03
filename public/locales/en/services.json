@@ -33,6 +33,53 @@
     "secondaryCta": "Read how coaching works",
     "secondaryHref": "/services/how-coaching-works"
   },
+  "fitChecklist": {
+    "eyebrow": "Is coaching really necessary?",
+    "title": "10 practical questions to confirm fit",
+    "description": "Use the same prompts clients ask before starting—grounded in visas, family, and mid-career realities, not hype.",
+    "items": [
+      {
+        "question": "If coaching didn’t exist, what would you do?",
+        "answer": "You could self-study or talk to friends. Coaching helps when you already want change but feel blocked by language, status, family, culture, or age constraints."
+      },
+      {
+        "question": "Why choose me over a generic coach?",
+        "answer": "I live the UK restart pressure, don’t sell dreams, and use structured breakdowns of money, time, status, family duties, and skills so options are concrete."
+      },
+      {
+        "question": "How do I differ from other Chinese/Taiwanese coaches in the UK?",
+        "answer": "Focus on mid-career, returners, and complex family/visa combos; cross-cultural and startup experience; careful not to overpromise—ideal for people allergic to success-theatre."
+      },
+      {
+        "question": "What visible outcomes appear after 3 months?",
+        "answer": "(1) Decision map with money/time/risks/emotional costs. (2) Executable cadence and boundary scripts. (3) Written self-definitions—not just “more confidence.”"
+      },
+      {
+        "question": "Why is the pricing justified?",
+        "answer": "You buy 3–6 months of critical-transition partnership, not hours. A mis-aimed career or migration choice costs far more than the fee."
+      },
+      {
+        "question": "Who will feel safe with this style, who might not?",
+        "answer": "Style: calm, deep, structured, honest about limits. Those wanting quick hype may not enjoy it; those wanting frank, steady conversations usually relax here."
+      },
+      {
+        "question": "What proof points are verifiable?",
+        "answer": "Work in Taiwan and the UK, migration and family roles, entrepreneurship, plus downloadable tools (boundary practice, time logs, emotion maps) and referenced frameworks."
+      },
+      {
+        "question": "If I only share three USPs, what are they?",
+        "answer": "Cross-cultural + mid-career + family realism; no dream-selling—acknowledge limits but keep moving; structured thinking with concrete tools, not just conversation."
+      },
+      {
+        "question": "If another coach seems similar, how do I shore up trust?",
+        "answer": "Publish content and transparent process—session cadence, assignments, tools—and say plainly what coaching won’t cover, with referrals when therapy or other help is safer."
+      },
+      {
+        "question": "Most candid reminder and action?",
+        "answer": "No one pays for effort alone; they pay when I am the best partner for this life stage. Write the three typical clients, their pains, fears, and 3/6-month shifts, and weave them into the site, service copy, and first-call opener."
+      }
+    ]
+  },
   "serviceDetail": {
     "transition": {
       "seo": {

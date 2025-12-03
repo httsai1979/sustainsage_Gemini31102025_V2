@@ -4,6 +4,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import IconBadge from '@/components/corporate/IconBadge';
 import ListWithDots from '@/components/corporate/ListWithDots';
+import FitChecklistSection from '@/components/common/FitChecklistSection';
 import MainLayout from '@/components/layout/MainLayout';
 import { CONTACT_EMAIL, FALLBACK_LOCALE, getCorporateCopy } from '@/content/corporate';
 import cn from '@/lib/cn';
@@ -146,6 +147,8 @@ export default function CorporatePage({ copy }) {
               ))}
             </div>
           </section>
+
+          <FitChecklistSection />
 
           <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <div className="space-y-5 rounded-3xl border border-brand-primary/40 bg-white/95 p-6 shadow-sustainCard lg:p-8">
