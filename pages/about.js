@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import RevealSection from '@/components/common/RevealSection';
+import FitChecklistSection from '@/components/common/FitChecklistSection';
 import FAQAccordion from '@/components/faq/FAQAccordion';
 import MainLayout from '@/components/layout/MainLayout';
 import Card from '@/components/ui/Card';
@@ -383,6 +384,8 @@ export default function AboutPage({
       </section>
 
       <BoundariesSection boundaries={copy?.boundaries} />
+
+      <FitChecklistSection />
 
       <section className="ss-section">
         <RevealSection>

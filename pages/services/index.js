@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
+import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
@@ -171,11 +172,41 @@ export default function ServicesPage({
   const badges = pathways?.badges ?? {};
   const gettingStartedCopy = t('gettingStarted', { returnObjects: true }) ?? {};
   const approachCopy = t('approach', { returnObjects: true }) ?? {};
+  const layeredCopy = t('serviceLayers', { returnObjects: true }) ?? {};
+  const clientStoriesCopy = t('clientStories', { returnObjects: true }) ?? {};
+  const fitChecklistCopy = t('fitChecklist', { returnObjects: true }) ?? {};
   const approachCards = Array.isArray(approachCopy?.cards) ? approachCopy.cards : [];
   const cta = t('cta', { returnObjects: true });
   const fallbackMessage = fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
   const primaryCta = hero?.primaryCta ?? { href: '/contact', label: 'Book a 20-minute chat' };
   const secondaryCta = hero?.secondaryCta ?? { href: '#support', label: 'Who we support' };
+  const router = useRouter();
+
+  const serviceLayers = Array.isArray(layeredCopy?.items) && layeredCopy.items.length > 0
+    ? layeredCopy.items
+    : SERVICE_LAYERS;
+
+  const serviceLayerMeta = {
+    eyebrow: layeredCopy?.eyebrow ?? 'Layered pathways',
+    title: layeredCopy?.title ?? 'How I can support you',
+    description:
+      layeredCopy?.description ??
+      'Start with the card that matches your context, then follow the links to see detailed second- and third-layer pages with full outlines.',
+  };
+
+  const clientStories = Array.isArray(clientStoriesCopy?.items) && clientStoriesCopy.items.length > 0
+    ? clientStoriesCopy.items
+    : CLIENT_CASES;
+
+  const clientStoriesMeta = {
+    eyebrow: clientStoriesCopy?.eyebrow ?? 'Client transformations',
+    title: clientStoriesCopy?.title ?? 'Real client transformations',
+    description:
+      clientStoriesCopy?.description ??
+      'Every partnership protects confidentiality; the composites below show how layered pathways play out in real life.',
+  };
+
+  const fitChecklist = Array.isArray(fitChecklistCopy?.items) ? fitChecklistCopy.items : [];
 
   const gettingStartedSteps = Array.isArray(gettingStartedCopy?.steps) && gettingStartedCopy.steps.length
     ? gettingStartedCopy.steps
@@ -258,17 +289,16 @@ export default function ServicesPage({
 
       <section className="ss-section" aria-labelledby="service-layers-heading">
         <RevealSection className="space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Layered pathways</p>
-          <h2 id="service-layers-heading" className="text-3xl font-semibold text-sustain-text">
-            How I can support you
-          </h2>
-          <p className="text-base text-slate-700">
-            Start with the card that matches your context, then follow the links to see detailed second- and third-layer pages
-            with full outlines.
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">
+            {serviceLayerMeta.eyebrow}
           </p>
+          <h2 id="service-layers-heading" className="text-3xl font-semibold text-sustain-text">
+            {serviceLayerMeta.title}
+          </h2>
+          <p className="text-base text-slate-700">{serviceLayerMeta.description}</p>
         </RevealSection>
         <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {SERVICE_LAYERS.map((layer, index) => (
+          {serviceLayers.map((layer, index) => (
             <RevealSection key={layer.id} delay={(index % 2) * 0.1}>
               <Card icon={<Icon name={layer.icon} />} title={layer.title} subtitle={layer.description}>
                 <ul className="space-y-5">
@@ -276,10 +306,15 @@ export default function ServicesPage({
                     <li key={link.href} className="rounded-2xl border border-sustain-cardBorder/70 bg-white/70 p-4">
                       <div className="flex items-start gap-3">
                         <div className="flex-1">
-                          <Link href={link.href} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
+                          <button
+                            type="button"
+                            onClick={() => router.push(link.href)}
+                            className="inline-flex items-center gap-2 font-semibold text-sustain-green underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-green"
+                            aria-label={link.label}
+                          >
                             {link.label}
                             <span aria-hidden>→</span>
-                          </Link>
+                          </button>
                           <p className="mt-2 text-sm text-slate-700">{link.description}</p>
                           {Array.isArray(link.highlights) && link.highlights.length ? (
                             <ul className="mt-3 space-y-1 text-xs font-medium text-slate-500">
@@ -328,10 +363,15 @@ export default function ServicesPage({
                   subtitle={card.excerpt}
                   icon={<Icon name={card.iconName} />}
                   footer={
-                    <Link href={`/services/${card.slug}`} className="inline-flex items-center gap-2 font-semibold text-sustain-green">
+                    <button
+                      type="button"
+                      onClick={() => router.push(`/services/${card.slug}`)}
+                      className="inline-flex items-center gap-2 font-semibold text-sustain-green underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sustain-green"
+                      aria-label={card.ctaLabel ?? pathways?.viewDetails ?? 'View details'}
+                    >
                       {card.ctaLabel ?? pathways?.viewDetails ?? 'View details'}
                       <span aria-hidden>→</span>
-                    </Link>
+                    </button>
                   }
                 >
                   <div className="space-y-4 text-sm leading-relaxed text-slate-700">
@@ -400,18 +440,41 @@ export default function ServicesPage({
         </div>
       </section>
 
+      {fitChecklist.length ? (
+        <section className="ss-section" aria-labelledby="fit-checklist-heading">
+          <RevealSection className="space-y-4 text-center md:text-left">
+            {fitChecklistCopy?.eyebrow ? (
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">
+                {fitChecklistCopy.eyebrow}
+              </p>
+            ) : null}
+            <h2 id="fit-checklist-heading" className="text-3xl font-semibold text-sustain-text">
+              {fitChecklistCopy?.title ?? 'Do you really need coaching? A grounded checklist'}
+            </h2>
+            {fitChecklistCopy?.description ? (
+              <p className="text-base text-slate-700">{fitChecklistCopy.description}</p>
+            ) : null}
+          </RevealSection>
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {fitChecklist.map((item, index) => (
+              <RevealSection key={item.question ?? index} delay={(index % 2) * 0.1}>
+                <Card title={item.question}>
+                  <p className="text-sm leading-relaxed text-slate-700">{item.answer}</p>
+                </Card>
+              </RevealSection>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="ss-section" aria-labelledby="client-stories-heading">
         <RevealSection className="space-y-4 text-center md:text-left">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">Client transformations</p>
-          <h2 id="client-stories-heading" className="text-3xl font-semibold text-sustain-text">
-            Real client transformations
-          </h2>
-          <p className="text-base text-slate-700">
-            Every partnership protects confidentiality; the composites below show how layered pathways play out in real life.
-          </p>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{clientStoriesMeta.eyebrow}</p>
+          <h2 id="client-stories-heading" className="text-3xl font-semibold text-sustain-text">{clientStoriesMeta.title}</h2>
+          <p className="text-base text-slate-700">{clientStoriesMeta.description}</p>
         </RevealSection>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {CLIENT_CASES.map((story, index) => (
+          {clientStories.map((story, index) => (
             <RevealSection key={story.id} delay={(index % 3) * 0.1}>
               <Card icon={<Icon name={story.icon} />} tag={story.tag} title={story.title}>
                 <div className="space-y-3 text-sm leading-relaxed text-slate-700">
