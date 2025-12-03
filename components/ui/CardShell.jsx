@@ -25,15 +25,15 @@ export default function CardShell({
   const resolvedIcon = icon
     ? icon
     : iconName
-    ? (
-      <IconBadge iconName={iconName} className={iconClassName} />
-    )
-    : null;
+      ? (
+        <IconBadge iconName={iconName} className={iconClassName} />
+      )
+      : null;
 
   return (
     <Tag
       className={cn(
-        'group relative flex h-full flex-col rounded-[32px] border border-white/70 bg-white/95 p-6 shadow-card ring-1 ring-black/5 transition duration-300 hover:-translate-y-1 hover:shadow-[0_35px_80px_rgba(15,23,42,0.16)] focus-within:-translate-y-1 focus-within:shadow-[0_35px_80px_rgba(15,23,42,0.2)] md:p-8',
+        'group relative flex h-full flex-col rounded-[32px] border border-white/60 bg-white/90 backdrop-blur-md p-6 shadow-card ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-ssgCard hover:border-primary/20 focus-within:-translate-y-2 focus-within:shadow-ssgCard md:p-8',
         className,
       )}
       {...rest}
