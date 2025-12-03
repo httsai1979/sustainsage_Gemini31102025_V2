@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import MainLayout from '@/components/layout/MainLayout';
 import FAQAccordion from '@/components/faq/FAQAccordion';
+import FitChecklistSection from '@/components/common/FitChecklistSection';
 import { loadJSON } from '@/lib/content';
 import { orderSections } from '@/lib/content/normalize';
 import { dedupeBy } from '@/lib/dedupe';
@@ -136,6 +137,8 @@ export default function FAQPage({
           <FAQAccordion items={curatedFaqItems} />
         </div>
       </section>
+
+      <FitChecklistSection />
 
       <section className="ss-section">
         <div className="rounded-card border border-sustain-cardBorder bg-white p-8 text-center shadow-card">

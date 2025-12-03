@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useTranslation } from 'next-i18next';
 
 import Hero from '@/components/layout/Hero';
+import FitChecklistSection from '@/components/common/FitChecklistSection';
 
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
@@ -137,6 +138,7 @@ export default function StructuredServicePage({ serviceKey, image }) {
   const boundaries = service.boundaries ?? {};
   const faq = service.faq ?? {};
   const cta = service.cta ?? {};
+  const fitChecklist = t('fitChecklist', { returnObjects: true, ns: 'common' });
 
   return (
     <>
@@ -193,6 +195,13 @@ export default function StructuredServicePage({ serviceKey, image }) {
       <Section title={boundaries.title} description={boundaries.description} background="white">
         <SummaryList items={boundaries.items} />
       </Section>
+
+      <FitChecklistSection
+        eyebrow={fitChecklist?.eyebrow}
+        title={fitChecklist?.title}
+        description={fitChecklist?.description}
+        items={fitChecklist?.items}
+      />
 
       <Section title={faq.title} description={faq.description} note={faq.note} background="tint">
         <FAQList items={faq.items} />

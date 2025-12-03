@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
+import FitChecklistSection from '@/components/common/FitChecklistSection';
 import MainLayout from '@/components/layout/MainLayout';
 import PageSection from '@/components/ui/PageSection';
 import { loadJSON } from '@/lib/content';
@@ -66,6 +67,8 @@ export default function CoachingBoundariesPage({
       {sections.map((section, idx) => (
         <ProseSection key={section.title ?? idx} section={section} />
       ))}
+
+      <FitChecklistSection />
     </MainLayout>
   );
 }
