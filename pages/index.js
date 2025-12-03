@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
@@ -19,43 +20,75 @@ import { orderSections } from '@/lib/content/normalize';
 import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
-const DEFAULT_WHO_CARDS = [
-  {
-    title: 'Professionals seeking growth',
-    description:
-      'Mid-career people who want a thoughtful space to decide what stays, what shifts, and how to move without burning out.',
-    icon: BriefcaseIcon,
-    href: '/for/mid-career-returners',
-    linkLabel: 'See the mid-career guide',
-  },
-  {
-    title: 'Career changers',
-    description:
-      'Those translating experience between countries or industries and needing calm structure to test new directions.',
-    icon: ArrowsRightLeftIcon,
-    href: '/for/newcomers-to-uk',
-    linkLabel: 'See the newcomers guide',
-  },
-  {
-    title: 'Purpose-driven individuals',
-    description:
-      'Graduates, working parents, and community builders who want support aligning their work with their values.',
-    icon: AcademicCapIcon,
-    href: '/for/parents-returning-to-work',
-    linkLabel: 'See the parents guide',
-  },
-];
+const getDefaultWhoCards = (locale = 'en-GB') => {
+  const isZh = locale?.startsWith('zh');
+
+  if (isZh) {
+    return [
+      {
+        title: '需要穩定節奏的職場人',
+        description: '中階與資深工作者，想先釐清「要保留什麼、要調整什麼」，避免燃燒殆盡。',
+        icon: BriefcaseIcon,
+        href: '/for/mid-career-returners',
+        linkLabel: '查看回歸職場指南',
+      },
+      {
+        title: '轉職或跨域的行動者',
+        description: '正把經驗轉換到新國家或產業，需要有結構且溫和的實驗步驟。',
+        icon: ArrowsRightLeftIcon,
+        href: '/for/newcomers-to-uk',
+        linkLabel: '查看新環境指南',
+      },
+      {
+        title: '以價值為導向的人',
+        description: '畢業生、職場父母、社群推動者，希望行動與核心價值保持一致。',
+        icon: AcademicCapIcon,
+        href: '/for/parents-returning-to-work',
+        linkLabel: '查看職涯陪伴指南',
+      },
+    ];
+  }
+
+  return [
+    {
+      title: 'Professionals seeking growth',
+      description:
+        'Mid-career people who want a thoughtful space to decide what stays, what shifts, and how to move without burning out.',
+      icon: BriefcaseIcon,
+      href: '/for/mid-career-returners',
+      linkLabel: 'See the mid-career guide',
+    },
+    {
+      title: 'Career changers',
+      description:
+        'Those translating experience between countries or industries and needing calm structure to test new directions.',
+      icon: ArrowsRightLeftIcon,
+      href: '/for/newcomers-to-uk',
+      linkLabel: 'See the newcomers guide',
+    },
+    {
+      title: 'Purpose-driven individuals',
+      description:
+        'Graduates, working parents, and community builders who want support aligning their work with their values.',
+      icon: AcademicCapIcon,
+      href: '/for/parents-returning-to-work',
+      linkLabel: 'See the parents guide',
+    },
+  ];
+};
 
 export default function Home({
   content = {},
   testimonials = [],
   showFallbackNotice = false,
   fallbackNotice = null,
+  locale = 'en-GB',
 } = {}) {
   const {
     hero = {},
     services = {},
     process = {},
+    fitChecklist = {},
     faqTeaser = null,
     recognise: recogniseContent = {},
     boundaries = {},
@@ -86,22 +119,30 @@ export default function Home({
         : step?.title ?? step?.description ?? `${step?.tag ?? ''}`
   );
 
+  const fitChecklistItems = dedupeBy(
+    orderSections(Array.isArray(fitChecklist?.items) ? fitChecklist.items : []),
+    (item, index) => item?.question ?? item?.title ?? item?.description ?? index
+  );
+
   const boundaryItems = dedupeBy(
     orderSections(Array.isArray(boundaries?.items) ? boundaries.items : []),
     (item) => item?.question ?? item?.title ?? item?.answer ?? ''
   );
 
   const fallbackMessage =
-    fallbackNotice ?? 'Temporarily showing English content while we complete this translation.';
+    fallbackNotice ??
+    (locale?.startsWith('zh')
+      ? '目前部分段落暫以英文顯示，翻譯完成後會自動更新。'
+      : 'Temporarily showing English content while we complete this translation.');
+
+  const defaultWhoCards = getDefaultWhoCards(locale);
 
   const audiences = dedupeBy(
-    Array.isArray(contentAudiences) && contentAudiences.length
-      ? contentAudiences
-      : DEFAULT_WHO_CARDS,
+    Array.isArray(contentAudiences) && contentAudiences.length ? contentAudiences : defaultWhoCards,
     (item) => item?.title ?? item?.description ?? ''
   );
 
-  const whoCards = DEFAULT_WHO_CARDS.map((card, index) => {
+  const whoCards = defaultWhoCards.map((card, index) => {
     const override = audiences[index] ?? {};
     return {
       ...card,
@@ -114,25 +155,44 @@ export default function Home({
     };
   });
 
-  const fallbackSteps = [
-    {
-      title: 'Initial conversation',
-      description:
-        'A 20-minute chat to understand what is changing and share the boundaries we work within.',
-    },
-    {
-      title: 'Goal setting',
-      description: 'We agree the focus, cadence, and accessibility needs before sessions begin.',
-    },
-    {
-      title: 'Regular sessions',
-      description: 'Online conversations (60–75 minutes) with experiments and reflections between sessions.',
-    },
-    {
-      title: 'Sustainable growth',
-      description: 'We pause, review, and keep what works so progress feels steady and kind.',
-    },
-  ];
+  const fallbackSteps = locale?.startsWith('zh')
+    ? [
+        {
+          title: '初步了解',
+          description: '20 分鐘彼此認識，說明界線、需求與工作方式。',
+        },
+        {
+          title: '設定目標',
+          description: '共同確認焦點、節奏與無障礙需求，再開始正式會談。',
+        },
+        {
+          title: '定期會談',
+          description: '60–75 分鐘線上對話，搭配會談間的小實驗與反思。',
+        },
+        {
+          title: '穩定成長',
+          description: '定期停下來回顧，保留有效的做法，維持穩健步伐。',
+        },
+      ]
+    : [
+        {
+          title: 'Initial conversation',
+          description:
+            'A 20-minute chat to understand what is changing and share the boundaries we work within.',
+        },
+        {
+          title: 'Goal setting',
+          description: 'We agree the focus, cadence, and accessibility needs before sessions begin.',
+        },
+        {
+          title: 'Regular sessions',
+          description: 'Online conversations (60–75 minutes) with experiments and reflections between sessions.',
+        },
+        {
+          title: 'Sustainable growth',
+          description: 'We pause, review, and keep what works so progress feels steady and kind.',
+        },
+      ];
 
   const stepIcons = ['calendar', 'target', 'note', 'handshake'];
 
@@ -168,13 +228,62 @@ export default function Home({
   const heroImageAlt =
     hero?.image?.alt ?? hero?.imageAlt ?? hero?.title ?? 'Coach and client in a calm conversation';
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sustainsage.com';
+  const localizedPath = locale === 'en-GB' ? '/' : `/${locale}`;
+  const canonicalUrl = `${siteUrl}${localizedPath}`;
+
+  const faqStructuredData =
+    boundaryItems.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: boundaryItems
+            .slice(0, 6)
+            .map((item) => ({
+              '@type': 'Question',
+              name: item?.question ?? item?.title ?? '',
+              acceptedAnswer: {
+                '@type': 'Answer',
+                text: item?.answer ?? item?.body ?? item?.description ?? '',
+              },
+            }))
+            .filter((item) => item.name && item.acceptedAnswer?.text),
+        }
+      : null;
+
+  const serviceStructuredData =
+    serviceCards.length > 0
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'ItemList',
+          itemListElement: serviceCards
+            .slice(0, 3)
+            .map((card, index) => ({
+              '@type': 'Service',
+              name: card.title,
+              description: card.description,
+              url: card.href ? `${siteUrl}${card.href}` : canonicalUrl,
+              position: index + 1,
+            }))
+            .filter((item) => item.name),
+        }
+      : null;
+
+  const structuredData = [faqStructuredData, serviceStructuredData].filter(Boolean);
+
   return (
-    <main className="bg-sustain-bg dark:bg-sustain-bg-dark">
-      <Section>
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
-          <RevealSection>
-            <div className="space-y-4">
-              {hero?.eyebrow ? (
+    <>
+      <Head>
+        {structuredData.map((data, index) => (
+          <script key={`ld-json-${index}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }} />
+        ))}
+      </Head>
+      <main className="bg-sustain-bg dark:bg-sustain-bg-dark">
+        <Section>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
+            <RevealSection>
+              <div className="space-y-4">
+                {hero?.eyebrow ? (
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sustain-green/80">{hero.eyebrow}</p>
               ) : null}
               <h1 className="text-h1">
@@ -371,6 +480,29 @@ export default function Home({
         </Section>
       ) : null}
 
+      {fitChecklistItems.length ? (
+        <Section>
+          <RevealSection className="space-y-4 text-center md:text-left">
+            {fitChecklist?.eyebrow ? (
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-sustain-green/80">
+                {fitChecklist.eyebrow}
+              </p>
+            ) : null}
+            <h2 className="text-h2">{fitChecklist?.title ?? '我真的需要教練嗎？10 個務實檢核'}</h2>
+            {fitChecklist?.description ? <p className="text-body">{fitChecklist.description}</p> : null}
+          </RevealSection>
+          <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {fitChecklistItems.map((item, index) => (
+              <RevealSection key={item.question ?? index} delay={(index % 2) * 0.1}>
+                <Card title={item.question ?? item.title}>
+                  <p className="text-sm leading-relaxed text-slate-700">{item.answer ?? item.body ?? item.description}</p>
+                </Card>
+              </RevealSection>
+            ))}
+          </div>
+        </Section>
+      ) : null}
+
       {boundaryItems.length ? (
         <Section>
           <RevealSection className="space-y-4 text-center md:text-left">
@@ -408,7 +540,8 @@ export default function Home({
           <Testimonials items={testimonials ?? []} />
         </RevealSection>
       </Section>
-    </main>
+      </main>
+    </>
   );
 }
 
@@ -417,6 +550,7 @@ Home.propTypes = {
     hero: PropTypes.object,
     services: PropTypes.object,
     process: PropTypes.object,
+    fitChecklist: PropTypes.object,
     boundaries: PropTypes.object,
     faqTeaser: PropTypes.object,
     seo: PropTypes.shape({
@@ -432,15 +566,25 @@ Home.propTypes = {
   ),
   showFallbackNotice: PropTypes.bool,
   fallbackNotice: PropTypes.string,
+  locale: PropTypes.string,
 };
 
 Home.getLayout = function getLayout(page) {
   const seo = page.props?.content?.seo ?? {};
+  const locale = page.props?.locale ?? 'en-GB';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://sustainsage.com';
+  const localizedPath = locale === 'en-GB' ? '/' : `/${locale}`;
+  const alternates = ['en-GB', 'zh-TW', 'zh-CN'].map((localeCode) => ({
+    hrefLang: localeCode,
+    href: `${siteUrl}${localeCode === 'en-GB' ? '' : `/${localeCode}`}`,
+  }));
   return (
     <MainLayout
       seo={{
         title: seo.title,
         description: seo.description,
+        canonical: `${siteUrl}${localizedPath}`,
+        alternates,
       }}
     >
       {page}
@@ -464,6 +608,7 @@ export async function getStaticProps({ locale = 'en-GB' }) {
       testimonials,
       showFallbackNotice,
       fallbackNotice,
+      locale,
       ...(await serverSideTranslations(locale, ['common', 'home', 'faq'])),
     },
   });
