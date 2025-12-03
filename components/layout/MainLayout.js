@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import SkipLink from '@/components/common/SkipLink';
-import Header from './Header';
-import Footer from './Footer';
+import SiteHeader from '@/components/site/SiteHeader';
+import SiteFooter from '@/components/site/SiteFooter';
 import SEO from './SEO';
 
 const DEFAULT_SEO = {};
 
 export default function MainLayout({ children, seo = DEFAULT_SEO } = {}) {
   const normalizedSeo = typeof seo === 'object' && seo !== null ? seo : DEFAULT_SEO;
-  const { title, description, desc, noIndex, noindex, og, ogImage, canonical, alternates, twitter } = normalizedSeo;
+  const { title, description, desc, noIndex, noindex, og, ogImage } = normalizedSeo;
 
   const openGraphImages = [];
 
@@ -31,21 +31,18 @@ export default function MainLayout({ children, seo = DEFAULT_SEO } = {}) {
     desc: description ?? desc,
     noindex: typeof noIndex === 'boolean' ? noIndex : noindex,
     og: openGraph,
-    canonical,
-    alternates,
-    twitter,
   };
 
   return (
     <>
       <SEO {...resolvedSeo} />
-      <div className="flex min-h-screen flex-col bg-brand-bg text-brand-ink transition-colors duration-300 dark:bg-sustain-bg-dark dark:text-sustain-text-dark">
+      <div className="flex min-h-screen flex-col bg-sustain-pageBg text-sustain-textMain transition-colors duration-300 dark:bg-sustain-bg-dark dark:text-sustain-text-dark">
         <SkipLink />
-        <Header />
+        <SiteHeader />
         <main id="content" className="typography flex-1 focus:outline-none">
           {children}
         </main>
-        <Footer />
+        <SiteFooter />
       </div>
     </>
   );
@@ -61,23 +58,5 @@ MainLayout.propTypes = {
     noindex: PropTypes.bool,
     og: PropTypes.object,
     ogImage: PropTypes.string,
-    canonical: PropTypes.string,
-    alternates: PropTypes.arrayOf(
-      PropTypes.shape({
-        hrefLang: PropTypes.string,
-        href: PropTypes.string,
-        url: PropTypes.string,
-        path: PropTypes.string,
-        locale: PropTypes.string,
-      })
-    ),
-    twitter: PropTypes.shape({
-      card: PropTypes.string,
-      site: PropTypes.string,
-      creator: PropTypes.string,
-      title: PropTypes.string,
-      description: PropTypes.string,
-      image: PropTypes.string,
-    }),
   }),
 };

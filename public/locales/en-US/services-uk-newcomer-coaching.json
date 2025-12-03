@@ -1,0 +1,91 @@
+{
+  "seo": {
+    "title": "UK newcomer coaching for international professionals | SustainSage",
+    "description": "ICF-aligned coaching to decode UK workplace norms, communicate across cultures, and build support systems."
+  },
+  "hero": {
+    "title": "Translate who you are into the UK workplace with confidence.",
+    "subtitle": "We unpack cultural codes, communication, and systems so you can land well without losing yourself.",
+    "primaryCta": "Book a 20-minute chat",
+    "primaryHref": "/contact?service=uk-newcomer-coaching",
+    "secondaryCta": "Back to services",
+    "secondaryHref": "/services"
+  },
+  "sections": {
+    "who": {
+      "title": "Who this is for",
+      "items": [
+        "You’re new to the UK job market and unsure how hiring really works.",
+        "You’ve recently moved and are balancing visas, housing, and a job search.",
+        "You’re taking on a UK-based role in a global company and want to adapt communication.",
+        "You need space to process bias or microaggressions while staying strategic."
+      ]
+    },
+    "what": {
+      "title": "What we work on",
+      "items": [
+        "Decoding job descriptions, applications, and interviews for UK expectations.",
+        "Strengthening narratives that highlight international experience and cultural fluency.",
+        "Planning stakeholder conversations that respect cultural and legal boundaries.",
+        "Building networks and support without exhausting yourself."
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "description": "Support tailored to help you integrate without over-assimilating.",
+      "items": [
+        "Six 60-minute Zoom sessions across 12–16 weeks, timed with your settlement milestones.",
+        "Session focus is co-designed; we respond to live interviews, workplace challenges, and wellbeing needs.",
+        "Between-session check-ins via secure notes or Loom when urgent decisions appear.",
+        "We provide cultural insight and coaching—not legal, immigration, or promised hiring outcomes."
+      ]
+    },
+    "examples": {
+      "title": "Example scenarios",
+      "items": [
+        {
+          "title": "Landing the first UK role",
+          "description": "We translated a Taiwanese marketer’s achievements for UK recruiters, rehearsed interviews, and planned networking that respected visa limits."
+        },
+        {
+          "title": "Negotiating sponsorship",
+          "description": "A product manager prepared a confident case for Skilled Worker sponsorship, aligned expectations with HR, and set boundaries around timelines."
+        },
+        {
+          "title": "Finding voice in a hybrid team",
+          "description": "We designed meeting scripts, feedback loops, and allies so an APAC lead could challenge bias in a London headquarters."
+        }
+      ]
+    },
+    "expect": {
+      "title": "What you can expect",
+      "items": [
+        "Language that bridges cultures without erasing your story.",
+        "A clear integration or job-search plan with checkpoints you own.",
+        "Confidence addressing bias while keeping yourself safe.",
+        "A map of people, communities, and resources to sustain you."
+      ]
+    },
+    "ethics": {
+      "title": "Ethics & fit",
+      "items": [
+        "Confidential, ICF-aligned coaching that respects immigration sensitivities.",
+        "We do not provide legal or immigration advice; we signpost trusted specialists.",
+        "Pace is co-designed to protect your wellbeing and cultural identity.",
+        "We stand with you against bias without pushing assimilation or toxic positivity."
+      ]
+    },
+    "cta": {
+      "title": "Need a grounded partner as you settle in the UK?",
+      "body": "Book a 20-minute chat so we can understand your context and decide the next step together.",
+      "primary": {
+        "label": "Book a 20-minute chat",
+        "href": "/contact?service=uk-newcomer-coaching"
+      },
+      "secondary": {
+        "label": "See how coaching works",
+        "href": "/services/how-coaching-works"
+      }
+    }
+  }
+}

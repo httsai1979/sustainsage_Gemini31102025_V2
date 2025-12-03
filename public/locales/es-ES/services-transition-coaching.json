@@ -1,0 +1,91 @@
+{
+  "seo": {
+    "title": "Transition coaching for global moves | SustainSage",
+    "description": "ICF-aligned coaching to steady international relocations, role changes, and life transitions while you stay grounded."
+  },
+  "hero": {
+    "title": "Steady your relocation or role shift without losing yourself.",
+    "subtitle": "We co-design structure around visas, careers, and community so you can move with clarity.",
+    "primaryCta": "Book a 20-minute chat",
+    "primaryHref": "/contact?service=transition-coaching",
+    "secondaryCta": "Back to services",
+    "secondaryHref": "/services"
+  },
+  "sections": {
+    "who": {
+      "title": "Who this is for",
+      "items": [
+        "You’re relocating to the UK while still managing responsibilities in another country.",
+        "You and a partner or family are negotiating different timelines, visas, or schooling.",
+        "You’re switching sector or function at the same time as moving.",
+        "You’re rebuilding routines after burnout or a difficult exit."
+      ]
+    },
+    "what": {
+      "title": "What we work on",
+      "items": [
+        "Clarifying practical decisions across immigration, finances, care, and timelines.",
+        "Translating your experience and leadership story for UK recruiters and stakeholders.",
+        "Designing sustainable experiments to test roles, consulting, or hybrid setups.",
+        "Building support systems so you can integrate in the UK while honouring commitments elsewhere."
+      ]
+    },
+    "how": {
+      "title": "How it works",
+      "description": "A 3–4 month partnership paced to match your transition.",
+      "items": [
+        "Six 60-minute sessions over 12–16 weeks via Zoom, scheduled around your relocation timeline.",
+        "Each session is co-designed; we review learning and recalibrate priorities together.",
+        "Between-session support via secure notes or Loom updates when decisions need timely reflection.",
+        "We offer structure, questions, and resources without guarantees of specific job or visa outcomes."
+      ]
+    },
+    "examples": {
+      "title": "Example scenarios",
+      "items": [
+        {
+          "title": "Coordinating a dual-location move",
+          "description": "We mapped decision windows for a Singapore–London relocation, aligned partner expectations, and rehearsed conversations with HR about visas and flexible working."
+        },
+        {
+          "title": "Switching sector while settling",
+          "description": "A corporate strategist moving into UK charity leadership translated achievements, planned informational interviews, and paced applications to avoid burnout."
+        },
+        {
+          "title": "Rebuilding after a difficult exit",
+          "description": "We created rest and learning cycles after redundancy, structured finances, and designed pilot consulting offers before committing to full-time roles."
+        }
+      ]
+    },
+    "expect": {
+      "title": "What you can expect",
+      "items": [
+        "Clearer priorities across personal, professional, and logistical commitments.",
+        "Language that explains your story with confidence in UK contexts.",
+        "Sustainable routines and boundaries that protect energy during change.",
+        "Increased agency to choose next steps instead of reacting to urgency."
+      ]
+    },
+    "ethics": {
+      "title": "Ethics & fit",
+      "items": [
+        "ICF-trained coaching with confidentiality agreements that respect self-funded or sponsored work.",
+        "We signpost therapy, legal, or immigration specialists when they can support you better.",
+        "You set the pace and focus; we co-design without pressure or hustle scripts.",
+        "No commissions or hidden referrals—recommendations are transparent and client-led."
+      ]
+    },
+    "cta": {
+      "title": "Ready to explore your next move with steadiness?",
+      "body": "Book a 20-minute chat so we can hear your context and confirm the fit.",
+      "primary": {
+        "label": "Book a 20-minute chat",
+        "href": "/contact?service=transition-coaching"
+      },
+      "secondary": {
+        "label": "See how coaching works",
+        "href": "/services/how-coaching-works"
+      }
+    }
+  }
+}

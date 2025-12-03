@@ -1,0 +1,67 @@
+{
+  "seo": {
+    "title": "Return-to-work & clarity coaching",
+    "description": "ICF-aligned coaching for carers, parents, and professionals rebuilding momentum after a career pause."
+  },
+  "hero": {
+    "title": "Re-enter work with clarity that honours care and capacity.",
+    "summary": "We create room to name competing commitments, renegotiate support, and experiment with rhythms that fit your life now."
+  },
+  "isForYou": {
+    "title": "Is this for you?",
+    "items": [
+      "You are returning to paid work after caregiving, illness, or relocation.",
+      "You want to align family agreements, personal energy, and professional goals.",
+      "You feel pressure to “catch up” yet want to move with care for yourself and others.",
+      "You are navigating part-time, flexible, or portfolio work and crave clarity."
+    ]
+  },
+  "explore": {
+    "title": "What we explore together",
+    "items": [
+      "What does “enough” look like for you and the people who rely on you?",
+      "Which boundaries need to be set, strengthened, or softened?",
+      "What stories about productivity or loyalty are ready to be updated?",
+      "How might you ask for support without feeling you must over-explain?",
+      "What experiments could help you test new routines or responsibilities safely?",
+      "Where do you want to feel more confident saying yes, no, or not yet?"
+    ]
+  },
+  "format": {
+    "title": "Format & flow",
+    "bullets": [
+      "Recommend four to six 60-minute sessions across two to three months, with optional pauses during school holidays or care peaks.",
+      "We track energy, agreements, and learning using simple check-ins you approve.",
+      "You stay in charge of homework—small experiments only happen with your consent.",
+      "We conclude with a review of supports, celebration of learning, and options for future touchpoints."
+    ]
+  },
+  "snapshot": {
+    "title": "Case snapshot",
+    "labels": {
+      "context": "Context",
+      "approach": "How we supported",
+      "outcome": "What changed"
+    },
+    "items": [
+      {
+        "context": "A parent rejoining the workforce after parental leave felt torn between career stretch projects and caring for an elder.",
+        "approach": "We mapped caregiving capacity, practised conversations with their manager about workload, and co-designed weekly reflection prompts shared with their partner.",
+        "outcome": "They felt clearer about boundaries, secured flexible arrangements, and kept agency over professional growth."
+      }
+    ]
+  },
+  "not": {
+    "title": "What this is not",
+    "items": [
+      "Not career counselling or CV rewriting—we focus on decision-making and agency.",
+      "Not a guarantee of promotion or employment offers.",
+      "Not therapy or childcare advice—we collaborate with you to notice patterns and choose next steps."
+    ]
+  },
+  "cta": {
+    "body": "If this sounds close to your reality, you’re welcome to book a 20-minute chat.",
+    "linkLabel": "Book a 20-minute chat",
+    "linkHref": "/contact?package=return-to-work-clarity"
+  }
+}

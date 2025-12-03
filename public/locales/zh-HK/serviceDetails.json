@@ -1,0 +1,466 @@
+{
+  "sectionTitles": {
+    "who": "適合的對象",
+    "topics": "我們會一起聚焦的主題",
+    "how": "進行方式",
+    "approach": "教練的方式",
+    "boundaries": "合作界線",
+    "not": "不等於什麼",
+    "notIncluded": "不包含",
+    "reflection": "先想一想"
+  },
+  "tabs": {
+    "overview": "概覽",
+    "pricing": "定價",
+    "readiness": "準備度",
+    "process": "流程",
+    "agreement": "合作協議",
+    "faq": "常見問題",
+    "cases": "案例"
+  },
+  "overviewPage": {
+    "sidebarEyebrow": "此服務會包含",
+    "sidebarFallback": "為你的轉換或實驗提供沉穩、有結構的教練容器。",
+    "contactCard": {
+      "title": "想找沉穩的討論夥伴？",
+      "body": "可以預約 20 分鐘聊聊，或寫幾行字說明目前的狀況。",
+      "note": "通常會在兩個工作天內回覆。"
+    }
+  },
+  "subpage": {
+    "exploreLabel": "瀏覽",
+    "fallbackNotice": "翻譯更新中，暫以英文呈現。",
+    "defaultCta": {
+      "title": "下一步",
+      "description": "可以先比較費用，或預約 20 分鐘聊聊看看這個路徑是否貼近你的情境。",
+      "primary": "查看費用",
+      "secondary": "預約 20 分鐘聊聊",
+      "note": ""
+    }
+  },
+  "casesPage": {
+    "backLink": "回到案例總覽",
+    "fallbackEnglish": "案例尚在翻譯，暫以英文顯示。",
+    "detailEyebrow": "案例細節",
+    "sidebar": {
+      "title": "想看其他例子？",
+      "body": "可以瀏覽更多案例，或寫信給我們，分享最貼近的匿名故事。",
+      "back": "回到案例",
+      "contact": "聯絡 SustainSage"
+    }
+  },
+  "defaultCta": "預約 20 分鐘初談",
+  "missing": {
+    "title": "暫時無法顯示這項服務",
+    "description": "目前無法載入服務介紹。請回到服務總覽，或直接寫信給我們一起找合適的支持。",
+    "contact": "直接聯絡我們"
+  },
+  "transition": {
+    "slug": "transition",
+    "title": "Transition package",
+    "tagline": "Six sessions to land gently in a new chapter.",
+    "summary": "Relocation, role change or returning after a pause can stretch logistics, identity and relationships. This container gives you structured time to choose what to carry forward and what to leave behind.",
+    "summaryPoints": [
+      "You set the agenda. We hold space for the feelings and admin that arrive in the same week.",
+      "We design grounded experiments so you can test decisions without burning bridges.",
+      "Sessions are online, confidential and culturally aware (English or Mandarin)."
+    ],
+    "suitable": {
+      "title": "Who this is for",
+      "bullets": [
+        "Mid-career professionals relocating to or within the UK while managing family expectations.",
+        "People stepping into a new organisation or sector with uneven support and invisible labour.",
+        "Returners navigating skill rustiness, care responsibilities and visa processes at once."
+      ]
+    },
+    "process": {
+      "title": "How the transition package flows",
+      "steps": [
+        "Intro call: we map your change landscape, boundaries and decision points.",
+        "Session 1–2: stabilise your footing—naming supports, stressors and capacity.",
+        "Session 3–4: design experiments and agreements that honour your constraints.",
+        "Session 5–6: review learning, close loops and script next steps with consent."
+      ]
+    },
+    "icf": {
+      "title": "Boundaries & ethics",
+      "intro": "This work follows ICF core competencies: partnership, confidentiality, consent and respect for your agency.",
+      "bullets": [
+        "Coaching only—we do not replace legal, immigration, financial or therapeutic professionals.",
+        "We discuss power, equity and safety without promising outcomes we cannot control.",
+        "If we notice you may benefit from other support, we will pause and signpost options."
+      ]
+    },
+    "casesTitle": "Composite coaching glimpses",
+    "cases": [
+      {
+        "title": "Visa-approved but untethered",
+        "body": "A project manager arrived in the UK ahead of their partner. We mapped the emotional load of distance, crafted scripts for negotiating flexible hours, and built a ‘weekend restoration’ ritual. By session six they had a relocation rhythm that protected their health."
+      },
+      {
+        "title": "Promotion plus parenting",
+        "body": "A department lead returning from leave feared being seen as unreliable. We designed consent-based updates with their team, identified where to decline extra duties, and rehearsed asking for mentoring. They left with a plan that balanced visibility and sustainable pace."
+      }
+    ],
+    "cta": {
+      "body": "Curious whether Transition fits? Book a 20-minute chat and note ‘Transition’. We will confirm scope before you commit.",
+      "primary": "Book a 20-minute chat",
+      "secondary": "Compare packages"
+    }
+  },
+  "confidence": {
+    "slug": "confidence",
+    "title": "Confidence & voice 自信與發聲",
+    "tagline": "五次會談，讓你在不犧牲細膩與關懷的情況下穩穩開口。",
+    "summary": "當文化、語言或過往經驗讓露出聲音感到冒險時，這個流程陪你練習有底氣又有界線的表達。",
+    "who": [
+      "想倡議、但不想被迫模仿主流領導風格的新手或中階管理者。",
+      "跨國、跨領域或提升職級後，面對冒牌者感受的專業人士。",
+      "在合作空間中，希望用溫柔但清楚的方式設下界線的人。"
+    ],
+    "topics": [
+      "看見讓你縮小聲音的故事，選擇哪些要留、哪些可以放下。",
+      "設計支持自己的語言、儀式與資源，讓出聲時更有根。",
+      "練習基於同意的對話：談期待、回饋與權力。",
+      "把真實情境轉成可測試的實驗，在會議或合作中驗證。"
+    ],
+    "how": [
+      "五次 55–60 分鐘會談，約兩到三個月完成，線上進行。",
+      "會前會請你蒐集想討論或排演的真實情境。",
+      "可選擇錄製個人反思音訊，供你在會談間回聽。",
+      "若有需要，可英語與華語雙語交替，協助表達。"
+    ],
+    "approach": [
+      "放慢自動反應，讓你有空間選擇對齊價值的行動。",
+      "看見安靜的勇氣，同樣珍視隱性與顯性的領導。",
+      "運用體感、敘事與系統視角的提問，所有練習都先取得你的同意。"
+    ],
+    "boundaries": [
+      "不提供主管評估或能力指標。",
+      "不介入或取代你所在組織的政策與流程。",
+      "需要創傷或醫療照護時，會轉介給合格專業。",
+      "你決定要進行哪些實驗，以及如何檢視結果。"
+    ],
+    "not": [
+      "不是「大聲說話」或打造人格魅力的速成班。",
+      "不是公關、危機應對或媒體訓練。",
+      "不是替他人議程包裝的績效管理。"
+    ],
+    "notIncluded": [
+      "性格測驗或心理衡鑑工具。",
+      "可直接套用、不需調整的制式話術。"
+    ],
+    "reflection": [
+      "我在哪些時刻其實已經展現勇氣，即使看起來很安靜？",
+      "我什麼時候會縮回去？當時我正在保護什麼？",
+      "要練習新的表達方式，我需要身邊有什麼支持？"
+    ],
+    "cta": "在聯絡表單註明「Confidence & voice」，我們會先了解你的情境、界線與目標，再確認是否展開。",
+    "ctaButton": "開始 Confidence & voice 諮詢"
+  },
+  "reset": {
+    "slug": "reset",
+    "title": "Reset package",
+    "tagline": "Four sessions to rebuild steady habits after a season of depletion.",
+    "summary": "This is a short, structured reset when you feel foggy, overextended or unsure how to restart. We focus on capacity, consent and small experiments so you can move without overcommitting.",
+    "summaryPoints": [
+      "We work in plain language—naming the pressures and supports you already hold.",
+      "You leave each session with one gentle experiment, not an overwhelming plan.",
+      "Between sessions you can request a short written reflection to keep momentum."
+    ],
+    "suitable": {
+      "title": "Who this is for",
+      "bullets": [
+        "Professionals returning from burnout leave or an intense life season.",
+        "Parents or carers recalibrating energy after a child-care or elder-care sprint.",
+        "Community organisers who need a pause to renegotiate commitments and boundaries."
+      ]
+    },
+    "process": {
+      "title": "How the reset unfolds",
+      "steps": [
+        "Intro call: surface what feels heavy, what is non-negotiable and the support you have.",
+        "Session 1: audit energy leaks and identify a minimum viable routine.",
+        "Session 2–3: test new agreements, boundaries or rituals and review their impact.",
+        "Session 4: document what to keep, what to release and how you will notice drift."
+      ]
+    },
+    "icf": {
+      "title": "Boundaries & ethics",
+      "intro": "We uphold ICF ethics—confidentiality, informed consent and respect for your pace.",
+      "bullets": [
+        "We are not therapists or medical professionals; we help you notice patterns and choose actions.",
+        "We will flag red flags (e.g. acute distress, safety concerns) and suggest other care when needed.",
+        "You stay in charge of commitments—we coach, we do not enforce or track productivity."
+      ]
+    },
+    "casesTitle": "Composite coaching glimpses",
+    "cases": [
+      {
+        "title": "Reclaiming lunch breaks",
+        "body": "An HR partner who had worked through layoffs felt guilty taking breaks. We mapped their nervous-system cues, designed a two-hour no-meeting block, and rehearsed boundary scripts. Within a month they were eating and resting without apology."
+      }
+    ],
+    "cta": {
+      "body": "Ready for a gentler reset? Book a 20-minute chat and mention ‘Reset’. We will confirm scope and timing together.",
+      "primary": "Book a 20-minute chat",
+      "secondary": "Compare packages"
+    }
+  },
+  "deepening": {
+    "slug": "deepening",
+    "title": "Deepening package",
+    "tagline": "Eight sessions to deepen leadership presence and relational impact.",
+    "summary": "When you have initial stability but crave more nuance, Deepening offers a longer arc. We explore power, relationship patterns and legacy so you can lead with alignment across cultures and systems.",
+    "summaryPoints": [
+      "We map the systems you influence—teams, communities, stakeholders—and the stories you hold.",
+      "You practise conversations about power, feedback and conflict with real scenarios.",
+      "We build in pauses for integration so insights translate into daily practice."
+    ],
+    "suitable": {
+      "title": "Who this is for",
+      "bullets": [
+        "Leaders stewarding multicultural teams who want to align values and decisions.",
+        "Practitioners holding space for others (coaches, facilitators, community leads).",
+        "Founders balancing sustainability, justice and growth without burning out themselves."
+      ]
+    },
+    "process": {
+      "title": "How the deepening arc works",
+      "steps": [
+        "Intro call: explore your long-term aims, influences and non-negotiables.",
+        "Sessions 1–3: map leadership stories, identities and patterns that shape your presence.",
+        "Sessions 4–6: practise conversations, decisions and boundary-setting with real-life stakes.",
+        "Sessions 7–8: consolidate learning, agree ongoing supports and note future check-ins."
+      ]
+    },
+    "icf": {
+      "title": "Boundaries & ethics",
+      "intro": "We stay within ICF coaching—curious questions, reflective feedback and collaborative design.",
+      "bullets": [
+        "We do not provide consulting deliverables or intervene with your stakeholders.",
+        "We maintain confidentiality and only share themes externally with your written consent.",
+        "We honour cultural context and invite you to challenge us if something feels off."
+      ]
+    },
+    "casesTitle": "Composite coaching glimpses",
+    "cases": [
+      {
+        "title": "Making space for feedback",
+        "body": "A charity director felt defensive when staff raised equity concerns. Together we mapped their triggers, practised a three-step response, and set up a feedback council. They reported less dread and clearer next steps after tough conversations."
+      },
+      {
+        "title": "Leading across cultures",
+        "body": "A tech lead managing teams in Taipei and London struggled with conflicting expectations. We explored decision rights, co-created communication agreements and rehearsed bilingual framing. They left with meeting structures that respected both teams’ norms."
+      }
+    ],
+    "cta": {
+      "body": "Deepening is a longer commitment. Book a 20-minute chat and mention ‘Deepening’ so we can confirm fit and scheduling.",
+      "primary": "Book a 20-minute chat",
+      "secondary": "Compare packages"
+    }
+  },
+  "experiments": {
+    "slug": "experiments",
+    "title": "Experiments & stewardship 實驗與承擔",
+    "tagline": "四次會談，協助你設計有倫理的實驗，在推動改變時兼顧不傷人。",
+    "summary": "適合照顧團隊、社群或專案的人。一起設計尊重容量、同意與資料的實驗，讓變革得以被好好承接。",
+    "who": [
+      "想測試新服務或方案、需要倫理風險思考夥伴的領導者。",
+      "推動文化、平等或永續變革的團隊，希望不要過度承諾。",
+      "在創新與照顧之間拉扯的實務工作者，包含同工與志工。"
+    ],
+    "topics": [
+      "釐清守護問題：誰會受影響？誰決定？誰負責？",
+      "盤點假設，設計能產生學習、又不造成傷害的實驗。",
+      "設定決策門檻、同意流程與溝通方式，維持利害關係人的主體性。",
+      "用脈絡解讀資料，決定要迭代、停止或擴大。"
+    ],
+    "how": [
+      "四次 70 分鐘會談，約 8–10 週完成，線上並搭配協作工具。",
+      "共享工作文件，讓行動、決策與風險都保持可見。",
+      "會談之間依你的需求安排責任追蹤。",
+      "事先同意的情況下，可邀請至多兩位利害關係人共參與部分會談。"
+    ],
+    "approach": [
+      "結合教練與反思式引導，但仍保留你的主導權。",
+      "把倫理、可近性與影響力放在和創新同等的位置。",
+      "調整實驗步調，讓學習有時間整合，不會壓垮系統。"
+    ],
+    "boundaries": [
+      "不提供法律、保護或財務稽核。",
+      "不代為執行實驗或管理你的團隊。",
+      "若出現利益衝突會即時告知並討論對策。",
+      "最終仍由你向受影響的人與系統負責。"
+    ],
+    "not": [
+      "不是衝刺型加速器或募資計畫。",
+      "不是專業顧問或法規合規工作的替代。",
+      "不是保證每個點子都能成功或擴大。"
+    ],
+    "notIncluded": [
+      "專案管理或實際執行支援。",
+      "協助行銷、銷售或募資。"
+    ],
+    "reflection": [
+      "我正在守護的改變是什麼？誰信任我能好好處理？",
+      "在前進前，我在哪些面向需要更多同意、清楚或資料？",
+      "什麼狀況會提醒我要暫停、停止或好好慶祝？"
+    ],
+    "cta": "若你準備以整體倫理推動實驗，請預約初談並註明「Experiments」，我們會一起確認範圍與時間。",
+    "ctaButton": "預約 Experiments 初談"
+  },
+  "backToOverview": "返回所有服務",
+  "checkIn": {
+    "slug": "check-in",
+    "title": "單次 Check-in 會談",
+    "tagline": "75 分鐘，讓你在下一步前先穩一下。",
+    "subtitle": "75 分鐘，讓你在下一步前先穩一下。",
+    "summary": "當你需要一個安穩、保密的空間，在做決定前整理思緒，我們提供這單次陪伴。",
+    "who": [
+      "在做重要決定或勇敢對話前，需要一次反思空間的人。",
+      "想先感受我們的教練風格，再決定是否投入長期方案的你。",
+      "曾與我們合作，想在方案之間重新校準步伐的舊客戶。"
+    ],
+    "topics": [
+      "看見此刻發生什麼—情緒、限制與可選擇的方向。",
+      "釐清你期待即將到來的對話、決定或變化帶來什麼。",
+      "設計一個尊重容量的小實驗或暫停步驟。"
+    ],
+    "how": [
+      "75 分鐘 Zoom 線上教練會談。",
+      "會前提供簡短提示，幫助你聚焦。",
+      "於兩個工作天內寄出重點摘要與延伸提問（選填）。",
+      "若雙方同意有需要，可在 30 天內安排加開一次跟進。"
+    ],
+    "approach": [
+      "遵循 ICF 倫理，讓你持續掌握主導權。",
+      "步調依你而走，運用提問、反思與身體覺察。",
+      "聚焦單一核心主題，讓你離開時更清晰。"
+    ],
+    "boundaries": [
+      "不是治療、危機處置或臨床建議。",
+      "不提供法律、財務或移民方面的意見。",
+      "決策與後續行動仍由你負責。",
+      "保密遵循 ICF 倫理與相關法規。"
+    ],
+    "not": [
+      "不是緊急預約或隨叫隨到的服務。",
+      "如果情況需要長期陪伴，這不會取代完整方案。",
+      "不是替他人處理績效或管理問題的場域。"
+    ],
+    "notIncluded": [
+      "不提供給雇主或機構的書面報告。",
+      "不會代替你聯絡第三方。"
+    ],
+    "reflection": [
+      "在會談前，什麼最值得被看見或承認？",
+      "會談結束時，什麼樣的狀態會讓我覺得更有資源？",
+      "這次對話後，我還需要哪些持續的支持？"
+    ],
+    "cta": "在表單註明「單次 Check-in」，並簡述你的情境。我們會先確認適配，再細心安排時間。",
+    "ctaButton": "預約單次 Check-in"
+  },
+  "newToUk": {
+    "slug": "new-to-uk",
+    "title": "New to the UK 調適流程",
+    "tagline": "三次會談，陪你溫柔落地英國的生活、工作與支持系統。",
+    "subtitle": "三次會談，陪你溫柔落地英國的生活、工作與支持系統。",
+    "summary": "在搬遷的頭幾個月，我們提供穩定容器，陪你整合、做決定、適時求助。",
+    "who": [
+      "於過去一年內搬到英國的專業人士。",
+      "同時要適應新制度與工作／學習的伴侶、照顧者或學生。",
+      "一邊處理簽證、住居與社群建立，一邊照顧身心的你。"
+    ],
+    "topics": [
+      "說出英國制度與文化讓你感到陌生或壓力的地方。",
+      "設計兼顧健康、人際與財務的日常節奏。",
+      "盤點支援網絡，練習以同意為前提提出需求。",
+      "判斷哪些事情需要現在行動、哪些可以稍後再處理。"
+    ],
+    "how": [
+      "三次 60 分鐘會談，約 6–8 週完成，線上進行。",
+      "必要時提供非同步追蹤，陪你處理文件或重要對話。",
+      "依你的地區、語言與需求，推薦合適資源。",
+      "若有需要，可邀請伴侶或信任的夥伴加入部分會談。"
+    ],
+    "approach": [
+      "結合實務規劃、情緒調節與敘事整理。",
+      "誠實面對移民現實、種族議題與官僚流程，但不把責任推回你身上。",
+      "保持你對選擇的主導權，我們不代替你做決定。"
+    ],
+    "boundaries": [
+      "不提供移民、住房或法律服務。",
+      "不保證工作機會、簽證或特定結果。",
+      "若需要治療或臨床照護，會轉介給合格專業。",
+      "你決定分享哪些資訊與採取哪些行動。"
+    ],
+    "not": [
+      "不是代辦或禮賓服務。",
+      "不是財務或稅務諮詢。",
+      "不是緊急支援專線。"
+    ],
+    "notIncluded": [
+      "不代填簽證或法律文件。",
+      "不會代你聯絡雇主、房東或政府單位。"
+    ],
+    "reflection": [
+      "落地過程中，什麼部分最讓我覺得脆弱或困惑？",
+      "三個月後，什麼樣的狀態會讓我覺得更像家？",
+      "誰可以成為我整合生活時的支持網？"
+    ],
+    "cta": "在訊息中註明「New to the UK」，我們會確認範圍、時間表與是否合適。",
+    "ctaButton": "開始 New to the UK 流程"
+  },
+  "returning": {
+    "slug": "returning",
+    "title": "Returning client 回訪調整",
+    "tagline": "三次會談，讓暫停後的教練對話重新接續。",
+    "subtitle": "三次會談，讓暫停後的教練對話重新接續。",
+    "summary": "專為曾合作的客戶設計，既延續過往學習，也為新實驗建立新容器。",
+    "who": [
+      "曾與 SustainSage 合作，現在進入新階段的舊客戶。",
+      "完成方案後又遇見新的轉換，想再次有陪伴的人。",
+      "需要有人陪你持續跟進先前決定與實驗的人。"
+    ],
+    "topics": [
+      "回顧暫停期間有哪些變化。",
+      "辨識新的界線、容量或限制。",
+      "設計符合現況的新實驗或協議。",
+      "肯定成果，決定這輪合作的收尾或延續。"
+    ],
+    "how": [
+      "三次 55 分鐘會談，約 6–8 週完成，線上進行。",
+      "重新閱讀先前筆記，連結過去與現在的學習。",
+      "如雙方同意，可在會談間以輕量訊息追蹤。",
+      "可再次使用雙語（英語／華語）教練。"
+    ],
+    "approach": [
+      "在既有信任上重新訂立界線與目標。",
+      "好奇這次需要有什麼不同。",
+      "仍以教練方式陪伴，決定權在你。"
+    ],
+    "boundaries": [
+      "即使曾合作，也不跳過同意與協議流程。",
+      "不提供治療、顧問或危機支援。",
+      "若覺得其他專業更合適，會坦白告知。",
+      "你決定節奏、範圍與何時結束。"
+    ],
+    "not": [
+      "不是無限期的顧問或隨叫隨到服務。",
+      "不是取代督導、治療或人資流程。",
+      "不保證過去的方法或目標仍然適用。"
+    ],
+    "notIncluded": [
+      "不提供約定外的緊急回覆。",
+      "未經額外協議，不代為撰寫給組織的成果文件。"
+    ],
+    "reflection": [
+      "自上次合作後，什麼改變了？",
+      "這次我需要什麼支持，是之前沒有提出的？",
+      "怎麼判斷這次調整已帶來我想要的幫助？"
+    ],
+    "cta": "留言時註明「Returning client」，我們會先檢視過往紀錄並確認檔期。",
+    "ctaButton": "預約 Returning client 調整"
+  }
+}

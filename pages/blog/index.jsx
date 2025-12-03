@@ -1,13 +1,14 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import MainLayout from '@/components/layout/MainLayout';
+import ContentHero from '@/components/content/ContentHero';
 import RevealSection from '@/components/common/RevealSection';
-import Tag from '@/components/ui/Tag';
+import MainLayout from '@/components/layout/MainLayout';
+import Button from '@/components/ui/Button';
+import CardShell from '@/components/ui/CardShell';
+import PageSection from '@/components/ui/PageSection';
+import { getBlogIndexContent } from '@/lib/blogContent';
 import { getAllPosts } from '@/lib/content';
-import { dedupeBy } from '@/lib/dedupe';
 import { toSerializable } from '@/lib/toSerializable';
 
 const formatDate = (dateString, locale = 'en-GB') => {
@@ -17,106 +18,133 @@ const formatDate = (dateString, locale = 'en-GB') => {
   return parsed.toLocaleDateString(locale, { day: 'numeric', month: 'short', year: 'numeric' });
 };
 
-function getCuratedPosts(t) {
-  const curatedKeys = ['post1', 'post2', 'post3'];
-  return curatedKeys
-    .map((key) => t(key, { returnObjects: true }))
-    .filter((post) => post && post.slug && post.title);
-}
+const toArray = (value) => {
+  if (Array.isArray(value)) return value;
+  if (typeof value === 'string' && value.trim().length) return [value];
+  return [];
+};
 
-export default function BlogPage({ posts = [], locale = 'en-GB' }) {
-  const { t } = useTranslation('blog');
-  const hero = t('hero', { returnObjects: true }) ?? {};
-  const curated = getCuratedPosts(t);
-  const blogPosts = dedupeBy(posts, (post) => post.slug ?? post.title);
-  const resolvedPosts = blogPosts.length ? blogPosts : curated;
-  const listTitle = t('listTitle');
-  const intro = t('intro');
-  const notice = t('notice');
-  const labels = t('labels', { returnObjects: true }) ?? {};
-  const articleCta = t('articleCta', { returnObjects: true }) ?? {};
-  const heroEyebrow = hero?.eyebrow ?? 'Blog';
+const buildManifestCard = (entry, post, categoryMap, categoryIconMap, locale) => {
+  const summary = toArray(entry.summary).length ? toArray(entry.summary) : toArray(post?.description);
+  const readingTime = entry.readingTimeMinutes
+    ? `${entry.readingTimeMinutes} min read`
+    : post?.readingTime ?? post?.reading_time ?? null;
+  const dateSource = entry.publishedAt ?? post?.date;
+  const categoryLabel = entry.categoryLabel ?? categoryMap.get(entry.categoryId) ?? post?.category ?? null;
+  const iconName = entry.iconName ?? categoryIconMap.get(entry.categoryId) ?? 'book';
+  const image = entry.image ?? post?.img ?? post?.hero ?? null;
+  const alt = post?.alt ?? post?.title ?? entry.title ?? entry.slug;
+
+  return {
+    slug: entry.slug,
+    title: entry.title ?? post?.title ?? entry.slug,
+    summary,
+    category: categoryLabel,
+    iconName,
+    meta: formatDate(dateSource, locale),
+    readingTime,
+    image,
+    alt,
+  };
+};
+
+const buildFallbackCard = (post, locale) => ({
+  slug: post.slug,
+  title: post.title,
+  summary: toArray(post.description),
+  category: post.category ?? null,
+  iconName: post.iconName ?? 'book',
+  meta: formatDate(post.date, locale),
+  readingTime: post.readingTime ?? post.reading_time ?? null,
+  image: post.img ?? post.hero ?? null,
+  alt: post.alt ?? post.title,
+});
+
+export default function BlogPage({ content, posts = [], locale = 'en-GB', isFallback = false }) {
+  const hero = content?.hero ?? {};
+  const categories = Array.isArray(content?.categories) ? content.categories : [];
+  const categoryMap = new Map(categories.map((cat) => [cat.id, cat.label]));
+  const categoryIconMap = new Map(categories.map((cat) => [cat.id, cat.iconName]));
+  const manifestPosts = Array.isArray(content?.posts) ? content.posts : [];
+  const postsBySlug = new Map(posts.map((post) => [post.slug, post]));
+  const manifestCards = manifestPosts.map((entry) =>
+    buildManifestCard(entry, postsBySlug.get(entry.slug), categoryMap, categoryIconMap, locale),
+  );
+  const manifestSlugs = new Set(manifestPosts.map((entry) => entry.slug));
+  const fallbackCards = posts
+    .filter((post) => !manifestSlugs.has(post.slug))
+    .map((post) => buildFallbackCard(post, locale));
+  const displayPosts = [...manifestCards, ...fallbackCards];
+  const readArticleLabel = content?.labels?.readArticle ?? 'Read article';
+  const readArticleAria = content?.labels?.readArticleAria ?? 'Read {{title}}';
+  const listTitle = content?.listTitle ?? 'Latest reflections';
+  const cta = content?.cta ?? null;
 
   return (
-    <main className="ss-container">
-      <section className="ss-section">
-        <RevealSection className="max-w-3xl space-y-3 text-center md:text-left">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-sustain-green/80">{heroEyebrow}</p>
-          <h1 className="text-4xl font-semibold text-sustain-text">{hero?.title ?? 'Notes from our coaching practice'}</h1>
-          {hero?.subtitle ? <p className="text-base text-slate-700">{hero.subtitle}</p> : null}
-          {intro ? <p className="text-base text-slate-600">{intro}</p> : null}
-        </RevealSection>
-        {notice ? (
-          <p className="mt-6 text-center text-sm text-slate-500 md:text-left">{notice}</p>
-        ) : null}
-      </section>
-      <section className="ss-section">
-        {listTitle ? (
-          <RevealSection className="mb-6 text-center md:text-left">
-            <h2 className="text-2xl font-semibold text-sustain-text">{listTitle}</h2>
-          </RevealSection>
-        ) : null}
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {resolvedPosts.map((post, index) => {
-            const href = `/blog/${post.slug}`;
-            const dateLabel = formatDate(post.date, locale);
-            const author = post.author ?? 'SustainSage';
-            return (
-              <RevealSection key={post.slug} delay={(index % 3) * 0.1}>
-                <Link href={href} className="block h-full" aria-label={labels?.readArticleAria?.replace('{{title}}', post.title) ?? `Read ${post.title}`}>
-                  <article className="ss-card h-full overflow-hidden">
-                    <div className="relative h-48 w-full overflow-hidden rounded-2xl">
-                      <Image
-                        src={post.img ?? post.hero ?? '/images/placeholder-hero.jpg'}
-                        alt={post.alt ?? post.title}
-                        fill
-                        sizes="(min-width: 1280px) 360px, (min-width: 768px) 45vw, 90vw"
-                        className="object-cover"
-                      />
+    <main>
+      <ContentHero hero={hero} showFallbackNotice={isFallback} fallbackNotice={content?.fallbackNotice} />
+      <PageSection id="blog-posts" title={listTitle} className="pt-4">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {displayPosts.map((post, index) => (
+            <RevealSection key={post.slug} delay={(index % 3) * 0.1}>
+              <Link
+                href={`/blog/${post.slug}`}
+                className="block h-full focus-visible:outline-none"
+                aria-label={readArticleAria.replace('{{title}}', post.title ?? post.slug)}
+              >
+                <CardShell
+                  as="article"
+                  className="h-full"
+                  iconName={post.iconName}
+                  eyebrow={post.category}
+                  title={post.title}
+                  meta={post.meta}
+                  imageSrc={post.image}
+                  imageAlt={post.alt}
+                >
+                  {post.summary?.length ? (
+                    <div className="space-y-2 text-base leading-relaxed text-ink/70">
+                      {post.summary.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
                     </div>
-                    <div className="mt-5 space-y-3">
-                      <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
-                        {dateLabel ? <span>{dateLabel}</span> : null}
-                        <span>• {author}</span>
-                      </div>
-                      {post.category ? <Tag>{post.category}</Tag> : null}
-                      <h2 className="text-lg font-semibold text-sustain-text">{post.title}</h2>
-                      <p className="text-sm text-slate-600">{post.description}</p>
-                      <div className="flex items-center gap-2 text-sm font-semibold text-sustain-green">
-                        <span>{labels?.readArticle ?? 'Read article'}</span>
-                        {post.readingTime || post.reading_time ? (
-                          <span className="text-xs font-normal text-slate-500">{post.readingTime ?? post.reading_time}</span>
-                        ) : null}
-                      </div>
-                    </div>
-                  </article>
-                </Link>
-              </RevealSection>
-            );
-          })}
+                  ) : null}
+                  <div className="mt-4 flex flex-wrap items-center gap-3 text-sm font-semibold text-sustain-primary">
+                    <span>{readArticleLabel}</span>
+                    {post.readingTime ? (
+                      <span className="text-xs font-normal uppercase tracking-wide text-sustain-textMuted">
+                        {post.readingTime}
+                      </span>
+                    ) : null}
+                  </div>
+                </CardShell>
+              </Link>
+            </RevealSection>
+          ))}
         </div>
-      </section>
-      {articleCta?.title ? (
-        <section className="ss-section">
-          <RevealSection>
-            <div className="rounded-card rounded-2xl border border-slate-100 bg-white p-8 text-center shadow-md">
-              <h2 className="text-3xl font-semibold text-sustain-text">{articleCta.title}</h2>
-              {articleCta?.body ? <p className="mt-4 text-base text-slate-700">{articleCta.body}</p> : null}
-              <div className="mt-6 flex flex-wrap justify-center gap-3">
-                {articleCta?.primaryHref ? (
-                  <Link href={articleCta.primaryHref} className="ss-btn-primary">
-                    {articleCta?.primary ?? 'Explore services'}
-                  </Link>
-                ) : null}
-                {articleCta?.secondaryHref ? (
-                  <Link href={articleCta.secondaryHref} className="ss-btn-secondary">
-                    {articleCta?.secondary ?? 'Book a 20-minute chat'}
-                  </Link>
-                ) : null}
-              </div>
+      </PageSection>
+      {cta?.title ? (
+        <PageSection id="blog-cta" title={cta.title} background="paper">
+          {Array.isArray(cta.body) ? (
+            <div className="space-y-4 text-base leading-relaxed text-ink/70">
+              {cta.body.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
-          </RevealSection>
-        </section>
+          ) : null}
+          <div className="mt-6 flex flex-wrap gap-3">
+            {cta?.primaryCta?.href ? (
+              <Button href={cta.primaryCta.href}>
+                {cta.primaryCta.label ?? 'Explore services'}
+              </Button>
+            ) : null}
+            {cta?.secondaryCta?.href ? (
+              <Button href={cta.secondaryCta.href} variant="secondary">
+                {cta.secondaryCta.label ?? 'Book a 20-minute chat'}
+              </Button>
+            ) : null}
+          </div>
+        </PageSection>
       ) : null}
     </main>
   );
@@ -139,12 +167,17 @@ export async function getStaticProps({ locale }) {
   const posts = getAllPosts(locale);
   const { loadNamespace } = await import('@/lib/server/loadNamespace');
   const namespaceCopy = loadNamespace(locale, 'blog');
+  const blogContent = getBlogIndexContent(locale);
+
   return toSerializable({
     props: {
       posts,
       locale,
+      content: blogContent.content,
+      isFallback: blogContent.isFallback,
+      usedLocale: blogContent.usedLocale,
       seo: namespaceCopy?.seo ?? null,
-      ...(await serverSideTranslations(locale, ['common', 'blog'])),
+      ...(await serverSideTranslations(locale, ['common', 'nav', 'blog'])),
     },
   });
 }

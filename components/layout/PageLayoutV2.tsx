@@ -1,5 +1,3 @@
-import FitChecklistSection from '@/components/common/FitChecklistSection';
-
 export default function PageLayoutV2({ header, subnav, children }) {
   return (
     <div className="min-h-screen bg-sustain-bg text-sustain-text transition-colors duration-300 dark:bg-sustain-bg-dark dark:text-sustain-text-dark">
@@ -9,10 +7,7 @@ export default function PageLayoutV2({ header, subnav, children }) {
         </div>
         {subnav}
       </header>
-      <main className="mx-auto max-w-6xl px-4 py-10 md:px-6 space-y-10">
-        {children}
-        <FitChecklistSection />
-      </main>
+      <main className="mx-auto max-w-6xl px-4 py-10 md:px-6">{children}</main>
     </div>
   );
 }

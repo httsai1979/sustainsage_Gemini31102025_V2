@@ -1,0 +1,121 @@
+{
+  "seo": {
+    "title": "About SustainSage | Coaching built on trust",
+    "description": "Meet the ICF-aligned, multicultural coaches behind SustainSage. Learn how we practise, who we support, and how we stay accountable."
+  },
+  "hero": {
+    "title": "Trust is built in how we practise",
+    "body": "We partner with people navigating relocation, career change, and mission-led work across cultures. Conversations stay bilingual, steady, and grounded.",
+    "bulletsTitle": "What guides every partnership",
+    "bullets": [
+      "Aligned with the ICF Code of Ethics from agreements to data care.",
+      "Lived experience relocating across Asia-Pacific, Europe, and the UK.",
+      "Practical, no-drama experiments that respect your agency."
+    ]
+  },
+  "practice": {
+    "title": "Professional, culturally fluent coaching",
+    "intro": "We anchor every engagement with clear agreements and context-sensitive practice.",
+    "sections": [
+      {
+        "title": "ICF-aligned practice",
+        "body": "International Coaching Federation principles shape our agreements, delivery, and reflections.",
+        "bullets": [
+          "Coaching contracts set goals, roles, confidentiality boundaries, cadence, and data retention before sessions begin.",
+          "Session notes are stored in encrypted spaces; recordings are deleted within 30 days unless you request otherwise.",
+          "We maintain monthly supervision and escalate safeguarding concerns collaboratively, only breaking confidentiality if safety is at risk.",
+          "Transparent reviews every 4–6 sessions ensure the work still serves your priorities."
+        ]
+      },
+      {
+        "title": "Bilingual & UK-aware",
+        "body": "We coach in English, Mandarin, or both—bridging UK workplaces with Mandarin-speaking contexts.",
+        "bullets": [
+          "Conversations can flow between English, Traditional Chinese, and Simplified Chinese without losing nuance.",
+          "Familiar with UK employment norms, visa milestones, and public-service ecosystems that impact career moves.",
+          "Draw on networks across Taiwan, Singapore, Hong Kong, and UK diaspora communities to widen support options."
+        ]
+      }
+    ]
+  },
+  "coaches": {
+    "title": "Our coaches",
+    "intro": "SustainSage is led by bilingual coaches who have lived and worked across Asia-Pacific and the UK.",
+    "people": [
+      {
+        "name": "Yi-Ling Lai 賴怡伶 (she/her)",
+        "title": "Co-founder · ICF PCC coach & service designer",
+        "image": "/images/founders/yi-ling-lai.svg",
+        "imageAlt": "Illustration of Yi-Ling Lai",
+        "languagesLabel": "Languages",
+        "languages": "English / 繁體中文 / 简体中文",
+        "locationLabel": "Base & cross-cultural background",
+        "location": "Based in London; previously led design and coaching programmes across Taipei and Singapore tech/NGO teams.",
+        "trainingLabel": "Coach training & credentials",
+        "training": [
+          "ICF Professional Certified Coach (PCC).",
+          "Certified Professional Co-Active Coach (CPCC), Co-Active Training Institute.",
+          "Trauma-informed Coaching Foundations, Animas Centre for Coaching."
+        ],
+        "specialtiesLabel": "Coaching focus areas",
+        "specialties": [
+          "Return-to-work clarity and redesigning workload with care responsibilities.",
+          "UK newcomer coaching for bilingual managers and community leaders.",
+          "Deepening practice for mission-led teams and social innovators."
+        ]
+      },
+      {
+        "name": "Hao-Cheng Tsai 蔡皓丞 (he/him)",
+        "title": "Co-founder · Coach & strategy facilitator",
+        "image": "/images/founders/hao-cheng-tsai.svg",
+        "imageAlt": "Illustration of Hao-Cheng Tsai",
+        "languagesLabel": "Languages",
+        "languages": "English / 繁體中文 / 简体中文",
+        "locationLabel": "Base & cross-cultural background",
+        "location": "Works between Taipei and London with experience supporting civic-tech, humanitarian, and creative teams across Asia and the UK.",
+        "trainingLabel": "Coach training & credentials",
+        "training": [
+          "ICF Associate Certified Coach (ACC).",
+          "Organisation & Relationship Systems Coaching (ORSC) Fundamentals and Intelligence.",
+          "Academy of Executive Coaching Practitioner Diploma in Team Coaching."
+        ],
+        "specialtiesLabel": "Coaching focus areas",
+        "specialties": [
+          "Transition & relocation planning for mission-driven professionals.",
+          "Returner coaching for parents and carers re-entering leadership roles.",
+          "Strategy facilitation for social impact and civic-tech organisations."
+        ]
+      }
+    ]
+  },
+  "ethics": {
+    "title": "Ethics & supervision",
+    "intro": "Accountability is built into our practice, so you always know what safeguards are in place.",
+    "items": [
+      {
+        "title": "ICF Code of Ethics",
+        "body": "Every agreement, data practice, and session structure follows the International Coaching Federation Code of Ethics. We revisit it whenever scope or needs shift."
+      },
+      {
+        "title": "Regular supervision & peer reflection",
+        "body": "We meet monthly with senior supervisors and facilitate peer reflection with multilingual practitioners to surface blind spots early."
+      },
+      {
+        "title": "When coaching isn't right",
+        "body": "If coaching is not the right support, we pause and collaborate on referrals—signposting mental health, legal, immigration, or community resources."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Want to see how this translates into support?",
+    "body": "Explore concrete coaching pathways or read common questions before booking anything.",
+    "primary": {
+      "label": "See our services",
+      "href": "/services"
+    },
+    "secondary": {
+      "label": "Common questions (FAQ)",
+      "href": "/faq"
+    }
+  }
+}

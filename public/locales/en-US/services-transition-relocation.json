@@ -1,0 +1,67 @@
+{
+  "seo": {
+    "title": "Transition & relocation coaching",
+    "description": "ICF-aligned coaching for people settling into the UK while holding commitments across borders."
+  },
+  "hero": {
+    "title": "Anchor yourself while building life across borders.",
+    "summary": "Sessions stay calm and bilingual as needed, so you can process change, agreements, and belonging at a humane pace."
+  },
+  "isForYou": {
+    "title": "Is this for you?",
+    "items": [
+      "You recently moved to the UK and juggle responsibilities in another country.",
+      "You want to honour family expectations while carving out your own rhythms.",
+      "You feel both excited and disoriented by new systems, visas, or paperwork.",
+      "You are building community from scratch and want to do it without burning out."
+    ]
+  },
+  "explore": {
+    "title": "What we explore together",
+    "items": [
+      "How do you want to describe “home” while loyalties span multiple places?",
+      "What support agreements—financial, emotional, practical—need updating?",
+      "Where might you grant yourself permission to grieve or celebrate?",
+      "What language helps you advocate for your needs in workplaces or services?",
+      "What experiments could help you meet people and rest, not just hustle?",
+      "Which values will guide choices when plans shift or paperwork delays happen?"
+    ]
+  },
+  "format": {
+    "title": "Format & flow",
+    "bullets": [
+      "Recommend six 60-minute sessions across three to four months, with flexibility to slow down when life events happen.",
+      "Language can switch between English and Mandarin (or remain in one) whenever nuance matters.",
+      "Each session ends with client-led next steps; we review alignment every two sessions.",
+      "We close by reflecting on learning, naming ongoing supports, and agreeing on future touchpoints if needed."
+    ]
+  },
+  "snapshot": {
+    "title": "Case snapshot",
+    "labels": {
+      "context": "Context",
+      "approach": "How we supported",
+      "outcome": "What changed"
+    },
+    "items": [
+      {
+        "context": "A policy professional relocating from Hong Kong wanted to stay connected with family while adjusting to UK workplace dynamics.",
+        "approach": "We mapped obligations, practised scripts for setting boundaries in both Cantonese and English, and designed community-building experiments that respected introversion.",
+        "outcome": "They reported feeling steadier, with agreements that honoured family care and clearer requests at work."
+      }
+    ]
+  },
+  "not": {
+    "title": "What this is not",
+    "items": [
+      "Not immigration, legal, or tax advice. We can help you plan questions for specialists, not replace them.",
+      "Not emergency relocation support or crisis response.",
+      "Not a promise that culture shock disappears—we work with the feelings and choices that are yours to make."
+    ]
+  },
+  "cta": {
+    "body": "If this sounds close to your reality, you’re welcome to book a 20-minute chat.",
+    "linkLabel": "Book a 20-minute chat",
+    "linkHref": "/contact?package=transition-relocation"
+  }
+}

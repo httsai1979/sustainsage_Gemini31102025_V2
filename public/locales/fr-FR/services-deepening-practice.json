@@ -1,0 +1,45 @@
+{
+  "seo": {
+    "title": "Deepening Practice – 8 sessions for leaders & practitioners | SustainSage",
+    "description": "An eight-session coaching space for leaders and practitioners who want a rigorous, human thinking partner."
+  },
+  "hero": {
+    "title": "Deepening Practice – 8 sessions",
+    "subtitle": "Long-term space to refine how you think, decide, relate and lead.",
+    "imageAlt": "Illustration for deepening leadership practice",
+    "primaryCta": "Book a 20-minute chat",
+    "secondaryCta": "Back to services"
+  },
+  "sections": {
+    "fit": {
+      "title": "For who",
+      "items": [
+        "People leading teams, projects or communities who already reflect, but want a more rigorous thinking partner.",
+        "Coaches / helpers who want a space where they can be human, not “the professional”."
+      ]
+    },
+    "focus": {
+      "title": "What we focus on",
+      "items": [
+        "Your real dilemmas (not case studies).",
+        "How you use power, voice, and boundaries.",
+        "How to stay human without over-giving."
+      ]
+    },
+    "ethics": {
+      "title": "ICF & ethics",
+      "items": [
+        "Clear confidentiality boundaries.",
+        "Regular check-ins on whether this still serves you.",
+        "Explicit encouragement to seek supervision/therapy where needed; we don’t try to be everything."
+      ]
+    },
+    "cta": {
+      "body": [
+        { "type": "text", "value": "Use the 20-minute chat to check fit. If a different container or supervision is more appropriate, we will say so plainly." }
+      ],
+      "primaryCta": "Book a 20-minute chat",
+      "secondaryCta": "Explore all services"
+    }
+  }
+}

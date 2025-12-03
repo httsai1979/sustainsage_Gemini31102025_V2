@@ -1,39 +1,62 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 
+const NAV_LINKS = [
+  { href: '/', label: 'home' },
+  { href: '/services', label: 'services' },
+  { href: '/resources', label: 'resources' },
+  { href: '/blog', label: 'blog' },
+  { href: '/about', label: 'about' },
+  { href: '/contact', label: 'contact' },
+  { href: '/faq', label: 'faq' },
+];
+
 export default function SiteFooter() {
   const { t } = useTranslation('common');
+  const { t: tNav } = useTranslation('nav');
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-slate-200 bg-white">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 py-8 sm:px-8 sm:py-10 md:flex-row md:justify-between">
-        <div>
-          <p className="text-lg font-semibold text-slate-900">SustainSage</p>
-          <p className="mt-3 max-w-sm text-sm text-slate-600">{t('footer.philosophy')}</p>
+    <footer className="ssg-site-footer">
+      <div className="ssg-footer-inner">
+        <div className="flex flex-1 flex-col gap-4 text-[var(--color-ink-muted)]">
+          <div className="flex items-center gap-3">
+            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary-soft)]">
+              <Image src="/brand/ssg-logo-mark.png" alt="SustainSage Group logo" width={22} height={22} />
+            </span>
+            <div>
+              <p className="text-base font-semibold text-[var(--color-ink)]">SustainSage Group</p>
+              <p className="text-xs text-[var(--color-ink-muted)]">{t('footer.copyright', { year })}</p>
+            </div>
+          </div>
+          <p className="max-w-sm text-sm text-[var(--color-ink-muted)]">{t('footer.philosophy')}</p>
         </div>
         <div className="flex flex-1 flex-col gap-8 md:flex-row md:justify-end">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-muted)]">
               {t('footer.sitemapTitle')}
             </p>
-            <ul className="mt-3 space-y-2 text-sm text-slate-600">
-              <li><Link href="/">{t('header.navHome')}</Link></li>
-              <li><Link href="/services">{t('header.navServices')}</Link></li>
-              <li><Link href="/resources">{t('header.navResources')}</Link></li>
-              <li><Link href="/blog">{t('header.navBlog')}</Link></li>
-              <li><Link href="/about">{t('header.navAbout')}</Link></li>
-              <li><Link href="/contact">{t('header.navContact')}</Link></li>
-              <li><Link href="/faq">{t('header.navFaq')}</Link></li>
+            <ul className="mt-3 space-y-2 text-sm">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-primary)]"
+                  >
+                    {tNav(link.label)}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-muted)]">
               {t('footer.contactTitle')}
             </p>
-            <ul className="mt-3 space-y-2 text-sm text-slate-600">
+            <ul className="mt-3 space-y-2 text-sm text-[var(--color-ink-muted)]">
               <li>
-                <a href="mailto:hello@sustainsage.com" className="hover:text-emerald-700">
+                <a href="mailto:hello@sustainsage.com" className="ssg-link">
                   hello@sustainsage.com
                 </a>
               </li>
@@ -43,7 +66,7 @@ export default function SiteFooter() {
                   href="https://linkedin.com/company/sustainsage-group-ltd"
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:text-emerald-700"
+                  className="ssg-link"
                 >
                   LinkedIn
                 </a>
@@ -51,11 +74,6 @@ export default function SiteFooter() {
             </ul>
           </div>
         </div>
-      </div>
-      <div className="bg-white/90 py-4">
-        <p className="text-center text-xs text-slate-500">
-          {t('footer.copyright', { year })}
-        </p>
       </div>
     </footer>
   );

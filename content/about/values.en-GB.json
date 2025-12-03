@@ -1,0 +1,150 @@
+{
+  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "seo": {
+    "title": "Values that shape every partnership",
+    "description": "Gentle, ICF-aligned principles that keep each conversation calm, transparent, and culturally aware."
+  },
+  "hero": {
+    "eyebrow": "What guides our coaching",
+    "title": "Values that shape every partnership",
+    "intro": [
+      "Gentle, ICF-aligned principles that keep each conversation calm, transparent, and culturally aware."
+    ]
+  },
+  "sections": [
+    {
+      "id": "values",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "authenticity",
+          "title": "Authenticity",
+          "iconName": "consent",
+          "body": [
+            "ICF-aligned practice keeps agreements, data care, and supervision transparent."
+          ]
+        },
+        {
+          "id": "gentleness",
+          "title": "Gentleness",
+          "iconName": "family",
+          "body": [
+            "We keep a calm cadence so experimentation feels kind, slow enough, and sustainable."
+          ]
+        },
+        {
+          "id": "structure",
+          "title": "Structure",
+          "iconName": "note",
+          "body": [
+            "Clear agreements, review points, and data boundaries help every partnership stay grounded."
+          ]
+        },
+        {
+          "id": "cultural-sensitivity",
+          "title": "Cultural sensitivity",
+          "iconName": "globe",
+          "body": [
+            "Lived experience across Asia-Pacific and the UK keeps multilingual nuance and policy context in view."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ethics",
+      "style": "cards",
+      "title": "Ethics & boundaries",
+      "lead": "We anchor every engagement in the International Coaching Federation (ICF) Code of Ethics and document how data is cared for from day one.",
+      "cards": [
+        {
+          "id": "informed-consent",
+          "title": "Set informed consent",
+          "iconName": "consent",
+          "body": [
+            "Set informed consent, confidentiality boundaries, and escalation paths before sessions begin."
+          ]
+        },
+        {
+          "id": "accessibility",
+          "title": "Check accessibility",
+          "iconName": "calendar",
+          "body": [
+            "Check accessibility, safeguarding, and wellbeing every few sessions to adjust support early."
+          ]
+        },
+        {
+          "id": "refer",
+          "title": "Pause or refer",
+          "iconName": "question",
+          "body": [
+            "Pause or refer when therapeutic, legal, or crisis support is more appropriate than coaching."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "style": "cards",
+      "title": "How we handle your data",
+      "cards": [
+        {
+          "id": "data-practices",
+          "title": "Data care",
+          "iconName": "privacy",
+          "bullets": [
+            "Store session notes in encrypted, access-controlled systems with time-bound retention.",
+            "Share summaries only with people named in the original agreement, never external parties without consent.",
+            "Delete recordings or artefacts immediately when they are no longer required for the coaching goal."
+          ],
+          "body": [
+            "Review the ICF Code of Ethics to see the standards we commit to in every partnership."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "boundaries",
+      "style": "cards",
+      "title": "Boundaries we uphold",
+      "lead": "These commitments protect your agency, safety, and consent.",
+      "cards": [
+        {
+          "id": "scope",
+          "title": "What scope does coaching cover?",
+          "iconName": "question",
+          "body": [
+            "We stay future-focused and collaborative. When therapeutic or legal support is needed, we pause and signpost trusted professionals."
+          ]
+        },
+        {
+          "id": "ethics-monitoring",
+          "title": "How do you monitor ethics?",
+          "iconName": "privacy",
+          "body": [
+            "We follow the International Coaching Federation Code of Ethics and maintain supervision to stay accountable."
+          ]
+        },
+        {
+          "id": "access-changes",
+          "title": "What if accessibility needs change?",
+          "iconName": "calendar",
+          "body": [
+            "We revisit agreements every few sessions to check progress, accessibility, and safeguarding requirements."
+          ]
+        }
+      ]
+    }
+  ],
+  "cta": {
+    "title": "Ready to map your next step?",
+    "body": "Browse our coaching services or read the full coaching boundaries we uphold.",
+    "primary": {
+      "label": "See services",
+      "href": "/services"
+    },
+    "secondary": {
+      "label": "Read coaching boundaries",
+      "href": "/services/how-coaching-works"
+    }
+  }
+}

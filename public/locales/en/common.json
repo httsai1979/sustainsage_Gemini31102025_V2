@@ -15,7 +15,9 @@
     "languages": {
       "en-GB": "English",
       "zh-TW": "繁體中文",
-      "zh-CN": "简体中文"
+      "zh-CN": "简体中文",
+      "fr-FR": "Français",
+      "es-ES": "Español"
     },
     "mega": {
       "mobileCta": "Explore services",
@@ -116,53 +118,6 @@
     "subtitle": "Book a bilingual, ICF-aligned 20-minute chat to map the next step together.",
     "button": "Schedule a chat"
   },
-  "fitChecklist": {
-    "eyebrow": "Do I really need coaching?",
-    "title": "10 practical questions to check fit",
-    "description": "Grounded prompts so you can verify whether this coaching space is the right match without leaving the page.",
-    "items": [
-      {
-        "question": "Q1｜If coaching weren’t an option, what would you do?",
-        "answer": "You could Google, watch videos, or ask friends. Coaching matters when you already want change but feel stuck in real-world constraints like language, status, family, culture, or age."
-      },
-      {
-        "question": "Q2｜Why me, not any generic coach?",
-        "answer": "I live the UK restart reality and don’t sell hype. I use structured thinking—breaking down money, time, status, family duties, and skills—so you can see your options clearly."
-      },
-      {
-        "question": "Q3｜How am I different from other UK-based Chinese/Taiwanese coaches?",
-        "answer": "I focus on mid-career, returners, and complex family/visa contexts. I bring cross-cultural, family, and startup layers, and I’m careful not to overpromise—ideal for people allergic to success-theatre."
-      },
-      {
-        "question": "Q4｜What visible outcomes appear after 3 months?",
-        "answer": "(1) A decision map with money/time/risks/emotional costs. (2) Executable rhythms and boundary scripts. (3) Written self-definitions you can revisit—not just “more confidence.”"
-      },
-      {
-        "question": "Q5｜Why is pricing defensible?",
-        "answer": "You are buying 3–6 months of critical-transition support, not hours. A mis-aimed career or migration decision is far costlier than the fee; steady decision quality is the value."
-      },
-      {
-        "question": "Q6｜Who will feel safe with my style, who may not?",
-        "answer": "Style: calm, deep, structured, and honest about limits—no hype. If you want to be pumped up fast, this isn’t it. If you want frank conversations and steady pacing, you’ll feel held."
-      },
-      {
-        "question": "Q7｜What proof points can be verified?",
-        "answer": "Work across Taiwan and the UK, family and migration experience, entrepreneurship, plus downloadable tools (boundaries practice, time logs, emotion maps) and named frameworks."
-      },
-      {
-        "question": "Q8｜If I only share three USPs, what are they?",
-        "answer": "Cross-cultural, mid-career, family-responsibility realism; no dream-selling—acknowledge limits but keep moving; structured thinking with concrete tools, not just chat."
-      },
-      {
-        "question": "Q9｜If another coach looks similar, how do I shore up trust?",
-        "answer": "Build trust with content and transparency: show session cadence, assignments, and tools; say clearly what coaching won’t cover and offer referrals when therapy or other help is safer."
-      },
-      {
-        "question": "Q10｜Most candid reminder and next step?",
-        "answer": "No one pays because I try hard; they pay when I’m the best person to help them decide and endure right now. Write out the three typical clients, their pains, fears, and 3/6-month shifts, then weave that into the site, service pages, and first-call opener."
-      }
-    ]
-  },
   "icfNotice": {
     "ariaLabel": "Coaching ethics and scope",
     "paragraph1": "We coach in line with the International Coaching Federation Code of Ethics. Coaching is a collaborative, client-led partnership that supports your self-directed learning and change. It is not therapy, counselling, medical, legal or financial advice. You remain responsible for your choices and actions.",
@@ -170,5 +125,6 @@
   },
   "testimonials": {
     "heading": "What clients say"
-  }
+  },
+  "fallbackNotice": "Temporarily showing English content while we complete this translation."
 }

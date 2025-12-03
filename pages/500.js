@@ -4,31 +4,27 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import { toSerializable } from '@/lib/toSerializable';
 
-import FitChecklistSection from '@/components/common/FitChecklistSection';
 import nextI18NextConfig from '../next-i18next.config.js';
 
 function ServerErrorPage() {
   const { t } = useTranslation('errorPages');
 
   return (
-    <div className="space-y-10">
-      <Hero image="/hero/default.svg" align="left" title={t('serverErrorTitle')} subtitle={t('serverErrorBody')}>
-        <Link
-          href="/"
-          className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900 focus-visible:ring-white"
-        >
-          {t('returnHome')}
-        </Link>
-      </Hero>
-      <FitChecklistSection />
-    </div>
+    <Hero image="/hero/default.svg" align="left" title={t('serverErrorTitle')} subtitle={t('serverErrorBody')}>
+      <Link
+        href="/"
+        className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900 focus-visible:ring-white"
+      >
+        {t('returnHome')}
+      </Link>
+    </Hero>
   );
 }
 
 export async function getStaticProps({ locale = 'en' }) {
   return toSerializable({
     props: {
-      ...(await serverSideTranslations(locale, ['common', 'errorPages'], nextI18NextConfig)),
+      ...(await serverSideTranslations(locale, ['common', 'nav', 'errorPages'], nextI18NextConfig)),
     },
   });
 }

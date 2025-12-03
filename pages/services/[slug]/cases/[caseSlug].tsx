@@ -8,6 +8,7 @@ import { useTranslation } from 'next-i18next';
 import { CaseDetail, type CaseDetailContent } from '@/components/cases/CaseDetail';
 import { StickyCTA } from '@/components/common/StickyCTA';
 import ServiceSubnav from '@/components/services/ServiceSubnav';
+import Button from '@/components/ui/Button';
 import { loadContent } from '@/lib/loadContent';
 import type { ServiceContent, ServiceSlug } from '@/lib/serviceContentTypes';
 import { SERVICE_SLUGS } from '@/lib/serviceContentTypes';
@@ -173,12 +174,12 @@ export default function ServiceCaseDetailPage({
               <p className="text-sm font-semibold text-sustain-text">{sidebarTitle}</p>
               <p className="mt-2 text-sm leading-6 text-slate-700">{sidebarBody}</p>
               <div className="mt-4 flex flex-col gap-3">
-                <Link href={`${basePath}/cases`} className="ss-btn-secondary text-center">
+                <Button href={`${basePath}/cases`} variant="secondary">
                   {sidebarBack}
-                </Link>
-                <Link href={`/contact?from=${slug}-case`} className="ss-btn-primary text-center">
+                </Button>
+                <Button href={`/contact?from=${slug}-case`}>
                   {sidebarContact}
-                </Link>
+                </Button>
               </div>
             </div>
           </aside>

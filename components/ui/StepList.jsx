@@ -1,40 +1,41 @@
 import PropTypes from 'prop-types';
 
 import cn from '@/lib/cn';
-import Icon from '@/components/ui/Icon';
-import { getIconComponent } from '@/components/icons/map';
+import CardShell from '@/components/ui/CardShell';
+import IconBadge from '@/components/ui/IconBadge';
+import { getLucideIcon } from '@/components/ui/icons';
 
-function StepIcon({ icon }) {
-  if (!icon) return null;
+function resolveIcon(icon) {
+  if (!icon) {
+    return { iconName: null, iconNode: null };
+  }
 
   if (typeof icon === 'string') {
-    return <Icon name={icon} />;
+    return { iconName: icon, iconNode: null };
   }
 
   if (typeof icon === 'function') {
     const IconComponent = icon;
-    return (
-      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
-        <IconComponent className="h-5 w-5" aria-hidden />
-      </span>
-    );
+    return {
+      iconName: null,
+      iconNode: <IconComponent className="h-5 w-5" aria-hidden />,
+    };
   }
 
-  const IconComponent = getIconComponent(icon?.name ?? icon?.icon);
+  const IconComponent = getLucideIcon(icon?.name ?? icon?.icon);
 
   if (IconComponent) {
-    return (
-      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
-        <IconComponent className="h-5 w-5" aria-hidden />
-      </span>
-    );
+    return {
+      iconName: null,
+      iconNode: <IconComponent className="h-5 w-5" aria-hidden />,
+    };
   }
 
   if (typeof icon === 'object') {
-    return icon;
+    return { iconName: null, iconNode: icon };
   }
 
-  return null;
+  return { iconName: null, iconNode: null };
 }
 
 export default function StepList({ steps = [], className = '' }) {
@@ -42,7 +43,7 @@ export default function StepList({ steps = [], className = '' }) {
   return (
     <ol
       className={cn(
-        'grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4',
+        'grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4',
         className,
       )}
     >
@@ -56,23 +57,27 @@ export default function StepList({ steps = [], className = '' }) {
         const title = normalizedStep?.title;
         const description = normalizedStep?.description;
         const iconValue = normalizedStep?.icon ?? normalizedStep?.iconName;
-        const iconNode = iconValue ? <StepIcon icon={iconValue} /> : null;
         const stepNumber = normalizedStep?.stepNumber ?? index + 1;
+        const { iconName, iconNode } = resolveIcon(iconValue);
         return (
           <li
             key={title ?? description ?? index}
-            className="flex h-full w-full flex-col gap-3 rounded-card rounded-2xl border border-slate-100 bg-white p-4 shadow-md md:p-5"
+            className="min-w-[240px] flex-1 md:min-w-0"
           >
-            <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-sustain-green text-sm font-semibold text-white">
-                {String(stepNumber).padStart(2, '0')}
-              </span>
-              {iconNode ? iconNode : null}
-              {title ? <p className="font-medium text-sustain-text">{title}</p> : null}
-            </div>
-            {description ? (
-              <p className="text-sm leading-relaxed text-slate-700">{description}</p>
-            ) : null}
+            <CardShell
+              icon={
+                <IconBadge
+                  iconName={iconName ?? 'calendar'}
+                  icon={iconNode}
+                  className="bg-primary/10"
+                />
+              }
+              eyebrow={`Step ${String(stepNumber).padStart(2, '0')}`}
+              title={title ?? `Step ${stepNumber}`}
+              className="h-full"
+            >
+              {description ? <p>{description}</p> : null}
+            </CardShell>
           </li>
         );
       })}
@@ -96,11 +101,3 @@ StepList.propTypes = {
   className: PropTypes.string,
 };
 
-StepIcon.propTypes = {
-  icon: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node,
-    PropTypes.func,
-    PropTypes.shape({ name: PropTypes.string }),
-  ]),
-};

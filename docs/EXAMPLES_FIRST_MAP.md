@@ -3,7 +3,7 @@
 ## A. JSON / MD / MDX sources
 - `content/legal/service-agreements.json` — contains nested `sections[]` arrays for the default agreement and each service variant, with `paragraphs[]` describing boundaries and logistics.
 - `content/legal/coaching-boundaries/en.json` — includes top-level `sections[]` each with `paragraphs[]` and optional `items[]`, plus `scope.whatYouGet.items[]` and `scope.whatWeDontDo.items[]` bullet lists.
-- `content/home/{en-GB|zh-CN|zh-TW}.json` — no `sections`; aggregates data via `services.cards[]`, `key_points.items[]`, `process.steps[]`, `boundaries.items[]`, and CTA objects.
+- `content/home/index.{en-GB|zh-CN|zh-TW}.json` — single structured file per locale containing `hero` metadata plus ordered `sections[]` blocks (personas, comparison cards, steps, topics, services, split-grid resources/blog, accordion boundaries, CTA rows, etc.).
 - `content/faq/{en-GB|zh-CN|zh-TW}.json` — no `sections`; organised into `categories[]` where every category carries an `items[]` question list and an overall `cta` block.
 - `content/about/{en-GB|zh-CN|zh-TW}.json` — no `sections`; key arrays include `approach.pillars[]`, `approach.cases[]`, `process.steps[]`, `whatIsCoaching.scenarios[]`, `ethics.dataPractices.items[]`, and `boundaries.items[]`.
 - `content/team/{james|partner}/{en-GB|zh-CN|zh-TW}.json` — no `sections`; profile data is stored in arrays such as `bio[]`, `focus[]`, `credentials[]`, and optional CTA metadata.
@@ -17,7 +17,7 @@
 - `content/services/{career-return|graduate-start|immigrant-job}/cases/*.json` — no `sections`; each case file supplies `session_flow[]`, `tools_used[]`, optional `boundary_and_consent` (string or array), `shift`, `outcome`, and `disclaimer` fields.
 
 ## B. React / TSX sources
-- `pages/index.js` — pulls `/content/home` JSON and maps `services.cards`, `key_points.items`, `process.steps`, and `boundaries.items` into cards, bullet lists, and step lists.
+- `pages/index.js` — pulls `content/home/index.{locale}.json`, rendering the hero plus each section type (personas, comparison, steps, topics, services preview, split resources/blog, accordion boundaries, FAQ CTA, soft CTA) with the shared card + icon primitives.
 - `pages/about.js` — loads `/content/about/{locale}.json` plus team/coaching data, rendering `approach`, `whatIsCoaching.scenarios`, `key_points.items`, `process.steps`, `boundaries.items`, and FAQ accordions.
 - `pages/about/approach/index.tsx` — consumes `approach.pillars` arrays for cards and surfaces fallback notices from the same JSON.
 - `pages/about/approach/cases.tsx` — lists `approach.cases[]` from the about JSON within `CaseCard` components.

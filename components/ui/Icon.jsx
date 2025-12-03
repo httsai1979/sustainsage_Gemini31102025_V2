@@ -3,7 +3,7 @@ import { cloneElement } from 'react';
 import cn from '@/lib/cn';
 import PropTypes from 'prop-types';
 
-import { ICONS } from '@/components/icons/map';
+import { getLucideIcon } from '@/components/ui/icons';
 
 const INLINE_ICONS = {
   check: (
@@ -32,27 +32,24 @@ const INLINE_ICONS = {
 export default function Icon({ name = 'info', className } = {}) {
   if (!name) return null;
   const key = name.toLowerCase();
-  const Component = ICONS[key];
+  const LucideIcon = getLucideIcon(key);
   const InlineIcon = INLINE_ICONS[key] ?? INLINE_ICONS.info;
 
-  const renderIcon = () => {
-    if (Component) {
-      return <Component className="h-5 w-5" aria-hidden="true" />;
-    }
-    if (!InlineIcon) return null;
-    return cloneElement(InlineIcon, {
-      className: cn('h-5 w-5', InlineIcon.props?.className),
-      'aria-hidden': true,
-    });
-  };
+  const icon = LucideIcon
+    ? <LucideIcon className="h-5 w-5" aria-hidden />
+    : InlineIcon
+    ? cloneElement(InlineIcon, {
+        className: cn('h-5 w-5', InlineIcon.props?.className),
+        'aria-hidden': true,
+      })
+    : null;
 
-  const icon = renderIcon();
   if (!icon) return null;
 
   return (
     <span
       className={cn(
-        'inline-flex h-10 w-10 items-center justify-center rounded-full bg-emerald-50 text-emerald-600',
+        'inline-flex h-10 w-10 items-center justify-center rounded-full bg-sustain-primary/10 text-sustain-primary',
         className,
       )}
     >

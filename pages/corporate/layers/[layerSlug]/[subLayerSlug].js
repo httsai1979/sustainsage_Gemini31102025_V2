@@ -4,7 +4,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
 import IconBadge from '@/components/corporate/IconBadge';
 import ListWithDots from '@/components/corporate/ListWithDots';
-import FitChecklistSection from '@/components/common/FitChecklistSection';
 import MainLayout from '@/components/layout/MainLayout';
 import {
   CONTACT_EMAIL,
@@ -118,8 +117,6 @@ function CorporateSubLayerPage({ layer, subLayer, heroTag, cta }) {
             </p>
           </div>
         </section>
-
-        <FitChecklistSection />
       </div>
     </div>
   );
@@ -196,7 +193,7 @@ export async function getStaticProps({ params, locale }) {
         title: `${subLayer.title} | ${copy.meta.title}`,
         description: subLayer.detail?.intro ?? copy.meta.description,
       },
-      ...(await serverSideTranslations(currentLocale, ['common'])),
+      ...(await serverSideTranslations(currentLocale, ['common', 'nav'])),
     },
   };
 }

@@ -5,8 +5,7 @@ import { useTranslation } from 'next-i18next';
 
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
-import FitChecklistSection from '@/components/common/FitChecklistSection';
-import SectionContainer from '@/components/sections/SectionContainer';
+import SectionContainer from '@/components/Sections/SectionContainer';
 import PageSection from '@/components/ui/PageSection';
 import { orderSections } from '@/lib/orderSections';
 
@@ -132,7 +131,6 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
   const expect = sections.expect ?? {};
   const ethics = sections.ethics ?? {};
   const cta = sections.cta ?? {};
-  const fitChecklist = t('fitChecklist', { returnObjects: true, ns: 'common' });
 
   const heroImage = image ?? hero.image ?? '/images/services/transition.svg';
   const heroImageAlt = imageAlt ?? hero.imageAlt ?? hero.title ?? 'Service illustration';
@@ -239,13 +237,6 @@ export default function ICFServicePage({ namespace, image = undefined, imageAlt 
           </PageSection>
         );
       })}
-
-      <FitChecklistSection
-        eyebrow={fitChecklist?.eyebrow}
-        title={fitChecklist?.title}
-        description={fitChecklist?.description}
-        items={fitChecklist?.items}
-      />
 
       {(ethics?.title || ethics?.description || (ethics?.items?.length ?? 0) > 0) ? (
         <PageSection title={ethics?.title} lead={ethics?.description}>
