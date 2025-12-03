@@ -53,6 +53,10 @@
 }
 
 /* 1.2 排版 - 字體家族 */
+html {
+    scroll-behavior: smooth;
+}
+
 html,
 body {
     height: 100%;
@@ -62,12 +66,18 @@ body {
     body {
         @apply bg-background text-foreground font-sans;
         background-color: var(--color-page-bg);
+        background-image: radial-gradient(circle at 15% 50%, rgba(189, 167, 137, 0.03), transparent 25%), radial-gradient(circle at 85% 30%, rgba(74, 108, 86, 0.03), transparent 25%);
+        background-attachment: fixed;
         color: var(--color-ink);
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         font-family: theme('fontFamily.sans');
         line-height: 1.6;
-        transition: background-color 200ms ease, color 200ms ease;
+        transition: background-color 300ms ease, color 300ms ease;
+    }
+    ::selection {
+        background-color: rgba(189, 167, 137, 0.3);
+        color: var(--color-ink);
     }
 }
 
@@ -274,15 +284,31 @@ h3 {
     background-color: var(--color-primary);
     color: #fff;
     border-radius: 9999px;
-    @apply inline-flex items-center justify-center px-6 py-3 font-semibold transition-all duration-300 shadow-sm;
+    @apply inline-flex items-center justify-center px-8 py-4 font-semibold transition-all duration-300 shadow-lg shadow-primary/20;
+    position: relative;
+    overflow: hidden;
+}
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(255,255,255,0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 .btn-primary:hover {
     background-color: var(--color-primary-dark);
-    @apply scale-[1.03] shadow-lg;
+    @apply scale-[1.02] shadow-xl shadow-primary/30;
+}
+.btn-primary:hover::after {
+    opacity: 1;
 }
 .btn-secondary {
-    @apply border border-[var(--color-primary)] text-[var(--color-primary)] px-6 py-3 rounded-lg font-semibold transition-all duration-300;
-    @apply hover:bg-[var(--color-primary)] hover:text-white hover:scale-[1.03];
+    @apply border border-[var(--color-primary)] text-[var(--color-primary)] px-8 py-4 rounded-full font-semibold transition-all duration-300 bg-transparent;
+    @apply hover:bg-[var(--color-primary)] hover:text-white hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20;
 }
 
 /* 1.3 留白 & 卡片 */
@@ -295,19 +321,22 @@ h3 {
 .card,
 .ssg-card {
     background: var(--ssg-surface);
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-    padding: 1.75rem;
-    transition: transform 200ms ease, box-shadow 200ms ease;
+    border-radius: theme('borderRadius.ssgCard');
+    box-shadow: theme('boxShadow.card');
+    padding: 2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.5);
 }
 .card-hover,
 .ssg-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+    transform: translateY(-4px);
+    box-shadow: theme('boxShadow.ssgCard');
+    border-color: var(--color-primary-soft);
 }
 
 .ss-card {
-    @apply rounded-3xl border border-sustain-cardBorder bg-sustain-surface p-6 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg focus-within:-translate-y-1 focus-within:shadow-lg md:p-8 dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark;
+    @apply rounded-[20px] border border-sustain-cardBorder bg-sustain-surface p-8 shadow-card transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-ssgCard focus-within:-translate-y-1 focus-within:shadow-ssgCard md:p-10 dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark;
+    backdrop-filter: blur(10px);
 }
 
 .ss-btn-primary {
@@ -448,7 +477,7 @@ h3 {
 
 /* 1.5 頁面載入微交互 */
 .reveal {
-    @apply opacity-0 translate-y-4 transition-all duration-500 ease-out;
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
 }
 .reveal.visible {
     @apply opacity-100 translate-y-0;
@@ -458,6 +487,21 @@ h3 {
 .reveal-2 { transition-delay: 200ms; }
 .reveal-3 { transition-delay: 300ms; }
 .reveal-4 { transition-delay: 400ms; }
+.reveal-5 { transition-delay: 500ms; }
+
+/* 新增動畫工具類 */
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+.animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(189, 167, 137, 0.4);
+}
 
 /* 2.3 服務頁 - 翻轉卡片 */
 .flip-card {

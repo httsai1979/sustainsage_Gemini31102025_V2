@@ -27,9 +27,9 @@ type ButtonProps = LinkProps | NativeButtonProps;
 
 const VARIANT_MAP: Record<ButtonVariants, string> = {
   primary:
-    'bg-[var(--color-brand-sage)] text-white shadow-lg shadow-emerald-900/25 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-900/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)]',
+    'bg-[var(--color-brand-sage)] text-white shadow-lg shadow-emerald-900/20 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/30 active:translate-y-0 active:shadow-md transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)] relative overflow-hidden after:absolute after:inset-0 after:bg-white/20 after:opacity-0 hover:after:opacity-100 after:transition-opacity',
   secondary:
-    'bg-white text-[var(--color-brand-sage)] ring-1 ring-inset ring-[color:var(--color-brand-sage)]/40 hover:bg-primary-soft/60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)]',
+    'bg-white/80 backdrop-blur-sm text-[var(--color-brand-sage)] ring-1 ring-inset ring-[color:var(--color-brand-sage)]/40 hover:bg-[var(--color-brand-sage)] hover:text-white hover:ring-[var(--color-brand-sage)] hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)]',
   ghost:
     'text-[var(--color-brand-sage)] ring-1 ring-transparent hover:bg-primary/10 hover:ring-[color:var(--color-brand-sage)]/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)]/70',
 };
