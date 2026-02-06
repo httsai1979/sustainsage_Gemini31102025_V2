@@ -10,6 +10,7 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest",
+    "content:check": "node scripts/content-manager.mjs --check",
     "check:defaultprops": "node scripts/check-default-props.js",
     "postbuild": "node scripts/generate-sitemap.js",
     "check:md-links": "node scripts/validate-internal-links.mjs"

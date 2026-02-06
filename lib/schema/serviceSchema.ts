@@ -110,6 +110,7 @@ export const servicePageSchema = z.preprocess((val: any) => {
     }
     return val;
 }, z.object({
+    title: z.string().optional(),
     seo: seoSchema.optional(),
     hero: heroSchema,
     features: featuresSchema,

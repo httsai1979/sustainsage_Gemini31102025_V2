@@ -89,6 +89,7 @@ export interface ServiceCTA {
 }
 
 export interface ServicePage {
+    title?: string;
     seo: SEO;
     hero: Hero;
     features: Features;
