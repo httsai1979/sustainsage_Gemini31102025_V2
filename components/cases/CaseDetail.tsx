@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import Button from '../ui/Button';
 
 export type CaseDetailContent = {
   title?: string;
@@ -11,6 +12,12 @@ export type CaseDetailContent = {
   tools_used?: string[];
   disclaimer?: string;
   timeframe?: string;
+  micro_cta?: {
+    title?: string;
+    description?: string;
+    buttonText?: string;
+    href?: string;
+  };
 };
 
 type CaseDetailProps = CaseDetailContent & {
@@ -25,6 +32,7 @@ export function CaseDetail({
   coaching_pivot,
   results,
   outcome,
+  micro_cta,
   tools_used,
   disclaimer,
   timeframe,
@@ -93,6 +101,27 @@ export function CaseDetail({
             <section className="space-y-3">
               <h2 className="text-xl font-semibold text-emerald-800">Final Output (最終產出)</h2>
               <div className="text-base leading-7 text-slate-700">{outcome}</div>
+            </section>
+          ) : null}
+
+          {/* Micro-CTA Section */}
+          {micro_cta ? (
+            <section className="mt-12 rounded-3xl bg-slate-900 p-8 text-white shadow-xl">
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+                <div className="space-y-2">
+                  <h3 className="text-xl font-bold">{micro_cta.title ?? 'Explore your path'}</h3>
+                  <p className="text-sm text-slate-300 max-w-md">
+                    {micro_cta.description ?? 'Schedule a diagnostic consultation to see how these frameworks apply to your context.'}
+                  </p>
+                </div>
+                <Button
+                  href={micro_cta.href ?? '/contact'}
+                  variant="primary"
+                  className="bg-emerald-500 hover:bg-emerald-600 text-white shadow-emerald-900/40"
+                >
+                  {micro_cta.buttonText ?? 'Schedule consultation'}
+                </Button>
+              </div>
             </section>
           ) : null}
         </div>
