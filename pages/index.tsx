@@ -14,7 +14,7 @@ import SectionIntro from '@/components/home/SectionIntro';
 import CardShell from '@/components/ui/CardShell';
 import Button from '@/components/ui/Button';
 import HeroShell from '@/components/ui/HeroShell';
-import PageSection from '@/components/ui/PageSection';
+import PageSection, { PageSectionProps } from '@/components/ui/PageSection';
 import StepList from '@/components/ui/StepList';
 import Icon from '@/components/ui/Icon';
 import { loadJSON } from '@/lib/content';
@@ -65,6 +65,8 @@ const SECTION_COMPONENTS: SectionComponentMap = {
   intent: IntentSection,
 };
 
+const BACKGROUND_CYCLE: PageSectionProps['background'][] = ['default', 'pattern', 'default', 'grid', 'default', 'soft'];
+
 const Home: NextPageWithLayout<HomePageProps> = ({
   content,
   testimonials,
@@ -84,16 +86,18 @@ const Home: NextPageWithLayout<HomePageProps> = ({
         fallbackNotice={fallbackMessage}
       />
       {sections.map((section, index) => {
-        const Component = SECTION_COMPONENTS[section.type] as React.ComponentType<{ section: any }>;
+        const Component = SECTION_COMPONENTS[section.type] as React.ComponentType<{ section: any; background: any }>;
+        const background = BACKGROUND_CYCLE[index % BACKGROUND_CYCLE.length];
         return (
           <Component
             key={section?.id ?? section?.title ?? `home-section-${index}`}
             section={section}
+            background={background}
           />
         );
       })}
       {Array.isArray(testimonials) && testimonials.length ? (
-        <PageSection id="testimonials" title={content?.testimonialsSection?.title}>
+        <PageSection id="testimonials" title={content?.testimonialsSection?.title} background="grid">
           <RevealSection>
             <Testimonials items={testimonials} />
           </RevealSection>
@@ -142,12 +146,13 @@ function HomeHero({ hero, showFallbackNotice = false, fallbackNotice = '' }: Hom
 
 type SectionProps<T extends HomeSection> = {
   section: T;
+  background?: PageSectionProps['background'];
 };
 
-function PersonasSection({ section }: SectionProps<PersonasSectionData>) {
+function PersonasSection({ section, background }: SectionProps<PersonasSectionData>) {
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
+    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
       <SectionIntro paragraphs={section?.intro} idPrefix={section?.id} />
       <CardGrid
         items={cards}
@@ -175,9 +180,9 @@ function PersonasSection({ section }: SectionProps<PersonasSectionData>) {
   );
 }
 
-function PromoSection({ section }: SectionProps<PromoSectionData>) {
+function PromoSection({ section, background }: SectionProps<PromoSectionData>) {
   return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
+    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
       <RevealSection>
         <CardShell className="bg-white/95">
           <Paragraphs
@@ -198,10 +203,10 @@ function PromoSection({ section }: SectionProps<PromoSectionData>) {
   );
 }
 
-function ComparisonSection({ section }: SectionProps<ComparisonSectionData>) {
+function ComparisonSection({ section, background }: SectionProps<ComparisonSectionData>) {
   const cards = [section?.leftCard, section?.rightCard].filter(Boolean);
   return (
-    <PageSection id={section?.id} title={section?.title}>
+    <PageSection id={section?.id} title={section?.title} background={background}>
       <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
       <CardGrid
         columns="two"
@@ -228,7 +233,7 @@ function ComparisonSection({ section }: SectionProps<ComparisonSectionData>) {
   );
 }
 
-function StepsSection({ section }: SectionProps<StepsSectionData>) {
+function StepsSection({ section, background }: SectionProps<StepsSectionData>) {
   const steps = Array.isArray(section?.steps)
     ? section.steps.map((step, index) => ({
       title: step?.title,
@@ -238,7 +243,7 @@ function StepsSection({ section }: SectionProps<StepsSectionData>) {
     }))
     : [];
   return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
+    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
       <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
       <div className="mt-8">
         <RevealSection>
@@ -249,12 +254,12 @@ function StepsSection({ section }: SectionProps<StepsSectionData>) {
   );
 }
 
-function IntentSection({ section }: SectionProps<IntentSectionData>) {
+function IntentSection({ section, background }: SectionProps<IntentSectionData>) {
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   const SafeIcon = Icon as any;
 
   return (
-    <PageSection id={section?.id} title={section?.title} className="bg-emerald-50/50">
+    <PageSection id={section?.id} title={section?.title} className="bg-emerald-50/50" background={background}>
       <div className="mb-10 text-center">
         {section?.subtitle && <p className="text-lg text-slate-600 font-medium">{section.subtitle}</p>}
       </div>
@@ -283,10 +288,10 @@ function IntentSection({ section }: SectionProps<IntentSectionData>) {
   );
 }
 
-function TopicsSection({ section }: SectionProps<TopicsSectionData>) {
+function TopicsSection({ section, background }: SectionProps<TopicsSectionData>) {
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
+    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
       <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
       <CardGrid
         columns="four"
@@ -306,10 +311,10 @@ function TopicsSection({ section }: SectionProps<TopicsSectionData>) {
   );
 }
 
-function ServicesSection({ section }: SectionProps<ServicesSectionData>) {
+function ServicesSection({ section, background }: SectionProps<ServicesSectionData>) {
   const cards = Array.isArray(section?.cards) ? section.cards : [];
   return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
+    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
       <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
       <CardGrid
         items={cards}
@@ -337,10 +342,10 @@ function ServicesSection({ section }: SectionProps<ServicesSectionData>) {
   );
 }
 
-function SplitSection({ section }: SectionProps<SplitSectionData>) {
+function SplitSection({ section, background }: SectionProps<SplitSectionData>) {
   const columns = [section?.left, section?.right].filter(Boolean);
   return (
-    <PageSection id={section?.id} title={section?.title}>
+    <PageSection id={section?.id} title={section?.title} background={background}>
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         {columns.map((column, index) => (
           <RevealSection key={column?.title ?? index} delay={index * 0.08}>
@@ -388,7 +393,7 @@ function SplitSection({ section }: SectionProps<SplitSectionData>) {
   );
 }
 
-function AccordionSection({ section }: SectionProps<AccordionSectionData>) {
+function AccordionSection({ section, background }: SectionProps<AccordionSectionData>) {
   const items = Array.isArray(section?.faqs)
     ? section.faqs.map((item) => ({
       question: item?.question,
@@ -396,7 +401,7 @@ function AccordionSection({ section }: SectionProps<AccordionSectionData>) {
     }))
     : [];
   return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
+    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
       <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
       <div className="mt-8">
         <RevealSection>
@@ -407,9 +412,9 @@ function AccordionSection({ section }: SectionProps<AccordionSectionData>) {
   );
 }
 
-function FaqCtaSection({ section }: SectionProps<FaqCtaSectionData>) {
+function FaqCtaSection({ section, background }: SectionProps<FaqCtaSectionData>) {
   return (
-    <PageSection id={section?.id}>
+    <PageSection id={section?.id} background={background}>
       <RevealSection>
         <div className="rounded-[32px] border border-white/70 bg-white/95 p-8 text-center shadow-card">
           {section?.title ? <h2 className="text-3xl font-semibold text-ink">{section.title}</h2> : null}
@@ -432,9 +437,9 @@ function FaqCtaSection({ section }: SectionProps<FaqCtaSectionData>) {
   );
 }
 
-function SoftCTASection({ section }: SectionProps<SoftCTASectionData>) {
+function SoftCTASection({ section, background }: SectionProps<SoftCTASectionData>) {
   return (
-    <PageSection id={section?.id} background="paper" title={section?.title}>
+    <PageSection id={section?.id} title={section?.title} background={background}>
       <RevealSection>
         <div className="rounded-[32px] border border-white/70 bg-white/95 p-8 shadow-card">
           <Paragraphs paragraphs={section?.body} idPrefix={`${section?.id}-body`} />

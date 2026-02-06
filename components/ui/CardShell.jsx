@@ -33,11 +33,17 @@ export default function CardShell({
   return (
     <Tag
       className={cn(
-        'group relative flex h-full flex-col rounded-[32px] border border-white/60 bg-white/90 backdrop-blur-md p-6 shadow-card ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-ssgCard hover:border-primary/20 focus-within:-translate-y-2 focus-within:shadow-ssgCard md:p-8',
+        'group relative flex h-full flex-col rounded-[32px] border border-white/60 bg-white/90 backdrop-blur-md p-6 shadow-card ring-1 ring-black/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-ssgCard hover:border-primary/20 focus-within:-translate-y-2 focus-within:shadow-ssgCard md:p-8 overflow-hidden',
         className,
       )}
       {...rest}
     >
+      {/* Decorative SVG pattern */}
+      <div className="absolute top-0 right-0 -mr-16 -mt-16 h-32 w-32 opacity-[0.03] transition-opacity group-hover:opacity-[0.07]">
+        <svg viewBox="0 0 100 100" fill="currentColor" className="text-primary">
+          <circle cx="50" cy="50" r="40" />
+        </svg>
+      </div>
       {imageSrc ? (
         <div className="relative mb-5 overflow-hidden rounded-2xl border border-black/5 bg-gradient-to-br from-primary/10 via-white to-primary/5">
           <div className="relative aspect-[16/9] w-full">

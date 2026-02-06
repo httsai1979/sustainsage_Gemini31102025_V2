@@ -5,7 +5,7 @@ import Prose from './Prose';
 import SectionContainer from './SectionContainer';
 import SectionHeading from './SectionHeading';
 
-interface PageSectionProps {
+export interface PageSectionProps {
   id?: string;
   className?: string;
   eyebrow?: string;
@@ -13,7 +13,7 @@ interface PageSectionProps {
   lead?: ReactNode;
   children?: ReactNode;
   prose?: boolean;
-  background?: 'default' | 'paper';
+  background?: 'default' | 'paper' | 'pattern' | 'grid' | 'soft';
 }
 
 export default function PageSection({
@@ -26,10 +26,22 @@ export default function PageSection({
   prose = false,
   background = 'default',
 }: PageSectionProps) {
+  const backgroundMap = {
+    default: 'bg-transparent',
+    paper: 'bg-white',
+    pattern: 'bg-white relative overflow-hidden',
+    grid: 'bg-paper relative overflow-hidden',
+    soft: 'bg-soft-gradient',
+  };
+
   return (
-    <SectionContainer id={id} className={className} background={background === 'paper' ? 'muted' : 'default'}>
-      {(eyebrow || title || lead) && <SectionHeading eyebrow={eyebrow} title={title} subtitle={lead} />}
-      {prose ? <Prose className="mt-8 text-ink/80">{children}</Prose> : <div className="mt-10">{children}</div>}
+    <SectionContainer id={id} className={cn(backgroundMap[background], className)}>
+      {background === 'pattern' && <div className="bg-dot-pattern absolute inset-0 pointer-events-none" />}
+      {background === 'grid' && <div className="bg-grid-pattern absolute inset-0 pointer-events-none" />}
+      <div className="relative z-10">
+        {(eyebrow || title || lead) && <SectionHeading eyebrow={eyebrow} title={title} subtitle={lead} align={background === 'soft' ? 'center' : 'left'} />}
+        {prose ? <Prose className="mt-8 text-ink/80">{children}</Prose> : <div className="mt-10">{children}</div>}
+      </div>
     </SectionContainer>
   );
 }
