@@ -54,7 +54,7 @@ export default function HeroShell({
   return (
     <section
       className={cn(
-        'relative overflow-hidden bg-gradient-to-b from-white via-background to-background py-20 sm:py-24 lg:py-28',
+        'relative overflow-hidden bg-background py-40 sm:py-48 lg:py-56',
         className,
       )}
     >

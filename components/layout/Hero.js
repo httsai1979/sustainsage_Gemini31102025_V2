@@ -11,7 +11,7 @@ export default function Hero({
   priority = false,
 }) {
   return (
-    <section className="bg-emerald-950/5 py-16 sm:py-24">
+    <section className="bg-emerald-950/5 py-32 sm:py-48">
       <div className="mx-auto flex w-full max-w-6xl flex-col-reverse items-center gap-12 px-6 lg:flex-row lg:gap-16">
         <div className="w-full max-w-2xl text-left">
           {eyebrow && (
