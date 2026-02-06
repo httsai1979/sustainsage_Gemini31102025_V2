@@ -48,7 +48,26 @@ export default function ContactForm({ hasBoundaryConsent = false } = {}) {
         setFormData((previous) => (previous.focusArea ? previous : { ...previous, focusArea: focusParam }));
       }
     }
-  }, [focusAreaOptions, router.query.package, router.query.topic]);
+
+    // Pick up tool results from localStorage
+    try {
+      const savedResults = localStorage.getItem('ss_tool_results');
+      if (savedResults && router.query.from_tool === 'true') {
+        const parsed = JSON.parse(savedResults);
+        const toolInfo = `\n\n--- Tool Results (${parsed.tool}) ---\nTarget: ${parsed.challenge}\nRungs: ${parsed.steps.map(s => `\n- ${s.action} (Risk: ${s.risk}%)`).join('')}`;
+
+        setFormData(prev => ({
+          ...prev,
+          help: prev.help ? prev.help : `Hi, I just used the ${parsed.tool}. Here is a summary of my experiment ladder:${toolInfo}\n\nI'd like to talk more about this.`
+        }));
+
+        // Optionally clear it or keep it
+        // localStorage.removeItem('ss_tool_results');
+      }
+    } catch (e) {
+      console.error('Failed to parse tool results', e);
+    }
+  }, [focusAreaOptions, router.query.package, router.query.topic, router.query.from_tool]);
 
   const handleChange = (event) => {
     const { name, type, value, checked } = event.target;
@@ -143,9 +162,8 @@ export default function ContactForm({ hasBoundaryConsent = false } = {}) {
           {status && (
             <div
               role="alert"
-              className={`mt-6 rounded-xl p-4 text-sm ${
-                status === 'success' ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'
-              }`}
+              className={`mt-6 rounded-xl p-4 text-sm ${status === 'success' ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'
+                }`}
             >
               {message}
             </div>

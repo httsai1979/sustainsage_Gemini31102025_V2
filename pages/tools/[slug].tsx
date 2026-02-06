@@ -5,10 +5,16 @@ import { useTranslation } from 'next-i18next';
 
 import MainLayout from '@/components/layout/MainLayout';
 import { resolveToolCopy, toolsConfig, type LocalizedTool } from '@/lib/toolsConfig';
+import ToolShell from '@/components/tools/ToolShell';
+import BehaviourLadder from '@/components/tools/BehaviourLadder';
 
 interface ToolPageProps {
-  tool: LocalizedTool;
+  tool: LocalizedTool & { hasComponent?: boolean };
 }
+
+const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
+  'behaviour-ladder': BehaviourLadder,
+};
 
 function ToolPage({ tool }: ToolPageProps) {
   const { t } = useTranslation('tools');
@@ -16,6 +22,18 @@ function ToolPage({ tool }: ToolPageProps) {
     'reminder',
     'This is a self-reflection tool. Take your time and you can download or save your notes just for yourself.'
   );
+
+  if (tool.hasComponent && TOOL_COMPONENTS[tool.slug]) {
+    const Component = TOOL_COMPONENTS[tool.slug];
+    return (
+      <main className="ss-container py-16">
+        <ToolShell title={tool.title} description={tool.description} category={tool.category}>
+          <Component />
+        </ToolShell>
+      </main>
+    );
+  }
+
   return (
     <main className="ss-container py-16">
       <section className="ss-section">
