@@ -1,113 +1,82 @@
-import type { ComponentType } from 'react';
-import type { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
+import { BehaviourExperimentLadder } from '@/components/tools/BehaviourExperimentLadder';
+import PageSection from '@/components/ui/PageSection';
+import SectionContainer from '@/components/ui/SectionContainer';
+import { useRouter } from 'next/router';
 
-import MainLayout from '@/components/layout/MainLayout';
-import { resolveToolCopy, toolsConfig, type LocalizedTool } from '@/lib/toolsConfig';
-import ToolShell from '@/components/tools/ToolShell';
-import BehaviourLadder from '@/components/tools/BehaviourLadder';
-
-interface ToolPageProps {
-  tool: LocalizedTool & { hasComponent?: boolean };
-}
-
-const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
-  'behaviour-ladder': BehaviourLadder,
+const TOOL_MAP: Record<string, React.ComponentType> = {
+  'behaviour-ladder': BehaviourExperimentLadder,
+  'behaviour-experiment-ladder': BehaviourExperimentLadder,
 };
 
-function ToolPage({ tool }: ToolPageProps) {
-  const { t } = useTranslation('tools');
-  const reminderCopy = t(
-    'reminder',
-    'This is a self-reflection tool. Take your time and you can download or save your notes just for yourself.'
-  );
+export default function ToolPage() {
+  const router = useRouter();
+  const { slug } = router.query;
+  const { t } = useTranslation('common');
 
-  if (tool.hasComponent && TOOL_COMPONENTS[tool.slug]) {
-    const Component = TOOL_COMPONENTS[tool.slug];
+  const ToolComponent = TOOL_MAP[slug as string];
+
+  if (!ToolComponent) {
     return (
-      <main className="ss-container py-16">
-        <ToolShell title={tool.title} description={tool.description} category={tool.category}>
-          <Component />
-        </ToolShell>
-      </main>
+      <PageSection>
+        <SectionContainer>
+          <div className="py-20 text-center">
+            <h1 className="text-2xl font-bold">Tool Not Found</h1>
+            <p className="mt-4 text-slate-500 text-base">We are currently migrating this tool to the new React framework.</p>
+          </div>
+        </SectionContainer>
+      </PageSection>
     );
   }
 
   return (
-    <main className="ss-container py-16">
-      <section className="ss-section">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-start">
-          <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sustain-green/80">{tool.category}</p>
-            <h1 className="text-4xl font-semibold text-sustain-text">{tool.title}</h1>
-            <p className="text-base text-slate-700">{tool.description}</p>
-          </div>
-          <div className="rounded-3xl border border-slate-100 bg-white p-6 shadow-lg">
-            <p className="text-sm text-slate-600">{reminderCopy}</p>
-            <div className="mt-4 overflow-hidden rounded-2xl">
-              <iframe
-                src={tool.iframeSrc}
-                title={`${tool.title} interactive tool`}
-                width="100%"
-                height="800"
-                loading="lazy"
-                style={{ border: '1px solid #e5e7eb', borderRadius: '1rem', width: '100%', height: '800px' }}
-              />
+    <PageSection className="bg-slate-50 min-h-screen pt-32 pb-20">
+      <SectionContainer>
+        <div className="mb-12 text-center space-y-4">
+          <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+            {slug?.toString().split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+          </h1>
+          <p className="mx-auto max-w-2xl text-base text-slate-600">
+            A diagnostic tool designed to help you untangle professional narratives and build evidence-based momentum.
+          </p>
+        </div>
+
+        <ToolComponent />
+
+        <div className="mt-20 rounded-3xl bg-emerald-950 p-10 text-white">
+          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+            <div className="space-y-2">
+              <h2 className="text-2xl font-bold">Need a professional perspective?</h2>
+              <p className="text-emerald-100/70 max-w-lg">
+                Your tool results provide a <strong>data-driven foundation</strong>. Join a 20-minute consultation to turn these observations into a structured action plan.
+              </p>
             </div>
+            <button className="rounded-full bg-emerald-500 px-8 py-4 font-bold shadow-lg shadow-emerald-900/40 transition-all hover:bg-emerald-400 active:scale-95">
+              Discuss Results (20m)
+            </button>
           </div>
         </div>
-      </section>
-    </main>
+      </SectionContainer>
+    </PageSection>
   );
 }
 
-ToolPage.getLayout = function getLayout(page: any) {
-  const title = page?.props?.tool?.title ?? 'Interactive tool';
-  const description = page?.props?.tool?.description ?? '';
-  const Layout = MainLayout as ComponentType<any>;
-  return (
-    <Layout
-      seo={{
-        title: `${title} | SustainSage tools`,
-        description,
-      }}
-    >
-      {page}
-    </Layout>
-  );
-};
-
-export const getStaticPaths: GetStaticPaths = async ({ locales = [] }) => {
-  const paths = (locales.length ? locales : ['en-GB']).flatMap((locale) =>
-    toolsConfig.map((tool) => ({
-      params: { slug: tool.slug },
-      locale,
-    }))
-  );
-
-  return { paths, fallback: false };
-};
-
-export const getStaticProps: GetStaticProps<ToolPageProps> = async ({ params, locale }) => {
-  const slug = params?.slug;
-
-  if (typeof slug !== 'string') {
-    return { notFound: true };
-  }
-
-  const tool = toolsConfig.find((item) => item.slug === slug);
-
-  if (!tool) {
-    return { notFound: true };
-  }
-
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
-    props: {
-      tool: resolveToolCopy(tool, locale ?? 'en-GB'),
-      ...(await serverSideTranslations(locale ?? 'en-GB', ['common', 'nav', 'tools'])),
-    },
+    paths: [
+      { params: { slug: 'behaviour-ladder' } },
+      { params: { slug: 'behaviour-experiment-ladder' } },
+    ],
+    fallback: true,
   };
 };
 
-export default ToolPage;
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'en-GB', ['common', 'nav'])),
+    },
+  };
+};

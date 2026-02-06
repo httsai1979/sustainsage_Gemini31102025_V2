@@ -11,6 +11,7 @@ import { GA_MEASUREMENT_ID, hasGa, pageview } from '@/lib/ga';
 import { ThemeProvider } from '@/components/theme/ThemeProvider';
 
 import nextI18NextConfig from '../next-i18next.config.js';
+import { ToolProvider } from '@/context/ToolContext';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -48,28 +49,30 @@ function MyApp({ Component, pageProps }) {
   const content = Component.getLayout ? Component.getLayout(page) : <MainLayout>{page}</MainLayout>;
 
   return (
-    <ThemeProvider>
-      <>
-        {hasGa && consent === 'granted' && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga-init" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){window.dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_MEASUREMENT_ID}', { page_path: window.location.pathname });
-              `}
-            </Script>
-          </>
-        )}
-        {content}
-        <CookieConsent consent={consent} onConsent={handleConsent} />
-      </>
-    </ThemeProvider>
+    <ToolProvider>
+      <ThemeProvider>
+        <>
+          {hasGa && consent === 'granted' && (
+            <>
+              <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+                strategy="afterInteractive"
+              />
+              <Script id="ga-init" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){window.dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_MEASUREMENT_ID}', { page_path: window.location.pathname });
+                `}
+              </Script>
+            </>
+          )}
+          {content}
+          <CookieConsent consent={consent} onConsent={handleConsent} />
+        </>
+      </ThemeProvider>
+    </ToolProvider>
   );
 }
 
