@@ -4,7 +4,7 @@
   "hero": {
     "eyebrow": "Professional Re-entry & Flexibility",
     "title": "Return to your career path with established boundaries",
-    "subtitle": "We assist in rebuilding professional confidence and behavioral rhythms, ensuring your return aligns with your current personal and household context.",
+    "subtitle": "We help you re-establish professional confidence and cadence, framing your career break as a strategic pivot to secure flexible working patterns that match your life context.",
     "primaryCta": {
       "label": "Schedule initial consultation (20m)",
       "href": "/contact?topic=career-return"
@@ -132,6 +132,10 @@
       {
         "q": "What is the level of confidentiality?",
         "a": "We follow ICF Code of Ethics. Confidentiality is strictly maintained except where legal disclosure is mandated by law (safeguarding)."
+      },
+      {
+        "q": "How does coaching differ from a recruitment agency?",
+        "a": "Recruiters are paid by employers to fill a seat. We are paid by you to build your long-term professional resilience. Our goal is to develop your strategic evaluation skills so you can independently navigate the entire market."
       }
     ]
   },
