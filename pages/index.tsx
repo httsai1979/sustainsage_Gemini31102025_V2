@@ -37,6 +37,7 @@ import type {
   StepsSection as StepsSectionData,
   Testimonial,
   TopicsSection as TopicsSectionData,
+  IntentSection as IntentSectionData,
 } from '@/types/home';
 
 type NextPageWithLayout<P> = NextPage<P> & {
@@ -61,6 +62,7 @@ const SECTION_COMPONENTS: SectionComponentMap = {
   accordion: AccordionSection,
   'faq-cta': FaqCtaSection,
   cta: SoftCTASection,
+  intent: IntentSection,
 };
 
 const Home: NextPageWithLayout<HomePageProps> = ({
@@ -82,7 +84,7 @@ const Home: NextPageWithLayout<HomePageProps> = ({
         fallbackNotice={fallbackMessage}
       />
       {sections.map((section, index) => {
-        const Component = SECTION_COMPONENTS[section.type];
+        const Component = SECTION_COMPONENTS[section.type] as React.ComponentType<{ section: any }>;
         return (
           <Component
             key={section?.id ?? section?.title ?? `home-section-${index}`}
@@ -229,11 +231,11 @@ function ComparisonSection({ section }: SectionProps<ComparisonSectionData>) {
 function StepsSection({ section }: SectionProps<StepsSectionData>) {
   const steps = Array.isArray(section?.steps)
     ? section.steps.map((step, index) => ({
-        title: step?.title,
-        description: step?.description,
-        icon: step?.iconName,
-        stepNumber: index + 1,
-      }))
+      title: step?.title,
+      description: step?.description,
+      icon: step?.iconName,
+      stepNumber: index + 1,
+    }))
     : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>
@@ -242,6 +244,40 @@ function StepsSection({ section }: SectionProps<StepsSectionData>) {
         <RevealSection>
           <StepList steps={steps} />
         </RevealSection>
+      </div>
+    </PageSection>
+  );
+}
+
+function IntentSection({ section }: SectionProps<IntentSectionData>) {
+  const cards = Array.isArray(section?.cards) ? section.cards : [];
+  const SafeIcon = Icon as any;
+
+  return (
+    <PageSection id={section?.id} title={section?.title} className="bg-emerald-50/50">
+      <div className="mb-10 text-center">
+        {section?.subtitle && <p className="text-lg text-slate-600 font-medium">{section.subtitle}</p>}
+      </div>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {cards.map((card) => (
+          <Link
+            key={card.id}
+            href={card.href}
+            className="group relative flex flex-col rounded-[2rem] bg-white p-10 shadow-sm ring-1 ring-slate-200/60 transition-all hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-900/5 hover:ring-emerald-400"
+          >
+            <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 transition-all duration-300 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white group-hover:shadow-lg group-hover:shadow-emerald-200">
+              <SafeIcon name={card.icon ?? 'briefcase'} className="h-7 w-7" />
+            </div>
+            <h3 className="text-2xl font-bold tracking-tight text-slate-900">{card.title}</h3>
+            <p className="mt-4 flex-1 text-base leading-relaxed text-slate-500/90">{card.description}</p>
+            <div className="mt-10 flex items-center gap-2 text-sm font-bold text-emerald-600">
+              <span className="relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-emerald-400 after:transition-all group-hover:after:w-full">
+                Explore this path
+              </span>
+              <span className="transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden>→</span>
+            </div>
+          </Link>
+        ))}
       </div>
     </PageSection>
   );
@@ -355,9 +391,9 @@ function SplitSection({ section }: SectionProps<SplitSectionData>) {
 function AccordionSection({ section }: SectionProps<AccordionSectionData>) {
   const items = Array.isArray(section?.faqs)
     ? section.faqs.map((item) => ({
-        question: item?.question,
-        answer: Array.isArray(item?.answer) ? item.answer.join(' ') : item?.answer,
-      }))
+      question: item?.question,
+      answer: Array.isArray(item?.answer) ? item.answer.join(' ') : item?.answer,
+    }))
     : [];
   return (
     <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title}>

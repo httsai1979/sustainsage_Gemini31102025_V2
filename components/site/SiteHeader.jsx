@@ -8,18 +8,11 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import cn from '@/lib/cn';
 import i18nConfig from '../../next-i18next.config';
 
-const NAV_LINKS = {
-  primary: [
-    { href: '/services', label: 'services', highlight: true },
-    { href: '/resources', label: 'resources', highlight: true },
-  ],
-  secondary: [
-    { href: '/blog', label: 'blog' },
-    { href: '/about', label: 'about' },
-    { href: '/faq', label: 'faq' },
-    { href: '/contact', label: 'contact' },
-  ]
-};
+const NAV_LINKS = [
+  { href: '/services', label: 'services' },
+  { href: '/about', label: 'about' },
+  { href: '/contact', label: 'contact' },
+];
 
 const LOCALE_LABELS = {
   'en-GB': 'EN',
@@ -118,39 +111,21 @@ export default function SiteHeader() {
           <SiteLogo />
 
           {/* Layered Desktop Nav */}
-          <nav className="hidden items-center gap-8 md:flex">
-            <div className="flex items-center gap-6 border-r border-slate-200 pr-6">
-              {NAV_LINKS.primary.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    'text-[15px] font-bold tracking-tight transition-all duration-200',
-                    isActive(item.href)
-                      ? 'text-[var(--color-brand-sage)]'
-                      : 'text-slate-900/90 hover:text-[var(--color-brand-sage)]'
-                  )}
-                >
-                  {tNav(item.label)}
-                </Link>
-              ))}
-            </div>
-            <div className="flex items-center gap-5">
-              {NAV_LINKS.secondary.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    'text-[14px] font-semibold transition-all duration-200',
-                    isActive(item.href)
-                      ? 'text-[var(--color-brand-sage)]'
-                      : 'text-slate-500 hover:text-slate-900'
-                  )}
-                >
-                  {tNav(item.label)}
-                </Link>
-              ))}
-            </div>
+          <nav className="hidden items-center gap-10 md:flex">
+            {NAV_LINKS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={cn(
+                  'text-[15px] font-bold tracking-tight transition-all duration-200',
+                  isActive(item.href)
+                    ? 'text-[var(--color-brand-sage)]'
+                    : 'text-slate-900/90 hover:text-[var(--color-brand-sage)]'
+                )}
+              >
+                {tNav(item.label)}
+              </Link>
+            ))}
           </nav>
         </div>
 
@@ -196,34 +171,18 @@ export default function SiteHeader() {
             <XMarkIcon className="h-6 w-6" />
           </button>
         </div>
-        <div className="flex flex-col gap-1 p-4">
-          <p className="px-4 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400">Core Services</p>
-          {NAV_LINKS.primary.map((item) => (
+        <div className="flex flex-col gap-1 p-6">
+          <p className="px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Navigation</p>
+          {NAV_LINKS.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setMenuOpen(false)}
               className={cn(
-                'flex items-center rounded-2xl px-4 py-4 text-[17px] font-bold transition-all',
+                'flex items-center rounded-2xl px-4 py-4 text-[18px] font-bold transition-all',
                 isActive(item.href)
                   ? 'bg-emerald-50 text-[var(--color-brand-sage)]'
                   : 'text-slate-900 active:bg-slate-50'
-              )}
-            >
-              {tNav(item.label)}
-            </Link>
-          ))}
-          <div className="my-4 h-px bg-slate-100 mx-4" />
-          {NAV_LINKS.secondary.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setMenuOpen(false)}
-              className={cn(
-                'flex items-center rounded-2xl px-4 py-3.5 text-[15px] font-semibold transition-all',
-                isActive(item.href)
-                  ? 'bg-emerald-50 text-[var(--color-brand-sage)]'
-                  : 'text-slate-600 active:bg-slate-50'
               )}
             >
               {tNav(item.label)}

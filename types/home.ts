@@ -65,6 +65,14 @@ export type ServiceCard = {
   ctaLabel?: string;
 };
 
+export type IntentCard = {
+  id: string;
+  title: string;
+  description: string;
+  href: string;
+  icon?: string;
+};
+
 export type SplitItem = {
   id?: string;
   iconName?: string;
@@ -157,6 +165,12 @@ export type SoftCTASection = HomeBaseSection & {
   secondaryLink?: CTA;
 };
 
+export type IntentSection = HomeBaseSection & {
+  type: 'intent';
+  subtitle?: string;
+  cards: IntentCard[];
+};
+
 export type HomeSection =
   | PersonasSection
   | PromoSection
@@ -167,7 +181,8 @@ export type HomeSection =
   | SplitSection
   | AccordionSection
   | FaqCtaSection
-  | SoftCTASection;
+  | SoftCTASection
+  | IntentSection;
 
 export type SectionComponentMap = {
   [Type in HomeSection['type']]: ComponentType<{ section: Extract<HomeSection, { type: Type }> }>;

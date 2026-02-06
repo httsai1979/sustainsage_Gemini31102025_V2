@@ -29,6 +29,35 @@
   },
   "sections": [
     {
+      "id": "intent-navigation",
+      "type": "intent",
+      "title": "Which path fits your current context?",
+      "subtitle": "Select a starting point to see how coaching adapts to your reality.",
+      "cards": [
+        {
+          "id": "returner",
+          "title": "Career Returner",
+          "description": "Returning after care leave or a break.",
+          "href": "/services/career-return",
+          "icon": "briefcase"
+        },
+        {
+          "id": "newcomer",
+          "title": "UK Newcomer",
+          "description": "Translating experience to the UK market.",
+          "href": "/services/newcomers-uk",
+          "icon": "globe"
+        },
+        {
+          "id": "graduate",
+          "title": "Early Career",
+          "description": "Navigating first roles and leadership.",
+          "href": "/services/graduates",
+          "icon": "book"
+        }
+      ]
+    },
+    {
       "id": "who-this-is-for",
       "type": "personas",
       "eyebrow": "Who coaching is for",
