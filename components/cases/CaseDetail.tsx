@@ -2,106 +2,115 @@ import type { ReactNode } from 'react';
 
 export type CaseDetailContent = {
   title?: string;
-  context?: string;
-  session_flow?: string | string[];
+  context?: string;          // 背景
+  challenge?: string;        // 挑戰
+  action?: string;           // 行動
+  coaching_pivot?: string;   // 教練介入點
+  results?: string;          // 成果
   tools_used?: string[];
-  boundary_and_consent?: string | string[];
-  timeframe?: string;
-  shift?: string;
-  outcome?: string;
   disclaimer?: string;
+  timeframe?: string;
 };
 
 type CaseDetailProps = CaseDetailContent & {
   header?: ReactNode;
 };
 
-function renderLines(value?: string | string[]) {
-  if (!value) {
-    return null;
-  }
-
-  const lines = Array.isArray(value) ? value : [value];
-
-  return (
-    <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-slate-700">
-      {lines.map((line) => (
-        <li key={line}>{line}</li>
-      ))}
-    </ul>
-  );
-}
-
 export function CaseDetail({
   title,
   context,
-  session_flow,
+  challenge,
+  action,
+  coaching_pivot,
+  results,
   tools_used,
-  boundary_and_consent,
-  timeframe,
-  shift,
-  outcome,
   disclaimer,
+  timeframe,
   header,
 }: CaseDetailProps) {
   return (
-    <article className="space-y-8">
-      <header className="space-y-2">
+    <article className="space-y-12">
+      <header className="space-y-4">
         {header}
-        {title ? <h1 className="text-3xl font-semibold text-slate-900">{title}</h1> : null}
-        {disclaimer ? <p className="text-xs text-slate-500">{disclaimer}</p> : null}
+        {title ? (
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            {title}
+          </h1>
+        ) : null}
+        {disclaimer ? (
+          <p className="text-xs italic text-slate-500">{disclaimer}</p>
+        ) : null}
       </header>
 
-      {context ? (
-        <section className="space-y-2">
-          <h2 className="text-lg font-semibold text-slate-900">Context</h2>
-          <p className="text-sm leading-6 text-slate-700">{context}</p>
-        </section>
-      ) : null}
-
-      {session_flow ? (
-        <section className="space-y-2">
-          <h2 className="text-lg font-semibold text-slate-900">Session flow</h2>
-          {renderLines(session_flow)}
-        </section>
-      ) : null}
-
-      {tools_used && tools_used.length > 0 ? (
-        <section className="space-y-2">
-          <h2 className="text-lg font-semibold text-slate-900">Tools used</h2>
-          <ul className="flex flex-wrap gap-2">
-            {tools_used.map((tool) => (
-              <li key={tool} className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-medium text-emerald-900">
-                {tool}
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
-
-      {boundary_and_consent ? (
-        <section className="space-y-2">
-          <h2 className="text-lg font-semibold text-slate-900">Boundary &amp; consent</h2>
-          {renderLines(boundary_and_consent)}
-        </section>
-      ) : null}
-
-      {timeframe ? (
-        <section className="space-y-2">
-          <h2 className="text-lg font-semibold text-slate-900">Timeframe</h2>
-          <p className="text-sm leading-6 text-slate-700">{timeframe}</p>
-        </section>
-      ) : null}
-
-      {shift || outcome ? (
-        <section className="space-y-2">
-          <h2 className="text-lg font-semibold text-slate-900">Shift &amp; outcome</h2>
-          {shift ? <p className="text-sm leading-6 text-slate-700">{shift}</p> : null}
-          {outcome && outcome !== shift ? (
-            <p className="text-sm leading-6 text-slate-700">{outcome}</p>
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_280px]">
+        <div className="space-y-10">
+          {/* Context Section */}
+          {context ? (
+            <section className="space-y-3">
+              <h2 className="text-xl font-semibold text-emerald-800">Background / Context</h2>
+              <div className="text-base leading-7 text-slate-700">{context}</div>
+            </section>
           ) : null}
-        </section>
-      ) : null}
+
+          {/* Challenge Section */}
+          {challenge ? (
+            <section className="space-y-3">
+              <h2 className="text-xl font-semibold text-emerald-800">The Challenge</h2>
+              <div className="text-base leading-7 text-slate-700">{challenge}</div>
+            </section>
+          ) : null}
+
+          {/* Action Section */}
+          {action ? (
+            <section className="space-y-3">
+              <h2 className="text-xl font-semibold text-emerald-800">Action Taken</h2>
+              <div className="text-base leading-7 text-slate-700">{action}</div>
+            </section>
+          ) : null}
+
+          {/* Coaching Pivot Section */}
+          {coaching_pivot ? (
+            <section className="rounded-2xl bg-emerald-50/50 p-6 shadow-sm ring-1 ring-emerald-100">
+              <h2 className="text-xl font-semibold text-emerald-900">Coaching Pivot</h2>
+              <div className="mt-3 text-base leading-7 text-emerald-950/80 italic">
+                {coaching_pivot}
+              </div>
+            </section>
+          ) : null}
+
+          {/* Results Section */}
+          {results ? (
+            <section className="space-y-3">
+              <h2 className="text-xl font-semibold text-emerald-800">Results & Shift</h2>
+              <div className="text-base leading-7 text-slate-700">{results}</div>
+            </section>
+          ) : null}
+        </div>
+
+        {/* Sidebar Info */}
+        <aside className="space-y-8">
+          {timeframe ? (
+            <div className="space-y-2">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500">Duration</h3>
+              <p className="text-sm text-slate-700">{timeframe}</p>
+            </div>
+          ) : null}
+
+          {tools_used && tools_used.length > 0 ? (
+            <div className="space-y-4">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500">Frameworks used</h3>
+              <ul className="flex flex-col gap-2">
+                {tools_used.map((tool) => (
+                  <li key={tool} className="flex items-center gap-2 text-sm text-slate-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                    {tool}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+        </aside>
+      </div>
     </article>
   );
 }

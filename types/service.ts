@@ -60,12 +60,17 @@ export interface FAQ {
     items: FaqItem[];
 }
 
+/**
+ * Standard Narrative Structure for Case Studies
+ */
 export interface CaseItem {
     slug?: string;
     title: string;
-    context?: string;
-    coaching_moves?: string;
-    shift?: string;
+    context: string;          // 背景 (Context)
+    challenge: string;        // 挑戰 (Challenge)
+    action: string;           // 行動 (Action)
+    coaching_pivot: string;   // 教練介入點 (Coaching Pivot)
+    results: string;          // 成果 (Results)
     tools_used?: string[];
     disclaimer?: string;
 }

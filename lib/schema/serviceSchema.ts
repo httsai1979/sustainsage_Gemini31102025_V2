@@ -67,15 +67,26 @@ const faqSchema = z.object({
     items: z.array(faqItemSchema),
 });
 
-const caseItemSchema = z.object({
+const caseItemSchema = z.preprocess((val: any) => {
+    if (val && typeof val === 'object') {
+        // Map legacy fields if new ones are missing
+        if (!val.challenge) val.challenge = val.context || "";
+        if (!val.action) val.action = val.coaching_moves || "";
+        if (!val.coaching_pivot) val.coaching_pivot = val.coaching_moves || "";
+        if (!val.results) val.results = val.shift || val.outcome || "";
+    }
+    return val;
+}, z.object({
     slug: z.string().optional(),
     title: nonEmptyString,
-    context: z.string().optional(),
-    coaching_moves: z.string().optional(),
-    shift: z.string().optional(),
+    context: z.string(),
+    challenge: z.string(),
+    action: z.string(),
+    coaching_pivot: z.string(),
+    results: z.string(),
     tools_used: z.array(z.string()).optional(),
     disclaimer: z.string().optional(),
-});
+}));
 
 const casesSchema = z.object({
     title: z.string().optional(),
@@ -99,14 +110,13 @@ export const servicePageSchema = z.preprocess((val: any) => {
     }
     return val;
 }, z.object({
-    seo: seoSchema.optional(), // Make optional for now as some files might not have it yet
+    seo: seoSchema.optional(),
     hero: heroSchema,
     features: featuresSchema,
     pricing: pricingSchema.optional(),
     faq: faqSchema.optional(),
     cases: casesSchema.optional(),
     cta: serviceCtaSchema.optional(),
-    // Optional legacy fields that we still allow
     process: z.object({
         title: z.string().optional(),
         description: z.string().optional(),
@@ -119,9 +129,6 @@ export const servicePageSchema = z.preprocess((val: any) => {
     }).optional(),
 }));
 
-/**
- * Validates that both en-GB and zh-TW versions exist and are structurally valid.
- */
 export const localizedServiceSchema = z.object({
     'en-GB': servicePageSchema,
     'zh-TW': servicePageSchema,
