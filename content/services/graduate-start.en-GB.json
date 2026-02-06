@@ -1,12 +1,12 @@
 {
-  "title": "Early Career & Graduate Transition — Professional Framework",
-  "description": "Establish professional narratives from academic achievements and develop a structured approach to career exploration and decision-making.",
+  "title": "Early Career & Graduate Transition",
+  "description": "Translate academic achievement into professional evidence and develop structured decision-making frameworks.",
   "hero": {
-    "eyebrow": "Early Career Professional Alignment",
+    "eyebrow": "Early Career Alignment",
     "title": "Build your professional narrative with evidence from day one",
-    "subtitle": "We assist in clarifying professional pathways, practicing influential professional communication, and establishing sustainable behavioral rhythms for your first role.",
+    "subtitle": "Clarify professional pathways, practice influential communication, and establish sustainable behavioral rhythms for your first role.",
     "primaryCta": {
-      "label": "Schedule initial consultation (20m)",
+      "label": "Book consultation (20m)",
       "href": "/contact?topic=graduate-start"
     },
     "secondaryCta": {
@@ -27,57 +27,57 @@
     "icon": "book"
   },
   "key_points": {
-    "title": "Core Audience",
-    "description": "Supporting graduates and early-career professionals in establishing professional language and behavioral cadences.",
+    "title": "Core Focus",
+    "description": "Supporting graduates in establishing professional identity and behavioral cadences.",
     "items": [
       {
-        "title": "Graduating Decision-makers",
-        "description": "Navigating the intersection of academic requirements and professional entry."
+        "title": "Strategic Entry",
+        "description": "Navigate the intersection of academic requirements and professional entry."
       },
       {
-        "title": "Early-role Aligners",
-        "description": "Professionals within their first 18 months seeking to manage stakeholder expectations effectively."
+        "title": "Stakeholder Alignment",
+        "description": "Manage early-role expectations and professional feedback effectively."
       },
       {
-        "title": "Cross-sector Explorers",
-        "description": "Building evaluation frameworks for career options based on data rather than external pressure."
+        "title": "Evidence Frameworks",
+        "description": "Build evaluation tools for career options based on data rather than pressure."
       }
     ]
   },
   "boundaries": {
-    "title": "Ethical & Professional Agreements",
-    "description": "Designed to protect the autonomy and psychological resources of early-career professionals.",
+    "title": "Ethical Agreements",
+    "description": "Agreements that protect the autonomy of early-career professionals.",
     "items": [
       {
         "question": "Who sets the agenda?",
-        "answer": "The coachee (you) retains full agency over the coaching agenda. While sponsors (e.g., family members) may be involved in initial resource alignment, session content remains strictly confidential per ICF standards."
+        "answer": "You retain full agency. Session content remains strictly confidential per ICF standards, even if third parties provide sponsorship."
       },
       {
         "question": "How is progress measured?",
-        "answer": "Progress is measured through the acquisition of 'data points' (feedback from experiments) rather than just emotional state."
+        "answer": "Through the acquisition of objective data points from behavioral experiments."
       },
       {
-        "question": "Handling transition stress?",
-        "answer": "Coaching is not a replacement for clinical mental health support. If stress levels exceed the coaching scope, we will suggest parallel clinical support or a pause in services."
+        "question": "Transition stress?",
+        "answer": "Coaching is not therapy. We will signpost clinical support if needs fall outside the coaching scope."
       }
     ]
   },
   "cases": {
-    "title": "Anonymised Case Studies",
+    "title": "Case Studies",
     "description": "Illustrating professional transition pathways for early-career individuals.",
     "items": [
       {
-        "title": "Evaluating Multi-sector Options",
-        "context": "A graduate facing decision paralysis between three distinct industry pathways.",
-        "coaching_moves": "Developed a weighted decision matrix and prototyped informational interviews to gather objective sector data.",
-        "shift": "Defined a clear selection rationale based on long-term professional value, resulting in a structured 6-month development plan.",
+        "title": "Sector Exploration",
+        "context": "Graduate facing decision paralysis between three distinct industry pathways.",
+        "coaching_moves": "Developed a decision matrix and prototyped informational interviews to gather objective sector data.",
+        "shift": "Defined a selection rationale based on long-term value and a 6-month development plan.",
         "slug": "structured-career-choice"
       },
       {
-        "title": "Proactive Stakeholder Management",
-        "context": "An early-career professional seeking to establish regular performance feedback loops.",
-        "coaching_moves": "Practiced output-linked feedback scripts and identified internal support networks for professional growth.",
-        "shift": "Established a recurring feedback rhythm with line management, improving role clarity and performance alignment.",
+        "title": "Onboarding Alignment",
+        "context": "Early-career professional seeking to establish regular feedback loops.",
+        "coaching_moves": "Practiced output-linked feedback scripts and identified internal support networks.",
+        "shift": "Established a recurring feedback rhythm, improving role clarity and performance alignment.",
         "slug": "onboarding-alignment-success"
       }
     ]
@@ -90,36 +90,36 @@
         "highlights": [
           "Career decision matrix development",
           "Micro-experiment log & plan",
-          "Professional narrative & CV calibration"
+          "Professional narrative calibration"
         ]
       },
       {
         "title": "Single Focus Consultation",
         "highlights": [
-          "Precision alignment for Assessment Centres or final-round interviews",
-          "Output of actionable professional strategy notes"
+          "Assessment Centre precision alignment",
+          "Actionable professional strategy notes"
         ]
       }
     ],
     "policies": [
-      "Ethical Confidentiality: Adhering to ICF standards. No disclosure to sponsors without written consent.",
-      "Outcome Disclaimer: Outcomes depend on market conditions and individual engagement; we focus on improving decision-making and evidence quality.",
-      "Budget Considerations: Phased payment plans are available for recent graduates; please discuss during the initial consultation."
+      "Strict ICF ethical standards; no disclosure to sponsors.",
+      "Outcomes focus on improved decision-making and evidence quality.",
+      "Phased payment plans available for recent graduates."
     ]
   },
   "faq": {
     "items": [
       {
         "q": "Is CV writing included?",
-        "a": "We coach the logic of professional value translation and co-edit documents in Google Docs. You retain full authorship and ownership of the narrative."
+        "a": "We coach the logic of professional value translation and co-edit documents; you retain full authorship."
       },
       {
-        "q": "What if I lack significant professional experience?",
-        "a": "We focus on turning academic projects and volunteer work into objective evidence of skills and outcomes."
+        "q": "What if I lack experience?",
+        "a": "We translate academic projects and volunteer work into objective skill-based evidence."
       },
       {
-        "q": "How does this differ from standard career services?",
-        "a": "While standard services may provide templates, coaching helps you build a personal 'evaluation framework' for long-term career autonomy."
+        "q": "How does this differ from standard services?",
+        "a": "We help you build a personal 'evaluation framework' for long-term career autonomy."
       }
     ]
   }

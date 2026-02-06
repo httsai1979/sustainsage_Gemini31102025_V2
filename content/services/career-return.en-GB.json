@@ -1,16 +1,16 @@
 {
   "title": "Career Re-entry — Professional Framework",
-  "description": "Establish evidence-based narratives and flexible negotiation capabilities to navigate your return to the professional workplace.",
+  "description": "Establish evidence-based narratives and flexible negotiation capabilities to navigate your return to the workplace.",
   "hero": {
-    "eyebrow": "Professional Re-entry & Flexibility",
+    "eyebrow": "Professional Re-entry",
     "title": "Return to your career path with established boundaries",
-    "subtitle": "We help you re-establish professional confidence and cadence, framing your career break as a strategic pivot to secure flexible working patterns that match your life context.",
+    "subtitle": "Re-establish professional confidence and secure flexible working patterns that match your current life context through structured coaching experiments.",
     "primaryCta": {
-      "label": "Schedule initial consultation (20m)",
+      "label": "Book consultation (20m)",
       "href": "/contact?topic=career-return"
     },
     "secondaryCta": {
-      "label": "Process & Framework",
+      "label": "How it works",
       "href": "/services/how-coaching-works"
     }
   },
@@ -20,74 +20,72 @@
     "title": "Professional Transition",
     "description": "Establish a stable working cadence over 12 weeks using evidence-led frameworks.",
     "benefits": [
-      "Reconstruct professional narratives after career gaps (caregiving, study, or health).",
+      "Construct professional narratives to bridge career gaps effectively.",
       "Test role alignment through behavioral experiments to mitigate transition risks.",
-      "Negotiate and maintain sustainable flexible working patterns."
+      "Negotiate sustainable flexible working patterns with confidence."
     ],
     "icon": "calendar"
   },
   "key_points": {
-    "title": "Core Audience",
-    "description": "Supporting senior professionals balancing multiple responsibilities during a return to professional roles.",
+    "title": "Focus Area",
+    "description": "Supporting senior professionals in balancing priorities during their return to the workplace.",
     "items": [
       {
-        "title": "Flexible Negotiation Needs",
-        "description": "Professionals seeking high-value roles who need to establish flexible working terms or patterns."
+        "title": "Flexible Negotiation",
+        "description": "Establish working terms that align high-value roles with your current availability."
       },
       {
-        "title": "Professional Identity Redefinition",
-        "description": "Translating experience gained during breaks into market-aligned evidence points."
+        "title": "Identity Redefinition",
+        "description": "Translate experience gained during breaks into market-aligned professional evidence."
       },
       {
-        "title": "Resilience-focused Returners",
-        "description": "Using structured rhythms to prevent burnout recurrence and ensure long-term career sustainability."
+        "title": "Sustainable Resilience",
+        "description": "Implement structured rhythms to prevent burnout and ensure long-term career stability."
       }
     ]
   },
   "boundaries": {
-    "title": "Professional Boundaries & Ethics",
-    "description": "Aligned with ICF ethical frameworks to ensure safety and data agency.",
+    "title": "Professional Boundaries",
+    "description": "Coaching is a structured partnership focused on future-facing professional goals.",
     "items": [
       {
         "question": "Who controls the data?",
-        "answer": "You retain full agency over shared information. No details are shared with employers or third-party HR without your explicit written consent."
+        "answer": "You retain full agency. No details are shared with employers or third parties without explicit consent."
       },
       {
-        "question": "Is medical or legal advice included?",
-        "answer": "Coaching is not a replacement for therapy or legal services. We will signpost appropriate professionals and pause coaching if needs fall outside our scope."
+        "question": "Is this therapy?",
+        "answer": "No. We focus on professional strategies and will signpost appropriate clinical help if needed."
       },
       {
-        "question": "Handling external over-capacity?",
-        "answer": "We evaluate risks together. We offer a 'pause clause' to suspend work during high-pressure periods and resume when conditions allow."
+        "question": "Handling capacity?",
+        "answer": "We use a 'pause clause' to suspend sessions during high-pressure periods to protect your wellbeing."
       }
     ]
   },
   "cases": {
     "title": "Anonymised Case Studies",
-    "description": "Composite scenarios demonstrating diverse professional re-entry pathways.",
+    "description": "Scenarios demonstrating diverse professional re-entry pathways.",
     "items": [
       {
-        "title": "Flexible Working Negotiation",
-        "context": "A senior manager returning after a 2-year break, needing to balance care duties with role demands.",
-        "coaching_moves": "Identified non-negotiable needs, drafted outreach scripts based on 'output alignment', and rehearsed a phased re-entry proposal.",
-        "shift": "Secured a 4-day working pattern and established a formal 'health review rhythm' with the line manager.",
+        "title": "Flexible Working",
+        "context": "Senior manager returning after 2 years; balancing care duties with role demands.",
+        "coaching_moves": "Drafted outreach scripts and rehearsed a phased re-entry proposal focused on output alignment.",
+        "shift": "Secured a 4-day pattern and established a formal review rhythm.",
         "tools_used": [
           "Boundary Scripts",
-          "Stakeholder Alignment Map"
+          "Alignment Map"
         ],
-        "disclaimer": "Composite scenario for illustrative purposes.",
         "slug": "professional-reentry-flexible"
       },
       {
-        "title": "Structured Return post-burnout",
-        "context": "A project lead returning after burnout leave, concerned about maintaining a sustainable pace.",
-        "coaching_moves": "Established energy auditing rituals, practiced evidence-based support requests, and defined monitoring cadences for the first 90 days.",
-        "shift": "Shifted communication from 'defensive bracing' to 'proactive capacity management' based on visible data points.",
+        "title": "Post-burnout Return",
+        "context": "Project lead returning after medical leave; concerned about maintaining pace.",
+        "coaching_moves": "Established energy auditing rituals and defined monitoring cadences for the first 90 days.",
+        "shift": "Shifted to 'proactive capacity management' based on visible data points.",
         "tools_used": [
-          "Energy Audit Tool",
-          "Weekly Review Framework"
+          "Energy Audit",
+          "Review Framework"
         ],
-        "disclaimer": "Anonymised situations.",
         "slug": "rebuilding-precision-post-burnout"
       }
     ]
@@ -98,52 +96,47 @@
       {
         "title": "Professional Restart (3 Sessions)",
         "highlights": [
-          "Post-break narrative alignment & confidence reset",
-          "Evidence-based pilot project planning",
+          "Post-break narrative alignment",
+          "Pilot project planning",
           "Initial flexible boundary framework"
         ]
       },
       {
         "title": "Momentum Builder (6 Sessions)",
         "highlights": [
-          "CV & LinkedIn reconstruction: Bridge the gap with evidence",
-          "Mock interviews: Focus on cross-cultural negotiation",
-          "Establishing long-term resilience indicators"
+          "CV & LinkedIn reconstruction",
+          "Mock interviews and negotiation",
+          "Long-term resilience indicators"
         ]
       }
     ],
     "policies": [
-      "Scheduling: 24 hours' notice required for changes; late cancellations are forfeited.",
-      "Confidentiality: Ethical confidentiality by default; GDPR-compliant data minimisation.",
-      "Currency: Invoiced in GBP; supports corporate invoicing requirements.",
-      "Scope: Evidence-led coaching; does not include legal or medical consulting."
+      "24 hours' notice for scheduling changes.",
+      "Strict ethical confidentiality and GDPR compliance.",
+      "Invoiced in GBP; supports corporate requirements."
     ]
   },
   "faq": {
     "items": [
       {
         "q": "How does coaching differ from recruitment?",
-        "a": "Recruitment focuses on the transaction of a placement. Coaching focuses on your 'long-term fit and resilience', building skills that last beyond a single role."
+        "a": "Recruiters fill seats; we build your long-term professional resilience and strategic evaluation skills."
       },
       {
         "q": "Is a job offer guaranteed?",
-        "a": "We do not provide placement guarantees. Our value lies in significantly improving your market positioning and decision-making clarity."
+        "a": "No. Our focus is on improving your market positioning and decision-making clarity."
       },
       {
         "q": "What is the level of confidentiality?",
-        "a": "We follow ICF Code of Ethics. Confidentiality is strictly maintained except where legal disclosure is mandated by law (safeguarding)."
-      },
-      {
-        "q": "How does coaching differ from a recruitment agency?",
-        "a": "Recruiters are paid by employers to fill a seat. We are paid by you to build your long-term professional resilience. Our goal is to develop your strategic evaluation skills so you can independently navigate the entire market."
+        "a": "Confidentiality is strictly maintained following the ICF Code of Ethics."
       }
     ]
   },
   "readiness": {
     "checklist": [
-      "Understands coaching as a collaborative partnership, not a passive advice-reception.",
-      "Comfortable with behavioral experiments where failure is viewed as a data point.",
-      "Workable within UK office hours (GMT/BST) for online sessions."
+      "Ready for a collaborative partnership",
+      "Willing to test new behaviours and scripts",
+      "Available during UK office hours"
     ]
   }
 }

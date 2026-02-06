@@ -1,16 +1,16 @@
 {
-  "title": "UK Career Transition — Professional Framework",
-  "description": "Establish a professional narrative aligned with UK market standards and develop strategies for navigating visa and cultural requirements.",
+  "title": "UK Career Transition",
+  "description": "Align your professional narrative with UK market standards and develop strategies for cultural and regulatory requirements.",
   "hero": {
-    "eyebrow": "International Professional Localisation",
+    "eyebrow": "International Localisation",
     "title": "Establish your professional positioning in the UK market",
-    "subtitle": "We assist in decoding local hiring signals, building structured professional scripts, and balancing outreach momentum with regulatory constraints.",
+    "subtitle": "Decode local hiring signals, build authoritative scripts, and balance outreach momentum with regulatory constraints.",
     "primaryCta": {
-      "label": "Schedule initial consultation (20m)",
+      "label": "Book consultation (20m)",
       "href": "/contact?topic=immigrant-job"
     },
     "secondaryCta": {
-      "label": "View Professional Scope",
+      "label": "View FAQs",
       "href": "/faq"
     }
   },
@@ -18,47 +18,47 @@
     "order": 2,
     "eyebrow": "UK Newcomers",
     "title": "Market Positioning",
-    "description": "Calibrate CV, LinkedIn, and regulatory communication strategies without compromising your professional value.",
+    "description": "Calibrate CV, LinkedIn, and regulatory communication without compromising your professional value.",
     "benefits": [
-      "Reconstruct professional summaries and evidence points to align with UK industry standards.",
-      "Rehearse evidence-based outreach for recruiters and internal decision-makers.",
-      "Manage outreach rhythms and visa timelines with a focus on sustainable momentum."
+      "Reconstruct professional summaries to align with UK industry standards.",
+      "Rehearse evidence-based outreach for recruiters and decision-makers.",
+      "Manage visa timelines and outreach rhythms with sustainable momentum."
     ],
     "icon": "mail"
   },
   "key_points": {
-    "title": "Core Audience",
-    "description": "Supporting professionals with significant international experience navigating cultural or systemic barriers in the UK market.",
+    "title": "Core Focus",
+    "description": "Supporting international professionals in navigating cultural or systemic barriers in the UK market.",
     "items": [
       {
-        "title": "Professionals exploring Sponsorship",
-        "description": "Managing the complex intersection of recruitment timelines, sponsorship requirements, and household relocation."
+        "title": "Sponsorship Strategy",
+        "description": "Manage the intersection of recruitment timelines and sponsorship requirements."
       },
       {
-        "title": "Cross-border Translators",
-        "description": "Translating international project experience into metrics and outcomes that local hiring managers can accurately evaluate."
+        "title": "Value Translation",
+        "description": "Translate international project experience into metrics that local hiring managers value."
       },
       {
-        "title": "Relocating Partners",
-        "description": "Redefining professional identity in the UK and systematically expanding local professional networks."
+        "title": "Network Expansion",
+        "description": "Redefine professional identity and systematically build local professional networks."
       }
     ]
   },
   "boundaries": {
-    "title": "Safety & Ethical Commitments",
-    "description": "We prioritise your decision-making agency and psychological resilience throughout the transition.",
+    "title": "Safety & Ethics",
+    "description": "We prioritise your decision-making agency and resilience throughout the transition.",
     "items": [
       {
-        "question": "Is immigration or legal advice provided?",
-        "answer": "Coaching is not an immigration service. We work within your known constraints and signpost official resources, but do not provide legal representation or regulatory interpretation."
+        "question": "Legal Advice?",
+        "answer": "Coaching is not an immigration service. We work within your constraints but do not provide legal representation."
       },
       {
-        "question": "Are specific outcomes guaranteed?",
-        "answer": "We do not provide placement guarantees. Our value lies in improving your market positioning and strategic decision-making. Final outcomes depend on market conditions and individual engagement."
+        "question": "Placement Guarantees?",
+        "answer": "No. Our value lies in improving your market positioning and strategic decision-making."
       },
       {
-        "question": "Handling systemic barriers?",
-        "answer": "We work on protective strategies and evidence-based recording of processes to ensure your professional safety remains a priority."
+        "question": "Systemic Barriers?",
+        "answer": "We develop protective strategies to ensure your professional safety and agency remain the priority."
       }
     ]
   },
@@ -67,51 +67,59 @@
     "packages": [
       {
         "name": "Positioning Alignment (3 Sessions)",
-        "scope": "3 × 50 minutes / CV & LinkedIn calibration / Initial outreach experiments."
+        "highlights": [
+          "CV & LinkedIn calibration",
+          "Initial outreach experiments",
+          "Professional narrative check"
+        ]
       },
       {
         "name": "Market Momentum (6 Sessions)",
-        "scope": "6 × 50 minutes / Portfolio reframing / Interview rehearsals focused on cultural fit. "
+        "highlights": [
+          "Portfolio reframing",
+          "Mock interviews and cultural fit",
+          "Output-linked communication scripts"
+        ]
       }
     ],
     "policies": [
-      "Confidentiality: Following ICF ethics and GDPR data minimisation practices.",
-      "Logistics: UK office hours (GMT/BST); Invoiced in GBP.",
-      "Scope: Evidence-led coaching; does not include done-for-you drafting or recruitment placement."
+      "ICF ethics and GDPR data minimisation practices.",
+      "UK office hours (GMT/BST); Invoiced in GBP.",
+      "Does not include legal consulting or recruitment placement."
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "What is the primary language of sessions?",
-        "a": "Sessions are delivered in English to align with workplace search requirements. However, we can use Chinese for nuanced conceptual alignment where necessary to ensure clarity of decision-making."
+        "q": "What is the primary language?",
+        "a": "Sessions are in English, but we can use Chinese for nuanced conceptual alignment if needed."
       },
       {
-        "q": "Will you contact recruiters on my behalf?",
-        "a": "No. We assist in crafting authoritative outreach scripts and communication strategies, while you retain full agency over professional relationship management."
+        "q": "Will you contact recruiters?",
+        "a": "No. We assist in crafting authoritative scripts; you retain full agency over relationship management."
       },
       {
-        "q": "What can we collaborate on for preparation?",
-        "a": "We encourage you to have your current CV and LinkedIn URL ready, along with two concrete examples of professional problem-solving or decision-making from your previous experience."
+        "q": "How should I prepare?",
+        "a": "Have your CV and LinkedIn ready, along with two concrete examples of professional problem-solving."
       }
     ]
   },
   "cases": {
-    "title": "Composite Case Studies",
+    "title": "Case Studies",
     "description": "Demonstrating localisation pathways; anonymised for confidentiality.",
     "items": [
       {
-        "title": "Strategic Communication for Sponsorship",
+        "title": "Sponsorship Strategy",
         "context": "Professional concerned about early-stage exclusion due to sponsorship requirements.",
-        "coaching_moves": "Designed structured sponsorship messaging; prioritised firms based on historical data; established a 14-day output reflection cycle.",
-        "shift": "Approached sponsorship inquiries with a neutral, professional stance, resulting in faster signals from target employers.",
+        "coaching_moves": "Designed structured messaging and prioritised firms based on historical data.",
+        "shift": "Approached inquiries with a neutral stance, resulting in faster signals from target employers.",
         "slug": "sponsorship-strategy-precision"
       },
       {
-        "title": "Translating Leadership for UK Leads",
-        "context": "Senior manager concerned that international leadership experience was being undervalued by local hiring teams.",
-        "coaching_moves": "Applied the CAR (Challenge-Action-Result) framework to key projects; integrated risk-management details; rehearsed senior-level stakeholder alignment.",
-        "shift": "Interview feedback shifted from 'misalignment' to 'demonstrated professional value', improving depth of engagement in final rounds.",
+        "title": "Leadership Translation",
+        "context": "Senior manager concerned that international leadership experience was being undervalued.",
+        "coaching_moves": "Applied the CAR framework to key projects and rehearsed senior-level stakeholder alignment.",
+        "shift": "Interview feedback shifted from 'misalignment' to 'demonstrated professional value'.",
         "slug": "leadership-translation-success"
       }
     ]
