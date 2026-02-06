@@ -4,84 +4,83 @@
     "description": "沉穩、以證據為基礎的教練，陪伴在英回流者、畢業生與新移民。小步前進、看得見的佐證、誠實的指引。"
   },
   "hero": {
-    "eyebrow": "溫和地走過改變",
-    "title": "在現實條件下，慢慢找到下一步",
-    "description": "與符合 ICF 精神的教練合作，在不硬撐自己的前提下，試著整理出幾個你願意考慮的方向。",
-    "subheadline": "不賣夢、不催促，也不否認限制，用你負擔得起的步調，一點一點試著前進。",
+    "eyebrow": "英國雙語職涯教練",
+    "title": "在英國職場，穩健找到下一步",
+    "description": "與熟悉 ICF 倫理的雙語教練合作，在現實限制下，有策略地整理出可行方向。",
+    "subheadline": "不做誇大承諾。用你負擔得起的步調，陪你一點一點試著前進。",
     "chips": [
-      "中生代職涯者",
-      "初到英國求職市場",
-      "畢業生與年輕人"
+      "中生代專業人士",
+      "移居英國者",
+      "畢業生與年輕領袖"
     ],
     "primaryCta": {
       "href": "/contact",
-      "label": "安排初步諮詢 (20分鐘)"
+      "label": "預約 20 分鐘初步諮詢"
     },
     "secondaryLink": {
       "href": "/services",
-      "label": "瀏覽教練框架"
+      "label": "瀏覽教練路徑"
     },
-    "secondaryText": "基於證據與 ICF 倫理的實務觀察——無誇大承諾。",
+    "secondaryText": "基於證據與 ICF 倫理的實務觀察。",
     "image": {
       "src": "/images/hero/main.jpg",
-      "alt": "教練與來訪者在窗邊進行平靜對話"
+      "alt": "教練與來訪者的平靜對話"
     }
   },
   "sections": [
     {
       "id": "who-this-is-for",
       "type": "personas",
-      "eyebrow": "這些人會覺得有幫助",
-      "title": "適合來這裡的人",
-      "description": "這三種情境只是常見的樣子，不會完全覆蓋所有人。如果你大致落在其中幾種，通常會覺得這個空間有一些幫助。",
+      "eyebrow": "適用對象",
+      "title": "誰會覺得這份對話有幫助",
+      "description": "如果你正處於以下這三種常見情境，或是感到卡在轉換之中，這裏的結構化對話會非常適合你。",
       "intro": [
-        "這些情境每週都會聽到。每個連結都會說明情境、界線與如何開始。"
+        "每個情境都有對應的支援方式與界線說明。"
       ],
       "cards": [
         {
           "id": "mid-career",
           "iconName": "briefcase",
-          "title": "中生代職涯者",
+          "title": "中生代專業人士",
           "summary": [
-            "有 8–15 年經驗，需要沉澱的空間來決定什麼要留下、什麼要調整，以及如何掌握節奏。"
+            "已有 8–15 年職場經驗，需要在復歸或轉換時，重新對齊價值與現實資源。"
           ],
           "href": "/services/mid-career",
-          "ctaLabel": "查看此路徑"
+          "ctaLabel": "查看對應路徑"
         },
         {
           "id": "newcomers-uk",
           "iconName": "globe",
-          "title": "初到英國",
+          "title": "初到英國者",
           "summary": [
-            "跨國或跨產業轉換經驗的專業人士，希望用沉穩的結構來測試新方向。"
+            "具備海外資歷，希望用沈穩、不焦慮的步調，在英國求職市場測試定位。"
           ],
           "href": "/services/newcomers-uk",
-          "ctaLabel": "查看此路徑"
+          "ctaLabel": "查看對應路徑"
         },
         {
           "id": "graduates",
           "iconName": "book",
-          "title": "畢業生與年輕人",
+          "title": "畢業生與年輕領袖",
           "summary": [
-            "在保持價值感與資源感的同時成長為領導者。",
-            "帶著好奇與尊重去練習回饋、設定期待或界線的對話。"
+            "在快速變遷的環境中，尋找自信與界線，並練習具備尊重的影響力對話。"
           ],
           "href": "/services/graduates",
-          "ctaLabel": "查看此路徑"
+          "ctaLabel": "查看對應路徑"
         }
       ]
     },
     {
       "id": "corporate-preview",
       "type": "promo",
-      "eyebrow": "給組織的服務",
-      "title": "給中英之間的企業領導",
+      "eyebrow": "組織服務",
+      "title": "給中英企業領袖",
       "body": [
-        "如果你帶領一家在英的中資企業，常在總部與當地現實之間被拉扯，這裡有個安靜的空間可以一起梳理。"
+        "為在英的中資企業提供私密教練空間，梳理總部期待與當地現實之間的落差。"
       ],
       "cta": {
         "href": "/corporate",
-        "label": "了解更多"
+        "label": "了解組織方案"
       }
     },
     {
@@ -113,34 +112,34 @@
     {
       "id": "how-we-work",
       "type": "steps",
-      "eyebrow": "我們怎麼合作",
-      "title": "適合沉澱的平穩結構",
+      "eyebrow": "合作流程",
+      "title": "穩定且透明的對話結構",
       "intro": [
-        "始終從實例出發，再一起確認協定、節奏與回顧點。"
+        "從實例出發，每一階段都有明確的協定與回顧節點。"
       ],
       "steps": [
         {
           "id": "initial-conversation",
-          "title": "步驟 1 – 初步對談",
-          "description": "20 分鐘的談話，了解正在改變的事，並說明我們工作的界線。",
+          "title": "01 初步對談",
+          "description": "20 分鐘視訊對談，確認需求與界線。",
           "iconName": "phone"
         },
         {
           "id": "goal-setting",
-          "title": "步驟 2 – 對齊目標",
-          "description": "在開始前，對焦主題、節奏與無障礙需求。",
+          "title": "02 對齊目標",
+          "description": "開案前對焦主題、節奏與可近性需求。",
           "iconName": "target"
         },
         {
           "id": "regular-sessions",
-          "title": "步驟 3 – 定期會談",
-          "description": "線上會談（60–75 分鐘），並在會談間進行實驗與反思。",
+          "title": "03 定期會談",
+          "description": "每週或隔週 60–75 分鐘，進行實驗與反思。",
           "iconName": "calendar"
         },
         {
           "id": "sustainable-growth",
-          "title": "步驟 4 – 穩定成長",
-          "description": "一起暫停、回顧，並留下有效的作法，讓進展穩健且友善。",
+          "title": "04 回顧與沉澱",
+          "description": "共同檢核進展，留下真正長期有效的作法。",
           "iconName": "spark"
         }
       ]
