@@ -1,23 +1,17 @@
 {
-  "title": "Rebuilding confidence post-burnout",
-  "context": "Composite of managers re-entering after burnout-related leave while negotiating reduced hours and energy rebuild.",
-  "session_flow": [
-    "Ran an energy audit to map activities that drain or restore focus.",
-    "Scripted requests for accommodations and experimented with gradual responsibility increases.",
-    "Set up a weekly reflection ritual to notice progress before urgency took over."
-  ],
+  "title": "Post-Burnout Re-entry: Establishing Evidence-led Capacity Management",
+  "context": "A managerial-level professional re-entering the workplace following burnout-related leave, facing challenges in rhythm recalibration and energy sustainability.",
+  "challenge": "Perceiving workload as an uncontrollable external stressor, coupled with a lack of structured monitoring tools to identify and mitigate early exhaustion signals.",
+  "coaching_pivot": "The coaching value focused on implementing a 'Capacity Auditing' system. By converting subjective fatigue into observable data points, we enabled the client to engage in objective stakeholder negotiations regarding sustainable output.",
+  "action": "Execution of weekly energy audits; design of metric-driven phased return milestones; rehearsal of scripts for requesting technical support and naming professional boundaries.",
+  "results": "Shift from reactive bracing to proactive capacity management. Improved ability to articulate professional needs through data rather than emotional appeal.",
+  "outcome": "Secured a formal, phased re-entry agreement with management and established an enduring internal ritual for monitoring career sustainability.",
   "tools_used": [
-    "Energy audit",
-    "Accommodation scripts",
-    "Weekly reflection prompts"
+    "Energy Audit Tool",
+    "Capacity Budgeting Framework",
+    "Adaptive Stakeholder Scripts"
   ],
-  "boundary_and_consent": [
-    "Established a scale for checking capacity before deeper somatic exercises.",
-    "Agreed to skip any task that recreated burnout warning signs."
-  ],
-  "timeframe": "6 sessions over 9 weeks with lightweight check-ins between meetings.",
-  "shift": "They described steadier energy and could articulate needs with less guilt.",
-  "outcome": "Negotiated a phased return plan and identified early warning signals before accepting new commitments.",
-  "disclaimer": "Composite scenario; individual outcomes vary.",
+  "timeframe": "6 sessions over 9 weeks with integrated asynchronous capacity check-ins.",
+  "disclaimer": "Anonymised composite study for professional illustration.",
   "fallbackNotice": "Temporarily showing English content while we complete this translation."
 }

@@ -1,20 +1,17 @@
 {
-  "title": "Interview stories flat",
-  "context": "Composite of graduates whose interview stories sounded generic and failed to communicate impact.",
-  "session_flow": [
-    "Audited existing stories and identified missing stakes, actions and reflections.",
-    "Rebuilt two STAR stories with vivid details and rehearsed follow-up questions.",
-    "Recorded mock interviews to observe pacing and reduce filler."
-  ],
+  "title": "Interview Narrative: Elevating Impact for Early-Career Professionals",
+  "context": "A graduate or junior professional whose interview responses consistently received feedback for being 'generic' or lacking 'demonstrated impact' in the UK professional market.",
+  "challenge": "Failing to distinguish between 'academic activity' and 'professional value,' leading to circular descriptions of tasks rather than linear evidence of outcomes and decision-making.",
+  "coaching_pivot": "The coaching value focused on the 'STAR (Situation-Task-Action-Result) Framework' and 'Impact Calibration.' By converting student-led narratives into business-aligned evidence, we enabled the client to practice professional pauses and authoritative follow-up responses.",
+  "action": "Audit and reconstruction of two core professional stories; high-fidelity mock interviews with integrated recording analysis; calibration of commercial metrics for project achievements.",
+  "results": "Shift from speculative or process-heavy talk to grounded, impact-linked framing. Improved ability to navigate probing questions without losing narrative structure.",
+  "outcome": "Advanced to final-round interviews with positive feedback regarding specific technical strengths and professional maturity.",
   "tools_used": [
-    "STAR builder",
-    "Interview rehearsal",
-    "Feedback transcript"
+    "STAR Framework Builder",
+    "Impact-Driven Narrative Coaching",
+    "Strategic Communication Drills"
   ],
-  "boundary_and_consent": "Student could delete any recording immediately and opted into which clips we analysed together.",
-  "timeframe": "3 sessions over 4 weeks with asynchronous transcript reviews.",
-  "shift": "They sounded more grounded describing impact and could handle probing without spiralling.",
-  "outcome": "Received clearer feedback from interviewers about specific strengths and advanced to final rounds.",
-  "disclaimer": "Composite illustration; interview outcomes vary.",
+  "timeframe": "3 sessions over 4 weeks with integrated asynchronous transcript and audio analysis.",
+  "disclaimer": "Anonymised composite study for professional illustration.",
   "fallbackNotice": "Temporarily showing English content while we complete this translation."
 }

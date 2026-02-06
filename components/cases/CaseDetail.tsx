@@ -2,11 +2,12 @@ import type { ReactNode } from 'react';
 
 export type CaseDetailContent = {
   title?: string;
-  context?: string;          // 背景
-  challenge?: string;        // 挑戰
-  action?: string;           // 行動
-  coaching_pivot?: string;   // 教練介入點
-  results?: string;          // 成果
+  context?: string;          // 背景脈絡
+  challenge?: string;        // 關鍵瓶頸
+  action?: string;           // 策略行動
+  coaching_pivot?: string;   // 教練接入與價值
+  results?: string;          // 實質轉變
+  outcome?: string;          // 最終產出
   tools_used?: string[];
   disclaimer?: string;
   timeframe?: string;
@@ -23,6 +24,7 @@ export function CaseDetail({
   action,
   coaching_pivot,
   results,
+  outcome,
   tools_used,
   disclaimer,
   timeframe,
@@ -47,7 +49,7 @@ export function CaseDetail({
           {/* Context Section */}
           {context ? (
             <section className="space-y-3">
-              <h2 className="text-xl font-semibold text-emerald-800">Background / Context</h2>
+              <h2 className="text-xl font-semibold text-emerald-800">Situational Context (背景脈絡)</h2>
               <div className="text-base leading-7 text-slate-700">{context}</div>
             </section>
           ) : null}
@@ -55,34 +57,42 @@ export function CaseDetail({
           {/* Challenge Section */}
           {challenge ? (
             <section className="space-y-3">
-              <h2 className="text-xl font-semibold text-emerald-800">The Challenge</h2>
+              <h2 className="text-xl font-semibold text-emerald-800">Identified Bottleneck (關鍵瓶頸)</h2>
               <div className="text-base leading-7 text-slate-700">{challenge}</div>
-            </section>
-          ) : null}
-
-          {/* Action Section */}
-          {action ? (
-            <section className="space-y-3">
-              <h2 className="text-xl font-semibold text-emerald-800">Action Taken</h2>
-              <div className="text-base leading-7 text-slate-700">{action}</div>
             </section>
           ) : null}
 
           {/* Coaching Pivot Section */}
           {coaching_pivot ? (
             <section className="rounded-2xl bg-emerald-50/50 p-6 shadow-sm ring-1 ring-emerald-100">
-              <h2 className="text-xl font-semibold text-emerald-900">Coaching Pivot</h2>
+              <h2 className="text-xl font-semibold text-emerald-900">Coaching Intervention & Value (教練介入與價值)</h2>
               <div className="mt-3 text-base leading-7 text-emerald-950/80 italic">
                 {coaching_pivot}
               </div>
             </section>
           ) : null}
 
+          {/* Action Section */}
+          {action ? (
+            <section className="space-y-3">
+              <h2 className="text-xl font-semibold text-emerald-800">Strategic Action (策略行動)</h2>
+              <div className="text-base leading-7 text-slate-700">{action}</div>
+            </section>
+          ) : null}
+
           {/* Results Section */}
           {results ? (
-            <section className="space-y-3">
-              <h2 className="text-xl font-semibold text-emerald-800">Results & Shift</h2>
+            <section className="space-y-3 border-t border-slate-100 pt-10">
+              <h2 className="text-xl font-semibold text-emerald-800">Observed Shift (實質轉變)</h2>
               <div className="text-base leading-7 text-slate-700">{results}</div>
+            </section>
+          ) : null}
+
+          {/* Outcome Section */}
+          {outcome ? (
+            <section className="space-y-3">
+              <h2 className="text-xl font-semibold text-emerald-800">Final Output (最終產出)</h2>
+              <div className="text-base leading-7 text-slate-700">{outcome}</div>
             </section>
           ) : null}
         </div>
@@ -91,14 +101,14 @@ export function CaseDetail({
         <aside className="space-y-8">
           {timeframe ? (
             <div className="space-y-2">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500">Duration</h3>
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500">Service Period</h3>
               <p className="text-sm text-slate-700">{timeframe}</p>
             </div>
           ) : null}
 
           {tools_used && tools_used.length > 0 ? (
             <div className="space-y-4">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500">Frameworks used</h3>
+              <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500">Frameworks Applied</h3>
               <ul className="flex flex-col gap-2">
                 {tools_used.map((tool) => (
                   <li key={tool} className="flex items-center gap-2 text-sm text-slate-700">
