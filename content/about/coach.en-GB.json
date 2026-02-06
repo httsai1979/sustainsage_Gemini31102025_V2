@@ -18,35 +18,19 @@
       "title": "Coaching for complex transitions",
       "cards": [
         {
-          "id": "background",
-          "title": "Before coaching",
-          "iconName": "briefcase",
-          "body": [
-            "Before I became a coach, I spent years in manufacturing – leading three factories and around 1,400 people across Mainland China and Taiwan."
-          ]
-        },
-        {
-          "id": "moments-between",
-          "title": "Listening between the targets",
-          "iconName": "chat",
-          "body": [
-            "Looking back from the UK now, what stays with me is not the targets we hit, but the moments in between: the plant manager who closed the door and admitted he was not sleeping, the HR colleague who asked whether she had become someone she did not recognise, the engineer who wondered if moving country had actually moved him closer to the life he wanted."
-          ]
-        },
-        {
-          "id": "focus-today",
-          "title": "Focus today",
+          "id": "experience",
+          "title": "Professional context",
           "iconName": "target",
           "body": [
-            "Today, as a Taiwan-born, UK-based coach who has lived the pressure of cross-border factory leadership, I work with mid-career individuals and with China–UK corporate leaders."
+            "As a Taiwan-born, UK-based professional coach with lived experience in cross-border leadership, I partner with mid-career professionals and corporate leaders to navigate complexity through evidence-based frameworks."
           ]
         },
         {
           "id": "languages",
-          "title": "Languages we coach in",
+          "title": "Multilingual partnership",
           "iconName": "globe",
           "body": [
-            "Coaching flows between English, Traditional Chinese, and Simplified Chinese so nuance stays intact."
+            "Coaching flows between English, Traditional Chinese, and Simplified Chinese, ensuring professional nuance in every session."
           ]
         }
       ]

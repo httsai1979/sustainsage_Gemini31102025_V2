@@ -1,192 +1,126 @@
 {
-  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
-  "pricing": {
-    "packages": [
+  "title": "Early Career & Graduate Transition — Professional Framework",
+  "description": "Establish professional narratives from academic achievements and develop a structured approach to career exploration and decision-making.",
+  "hero": {
+    "eyebrow": "Early Career Professional Alignment",
+    "title": "Build your professional narrative with evidence from day one",
+    "subtitle": "We assist in clarifying professional pathways, practicing influential professional communication, and establishing sustainable behavioral rhythms for your first role.",
+    "primaryCta": {
+      "label": "Schedule initial consultation (20m)",
+      "href": "/contact?topic=graduate-start"
+    },
+    "secondaryCta": {
+      "label": "Process & Framework",
+      "href": "/services/how-coaching-works"
+    }
+  },
+  "card": {
+    "order": 3,
+    "eyebrow": "Graduate Start",
+    "title": "Career Activation",
+    "description": "Establish structured job-search narratives and professional habits through precise micro-experiments.",
+    "benefits": [
+      "Articulate professional preferences and constraints with clarity.",
+      "Test sector alignment through low-risk experiments to reduce decision friction.",
+      "Develop reflection rituals to manage early-career performance expectations."
+    ],
+    "icon": "book"
+  },
+  "key_points": {
+    "title": "Core Audience",
+    "description": "Supporting graduates and early-career professionals in establishing professional language and behavioral cadences.",
+    "items": [
       {
-        "name": "4-session starter",
-        "duration": "4×60–75min over ~6–8 weeks",
-        "scope": "Decision scorecard, tiny tests, basic portfolio/CV review.",
-        "price_note": "Student-friendly fees on request."
+        "title": "Graduating Decision-makers",
+        "description": "Navigating the intersection of academic requirements and professional entry."
       },
       {
-        "name": "Single session",
-        "duration": "60–75min",
-        "scope": "One decision or interview prep with a clear action note.",
-        "price_note": "Good for assessment centre or first interviews."
+        "title": "Early-role Aligners",
+        "description": "Professionals within their first 18 months seeking to manage stakeholder expectations effectively."
+      },
+      {
+        "title": "Cross-sector Explorers",
+        "description": "Building evaluation frameworks for career options based on data rather than external pressure."
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "Ethical & Professional Agreements",
+    "description": "Designed to protect the autonomy and psychological resources of early-career professionals.",
+    "items": [
+      {
+        "question": "Who sets the agenda?",
+        "answer": "The coachee (you) retains full agency over the coaching agenda. While sponsors (e.g., family members) may be involved in initial resource alignment, session content remains strictly confidential per ICF standards."
+      },
+      {
+        "question": "How is progress measured?",
+        "answer": "Progress is measured through the acquisition of 'data points' (feedback from experiments) rather than just emotional state.",
+      },
+      {
+        "question": "Handling transition stress?",
+        "answer": "Coaching is not a replacement for clinical mental health support. If stress levels exceed the coaching scope, we will suggest parallel clinical support or a pause in services."
+      }
+    ]
+  },
+  "cases": {
+    "title": "Anonymised Case Studies",
+    "description": "Illustrating professional transition pathways for early-career individuals.",
+    "items": [
+      {
+        "title": "Evaluating Multi-sector Options",
+        "context": "A graduate facing decision paralysis between three distinct industry pathways.",
+        "coaching_moves": "Developed a weighted decision matrix and prototyped informational interviews to gather objective sector data.",
+        "shift": "Defined a clear selection rationale based on long-term professional value, resulting in a structured 6-month development plan.",
+        "slug": "structured-career-choice"
+      },
+      {
+        "title": "Proactive Stakeholder Management",
+        "context": "An early-career professional seeking to establish regular performance feedback loops.",
+        "coaching_moves": "Practiced output-linked feedback scripts and identified internal support networks for professional growth.",
+        "shift": "Established a recurring feedback rhythm with line management, improving role clarity and performance alignment.",
+        "slug": "onboarding-alignment-success"
+      }
+    ]
+  },
+  "pricing": {
+    "title": "Service Investment",
+    "packages": [
+      {
+        "title": "Professional Starter (4 Sessions)",
+        "highlights": [
+          "Career decision matrix development",
+          "Micro-experiment log & plan",
+          "Professional narrative & CV calibration"
+        ]
+      },
+      {
+        "title": "Single Focus Consultation",
+        "highlights": [
+          "Precision alignment for Assessment Centres or final-round interviews",
+          "Output of actionable professional strategy notes"
+        ]
       }
     ],
     "policies": [
-      {
-        "title": "Rescheduling",
-        "body": "≥24h notice; otherwise counted as used."
-      },
-      {
-        "title": "No guarantees",
-        "body": "We support experiments; outcomes depend on your effort and timing."
-      }
-    ]
-  },
-  "readiness": {
-    "checklist": [
-      "50–60 minutes available online; UK hours workable.",
-      "A target role or field (even if rough).",
-      "Okay with coaching scope (not placement/therapy/legal).",
-      "Willing to run one micro-experiment between sessions.",
-      "Latest CV/LinkedIn link ready to share."
-    ],
-    "what_to_prepare": [
-      "Your LinkedIn URL or recent CV (PDF).",
-      "Two class/work projects you can explain in 60–90 seconds.",
-      "Short list of target roles/companies or constraints.",
-      "Top 3 questions you want answered in the first two sessions."
-    ],
-    "signals": [
-      "You value clear, UK-relevant guidance over hype.",
-      "You prefer tiny steps that build confidence and proof.",
-      "You can keep a weekly cadence with short reviews."
-    ]
-  },
-  "process": {
-    "title": "Process & pace",
-    "description": "A six to eight week sprint with optional monthly check-ins as you transition into your role.",
-    "steps": [
-      "Map strengths → small proof: skills, projects, outcomes.",
-      "UK CV/LinkedIn alignment: clear bullets, concrete verbs, results.",
-      "Portfolio or samples: one page, one story, one link.",
-      "Outreach scripts + light interview rehearsal.",
-      "Track → review → adjust: keep steps small and visible."
-    ],
-    "note": "Optional aftercare check-ins help you translate offers into confident starts."
-  },
-  "agreement": {
-    "sections": [
-      {
-        "title": "Scope & Fit",
-        "paragraphs": [
-          "This is coaching, not placement, therapy, or legal advice.",
-          "We focus on proof points, story clarity, preparation, and cadence."
-        ]
-      },
-      {
-        "title": "Confidentiality",
-        "paragraphs": [
-          "Confidential by default; minimal notes; deletion on request.",
-          "Quality supervision may use anonymised patterns without identifiers."
-        ]
-      },
-      {
-        "title": "Scheduling & Rescheduling",
-        "paragraphs": [
-          "≈50-minute sessions online within UK hours.",
-          "24 hours’ notice to reschedule; late changes count as used."
-        ]
-      },
-      {
-        "title": "Fees & Invoicing",
-        "paragraphs": [
-          "Fees in GBP; invoiced per block or as agreed.",
-          "Delivered sessions are non-refundable."
-        ]
-      },
-      {
-        "title": "Data & Records",
-        "paragraphs": [
-          "Minimum data kept for sessions and invoices.",
-          "Copy/deletion requests respected within legal limits."
-        ]
-      },
-      {
-        "title": "Fair Use & Boundaries",
-        "paragraphs": [
-          "Light check-ins are fine; heavy review/done-for-you is out of scope.",
-          "We do not contact employers on your behalf."
-        ]
-      }
+      "Ethical Confidentiality: Adhering to ICF standards. No disclosure to sponsors without written consent.",
+      "Outcome Disclaimer: Outcomes depend on market conditions and individual engagement; we focus on improving decision-making and evidence quality.",
+      "Budget Considerations: Phased payment plans are available for recent graduates; please discuss during the initial consultation."
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "Do you place graduates into jobs?",
-        "a": "No. Coaching is not placement. We help you produce UK-relevant proof and clear stories; you apply and track."
+        "q": "Is CV writing included?",
+        "a": "We coach the logic of professional value translation and co-edit documents in Google Docs. You retain full authorship and ownership of the narrative."
       },
       {
-        "q": "Will you write my CV/LinkedIn?",
-        "a": "You remain the author. We coach structure, clarity, and UK norms; we co-edit in Google Docs."
+        "q": "What if I lack significant professional experience?",
+        "a": "We focus on turning academic projects and volunteer work into objective evidence of skills and outcomes."
       },
       {
-        "q": "What if I have no “real experience”?",
-        "a": "We turn coursework, volunteering, and small projects into evidence with outcomes and links."
-      },
-      {
-        "q": "How much work between sessions?",
-        "a": "Usually 30–60 minutes weekly (one micro-experiment or edit pass). Keep it small and visible."
-      },
-      {
-        "q": "Is it confidential?",
-        "a": "Yes. Confidential by default; minimal notes; deletion on request. See boundaries."
-      },
-      {
-        "q": "Do you contact employers for me?",
-        "a": "No. We help with outreach scripts and confidence; you contact directly."
-      },
-      {
-        "q": "Rescheduling/refunds?",
-        "a": "24-hour notice to reschedule; late changes count as used. Delivered sessions are non-refundable."
+        "q": "How does this differ from standard career services?",
+        "a": "While standard services may provide templates, coaching helps you build a personal 'evaluation framework' for long-term career autonomy."
       }
     ]
-  },
-  "cases": {
-    "title": "Composite coaching glimpses",
-    "description": "Stories merged from graduates and early-career professionals to keep individuals anonymous.",
-    "items": [
-      {
-        "title": "Too many choices, no criteria",
-        "context": "Three sectors look appealing but overwhelm decisions.",
-        "coaching_moves": "Built decision scorecard; set 2-week micro-test per sector.",
-        "shift": "Made next pick using data rather than mood.",
-        "tools_used": [
-          "Decision Scorecard",
-          "Experiment Log"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
-        "slug": "too-many-choices-no-criteria"
-      },
-      {
-        "title": "Interview stories flat",
-        "context": "Projects sound generic; feedback: 'lack of impact'.",
-        "coaching_moves": "Refined two STAR stories; rehearsed follow-ups; trimmed jargon.",
-        "shift": "Stories felt concrete and paced; fewer ramble moments.",
-        "tools_used": [
-          "STAR Builder",
-          "Interview Rehearsal"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
-        "slug": "interview-stories-flat"
-      },
-      {
-        "title": "Portfolio without context",
-        "context": "Screenshots with no 'why/so-what'.",
-        "coaching_moves": "Added problem-goal-result captions; linked constraints; ordered by learning.",
-        "shift": "Reviewers grasped thinking, not just visuals.",
-        "tools_used": [
-          "Story Library",
-          "Portfolio Map"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
-        "slug": "portfolio-without-context"
-      }
-    ]
-  },
-  "key_points": {
-    "items": [
-      "Turn scattered efforts into a coherent story with visible evidence.",
-      "Weekly cadence; micro-experiments between sessions (coffee chats, mini-projects).",
-      "Portfolio/CV that shows outcomes and proof, not just course lists.",
-      "Interview rehearsal for clarity and fit—no scripts, no hacks.",
-      "Simple pricing; pause between blocks; confidentiality by default."
-    ]
-  },
-  "title": "Graduate start — coaching pathway",
-  "description": "From coursework to evidence. One page, one story, one link. Keep steps small and visible."
+  }
 }
