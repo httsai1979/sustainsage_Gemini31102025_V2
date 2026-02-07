@@ -4,6 +4,7 @@ import type { ReactNode } from 'react';
 import Prose from './Prose';
 import SectionContainer from './SectionContainer';
 import SectionHeading from './SectionHeading';
+import cn from '@/lib/cn';
 
 export interface PageSectionProps {
   id?: string;
@@ -53,6 +54,6 @@ PageSection.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   lead: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   prose: PropTypes.bool,
-  background: PropTypes.oneOf(['default', 'paper']),
+  background: PropTypes.oneOf(['default', 'paper', 'pattern', 'grid', 'soft']),
   children: PropTypes.node,
 };
