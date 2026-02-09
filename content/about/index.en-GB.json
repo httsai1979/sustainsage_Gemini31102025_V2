@@ -15,6 +15,20 @@
       "Henley PECE Certified Executive Coach (Oct 2024)",
       "15+ Years Global Manufacturing Leadership",
       "Bilingual Strategic Perspective (CN/TW/UK)"
+    ],
+    "stats": [
+      {
+        "value": "1,400+",
+        "label": "Global Team Size Led"
+      },
+      {
+        "value": "15 Years",
+        "label": "Electronics Ops Leadership"
+      },
+      {
+        "value": "Henley",
+        "label": "Business School Certified"
+      }
     ]
   },
   "sections": [
@@ -28,7 +42,7 @@
           "id": "foundation",
           "year": "The Early Years",
           "title": "Global Business Development",
-          "body": "Started as a Global Business Development Manager (BDM), learning to navigate international markets and align customer expectations with industrial realities."
+          "body": "Leveraging my BSc in Electronics Engineering, I started as a Global BDM—bridging the gap between technical specs and commercial realities in international markets."
         },
         {
           "id": "leadership",

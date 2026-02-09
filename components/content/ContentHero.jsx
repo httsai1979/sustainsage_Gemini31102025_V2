@@ -8,9 +8,10 @@ export default function ContentHero({ hero = {}, showFallbackNotice = false, fal
   const introParagraphs = Array.isArray(hero?.intro)
     ? hero.intro
     : hero?.intro
-    ? [hero.intro]
-    : [];
+      ? [hero.intro]
+      : [];
   const chips = Array.isArray(hero?.chips) ? hero.chips : [];
+  const stats = Array.isArray(hero?.stats) ? hero.stats : [];
 
   return (
     <HeroShell
@@ -19,6 +20,7 @@ export default function ContentHero({ hero = {}, showFallbackNotice = false, fal
       subtitle={hero?.lead}
       description={introParagraphs}
       chips={chips}
+      stats={stats}
       notice={showFallbackNotice ? fallbackNotice ?? DEFAULT_NOTICE : null}
       image={hero?.image}
     />
@@ -35,6 +37,10 @@ ContentHero.propTypes = {
       PropTypes.string,
     ]),
     chips: PropTypes.arrayOf(PropTypes.string),
+    stats: PropTypes.arrayOf(PropTypes.shape({
+      value: PropTypes.string,
+      label: PropTypes.string,
+    })),
   }),
   showFallbackNotice: PropTypes.bool,
   fallbackNotice: PropTypes.string,

@@ -16,12 +16,20 @@ interface HeroImage {
   alt?: string;
 }
 
+interface HeroStat {
+  value: string;
+  label: string;
+}
+
+
+
 interface HeroShellProps {
   eyebrow?: ReactNode;
   title?: ReactNode;
   subtitle?: ReactNode;
   description?: Array<string | ReactNode> | string | ReactNode;
   chips?: Array<string>;
+  stats?: Array<HeroStat>;
   primaryCta?: HeroCta;
   secondaryCta?: HeroCta;
   meta?: ReactNode;
@@ -42,6 +50,7 @@ export default function HeroShell({
   subtitle,
   description,
   chips = [],
+  stats = [],
   primaryCta,
   secondaryCta,
   meta,
@@ -80,6 +89,17 @@ export default function HeroShell({
                     >
                       {chip}
                     </span>
+                  ))}
+                </div>
+              ) : null}
+
+              {stats?.length ? (
+                <div className="grid grid-cols-2 gap-4 border-t border-ink/10 pt-8 sm:grid-cols-3">
+                  {stats.map((stat) => (
+                    <div key={stat.label} className="space-y-1">
+                      <p className="text-2xl font-bold text-ink sm:text-3xl">{stat.value}</p>
+                      <p className="text-xs font-medium uppercase tracking-wider text-ink/60">{stat.label}</p>
+                    </div>
                   ))}
                 </div>
               ) : null}
@@ -123,7 +143,9 @@ export default function HeroShell({
                     priority
                   />
                 ) : (
-                  <div className="h-full w-full bg-gradient-to-br from-primary/20 via-primary/5 to-white" />
+                  <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-primary/20 via-primary/5 to-white text-ink/20">
+                    <span className="text-9xl font-bold opacity-20">SS</span>
+                  </div>
                 )}
               </div>
             </div>
