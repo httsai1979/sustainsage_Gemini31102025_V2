@@ -1,26 +1,27 @@
 {
   "seo": {
-    "title": "SustainSage Coaching — UK bilingual career coaching",
-    "description": "Calm, evidence-led coaching for returners, graduates, and immigrants in the UK. Small steps, visible proof, honest guidance."
+    "title": "SustainSage | Strategic Executive Coaching | Henley Certified Coach James Tsai",
+    "description": "Combining 15+ years of senior management (1,400+ team) with Henley Business School Executive Coaching certification. Specializing in strategic transition and alignment for expatriate leaders in the UK."
   },
   "hero": {
-    "eyebrow": "Navigate change sustainably",
-    "title": "Coaching to help you move forward with clarity",
-    "subtitle": "SustainSage offers thoughtful coaching for people navigating transitions, relocations, and re-entry moments.",
+    "eyebrow": "SustainSage Executive Coaching",
+    "title": "Accelerate Your UK Career Transition with 15+ Years of Global Management Practice",
+    "description": "You don't need another session of emotional encouragement. You need a strategic partner who has handled P&L, workforce volatility, and multinational operational realities to help you pin down your position in the UK.",
+    "subtitle": "Bridging the gap between 15 years of high-level manufacturing leadership and the scientific rigor of Henley Business School for professionals pursuing excellence.",
     "chips": [
-      "Mid-career professionals",
-      "Newcomers to the UK job market",
-      "Graduates & young adults"
+      "Henley PECE Certified Executive Coach",
+      "Senior Executives",
+      "Global Transition Professionals"
     ],
     "primaryCta": {
       "href": "/contact",
-      "label": "Schedule initial consultation (20m)"
+      "label": "Book a strategic consultation"
     },
     "secondaryLink": {
       "href": "/services",
-      "label": "Explore coaching frameworks"
+      "label": "Explore strategic pathways"
     },
-    "secondaryText": "Evidence-led sessions aligned with ICF ethics—no hyperbolic promises.",
+    "secondaryText": "15+ Years Management Experience + Henley PECE Certification.",
     "image": {
       "src": "/images/hero/main.jpg",
       "alt": "Coach and client in a calm conversation by the window"
@@ -30,56 +31,56 @@
     {
       "id": "who-this-is-for",
       "type": "personas",
-      "eyebrow": "Who coaching is for",
-      "title": "People who find this space helpful",
+      "eyebrow": "Strategic Partners",
+      "title": "Who finds this high-level space helpful",
+      "description": "If you prioritize problem-solving and strategic alignment over general empathy, these structured dialogues and outputs will fit your pace.",
       "intro": [
-        "These are the contexts we hear every week. Each link shows scenarios, boundaries, and ways to start."
+        "Informed by 15 years of high-pressure operational leadership, providing elevated support for every career stage."
       ],
       "cards": [
         {
           "id": "mid-career",
           "iconName": "briefcase",
-          "title": "Mid-career professionals",
+          "title": "Senior Executives & Leaders",
           "summary": [
-            "People with 8–15 years of experience who need a reflective space to decide what stays, what shifts, and how to pace change."
+            "Addressing leadership pressure at the 1,400+ team scale, organisational change, and high-stakes career re-alignment."
           ],
           "href": "/services/mid-career",
-          "ctaLabel": "See this pathway"
+          "ctaLabel": "See strategic pathway"
         },
         {
           "id": "newcomers-uk",
           "iconName": "globe",
-          "title": "New to the UK",
+          "title": "Global Transition Professionals",
           "summary": [
-            "Professionals translating experience between countries or industries who want calm structure to test new directions."
+            "Success-proven overseas, now requiring a 'cultural translation' of their career to land precisely in the UK market."
           ],
           "href": "/services/newcomers-uk",
-          "ctaLabel": "See this pathway"
+          "ctaLabel": "See strategic pathway"
         },
         {
           "id": "graduates",
           "iconName": "book",
-          "title": "Graduates & young adults",
+          "title": "High-Potential Young Leaders",
           "summary": [
-            "Grow into leadership while staying values-led and resourced.",
-            "Plan and rehearse feedback, expectation-setting, or boundary conversations with curiosity and respect."
+            "Build executive presence and decision-making boundaries in rapidly changing environments."
           ],
           "href": "/services/graduates",
-          "ctaLabel": "See this pathway"
+          "ctaLabel": "See strategic pathway"
         }
       ]
     },
     {
       "id": "corporate-preview",
       "type": "promo",
-      "eyebrow": "For organisations",
-      "title": "For China–UK corporate leaders",
+      "eyebrow": "Organisational & Leadership Services",
+      "title": "For UK-based Corporate Leaders & Expatriate Managers",
       "body": [
-        "If you lead a China-invested business in the UK and feel pulled between head office and local realities, there is a quiet place to talk it through."
+        "Designed for executives in multinational businesses. We focus on resolving the 'alignment pain' between Head Office strategic intent and local UK operational realities, helping managers lead effectively across cultural and managerial gaps."
       ],
       "cta": {
         "href": "/corporate",
-        "label": "Learn more"
+        "label": "Learn about organisational alignment"
       }
     },
     {
@@ -119,7 +120,7 @@
       "steps": [
         {
           "id": "initial-conversation",
-          "title": "Step 1 – Initial conversation",
+          "title": "Step 1 – Initial consultation",
           "description": "A 20-minute chat to understand what is changing and share the boundaries we work within.",
           "iconName": "phone"
         },

@@ -1,0 +1,115 @@
+{
+    "seo": {
+        "title": "Executive Leadership Landing | Strategic Coaching for Multinational Leaders",
+        "description": "Specialized executive coaching for senior managers in UK-based multinational firms. Solving HQ-branch alignment, P&L pressure, and cross-cultural governance."
+    },
+    "hero": {
+        "eyebrow": "Executive Leadership Landing",
+        "title": "Executive Leadership Landing",
+        "intro": [
+            "Specifically designed for senior executives and corporate leaders in UK-based multinational or East Asian firms. We address the 'alignment pain' between global headquarters and local operational reality.",
+            "High-pressure leadership requires more than just endurance; it requires strategic precision and a resilient internal governance system."
+        ],
+        "chips": [
+            "Focused on Senior Management (VP, Director, Head of Dept)",
+            "Cross-Cultural Governance Specialist",
+            "P&L Resilience Protocols"
+        ]
+    },
+    "sections": [
+        {
+            "id": "challenges",
+            "title": "Strategic Challenges for Leaders",
+            "style": "cards",
+            "cards": [
+                {
+                    "id": "hq-alignment",
+                    "title": "HQ-Branch Misalignment",
+                    "iconName": "handshake",
+                    "body": [
+                        "Navigating the tension between the strategic intent of a distant headquarters and the hard operational realities in the UK."
+                    ]
+                },
+                {
+                    "id": "pl-resilience",
+                    "title": "P&L Pressure vs. Capacity",
+                    "iconName": "target",
+                    "body": [
+                        "Maintaining high-level decision quality while being held accountable for aggressive financial and operational targets."
+                    ]
+                },
+                {
+                    "id": "style-translation",
+                    "title": "Leadership Style Translation",
+                    "iconName": "chat",
+                    "body": [
+                        "Adapting your leadership presence to be effective within UK workplace culture without compromising your core authority or HQ requirements."
+                    ]
+                },
+                {
+                    "id": "burnout-prevention",
+                    "title": "Top-Level Burnout Risk",
+                    "iconName": "clock",
+                    "body": [
+                        "Protecting the most valuable asset in the organization—your cognitive energy and decision-making clarity."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "support",
+            "title": "How Clinical & Field-Hardened Coaching Helps",
+            "style": "cards",
+            "cards": [
+                {
+                    "id": "governance-map",
+                    "title": "Internal Governance Mapping",
+                    "iconName": "note",
+                    "body": [
+                        "Create a clear map of your decision rights, escalation paths, and stakeholder influence to reduce organisational friction."
+                    ]
+                },
+                {
+                    "id": "negotiation-rehearsal",
+                    "title": "High-Stakes Rehearsal",
+                    "iconName": "chat",
+                    "body": [
+                        "Prepare for critical board meetings, union negotiations, or HQ business reviews in a confidential, bilingual space."
+                    ]
+                },
+                {
+                    "id": "resilience-protocols",
+                    "title": "Advanced Resilience Protocols",
+                    "iconName": "target",
+                    "body": [
+                        "Implement specific psychological and operational boundaries that protect your capacity during high-stakes turnaround or scale-up phases."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "vignette",
+            "title": "A Leadership Viewpoint",
+            "style": "prose",
+            "body": [
+                "A senior Director of a major electronics firm found that the reporting rituals required by the Asian HQ were demoralising the local UK management team. Coaching provided a 'strategic buffer'—we mapped out a new communication architecture that satisfied HQ's data needs while allowing the UK team the autonomy they needed to perform. By aligning the two systems, the Director reduced his own weekend workload by 30% and improved local retention rates."
+            ]
+        },
+        {
+            "id": "cta",
+            "style": "cta",
+            "title": "Ready to Align Your Global Strategy?",
+            "body": [
+                "Book a 20-minute strategic consultation. We'll determine if our operational dimensions match your current organizational challenges."
+            ],
+            "primaryCta": {
+                "href": "/contact",
+                "label": "Book Strategic Consultation"
+            },
+            "secondaryCta": {
+                "href": "/services",
+                "label": "See All Pathways"
+            }
+        }
+    ]
+}

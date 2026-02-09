@@ -1,148 +1,124 @@
 {
   "fallbackNotice": "Temporarily showing English content while we complete this translation.",
   "seo": {
-    "title": "About — SustainSage Group",
-    "description": "Bilingual coaches based in the UK. ICF-aligned, confidential by default, practical and culture-aware."
+    "title": "About | From managing 1,400 people to Henley-certified executive coaching",
+    "description": "An executive coach with 15 years of senior management experience in electronics manufacturing, scientifically trained by a top business school. Decisive, warm, and strategic."
   },
   "hero": {
-    "eyebrow": "About SustainSage",
-    "title": "Coaching for complex transitions",
+    "eyebrow": "The SustainSage Story",
+    "title": "From Managing 1,400 People to Protecting a New Life",
     "intro": [
-      "SustainSage is led by bilingual coaches who have moved between Taiwan, Singapore, and the UK. We keep coaching steady, culturally aware, and grounded in practical experiments.",
-      "Every partnership begins with informed consent, shared language, and clarity on how we will work together."
+      "In November 2021, the birth of my daughter changed my perspective on the world. To reunite with my family in the UK, I chose to leave the VP of Operations position I had cultivated for years. This was more than a geographical relocation; it was a profound transformation of values and identity.",
+      "This decision allowed me to transition from an operational leader to a professional coach. I understand the weight of 'starting over' when you have so much to lose, and the courage it takes to align your professional success with your personal mission."
     ],
     "chips": [
-      "ICF-aligned practice keeps agreements, data care, and supervision transparent so trust can grow.",
-      "Lived experience across Asia-Pacific and the UK keeps culture and policy context in view.",
-      "No-drama experiments help you build momentum without burning out."
+      "Henley PECE Certified Executive Coach (Oct 2024)",
+      "15+ Years Global Manufacturing Leadership",
+      "Bilingual Strategic Perspective (CN/TW/UK)"
+    ],
+    "stats": [
+      {
+        "value": "1,400+",
+        "label": "Global Team Size Led"
+      },
+      {
+        "value": "15 Years",
+        "label": "Electronics Ops Leadership"
+      },
+      {
+        "value": "Henley",
+        "label": "Business School Certified"
+      }
     ]
   },
   "sections": [
     {
-      "id": "about-navigation",
-      "style": "cards",
-      "cards": [
+      "id": "career-trajectory",
+      "style": "story-blocks",
+      "title": "A Trajectory of Pragmatic Evolution",
+      "lead": "I didn't start in the boardroom. My journey from the factory floor to executive leadership gives me a 360-degree view of how organisations actually move.",
+      "items": [
         {
-          "id": "story",
-          "title": "From factories to quiet conversations",
-          "iconName": "book",
-          "body": [
-            "Before I became a coach, I spent years in manufacturing – leading three factories and around 1,400 people across Mainland China and Taiwan."
-          ],
-          "href": "/about/story"
+          "id": "foundation",
+          "year": "The Early Years",
+          "title": "Global Business Development",
+          "body": "Leveraging my BSc in Electronics Engineering, I started as a Global BDM—bridging the gap between technical specs and commercial realities in international markets."
         },
         {
-          "id": "coach",
-          "title": "Meet the bilingual coaches behind SustainSage",
-          "iconName": "chat",
-          "body": [
-            "We bring supervision-informed coaching, policy literacy, and multilingual lived experience to every partnership."
-          ],
-          "href": "/about/coach"
+          "id": "leadership",
+          "year": "Management Ascent",
+          "title": "From Team Leader to Factory Ops",
+          "body": "Moved into leadership roles, managing sales teams and eventually overseeing high-precision factory operations in Taiwan and Mainland China."
         },
         {
-          "id": "values",
-          "title": "Values that shape every partnership",
-          "iconName": "consent",
-          "body": [
-            "Gentle, ICF-aligned principles that keep each conversation calm, transparent, and culturally aware."
-          ],
-          "href": "/about/values"
-        },
-        {
-          "id": "approach",
-          "title": "Experiments that respect pace and context",
-          "iconName": "compass",
-          "body": [
-            "Every partnership begins with informed consent, shared language, and clarity on how we will work together."
-          ],
-          "href": "/about/approach"
+          "id": "executive",
+          "year": "Strategic Height",
+          "title": "VP of Operations",
+          "body": "Reached the level of VP of Operations, leading a multinational workforce of 1,400 people. This role taught me how to govern complex systems while holding space for human resilience."
         }
       ]
     },
     {
-      "id": "values-preview",
-      "style": "cards",
-      "title": "Values that shape every partnership",
-      "lead": "Gentle, ICF-aligned principles that keep each conversation calm, transparent, and culturally aware.",
+      "id": "core-capabilities",
+      "style": "feature-grid",
+      "title": "Strategic Precision Meets Human Empathy",
       "cards": [
         {
-          "id": "authenticity",
-          "title": "Authenticity",
-          "iconName": "consent",
-          "body": [
-            "ICF-aligned practice keeps agreements, data care, and supervision transparent so trust can grow."
-          ]
-        },
-        {
-          "id": "gentleness",
-          "title": "Gentleness",
-          "iconName": "family",
-          "body": [
-            "We keep a calm cadence so experimentation feels kind, slow enough, and sustainable."
-          ]
-        },
-        {
-          "id": "structure",
-          "title": "Structure",
-          "iconName": "note",
-          "body": [
-            "Clear agreements, review points, and data boundaries help every partnership stay grounded."
-          ]
-        },
-        {
-          "id": "cultural-sensitivity",
-          "title": "Cultural sensitivity",
+          "id": "multicultural-translation",
           "iconName": "globe",
+          "title": "Multicultural Context Translation",
           "body": [
-            "Lived experience across Asia-Pacific and the UK keeps multilingual nuance and policy context in view."
+            "I move fluently between English and Chinese thinking. I don't just translate words; I translate the cultural context, the unsaid expectations, and the business logic between the East and the West."
+          ]
+        },
+        {
+          "id": "operational-reality",
+          "iconName": "briefcase",
+          "title": "Global Management at Scale",
+          "body": [
+            "With experience leading 1,400 people across Mainland China, Taiwan, and the UK, I understand the friction of P&L, workforce volatility, and the reality of high-pressure operations."
+          ]
+        },
+        {
+          "id": "resilient-leadership",
+          "iconName": "handshake",
+          "title": "Cultivating Resilience",
+          "body": [
+            "I help leaders transform their past management experience into coaching wisdom—building teams that are not just efficient, but sustainable and resilient."
           ]
         }
       ]
     },
     {
-      "id": "practice-pillars",
-      "style": "cards",
-      "title": "Structures that keep our practice steady",
-      "lead": "Training, supervision, and bilingual partnerships that keep our work grounded and accountable.",
-      "cards": [
-        {
-          "id": "context-before-action",
-          "title": "Context before action",
-          "iconName": "target",
-          "body": [
-            "We map systems, constraints, and access needs before suggesting experiments."
-          ]
-        },
-        {
-          "id": "bilingual-collaboration",
-          "title": "Bilingual collaboration",
-          "iconName": "globe",
-          "body": [
-            "Sessions move between English, Traditional Chinese, and Simplified Chinese so nuance survives translation."
-          ]
-        },
-        {
-          "id": "reflective-practice",
-          "title": "Reflective practice",
-          "iconName": "note",
-          "body": [
-            "Monthly supervision and pause points keep bias, risk, and wellbeing in view."
-          ]
-        }
-      ]
+      "id": "formal-credentials",
+      "style": "split-creds",
+      "title": "Scientifically Trained, Field Proven",
+      "left": {
+        "title": "The Henley Seal",
+        "body": [
+          "In October 2024, I officially earned the Professional Executive Coaching Certification (PECE) from Henley Business School, University of Reading.",
+          "This rigorous scientific training allows me to combine field-hardened management experience with world-class coaching psychology."
+        ]
+      },
+      "right": {
+        "title": "The SustainSage Identity",
+        "body": [
+          "I am an executive coach who understands your situation because I have been there.",
+          "I support senior executives, mid-career professionals, and high-potential graduates who are looking for more than just career advice—they are looking for strategic alignment."
+        ]
+      }
     }
   ],
   "cta": {
-    "title": "Ready to map your next step?",
-    "body": "Browse our coaching services or read the full coaching boundaries we uphold.",
+    "title": "Ready for a Strategic Conversation?",
+    "body": "Let's map out your transition with the precision of an operator and the insight of a coach.",
     "primary": {
-      "label": "See services",
-      "href": "/services"
+      "label": "Schedule Strategic Consult",
+      "href": "/contact"
     },
     "secondary": {
-      "label": "Read coaching boundaries",
-      "href": "/services/how-coaching-works"
+      "label": "View Strategic Pathways",
+      "href": "/services"
     }
   }
 }

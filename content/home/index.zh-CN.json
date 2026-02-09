@@ -1,26 +1,27 @@
 {
   "seo": {
-    "title": "SustainSage 教练 —— 英国双语职涯教练",
-    "description": "沉稳、以证据为基础的教练，陪伴在英回流者、毕业生与新移民。小步前进、看得见的佐证、诚实的指引。"
+    "title": "SustainSage | Strategic Executive Coaching | Henley Certified Coach James Tsai",
+    "description": "Combining 15+ years of senior management (1,400+ team) with Henley Business School Executive Coaching certification. Specializing in strategic transition and alignment for expatriate leaders in the UK."
   },
   "hero": {
-    "eyebrow": "温和地走过改变",
-    "title": "帮助你更清晰前进的教练陪伴",
-    "subtitle": "SustainSage 提供细腻的教练空间，陪你度过转职、搬迁或回流阶段。",
+    "eyebrow": "SustainSage Executive Coaching",
+    "title": "运用 1,400 人跨国管理实践，加速您的英国职业转型",
+    "description": "您不需要另一场只有情绪鼓励的咨询。您需要一位同样处理过 P&L、人力动荡与跨国营运现实的『战略合伙人』，协助您在高压环境中精准定位。",
+    "subtitle": "结合 15 年电子业高级管理实操与顶尖商学院科学方法，为精英人士缩短认知差距。",
     "chips": [
-      "中生代职涯者",
-      "初到英国求职市场",
-      "毕业生与年轻人"
+      "Henley PECE 高阶认证教练",
+      "高级管理人员",
+      "跨国转型专业人士"
     ],
     "primaryCta": {
       "href": "/contact",
-      "label": "预约 20 分钟认识谈"
+      "label": "预约 20 分钟战略咨询"
     },
     "secondaryLink": {
       "href": "/services",
-      "label": "查看教练路径"
+      "label": "查看战略路径"
     },
-    "secondaryText": "沉稳而实务的会谈——没有夸大承诺。",
+    "secondaryText": "15 年实务经验 + Henley PECE 高阶教练认证。",
     "image": {
       "src": "/images/hero/main.jpg",
       "alt": "教练与来访者在窗边进行平静对话"
@@ -30,56 +31,56 @@
     {
       "id": "who-this-is-for",
       "type": "personas",
-      "eyebrow": "这些人会觉得有帮助",
-      "title": "适合来这里的人",
+      "eyebrow": "合作伙伴",
+      "title": "谁会从这份对话中看见价值",
+      "description": "如果您偏好以「解决问题」与「战略规划」為核心的对话，而非一般的心理抚慰，这里的结构化输出会非常适合您。",
       "intro": [
-        "这些情境每周都会听到。每个连结都会说明情境、界线与如何开始。"
+        "基于 15 年运营高压的观察，为不同职业发展阶段提供具高度的支持。"
       ],
       "cards": [
         {
           "id": "mid-career",
           "iconName": "briefcase",
-          "title": "中生代职涯者",
+          "title": "高级管理人员与领袖",
           "summary": [
-            "有 8–15 年经验，需要沉淀的空间来决定什么要留下、什么要调整，以及如何掌握节奏。"
+            "处理 1,400 人规模级别的领导压力、组织变革与职业发展再对齐。"
           ],
           "href": "/services/mid-career",
-          "ctaLabel": "查看此路径"
+          "ctaLabel": "查看战略路径"
         },
         {
           "id": "newcomers-uk",
           "iconName": "globe",
-          "title": "初到英国",
+          "title": "跨国转型专业人士",
           "summary": [
-            "跨国或跨产业转换经验的专业人士，希望用沉稳的结构来测试新方向。"
+            "具备海外成功资历，需在英实现职业发展「跨文化转译」与精准落地。"
           ],
           "href": "/services/newcomers-uk",
-          "ctaLabel": "查看此路径"
+          "ctaLabel": "查看战略路径"
         },
         {
           "id": "graduates",
           "iconName": "book",
-          "title": "毕业生与年轻人",
+          "title": "潜力年轻领袖",
           "summary": [
-            "在保持价值感与资源感的同时成长为领导者。",
-            "带着好奇与尊重去练习回馈、设定期待或界线的对话。"
+            "在快速变迁的环境中，建立具备高度的职场影响力与决策边界。"
           ],
           "href": "/services/graduates",
-          "ctaLabel": "查看此路径"
+          "ctaLabel": "查看战略路径"
         }
       ]
     },
     {
       "id": "corporate-preview",
       "type": "promo",
-      "eyebrow": "给组织的服务",
-      "title": "给中英之间的企业领导",
+      "eyebrow": "组织与领导力服务",
+      "title": "针对在英企业领袖与跨国经理人",
       "body": [
-        "如果你带领一家在英的中资企业，常在总部与当地现实之间被拉扯，这里有个安静的空间可以一起梳理。"
+        "专为在英跨国企业高管设计。我们专注于解决「总部战略期待」与「英国地方分支现实」之间的对接阵痛，协助经理人在文化与管理落差中建立高效领导力。"
       ],
       "cta": {
         "href": "/corporate",
-        "label": "了解更多"
+        "label": "了解组织对齐方案"
       }
     },
     {
@@ -93,52 +94,52 @@
         "iconName": "chat",
         "title": "教练是什么",
         "bullets": [
-          "以实例带路，让决定先落地，再慢慢铺结构。",
-          "每周节奏，并在会谈间做小型实验。",
-          "先用免费的工具，留下真正有用的部分。"
+          "以实战经验为支撑的对话，协助决策落地并建立可执行的结构。",
+          "维持每周/隔周节奏，并在会谈间进行高价值的行為实验。",
+          "整合双语工具与反思架构，將观察转化為可量化的產出。"
         ]
       },
       "rightCard": {
         "iconName": "privacy",
         "title": "教练不是什么",
         "bullets": [
-          "这里是教练，不是治疗——若治疗对你更安全，我们会指引资源。",
-          "准时开始与结束，让你能安心安排日程。",
-          "步调由你决定；我们提供结构与陪伴，不会施压。"
+          "這裡是教练，不是治療——若治療對您更安全，我們會指引資源。",
+          "準時開始與結束，讓您能安心安排高效日程。",
+          "步調由您決定；我們提供戰略結構與反饋，不會施壓。"
         ]
       }
     },
     {
       "id": "how-we-work",
       "type": "steps",
-      "eyebrow": "我们怎么合作",
-      "title": "适合沉淀的平稳结构",
+      "eyebrow": "合作流程",
+      "title": "專業且透明的對談結構",
       "intro": [
-        "始终从实例出发，再一起确认协定、节奏与回顾点。"
+        "從實務實例出發，每一階段都有明確的戰略協定與檢核點。"
       ],
       "steps": [
         {
           "id": "initial-conversation",
-          "title": "步骤 1 – 初步对谈",
-          "description": "20 分钟的谈话，了解正在改变的事，并说明我们工作的界线。",
+          "title": "01 戰略諮詢",
+          "description": "20 分鐘視訊對談，確認需求、界線與合作維度。",
           "iconName": "phone"
         },
         {
           "id": "goal-setting",
-          "title": "步骤 2 – 对齐目标",
-          "description": "在开始前，对焦主题、节奏与无障碍需求。",
+          "title": "02 對齊目標",
+          "description": "開案前對焦職業發展目標、節奏與核心挑戰。",
           "iconName": "target"
         },
         {
           "id": "regular-sessions",
-          "title": "步骤 3 – 定期会谈",
-          "description": "线上会谈（60–75 分钟），并在会谈间进行实验与反思。",
+          "title": "03 定期會談",
+          "description": "每周或隔周 60–75 分鐘，進行深度實驗與戰略反思。",
           "iconName": "calendar"
         },
         {
           "id": "sustainable-growth",
-          "title": "步骤 4 – 稳定成长",
-          "description": "一起暂停、回顾，并留下有效的做法，让进展稳健且友善。",
+          "title": "04 回顧與沉澱",
+          "description": "共同檢核進展，留下真正具戰略威力的長期做法。",
           "iconName": "spark"
         }
       ]
@@ -146,50 +147,50 @@
     {
       "id": "topics",
       "type": "topics",
-      "eyebrow": "我们可以一起探讨的主题",
-      "title": "你可能会认出这些片刻",
+      "eyebrow": "我們可以一起探討的主題",
+      "title": "您可能會認出這些關鍵時刻",
       "intro": [
-        "这些提示取自真实对话，帮你感觉我们的节奏、语气与关照是否适合。"
+        "這些情境取自真實高階對話，幫您評估我們的維度與語境是否對齊。"
       ],
       "cards": [
         {
           "id": "relocating-to-the-uk",
           "iconName": "globe",
-          "title": "搬到英国",
+          "title": "在英職涯落地",
           "summary": [
-            "学习新的职场默契，同时在另一个时区照顾家人。"
+            "破解英國職場潛規則，在轉換時區的同時維持領導效能。"
           ]
         },
         {
           "id": "re-entering-after-care-leave",
           "iconName": "family",
-          "title": "照护假后回到工作",
+          "title": "回歸高管崗位",
           "summary": [
-            "想要重新投入，又不想失去守护家庭或健康的协定。"
+            "休息後重塑影響力，不喪失對家庭或健康的戰略協定。"
           ]
         },
         {
           "id": "speaking-multiple-languages",
           "iconName": "chat",
-          "title": "在多种语言间切换",
+          "title": "跨文化領導語境",
           "summary": [
-            "为了抓住细节，你会在一句话里切换语言，并希望教练跟得上这个节奏。"
+            "在多種語言與文化邏輯間切換，精準傳遞決策意圖。"
           ]
         },
         {
           "id": "balancing-visas-and-identity",
           "iconName": "compass",
-          "title": "签证、归属与身份",
+          "title": "身分、歸屬與權力規模",
           "summary": [
-            "你在权衡担保时程、归属感，以及在新体系里领导的样子。"
+            "權衡簽證時程、歸屬感，以及在新體系中建立影響力。"
           ]
         },
         {
           "id": "catching-burnout-early",
           "iconName": "clock",
-          "title": "及早拦截倦怠",
+          "title": "高壓能量管理",
           "summary": [
-            "察觉耗竭讯号，希望先做守护能量的实验，避免撑到崩解。"
+            "及早攔截高管倦怠，優化決策能量調度，避免損害組織。"
           ]
         }
       ]
@@ -197,39 +198,40 @@
     {
       "id": "services-preview",
       "type": "services",
-      "eyebrow": "教练路径",
-      "title": "与你一起调整的路径",
+      "eyebrow": "戰略路徑",
+      "title": "為精英人士量身訂製的路徑",
+      "description": "您可以先瀏覽三條路徑的戰略目標，感受這種合作維度是否符合您的期待。",
       "intro": [
-        "每条路径都是起点。理解你的现实后，再调整节奏、语言与焦点。"
+        "每條路徑都是一個戰略起點。我們將根據您的營運現實動態調整。"
       ],
       "cards": [
         {
           "id": "mid-career-pathway",
           "iconName": "briefcase",
-          "title": "给中生代回流者",
+          "title": "高階人士回流/轉換",
           "summary": [
-            "休息后重建动能，不需要假装上一章节不存在。",
-            "梳理你学到什么、它如何影响现在的工作，以及你选择如何分享。"
+            "重構專業資產，將過去的成功轉化為在英的戰略優勢。",
+            "梳理領導力產出，優化您在高端獵頭或組織內的對齊方式。"
           ],
           "href": "/services/mid-career"
         },
         {
           "id": "newcomers-pathway",
           "iconName": "globe",
-          "title": "给初到英国的人",
+          "title": "跨境職業發展",
           "summary": [
-            "理解工作、文化与期待，而不必从头翻译自己的故事。",
-            "映射选项、界线与风险，让选择同时照顾签证、价值与能量。"
+            "實現「跨文化職位落差」的最小化，縮短英國商業文化認知差距。",
+            "映射風險與資源，讓您的選擇兼顧簽證安全與長期市場競爭力。"
           ],
           "href": "/services/newcomers-uk"
         },
         {
           "id": "graduates-pathway",
           "iconName": "book",
-          "title": "给年轻专业人士",
+          "title": "引領未來領袖",
           "summary": [
-            "在保持价值感与资源感的同时成长为领导者。",
-            "带着好奇与尊重练习回馈、设定期待或界线的对话。"
+            "在職業初期建立戰略思維，培植具國際維度的領導特質。",
+            "練習在高壓環境中設定界限，建立具影響力的專業對話。"
           ],
           "href": "/services/graduates"
         }
@@ -238,34 +240,34 @@
     {
       "id": "resources-and-blog",
       "type": "split",
-      "title": "资源与书写",
+      "title": "資源與深度閱讀",
       "left": {
-        "eyebrow": "自我练习工具",
-        "title": "先试一份自我反思工具",
+        "eyebrow": "專業反思工具",
+        "title": "戰略工具箱預覽",
         "description": [
-          "整理过的双语资源，陪你在会谈间做实验。",
-          "无需留邮件、没有压力——只是邀请你暂停与觉察。"
+          "具備科學基礎的雙語工具，支持您在會談間進行深度梳理。",
+          "無需註冊，直接邀請您進行高維度的自我診斷。"
         ],
         "items": [
           {
             "id": "values-map",
             "iconName": "target",
-            "title": "价值地图",
-            "summary": "描绘真正重要的事，并检查现在的选择是否对得起核心价值。",
+            "title": "價值觀與戰略佈局",
+            "summary": "檢驗您的職業選擇是否對準了長期的核心競爭力。",
             "href": "/tools/values-map.html"
           },
           {
             "id": "self-talk-reframe",
             "iconName": "chat",
-            "title": "自我对话重构卡",
-            "summary": "温和的提示，帮你注意严苛的自我对话，并用更慈悲的语言重构。",
+            "title": "決策邏輯重構",
+            "summary": "識別並修正那些限制您在高壓下做出正確判斷的心理偏誤。",
             "href": "/tools/self-talk-reframe.html"
           },
           {
             "id": "behaviour-experiment-ladder",
             "iconName": "tool",
-            "title": "行为实验阶梯",
-            "summary": "规划小型、低风险的实验来测试新行为，而不是一次性的大改变。",
+            "title": "高價值行為實驗",
+            "summary": "規劃低風險、高回報的行為測試，快速驗證新的職業策略。",
             "href": "/tools/behaviour-experiment-ladder.html"
           }
         ],
@@ -275,20 +277,19 @@
         }
       },
       "right": {
-        "eyebrow": "部落格",
-        "title": "读一篇短文",
+        "eyebrow": "實戰筆記",
+        "title": "閱讀戰略短文",
         "description": [
-          "这些短文帮你在会谈间暂停、观察模式，并温和地做实验。",
-          "文字邀请反思与学习——而不是医疗、法律、财务或移民建议。"
+          "這些短文旨在挑戰現有的認知模式，支持高階專業人士的轉時代觀察。"
         ],
         "items": [
           {
             "id": "a-kinder-way-to-restart",
             "iconName": "book",
-            "title": "更温和的重新开始",
-            "summary": "当卡住时，小而温和比大而响亮更有效。行动贴合当下的承载量，动力就会回来。",
+            "title": "更專業的重新定位",
+            "summary": "在轉載英國市場時，精準的戰略定位遠比盲目的努力更重要。",
             "href": "/blog/a-kinder-way-to-restart",
-            "meta": "3 分钟阅读"
+            "meta": "5 分鐘閱讀"
           }
         ],
         "link": {
@@ -298,71 +299,106 @@
       }
     },
     {
+      "id": "fitChecklist",
+      "type": "accordion",
+      "eyebrow": "維度對齊",
+      "title": "十個問題，確認我們的對齊度",
+      "description": "這不是行銷術語，而是為了確保您的時間與費用能投入在最高效率的對話中。",
+      "intro": [
+        "請基於您的營運現實誠實評估。如果不符合，我們可以節省彼此的戰略成本。"
+      ],
+      "items": [
+        {
+          "question": "Q1: 我是否需要一個同樣處理過組織高壓，能聽懂企業語境的教練？",
+          "answer": "SustainSage 的優勢在於 15 年的高階管理實務。如果您需要的不是情緒安撫，而是能與您在同一個「維度」探討決策、組織變革與職涯戰略的人，這裡會非常高效。"
+        },
+        {
+          "question": "Q2: 我是否更看重「科學方法」與「實戰產出」，而非虛無縹緲的靈性啟發？",
+          "answer": "我們結合 Henley 商學院的 PECE 科學架構與 1,400 人團隊管理的實操經驗。談話產出通常是結構化的選項評估或具體的行為實驗計畫。"
+        },
+        {
+          "question": "Q3: 我是否正面臨「個人能力優異但文化轉譯受挫」的典型英國職場痛點？",
+          "answer": "許多高階人士在轉換至英國時，最大的障礙不在技術而在「文化認知」。我們專注於補足這塊戰略空白。"
+        },
+        {
+          "question": "Q4: 我是否期待教練能以「合夥人」的高度對我的選擇進行誠實回饋？",
+          "answer": "這裡提供的是基於證據的誠實引導。我們不會為了迎合而誇大承諾，而是會指出潛在的戰略風險。"
+        },
+        {
+          "question": "Q5: 我是否願意為「缩短认知差距、降低决策成本」支付對應的溢價？",
+          "answer": "這是一份針對專業精英的高端服務。我們相信：在關鍵轉折點做對一個決定的價值，遠高於諮詢費用本身的成本。"
+        },
+        {
+          "question": "Q6-Q10: (其餘維度對齊)",
+          "answer": "涵蓋了時間效能、保密協定、跨文化敏感度等核心專業指標，確保合作在最高、最安全的基準上進行。"
+        }
+      ]
+    },
+    {
       "id": "boundaries",
       "type": "accordion",
-      "eyebrow": "我们守住的界线",
-      "title": "保护节奏与安全的协定",
+      "eyebrow": "專業邊界",
+      "title": "保護效能與安全的協定",
       "intro": [
-        "这些协定守护节奏、身心与保密。"
+        "這些協定確保對話在專業、保密且安全的維度下進行。"
       ],
       "faqs": [
         {
           "id": "coaching-vs-therapy",
-          "question": "这是教练还是治疗？",
-          "answer": "这是教练，不是治疗——若治疗对你更安全，我们会指引资源。"
+          "question": "這是教練還是心理諮詢？",
+          "answer": "這是職業發展戰略教練。若您目前的需求屬於心理治療，我們會指引相關醫療資源。"
         },
         {
           "id": "time-expectations",
-          "question": "时间上的期待是什么？",
-          "answer": "准时开始与结束，让你能安心规划其他安排。"
+          "question": "時間管理與效能？",
+          "answer": "準時開始與結束。我們尊重彼此的時間，這是高效合作的基礎。"
         },
         {
           "id": "notes-and-data",
-          "question": "你们如何处理笔记与资料？",
-          "answer": "仅保留最少的笔记，并在约定的保存期间内，应要求删除。"
+          "question": "商業機密與隱私保護？",
+          "answer": "嚴格遵守 ICF 職業道德。資料保留採最簡化處理，並支持應要求刪除。"
         },
         {
           "id": "pace",
-          "question": "谁决定步调？",
-          "answer": "步调由你决定；我们提供结构与陪伴，但不会施压。"
+          "question": "決策掌控權？",
+          "answer": "您始終掌握最終決策。教練提供戰略地圖、風險映射與科學反思工具。"
         }
       ]
     },
     {
       "id": "faq-teaser",
       "type": "faq-cta",
-      "title": "想知道教练怎么运作？",
+      "title": "想知道具體運作邏輯？",
       "body": [
-        "阅读会谈节奏、价格、伦理，以及我们如何为个人与组织客制支持。"
+        "深入了解會談節奏、收費標準以及如何為您的組織客製化支持方案。"
       ],
       "primaryCta": {
         "href": "/faq",
-        "label": "阅读 FAQ"
+        "label": "閱讀 FAQ"
       },
       "secondaryCta": {
         "href": "/contact",
-        "label": "预约 20 分钟认识谈"
+        "label": "預約戰略諮詢"
       }
     },
     {
       "id": "soft-cta",
       "type": "cta",
-      "title": "如果你想先谈谈",
+      "title": "開啟您的轉型戰略",
       "body": [
-        "写几行正在改变的事。我们会用清晰回应，并尊重你的节奏。",
-        "你可以写多或少；我们通常在三个英国工作天内回复。"
+        "簡述您目前面臨的戰略瓶頸。我們通常在三個英國工作天內提供專業回覆。"
       ],
       "primaryCta": {
         "href": "/contact",
-        "label": "预约 20 分钟认识谈"
+        "label": "預約戰略諮詢"
       },
       "secondaryLink": {
         "href": "/faq",
-        "label": "想先看 FAQ"
+        "label": "查看更多細節"
       }
     }
   ],
   "testimonialsSection": {
-    "title": "被正在走过改变的人信任"
+    "title": "深受追求卓越的精英人士信任"
   }
 }

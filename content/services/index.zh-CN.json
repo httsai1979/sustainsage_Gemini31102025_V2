@@ -1,45 +1,120 @@
 {
-  "fallbackNotice": "如有尚未翻译的段落，会暂以英文显示。",
-  "pathways": [
+  "seo": {
+    "title": "教练服务 | 高阶领导力与职业转型战略",
+    "description": "为高级管理人员、中生代专业人士与初到英国的精英提供具备战略高度的教练路径。专注于跨文化治理、运营压力管理与职业精准定位。"
+  },
+  "hero": {
+    "eyebrow": "教练服务",
+    "title": "为高压转折点设计的战略路径",
+    "intro": [
+      "每段合作都是一次战略对齐。我们超越一般的感性安抚，为在英国商业环境中航行的领导者提供结构化、经实操验证的引导。",
+      "请选择最贴近您当前挑战的路径，了解我们如何将您的过去经验转化为下一个战略优势。"
+    ],
+    "chips": [
+      "Henley PECE 高阶认证教练",
+      "15 年电子业高管背景"
+    ]
+  },
+  "whoThisIsFor": {
+    "eyebrow": "专属支持",
+    "title": "谁会从这些对话中看见价值",
+    "lead": "根据您目前的战略挑战选择路径。每条路径都包含明确的会谈结构与高价值的实践输出。"
+  },
+  "whoThisIsForCards": [
     {
-      "slug": "career-return",
-      "title": "重返职场",
-      "teaser": "12 周稳稳拉回节奏：轻量结构、小实验、诚实界线。",
-      "audience": "因为照护、健康、进修或搬迁而暂别，如今准备回到职场的专业者。",
-      "focus": "重新建立节奏、更新叙事，并练习守得住的界线。",
-      "format": "1:1 线上教练｜12 周｜每次 60–75 分钟",
-      "cta_label": "查看路径"
+      "id": "leadership",
+      "title": "高阶领导力转型 (Executive Leadership Landing)",
+      "eyebrow": "针对高级管理人员与企业领袖",
+      "iconName": "target",
+      "body": [
+        "专门针对在英中资或跨国企业的高级经理人。我们解决「总部战略期待」与「英国当地运营现实」之间的对接阵痛。",
+        "核心焦点：跨文化治理冲突、P&L 压力下的心理韧性、以及高难度决策的战略导航。"
+      ],
+      "href": "/services/leadership",
+      "ctaLabel": "查看高管战略路径"
     },
     {
-      "slug": "graduate-start",
-      "title": "毕业起步",
-      "teaser": "把故事说清楚，转成可被看见、可被测试的小步骤。",
-      "audience": "正在摸索第一份英国工作的毕业生或新人。",
-      "focus": "把专案转成证据点、测试选项，并累积可以带回现场的语言。",
-      "format": "1:1 线上教练｜8–10 周｜每次 60 分钟",
-      "cta_label": "查看路径"
+      "id": "mid-career",
+      "title": "中生代实战转型 (Strategic Transition)",
+      "eyebrow": "针对资深专业人士",
+      "iconName": "briefcase",
+      "body": [
+        "这不只是一个沉淀空间，更是一个「产出结果」的实验室。通过「运营证据点」的梳理，重新建立您的职业动能。",
+        "核心焦点：将职业中断转化为战略资产、排演高阶面试语境、并以精准定位重回核心战场。"
+      ],
+      "href": "/services/mid-career",
+      "ctaLabel": "查看职业实战路径"
     },
     {
-      "slug": "immigrant-job",
-      "title": "英国职场新起点",
-      "teaser": "把海外经验翻成当地可信的证据点。",
-      "audience": "带着海外经验、需要转换成英国叙事与签证可行性的专业者。",
-      "focus": "翻译履历、盘点网络与可近性需求，并练习稳健的沟通语言。",
-      "format": "1:1 线上教练｜8–12 周｜每次 60–75 分钟",
-      "cta_label": "查看路径"
+      "id": "newcomers-uk",
+      "title": "英国职场转译 (UK Career Translation)",
+      "eyebrow": "针对跨国转型精英",
+      "iconName": "globe",
+      "body": [
+        "最小化「文化转译时差」。协助您映射英国职场默契，并将您的海外资历转化为当地可信的证据点。",
+        "核心焦点：签证逻辑对齐、人脉网络构建、以及破解英国商业社交的非正式规则。"
+      ],
+      "href": "/services/newcomers-uk",
+      "ctaLabel": "查看职场转译路径"
     }
   ],
-  "hero": {
-    "title": "先找到最像你的路径。",
-    "subtitle": "重返职场、毕业起步或英国市场，每条路径都会说明服务对象、合作结构与如何开始。"
-  },
-  "pathways_intro": "先看看自己最像哪条。如果还在评估教练是否合适，可以到 Readiness 指南了解什么情境最能发挥效果。",
-  "cta": {
-    "primary_label": "先试用免费工具",
-    "primary_href": "/resources",
-    "secondary_label": "预约 20 分钟聊一聊",
-    "secondary_href": "/contact"
-  },
-  "title": "服务｜可以立即启动的三条路径",
-  "description": "三个聚焦情境，让你先确认适配，再了解节奏与费用。"
+  "sections": [
+    {
+      "id": "coaching-topics",
+      "eyebrow": "战略议题",
+      "title": "真实世界的运营挑战",
+      "lead": "这些提示反映了我们共同应对的高压环境。每次对话都旨在达成清晰的认知与果斷的行动。",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "alignment",
+          "title": "总部与分支对齐",
+          "iconName": "handshake",
+          "body": [
+            "当北京/总部董事会的期待，与伦敦/曼彻斯特的运营现实产生脱节时的冲突管理。"
+          ]
+        },
+        {
+          "id": "resilience",
+          "title": "P&L 压力韧性",
+          "iconName": "target",
+          "body": [
+            "在极端财务指标与运营目标下，如何维持决策透明度与个人心理空间。"
+          ]
+        },
+        {
+          "id": "culture",
+          "title": "领导力文化转译",
+          "iconName": "chat",
+          "body": [
+            "从「威权式管理」到「协作式引领」的精准切换，且不丧失领导者的核心权威。"
+          ]
+        },
+        {
+          "id": "burnout",
+          "title": "高管能量调度",
+          "iconName": "clock",
+          "body": [
+            "针对高级人士的倦怠预警机制，确保您的决策质量始终维持在精英水准。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "style": "cta",
+      "title": "准备好对齐您的转型战略了吗？",
+      "body": [
+        "20 分钟的战略咨询将帮助我们确认：我们的思考维度是否能与您的当前使命达成共鳴。"
+      ],
+      "primaryCta": {
+        "href": "/contact",
+        "label": "预约战略咨询"
+      },
+      "secondaryCta": {
+        "href": "/services/how-coaching-works",
+        "label": "查看合作指南"
+      }
+    }
+  ]
 }

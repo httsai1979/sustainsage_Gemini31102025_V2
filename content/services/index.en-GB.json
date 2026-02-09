@@ -1,166 +1,101 @@
 {
   "seo": {
-    "title": "Coaching services",
-    "description": "Explore SustainSage coaching pathways that support career returners, internationally trained professionals building UK careers, and graduates starting their first roles."
+    "title": "Coaching Services | Strategic Executive & Career Pathways",
+    "description": "Strategic coaching pathways for senior executives, mid-career professionals, and global newcomers in the UK. Practical, evidence-led, and results-oriented."
   },
   "hero": {
-    "eyebrow": "Coaching services",
-    "title": "Coaching pathways shaped with you",
+    "eyebrow": "Coaching Services",
+    "title": "Strategic Pathways for High-Stakes Transitions",
     "intro": [
-      "Each pathway is a starting point. We adapt pace, language, and focus once we understand your reality.",
-      "Three focused coaching pathways that you can combine or adapt after our 20-minute chat."
+      "Every partnership is a strategic alignment. We move beyond general empathy to provide structured, field-hardened guidance for leaders and professionals navigating the UK landscape.",
+      "Choose a specialized pathway below to see how we translate your past experience into your next strategic advantage."
     ],
     "chips": [
-      "Choose the starting point that fits right now."
+      "Henley PECE Certified",
+      "15+ Years Executive Experience"
     ]
   },
   "whoThisIsFor": {
-    "eyebrow": "Who coaching is for",
-    "title": "People who find this space helpful",
-    "lead": "These are the contexts we hear every week. Each link shows scenarios, boundaries, and ways to start."
+    "eyebrow": "Targeted Support",
+    "title": "Who finds this high-level space helpful",
+    "lead": "Select the pathway that matches your current strategic challenge. Each includes clear session structures and practical outputs."
   },
   "whoThisIsForCards": [
     {
+      "id": "leadership",
+      "title": "Executive Leadership Landing",
+      "eyebrow": "For Senior Executives & Corporate Leaders",
+      "iconName": "target",
+      "body": [
+        "Specifically for senior managers in UK-based multinational or East Asian firms. We address the 'alignment pain' between HQ expectations and local UK operational realities.",
+        "Focus: Cross-cultural governance, P&L pressure resilience, and high-stakes leadership navigation."
+      ],
+      "href": "/services/leadership",
+      "ctaLabel": "View Executive Pathway"
+    },
+    {
       "id": "mid-career",
-      "title": "For mid-career returners",
-      "eyebrow": "Coaching for career returners",
+      "title": "Strategic Mid-Career Transition",
+      "eyebrow": "For Experienced Professionals",
       "iconName": "briefcase",
       "body": [
-        "Rebuild momentum after a break without pretending the last chapter did not happen.",
-        "Clarify what you learned, how it shapes your work now, and how you choose to share it."
+        "This is not just a space for reflection; it is a laboratory for results. Rebuild your professional momentum with a focus on 'operational evidence' and market positioning.",
+        "Focus: Translating career break gaps into strategic assets, rehearsing high-stakes interviews, and landing your next role with precision."
       ],
-      "href": "/services/mid-career"
+      "href": "/services/mid-career",
+      "ctaLabel": "View Career Pathway"
     },
     {
       "id": "newcomers-uk",
-      "title": "For newcomers to the UK",
-      "eyebrow": "Coaching for newcomers to the UK",
+      "title": "UK Career Translation",
+      "eyebrow": "For Global Newcomers",
       "iconName": "globe",
       "body": [
-        "Make sense of work, culture, and expectations—without having to translate your whole story from scratch.",
-        "Map options, boundaries, and risks so your choices honour visas, values, and energy."
+        "Minimise the 'cultural translation lag'. We help you map UK workplace norms and translate your international seniority into local proof points.",
+        "Focus: Visa logic alignment, networking strategy, and mastering the unspoken rules of UK business."
       ],
-      "href": "/services/newcomers-uk"
-    },
-    {
-      "id": "graduates",
-      "title": "For young professionals",
-      "eyebrow": "Coaching for young professionals",
-      "iconName": "book",
-      "body": [
-        "Grow into leadership while staying values-led and resourced.",
-        "Plan and rehearse feedback, expectation-setting, or boundary conversations with curiosity and respect."
-      ],
-      "href": "/services/graduates"
+      "href": "/services/newcomers-uk",
+      "ctaLabel": "View Translation Pathway"
     }
   ],
   "sections": [
     {
       "id": "coaching-topics",
-      "eyebrow": "Areas we can explore together",
-      "title": "You might recognise these moments",
-      "lead": "Short prompts from real conversations so you can sense whether the rhythm, tone, and care fit what you need.",
+      "eyebrow": "Strategic Topics",
+      "title": "Real-world operational challenges",
+      "lead": "These prompts reflect the high-pressure environments we navigate. Each conversation is designed for clarity and decisive action.",
       "style": "cards",
       "cards": [
         {
-          "id": "relocating-to-the-uk",
-          "title": "Relocating to the UK",
-          "iconName": "globe",
+          "id": "alignment",
+          "title": "HQ vs. Branch Alignment",
+          "iconName": "handshake",
           "body": [
-            "You are learning new workplace norms while supporting family in another timezone."
+            "Managing the tension when the boardroom in Taipei/Beijing doesn't match the reality in London/Manchester."
           ]
         },
         {
-          "id": "care-leave",
-          "title": "Re-entering after care leave",
-          "iconName": "family",
+          "id": "resilience",
+          "title": "P&L Pressure Resilience",
+          "iconName": "target",
           "body": [
-            "You want to return without losing the agreements that protect your household or health."
+            "Holding space for strategic decisions while maintaining personal capacity under intense financial and operational targets."
           ]
         },
         {
-          "id": "multilingual",
-          "title": "Speaking multiple languages",
+          "id": "culture",
+          "title": "Leadership Culture Translation",
           "iconName": "chat",
           "body": [
-            "You switch languages mid-sentence to capture nuance and want a coach who can hold that pace."
-          ]
-        },
-        {
-          "id": "visas-and-identity",
-          "title": "Balancing visas and identity",
-          "iconName": "compass",
-          "body": [
-            "You are weighing sponsorship timelines, belonging, and what leadership looks like in a new system."
+            "Moving from 'authoritative' to 'collaborative' (or vice versa) without losing your core authority as a leader."
           ]
         },
         {
           "id": "burnout",
-          "title": "Catching burnout early",
+          "title": "Executive Energy Management",
           "iconName": "clock",
           "body": [
-            "You notice signals of exhaustion and want experiments that protect energy before things fracture."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "approach",
-      "eyebrow": "My approach",
-      "title": "Practical, personalised, sustainable",
-      "lead": "We co-create experiments that are culturally aware, trauma-informed, and kind to your pace.",
-      "style": "cards",
-      "cards": [
-        {
-          "id": "personalised-flexible",
-          "title": "Personalised & flexible",
-          "iconName": "note",
-          "body": [
-            "We co-design agreements, cadence, and language preferences so the coaching rhythm fits your life and responsibilities."
-          ]
-        },
-        {
-          "id": "practical-sustainable",
-          "title": "Practical & sustainable",
-          "iconName": "target",
-          "body": [
-            "Every session ends with right-sized experiments, reflections, or scripts you can use immediately without burning out."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "how-we-work",
-      "eyebrow": "Getting started",
-      "title": "A steady process from first chat to ongoing sessions",
-      "style": "steps",
-      "steps": [
-        {
-          "id": "book-chat",
-          "title": "Book your 20-minute chat",
-          "body": [
-            "We talk for 20 minutes to understand what is changing and answer scope questions."
-          ]
-        },
-        {
-          "id": "explore",
-          "title": "Explore together",
-          "body": [
-            "We map priorities, access needs, and the rhythm that keeps you steady."
-          ]
-        },
-        {
-          "id": "choose",
-          "title": "Choose your path",
-          "body": [
-            "Select one of the coaching pathways or co-design something bespoke."
-          ]
-        },
-        {
-          "id": "begin",
-          "title": "Begin your journey",
-          "body": [
-            "We meet online every 2–3 weeks, review progress, and adjust agreements as needed."
+            "Advanced protocols for burnout prevention, ensuring your decision-making quality remains elite."
           ]
         }
       ]
@@ -168,17 +103,17 @@
     {
       "id": "cta",
       "style": "cta",
-      "title": "Not sure where to start?",
+      "title": "Ready to Align Your Strategy?",
       "body": [
-        "A 20-minute chat lets us hear your context and shape the right mix together."
+        "A 20-minute strategic consultation helps us determine if our dimensions of thinking match your current mission."
       ],
       "primaryCta": {
         "href": "/contact",
-        "label": "Book a 20-minute chat"
+        "label": "Book Strategic Consultation"
       },
       "secondaryCta": {
         "href": "/services/how-coaching-works",
-        "label": "Read how coaching works"
+        "label": "View Operational Structure"
       }
     }
   ]

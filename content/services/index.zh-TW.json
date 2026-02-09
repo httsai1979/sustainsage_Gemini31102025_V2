@@ -1,45 +1,120 @@
 {
-  "fallbackNotice": "如有尚未翻譯的段落，會暫以英文顯示。",
-  "pathways": [
+  "seo": {
+    "title": "教練服務 | 高階領導力與職涯轉型戰略",
+    "description": "為高階主管、中生代專業人士與初到英國的精英提供具備戰略高度的教練路徑。專注於跨文化治理、營運壓力管理與職涯精準定位。"
+  },
+  "hero": {
+    "eyebrow": "教練服務",
+    "title": "為高壓轉折點設計的戰略路徑",
+    "intro": [
+      "每段合作都是一次戰略對齊。我們超越一般的情緒安撫，為在英國商業環境中航行的領導者提供結構化、經實踐驗證的引導。",
+      "請選擇最貼近您當前挑戰的路徑，了解我們如何將您的過去經驗轉化為下一個戰略優勢。"
+    ],
+    "chips": [
+      "Henley PECE 高階認證教練",
+      "15 年電子業高管背景"
+    ]
+  },
+  "whoThisIsFor": {
+    "eyebrow": "專屬支持",
+    "title": "誰會從這些對話中看見價值",
+    "lead": "根據您目前的戰略挑戰選擇路徑。每條路徑都包含明確的會談結構與高價值的實踐產出。"
+  },
+  "whoThisIsForCards": [
     {
-      "slug": "career-return",
-      "title": "重返職場",
-      "teaser": "12 週溫和拉回節奏：輕量結構、小實驗、誠實界線。",
-      "audience": "曾因照護、健康、進修或搬遷而暫停、現在準備重返職場的人。",
-      "focus": "重建節奏、更新故事、練習守得住的界線。",
-      "format": "1:1 線上教練｜12 週｜每次 60–75 分鐘",
-      "cta_label": "查看路徑"
+      "id": "leadership",
+      "title": "高階領導力轉型 (Executive Leadership Landing)",
+      "eyebrow": "針對高階經理人與企業領袖",
+      "iconName": "target",
+      "body": [
+        "專門針對在英中資或台資企業的高級經理人。我們解決「總部戰略期待」與「英國在地營運現實」之間的對接陣痛。",
+        "核心焦點：跨文化治理衝突、P&L 壓力下的心理韌性、以及高難度決策的戰略導航。"
+      ],
+      "href": "/services/leadership",
+      "ctaLabel": "查看高管戰略路徑"
     },
     {
-      "slug": "graduate-start",
-      "title": "畢業起步",
-      "teaser": "把故事說清楚，轉成可被看見、可被測的小步驟。",
-      "audience": "正在摸索第一份工作的畢業生或新鮮人。",
-      "focus": "把專案轉成證據點、測試選項、累積可帶回現場的語句。",
-      "format": "1:1 線上教練｜8–10 週｜每次 60 分鐘",
-      "cta_label": "查看路徑"
+      "id": "mid-career",
+      "title": "中生代實戰轉型 (Strategic Transition)",
+      "eyebrow": "針對資深專業人士",
+      "iconName": "briefcase",
+      "body": [
+        "這不只是一個沉澱空間，更是一個「產出結果」的實驗室。透過「營運證據點」的梳理，重新建立您的職涯動能。",
+        "核心焦點：將職涯中斷轉化為戰略資產、排演高階面試語境、並以精準定位重回核心戰場。"
+      ],
+      "href": "/services/mid-career",
+      "ctaLabel": "查看職涯實戰路徑"
     },
     {
-      "slug": "immigrant-job",
-      "title": "英國職場新起點",
-      "teaser": "把海外經驗翻成在地可信的證據點。",
-      "audience": "帶著海外經驗、需要轉換成英國敘事與簽證可行性的專業者。",
-      "focus": "翻譯履歷、盤點網絡與可近性需求，並練習穩定的溝通語句。",
-      "format": "1:1 線上教練｜8–12 週｜每次 60–75 分鐘",
-      "cta_label": "查看路徑"
+      "id": "newcomers-uk",
+      "title": "英國職涯轉譯 (UK Career Translation)",
+      "eyebrow": "針對跨國移居精英",
+      "iconName": "globe",
+      "body": [
+        "最小化「文化轉譯時差」。協助您映射英國職場默契，並將您的海外資歷轉化為在地可信的經營點。",
+        "核心焦點：簽證邏輯對齊、人脈網絡構建、以及破解英國商業社交的非正式規則。"
+      ],
+      "href": "/services/newcomers-uk",
+      "ctaLabel": "查看職涯轉譯路徑"
     }
   ],
-  "hero": {
-    "title": "先找到最像你的路徑。",
-    "subtitle": "重返職場、畢業起步或在英國重新摸索工作的方向，每條路徑都會說明：適合誰、我們會怎麼一起工作，以及如果你還在猶豫，可以怎麼先從小地方開始。"
-  },
-  "pathways_intro": "你不一定要馬上決定。可以先看看自己大致比較接近哪一條路徑，感受描述是否貼近你的生活狀態；如果還在評估 coaching 是否合適，也可以先閱讀 Readiness 指南，了解什麼情況下這類對話比較有幫助。",
-  "cta": {
-    "primary_label": "先試用免費工具",
-    "primary_href": "/resources",
-    "secondary_label": "預約 20 分鐘聊聊",
-    "secondary_href": "/contact"
-  },
-  "title": "服務｜可以立即開始的三條路徑",
-  "description": "三個聚焦情境，讓你先確認適配，再了解節奏與費用。"
+  "sections": [
+    {
+      "id": "coaching-topics",
+      "eyebrow": "戰略議題",
+      "title": "真實世界的營運挑戰",
+      "lead": "這些提示反映了我們共同應對的高壓環境。每次對話都旨在達成清晰的認知與果斷的行動。",
+      "style": "cards",
+      "cards": [
+        {
+          "id": "alignment",
+          "title": "總部與分支對齊",
+          "iconName": "handshake",
+          "body": [
+            "當台北/北京董事會的期待，與倫敦/曼徹斯特的營運現實產生脫節時的衝突管理。"
+          ]
+        },
+        {
+          "id": "resilience",
+          "title": "P&L 壓力韌性",
+          "iconName": "target",
+          "body": [
+            "在極度財務指標與營運目標下，如何維持決策透明度與個人心理空間。"
+          ]
+        },
+        {
+          "id": "culture",
+          "title": "領導力文化轉譯",
+          "iconName": "chat",
+          "body": [
+            "從「威權式管理」到「協作式引領」的精準切換，且不喪失領導者的核心權威。"
+          ]
+        },
+        {
+          "id": "burnout",
+          "title": "高管能量調度",
+          "iconName": "clock",
+          "body": [
+            "針對高階人士的倦怠預警機制，確保您的決策品質始終維持在精英水準。"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "style": "cta",
+      "title": "準備好對齊您的轉型戰略了嗎？",
+      "body": [
+        "20 分鐘的戰略諮詢將幫助我們確認：我們的思考維度是否能與您的當前使命達成共鳴。"
+      ],
+      "primaryCta": {
+        "href": "/contact",
+        "label": "預約戰略諮詢"
+      },
+      "secondaryCta": {
+        "href": "/services/how-coaching-works",
+        "label": "查看合作指南"
+      }
+    }
+  ]
 }
