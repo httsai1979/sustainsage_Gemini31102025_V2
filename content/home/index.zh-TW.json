@@ -1,17 +1,17 @@
 {
   "seo": {
-    "title": "SustainSage | 實戰精英轉型 | 英國雙語高階教練 James Tsai",
-    "description": "結合 15 年電子製造業 1,400 人團隊管理實務與 Henley 商學院高階教練認證。為專業人士提供具戰略高度的職涯轉型支持，縮短英國商業文化認知差距。"
+    "title": "SustainSage | Strategic Executive Coaching | Henley Certified Coach James Tsai",
+    "description": "Combining 15+ years of senior management (1,400+ team) with Henley Business School Executive Coaching certification. Specializing in strategic transition and alignment for expatriate leaders in the UK."
   },
   "hero": {
     "eyebrow": "SustainSage Executive Coaching",
-    "title": "從 1,400 人軍隊管理，到 Henley 科學教練",
-    "description": "您不需要另一個只有情緒鼓勵的諮詢師。您需要一位同樣處理過 P&L、人力動盪與跨國營運現實的『戰略合夥人』，協助您在英國職場精準定位。",
-    "subheadline": "結合 15 年電子業高階管理實戰與頂尖商學院科學方法，為追求卓越的專業人士縮短認知差距。",
+    "title": "運用 1,400 人跨國管理實踐，加速您的英國職涯轉型",
+    "description": "您不需要另一場只有情緒鼓勵的諮詢。您需要一位同樣處理過 P&L、人力動盪與跨國營運現實的『戰略合夥人』，協助您在高壓環境中精準定位。",
+    "subheadline": "結合 15 年電子業高階管理實務與 Henley 商學院科學方法，為精英人士縮短認知差距。",
     "chips": [
+      "Henley PECE 高階認證教練",
       "高階經理人",
-      "跨國轉型專業人士",
-      "潛力年輕領袖"
+      "跨國轉型專業人士"
     ],
     "primaryCta": {
       "href": "/contact",
@@ -74,13 +74,13 @@
       "id": "corporate-preview",
       "type": "promo",
       "eyebrow": "組織與領導力服務",
-      "title": "針對在英企業領袖",
+      "title": "針對在英企業領袖與跨國經理人",
       "body": [
-        "協助中資或台資企業高管，對齊總部戰略意圖與英國本地營運現實，解決文化與管理落差。"
+        "專為在英跨國企業高管設計。我們專注於解決「總部戰略期待」與「英國地方分支現實」之間的對接陣痛，協助經理人在文化與管理落差中建立高效領導力。"
       ],
       "cta": {
         "href": "/corporate",
-        "label": "了解組織方案"
+        "label": "了解組織對齊方案"
       }
     },
     {

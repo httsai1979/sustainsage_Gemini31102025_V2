@@ -1,17 +1,17 @@
 {
   "seo": {
-    "title": "SustainSage | Strategic Executive Transition | Bilingual Coach James Tsai",
-    "description": "Combining 15+ years of senior management (1,400+ team) with Henley Business School executive coaching certification. Strategic career transition support for professionals navigating the UK business landscape."
+    "title": "SustainSage | Strategic Executive Coaching | Henley Certified Coach James Tsai",
+    "description": "Combining 15+ years of senior management (1,400+ team) with Henley Business School Executive Coaching certification. Specializing in strategic transition and alignment for expatriate leaders in the UK."
   },
   "hero": {
     "eyebrow": "SustainSage Executive Coaching",
-    "title": "From Managing 1,400 People to Henley-Certified Coaching",
+    "title": "Accelerate Your UK Career Transition with 15+ Years of Global Management Practice",
     "description": "You don't need another session of emotional encouragement. You need a strategic partner who has handled P&L, workforce volatility, and multinational operational realities to help you pin down your position in the UK.",
     "subtitle": "Bridging the gap between 15 years of high-level manufacturing leadership and the scientific rigor of Henley Business School for professionals pursuing excellence.",
     "chips": [
+      "Henley PECE Certified Executive Coach",
       "Senior Executives",
-      "Global Transition Professionals",
-      "High-Potential Young Leaders"
+      "Global Transition Professionals"
     ],
     "primaryCta": {
       "href": "/contact",
@@ -74,13 +74,13 @@
       "id": "corporate-preview",
       "type": "promo",
       "eyebrow": "Organisational & Leadership Services",
-      "title": "For UK-based Corporate Leaders",
+      "title": "For UK-based Corporate Leaders & Expatriate Managers",
       "body": [
-        "Supporting executives in China or Taiwan-invested businesses to align head office intent with local UK operational realities."
+        "Designed for executives in multinational businesses. We focus on resolving the 'alignment pain' between Head Office strategic intent and local UK operational realities, helping managers lead effectively across cultural and managerial gaps."
       ],
       "cta": {
         "href": "/corporate",
-        "label": "Learn about organisational solutions"
+        "label": "Learn about organisational alignment"
       }
     },
     {
@@ -120,7 +120,7 @@
       "steps": [
         {
           "id": "initial-conversation",
-          "title": "Step 1 – Initial conversation",
+          "title": "Step 1 – Initial consultation",
           "description": "A 20-minute chat to understand what is changing and share the boundaries we work within.",
           "iconName": "phone"
         },
