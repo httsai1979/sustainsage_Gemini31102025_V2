@@ -1,0 +1,110 @@
+{
+    "fallbackNotice": "如有尚未完成的翻译段落，会暂以英文显示。",
+    "seo": {
+        "title": "关于 SustainSage | 从管理 1,400 人运营到 Henley 认证高阶教练 James Tsai",
+        "description": "具备电子制造业 15 年高阶管理经验，且经过顶尖商学院科学训练的高级主管教练。提供诚恳、专业且具备战略高度的转型支持。"
+    },
+    "hero": {
+        "eyebrow": "SustainSage 的故事",
+        "title": "从管理 1,400 人的跨国运营，到守护一个新生命的诞生",
+        "intro": [
+            "2021 年 11 月，女儿的出生改变了我看世界的视角。为了与在英国的家人团聚，我选择放下耕耘多年的运营副总裁职位，这不仅是地理上的搬迁，更是一场关于价值观重排的深刻转型。",
+            "这份决定让我从一位追求指标的运营领导者，演化为一位跨文化的高阶教练。我理解在优渥的积累下选择「重新开始」需要什么样的心理韧性，也深知将职业成就与人生使命重新对齐的价值。"
+        ],
+        "chips": [
+            "Henley PECE 高阶认证教练 (2024.10)",
+            "15 年电子制造业高阶管理实操",
+            "中英双语战略语境转译"
+        ]
+    },
+    "sections": [
+        {
+            "id": "career-trajectory",
+            "style": "story-blocks",
+            "title": "实战进化的职业轨迹",
+            "lead": "我并非一开始就在会议室里做决策。从工厂一线到决策高层的每一步，都让我掌握了组织如何运作的全方位视角。",
+            "items": [
+                {
+                    "id": "foundation",
+                    "year": "职业起步",
+                    "title": "全球业务开发经理 (BDM)",
+                    "body": "从第一线起步，学习如何在国际市场中开拓机会，并在客户期待与生产现实之间取得战略平衡。"
+                },
+                {
+                    "id": "leadership",
+                    "year": "实务深耕",
+                    "title": "团队主管与工厂运营主管",
+                    "body": "进入管理核心，带领业务团队并负责高精密电子工厂的运营，处理各项 KPIs、质量控管与劳动力调度。"
+                },
+                {
+                    "id": "executive",
+                    "year": "战略高度",
+                    "title": "跨国运营副总裁 (VP of Operations)",
+                    "body": "担任运营副总裁，管理横跨中台英三地、总人数达 1,400 人的专业团队。这段路径让我掌握了从商务战略、现场管理到组织治理的全方位视角。"
+                }
+            ]
+        },
+        {
+            "id": "core-capabilities",
+            "style": "feature-grid",
+            "title": "战略高度与诚恳温度的交汇",
+            "cards": [
+                {
+                    "id": "multicultural-translation",
+                    "iconName": "globe",
+                    "title": "多文化思维转译",
+                    "body": [
+                        "我能精准转换中英双语思维。这不仅是语言的翻译，更是文化语境与商务期待的转译，协助您跨越东西方职场的沟通鸿溝。"
+                    ]
+                },
+                {
+                    "id": "operational-reality",
+                    "iconName": "briefcase",
+                    "title": "跨国管理实务",
+                    "body": [
+                        "具备管理 1,400 人团队的实战经验。我深谙跨国企业在高压环境下的痛点——无论是 P&L 的压力、人才流动的挑战，还是组织变革的阵痛。"
+                    ]
+                },
+                {
+                    "id": "resilient-leadership",
+                    "iconName": "handshake",
+                    "title": "团队引领与教练智慧",
+                    "body": [
+                        "将多年的管理经验转化为教练智慧。我协助领导者建立具备韧性的团队，在变动不居的市场环境中保持竞争力与核心价值。"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "formal-credentials",
+            "style": "split-creds",
+            "title": "顶尖商学院科学训练",
+            "left": {
+                "title": "Henley PECE 钢印",
+                "body": [
+                    "于 2024 年 10 月正式获得英国 Henley Business School (University of Reading) 的 PECE (Professional Executive Coaching Certification) 认证。",
+                    "这份国际认证代表了扎实的教练心理学训练，让我得以将实战经验与科学化的教练方法论完美结合。"
+                ]
+            },
+            "right": {
+                "title": "具备高管视野的教练",
+                "body": [
+                    "我是一位具备电子制造业 15 年高级管理经验，且经过顶尖商学院科学训练的高级主管教练。",
+                    "我知道您面临的处境，因为我也曾经深处其中。"
+                ]
+            }
+        }
+    ],
+    "cta": {
+        "title": "开启一场具备战略高度的对话",
+        "body": "让我们以运营者的精准与教练的洞察，一起为您的转型路径绘制地图。",
+        "primary": {
+            "label": "预约战略咨询",
+            "href": "/contact"
+        },
+        "secondary": {
+            "label": "查看服务路径",
+            "href": "/services"
+        }
+    }
+}

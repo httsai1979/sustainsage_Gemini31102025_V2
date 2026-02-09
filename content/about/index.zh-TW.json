@@ -1,0 +1,110 @@
+{
+    "fallbackNotice": "如有尚未完成的翻譯段落，會暫以英文顯示。",
+    "seo": {
+        "title": "關於 SustainSage | 從管理 1,400 人營運到 Henley 認證高階教練 James Tsai",
+        "description": "具備電子製造業 15 年高階管理經驗，且經過頂尖商學院科學訓練的高階主管教練。提供誠懇、專業且具備戰略高度的轉型支持。"
+    },
+    "hero": {
+        "eyebrow": "SustainSage 的故事",
+        "title": "從管理 1,400 人的跨國營運，到守護一個新生命的誕生",
+        "intro": [
+            "2021 年 11 月，女兒的出生改變了我看世界的視角。為了與在英國的家人團圓，我選擇放下耕耘多年的營運副總職位，這不僅是地理上的搬遷，更是一場關於價值觀重排的深刻轉型。",
+            "這份決定讓我從一位追求指標的營運領導者，轉化為一位跨文化的高階教練。我理解在優渥的累積下選擇「重新開始」需要什麼樣的心理韌性，也深知將職業成就與人生使命重新對齊的價值。"
+        ],
+        "chips": [
+            "Henley PECE 高階認證教練 (2024.10)",
+            "15 年電子製造業高階管理實務",
+            "中英雙語戰略語境轉譯"
+        ]
+    },
+    "sections": [
+        {
+            "id": "career-trajectory",
+            "style": "story-blocks",
+            "title": "實戰進化的職業軌跡",
+            "lead": "我並非一開始就在會議室裡做決策。從工廠現場到決策高層的每一步，都讓我掌握了組織如何運作的全方位視角。",
+            "items": [
+                {
+                    "id": "foundation",
+                    "year": "職涯起點",
+                    "title": "全球商務開發經理 (BDM)",
+                    "body": "從第一線起步，學習如何在國際市場中開拓機會，並在客戶期待與生產現實之間取得戰略平衡。"
+                },
+                {
+                    "id": "leadership",
+                    "year": "實務深耕",
+                    "title": "團隊主管與工廠營運主管",
+                    "body": "進入管理核心，帶領業務團隊並負責高精密電子工廠的營運，處理各項 KPIs、品質控管與勞動力調度。"
+                },
+                {
+                    "id": "executive",
+                    "year": "戰略高度",
+                    "title": "跨國營運副總 (VP of Operations)",
+                    "body": "擔任營運副總，管理橫跨中台英三地、總人數達 1,400 人的專業團隊。這段路徑讓我掌握了從商務戰略、現場管理到組織治理的全方位視角。"
+                }
+            ]
+        },
+        {
+            "id": "core-capabilities",
+            "style": "feature-grid",
+            "title": "戰略高度與誠懇溫度的交會",
+            "cards": [
+                {
+                    "id": "multicultural-translation",
+                    "iconName": "globe",
+                    "title": "多文化思維轉譯",
+                    "body": [
+                        "我能精準轉換中英雙語思維。這不僅是語言的翻譯，更是文化語境與商務期待的轉譯，協助您跨越東西方職場的溝通鴻溝。"
+                    ]
+                },
+                {
+                    "id": "operational-reality",
+                    "iconName": "briefcase",
+                    "title": "跨國管理實務",
+                    "body": [
+                        "具備管理 1,400 人團隊的實戰經驗。我深諳跨國企業在高壓環境下的痛點——無論是 P&L 的壓力、人才流動的挑戰，還是組織轉變的陣痛。"
+                    ]
+                },
+                {
+                    "id": "resilient-leadership",
+                    "iconName": "handshake",
+                    "title": "團隊引領與教練智慧",
+                    "body": [
+                        "將多年的管理經驗轉化為教練智慧。我協助領導者建立具備韌性的團隊，在變變不定的市場環境中保持競爭力與核心價值。"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "formal-credentials",
+            "style": "split-creds",
+            "title": "頂尖商學院科學訓練",
+            "left": {
+                "title": "Henley PECE 鋼印",
+                "body": [
+                    "於 2024 年 10 月正式獲得英國 Henley Business School (University of Reading) 的 PECE (Professional Executive Coaching Certification) 認證。",
+                    "這份國際認證代表了紮實的教練心理學訓練，讓我得以將實戰經驗與科學化的教練方法論完美結合。"
+                ]
+            },
+            "right": {
+                "title": "具備高管視野的教練",
+                "body": [
+                    "我是一位具備電子製造業 15 年高階管理經驗，且經過頂尖商學院科學訓練的高階主管教練。",
+                    "我知道您面臨的處境，因為我也曾經深處其中。"
+                ]
+            }
+        }
+    ],
+    "cta": {
+        "title": "開啟一場具備戰略高度的對話",
+        "body": "讓我們以營運者的精準與教練的洞察，一起為您的轉型路徑繪製地圖。",
+        "primary": {
+            "label": "預約戰略諮詢",
+            "href": "/contact"
+        },
+        "secondary": {
+            "label": "查看服務路徑",
+            "href": "/services"
+        }
+    }
+}
