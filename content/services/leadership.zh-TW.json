@@ -1,0 +1,115 @@
+{
+    "seo": {
+        "title": "高階領導力轉型 | 為跨國企業領袖設計的戰略教練",
+        "description": "專為在英跨國企業高管、VP 與部門首長設計。解決總部與分支對齊、P&L 壓力管理與跨文化治理衝突。"
+    },
+    "hero": {
+        "eyebrow": "Executive Leadership Landing",
+        "title": "高階領導力轉型",
+        "intro": [
+            "專為在英中資、台資企業或跨國集團的高級經理人設計。我們專注於解決「全球總部戰略意圖」與「英國在地營運現實」之間的對接陣痛。",
+            "高壓領導力需要的不僅是耐力，更需要精準的戰略眼光與具備韌性的內在治理體系。"
+        ],
+        "chips": [
+            "針對高階管理層 (VP, Director, Head of Dept)",
+            "跨文化治理專家支援",
+            "P&L 壓力韌性協議"
+        ]
+    },
+    "sections": [
+        {
+            "id": "challenges",
+            "title": "領導者面臨的戰略挑戰",
+            "style": "cards",
+            "cards": [
+                {
+                    "id": "hq-alignment",
+                    "title": "總部與分支對齊失調",
+                    "iconName": "handshake",
+                    "body": [
+                        "如何處理母公司（遠端）的戰略期待，與英國在地營運現實、勞動法律之間的劇烈磨合。"
+                    ]
+                },
+                {
+                    "id": "pl-resilience",
+                    "title": "P&L 壓力與產能平衡",
+                    "iconName": "target",
+                    "body": [
+                        "在極度艱鉅的財務指標下，如何維持決策品質，同時避免組織能量的過度耗損。"
+                    ]
+                },
+                {
+                    "id": "style-translation",
+                    "title": "領導風格的語境轉譯",
+                    "iconName": "chat",
+                    "body": [
+                        "調整您的領導力氣場，在不喪失核心權威的前提下，有效地在英國職場文化中建立影響力。"
+                    ]
+                },
+                {
+                    "id": "burnout-prevention",
+                    "title": "高層倦怠與決策風險",
+                    "iconName": "clock",
+                    "body": [
+                        "守護組織中最寶貴的資產——您的決策清晰度與認知能量。"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "support",
+            "title": "結合實戰背景的教練如何支援",
+            "style": "cards",
+            "cards": [
+                {
+                    "id": "governance-map",
+                    "title": "內在治理地圖 (Governance Map)",
+                    "iconName": "note",
+                    "body": [
+                        "為您的決策權、升級路徑與利害關係人影響力建立清晰地圖，降低組織內耗。"
+                    ]
+                },
+                {
+                    "id": "negotiation-rehearsal",
+                    "title": "高壓場景排演",
+                    "iconName": "chat",
+                    "body": [
+                        "在保密、雙語的空間內，為關鍵的董事會會議、工會談判或總部營運審查做沙盤推演。"
+                    ]
+                },
+                {
+                    "id": "resilience-protocols",
+                    "title": "高階韌性協議",
+                    "iconName": "target",
+                    "body": [
+                        "建立具體的心理與營運邊界，在組織轉型或快速擴張期間守護您的領導效能。"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "vignette",
+            "title": "領導者視角",
+            "style": "prose",
+            "body": [
+                "一位大型電子企業的高階主管發現，亞洲總部要求的頻繁回報機制正讓英國在地管理團隊感到挫折。教練對話提供了一個「戰略緩衝空間」——我們共同設計了一套新的溝通架構，既能滿足總部的數據需求，又賦予英國團隊必要的執行自主權。結果顯示，該主管個人的週末工作量減少了 30%，且在地人才留職率顯著提升。"
+            ]
+        },
+        {
+            "id": "cta",
+            "style": "cta",
+            "title": "準備好對齊您的全球戰略了嗎？",
+            "body": [
+                "預約 20 分鐘戰略諮詢。我們將共同評估目前的組織維度是否能與您的帶領使命達成共鳴。"
+            ],
+            "primaryCta": {
+                "href": "/contact",
+                "label": "預約戰略諮詢"
+            },
+            "secondaryCta": {
+                "href": "/services",
+                "label": "查看所有路徑"
+            }
+        }
+    ]
+}

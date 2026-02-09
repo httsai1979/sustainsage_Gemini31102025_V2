@@ -1,171 +1,106 @@
 {
   "seo": {
-    "title": "Coaching for career returners | SustainSage",
-    "description": "Support for professionals returning after a career break or relocation—regain momentum without ignoring capacity."
+    "title": "Strategic Mid-Career Transition | From Reflection to Results",
+    "description": "Evidence-led coaching for experienced professionals returning to work or switching fields. Turn your 'gap' into a strategic advantage with field-hardened guidance."
   },
   "hero": {
-    "eyebrow": "Coaching for career returners",
-    "title": "Coaching for career returners",
+    "eyebrow": "Strategic Mid-Career Transition",
+    "title": "A Laboratory for Results, Not Just Reflection",
     "intro": [
-      "Rebuild momentum after a break without pretending the last chapter did not happen.",
-      "You’ve done this before, yet the landscape changed. Let’s rebuild momentum with care."
+      "Rebuilding professional momentum after a career break or relocation requires more than just self-discovery; it requires operational evidence and strategic positioning.",
+      "We don't just talk about your past; we translate it into the high-stakes language that UK hiring managers and stakeholders respect."
     ],
     "chips": [
-      "Support for professionals returning after a career break or relocation—regain momentum without ignoring capacity."
+      "For Senior Individual Contributors & Managers",
+      "Field-Hardened Narrative Development",
+      "Strategic Market Positioning"
     ]
   },
   "sections": [
     {
       "id": "challenges",
-      "title": "What tends to show up",
+      "title": "Operational Challenges at Mid-Career",
       "style": "cards",
       "cards": [
         {
-          "id": "story-gaps",
-          "title": "Story gaps on your CV",
+          "id": "narrative-gap",
+          "title": "Narrative Gap Friction",
           "iconName": "note",
           "body": [
-            "Wondering how to speak about a break without shrinking experience or oversharing personal reasons."
+            "Struggling to articulate years of seniority when the recent CV gap feels like it's pulling you back. How to lead with your peak experience, not your latest pause."
           ]
         },
         {
-          "id": "confidence",
-          "title": "Confidence wobble",
-          "iconName": "question",
+          "id": "interview-execution",
+          "title": "High-Stakes Interview Execution",
+          "iconName": "chat",
           "body": [
-            "Old strengths are still there, yet interviews or networking feel sharper than expected."
+            "Your skills haven't faded, but the 'delivery' in interviews needs to be recalibrated for the sharp, evidence-heavy UK recruitment style."
           ]
         },
         {
-          "id": "priorities",
-          "title": "Changed priorities",
+          "id": "market-alignment",
+          "title": "Strategic Market Alignment",
           "iconName": "target",
           "body": [
-            "You want to re-enter with purpose, not slide into the first offer that arrives."
-          ]
-        },
-        {
-          "id": "logistics",
-          "title": "Logistics plus emotions",
-          "iconName": "calendar",
-          "body": [
-            "Balancing job search tasks with family care, health needs, or new city admin."
+            "Ensuring you don't 'under-sell' yourself out of survival fear, and instead hold position for roles that match your true 15+ years value."
           ]
         }
       ]
     },
     {
       "id": "support",
-      "title": "How coaching can help",
+      "title": "The Practical Coaching Output",
       "style": "cards",
       "cards": [
         {
-          "id": "integrate-break",
-          "title": "Integrate your break into a coherent narrative",
+          "id": "operational-evidence",
+          "title": "Operational Evidence Portfolio",
           "iconName": "briefcase",
           "body": [
-            "Clarify what you learned, how it shapes your work now, and how you choose to share it."
+            "Identify the 'unspoken proof' in your history and turn it into clear, strategic case studies you can deploy during networking."
           ]
         },
         {
-          "id": "practice-conversations",
-          "title": "Practice grounded conversations",
+          "id": "rehearsal-lab",
+          "title": "The Rehearsal Lab",
           "iconName": "chat",
           "body": [
-            "Rehearse interviews, networking, or boundary-setting chats so you can show up steady and curious."
+            "We don't just 'talk about' interviews; we rehearse them. Get honest, high-level feedback on your impact and bilingual switching rhythm."
           ]
         },
         {
-          "id": "humane-pace",
-          "title": "Design a humane pace",
+          "id": "momentum-checkpoints",
+          "title": "Momentum & Boundary Protocols",
           "iconName": "clock",
           "body": [
-            "Break the return into experiments and agreements that respect your capacity and financial realities."
+            "Design a job search cadence that mirrors high-level project management—ensuring results without letting the search consume your family life."
           ]
         }
       ]
     },
     {
       "id": "vignette",
-      "title": "A short vignette",
+      "title": "Results in Action",
       "style": "prose",
       "body": [
-        "“R” had managed teams across Asia before pausing work to relocate and care for an elder. Two years later she wanted to re-enter consulting but worried the gap would eclipse her track record. Coaching helped her surface the skills she used while caregiving, map what kind of firm would respect her boundaries, and practice a narrative that felt honest. Within four sessions she chose a consultancy that welcomed her portfolio of community work as part of her leadership story."
-      ]
-    },
-    {
-      "id": "packages",
-      "title": "Which package fits?",
-      "style": "cards",
-      "cards": [
-        {
-          "id": "transition",
-          "title": "Transition package",
-          "iconName": "target",
-          "body": [
-            "Most returners choose the Transition package to map their new chapter, practice conversations, and design a paced comeback."
-          ],
-          "href": "/services/transition-coaching"
-        },
-        {
-          "id": "reset",
-          "title": "Reset package",
-          "iconName": "clock",
-          "body": [
-            "If you need a shorter container while juggling care, the Reset package holds four sessions to steady confidence and set sustainable rhythms."
-          ],
-          "href": "/services/reset-sprint"
-        },
-        {
-          "id": "process",
-          "title": "Coaching process",
-          "iconName": "note",
-          "body": [
-            "Not sure where to start? Explore the coaching process or book a call to see if coaching matches your stage."
-          ],
-          "href": "/services/how-coaching-works"
-        }
-      ]
-    },
-    {
-      "id": "boundaries",
-      "title": "What this page is not promising",
-      "style": "cards",
-      "cards": [
-        {
-          "id": "no-guarantees",
-          "title": "We do not promise job offers or fast-tracked promotions.",
-          "iconName": "privacy",
-          "body": []
-        },
-        {
-          "id": "no-done-for-you",
-          "title": "No done-for-you CV writing or recruiter outreach.",
-          "iconName": "note",
-          "body": []
-        },
-        {
-          "id": "not-therapy",
-          "title": "No replacement for therapy if trauma or burnout needs clinical care.",
-          "iconName": "consent",
-          "body": []
-        }
+        "“R” had managed teams across Asia before a 2-year relocation break. In her coaching 'Lab', we moved past the 'guilt' of the gap and focused on her previous management of 100+ people. We rehearsed a specific 15-minute 'Strategic Contribution' pitch for executive recruiters. Within four sessions, she secured a post-relocation role at a Tier-1 consultancy, using her gap as evidence of her 'calculated risk-taking' and emotional intelligence—a strategic asset rather than a liability."
       ]
     },
     {
       "id": "cta",
       "style": "cta",
-      "title": "Curious how this could look for you?",
+      "title": "Ready for a Result-Oriented Change?",
       "body": [
-        "Book a 20-minute chat and we’ll explore pace, scope and readiness together."
+        "Book a 20-minute strategic consultation. We'll move past general advice and start mapping your operational return."
       ],
       "primaryCta": {
         "href": "/contact",
-        "label": "Book 20-minute chat"
+        "label": "Book Strategic Consultation"
       },
       "secondaryCta": {
         "href": "/services",
-        "label": "Compare services"
+        "label": "Compare Pathways"
       }
     }
   ]

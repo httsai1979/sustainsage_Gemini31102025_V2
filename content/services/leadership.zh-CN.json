@@ -1,0 +1,115 @@
+{
+    "seo": {
+        "title": "高阶领导力转型 | 为跨国企业领袖设计的战略教练",
+        "description": "专为在英跨国企业高管、VP 与部门负责人设计。解决总部与分支对齐、P&L 压力管理与跨文化治理冲突。"
+    },
+    "hero": {
+        "eyebrow": "Executive Leadership Landing",
+        "title": "高阶领导力转型",
+        "intro": [
+            "专为在英中资、跨国集团的高级经理人设计。我们专注于解决「全球总部战略意图」与「英国当地运营现实」之间的对接阵痛。",
+            "高压领导力需要的不仅是耐力，更需要精准的战略眼光与具备韧性的内在治理体系。"
+        ],
+        "chips": [
+            "针对高级管理层 (VP, Director, Head of Dept)",
+            "跨文化治理专家支持",
+            "P&L 压力韧性协议"
+        ]
+    },
+    "sections": [
+        {
+            "id": "challenges",
+            "title": "领导者面临的战略挑战",
+            "style": "cards",
+            "cards": [
+                {
+                    "id": "hq-alignment",
+                    "title": "总部与分支对齐失调",
+                    "iconName": "handshake",
+                    "body": [
+                        "如何处理母公司（远程）的战略期待，与英国当地运营现实、劳动法律之间的剧烈磨合。"
+                    ]
+                },
+                {
+                    "id": "pl-resilience",
+                    "title": "P&L 压力与产出平衡",
+                    "iconName": "target",
+                    "body": [
+                        "在极端艰巨的财务指标下，如何维持决策质量，同时避免组织能量的过度损耗。"
+                    ]
+                },
+                {
+                    "id": "style-translation",
+                    "title": "领导风格的语境转译",
+                    "iconName": "chat",
+                    "body": [
+                        "调整您的领导力气场，在不丧失核心权威的前提下，有效地在英国职场文化中建立影响力。"
+                    ]
+                },
+                {
+                    "id": "burnout-prevention",
+                    "title": "高层倦怠与决策风险",
+                    "iconName": "clock",
+                    "body": [
+                        "守护组织中最宝贵的资产——您的决策清晰度与认知能量。"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "support",
+            "title": "结合实战背景的教练如何支持",
+            "style": "cards",
+            "cards": [
+                {
+                    "id": "governance-map",
+                    "title": "内在治理地图 (Governance Map)",
+                    "iconName": "note",
+                    "body": [
+                        "为您的决策权、升级路径与利益相关者影响力建立清晰地图，降低组织内耗。"
+                    ]
+                },
+                {
+                    "id": "negotiation-rehearsal",
+                    "title": "高压场景排演",
+                    "iconName": "chat",
+                    "body": [
+                        "在保密、双语的空间内，为关键的董事会会议、谈话或总部业务审查做沙盘推演。"
+                    ]
+                },
+                {
+                    "id": "resilience-protocols",
+                    "title": "高级韧性协议",
+                    "iconName": "target",
+                    "body": [
+                        "建立具体的心理与运营边界，在组织转型或快速扩张期间守护您的领导效能。"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "vignette",
+            "title": "领导者视角",
+            "style": "prose",
+            "body": [
+                "一位大型电子企业的高级主管发现，总部要求的频繁汇报机制正让英国当地管理团队感到挫敗。教练对话提供了一个「战略缓冲空间」——我们共同设计了一套新的沟通架构，既能满足总部的數據需求，又赋予英国团队必要的执行自主权。结果显示，该主管个人的周末工作量减少了 30%，且当地人才留职率显著提升。"
+            ]
+        },
+        {
+            "id": "cta",
+            "style": "cta",
+            "title": "准备好对齐您的全球战略了吗？",
+            "body": [
+                "预约 20 分钟战略咨询。我们将共同评估目前的组织维度是否能与您的使命达成共鸣。"
+            ],
+            "primaryCta": {
+                "href": "/contact",
+                "label": "预约战略咨询"
+            },
+            "secondaryCta": {
+                "href": "/services",
+                "label": "查看所有路径"
+            }
+        }
+    ]
+}
