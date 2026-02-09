@@ -344,6 +344,38 @@ h3 {
     }
 }
 
+.ssg-site-header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(10px);
+    transition: background-color 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.ssg-site-footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 1.5rem 0;
+    margin-top: 4rem;
+}
+
+.ssg-footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .ssg-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
 /* 1.5 頁面載入微交互 */
 .reveal {
     @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
