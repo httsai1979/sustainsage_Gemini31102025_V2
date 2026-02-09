@@ -10,15 +10,16 @@ type LoadResult = {
 };
 
 export async function loadServiceContent(
-  slug: ServiceSlug,
+  slug: string,
   requestedLocale: string
 ): Promise<LoadResult | null> {
-  const result = loadJSON<Partial<ServiceContent>>(`content/services/${slug}.{locale}.json`, requestedLocale);
+  const { data, usedLocale, isFallback } = loadJSON<Partial<ServiceContent>>(`content/services/${slug}.{locale}.json`, requestedLocale);
 
-  if (!result.data) {
+  if (!data) {
     return null;
   }
 
+  // Base data merge for legacy structures
   const basePath = path.join(process.cwd(), 'content', 'services', `${slug}.json`);
   const baseData = fs.existsSync(basePath)
     ? (JSON.parse(fs.readFileSync(basePath, 'utf-8')) as Partial<ServiceContent>)
@@ -27,10 +28,8 @@ export async function loadServiceContent(
   const service: ServiceContent = {
     slug,
     ...baseData,
-    ...result.data,
-  };
+    ...data,
+  } as ServiceContent;
 
-  const showFallbackNotice = Boolean(result.usedLocale && result.usedLocale !== result.requestedLocale);
-
-  return { service, showFallbackNotice };
+  return { service, showFallbackNotice: isFallback };
 }

@@ -1,10 +1,6 @@
 {
   "home": "Home",
-  "services": "Coaching services",
-  "resources": "Resources",
-  "blog": "Blog",
+  "services": "Services",
   "about": "About",
-  "contact": "Contact",
-  "faq": "FAQ",
-  "corporate": "For corporate leaders"
+  "contact": "Contact"
 }

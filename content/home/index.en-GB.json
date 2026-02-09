@@ -14,13 +14,13 @@
     ],
     "primaryCta": {
       "href": "/contact",
-      "label": "Book a 20-minute chat"
+      "label": "Schedule initial consultation (20m)"
     },
     "secondaryLink": {
       "href": "/services",
-      "label": "See coaching pathways"
+      "label": "Explore coaching frameworks"
     },
-    "secondaryText": "Calm, practical sessions—no hype, no guarantees.",
+    "secondaryText": "Evidence-led sessions aligned with ICF ethics—no hyperbolic promises.",
     "image": {
       "src": "/images/hero/main.jpg",
       "alt": "Coach and client in a calm conversation by the window"
@@ -93,9 +93,9 @@
         "iconName": "chat",
         "title": "What coaching is",
         "bullets": [
-          "Example-led conversations keep decisions grounded before we layer on more structure.",
-          "Weekly rhythm with small experiments between sessions.",
-          "Try free tools first and keep what genuinely helps."
+          "Evidence-led dialogue used to ground decisions and build actionable structures.",
+          "Weekly or fortnightly cadence with mini-experiments between sessions.",
+          "Integrated bilingual tools designed to convert observations into structured outputs."
         ]
       },
       "rightCard": {
@@ -341,7 +341,7 @@
       },
       "secondaryCta": {
         "href": "/contact",
-        "label": "Book a 20-minute chat"
+        "label": "Schedule initial consultation"
       }
     },
     {
@@ -354,7 +354,7 @@
       ],
       "primaryCta": {
         "href": "/contact",
-        "label": "Book a 20-minute chat"
+        "label": "Schedule initial consultation"
       },
       "secondaryLink": {
         "href": "/faq",

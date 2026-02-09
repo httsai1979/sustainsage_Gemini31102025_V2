@@ -44,7 +44,7 @@ export default function SectionContainer({
     );
   }
 
-  const sectionClasses = ['py-16', 'sm:py-20', className].filter(Boolean).join(' ');
+  const sectionClasses = ['py-32', 'sm:py-40', className].filter(Boolean).join(' ');
   const widthClass = wide ? 'max-w-6xl' : 'max-w-4xl';
 
   return (

@@ -4,6 +4,7 @@ import { useTranslation } from 'next-i18next';
 
 import Hero from '@/components/layout/Hero';
 import MainLayout from '@/components/layout/MainLayout';
+import BulletHighlights from '@/components/Sections/BulletHighlights';
 
 const BUTTON_BASE =
   'inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2';
@@ -203,15 +204,12 @@ export default function ServiceDetailPage({ serviceKey, heroImage, heroAlt }) {
         {modernSuitable.length > 0 && (
           <section className="bg-emerald-950/5 py-16 sm:py-20">
             <div className="mx-auto max-w-5xl px-6">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{suitableTitle}</h2>
-              <ul className="mt-6 space-y-3 text-sm leading-6 text-slate-700">
-                {modernSuitable.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <BulletHighlights
+                block={{
+                  title: suitableTitle,
+                  items: modernSuitable.slice(0, 5)
+                }}
+              />
             </div>
           </section>
         )}
@@ -219,14 +217,14 @@ export default function ServiceDetailPage({ serviceKey, heroImage, heroAlt }) {
         {modernProcess.length > 0 && (
           <section className="bg-white py-16 sm:py-20">
             <div className="mx-auto max-w-5xl px-6">
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">{modernProcessLabel}</h2>
+              <h2 className="text-2xl font-bold tracking-tight text-slate-900 mb-8">{modernProcessLabel}</h2>
               <ol className="mt-6 space-y-4 text-sm leading-6 text-slate-700">
-                {modernProcess.map((item, index) => (
-                  <li key={item} className="flex gap-3 rounded-3xl border border-emerald-100 bg-emerald-50/60 p-5">
-                    <span className="mt-0.5 flex h-7 w-7 items-center justify-center rounded-full bg-emerald-600 text-sm font-semibold text-white">
+                {modernProcess.slice(0, 5).map((item, index) => (
+                  <li key={item} className="flex gap-4 rounded-2xl border border-emerald-50 bg-emerald-50/30 p-6 transition-all hover:bg-emerald-50">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-sm font-bold text-white shadow-md shadow-emerald-200">
                       {index + 1}
                     </span>
-                    <span>{item}</span>
+                    <span className="font-medium text-slate-700">{item}</span>
                   </li>
                 ))}
               </ol>
@@ -328,11 +326,11 @@ export default function ServiceDetailPage({ serviceKey, heroImage, heroAlt }) {
       {hasCoreSections && (
         <section className="bg-emerald-950/5 py-16 sm:py-20">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="grid gap-8 md:grid-cols-2">
-              <ListCard title={sectionTitles.who} items={who} />
-              <ListCard title={sectionTitles.topics} items={topics} />
-              <ListCard title={sectionTitles.how} items={how} />
-              <ListCard title={sectionTitles.approach} items={approach} />
+            <div className="grid gap-6 md:grid-cols-2">
+              {who.length > 0 && <BulletHighlights block={{ title: sectionTitles.who, items: who.slice(0, 5) }} />}
+              {topics.length > 0 && <BulletHighlights block={{ title: sectionTitles.topics, items: topics.slice(0, 5) }} />}
+              {how.length > 0 && <BulletHighlights block={{ title: sectionTitles.how, items: how.slice(0, 5) }} />}
+              {approach.length > 0 && <BulletHighlights block={{ title: sectionTitles.approach, items: approach.slice(0, 5) }} />}
             </div>
           </div>
         </section>

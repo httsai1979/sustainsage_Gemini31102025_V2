@@ -6,11 +6,20 @@
   "hero": {
     "kicker": "常見提問",
     "title": "先把疑問說清楚，再決定是否需要這份支持。",
-    "body": "我們依循 ICF 倫理：不做保證、不施壓，若教練不適合就協助轉介。",
+    "body": "我們依循 ICF 倫理與邊界：不做保證、不施壓，也承認有些情況 coaching 並不適合。這一頁試著先把常見的疑問說清楚，讓你更容易判斷下一步。",
     "links": [
-      {"href": "/services/how-coaching-works", "label": "教練怎麼進行"},
-      {"href": "/about", "label": "認識我們"},
-      {"href": "/contact", "label": "預約 20 分鐘聊聊"}
+      {
+        "href": "/services/how-coaching-works",
+        "label": "教練怎麼進行"
+      },
+      {
+        "href": "/about",
+        "label": "認識我們"
+      },
+      {
+        "href": "/contact",
+        "label": "預約 20 分鐘聊聊"
+      }
     ]
   },
   "categories": [
@@ -101,7 +110,7 @@
   ],
   "cta": {
     "title": "還在觀望？",
-    "body": "歡迎分享你的處境，我們會坦白告訴你是教練、轉介還是其他資源比較適合。",
+    "body": "如果看完 FAQ 還是覺得不確定，也可以簡單寫下你現在的處境。我們會如實說明：是適合進入教練對話、先利用其他資源，還是暫時不建議開始。",
     "primary": "預約 20 分鐘聊聊",
     "secondary": "查看教練路徑"
   },

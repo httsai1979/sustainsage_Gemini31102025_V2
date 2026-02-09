@@ -1,253 +1,127 @@
 {
-  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "title": "UK Career Transition",
+  "description": "Align your professional narrative with UK market standards and develop strategies for cultural and regulatory requirements.",
+  "hero": {
+    "eyebrow": "International Localisation",
+    "title": "Establish your professional positioning in the UK market",
+    "subtitle": "Decode local hiring signals, build authoritative scripts, and balance outreach momentum with regulatory constraints.",
+    "primaryCta": {
+      "label": "Book consultation (20m)",
+      "href": "/contact?topic=immigrant-job"
+    },
+    "secondaryCta": {
+      "label": "View FAQs",
+      "href": "/faq"
+    }
+  },
+  "card": {
+    "order": 2,
+    "eyebrow": "UK Newcomers",
+    "title": "Market Positioning",
+    "description": "Calibrate CV, LinkedIn, and regulatory communication without compromising your professional value.",
+    "benefits": [
+      "Reconstruct professional summaries to align with UK industry standards.",
+      "Rehearse evidence-based outreach for recruiters and decision-makers.",
+      "Manage visa timelines and outreach rhythms with sustainable momentum."
+    ],
+    "icon": "mail"
+  },
+  "key_points": {
+    "title": "Core Focus",
+    "description": "Supporting international professionals in navigating cultural or systemic barriers in the UK market.",
+    "items": [
+      {
+        "title": "Sponsorship Strategy",
+        "description": "Manage the intersection of recruitment timelines and sponsorship requirements."
+      },
+      {
+        "title": "Value Translation",
+        "description": "Translate international project experience into metrics that local hiring managers value."
+      },
+      {
+        "title": "Network Expansion",
+        "description": "Redefine professional identity and systematically build local professional networks."
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "Safety & Ethics",
+    "description": "We prioritise your decision-making agency and resilience throughout the transition.",
+    "items": [
+      {
+        "question": "Legal Advice?",
+        "answer": "Coaching is not an immigration service. We work within your constraints but do not provide legal representation."
+      },
+      {
+        "question": "Placement Guarantees?",
+        "answer": "No. Our value lies in improving your market positioning and strategic decision-making."
+      },
+      {
+        "question": "Systemic Barriers?",
+        "answer": "We develop protective strategies to ensure your professional safety and agency remain the priority."
+      }
+    ]
+  },
   "pricing": {
+    "title": "Service Investment",
     "packages": [
       {
-        "name": "Starter — 3 sessions",
-        "duration": "3 × 50-min over 4–6 weeks",
-        "scope": "One micro-experiment between sessions; CV/LinkedIn quick pass for UK norms.",
-        "price_note": "Fees on request; invoiced in GBP."
+        "name": "Positioning Alignment (3 Sessions)",
+        "highlights": [
+          "CV & LinkedIn calibration",
+          "Initial outreach experiments",
+          "Professional narrative check"
+        ]
       },
       {
-        "name": "Focus — 6 sessions",
-        "duration": "6 × 50-min over 8–12 weeks",
-        "scope": "Portfolio/CV reframing with visible proof points; interview rehearsal for clarity and fit.",
-        "price_note": "Fees on request; invoiced in GBP."
-      },
-      {
-        "name": "Extended — 12 sessions",
-        "duration": "12 × 50-min over 3–6 months",
-        "scope": "Deep practice on culture fit and manager conversations; tailored projects with rhythm reviews.",
-        "price_note": "Fees on request; invoiced in GBP."
+        "name": "Market Momentum (6 Sessions)",
+        "highlights": [
+          "Portfolio reframing",
+          "Mock interviews and cultural fit",
+          "Output-linked communication scripts"
+        ]
       }
     ],
     "policies": [
-      {
-        "title": "Rescheduling",
-        "body": "24 hours’ notice; late changes count as used."
-      },
-      {
-        "title": "Cadence",
-        "body": "Cadence agreed in the first session; pause allowed between blocks."
-      },
-      {
-        "title": "Confidentiality",
-        "body": "Confidential by default; minimal notes; deletion on request."
-      },
-      {
-        "title": "Scope",
-        "body": "Coaching, not therapy — signposting if therapy is safer."
-      },
-      {
-        "title": "Logistics",
-        "body": "UK hours (online); invoicing in GBP."
-      }
-    ]
-  },
-  "readiness": {
-    "checklist": [
-      "50–60 minutes available; quiet place and stable connection.",
-      "UK hours workable; calendar ready for weekly cadence.",
-      "A situation to test (role/field/city) or one question you care about.",
-      "Comfortable with coaching boundaries; no crisis topics.",
-      "Willing to run one micro-experiment before the next session.",
-      "LinkedIn URL or latest CV ready to share.",
-      "Consent to minimal notes and data handling per policy.",
-      "If English is not first language: okay to pause/clarify.",
-      "Able to use Google Docs/Sheets and Zoom/Meet.",
-      "Payment/invoice method available in GBP."
-    ],
-    "what_to_prepare": [
-      "Your LinkedIn URL or a recent CV (PDF).",
-      "Two short examples you’re proud of — what you did and why it matters.",
-      "Constraints list (visa, childcare, shifts, location).",
-      "A rough weekly rhythm that could work for you.",
-      "Top 3 questions you want answered in the first two sessions."
-    ],
-    "signals": [
-      "You prefer calm, honest guidance without hype.",
-      "You’re okay with small experiments that may fail.",
-      "You want UK-relevant proof points, not generic advice.",
-      "You can keep a weekly cadence with short reviews.",
-      "You’re comfortable with “coaching, not therapy” scope."
-    ]
-  },
-  "process": {
-    "title": "Process & milestones",
-    "description": "We usually partner for eight to ten sessions across three months with optional co-working sprints.",
-    "steps": [
-      {
-        "title": "Map the hiring landscape",
-        "description": "We unpack sector norms, sponsorship realities and what evidence UK employers seek."
-      },
-      {
-        "title": "Build your narrative toolkit",
-        "description": "We co-write scripts, portfolio stories and Q&A to use with recruiters, hiring managers and networks."
-      },
-      {
-        "title": "Sustain the search",
-        "description": "We monitor energy, iterate weekly plans and celebrate momentum so you do not burn out."
-      }
-    ],
-    "note": "You can add document reviews or mock interviews between sessions when deadlines appear."
-  },
-  "agreement": {
-    "sections": [
-      {
-        "title": "Scope & Fit",
-        "paragraphs": [
-          "This is coaching, not therapy, counselling, immigration or legal advice.",
-          "We work on UK-relevant proof points, clear stories, preparation and cadence.",
-          "If therapy or legal advice is safer, we will signpost appropriate services."
-        ]
-      },
-      {
-        "title": "Confidentiality",
-        "paragraphs": [
-          "Sessions are confidential by default.",
-          "Only minimal notes are kept; you may request deletion at any time.",
-          "We may discuss anonymised patterns in supervision for quality, without identifying details."
-        ]
-      },
-      {
-        "title": "Scheduling & Rescheduling",
-        "paragraphs": [
-          "Standard session length is ~50 minutes, online, within UK hours.",
-          "24 hours’ notice is required to reschedule; late changes count as used.",
-          "Blocks may pause between sessions by mutual agreement to protect cadence and rest."
-        ]
-      },
-      {
-        "title": "Fees & Invoicing",
-        "paragraphs": [
-          "Fees are in GBP. Invoices are issued for each block or as agreed.",
-          "Delivered sessions are non-refundable. Unused sessions in a block can be paused.",
-          "Any bank or platform charges are borne by the client unless otherwise agreed."
-        ]
-      },
-      {
-        "title": "Data & Records",
-        "paragraphs": [
-          "We keep the minimum necessary data to run sessions and invoices.",
-          "You can request a copy or deletion of personal data subject to legal limits.",
-          "We use common tools (e.g., Google Docs/Sheets, email, video platforms) with reasonable care."
-        ]
-      },
-      {
-        "title": "Fair Use & Boundaries",
-        "paragraphs": [
-          "Between sessions, light check-ins are fine; heavy review or done-for-you work is out of scope.",
-          "We do not contact employers on your behalf, nor provide visa/legal advice.",
-          "If there is risk of harm, confidentiality may be lifted to keep people safe."
-        ]
-      },
-      {
-        "title": "Disputes",
-        "paragraphs": [
-          "We aim to resolve issues early via email and a short call.",
-          "If unresolved, we will propose a simple written plan and a pause if needed.",
-          "UK law and forums apply unless otherwise required by mandatory local law."
-        ]
-      }
+      "ICF ethics and GDPR data minimisation practices.",
+      "UK office hours (GMT/BST); Invoiced in GBP.",
+      "Does not include legal consulting or recruitment placement."
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "Do you guarantee a job or interview?",
-        "a": "No. Coaching is not placement. We help you create UK-relevant proof points and clearer stories, then you apply and track results."
+        "q": "What is the primary language?",
+        "a": "Sessions are in English, but we can use Chinese for nuanced conceptual alignment if needed."
       },
       {
-        "q": "What language are sessions delivered in?",
-        "a": "English. We can slow down, clarify, and write together. If needed, we can switch briefly to Chinese for tricky concepts."
+        "q": "Will you contact recruiters?",
+        "a": "No. We assist in crafting authoritative scripts; you retain full agency over relationship management."
       },
       {
-        "q": "Can you advise on visas or immigration law?",
-        "a": "No legal advice. We work with your constraints and signpost official resources where appropriate."
-      },
-      {
-        "q": "Will you write my CV or LinkedIn for me?",
-        "a": "You own the words. We coach the structure, clarity, and UK norms; we can suggest edits together on Google Docs."
-      },
-      {
-        "q": "Will you contact employers or recruiters on my behalf?",
-        "a": "No. We help you build outreach scripts and confidence, but you contact people directly."
-      },
-      {
-        "q": "How much between-session work is expected?",
-        "a": "Usually 30–60 minutes a week (one micro-experiment: info chat, trial task, volunteering taster). Keep it small and visible."
-      },
-      {
-        "q": "Is our conversation confidential?",
-        "a": "Yes. Confidential by default; minimal notes; deletion on request. See boundaries page for details."
-      },
-      {
-        "q": "What is your reschedule/refund policy?",
-        "a": "24-hour notice for rescheduling; late changes count as used. No refunds for delivered sessions; blocks can pause between sessions."
+        "q": "How should I prepare?",
+        "a": "Have your CV and LinkedIn ready, along with two concrete examples of professional problem-solving."
       }
     ]
   },
   "cases": {
-    "title": "Composite coaching glimpses",
-    "description": "Examples anonymised across internationally trained professionals navigating the UK market.",
+    "title": "Case Studies",
+    "description": "Demonstrating localisation pathways; anonymised for confidentiality.",
     "items": [
       {
-        "title": "Sponsorship status anxiety",
-        "context": "Non-UK degree; unsure how to address visa sponsorship early.",
-        "coaching_moves": "Built a 2-line sponsorship script; prioritised target firms by policy; planned 10-day outreach.",
-        "shift": "Fewer ghosted threads; clearer yes/no signals faster.",
-        "tools_used": [
-          "Decision Scorecard",
-          "Outreach Tracker"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
-        "slug": "securing-sponsorship-with-clarity"
+        "title": "Sponsorship Strategy",
+        "context": "Professional concerned about early-stage exclusion due to sponsorship requirements.",
+        "coaching_moves": "Designed structured messaging and prioritised firms based on historical data.",
+        "shift": "Approached inquiries with a neutral stance, resulting in faster signals from target employers.",
+        "slug": "sponsorship-strategy-precision"
       },
       {
-        "title": "Translating overseas wins",
-        "context": "Strong results abroad not mapping to UK bullets.",
-        "coaching_moves": "Converted two projects to UK-style metrics; created proof links; rehearsed succinct framing.",
-        "shift": "Hiring managers understood scope without over-explaining.",
-        "tools_used": [
-          "CAR Bullets",
-          "Portfolio Map"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
-        "slug": "translating-overseas-leadership"
-      },
-      {
-        "title": "Accent & confidence",
-        "context": "Avoids phone screens due to accent worries.",
-        "coaching_moves": "Practised slow-first phrasing; scripted clarifying questions; built pause habits.",
-        "shift": "Entered calls with steadier pace and fewer rush-talk loops.",
-        "tools_used": [
-          "Pacing Cues",
-          "Question Bank"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
-        "slug": "partner-rebuilding-identity"
+        "title": "Leadership Translation",
+        "context": "Senior manager concerned that international leadership experience was being undervalued.",
+        "coaching_moves": "Applied the CAR framework to key projects and rehearsed senior-level stakeholder alignment.",
+        "shift": "Interview feedback shifted from 'misalignment' to 'demonstrated professional value'.",
+        "slug": "leadership-translation-success"
       }
     ]
-  },
-  "key_points": {
-    "items": [
-      {
-        "title": "Translate overseas experience into UK-relevant examples and terms."
-      },
-      {
-        "title": "Weekly cadence; micro-experiments between sessions (info chats, trial tasks, volunteering taster)."
-      },
-      {
-        "title": "CV/LinkedIn adapted to UK norms; show recent proof points."
-      },
-      {
-        "title": "Interview rehearsal for culture/fit—clear stories without scripts or hacks."
-      },
-      {
-        "title": "Simple pricing; pause between blocks; confidentiality by default."
-      }
-    ]
-  },
-  "title": "Immigrant job search — coaching pathway",
-  "description": "Turn experience into UK-relevant proof points. CV/LinkedIn clarity, outreach scripts, interview practice."
+  }
 }

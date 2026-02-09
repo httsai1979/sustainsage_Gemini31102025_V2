@@ -9,6 +9,7 @@ export type ToolConfig = {
   description: LocalizedField;
   category: LocalizedField;
   iframeSrc: string;
+  hasComponent?: boolean;
 };
 
 export type LocalizedTool = {
@@ -69,6 +70,7 @@ export const toolsConfig: ToolConfig[] = [
     }),
     category: INTERACTIVE_CATEGORY,
     iframeSrc: '/tools/behaviour-ladder.html',
+    hasComponent: true,
   },
   {
     slug: 'values-map',

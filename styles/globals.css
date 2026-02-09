@@ -7,7 +7,8 @@
 
 :root {
     /* 1.1 色彩配置 - 與 tailwind.config.js 保持一致 */
-    --color-primary: #BDA789;        /* warm sand */
+    --color-primary: #BDA789;
+    /* warm sand */
     --color-primary-dark: #97866D;
     --color-primary-soft: #F4EDE1;
 
@@ -39,6 +40,26 @@
     --ssg-muted: var(--color-text-secondary);
 }
 
+/* Background Patterns - Coordinated Design */
+.bg-dot-pattern {
+    background-image: radial-gradient(var(--color-primary) 0.5px, transparent 0.5px);
+    background-size: 24px 24px;
+    background-position: 0 0;
+    opacity: 0.15;
+}
+
+.bg-grid-pattern {
+    background-image: linear-gradient(var(--color-primary) 0.5px, transparent 0.5px),
+        linear-gradient(90deg, var(--color-primary) 0.5px, transparent 0.5px);
+    background-size: 40px 40px;
+    opacity: 0.08;
+}
+
+.bg-soft-gradient {
+    background: radial-gradient(circle at top left, var(--color-primary-soft) 0%, transparent 70%),
+        radial-gradient(circle at bottom right, rgba(74, 108, 86, 0.05) 0%, transparent 70%);
+}
+
 .dark {
     --color-paper: #050816;
     --color-surface: #111827;
@@ -66,7 +87,6 @@ body {
     body {
         @apply bg-background text-foreground font-sans;
         background-color: var(--color-page-bg);
-        background-image: radial-gradient(circle at 15% 50%, rgba(189, 167, 137, 0.03), transparent 25%), radial-gradient(circle at 85% 30%, rgba(74, 108, 86, 0.03), transparent 25%);
         background-attachment: fixed;
         color: var(--color-ink);
         -webkit-font-smoothing: antialiased;
@@ -75,80 +95,45 @@ body {
         line-height: 1.6;
         transition: background-color 300ms ease, color 300ms ease;
     }
+
     ::selection {
         background-color: rgba(189, 167, 137, 0.3);
         color: var(--color-ink);
     }
 }
 
-/* 全站容器與段落間距 */
-.ss-container {
+/* 全站容器與段落間距 - Google Principles: Generous Spacing */
+.ss-container,
+.ssg-container {
     max-width: theme('maxWidth.page');
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
-.ss-section {
-    padding-top: 1.75rem;
-    padding-bottom: 1.75rem;
-}
-
-@media (min-width: 768px) {
-    .ss-section {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-}
-
-.ssg-container {
-    max-width: min(100rem, 100%);
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-}
-
-@media (min-width: 640px) {
-    .ssg-container {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .ssg-container {
-        padding-left: 2rem;
-        padding-right: 2rem;
-    }
-}
-
+.ss-section,
 .ssg-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 }
 
 @media (min-width: 768px) {
+
+    .ss-section,
     .ssg-section {
-        padding-top: 3.5rem;
-        padding-bottom: 3.5rem;
+        padding-top: 10rem;
+        padding-bottom: 10rem;
     }
 }
 
-@media (min-width: 1280px) {
-    .ssg-section {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-    }
-}
-
-.ssg-stack > * + * {
-    margin-top: 1rem;
+.ssg-stack>*+* {
+    margin-top: 2rem;
 }
 
 .ssg-prose p {
-    line-height: 1.75;
+    line-height: 1.85;
+    /* Better readability */
 }
 
 .ssg-divider {
@@ -189,7 +174,7 @@ h3 {
     @apply text-base leading-7 text-sustain-textMuted dark:text-sustain-text-dark/90;
 }
 
-.typography p + p {
+.typography p+p {
     @apply mt-4;
 }
 
@@ -215,7 +200,7 @@ h3 {
     @apply font-semibold text-slate-900;
 }
 
-.prose-base > :where(* + *) {
+.prose-base> :where(* + *) {
     margin-top: 1.25rem;
 }
 
@@ -244,15 +229,19 @@ h3 {
 .h1 {
     @apply text-[32px] md:text-[48px] font-bold;
 }
+
 .h2 {
     @apply text-[28px] md:text-[36px] font-bold;
 }
+
 .h3 {
     @apply text-[20px] md:text-[24px] font-semibold;
 }
+
 .body-text {
     @apply text-[16px] md:text-[17px] font-normal;
 }
+
 .caption {
     @apply text-[14px] font-normal text-[var(--color-text-secondary)];
 }
@@ -279,160 +268,40 @@ h3 {
     }
 }
 
-/* 按鈕樣式 */
-.btn-primary {
-    background-color: var(--color-primary);
-    color: #fff;
-    border-radius: 9999px;
-    @apply inline-flex items-center justify-center px-8 py-4 font-semibold transition-all duration-300 shadow-lg shadow-primary/20;
-    position: relative;
-    overflow: hidden;
-}
-.btn-primary::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(255,255,255,0.2), transparent);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-.btn-primary:hover {
-    background-color: var(--color-primary-dark);
-    @apply scale-[1.02] shadow-xl shadow-primary/30;
-}
-.btn-primary:hover::after {
-    opacity: 1;
-}
-.btn-secondary {
-    @apply border border-[var(--color-primary)] text-[var(--color-primary)] px-8 py-4 rounded-full font-semibold transition-all duration-300 bg-transparent;
-    @apply hover:bg-[var(--color-primary)] hover:text-white hover:scale-[1.02] hover:shadow-lg hover:shadow-primary/20;
-}
-
-/* 1.3 留白 & 卡片 */
-.section-padding {
-    @apply py-12 md:py-20; /* 48px / 80px */
-}
-.content-container {
-    @apply max-w-6xl mx-auto px-4 md:px-8; /* 接近 1280px，留有邊距 */
-}
-.card,
-.ssg-card {
-    background: var(--ssg-surface);
-    border-radius: theme('borderRadius.ssgCard');
-    box-shadow: theme('boxShadow.card');
-    padding: 2rem;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-}
-.card-hover,
-.ssg-card:hover {
-    transform: translateY(-4px);
-    box-shadow: theme('boxShadow.ssgCard');
-    border-color: var(--color-primary-soft);
-}
-
-.ss-card {
-    @apply rounded-[20px] border border-sustain-cardBorder bg-sustain-surface p-8 shadow-card transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-ssgCard focus-within:-translate-y-1 focus-within:shadow-ssgCard md:p-10 dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark;
-    backdrop-filter: blur(10px);
+/* 按鈕樣式 - Google M3 Inspired: Simple, High-Contrast */
+.ss-btn {
+    @apply inline-flex items-center justify-center px-8 py-3.5 rounded-full font-semibold transition-all duration-200 active:scale-95;
 }
 
 .ss-btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.6rem 1.4rem;
-    border-radius: 9999px;
-    background-color: var(--color-primary);
-    color: #FFFFFF;
-    font-weight: 500;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: background-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
-}
-
-.ss-btn-primary:hover,
-.ss-btn-primary:focus-visible {
-    background-color: var(--color-primary-dark);
-    box-shadow: 0 10px 20px rgba(151, 134, 109, 0.35);
-    transform: scale(1.03);
+    @apply bg-[var(--color-primary)] text-white shadow-md hover:bg-[var(--color-primary-dark)] hover:shadow-lg focus:ring-4 focus:ring-primary-200;
 }
 
 .ss-btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.6rem 1.4rem;
-    border-radius: 9999px;
-    border: 1px solid var(--ssg-border);
-    background-color: var(--ssg-surface);
-    color: var(--ssg-text);
-    font-weight: 500;
-    font-size: 0.95rem;
-    text-decoration: none;
-    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+    @apply border border-[var(--color-primary)] text-[var(--color-primary)] hover:bg-[var(--color-primary-soft)] focus:ring-4 focus:ring-primary-100;
 }
 
-.ss-btn-secondary:hover,
-.ss-btn-secondary:focus-visible {
-    background-color: var(--color-primary-soft);
-    border-color: var(--color-primary);
-    color: var(--color-primary);
-}
-
-.dark .ss-btn-secondary {
-    background-color: var(--ssg-surface);
-    color: var(--ssg-text);
-    border-color: var(--ssg-border);
-}
-
-.dark .ss-btn-secondary:hover,
-.dark .ss-btn-secondary:focus-visible {
-    background-color: rgba(189, 167, 137, 0.12);
-    border-color: var(--color-primary);
-    color: #F8FAFC;
+/* 留白 & 卡片 - Material Surface & Elevation */
+.ss-card {
+    @apply rounded-3xl border border-sustain-cardBorder bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-[var(--color-primary-soft)] md:p-10 dark:border-sustain-cardBorder-dark dark:bg-sustain-surface-dark;
 }
 
 .nav-link {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.15rem;
-    padding-bottom: 0.35rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--ssg-text);
-    transition: color 150ms ease;
+    @apply relative inline-flex items-center gap-1 font-medium text-sustain-textMain transition-colors duration-200 hover:text-[var(--color-primary)];
 }
 
 .nav-link::after {
     content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 2px;
-    background: var(--color-brand-sage);
-    transform: scaleX(0);
-    transform-origin: center;
-    transition: transform 150ms ease;
-}
-
-.nav-link:hover,
-.nav-link:focus-visible {
-    color: var(--color-brand-sage);
+    @apply absolute left-0 -bottom-1 h-0.5 w-full bg-[var(--color-primary)] scale-x-0 transition-transform duration-200;
 }
 
 .nav-link:hover::after,
-.nav-link:focus-visible::after,
 .nav-link--active::after {
-    transform: scaleX(1);
+    @apply scale-x-100;
 }
 
 .nav-link--active {
-    color: var(--color-primary);
+    @apply text-[var(--color-primary)];
 }
 
 /* 1.4 導航欄滾動效果 */
@@ -440,7 +309,39 @@ h3 {
     /* backdrop-filter 已在 tailwind.config.js 中配置為 'backdrop-blur-10px' */
     @apply bg-white/80 shadow-sm backdrop-blur-[10px];
     border-bottom-width: 1px;
-    border-color: rgba(0,0,0,0.05);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+.ssg-site-header {
+    background-color: var(--color-surface);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    backdrop-filter: blur(10px);
+    transition: background-color 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.ssg-site-footer {
+    background-color: var(--color-surface);
+    border-top: 1px solid rgba(0, 0, 0, 0.04);
+    padding: 1.5rem 0;
+    margin-top: 4rem;
+}
+
+.ssg-footer-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+@media (max-width: 640px) {
+    .ssg-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 .ssg-site-header {
@@ -479,26 +380,45 @@ h3 {
 .reveal {
     @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
 }
+
 .reveal.visible {
     @apply opacity-100 translate-y-0;
 }
+
 /* 交錯載入 */
-.reveal-1 { transition-delay: 100ms; }
-.reveal-2 { transition-delay: 200ms; }
-.reveal-3 { transition-delay: 300ms; }
-.reveal-4 { transition-delay: 400ms; }
-.reveal-5 { transition-delay: 500ms; }
+.reveal-1 {
+    transition-delay: 100ms;
+}
+
+.reveal-2 {
+    transition-delay: 200ms;
+}
+
+.reveal-3 {
+    transition-delay: 300ms;
+}
+
+.reveal-4 {
+    transition-delay: 400ms;
+}
+
+.reveal-5 {
+    transition-delay: 500ms;
+}
 
 /* 新增動畫工具類 */
 .animate-float {
     animation: float 6s ease-in-out infinite;
 }
+
 .animate-pulse-slow {
     animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
+
 .hover-glow {
     transition: box-shadow 0.3s ease;
 }
+
 .hover-glow:hover {
     box-shadow: 0 0 20px rgba(189, 167, 137, 0.4);
 }
@@ -508,6 +428,7 @@ h3 {
     perspective: 1000px;
     min-height: 200px;
 }
+
 .flip-card-inner {
     position: relative;
     width: 100%;
@@ -515,14 +436,17 @@ h3 {
     transition: transform 0.6s;
     transform-style: preserve-3d;
 }
+
 /* 懸停時翻轉 (桌面) */
 .flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
 }
+
 /* 點擊時翻轉 (行動裝置) */
 .flip-card.flipped .flip-card-inner {
     transform: rotateY(180deg);
 }
+
 .flip-card-front,
 .flip-card-back {
     position: absolute;
@@ -532,9 +456,11 @@ h3 {
     backface-visibility: hidden;
     @apply rounded-2xl p-6;
 }
+
 .flip-card-front {
     @apply bg-white border border-gray-200 shadow-sm flex flex-col items-center justify-center text-center;
 }
+
 .flip-card-back {
     @apply bg-[var(--color-primary)] text-white flex flex-col justify-center;
     transform: rotateY(180deg);
@@ -544,46 +470,104 @@ h3 {
 .floating-label-group {
     @apply relative;
 }
+
 .floating-input {
     @apply block w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-base;
     /* 'placeholder-shown' 的關鍵：需要一個空白的 placeholder */
     @apply placeholder:text-transparent;
 }
+
 .floating-label {
     @apply absolute left-4 text-[var(--color-text-secondary)] transition-all duration-200 ease-in-out;
     top: 50%;
     transform: translateY(-50%);
     pointer-events: none;
 }
+
 /* 當輸入框 focus 或 :not(:placeholder-shown) (即有內容時) */
-.floating-input:focus ~ .floating-label,
-.floating-input:not(:placeholder-shown) ~ .floating-label {
+.floating-input:focus~.floating-label,
+.floating-input:not(:placeholder-shown)~.floating-label {
     @apply text-xs px-1;
     top: 0;
     transform: translateY(-50%) scale(0.9);
-    background-color: white; /* 穿過邊框 */
+    background-color: white;
+    /* 穿過邊框 */
     color: var(--color-primary);
 }
+
 .floating-textarea {
     @apply min-h-[150px];
 }
-.floating-textarea:focus ~ .floating-label,
-.floating-textarea:not(:placeholder-shown) ~ .floating-label {
-    top: 1.25rem; /* 調整 textarea 標籤的初始位置 */
+
+.floating-textarea:focus~.floating-label,
+.floating-textarea:not(:placeholder-shown)~.floating-label {
+    top: 1.25rem;
+    /* 調整 textarea 標籤的初始位置 */
     transform: translateY(-120%) scale(0.9);
 }
-.typography{--ssg-leading:1.8;--ssg-space:1.15rem;font-size:1.0625rem;color:#1f2937}
-.typography :where(p){margin-top:calc(var(--ssg-space)*.75);margin-bottom:calc(var(--ssg-space)*.75);line-height:var(--ssg-leading);color:inherit}
-.typography :where(h1){margin:0 0 1.5rem 0;font-weight:700;font-size:2.25rem;line-height:1.2;color:#0f172a}
-.typography :where(h2){margin:2.5rem 0 1rem 0;font-weight:700;font-size:1.65rem;line-height:1.3;color:#0f172a}
-.typography :where(h3){margin:1.75rem 0 .75rem 0;font-weight:600;font-size:1.25rem;line-height:1.35;color:#0f172a}
-.typography :where(h4){margin:1.5rem 0 .5rem 0;font-weight:600;font-size:1.0625rem;color:#0f172a}
-.typography :where(ul,ol){margin:1rem 0 1rem 1.5rem;display:grid;gap:.65rem}
-.typography :where(li){color:inherit;line-height:var(--ssg-leading)}
-.typography :where(a){color:var(--color-primary,#4a6c56);text-decoration:underline;text-underline-offset:0.25em;text-decoration-thickness:1.5px;transition:color .15s ease, text-decoration-color .15s ease}
-.typography :where(a:hover,a:focus-visible){color:var(--color-primary-dark,#365040);text-decoration-color:currentColor}
-.typography :where(a:focus-visible){outline:2px solid var(--color-primary,#4a6c56);outline-offset:2px}
-.typography :where(blockquote){border-left:4px solid #e2e8f0;padding-left:1rem;color:#334155;font-style:italic}
+
+.typography {
+    --ssg-leading: 1.8;
+    --ssg-space: 1.15rem;
+    font-size: 1.0625rem;
+    color: #1f2937
+}
+
+.typography :where(p) {
+    margin-top: calc(var(--ssg-space)*.75);
+    margin-bottom: calc(var(--ssg-space)*.75);
+    line-height: var(--ssg-leading);
+    color: inherit
+}
+
+.typography :where(h1) {
+    margin: 0 0 1.5rem 0;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 1.2;
+    color: #0f172a
+}
+
+.typography :where(h2) {
+    margin: 2.5rem 0 1rem 0;
+    font-weight: 700;
+    font-size: 1.65rem;
+    line-height: 1.3;
+    color: #0f172a
+}
+
+.typography :where(h3) {
+    margin: 1.75rem 0 .75rem 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+    line-height: 1.35;
+    color: #0f172a
+}
+
+.typography :where(h4) {
+    margin: 1.5rem 0 .5rem 0;
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: #0f172a
+}
+
+.typography :where(ul, ol) {
+    margin: 1rem 0 1rem 1.5rem;
+    display: grid;
+    gap: .65rem
+}
+
+.typography :where(li) {
+    color: inherit;
+    line-height: var(--ssg-leading)
+}
+
+.typography :where(blockquote) {
+    border-left: 4px solid #e2e8f0;
+    padding-left: 1rem;
+    color: #334155;
+    font-style: italic
+}
 
 /* Blog detail layout */
 .ssg-blog-hero {
@@ -669,16 +653,18 @@ h3 {
     }
 }
 
-.typography :where(hr){border:0;border-top:1px solid #e2e8f0;margin:1.75rem 0}
+.typography :where(hr) {
+    border: 0;
+    border-top: 1px solid #e2e8f0;
+    margin: 1.75rem 0
+}
 
 /* [SSG BLOG + BRAND] Added article wrapper, card layout, new colour tokens, and logo usage. */
 
 .ssg-blog-page {
-    padding-top: 2.5rem;
-    padding-bottom: 3.25rem;
-    background: radial-gradient(circle at 12% 22%, rgba(189, 167, 137, 0.12), transparent 32%),
-        radial-gradient(circle at 88% 8%, rgba(74, 108, 86, 0.1), transparent 30%),
-        var(--color-page-bg);
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    background: var(--color-page-bg);
 }
 
 .ssg-blog-container {
@@ -710,7 +696,7 @@ h3 {
     word-break: break-word;
 }
 
-.ssg-blog-article-body > *:first-child {
+.ssg-blog-article-body>*:first-child {
     margin-top: 0;
 }
 
@@ -749,7 +735,7 @@ h3 {
     color: inherit;
 }
 
-.ssg-blog-article-body li + li {
+.ssg-blog-article-body li+li {
     margin-top: 0.35rem;
 }
 
@@ -778,7 +764,7 @@ h3 {
 }
 
 /* First italic line (intro sentence) slightly softer */
-.ssg-blog-article-body > p:first-of-type {
+.ssg-blog-article-body>p:first-of-type {
     font-style: italic;
     opacity: 0.85;
 }

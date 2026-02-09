@@ -27,20 +27,20 @@ type ButtonProps = LinkProps | NativeButtonProps;
 
 const VARIANT_MAP: Record<ButtonVariants, string> = {
   primary:
-    'bg-[var(--color-brand-sage)] text-white shadow-lg shadow-emerald-900/20 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-900/30 active:translate-y-0 active:shadow-md transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)] relative overflow-hidden after:absolute after:inset-0 after:bg-white/20 after:opacity-0 hover:after:opacity-100 after:transition-opacity',
+    'bg-[var(--color-brand-sage)] text-white shadow-lg shadow-emerald-900/10 hover:-translate-y-0.5 hover:shadow-xl hover:shadow-emerald-900/20 active:translate-y-0 active:shadow-md transition-all duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-sage)] relative overflow-hidden',
   secondary:
-    'bg-white/80 backdrop-blur-sm text-[var(--color-brand-sage)] ring-1 ring-inset ring-[color:var(--color-brand-sage)]/40 hover:bg-[var(--color-brand-sage)] hover:text-white hover:ring-[var(--color-brand-sage)] hover:shadow-lg hover:shadow-emerald-900/20 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)]',
+    'bg-white text-[var(--color-brand-sage)] ring-1 ring-[color:var(--color-brand-sage)]/20 hover:bg-[var(--color-brand-sage)]/5 hover:ring-[color:var(--color-brand-sage)]/40 hover:shadow-sm transition-all duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-sage)]',
   ghost:
-    'text-[var(--color-brand-sage)] ring-1 ring-transparent hover:bg-primary/10 hover:ring-[color:var(--color-brand-sage)]/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-brand-sage)]/70',
+    'text-[var(--color-brand-sage)] hover:bg-[var(--color-brand-sage)]/5 transition-all duration-300 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[var(--color-brand-sage)]/50',
 };
 
 const SIZE_MAP: Record<ButtonSizes, string> = {
   sm: 'px-4 py-2 text-sm',
-  md: 'px-5 py-3 text-base',
-  lg: 'px-6 py-3.5 text-lg',
+  md: 'px-6 py-3 text-[15px]',
+  lg: 'px-8 py-4 text-lg',
 };
 
-const BASE_CLASS = 'inline-flex items-center justify-center rounded-pill font-semibold tracking-tight transition duration-300 focus-visible:ring-0';
+const BASE_CLASS = 'inline-flex items-center justify-center rounded-pill font-semibold tracking-tight outline-none select-none active:scale-[0.98] transition-all duration-300';
 
 const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, ButtonProps>(
   ({ variant = 'primary', size = 'md', className, children, href, ...rest }, ref) => {

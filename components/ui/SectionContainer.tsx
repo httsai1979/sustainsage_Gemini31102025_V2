@@ -12,7 +12,7 @@ interface SectionContainerProps {
 export default function SectionContainer({ id, className, background = 'default', children }: SectionContainerProps) {
   const backgroundClass =
     background === 'muted'
-      ? 'bg-gradient-to-b from-background via-white to-background'
+      ? 'bg-white'
       : 'bg-transparent';
 
   return (

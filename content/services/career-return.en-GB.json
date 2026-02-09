@@ -1,235 +1,142 @@
 {
-  "fallbackNotice": "Temporarily showing English content while we complete this translation.",
+  "title": "Career Re-entry — Professional Framework",
+  "description": "Establish evidence-based narratives and flexible negotiation capabilities to navigate your return to the workplace.",
+  "hero": {
+    "eyebrow": "Professional Re-entry",
+    "title": "Return to your career path with established boundaries",
+    "subtitle": "Re-establish professional confidence and secure flexible working patterns that match your current life context through structured coaching experiments.",
+    "primaryCta": {
+      "label": "Book consultation (20m)",
+      "href": "/contact?topic=career-return"
+    },
+    "secondaryCta": {
+      "label": "How it works",
+      "href": "/services/how-coaching-works"
+    }
+  },
+  "card": {
+    "order": 1,
+    "eyebrow": "Career Return",
+    "title": "Professional Transition",
+    "description": "Establish a stable working cadence over 12 weeks using evidence-led frameworks.",
+    "benefits": [
+      "Construct professional narratives to bridge career gaps effectively.",
+      "Test role alignment through behavioral experiments to mitigate transition risks.",
+      "Negotiate sustainable flexible working patterns with confidence."
+    ],
+    "icon": "calendar"
+  },
+  "key_points": {
+    "title": "Focus Area",
+    "description": "Supporting senior professionals in balancing priorities during their return to the workplace.",
+    "items": [
+      {
+        "title": "Flexible Negotiation",
+        "description": "Establish working terms that align high-value roles with your current availability."
+      },
+      {
+        "title": "Identity Redefinition",
+        "description": "Translate experience gained during breaks into market-aligned professional evidence."
+      },
+      {
+        "title": "Sustainable Resilience",
+        "description": "Implement structured rhythms to prevent burnout and ensure long-term career stability."
+      }
+    ]
+  },
+  "boundaries": {
+    "title": "Professional Boundaries",
+    "description": "Coaching is a structured partnership focused on future-facing professional goals.",
+    "items": [
+      {
+        "question": "Who controls the data?",
+        "answer": "You retain full agency. No details are shared with employers or third parties without explicit consent."
+      },
+      {
+        "question": "Is this therapy?",
+        "answer": "No. We focus on professional strategies and will signpost appropriate clinical help if needed."
+      },
+      {
+        "question": "Handling capacity?",
+        "answer": "We use a 'pause clause' to suspend sessions during high-pressure periods to protect your wellbeing."
+      }
+    ]
+  },
+  "cases": {
+    "title": "Anonymised Case Studies",
+    "description": "Scenarios demonstrating diverse professional re-entry pathways.",
+    "items": [
+      {
+        "title": "Flexible Working",
+        "context": "Senior manager returning after 2 years; balancing care duties with role demands.",
+        "coaching_moves": "Drafted outreach scripts and rehearsed a phased re-entry proposal focused on output alignment.",
+        "shift": "Secured a 4-day pattern and established a formal review rhythm.",
+        "tools_used": [
+          "Boundary Scripts",
+          "Alignment Map"
+        ],
+        "slug": "professional-reentry-flexible"
+      },
+      {
+        "title": "Post-burnout Return",
+        "context": "Project lead returning after medical leave; concerned about maintaining pace.",
+        "coaching_moves": "Established energy auditing rituals and defined monitoring cadences for the first 90 days.",
+        "shift": "Shifted to 'proactive capacity management' based on visible data points.",
+        "tools_used": [
+          "Energy Audit",
+          "Review Framework"
+        ],
+        "slug": "rebuilding-precision-post-burnout"
+      }
+    ]
+  },
   "pricing": {
+    "title": "Service Investment",
     "packages": [
       {
-        "title": "Restart — 3 sessions",
+        "title": "Professional Restart (3 Sessions)",
         "highlights": [
-          "3 × 50-min over 4–6 weeks",
-          "Confidence reset and story refresh after a gap",
-          "Recent proof points plan (mini-project / references)"
+          "Post-break narrative alignment",
+          "Pilot project planning",
+          "Initial flexible boundary framework"
         ]
       },
       {
-        "title": "Momentum — 6 sessions",
+        "title": "Momentum Builder (6 Sessions)",
         "highlights": [
-          "6 × 50-min over 8–12 weeks",
-          "Portfolio/CV reframing with gap-bridge evidence",
-          "Interview rehearsal for return-to-work scenarios"
-        ]
-      },
-      {
-        "title": "Sustain — 12 sessions",
-        "highlights": [
-          "12 × 50-min over 3–6 months",
-          "Cadence for balancing care duties and work",
-          "Tailored experiments + rhythm reviews"
+          "CV & LinkedIn reconstruction",
+          "Mock interviews and negotiation",
+          "Long-term resilience indicators"
         ]
       }
     ],
     "policies": [
-      "Rescheduling: 24 hours’ notice; late changes count as used.",
-      "Blocks may pause between sessions by mutual agreement.",
-      "Confidential by default; minimal notes; deletion on request.",
-      "Coaching, not therapy; signposting if therapy/legal advice is safer.",
-      "Online within UK hours; invoicing in GBP."
-    ]
-  },
-  "readiness": {
-    "checklist": [
-      "50–60 minutes available online, UK hours workable.",
-      "A gap to bridge (parenting, health, study, care) and a target domain.",
-      "Okay with coaching scope (not therapy/legal).",
-      "Willing to try one micro-experiment between sessions.",
-      "Recent CV or LinkedIn link ready to share.",
-      "Able to use Google Docs/Sheets and Zoom/Meet.",
-      "Consent to minimal notes and data handling."
-    ],
-    "what_to_prepare": [
-      "Your LinkedIn URL or a recent CV (PDF).",
-      "Two short examples from before/after the gap.",
-      "Constraints list (hours, location, care duties).",
-      "Rough weekly rhythm you can keep.",
-      "Top 3 questions for the first two sessions."
-    ],
-    "signals": [
-      "You want calm, honest, UK-relevant guidance.",
-      "You prefer small steps that produce visible proof.",
-      "You can commit to a weekly cadence with short reviews.",
-      "You are comfortable with “coaching, not therapy”."
-    ]
-  },
-  "process": {
-    "title": "How the process works",
-    "description": "A three to four month container with 60-minute sessions and light touch check-ins between calls.",
-    "steps": [
-      "Reset & boundaries — aims, constraints, what sits outside coaching.",
-      "Rebuild signal — one visible proof point (mini-project, reference, refresher).",
-      "Story & CV — bridge the gap without apologising; clear “why now”.",
-      "Interview fit — return-to-work scenarios, timing, breaks, care duties.",
-      "Apply & review — track, 20-min retro, adjust the next small step."
-    ],
-    "note": "Optional asynchronous feedback through voice notes or docs helps you integrate between sessions."
-  },
-  "agreement": {
-    "sections": [
-      {
-        "title": "Scope & Fit",
-        "paragraphs": [
-          "This is coaching, not therapy, counselling, HR, or legal advice.",
-          "We work on UK-relevant proof points, story clarity, preparation, and cadence.",
-          "If therapy/legal support is safer, we will signpost appropriate services."
-        ]
-      },
-      {
-        "title": "Confidentiality",
-        "paragraphs": [
-          "Sessions are confidential by default.",
-          "Only minimal notes are kept; you may request deletion at any time.",
-          "Quality supervision may use anonymised patterns without identifying details."
-        ]
-      },
-      {
-        "title": "Scheduling & Rescheduling",
-        "paragraphs": [
-          "≈50-minute sessions online within UK hours.",
-          "24 hours’ notice to reschedule; late changes count as used.",
-          "Blocks may pause between sessions by mutual agreement."
-        ]
-      },
-      {
-        "title": "Fees & Invoicing",
-        "paragraphs": [
-          "Fees in GBP, invoiced per block or as agreed.",
-          "Delivered sessions are non-refundable; unused sessions in a block may pause.",
-          "Bank/platform charges are borne by the client unless otherwise agreed."
-        ]
-      },
-      {
-        "title": "Data & Records",
-        "paragraphs": [
-          "We keep the minimum data needed to run sessions and invoices.",
-          "You can request copy or deletion of personal data subject to legal limits.",
-          "We use common tools (Google Docs/Sheets, email, video) with reasonable care."
-        ]
-      },
-      {
-        "title": "Fair Use & Boundaries",
-        "paragraphs": [
-          "Light check-ins are fine; heavy review or done-for-you work is out of scope.",
-          "We do not contact employers or HR on your behalf.",
-          "If there is risk of harm, confidentiality may be lifted to keep people safe."
-        ]
-      },
-      {
-        "title": "Disputes",
-        "paragraphs": [
-          "Aim to resolve early via email and a short call.",
-          "If unresolved, we propose a simple written plan and pause if needed.",
-          "UK law and forums apply unless mandatory local law requires otherwise."
-        ]
-      }
+      "24 hours' notice for scheduling changes.",
+      "Strict ethical confidentiality and GDPR compliance.",
+      "Invoiced in GBP; supports corporate requirements."
     ]
   },
   "faq": {
     "items": [
       {
-        "q": "Can you explain my employment gap for me?",
-        "a": "We co-craft your story, but you own the words. We focus on what changed and what you can evidence now."
+        "q": "How does coaching differ from recruitment?",
+        "a": "Recruiters fill seats; we build your long-term professional resilience and strategic evaluation skills."
       },
       {
-        "q": "Will you guarantee a return-to-work role?",
-        "a": "No. Coaching is not placement. We help you create proof points and clearer stories; you apply and track results."
+        "q": "Is a job offer guaranteed?",
+        "a": "No. Our focus is on improving your market positioning and decision-making clarity."
       },
       {
-        "q": "Do you write my CV/LinkedIn?",
-        "a": "We coach structure and clarity to UK norms, and suggest edits together in Google Docs. You remain the author."
-      },
-      {
-        "q": "How much time between sessions?",
-        "a": "Usually 30–60 minutes weekly for one micro-experiment or edit pass. Keep it small and visible."
-      },
-      {
-        "q": "Is it confidential?",
-        "a": "Yes. Confidential by default; minimal notes; deletion on request. See the boundaries page for details."
-      },
-      {
-        "q": "What about childcare/limited hours?",
-        "a": "We plan rhythm around constraints and target roles that match your workable hours."
-      },
-      {
-        "q": "Can you speak to my manager or HR?",
-        "a": "No. We help you plan the conversation; you speak for yourself when ready."
-      },
-      {
-        "q": "Reschedule/Refunds?",
-        "a": "24-hour notice required to reschedule; late changes count as used. Delivered sessions are non-refundable."
+        "q": "What is the level of confidentiality?",
+        "a": "Confidentiality is strictly maintained following the ICF Code of Ethics."
       }
     ]
   },
-  "cases": {
-    "title": "Composite coaching glimpses",
-    "description": "Real situations blended from multiple returners so identities stay confidential.",
-    "items": [
-      {
-        "title": "Back after 3 years, worried about gaps",
-        "context": "UK job search after a 3-year break; unsure how to frame caregiving.",
-        "coaching_moves": "Mapped a 30-min 'first day' simulation; rewrote 4 CV bullets with CAR; rehearsed boundary language.",
-        "shift": "Clearer language for gaps; sent 2 outreach messages with less avoidance.",
-        "tools_used": [
-          "Values Map",
-          "Self-Talk Reframe",
-          "Behavior Ladder"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
-        "slug": "back-after-3-years-worried-about-gaps"
-      },
-      {
-        "title": "Rebuilding confidence post-burnout",
-        "context": "Returning after burnout leave; anxious about pace and expectations.",
-        "coaching_moves": "Designed gentle energy audit; practised asking for support; set weekly review ritual.",
-        "shift": "Communicated capacity cleanly; reported growing steadiness instead of bracing.",
-        "tools_used": [
-          "Energy Audit",
-          "Weekly Reflection",
-          "Boundary Scripts"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
-        "slug": "rebuilding-confidence-post-burnout"
-      },
-      {
-        "title": "Translating new skills after study",
-        "context": "Certification during break; needs hybrid-role repositioning.",
-        "coaching_moves": "Reframed experience stories; prototyped networking outreach; tested answers.",
-        "shift": "Entered conversations confident about naming boundaries and new value.",
-        "tools_used": [
-          "Story Library",
-          "Interview Rehearsal"
-        ],
-        "disclaimer": "Illustrative and anonymised; outcomes are not promised.",
-        "slug": "translating-new-skills-after-study"
-      }
+  "readiness": {
+    "checklist": [
+      "Ready for a collaborative partnership",
+      "Willing to test new behaviours and scripts",
+      "Available during UK office hours"
     ]
-  },
-  "key_points": {
-    "items": [
-      {
-        "title": "Gentle 12-week ramp back with light structure and honest boundaries."
-      },
-      {
-        "title": "Weekly cadence; small experiments between sessions to build momentum."
-      },
-      {
-        "title": "Interview rehearsal that sharpens stories and fit—no hacks, no scripts."
-      },
-      {
-        "title": "CV/portfolio reframing to show recent proof of progress."
-      },
-      {
-        "title": "Simple pricing; pause between blocks; confidentiality by default."
-      }
-    ]
-  },
-  "title": "Career return — coaching pathway",
-  "description": "Bridge your gap with confidence. Story, evidence, cadence around care and workload."
+  }
 }

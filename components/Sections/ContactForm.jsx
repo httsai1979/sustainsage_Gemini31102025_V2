@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
+import { useTools } from '@/context/ToolContext';
 
 const FIELD_CLASSNAME =
   'block w-full rounded-xl border border-slate-200 px-3.5 py-2 text-slate-900 shadow-sm placeholder:text-slate-400 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500';
@@ -33,6 +34,8 @@ export default function ContactForm({ hasBoundaryConsent = false } = {}) {
   const timezoneHint = t('form.timezoneHint');
   const formHighlight = t('form.highlight');
 
+  const { usedTools } = useTools();
+
   useEffect(() => {
     setFormData((previous) => ({
       ...previous,
@@ -48,7 +51,33 @@ export default function ContactForm({ hasBoundaryConsent = false } = {}) {
         setFormData((previous) => (previous.focusArea ? previous : { ...previous, focusArea: focusParam }));
       }
     }
-  }, [focusAreaOptions, router.query.package, router.query.topic]);
+
+    // Pick up tool results from ToolContext
+    const entries = Object.entries(usedTools);
+    if (entries.length > 0) {
+      const [slug, result] = entries[entries.length - 1]; // Use the most recent tool
+      const toolName = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+
+      setFormData(prev => {
+        // Only update if help is empty to avoid overwriting user manual input
+        if (prev.help) return prev;
+
+        const autoHelp = `Hi, I just finished the ${toolName} tool. I'd like to discuss my findings and how they apply to my current transition.`;
+
+        // Auto-select focus area if it's the specific ladder tool
+        let autoFocus = prev.focusArea;
+        if (slug.includes('ladder') || slug.includes('experiment')) {
+          autoFocus = 'transition';
+        }
+
+        return {
+          ...prev,
+          help: autoHelp,
+          focusArea: autoFocus
+        };
+      });
+    }
+  }, [focusAreaOptions, router.query.package, router.query.topic, usedTools]);
 
   const handleChange = (event) => {
     const { name, type, value, checked } = event.target;
@@ -143,9 +172,8 @@ export default function ContactForm({ hasBoundaryConsent = false } = {}) {
           {status && (
             <div
               role="alert"
-              className={`mt-6 rounded-xl p-4 text-sm ${
-                status === 'success' ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'
-              }`}
+              className={`mt-6 rounded-xl p-4 text-sm ${status === 'success' ? 'bg-emerald-50 text-emerald-700' : 'bg-red-50 text-red-700'
+                }`}
             >
               {message}
             </div>

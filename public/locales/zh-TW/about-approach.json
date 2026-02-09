@@ -57,9 +57,19 @@
         {
           "title": "一起理解流程",
           "segments": [
-            { "type": "text", "value": "想知道完整流程，可閱讀我們的 " },
-            { "type": "link", "href": "/services/how-coaching-works", "label": "教練如何進行" },
-            { "type": "text", "value": " 指南，逐步了解我們如何合作。" }
+            {
+              "type": "text",
+              "value": "想知道完整流程，可閱讀我們的 "
+            },
+            {
+              "type": "link",
+              "href": "/services/how-coaching-works",
+              "label": "教練如何進行"
+            },
+            {
+              "type": "text",
+              "value": " 指南，逐步了解我們如何合作。"
+            }
           ]
         }
       ]
@@ -80,17 +90,51 @@
           "title": "坦誠轉介",
           "description": "當教練不是最佳容器，我們會提前說明，並連結其他支援，而不是勉強你完成方案。"
         }
+      ]
+    },
+    "interactive_tools": {
+      "title": "動手實踐：互動教練工具",
+      "description": "我們相信『邊做邊學』。即使還沒開始正式會談，你也可以先嘗試這些根據認知行為取向設計的工具，繞過大腦的防禦機制。",
+      "items": [
+        {
+          "title": "行為實驗階梯",
+          "description": "將恐懼拆解為可控的小實驗。",
+          "href": "/tools/behaviour-ladder"
+        },
+        {
+          "title": "自我價值地圖",
+          "description": "找回支持你的核心錨點。",
+          "href": "/tools/values-map"
+        }
       ],
-      "cta": {
-        "title": "下一步",
-        "segments": [
-          { "type": "text", "value": "想感受這套取向如何支持你？可以先瀏覽 " },
-          { "type": "link", "href": "/services", "label": "教練服務" },
-          { "type": "text", "value": "，或到 " },
-          { "type": "link", "href": "/services/how-coaching-works", "label": "教練如何進行" },
-          { "type": "text", "value": " 指南預約初談。" }
-        ]
-      }
+      "note": "工具產出的結果僅儲存在你的瀏覽器中。你可以選擇將結果附在諮詢表單中，讓我們在初談時能更精準地討論你的需求。"
+    },
+    "cta": {
+      "title": "下一步",
+      "segments": [
+        {
+          "type": "text",
+          "value": "想感受這套取向如何支持你？可以先嘗試 "
+        },
+        {
+          "type": "link",
+          "href": "/tools/behaviour-ladder",
+          "label": "互動工具"
+        },
+        {
+          "type": "text",
+          "value": "，或到 "
+        },
+        {
+          "type": "link",
+          "href": "/services",
+          "label": "教練服務"
+        },
+        {
+          "type": "text",
+          "value": " 預約初談。"
+        }
+      ]
     }
   }
 }
