@@ -18,7 +18,7 @@ export default function ToolPage({ locale, slug }: Props) {
       <ContentSection title={zh ? '何時適合使用' : 'When to use it'} tone="sage"><p className="text-lg leading-8 text-slate-750">{tool.whenToUse}</p></ContentSection>
       <section className="bg-[#fcfaf5] px-4 py-16 sm:px-8">
         <div className="mx-auto max-w-5xl overflow-hidden rounded-[1.5rem] border border-emerald-950/10 bg-white shadow-[0_18px_48px_rgba(28,55,44,.09)]">
-          <iframe title={tool.title} src={`/tools/${iframeSlug}.html`} className="min-h-[760px] w-full border-0" sandbox="allow-scripts allow-downloads allow-modals" />
+          <iframe title={tool.title} src={`/tools/${iframeSlug}.html`} className="min-h-[760px] w-full border-0" sandbox="allow-scripts allow-same-origin allow-downloads allow-modals" />
         </div>
       </section>
       <ContentSection title={zh ? '界線與資料' : 'Limits and data handling'} tone="sand">
