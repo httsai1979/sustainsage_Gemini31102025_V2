@@ -1,32 +1,18 @@
 import Link from 'next/link';
-import Hero from '@/components/layout/Hero';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-import { toSerializable } from '@/lib/toSerializable';
+import { useRouter } from 'next/router';
+import { CONTACT_EMAIL } from '@/content/siteStrategy';
 
-import nextI18NextConfig from '../next-i18next.config.js';
-
-function ServerErrorPage() {
-  const { t } = useTranslation('errorPages');
-
+export default function ErrorPage() {
+  const router = useRouter();
+  const zh = router.locale === 'zh-TW';
   return (
-    <Hero image="/hero/default.svg" align="left" title={t('serverErrorTitle')} subtitle={t('serverErrorBody')}>
-      <Link
-        href="/"
-        className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-emerald-900 focus-visible:ring-white"
-      >
-        {t('returnHome')}
-      </Link>
-    </Hero>
+    <main className="grid min-h-[75vh] place-items-center bg-[#f6f1e7] px-6 pt-28 text-center">
+      <div>
+        <p className="font-mono text-sm text-emerald-800">500</p>
+        <h1 className="mt-5 text-5xl font-semibold tracking-[-.04em] text-slate-950">{zh ? '網站暫時無法完成這個要求' : 'The site could not complete that request'}</h1>
+        <p className="mx-auto mt-5 max-w-xl leading-7 text-slate-650">{zh ? `請稍後再試，或寄信至 ${CONTACT_EMAIL}。` : `Please try again later or email ${CONTACT_EMAIL}.`}</p>
+        <Link className="ssg-primary-button mt-8" href="/">{zh ? '回到首頁' : 'Return home'}</Link>
+      </div>
+    </main>
   );
 }
-
-export async function getStaticProps({ locale = 'en' }) {
-  return toSerializable({
-    props: {
-      ...(await serverSideTranslations(locale, ['common', 'nav', 'errorPages'], nextI18NextConfig)),
-    },
-  });
-}
-
-export default ServerErrorPage;

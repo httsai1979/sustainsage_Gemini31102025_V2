@@ -3,6 +3,42 @@
 @tailwind components;
 @tailwind utilities;
 
+.ssg-primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    border-radius: .8rem;
+    background: #174c39;
+    padding: .8rem 1.2rem;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 650;
+    line-height: 1.35;
+    text-align: center;
+    transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.ssg-primary-button:hover {
+    background: #103d2d;
+    box-shadow: 0 12px 28px rgba(16, 61, 45, .18);
+    transform: translateY(-1px);
+}
+
+.ssg-primary-button:active {
+    transform: translateY(1px) scale(.99);
+}
+
+.ssg-primary-button:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #b7813f;
+    outline-offset: 3px;
+}
+
 /* 2. 移植 index.html <style> 中的所有自訂規則 */
 
 :root {

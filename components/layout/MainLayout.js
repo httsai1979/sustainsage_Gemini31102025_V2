@@ -8,7 +8,7 @@ const DEFAULT_SEO = {};
 
 export default function MainLayout({ children, seo = DEFAULT_SEO } = {}) {
   const normalizedSeo = typeof seo === 'object' && seo !== null ? seo : DEFAULT_SEO;
-  const { title, description, desc, noIndex, noindex, og, ogImage } = normalizedSeo;
+  const { title, description, desc, noIndex, noindex, og, ogImage, schema } = normalizedSeo;
 
   const openGraphImages = [];
 
@@ -31,12 +31,13 @@ export default function MainLayout({ children, seo = DEFAULT_SEO } = {}) {
     desc: description ?? desc,
     noindex: typeof noIndex === 'boolean' ? noIndex : noindex,
     og: openGraph,
+    schema,
   };
 
   return (
     <>
       <SEO {...resolvedSeo} />
-      <div className="flex min-h-screen flex-col bg-sustain-pageBg text-sustain-textMain transition-colors duration-300 dark:bg-sustain-bg-dark dark:text-sustain-text-dark">
+      <div className="flex min-h-screen flex-col bg-[#fcfaf5] text-slate-900">
         <SkipLink />
         <SiteHeader />
         <main id="content" className="typography flex-1 focus:outline-none">
@@ -58,5 +59,6 @@ MainLayout.propTypes = {
     noindex: PropTypes.bool,
     og: PropTypes.object,
     ogImage: PropTypes.string,
+    schema: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
   }),
 };

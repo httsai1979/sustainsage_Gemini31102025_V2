@@ -1,46 +1,36 @@
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import { SITE_URL, normaliseLocale } from '@/content/siteStrategy';
 
-const SITE_NAME = 'SustainSage';
-const DEFAULT_TITLE = SITE_NAME;
-const DEFAULT_DESCRIPTION =
-  'Calm, practical coaching for people navigating transitions, relocations, and re-entry moments.';
+const DEFAULT_TITLE = 'Cross-cultural career transition coaching | SustainSage';
+const DEFAULT_DESCRIPTION = 'Career transition coaching for Chinese-speaking professionals building their next chapter in the UK.';
 
-const buildImages = (og = {}) => {
-  if (Array.isArray(og.images)) {
-    return og.images.filter(Boolean);
-  }
-
-  if (og.image) {
-    return [og.image];
-  }
-
-  return [];
-};
-
-export default function SEO({ title, desc, og = {}, noindex = false }) {
-  const pageTitle = title ? `${title} | ${SITE_NAME}` : DEFAULT_TITLE;
+export default function SEO({ title, desc, og = {}, noindex = false, schema = [] }) {
+  const router = useRouter();
+  const locale = normaliseLocale(router.locale);
+  const path = (router.asPath || '/').split(/[?#]/)[0];
+  const cleanPath = path === '/' ? '' : path;
+  const canonical = `${SITE_URL}${locale === 'zh-TW' ? '/zh-TW' : ''}${cleanPath}`;
+  const pageTitle = title ? `${title} | SustainSage` : DEFAULT_TITLE;
   const description = typeof desc === 'string' && desc.trim() ? desc : DEFAULT_DESCRIPTION;
-
-  const ogTitle = og.title ?? pageTitle;
-  const ogDescription = og.description ?? description;
-  const ogType = og.type ?? 'website';
-  const ogUrl = og.url;
-  const ogLocale = og.locale;
-  const ogImages = buildImages(og);
-
+  const schemas = Array.isArray(schema) ? schema : [schema];
   return (
     <Head>
       <title>{pageTitle}</title>
       <meta name="description" content={description} />
-      {noindex ? <meta name="robots" content="noindex" /> : null}
-      <meta property="og:site_name" content={SITE_NAME} />
-      <meta property="og:title" content={ogTitle} />
-      <meta property="og:description" content={ogDescription} />
-      <meta property="og:type" content={ogType} />
-      {ogUrl ? <meta property="og:url" content={ogUrl} /> : null}
-      {ogLocale ? <meta property="og:locale" content={ogLocale} /> : null}
-      {ogImages.map((image) => (
-        <meta key={image} property="og:image" content={image} />
+      <meta name="robots" content={noindex ? 'noindex,nofollow' : 'index,follow'} />
+      <link rel="canonical" href={canonical} />
+      <link rel="alternate" hrefLang="en-GB" href={`${SITE_URL}${cleanPath}`} />
+      <link rel="alternate" hrefLang="zh-TW" href={`${SITE_URL}/zh-TW${cleanPath}`} />
+      <link rel="alternate" hrefLang="x-default" href={`${SITE_URL}${cleanPath}`} />
+      <meta property="og:site_name" content="SustainSage" />
+      <meta property="og:title" content={og.title ?? pageTitle} />
+      <meta property="og:description" content={og.description ?? description} />
+      <meta property="og:type" content={og.type ?? 'website'} />
+      <meta property="og:url" content={og.url ?? canonical} />
+      <meta property="og:locale" content={og.locale ?? (locale === 'zh-TW' ? 'zh_TW' : 'en_GB')} />
+      {schemas.filter(Boolean).map((item, index) => (
+        <script key={item['@id'] ?? index} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(item) }} />
       ))}
     </Head>
   );
