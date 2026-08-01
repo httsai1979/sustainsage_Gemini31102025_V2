@@ -33,7 +33,7 @@ export const siteFacts = {
   serviceLanguages: ['English', '繁體中文'],
   sessionCount: 6,
   sessionMinutes: 60,
-  programmeWeeks: '12–16',
+  programmeWeeks: '12-16',
   fitConversationMinutes: 20,
 } as const;
 
@@ -243,7 +243,7 @@ export const siteContent = {
     ],
     programme: {
       title: 'Career Transition Coaching Programme',
-      summary: 'Six one-to-one online coaching sessions, each 60 minutes, normally completed over 12–16 weeks.',
+      summary: 'Six one-to-one online coaching sessions, each 60 minutes, normally completed over 12-16 weeks.',
       details: [
         'Session one clarifies the goal, current situation and useful signs of progress.',
         'Middle sessions work with real decisions, difficult conversations, boundaries or barriers to action.',
@@ -302,7 +302,7 @@ export const siteContent = {
     ],
     programme: {
       title: '職涯轉換 Coaching 計畫',
-      summary: '六次一對一線上 Coaching，每次 60 分鐘，通常在 12–16 週內完成。',
+      summary: '六次一對一線上 Coaching，每次 60 分鐘，通常在 12-16 週內完成。',
       details: [
         '第一次釐清目標、現況與有意義的進展指標。',
         '中間會談處理真實決定、困難對話、界線或行動障礙。',

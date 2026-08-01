@@ -39,7 +39,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       from,
       to: [to],
       replyTo: data.email,
-      subject: `Fit conversation request — ${data.name}`,
+      subject: `Fit conversation request - ${data.name}`,
       html: `<h1>Fit conversation request</h1><p><strong>Name:</strong> ${escapeHtml(data.name)}</p><p><strong>Email:</strong> ${escapeHtml(data.email)}</p><p><strong>Language:</strong> ${escapeHtml(data.language)}</p><p><strong>Transition:</strong> ${escapeHtml(data.transition)}</p><p><strong>What would make it useful:</strong></p><p>${escapeHtml(data.useful).replace(/\n/g, '<br>')}</p>`,
     });
     if (error) {

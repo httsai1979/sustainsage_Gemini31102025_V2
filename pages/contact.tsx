@@ -2,6 +2,7 @@ import type { FormEvent } from 'react';
 import { useState } from 'react';
 import type { GetStaticProps } from 'next';
 import Link from 'next/link';
+import { EnvelopeSimple, ShieldCheck } from '@phosphor-icons/react';
 import MainLayout from '@/components/layout/MainLayout';
 import { PageHero } from '@/components/site/ContentPage';
 import { CONTACT_EMAIL, getSiteContent, normaliseLocale } from '@/content/siteStrategy';
@@ -38,10 +39,10 @@ export default function Contact({ locale }: { locale: string }) {
   }
 
   const label = 'block text-sm font-semibold text-slate-800';
-  const field = 'mt-2 w-full rounded-xl border border-emerald-950/20 bg-white px-4 py-3 text-base text-slate-950 shadow-sm transition focus:border-emerald-800';
+  const field = 'mt-2 w-full rounded-[.85rem] border border-[#173d2f]/20 bg-white px-4 py-3 text-base text-[#10251d] shadow-sm transition focus:border-[#27634e]';
   return (
     <>
-      <PageHero eyebrow={zh ? '聯絡' : 'CONTACT'} title={content.cta} intro={zh ? '這 20 分鐘用來確認議題是否適合 Coaching，以及雙方是否適合合作。它不是免費 Coaching，也不保證立即解決問題。' : 'These 20 minutes check whether the topic suits coaching and whether working together feels appropriate. It is not free coaching and does not promise an immediate solution.'} />
+      <PageHero eyebrow={zh ? '聯絡' : 'CONTACT'} title={zh ? '先從 20 分鐘適配對談開始' : 'Start with a 20-minute fit conversation'} intro={zh ? '確認議題是否適合 Coaching，以及雙方是否適合合作。這不是免費 Coaching。' : 'Check whether the topic suits coaching and whether working together feels appropriate. This is not free coaching.'} image="/images/editorial/coaching-conversation.webp" imageAlt={zh ? '專注的一對一對話' : 'A focused one-to-one conversation'} />
       <section className="bg-[#fcfaf5]">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 sm:px-8 lg:grid-cols-[1.15fr_.85fr] lg:py-28">
           <form onSubmit={submit} className="rounded-[1.5rem] bg-white p-7 shadow-[0_18px_48px_rgba(28,55,44,.09)] sm:p-10">
@@ -56,10 +57,11 @@ export default function Contact({ locale }: { locale: string }) {
               <div aria-live="polite">{message ? <p className={`rounded-xl p-4 text-sm ${status === 'sent' ? 'bg-emerald-50 text-emerald-950' : 'bg-amber-50 text-amber-950'}`}>{message}</p> : null}</div>
             </div>
           </form>
-          <aside className="self-start rounded-[1.5rem] bg-[#e9efe8] p-8">
-            <h2 className="text-2xl font-semibold text-slate-950">{zh ? '也可以直接來信' : 'You can also email directly'}</h2>
+          <aside className="self-start rounded-[1.25rem] border border-[#173d2f]/10 bg-[#e6ede8] p-8">
+            <span className="grid h-12 w-12 place-items-center rounded-[.9rem] bg-white text-[#27634e]"><EnvelopeSimple className="h-6 w-6" /></span>
+            <h2 className="mt-7 text-2xl font-medium tracking-[-.02em] text-[#10251d]">{zh ? '也可以直接來信' : 'You can also email directly'}</h2>
             <a href={`mailto:${CONTACT_EMAIL}`} className="mt-5 block break-all text-lg font-semibold text-emerald-900 underline underline-offset-4">{CONTACT_EMAIL}</a>
-            <p className="mt-6 text-sm leading-6 text-slate-650">{zh ? '請不要在表單或電子郵件中傳送醫療紀錄、身分證件、財務資料或其他不必要的敏感資訊。' : 'Please do not send medical records, identity documents, financial details or other unnecessary sensitive information through the form or email.'}</p>
+            <div className="mt-7 flex gap-3 border-t border-[#173d2f]/10 pt-6 text-sm leading-6 text-[#53675f]"><ShieldCheck className="mt-0.5 h-5 w-5 shrink-0 text-[#27634e]" /><p>{zh ? '請不要在表單或電子郵件中傳送醫療紀錄、身分證件、財務資料或其他不必要的敏感資訊。' : 'Please do not send medical records, identity documents, financial details or other unnecessary sensitive information through the form or email.'}</p></div>
           </aside>
         </div>
       </section>

@@ -12,7 +12,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Aptos', '"Segoe UI Variable"', '"Noto Sans TC"', 'system-ui', 'sans-serif'],
+      sans: ['Manrope', '"Noto Sans TC"', 'Aptos', '"Segoe UI Variable"', 'system-ui', 'sans-serif'],
     },
     extend: {
       colors: {

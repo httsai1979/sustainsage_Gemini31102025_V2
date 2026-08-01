@@ -1,6 +1,7 @@
 import type { GetStaticProps } from 'next';
+import { ArrowCounterClockwise, Briefcase, ChatCircleText, GlobeHemisphereWest, Scales, Target, UserSwitch } from '@phosphor-icons/react';
 import MainLayout from '@/components/layout/MainLayout';
-import { BulletList, ContentSection, NumberedList, PageHero, PrimaryCTA } from '@/components/site/ContentPage';
+import { BulletList, ContentSection, EditorialMedia, IconCardGrid, MediaSplit, NumberedList, PageHero, PrimaryCTA } from '@/components/site/ContentPage';
 import { getSiteContent, normaliseLocale, SITE_URL } from '@/content/siteStrategy';
 
 export default function Coaching({ locale }: { locale: string }) {
@@ -14,16 +15,27 @@ export default function Coaching({ locale }: { locale: string }) {
     : ['Focused questions and summaries', 'Decision criteria and system mapping', 'Rehearsal for difficult conversations', 'Low-risk action experiments and review'];
   return (
     <>
-      <PageHero eyebrow="COACHING" title={zh ? '一套服務，處理真實的職涯轉換' : 'One service for real career transitions'} intro={zh ? 'Coaching 是一段有結構、以你為決策者的思考夥伴關係。它不替你下答案，而是幫助你看清處境、選擇與下一步。' : 'Coaching is a structured thinking partnership in which you remain the decision-maker. It does not supply an answer; it helps you see the situation, choices and next step more clearly.'} cta={content.cta} />
+      <PageHero eyebrow="COACHING" title={zh ? '一套服務，處理真實的職涯轉換' : 'One service for real career transitions'} intro={zh ? 'Coaching 是一段有結構、以你為決策者的思考夥伴關係。它不替你下答案，而是幫助你看清處境、選擇與下一步。' : 'Coaching is a structured thinking partnership in which you remain the decision-maker. It does not supply an answer; it helps you see the situation, choices and next step more clearly.'} cta={zh ? '預約適配對談' : 'Request a fit conversation'} image="/images/editorial/coaching-conversation.webp" imageAlt={zh ? '兩位專業人士進行一對一 Coaching 對話' : 'Two professionals in a focused one-to-one coaching conversation'} />
       <ContentSection title={zh ? 'Coaching 是什麼' : 'What coaching is'} tone="sage"><BulletList items={content.canHelp} /></ContentSection>
       <ContentSection title={zh ? '四種適用情境' : 'Four situations where it may help'}>
-        <div className="grid gap-5 sm:grid-cols-2">{content.situations.map((item) => <article id={item.id} key={item.id} className="scroll-mt-28 rounded-[1.25rem] bg-white p-7 shadow-[0_12px_34px_rgba(28,55,44,.07)]"><h3 className="text-xl font-semibold text-slate-950">{item.title}</h3><p className="mt-3 leading-7 text-slate-650">{item.summary}</p></article>)}</div>
+        <IconCardGrid items={content.situations.map((item, index) => ({ ...item, body: item.summary, icon: [Briefcase, ArrowCounterClockwise, GlobeHemisphereWest, UserSwitch][index] }))} />
       </ContentSection>
       <ContentSection tone="sand" title={zh ? '可以帶進會談的問題' : 'Questions you can bring'}><BulletList items={questions} /></ContentSection>
       <ContentSection title={content.programme.title} intro={content.programme.summary}><NumberedList items={content.programme.details} /><p className="mt-6 rounded-xl bg-emerald-50 p-5 font-semibold text-emerald-950">{content.programme.fees}</p></ContentSection>
-      <ContentSection tone="sage" title={zh ? 'Coaching 方法' : 'Coaching approach'}><BulletList items={methods} /></ContentSection>
-      <ContentSection title={zh ? '反思工具如何輔助' : 'How reflection tools support the work'}><p className="text-lg leading-8 text-slate-750">{zh ? '七項非 AI 工具可在會談前或會談之間，協助你記錄觀察、釐清價值與設計小型行動。工具不會把資料傳送給 SustainSage，也不取代專業服務。' : 'Seven non-AI tools can help you record observations, clarify values and design small actions before or between sessions. They do not send entries to SustainSage and do not replace professional care.'}</p></ContentSection>
-      <ContentSection tone="sand" title={zh ? '能做與不能做的事' : 'What coaching can—and cannot—do'}><BulletList items={content.boundaries} /></ContentSection>
+      <ContentSection tone="sage" title={zh ? 'Coaching 方法' : 'Coaching approach'}>
+        <div className="grid gap-4 md:grid-cols-2">
+          {methods.map((method, index) => {
+            const Icon = [ChatCircleText, Scales, Target, UserSwitch][index];
+            return <div key={method} className="flex items-center gap-4 rounded-[1.25rem] border border-[#173d2f]/10 bg-white/70 p-6"><Icon className="h-7 w-7 shrink-0 text-[#2b6a53]" /><span className="text-lg leading-7 text-[#31483f]">{method}</span></div>;
+          })}
+        </div>
+      </ContentSection>
+      <ContentSection title={zh ? '反思工具如何輔助' : 'How reflection tools support the work'}>
+        <MediaSplit reverse media={<EditorialMedia src="/images/editorial/reflection-tools.webp" alt={zh ? '筆記本、指南針與反思工具' : 'A notebook, compass and tactile reflection tools'} />}>
+          <p className="text-lg leading-8 text-[#40554c]">{zh ? '七項非 AI 工具可在會談前或會談之間，協助你記錄觀察、釐清價值與設計小型行動。工具不會把資料傳送給 SustainSage，也不取代專業服務。' : 'Seven non-AI tools can help you record observations, clarify values and design small actions before or between sessions. They do not send entries to SustainSage and do not replace professional care.'}</p>
+        </MediaSplit>
+      </ContentSection>
+      <ContentSection tone="sand" title={zh ? '能做與不能做的事' : 'What coaching can and cannot do'}><BulletList items={content.boundaries} /></ContentSection>
       <ContentSection title="FAQ">
         <dl className="grid gap-8">
           {(zh ? [
