@@ -2,8 +2,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { SITE_URL, normaliseLocale } from '@/content/siteStrategy';
 
-const DEFAULT_TITLE = 'Cross-cultural career transition coaching | SustainSage';
-const DEFAULT_DESCRIPTION = 'Career transition coaching for Chinese-speaking professionals building their next chapter in the UK.';
+const DEFAULT_TITLE = 'UK-Asia cross-border leadership coaching | SustainSage';
+const DEFAULT_DESCRIPTION = 'Cross-cultural leadership coaching for SME founders, managers and assignees working between the UK and Asia.';
 
 export default function SEO({ title, desc, og = {}, noindex = false, schema = [] }) {
   const router = useRouter();

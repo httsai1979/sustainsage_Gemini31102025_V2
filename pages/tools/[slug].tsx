@@ -30,7 +30,7 @@ export default function ToolPage({ locale, slug }: Props) {
       <ContentSection title={zh ? '下一個相關工具' : 'A related next tool'}>
         <Link className="inline-flex text-xl font-semibold text-emerald-800 underline decoration-2 underline-offset-4 hover:text-emerald-950" href={`/tools/${nextTool.slug}`}>{nextTool.title} →</Link>
       </ContentSection>
-      <PrimaryCTA title={zh ? '想在 Coaching 中整理這些觀察？' : 'Want to work with these observations in coaching?'} body={zh ? '你不需要提交工具內容；適配對談先確認議題、邊界與合作方式。' : 'You do not need to submit your tool entries. The fit conversation first checks the topic, boundaries and way of working.'} label={content.cta} />
+      <PrimaryCTA title={zh ? '這些觀察是否連結到跨境領導問題？' : 'Do these observations connect to a cross-border leadership issue?'} body={zh ? '你不需要提交工具內容。只需說明角色、組織脈絡與希望處理的問題。' : 'You do not need to submit your tool entries. Describe only the role, organisational context and issue you want to address.'} label={content.cta} />
     </>
   );
 }

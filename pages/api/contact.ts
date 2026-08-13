@@ -7,8 +7,11 @@ export const contactSchema = z.object({
   name: z.string().trim().min(2).max(120),
   email: z.string().trim().email().max(254),
   language: z.enum(['English', '繁體中文']),
-  transition: z.enum(['career-change', 'returning-to-work', 'new-to-uk', 'leadership-transition']),
-  useful: z.string().trim().min(20).max(2000),
+  role: z.enum(['founder-owner', 'country-general-manager', 'functional-leader', 'assignee', 'hr-sponsor', 'referral-partner']),
+  organisation: z.string().trim().min(2).max(160),
+  context: z.enum(['hq-local-expectations', 'cross-border-role', 'difficult-conversation', 'assignment-transition']),
+  payer: z.enum(['organisation', 'self-funded', 'undecided']),
+  useful: z.string().trim().min(40).max(3000),
   privacy: z.literal(true),
 });
 
@@ -39,8 +42,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       from,
       to: [to],
       replyTo: data.email,
-      subject: `Fit conversation request - ${data.name}`,
-      html: `<h1>Fit conversation request</h1><p><strong>Name:</strong> ${escapeHtml(data.name)}</p><p><strong>Email:</strong> ${escapeHtml(data.email)}</p><p><strong>Language:</strong> ${escapeHtml(data.language)}</p><p><strong>Transition:</strong> ${escapeHtml(data.transition)}</p><p><strong>What would make it useful:</strong></p><p>${escapeHtml(data.useful).replace(/\n/g, '<br>')}</p>`,
+      subject: `Confidential coaching enquiry - ${data.organisation}`,
+      html: `<h1>Confidential coaching enquiry</h1><p><strong>Name:</strong> ${escapeHtml(data.name)}</p><p><strong>Email:</strong> ${escapeHtml(data.email)}</p><p><strong>Language:</strong> ${escapeHtml(data.language)}</p><p><strong>Role:</strong> ${escapeHtml(data.role)}</p><p><strong>Organisation:</strong> ${escapeHtml(data.organisation)}</p><p><strong>Context:</strong> ${escapeHtml(data.context)}</p><p><strong>Likely funder:</strong> ${escapeHtml(data.payer)}</p><p><strong>Decision, conversation or risk:</strong></p><p>${escapeHtml(data.useful).replace(/\n/g, '<br>')}</p>`,
     });
     if (error) {
       console.error('[contact] Resend error', error);

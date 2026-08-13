@@ -9,8 +9,11 @@ const valid = {
   name: 'Example Person',
   email: 'person@example.org',
   language: 'English',
-  transition: 'career-change',
-  useful: 'I want to clarify a realistic next step for my transition.',
+  role: 'country-general-manager',
+  organisation: 'Example Manufacturing UK Ltd',
+  context: 'hq-local-expectations',
+  payer: 'organisation',
+  useful: 'I need to align headquarters expectations with what the UK team can realistically deliver.',
   privacy: true,
 };
 
@@ -31,7 +34,7 @@ describe('contact API validation', () => {
     process.env.RESEND_EMAIL_TO = 'coach@example.org';
   });
 
-  it('accepts a complete fit-conversation request', () => {
+  it('accepts a complete confidential coaching enquiry', () => {
     expect(contactSchema.safeParse(valid).success).toBe(true);
   });
 

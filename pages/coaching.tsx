@@ -1,5 +1,5 @@
 import type { GetStaticProps } from 'next';
-import { ArrowCounterClockwise, Briefcase, ChatCircleText, GlobeHemisphereWest, Scales, Target, UserSwitch } from '@phosphor-icons/react';
+import { AirplaneTilt, Buildings, ChatCircleText, Path, Scales, Target, UserSwitch } from '@phosphor-icons/react';
 import MainLayout from '@/components/layout/MainLayout';
 import { BulletList, ContentSection, EditorialMedia, IconCardGrid, MediaSplit, NumberedList, PageHero, PrimaryCTA } from '@/components/site/ContentPage';
 import { getSiteContent, normaliseLocale, SITE_URL } from '@/content/siteStrategy';
@@ -8,19 +8,19 @@ export default function Coaching({ locale }: { locale: string }) {
   const content = getSiteContent(locale);
   const zh = locale === 'zh-TW';
   const questions = zh
-    ? ['我真正想改變的是什麼？', '哪些條件不能再被忽略？', '如何準備一場困難對話？', '哪個小型實驗能讓我取得新資訊？']
-    : ['What do I genuinely want to change?', 'Which conditions can no longer be ignored?', 'How do I prepare for a difficult conversation?', 'What small experiment could give me new information?'];
+    ? ['總部與在地團隊各自認為我應該負責什麼？', '真正的決策權、影響力與風險分別在哪裡？', '如何準備一場跨越階級與文化的困難對話？', '哪個小型行動能提供新的資訊，而不讓風險失控？']
+    : ['What do headquarters and the local team each expect me to own?', 'Where do decision rights, influence and risk actually sit?', 'How do I prepare for a difficult conversation across hierarchy and culture?', 'What small action could create new information without losing control of the risk?'];
   const methods = zh
     ? ['深度提問與摘要', '選擇條件與系統脈絡整理', '困難對話預演', '低風險行動實驗與回顧']
     : ['Focused questions and summaries', 'Decision criteria and system mapping', 'Rehearsal for difficult conversations', 'Low-risk action experiments and review'];
   return (
     <>
-      <PageHero eyebrow="COACHING" title={zh ? '一套服務，處理真實的職涯轉換' : 'One service for real career transitions'} intro={zh ? 'Coaching 是一段有結構、以你為決策者的思考夥伴關係。它不替你下答案，而是幫助你看清處境、選擇與下一步。' : 'Coaching is a structured thinking partnership in which you remain the decision-maker. It does not supply an answer; it helps you see the situation, choices and next step more clearly.'} cta={zh ? '預約適配對談' : 'Request a fit conversation'} image="/images/editorial/coaching-conversation.webp" imageAlt={zh ? '兩位專業人士進行一對一 Coaching 對話' : 'Two professionals in a focused one-to-one coaching conversation'} />
-      <ContentSection title={zh ? 'Coaching 是什麼' : 'What coaching is'} tone="sage"><BulletList items={content.canHelp} /></ContentSection>
-      <ContentSection title={zh ? '四種適用情境' : 'Four situations where it may help'}>
-        <IconCardGrid items={content.situations.map((item, index) => ({ ...item, body: item.summary, icon: [Briefcase, ArrowCounterClockwise, GlobeHemisphereWest, UserSwitch][index] }))} />
+      <PageHero eyebrow="COACHING" title={zh ? '處理跨境領導中不能迴避的問題' : 'Work on the issues cross-border leaders cannot avoid'} intro={zh ? '以你為決策者，釐清角色、權責、文化期待與下一步行動。' : 'A structured thinking partnership for role, authority, cultural expectations and action.'} cta={content.cta} meta={zh ? '先提交情境，不需要預約短通話。' : 'Start by describing the situation. No short-call booking.'} image="/images/editorial/coaching-conversation.webp" imageAlt={zh ? '兩位專業人士進行一對一 Coaching 對話' : 'Two professionals in a focused one-to-one coaching conversation'} />
+      <ContentSection title={zh ? '這項 Coaching 如何工作' : 'How this coaching works'} tone="sage"><BulletList items={content.canHelp} /></ContentSection>
+      <ContentSection title={zh ? '四種常見的跨境領導情境' : 'Four cross-border leadership situations'}>
+        <IconCardGrid items={content.situations.map((item, index) => ({ ...item, body: item.summary, icon: [Buildings, Path, ChatCircleText, AirplaneTilt][index] }))} />
       </ContentSection>
-      <ContentSection tone="sand" title={zh ? '可以帶進會談的問題' : 'Questions you can bring'}><BulletList items={questions} /></ContentSection>
+      <ContentSection tone="sand" title={zh ? '可以帶進會談的真實問題' : 'Real questions to bring'}><BulletList items={questions} /></ContentSection>
       <ContentSection title={content.programme.title} intro={content.programme.summary}><NumberedList items={content.programme.details} /><p className="mt-6 rounded-xl bg-emerald-50 p-5 font-semibold text-emerald-950">{content.programme.fees}</p></ContentSection>
       <ContentSection tone="sage" title={zh ? 'Coaching 方法' : 'Coaching approach'}>
         <div className="grid gap-4 md:grid-cols-2">
@@ -39,20 +39,20 @@ export default function Coaching({ locale }: { locale: string }) {
       <ContentSection title="FAQ">
         <dl className="grid gap-8">
           {(zh ? [
-            ['20 分鐘對談是免費 Coaching 嗎？', '不是。它只用來確認議題是否適合 Coaching，以及雙方是否適合合作。'],
+            ['如何開始合作？', '先提交保密合作詢問，說明角色、組織脈絡與問題。若議題適合，SustainSage 會以電子郵件提出下一步與書面範圍。'],
             ['會談可以用中文嗎？', '可以。會談可使用英文或中文。'],
-            ['可以保證找到工作或升遷嗎？', '不能。Coaching 不保證特定結果，你仍是決策與行動的負責人。'],
-            ['如果我要取消或改期呢？', '正式合作前會提供書面條款；目前政策細節仍需最終確認。'],
+            ['企業付款時會與公司分享什麼？', 'Coaching 內容仍以保密為原則。任何 Sponsor 對齊或結束回顧的範圍，都必須在開始前由相關各方書面確認。'],
+            ['可以保證特定商業或職涯結果嗎？', '不能。Coaching 不保證特定結果，你仍是決策與行動的負責人。'],
           ] : [
-            ['Is the 20-minute conversation free coaching?', 'No. It only checks whether the topic suits coaching and whether working together feels appropriate.'],
+            ['How does an enquiry begin?', 'Describe the role, organisational context and issue in the confidential enquiry form. If the work appears suitable, SustainSage will propose next steps and a written scope by email.'],
             ['Can sessions be held in Chinese?', 'Yes. Sessions can be held in English or Chinese.'],
-            ['Can you guarantee a job or promotion?', 'No. Coaching cannot guarantee a particular outcome; you remain responsible for decisions and action.'],
-            ['What if I need to cancel or reschedule?', 'Written terms are provided before paid work begins; the final policy details still require confirmation.'],
+            ['What is shared when an organisation pays?', 'Coaching content remains confidential. Any sponsor alignment or closing review must be agreed in writing by the relevant parties before work begins.'],
+            ['Can you guarantee a business or career outcome?', 'No. Coaching cannot guarantee a particular outcome. You remain responsible for decisions and action.'],
           ]).map(([question, answer]) => <div key={question} className="border-b border-emerald-950/10 pb-7"><dt className="text-xl font-semibold text-slate-950">{question}</dt><dd className="mt-3 leading-7 text-slate-650">{answer}</dd></div>)}
         </dl>
       </ContentSection>
       <ContentSection tone="sage" title={zh ? '保密、資料與專業邊界' : 'Confidentiality, data and professional boundaries'}><p className="text-lg leading-8 text-slate-750">{zh ? '正式合作會說明保密範圍、保障義務、取消安排、資料保存與查閱刪除方式。若出現重大安全風險，保密可能依法或基於 safeguarding 責任受到限制。' : 'Before paid work begins, written terms explain confidentiality, safeguarding limits, cancellation arrangements, data retention and access or deletion requests. Confidentiality may be limited where law or a serious safeguarding concern requires action.'}</p></ContentSection>
-      <PrimaryCTA title={zh ? '先確認這套方式是否適合你' : 'First check whether this way of working fits'} body={zh ? '不需要先把所有問題整理好。帶著目前最重要的一件事來談即可。' : 'You do not need to organise every question first. Bring the one issue that matters most now.'} label={content.cta} />
+      <PrimaryCTA title={zh ? '讓我先理解你正在承擔什麼' : 'Let me understand what you are carrying'} body={zh ? '不需要把問題包裝成完美的 Coaching 題目。請直接說明角色、公司脈絡與目前最重要的問題。' : 'You do not need to package the issue as a perfect coaching goal. Describe the role, company context and what is at stake.'} label={content.cta} />
     </>
   );
 }
@@ -60,8 +60,8 @@ export default function Coaching({ locale }: { locale: string }) {
 Coaching.getLayout = (page) => {
   const content = getSiteContent(page.props.locale);
   const faq = page.props.locale === 'zh-TW'
-    ? [{ '@type': 'Question', name: '20 分鐘對談是免費 Coaching 嗎？', acceptedAnswer: { '@type': 'Answer', text: '不是。它只用來確認議題與適配度。' } }]
-    : [{ '@type': 'Question', name: 'Is the 20-minute conversation free coaching?', acceptedAnswer: { '@type': 'Answer', text: 'No. It checks the topic and mutual fit.' } }];
+    ? [{ '@type': 'Question', name: '如何開始合作？', acceptedAnswer: { '@type': 'Answer', text: '先提交保密合作詢問。若議題適合，SustainSage 會以電子郵件提出下一步與書面範圍。' } }]
+    : [{ '@type': 'Question', name: 'How does an enquiry begin?', acceptedAnswer: { '@type': 'Answer', text: 'Start by submitting a confidential enquiry. If the work appears suitable, SustainSage will propose next steps and a written scope by email.' } }];
   const schema = [{ '@context': 'https://schema.org', '@type': 'Service', '@id': `${SITE_URL}/coaching#service`, name: content.programme.title, provider: { '@id': `${SITE_URL}/#organisation` }, areaServed: 'United Kingdom', availableLanguage: ['English', 'Chinese'] }, { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq }];
   return <MainLayout seo={{ title: content.programme.title, description: content.programme.summary, schema }}>{page}</MainLayout>;
 };

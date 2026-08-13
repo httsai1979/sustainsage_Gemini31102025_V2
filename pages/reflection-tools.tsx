@@ -13,9 +13,9 @@ export default function ReflectionTools({ locale }: { locale: string }) {
   return (
     <>
       <PageHero
-        eyebrow={zh ? '反思工具' : 'REFLECTION TOOLS'}
-        title={zh ? '從停下來留意，到開始一個小行動' : 'From pausing to one small action'}
-        intro={zh ? '七項免費、非 AI 的自我反思工具。你的輸入保留在瀏覽器內，不會傳送給 SustainSage。' : 'Seven free, non-AI self-reflection tools. Your entries remain in your browser and are not sent to SustainSage.'}
+        eyebrow={zh ? '資源' : 'RESOURCES'}
+        title={zh ? '在重要對話與決定之前，先整理思考' : 'Think clearly before an important decision or conversation'}
+        intro={zh ? '七項非 AI 反思工具。你的輸入保留在瀏覽器內，不會傳送給 SustainSage。' : 'Seven non-AI reflection tools. Your entries remain in your browser and are not sent to SustainSage.'}
         image="/images/editorial/reflection-tools.webp"
         imageAlt={zh ? '筆記本、指南針與反思工具' : 'A notebook, compass and tactile reflection tools'}
       />
@@ -58,9 +58,9 @@ export default function ReflectionTools({ locale }: { locale: string }) {
       </ContentSection>
 
       <ContentSection title={zh ? '工具的界線' : 'Limits of these tools'} tone="sand"><p className="max-w-3xl text-lg leading-8 text-[#40554c]">{zh ? '工具只協助反思，不會診斷、治療或提供醫療、法律、財務、移民等專業意見。如有緊急安全或健康疑慮，請使用適當的專業或緊急服務。' : 'These tools support reflection. They do not diagnose, treat, or provide medical, legal, financial or immigration advice. If you have an urgent safety or health concern, use an appropriate professional or emergency service.'}</p></ContentSection>
-      <PrimaryCTA title={zh ? '想把觀察帶進一段有結構的對話？' : 'Want to bring your observations into a structured conversation?'} body={zh ? '適配對談只用來確認議題與合作方式，不要求你分享工具中的私人內容。' : 'The fit conversation checks the topic and way of working. You do not have to share private tool entries.'} label={content.cta} />
+      <PrimaryCTA title={zh ? '需要處理的是跨境領導情境？' : 'Is the issue a cross-border leadership situation?'} body={zh ? '你不需要分享工具中的私人內容。只需在合作詢問中說明角色、組織脈絡與目前需要推進的問題。' : 'You do not need to share private tool entries. Describe only the role, organisational context and issue that needs to move.'} label={content.cta} />
     </>
   );
 }
-ReflectionTools.getLayout = (page) => <MainLayout seo={{ title: page.props.locale === 'zh-TW' ? '反思工具' : 'Reflection Tools', description: page.props.locale === 'zh-TW' ? '七項免費、非 AI 的職涯反思工具。' : 'Seven free, non-AI tools for career reflection and small actions.' }}>{page}</MainLayout>;
+ReflectionTools.getLayout = (page) => <MainLayout seo={{ title: page.props.locale === 'zh-TW' ? '跨境領導反思資源' : 'Cross-border leadership reflection resources', description: page.props.locale === 'zh-TW' ? '七項非 AI 反思工具，協助你在重要對話與決定之前整理思考。' : 'Seven non-AI reflection tools for clearer thinking before important decisions and conversations.' }}>{page}</MainLayout>;
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({ props: { locale: normaliseLocale(locale) } });

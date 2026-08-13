@@ -14,8 +14,8 @@ describe('site strategy', () => {
     }
   });
 
-  it('keeps the primary navigation to five entries', () => {
-    expect(primaryNavigation.map((item) => item.href)).toEqual(['/', '/coaching', '/about', '/reflection-tools', '/contact']);
+  it('keeps the primary navigation focused on the service and company buyer', () => {
+    expect(primaryNavigation.map((item) => item.href)).toEqual(['/', '/coaching', '/for-companies', '/about', '/reflection-tools', '/contact']);
   });
 
   it('uses the approved company facts', () => {

@@ -8,19 +8,19 @@ export default function About({ locale }: { locale: string }) {
   const content = getSiteContent(locale);
   const zh = locale === 'zh-TW';
   const relevance = zh
-    ? ['理解跨文化職場裡未被明說的期待。', '能把營運現實、家庭責任與身分轉換放在同一張圖上。', '不把複雜轉換簡化成信心或正向思考問題。', '可用英文或中文進行細緻對話。']
-    : ['Understand the unspoken expectations inside cross-cultural workplaces.', 'Hold operational reality, family responsibility and identity transition in one view.', 'Avoid reducing a complex transition to confidence or positive thinking.', 'Work with nuance in English or Chinese.'];
+    ? ['理解總部與在地團隊沒有用相同方式說出的期待。', '能把營運現實、權責關係與個人風險放在同一張圖上。', '不把跨文化摩擦簡化為個性、國籍或溝通技巧問題。', '可用英文或中文處理細緻而敏感的對話。']
+    : ['Understand expectations that headquarters and local teams do not express in the same way.', 'Hold operational reality, authority and personal risk in one view.', 'Avoid reducing cross-cultural friction to personality, nationality or communication style.', 'Work with sensitive nuance in English or Chinese.'];
   return (
     <>
-      <PageHero eyebrow="ABOUT" title={zh ? '理解完整處境的跨文化經驗' : 'Experience that understands the whole transition'} intro={zh ? 'SustainSage 的公開 Coaching 服務由 Hao-Cheng Tsai 提供。他也是唯一的公開聯絡窗口。' : 'SustainSage’s public coaching service is provided by Hao-Cheng Tsai, who is also the sole public point of contact.'} image="/images/editorial/next-chapter.webp" imageAlt={zh ? '面向英國城市的專業工作空間' : 'A professional workspace looking onto a UK city'} />
-      <ContentSection title={zh ? '從跨國營運到英國職涯重整' : 'From international operations to rebuilding a career in the UK'} tone="sage">
+      <PageHero eyebrow="ABOUT" title={zh ? '理解跨境領導責任，而不是套用文化公式' : 'Cross-border responsibility without cultural formulas'} intro={zh ? 'SustainSage 的公開 Coaching 服務由 Hao-Cheng Tsai 提供，也是你提交合作詢問後的直接聯絡人。' : 'SustainSage coaching is provided by Hao-Cheng Tsai, who personally reviews every genuine enquiry.'} cta={content.cta} meta={zh ? '不透過自動排程篩選你。' : 'No automated scheduling funnel.'} image="/images/editorial/next-chapter.webp" imageAlt={zh ? '面向英國城市的專業工作空間' : 'A professional workspace looking onto a UK city'} />
+      <ContentSection title={zh ? '曾經承擔責任，因此理解問題的重量' : 'Experience of carrying the responsibility'} tone="sage">
         <div className="space-y-6 text-pretty text-lg leading-8 text-slate-750">{content.about.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
       </ContentSection>
-      <ContentSection title={zh ? '這些經驗為何與你有關' : 'Why this experience may matter to you'}>
+      <ContentSection title={zh ? '這些經驗如何進入 Coaching 工作' : 'How this experience informs the work'}>
         <IconCardGrid items={relevance.map((body, index) => ({ title: zh ? ['跨文化脈絡', '完整處境', '務實思考', '雙語細節'][index] : ['Cross-cultural context', 'The whole situation', 'Practical thinking', 'Bilingual nuance'][index], body, icon: [GlobeHemisphereWest, TreeStructure, Scales, ChatCircleText][index] }))} />
       </ContentSection>
       <ContentSection title={zh ? '清楚的專業範圍' : 'A clear professional scope'} tone="sand"><BulletList items={content.boundaries} /></ContentSection>
-      <PrimaryCTA title={zh ? `與 ${siteFacts.coach} 確認合作是否合適` : `Check the fit with ${siteFacts.coach}`} body={zh ? '先談你的轉換情境、希望對談有何幫助，以及 Coaching 是否是合適的支持。' : 'Discuss your transition, what would make a conversation useful, and whether coaching is the right kind of support.'} label={content.cta} />
+      <PrimaryCTA title={zh ? `把情境直接交給 ${siteFacts.coach} 閱讀` : `Put the situation directly in front of ${siteFacts.coach}`} body={zh ? '說明你的角色、組織脈絡與目前問題。不需要先預約，也不需要把故事壓縮成一段短通話。' : 'Describe the role, organisational context and current issue. No booking and no need to compress the story into a short call.'} label={content.cta} />
     </>
   );
 }
