@@ -4,7 +4,23 @@ const config = require('../next-sitemap.config.js');
 
 const siteUrl = String(config.siteUrl).replace(/\/$/, '');
 const core = ['/', '/coaching', '/for-companies', '/about', '/reflection-tools', '/contact'];
-const tools = ['emotion-triangle', 'thought-log', 'self-talk-reframe', 'values-map', 'role-separation', 'choice-clarifier', 'behaviour-ladder'].map((slug) => `/tools/${slug}`);
+const tools = [
+  'change-context-map',
+  'stakeholder-resistance-map',
+  'change-narrative-builder',
+  'role-decision-rights',
+  'difficult-conversation-planner',
+  'adoption-experiment-ladder',
+  'resilience-capacity-check',
+  'motivation-commitment-map',
+  'emotion-triangle',
+  'thought-log',
+  'self-talk-reframe',
+  'values-map',
+  'role-separation',
+  'choice-clarifier',
+  'behaviour-ladder',
+].map((slug) => `/tools/${slug}`);
 const legal = ['/legal/privacy', '/legal/cookie-policy', '/legal/coaching-terms', '/legal/coaching-boundaries'];
 const routes = [...core, ...tools, ...legal];
 const entries = routes.flatMap((route) => {

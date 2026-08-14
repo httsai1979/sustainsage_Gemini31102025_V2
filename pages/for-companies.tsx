@@ -1,5 +1,5 @@
 import type { GetStaticProps } from 'next';
-import { Buildings, FileText, LockKey, UsersThree } from '@phosphor-icons/react';
+import { ArrowsClockwise, Buildings, ShieldChevron, UsersThree } from '@phosphor-icons/react';
 import MainLayout from '@/components/layout/MainLayout';
 import { BulletList, ContentSection, EditorialMedia, IconCardGrid, MediaSplit, NumberedList, PageHero, PrimaryCTA } from '@/components/site/ContentPage';
 import { getSiteContent, normaliseLocale, SITE_URL } from '@/content/siteStrategy';
@@ -12,14 +12,14 @@ export default function ForCompanies({ locale }: { locale: string }) {
     ? [
         { title: '精簡的英國營運單位', body: '亞洲總部在英國的團隊規模不一定大，但 Country Manager 或關鍵主管承擔高度責任。' },
         { title: '關鍵外派任務', body: '主管正在準備抵達英國、建立角色，或需要在任務中重新處理總部與在地期待。' },
-        { title: '角色或責任轉換', body: '一位重要管理者剛被升任、回任、接管新市場，或處於需要穩定判斷的轉折點。' },
-        { title: '跨文化團隊摩擦', body: '問題不只是溝通技巧，而是權責、速度、回報方式與信任如何被不同地理解。' },
+        { title: '組織變革與在地採用', body: '主管需要把總部策略轉化為在地可行的新行為、責任與營運做法。' },
+        { title: '阻力與變革疲勞', body: '表面同意沒有形成行動，或長期改變正在削弱動機、韌性與執行品質。' },
       ]
     : [
         { title: 'Lean UK operations', body: 'An Asian-headquartered company may have a small UK team while its country or functional leader carries substantial responsibility.' },
         { title: 'Critical assignments', body: 'A leader is preparing to arrive, establish authority, or reset headquarters and local expectations during an assignment.' },
-        { title: 'Role transitions', body: 'A key manager has been promoted, repatriated, given a new market, or reached a point that needs steadier judgement.' },
-        { title: 'Cross-cultural team friction', body: 'The issue is not only communication style. It involves authority, pace, reporting expectations and how trust is formed.' },
+        { title: 'Organisational change and local adoption', body: 'A leader must translate headquarters strategy into workable new behaviour, ownership and operating practice.' },
+        { title: 'Resistance and change fatigue', body: 'Formal agreement is not becoming action, or prolonged change is weakening motivation, resilience and execution quality.' },
       ];
 
   const process = zh
@@ -49,7 +49,40 @@ export default function ForCompanies({ locale }: { locale: string }) {
       />
 
       <ContentSection title={zh ? '企業通常在這些時刻尋求支援' : 'When companies usually seek support'}>
-        <IconCardGrid items={buyerContexts.map((item, index) => ({ ...item, icon: [Buildings, UsersThree, FileText, LockKey][index] }))} />
+        <IconCardGrid items={buyerContexts.map((item, index) => ({ ...item, icon: [Buildings, UsersThree, ArrowsClockwise, ShieldChevron][index] }))} />
+      </ContentSection>
+
+      <ContentSection tone="sand" title={zh ? '支援變革領導者，不承接整個變革專案' : 'Support the change leader without taking over the programme'}>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <div className="rounded-[1.25rem] border border-[#173d2f]/10 bg-white p-7 sm:p-9">
+            <h3 className="text-2xl font-medium tracking-[-.025em] text-[#173d2f]">{zh ? 'Coaching 可以處理' : 'Coaching can support'}</h3>
+            <BulletList items={zh ? [
+              '變革授權、角色、利害關係人與決策權的釐清。',
+              '阻力來源、文化假設與在地採用障礙的理解。',
+              '變革敘事、困難對話與低風險採用實驗的準備。',
+              '主管在長期壓力下的韌性、動機與判斷品質。',
+            ] : [
+              'Clarity on the change mandate, roles, stakeholders and decision rights.',
+              'Understanding resistance, cultural assumptions and local adoption barriers.',
+              'Preparation for change narratives, difficult conversations and low-risk adoption experiments.',
+              'The leader’s resilience, motivation and judgement under sustained pressure.',
+            ]} />
+          </div>
+          <div className="rounded-[1.25rem] border border-[#173d2f]/10 bg-[#eceeea] p-7 sm:p-9">
+            <h3 className="text-2xl font-medium tracking-[-.025em] text-[#31483f]">{zh ? '不屬於這項服務' : 'Outside this service'}</h3>
+            <BulletList items={zh ? [
+              '代替管理團隊擁有轉型策略、PMO 或整體交付責任。',
+              '設計組織架構、裁員方案、員工諮詢程序或法律文件。',
+              '代寫內部溝通、操控員工認同，或把合理疑慮視為態度問題。',
+              '向 Sponsor 揭露 Coaching 對話內容。',
+            ] : [
+              'Owning the transformation strategy, PMO or programme delivery for management.',
+              'Designing organisation structures, redundancy plans, employee consultation or legal documents.',
+              'Writing internal communications, manufacturing buy-in or treating legitimate concerns as attitude problems.',
+              'Disclosing coaching conversations to the sponsor.',
+            ]} />
+          </div>
+        </div>
       </ContentSection>
 
       <ContentSection tone="sage" title={zh ? '付款者、Sponsor 與 Coaching 客戶需要清楚分開' : 'Payer, sponsor and coaching client are distinct roles'}>

@@ -5,11 +5,15 @@ describe('site strategy', () => {
     expect(Object.keys(siteContent)).toEqual(['en-GB', 'zh-TW']);
   });
 
-  it('keeps one programme, four situations and seven non-AI tools', () => {
+  it('keeps one programme, four situations, eight change tools and seven reflection tools', () => {
     for (const locale of ['en-GB', 'zh-TW']) {
       const content = getSiteContent(locale);
       expect(content.situations).toHaveLength(4);
+      expect(content.changeTools).toHaveLength(8);
       expect(content.tools).toHaveLength(7);
+      expect(new Set(content.changeTools.map((tool) => tool.slug)).size).toBe(8);
+      expect(content.changeTools.every((tool) => tool.prompts.length >= 5)).toBe(true);
+      expect(content.changeTools.every((tool) => content.changeTools.some((candidate) => candidate.slug === tool.nextSlug))).toBe(true);
       expect(content.programme.summary).toContain(locale === 'zh-TW' ? '六次' : 'Six');
     }
   });

@@ -1,3 +1,5 @@
+import { changeLeadershipStages, enChangeLeadershipTools, zhChangeLeadershipTools } from '@/content/changeLeadershipTools';
+
 export const SITE_URL = 'https://sustainsage-group.com';
 export const CONTACT_EMAIL = 'hc.tsai@sustainsage-group.com';
 export const PRIMARY_CTA_PATH = '/contact';
@@ -5,7 +7,7 @@ export const PRIMARY_CTA_PATH = '/contact';
 export type SupportedLocale = 'en-GB' | 'zh-TW';
 
 type Situation = {
-  id: 'hq-local-expectations' | 'cross-border-role' | 'difficult-conversation' | 'assignment-transition';
+  id: 'hq-local-expectations' | 'organisational-change' | 'resistance-adoption' | 'assignment-transition';
   title: string;
   summary: string;
 };
@@ -43,14 +45,14 @@ const enSituations: Situation[] = [
     summary: 'You are accountable to an Asian headquarters while building trust, clarity and momentum with a UK team.',
   },
   {
-    id: 'cross-border-role',
-    title: 'A new cross-border leadership role',
-    summary: 'You have taken on a country, functional or general management role where familiar leadership signals no longer travel cleanly.',
+    id: 'organisational-change',
+    title: 'Leading organisational change',
+    summary: 'You are responsible for turning a strategic decision into new behaviour, ownership and operating practice across UK and Asian teams.',
   },
   {
-    id: 'difficult-conversation',
-    title: 'A conversation with consequences',
-    summary: 'You need to address performance, authority, alignment or conflict across hierarchy and culture without damaging the relationship.',
+    id: 'resistance-adoption',
+    title: 'Resistance, adoption and momentum',
+    summary: 'Formal agreement is not becoming real adoption, and you need to understand the concerns, losses or system friction underneath it.',
   },
   {
     id: 'assignment-transition',
@@ -66,14 +68,14 @@ const zhSituations: Situation[] = [
     summary: '你需要對亞洲總部負責，同時在英國團隊中建立信任、清楚度與推進節奏。',
   },
   {
-    id: 'cross-border-role',
-    title: '新的跨境領導角色',
-    summary: '你剛接下國家、功能或整體營運責任，原本熟悉的領導訊號在新文化中不再能直接沿用。',
+    id: 'organisational-change',
+    title: '領導組織變革',
+    summary: '你需要把策略決定轉化為英國與亞洲團隊真正採用的新行為、責任與營運做法。',
   },
   {
-    id: 'difficult-conversation',
-    title: '一場後果重大的對話',
-    summary: '你需要跨越階級與文化，處理績效、權責、共識或衝突，同時不破壞工作關係。',
+    id: 'resistance-adoption',
+    title: '阻力、採用與推進動能',
+    summary: '表面同意沒有轉化成真正採用，你需要看懂背後的疑慮、損失感或系統摩擦。',
   },
   {
     id: 'assignment-transition',
@@ -228,13 +230,13 @@ export const siteContent = {
     },
     cta: 'Send a confidential enquiry',
     positioning: 'Cross-cultural leadership coaching for SME founders, managers and assignees working between the UK and Asia.',
-    supporting: 'For leaders handling headquarters-local expectations, role transitions, difficult conversations and international assignments.',
+    supporting: 'For leaders handling headquarters-local expectations, organisational change, resistance, sustainable adoption and international assignments.',
     situations: enSituations,
     canHelp: [
-      'Clarify the role, mandate and expectations around you.',
-      'Map stakeholders, decision rights and cultural assumptions.',
-      'Prepare for difficult conversations across hierarchy and culture.',
-      'Turn a high-stakes issue into a workable next action.',
+      'Clarify the change mandate, business need and local operating reality.',
+      'Map stakeholders, decision rights and the sources of resistance.',
+      'Prepare difficult conversations and a credible change narrative.',
+      'Build adoption through small experiments, reinforcement and sustainable leadership capacity.',
     ],
     steps: [
       'Send a confidential enquiry describing the role and situation.',
@@ -246,9 +248,9 @@ export const siteContent = {
       summary: 'Six one-to-one online coaching sessions, each 60 minutes, normally completed over 12-16 weeks. Available for self-funded and organisation-sponsored work.',
       details: [
         'Clarify the mandate, current system and useful signs of progress.',
-        'Map stakeholders, expectations and decision rights across locations.',
-        'Prepare real conversations and test small actions between sessions.',
-        'Close with a practical transition plan and unresolved risks made explicit.',
+        'Map stakeholders, resistance, expectations and decision rights across locations.',
+        'Prepare real conversations and test small adoption experiments between sessions.',
+        'Close with reinforcement, resilience and unresolved risks made explicit.',
       ],
       fees: 'After reviewing your enquiry, SustainSage will confirm whether the work is suitable and provide the scope, fee and written terms before any commitment.',
     },
@@ -273,6 +275,8 @@ export const siteContent = {
       ],
     },
     tools: enTools,
+    changeTools: enChangeLeadershipTools,
+    changeToolStages: changeLeadershipStages['en-GB'],
     toolStages: ['Pause and notice', 'Understand yourself', 'Clarify a choice', 'Start a small action'],
     boundaries: sharedBoundaries.en,
   },
@@ -288,13 +292,13 @@ export const siteContent = {
     },
     cta: '提交保密合作詢問',
     positioning: '為在英國與亞洲之間承擔管理責任的 SME 創辦人、主管與外派人才，提供跨文化領導 Coaching。',
-    supporting: '協助處理總部與在地團隊期待、角色轉換、困難對話與國際外派任務。',
+    supporting: '協助處理總部與在地團隊期待、組織變革、阻力與採用，以及外派任務中的持續領導。',
     situations: zhSituations,
     canHelp: [
-      '釐清你的角色、授權與周圍期待。',
-      '整理利害關係人、決策權與文化假設。',
-      '準備跨越階級與文化的困難對話。',
-      '把高風險問題轉成可以實際推進的下一步。',
+      '釐清變革授權、商業需求與在地營運現實。',
+      '整理利害關係人、決策權與阻力來源。',
+      '準備困難對話與可信的變革敘事。',
+      '透過小型實驗、強化機制與可持續承載力，讓採用真正發生。',
     ],
     steps: [
       '提交保密合作詢問，說明你的角色與目前情境。',
@@ -306,9 +310,9 @@ export const siteContent = {
       summary: '六次一對一線上 Coaching，每次 60 分鐘，通常在 12-16 週內完成。可由個人自費或企業贊助。',
       details: [
         '釐清授權範圍、目前系統與有意義的進展指標。',
-        '整理跨地點的利害關係人、期待與決策權。',
-        '準備真實對話，並在會談之間測試小型行動。',
-        '以可執行的轉換計畫收尾，同時說清楚尚未解決的風險。',
+        '整理跨地點的利害關係人、阻力、期待與決策權。',
+        '準備真實對話，並在會談之間測試小型採用實驗。',
+        '以強化機制、韌性安排與尚未解決的風險收尾。',
       ],
       fees: '閱讀你的詢問後，SustainSage 會先確認議題是否適合，再於任何承諾之前提供合作範圍、費用與書面條款。',
     },
@@ -333,6 +337,8 @@ export const siteContent = {
       ],
     },
     tools: zhTools,
+    changeTools: zhChangeLeadershipTools,
+    changeToolStages: changeLeadershipStages['zh-TW'],
     toolStages: ['停下來並留意', '理解自己', '釐清選擇', '開始一個小行動'],
     boundaries: sharedBoundaries.zh,
   },

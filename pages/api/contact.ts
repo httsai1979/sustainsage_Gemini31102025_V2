@@ -9,7 +9,7 @@ export const contactSchema = z.object({
   language: z.enum(['English', '繁體中文']),
   role: z.enum(['founder-owner', 'country-general-manager', 'functional-leader', 'assignee', 'hr-sponsor', 'referral-partner']),
   organisation: z.string().trim().min(2).max(160),
-  context: z.enum(['hq-local-expectations', 'cross-border-role', 'difficult-conversation', 'assignment-transition']),
+  context: z.enum(['hq-local-expectations', 'organisational-change', 'resistance-adoption', 'assignment-transition']),
   payer: z.enum(['organisation', 'self-funded', 'undecided']),
   useful: z.string().trim().min(40).max(3000),
   privacy: z.literal(true),

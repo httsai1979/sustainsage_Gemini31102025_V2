@@ -36,6 +36,9 @@ describe('contact API validation', () => {
 
   it('accepts a complete confidential coaching enquiry', () => {
     expect(contactSchema.safeParse(valid).success).toBe(true);
+    expect(contactSchema.safeParse({ ...valid, context: 'organisational-change' }).success).toBe(true);
+    expect(contactSchema.safeParse({ ...valid, context: 'resistance-adoption' }).success).toBe(true);
+    expect(contactSchema.safeParse({ ...valid, context: 'cross-border-role' }).success).toBe(false);
   });
 
   it('rejects missing privacy acknowledgement and short context', () => {
