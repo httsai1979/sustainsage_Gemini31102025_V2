@@ -26,4 +26,13 @@ describe('site strategy', () => {
     expect(siteFacts.companyNumber).toBe('15220734');
     expect(siteFacts.email).toBe('hc.tsai@sustainsage-group.com');
   });
+
+  it('presents the founder through human trust rather than numeric proof', () => {
+    for (const locale of ['en-GB', 'zh-TW']) {
+      const about = getSiteContent(locale).about;
+      const founderCopy = [about.title, about.summary, ...about.paragraphs, about.perspective, ...about.relationship.flatMap((item) => [item.title, item.body])].join(' ');
+      expect(about.relationship).toHaveLength(4);
+      expect(founderCopy).not.toMatch(/\b\d+(?:\.\d+)?%|\b\d+\+? years?\b|\d+\s*年/i);
+    }
+  });
 });
