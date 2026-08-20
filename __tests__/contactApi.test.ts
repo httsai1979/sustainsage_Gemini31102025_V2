@@ -9,10 +9,8 @@ const valid = {
   name: 'Example Person',
   email: 'person@example.org',
   language: 'English',
-  role: 'country-general-manager',
+  role: 'Country manager',
   organisation: 'Example Manufacturing UK Ltd',
-  context: 'hq-local-expectations',
-  payer: 'organisation',
   useful: 'I need to align headquarters expectations with what the UK team can realistically deliver.',
   privacy: true,
 };
@@ -34,11 +32,11 @@ describe('contact API validation', () => {
     process.env.RESEND_EMAIL_TO = 'coach@example.org';
   });
 
-  it('accepts a complete confidential coaching enquiry', () => {
+  it('accepts a human, low-friction coaching enquiry', () => {
     expect(contactSchema.safeParse(valid).success).toBe(true);
-    expect(contactSchema.safeParse({ ...valid, context: 'organisational-change' }).success).toBe(true);
-    expect(contactSchema.safeParse({ ...valid, context: 'resistance-adoption' }).success).toBe(true);
-    expect(contactSchema.safeParse({ ...valid, context: 'cross-border-role' }).success).toBe(false);
+    expect(contactSchema.safeParse({ ...valid, role: '', organisation: '' }).success).toBe(true);
+    const { role, organisation, ...minimal } = valid;
+    expect(contactSchema.safeParse(minimal).success).toBe(true);
   });
 
   it('rejects missing privacy acknowledgement and short context', () => {

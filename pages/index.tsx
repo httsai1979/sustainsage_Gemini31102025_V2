@@ -1,102 +1,56 @@
 import type { GetStaticProps } from 'next';
-import { AirplaneTilt, ArrowsClockwise, BatteryCharging, Buildings, ChatCircleText, Path, ShieldChevron } from '@phosphor-icons/react';
+import Link from 'next/link';
+import { ArrowRight, ChatCircleText, Path, UsersThree } from '@phosphor-icons/react';
 import MainLayout from '@/components/layout/MainLayout';
-import { BulletList, ContentSection, EditorialMedia, IconCardGrid, MediaSplit, NumberedList, PageHero, PrimaryCTA } from '@/components/site/ContentPage';
+import { ContentSection, CrossBorderMap, NumberedList, PageHero, PrimaryCTA, QuotePanel } from '@/components/site/ContentPage';
 import { getSiteContent, normaliseLocale, siteFacts, SITE_URL } from '@/content/siteStrategy';
 
 export default function Home({ locale }: { locale: string }) {
-  const content = getSiteContent(locale);
   const zh = locale === 'zh-TW';
-  const icons = [Buildings, Path, ChatCircleText, AirplaneTilt];
-  return (
-    <>
-      <PageHero
-        eyebrow={zh ? '英國與亞洲跨境領導 COACHING' : 'UK-ASIA CROSS-BORDER LEADERSHIP COACHING'}
-        title={zh ? '在總部與在地之間，清楚承擔領導責任' : 'Lead clearly across the UK and Asia'}
-        intro={zh ? '為在英國與亞洲之間承擔管理責任的 SME 創辦人、主管與外派人才而設。' : 'For SME founders, managers and assignees carrying leadership responsibility between the UK and Asia.'}
-        cta={content.cta}
-        meta={zh ? '不需要預約短通話。你的情境會先被完整閱讀，再決定合適的下一步。' : 'No short-call booking. Your situation is read before any suitable next step is proposed.'}
-        imageAlt={zh ? '一位跨境主管在英國城市窗邊整理決策' : 'A cross-border leader considering a decision beside a UK city window'}
-      />
+  const cta = zh ? '把情境寫給我' : 'Write to me about the situation';
+  const moments = zh ? [
+    ['總部說方向已經很清楚', '英國團隊感受到的，卻是重要決定早已在別處完成。'],
+    ['每個人都說支持改變', '會議結束後，承諾沒有變成新的行為與工作方式。'],
+    ['你一直替兩邊翻譯', '最後卻成為唯一需要解釋延誤、摩擦與失去信任的人。'],
+  ] : [
+    ['Headquarters believes the direction is clear', 'The UK team experiences the same decision as something completed elsewhere.'],
+    ['Everyone says they support the change', 'After the meeting, agreement does not become different behaviour or practice.'],
+    ['You keep translating for both sides', 'You become the person expected to explain delay, friction and lost trust.'],
+  ];
+  const scenarios = zh ? [
+    { label: '綜合情境 01', title: '被要求加快，卻沒有真正的授權', body: '亞洲總部希望英國營運更快落地。當地主管被要求承擔結果，關鍵批准權卻仍留在總部。他需要的不是更多壓力，而是看清可以改變的決策結構與下一場對話。' },
+    { label: '綜合情境 02', title: '表面同意，實際沒有採用', body: '一項新流程在會議中獲得支持，日常工作卻沒有改變。與其把它稱為抗拒，需要先理解人們可能失去什麼、哪些風險沒有被處理，以及領導者自己傳遞了什麼訊號。' },
+  ] : [
+    { label: 'COMPOSITE SITUATION 01', title: 'Asked to move faster without real authority', body: 'Asian headquarters wants UK operations to deliver faster. The local leader owns the outcome while key approvals remain at headquarters. More pressure is not the answer. The decision system and the next conversation need to become clearer.' },
+    { label: 'COMPOSITE SITUATION 02', title: 'Agreement without adoption', body: 'A new process receives support in the meeting, yet daily practice does not change. Before calling it resistance, the leader needs to understand perceived loss, unresolved risk and the signals their own behaviour is sending.' },
+  ];
+  return <>
+    <PageHero eyebrow={zh ? '英國與亞洲跨境領導 COACHING' : 'UK-ASIA CROSS-BORDER LEADERSHIP COACHING'} title={zh ? '當你同時對兩邊負責，卻沒有一邊真正理解你的處境' : 'Accountable to both sides. Fully understood by neither.'} intro={zh ? '為連結亞洲總部與英國團隊的 SME 創辦人、主管與外派領導者而設。看清真正的問題，準備不能迴避的對話，讓改變能被人們真正採用。' : 'For SME founders, managers and assignees connecting Asian headquarters with UK teams. See the real issue, prepare the conversation that cannot be avoided and make change possible to adopt.'} cta={cta} meta={zh ? '沒有預約連結。每一則訊息都由 Hao-Cheng 本人閱讀。' : 'No booking link. Every message is read personally by Hao-Cheng.'} />
 
-      <ContentSection title={zh ? '這不是一般職涯 Coaching' : 'This is not general career coaching'} intro={zh ? '它處理的是當文化、權責與商業現實同時影響一個決定時，領導者真正需要面對的問題。' : 'It is for decisions shaped by culture, authority, business reality and relationships at the same time.'}>
-        <IconCardGrid items={content.situations.map((item, index) => ({ id: item.id, title: item.title, body: item.summary, icon: icons[index] }))} />
-      </ContentSection>
+    <ContentSection eyebrow={zh ? '你可能正在經歷' : 'YOU MAY RECOGNISE THIS'} title={zh ? '真正困難的，通常不是文化差異本身' : 'The difficult part is rarely culture alone'} intro={zh ? '它發生在權責、關係、速度與沒有說出口的顧慮交會之處。' : 'It sits where authority, relationships, speed and unspoken concerns meet.'}>
+      <div className="divide-y divide-[#173d2f]/15 border-y border-[#173d2f]/15">{moments.map(([title, body], index) => <article key={title} className="grid gap-4 py-9 md:grid-cols-[72px_1fr_1.25fr]"><span className="font-mono text-sm text-[#9a5d2d]">0{index + 1}</span><h3 className="text-xl font-semibold text-[#173d2f]">{title}</h3><p className="text-lg leading-8 text-[#52665e]">{body}</p></article>)}</div>
+    </ContentSection>
 
-      <ContentSection
-        tone="sand"
-        eyebrow={zh ? '變革領導' : 'CHANGE LEADERSHIP'}
-        title={zh ? '不是宣布改變，而是讓改變能被採用' : 'Change only matters when it is adopted'}
-        intro={zh ? '這項 Coaching 支持負責變革結果的主管，而不是替組織代做轉型專案。' : 'This coaching supports the leader accountable for change. It does not take over the transformation programme.'}
-      >
-        <div className="grid gap-4 lg:grid-cols-12">
-          <article className="rounded-[1.25rem] bg-[#173d2f] p-8 text-white lg:col-span-7 lg:p-10">
-            <ArrowsClockwise className="h-8 w-8 text-[#e5a05a]" />
-            <h3 className="mt-10 max-w-[18ch] text-3xl font-medium tracking-[-.035em]">{zh ? '組織變革與持續採用' : 'Organisational change and sustained adoption'}</h3>
-            <p className="mt-4 max-w-[55ch] text-lg leading-8 text-[#d7e3dc]">{zh ? '把策略意圖轉譯成清楚的角色、對話、試驗與強化機制，讓 UK-Asia 團隊能真正改變日常做法。' : 'Translate strategic intent into clear roles, conversations, experiments and reinforcement so UK-Asia teams can change daily practice.'}</p>
-          </article>
-          <div className="grid gap-4 lg:col-span-5">
-            <article className="rounded-[1.25rem] border border-[#173d2f]/10 bg-white p-7">
-              <ShieldChevron className="h-7 w-7 text-[#27634e]" />
-              <h3 className="mt-6 text-2xl font-medium tracking-[-.025em] text-[#173d2f]">{zh ? '理解並處理阻力' : 'Work with resistance'}</h3>
-              <p className="mt-3 leading-7 text-[#53675f]">{zh ? '分辨阻力背後是合理風險、損失感、信任問題，還是結構性障礙，再選擇適合的回應。' : 'Distinguish legitimate risk, perceived loss, trust concerns and structural friction before choosing a response.'}</p>
-            </article>
-            <article className="rounded-[1.25rem] border border-[#173d2f]/10 bg-[#e7eee9] p-7">
-              <BatteryCharging className="h-7 w-7 text-[#27634e]" />
-              <h3 className="mt-6 text-2xl font-medium tracking-[-.025em] text-[#173d2f]">{zh ? '韌性、動機與承載力' : 'Resilience, motivation and capacity'}</h3>
-              <p className="mt-3 leading-7 text-[#53675f]">{zh ? '不是要求自己或團隊更努力，而是保護判斷品質、恢復能力、真實自主與持續承諾。' : 'Not asking people to try harder. Protect judgement, recovery, credible agency and commitment through sustained change.'}</p>
-            </article>
-          </div>
-        </div>
-      </ContentSection>
+    <ContentSection tone="sage" eyebrow={zh ? '一個不急著選邊的空間' : 'A SPACE THAT DOES NOT RUSH TO TAKE SIDES'} title={zh ? '總部不一定錯，在地團隊也不只是抗拒' : 'Headquarters may not be wrong. The local team may not simply be resistant.'}>
+      <div className="grid items-center gap-12 lg:grid-cols-12"><div className="lg:col-span-6"><CrossBorderMap locale={locale} /></div><div className="lg:col-span-5 lg:col-start-8"><QuotePanel quote={zh ? '我想先理解每一方正在保護什麼、你真正要對什麼負責，以及在組織現實中，哪些改變是真的可行。' : 'I want to understand what each side is protecting, what you are truly accountable for and what change is genuinely possible within the organisation.'} attribution="Hao-Cheng Tsai · Founder, SustainSage" /><Link href="/about" className="mt-8 inline-flex items-center font-bold text-[#27634e]">{zh ? '認識 Hao-Cheng 的工作方式' : 'How Hao-Cheng works'}<ArrowRight className="ml-2 h-4 w-4" /></Link></div></div>
+    </ContentSection>
 
-      <ContentSection tone="sage" title={zh ? '把跨境摩擦轉成可處理的工作' : 'Make cross-border friction workable'}>
-        <MediaSplit
-          reverse
-          media={<EditorialMedia src="/images/editorial/coaching-conversation.webp" alt={zh ? '一對一 Coaching 對話與開啟的筆記本' : 'A focused one-to-one coaching conversation with an open notebook'} />}
-        >
-          <BulletList items={content.canHelp} />
-        </MediaSplit>
-      </ContentSection>
+    <ContentSection eyebrow={zh ? '不是客戶見證，而是你可能熟悉的現實' : 'NOT TESTIMONIALS, BUT REALITIES YOU MAY RECOGNISE'} title={zh ? '把抽象的跨境摩擦，放回真實工作裡' : 'Put cross-border friction back into real work'} intro={zh ? '以下為綜合情境，用來說明這項工作處理的張力，不代表特定客戶。' : 'These are composite situations showing the tensions this work addresses. They do not represent named clients.'}>
+      <div className="grid gap-px bg-[#173d2f]/15 lg:grid-cols-2">{scenarios.map((item) => <article key={item.title} className="bg-[#fbfaf6] p-8 sm:p-10"><p className="text-xs font-bold tracking-[.14em] text-[#9a5d2d]">{item.label}</p><h3 className="mt-6 max-w-[20ch] text-2xl font-medium tracking-[-.025em] text-[#173d2f] sm:text-3xl">{item.title}</h3><p className="mt-5 text-lg leading-8 text-[#52665e]">{item.body}</p></article>)}</div>
+    </ContentSection>
 
-      <ContentSection title={zh ? '先理解情境，再決定是否合作' : 'Understand the situation before proposing work'} intro={zh ? '沒有行事曆連結，也不要求你在短時間內證明自己適合。' : 'There is no calendar link and no requirement to prove fit inside a short call.'}>
-        <NumberedList items={content.steps} />
-      </ContentSection>
-
-      <ContentSection tone="sand" title={content.about.title}>
-        <MediaSplit
-          media={<EditorialMedia src="/images/editorial/next-chapter.webp" alt={zh ? '一個面向英國城市、準備展開下一章的工作空間' : 'A workspace facing a UK city, prepared for a new chapter'} />}
-        >
-          <div className="space-y-5 text-pretty text-lg leading-8 text-[#40554c]">
-            {content.about.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-        </MediaSplit>
-      </ContentSection>
-
-      <ContentSection title={zh ? '適合誰，也清楚說明不適合誰' : 'Clear about who this is for'}>
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-[1.25rem] border border-[#173d2f]/10 bg-white p-7 sm:p-9">
-            <h3 className="mb-6 text-2xl font-medium tracking-[-.02em] text-[#173d2f]">{zh ? '可能適合' : 'May be suitable'}</h3>
-            <BulletList items={content.fit.suitable} />
-          </div>
-          <div className="rounded-[1.25rem] border border-[#173d2f]/10 bg-[#f0f2ef] p-7 sm:p-9">
-            <h3 className="mb-6 text-2xl font-medium tracking-[-.02em] text-[#31483f]">{zh ? '不是這項服務的範圍' : 'Outside this service'}</h3>
-            <BulletList items={content.fit.notSuitable} />
-          </div>
-        </div>
-      </ContentSection>
-
-      <PrimaryCTA title={zh ? '先把真正的情境說清楚' : 'Start with the situation that matters'} body={zh ? '提交你的角色、組織脈絡與目前需要處理的問題。SustainSage 會先閱讀，再以電子郵件提出合適的下一步。' : 'Describe your role, organisational context and the issue at stake. SustainSage will review it before proposing a suitable next step by email.'} label={content.cta} />
-    </>
-  );
+    <ContentSection tone="sand" eyebrow={zh ? '一起工作的方式' : 'WHAT THE WORK FEELS LIKE'} title={zh ? '理解你，但不只是認同你' : 'Understood, without being simply agreed with'}>
+      <NumberedList items={zh ? ['你可以帶來還沒有整理好的版本，包括矛盾、猶豫，以及不能在公司裡完整說出的部分。','我們一起辨認權力、文化、關係與組織系統如何影響你的判斷，不把問題簡化成個人態度。','把洞察轉成你能親自完成的對話、決定與小型實驗。決定仍然屬於你。'] : ['Bring the unfinished version, including contradiction, uncertainty and what cannot be said safely inside the organisation.','Examine how power, culture, relationships and the organisational system shape your judgement without reducing the issue to attitude.','Turn insight into a conversation, decision or small experiment you can carry out. The decision remains yours.']} />
+      <div className="mt-12 grid gap-8 border-t border-[#173d2f]/15 pt-10 sm:grid-cols-3">{[[ChatCircleText, zh ? '英文或中文' : 'English or Chinese'],[UsersThree, zh ? '個人或企業贊助' : 'Self or organisation funded'],[Path, zh ? '線上一對一' : 'Online one-to-one']].map(([Icon, text]: any) => <div key={text} className="flex items-center gap-4"><Icon className="h-6 w-6 text-[#2b6a53]" /><span className="font-semibold text-[#31483f]">{text}</span></div>)}</div>
+    </ContentSection>
+    <PrimaryCTA title={zh ? '你不需要先把事情說得很完整' : 'You do not need a polished version of the story'} body={zh ? '寫下你正在承擔的角色、兩邊的期待，以及現在最難處理的那件事。Hao-Cheng 會先親自閱讀，再用電子郵件回覆合適的下一步。' : 'Write about the role you are carrying, the expectations on both sides and what feels hardest to handle now. Hao-Cheng will read it personally and reply by email with a suitable next step.'} label={cta} />
+  </>;
 }
 
 Home.getLayout = (page) => {
-  const locale = page.props.locale;
-  const content = getSiteContent(locale);
+  const content = getSiteContent(page.props.locale);
   const organisation = { '@context': 'https://schema.org', '@type': 'Organization', '@id': `${SITE_URL}/#organisation`, name: siteFacts.legalName, url: SITE_URL, email: siteFacts.email, identifier: siteFacts.companyNumber };
   const person = { '@context': 'https://schema.org', '@type': 'Person', '@id': `${SITE_URL}/#hao-cheng-tsai`, name: siteFacts.coach, worksFor: { '@id': `${SITE_URL}/#organisation` }, knowsLanguage: ['English', 'Chinese'] };
-  return <MainLayout seo={{ title: locale === 'zh-TW' ? '英國與亞洲跨境領導 Coaching' : 'UK-Asia cross-border leadership coaching', description: `${content.positioning} ${content.supporting}`, schema: [organisation, person] }}>{page}</MainLayout>;
+  return <MainLayout seo={{ title: page.props.locale === 'zh-TW' ? '英國與亞洲跨境領導 Coaching' : 'UK-Asia cross-border leadership coaching', description: `${content.positioning} ${content.supporting}`, schema: [organisation, person] }}>{page}</MainLayout>;
 };
-
 export const getStaticProps: GetStaticProps = async ({ locale }) => ({ props: { locale: normaliseLocale(locale) } });
