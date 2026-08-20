@@ -4,6 +4,10 @@ export default function Document() {
   return (
     <Html>
       <Head>
+        <link rel="icon" href="/brand-mark.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#173d2f" />
         {/*
           **!!! 錯誤修正 !!!**
           我們將 Google Fonts 的 <link> 標籤從 Layout.js 移到這裡

@@ -55,7 +55,7 @@ export default function SiteHeader() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#173d2f]/10 bg-[#f5f7f3]/92 backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#173d2f]/10 bg-[#f5f7f3] shadow-[0_1px_18px_rgba(16,37,29,.06)]">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8">
         <SiteLogo />
         <nav aria-label="Primary" className="hidden items-center gap-6 md:flex lg:gap-8">
