@@ -1,494 +1,56 @@
-import type { GetStaticProps, NextPage } from 'next';
-import type { ReactElement } from 'react';
+import type { GetStaticProps } from 'next';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-
-import RevealSection from '@/components/common/RevealSection';
-import Testimonials from '@/components/Testimonials';
-import FAQAccordion from '@/components/faq/FAQAccordion';
+import { ArrowRight, ChatCircleText, Path, UsersThree } from '@phosphor-icons/react';
 import MainLayout from '@/components/layout/MainLayout';
-import CardGrid from '@/components/home/CardGrid';
-import Paragraphs, { DEFAULT_PARAGRAPH_CLASS, toParagraphs } from '@/components/home/Paragraphs';
-import SectionIntro from '@/components/home/SectionIntro';
-import CardShell from '@/components/ui/CardShell';
-import Button from '@/components/ui/Button';
-import HeroShell from '@/components/ui/HeroShell';
-import PageSection, { PageSectionProps } from '@/components/ui/PageSection';
-import StepList from '@/components/ui/StepList';
-import Icon from '@/components/ui/Icon';
-import { loadJSON } from '@/lib/content';
-import { getHomePageContent } from '@/lib/homeContent';
-import { validateHomeContent } from '@/lib/schema/homeSchema';
-import { toSerializable } from '@/lib/toSerializable';
-import type {
-  AccordionSection as AccordionSectionData,
-  ComparisonSection as ComparisonSectionData,
-  FaqCtaSection as FaqCtaSectionData,
-  HomeHero,
-  HomePageContent,
-  HomeSection,
-  PersonasSection as PersonasSectionData,
-  PromoSection as PromoSectionData,
-  SectionComponentMap,
-  ServicesSection as ServicesSectionData,
-  SoftCTASection as SoftCTASectionData,
-  SplitSection as SplitSectionData,
-  StepsSection as StepsSectionData,
-  Testimonial,
-  TopicsSection as TopicsSectionData,
-  IntentSection as IntentSectionData,
-} from '@/types/home';
+import { ContentSection, CrossBorderMap, NumberedList, PageHero, PrimaryCTA, QuotePanel } from '@/components/site/ContentPage';
+import { getSiteContent, normaliseLocale, siteFacts, SITE_URL } from '@/content/siteStrategy';
 
-type NextPageWithLayout<P> = NextPage<P> & {
-  getLayout?: (page: ReactElement<P>) => ReactElement;
+export default function Home({ locale }: { locale: string }) {
+  const zh = locale === 'zh-TW';
+  const cta = zh ? '把情境寫給我' : 'Write to me about the situation';
+  const moments = zh ? [
+    ['總部說方向已經很清楚', '英國團隊感受到的，卻是重要決定早已在別處完成。'],
+    ['每個人都說支持改變', '會議結束後，承諾沒有變成新的行為與工作方式。'],
+    ['你一直替兩邊翻譯', '最後卻成為唯一需要解釋延誤、摩擦與失去信任的人。'],
+  ] : [
+    ['Headquarters believes the direction is clear', 'The UK team experiences the same decision as something completed elsewhere.'],
+    ['Everyone says they support the change', 'After the meeting, agreement does not become different behaviour or practice.'],
+    ['You keep translating for both sides', 'You become the person expected to explain delay, friction and lost trust.'],
+  ];
+  const scenarios = zh ? [
+    { label: '綜合情境 01', title: '被要求加快，卻沒有真正的授權', body: '亞洲總部希望英國營運更快落地。當地主管被要求承擔結果，關鍵批准權卻仍留在總部。他需要的不是更多壓力，而是看清可以改變的決策結構與下一場對話。' },
+    { label: '綜合情境 02', title: '表面同意，實際沒有採用', body: '一項新流程在會議中獲得支持，日常工作卻沒有改變。與其把它稱為抗拒，需要先理解人們可能失去什麼、哪些風險沒有被處理，以及領導者自己傳遞了什麼訊號。' },
+  ] : [
+    { label: 'COMPOSITE SITUATION 01', title: 'Asked to move faster without real authority', body: 'Asian headquarters wants UK operations to deliver faster. The local leader owns the outcome while key approvals remain at headquarters. More pressure is not the answer. The decision system and the next conversation need to become clearer.' },
+    { label: 'COMPOSITE SITUATION 02', title: 'Agreement without adoption', body: 'A new process receives support in the meeting, yet daily practice does not change. Before calling it resistance, the leader needs to understand perceived loss, unresolved risk and the signals their own behaviour is sending.' },
+  ];
+  return <>
+    <PageHero image="/images/hero-v2/home.webp" imageAlt={zh?'一位跨境主管在英國 SME 辦公室整理會議筆記':'A cross-border leader reviewing meeting notes in a UK SME office'} eyebrow={zh ? '英國與亞洲跨境領導 COACHING' : 'UK-ASIA CROSS-BORDER LEADERSHIP COACHING'} title={zh ? '同時對兩邊負責，卻不被任何一邊真正理解' : 'Accountable to both sides. Fully understood by neither.'} intro={zh ? '為連結亞洲總部與英國團隊的 SME 創辦人、主管與外派領導者而設。看清真正的問題，準備不能迴避的對話，讓改變能被人們真正採用。' : 'For SME founders, managers and assignees connecting Asian headquarters with UK teams. See the real issue, prepare the conversation that cannot be avoided and make change possible to adopt.'} cta={cta} meta={zh ? '沒有預約連結。每一則訊息都由 Hao-Cheng 本人閱讀。' : 'No booking link. Every message is read personally by Hao-Cheng.'} />
+
+    <ContentSection eyebrow={zh ? '你可能正在經歷' : 'YOU MAY RECOGNISE THIS'} title={zh ? '真正困難的，通常不是文化差異本身' : 'The difficult part is rarely culture alone'} intro={zh ? '它發生在權責、關係、速度與沒有說出口的顧慮交會之處。' : 'It sits where authority, relationships, speed and unspoken concerns meet.'}>
+      <div className="divide-y divide-[#173d2f]/15 border-y border-[#173d2f]/15">{moments.map(([title, body], index) => <article key={title} className="grid gap-4 py-9 md:grid-cols-[72px_1fr_1.25fr]"><span className="font-mono text-sm text-[#9a5d2d]">0{index + 1}</span><h3 className="text-xl font-semibold text-[#173d2f]">{title}</h3><p className="text-lg leading-8 text-[#52665e]">{body}</p></article>)}</div>
+    </ContentSection>
+
+    <ContentSection tone="sage" eyebrow={zh ? '一個不急著選邊的空間' : 'A SPACE THAT DOES NOT RUSH TO TAKE SIDES'} title={zh ? '總部不一定錯，在地團隊也不只是抗拒' : 'Headquarters may not be wrong. The local team may not simply be resistant.'}>
+      <div className="grid items-center gap-12 lg:grid-cols-12"><div className="lg:col-span-6"><CrossBorderMap locale={locale} /></div><div className="lg:col-span-5 lg:col-start-8"><QuotePanel quote={zh ? '我想先理解每一方正在保護什麼、你真正要對什麼負責，以及在組織現實中，哪些改變是真的可行。' : 'I want to understand what each side is protecting, what you are truly accountable for and what change is genuinely possible within the organisation.'} attribution="Hao-Cheng Tsai · Founder, SustainSage" /><Link href="/about" className="mt-8 inline-flex items-center font-bold text-[#27634e]">{zh ? '認識 Hao-Cheng 的工作方式' : 'How Hao-Cheng works'}<ArrowRight className="ml-2 h-4 w-4" /></Link></div></div>
+    </ContentSection>
+
+    <ContentSection eyebrow={zh ? '不是客戶見證，而是你可能熟悉的現實' : 'NOT TESTIMONIALS, BUT REALITIES YOU MAY RECOGNISE'} title={zh ? '把抽象的跨境摩擦，放回真實工作裡' : 'Put cross-border friction back into real work'} intro={zh ? '以下為綜合情境，用來說明這項工作處理的張力，不代表特定客戶。' : 'These are composite situations showing the tensions this work addresses. They do not represent named clients.'}>
+      <div className="grid gap-px bg-[#173d2f]/15 lg:grid-cols-2">{scenarios.map((item) => <article key={item.title} className="bg-[#fbfaf6] p-8 sm:p-10"><p className="text-xs font-bold tracking-[.14em] text-[#9a5d2d]">{item.label}</p><h3 className="mt-6 max-w-[20ch] text-2xl font-medium tracking-[-.025em] text-[#173d2f] sm:text-3xl">{item.title}</h3><p className="mt-5 text-lg leading-8 text-[#52665e]">{item.body}</p></article>)}</div>
+    </ContentSection>
+
+    <ContentSection tone="sand" eyebrow={zh ? '一起工作的方式' : 'WHAT THE WORK FEELS LIKE'} title={zh ? '理解你，但不只是認同你' : 'Understood, without being simply agreed with'}>
+      <NumberedList items={zh ? ['你可以帶來還沒有整理好的版本，包括矛盾、猶豫，以及不能在公司裡完整說出的部分。','我們一起辨認權力、文化、關係與組織系統如何影響你的判斷，不把問題簡化成個人態度。','把洞察轉成你能親自完成的對話、決定與小型實驗。決定仍然屬於你。'] : ['Bring the unfinished version, including contradiction, uncertainty and what cannot be said safely inside the organisation.','Examine how power, culture, relationships and the organisational system shape your judgement without reducing the issue to attitude.','Turn insight into a conversation, decision or small experiment you can carry out. The decision remains yours.']} />
+      <div className="mt-12 grid gap-8 border-t border-[#173d2f]/15 pt-10 sm:grid-cols-3">{[[ChatCircleText, zh ? '英文或中文' : 'English or Chinese'],[UsersThree, zh ? '個人或企業贊助' : 'Self or organisation funded'],[Path, zh ? '線上一對一' : 'Online one-to-one']].map(([Icon, text]: any) => <div key={text} className="flex items-center gap-4"><Icon className="h-6 w-6 text-[#2b6a53]" /><span className="font-semibold text-[#31483f]">{text}</span></div>)}</div>
+    </ContentSection>
+    <PrimaryCTA title={zh ? '你不需要先把事情說得很完整' : 'You do not need a polished version of the story'} body={zh ? '寫下你正在承擔的角色、兩邊的期待，以及現在最難處理的那件事。Hao-Cheng 會先親自閱讀，再用電子郵件回覆合適的下一步。' : 'Write about the role you are carrying, the expectations on both sides and what feels hardest to handle now. Hao-Cheng will read it personally and reply by email with a suitable next step.'} label={cta} />
+  </>;
+}
+
+Home.getLayout = (page) => {
+  const content = getSiteContent(page.props.locale);
+  const organisation = { '@context': 'https://schema.org', '@type': 'Organization', '@id': `${SITE_URL}/#organisation`, name: siteFacts.legalName, url: SITE_URL, email: siteFacts.email, identifier: siteFacts.companyNumber };
+  const person = { '@context': 'https://schema.org', '@type': 'Person', '@id': `${SITE_URL}/#hao-cheng-tsai`, name: siteFacts.coach, worksFor: { '@id': `${SITE_URL}/#organisation` }, knowsLanguage: ['English', 'Chinese'] };
+  return <MainLayout seo={{ title: page.props.locale === 'zh-TW' ? '英國與亞洲跨境領導 Coaching' : 'UK-Asia cross-border leadership coaching', description: `${content.positioning} ${content.supporting}`, schema: [organisation, person] }}>{page}</MainLayout>;
 };
-
-type HomePageProps = {
-  content: HomePageContent;
-  testimonials: Testimonial[];
-  showFallbackNotice: boolean;
-  fallbackNotice: string | null;
-};
-
-const SECTION_COMPONENTS: SectionComponentMap = {
-  personas: PersonasSection,
-  promo: PromoSection,
-  comparison: ComparisonSection,
-  steps: StepsSection,
-  topics: TopicsSection,
-  services: ServicesSection,
-  split: SplitSection,
-  accordion: AccordionSection,
-  'faq-cta': FaqCtaSection,
-  cta: SoftCTASection,
-  intent: IntentSection,
-};
-
-const BACKGROUND_CYCLE: PageSectionProps['background'][] = ['default', 'pattern', 'default', 'grid', 'default', 'soft'];
-
-const Home: NextPageWithLayout<HomePageProps> = ({
-  content,
-  testimonials,
-  showFallbackNotice,
-  fallbackNotice,
-}) => {
-  const { t } = useTranslation('home');
-  const hero: HomeHero = content?.hero ?? {};
-  const sections: HomeSection[] = Array.isArray(content?.sections) ? content.sections : [];
-  const fallbackMessage = fallbackNotice ?? content?.fallbackNotice ?? t('fallbackNotice');
-
-  return (
-    <main>
-      <HomeHero
-        hero={hero}
-        showFallbackNotice={showFallbackNotice}
-        fallbackNotice={fallbackMessage}
-      />
-      {sections.map((section, index) => {
-        const Component = SECTION_COMPONENTS[section.type] as React.ComponentType<{ section: any; background: any }>;
-        const background = BACKGROUND_CYCLE[index % BACKGROUND_CYCLE.length];
-        return (
-          <Component
-            key={section?.id ?? section?.title ?? `home-section-${index}`}
-            section={section}
-            background={background}
-          />
-        );
-      })}
-      {Array.isArray(testimonials) && testimonials.length ? (
-        <PageSection id="testimonials" title={content?.testimonialsSection?.title} background="grid">
-          <RevealSection>
-            <Testimonials items={testimonials} />
-          </RevealSection>
-        </PageSection>
-      ) : null}
-    </main>
-  );
-};
-
-Home.getLayout = function getLayout(page: ReactElement<HomePageProps>) {
-  const seo = page.props?.content?.seo ?? {};
-  return (
-    <MainLayout
-      seo={{
-        title: seo.title,
-        description: seo.description,
-      }}
-    >
-      {page}
-    </MainLayout>
-  );
-};
-
-type HomeHeroProps = {
-  hero?: HomeHero;
-  showFallbackNotice?: boolean;
-  fallbackNotice?: string | null;
-};
-
-function HomeHero({ hero, showFallbackNotice = false, fallbackNotice = '' }: HomeHeroProps) {
-  const chips = toParagraphs(hero?.chips);
-  return (
-    <HeroShell
-      eyebrow={hero?.eyebrow}
-      title={hero?.title}
-      subtitle={hero?.subtitle}
-      chips={chips}
-      primaryCta={hero?.primaryCta ?? { href: '/contact', label: 'Book a 20-minute chat' }}
-      secondaryCta={hero?.secondaryLink}
-      meta={hero?.secondaryText}
-      notice={showFallbackNotice ? fallbackNotice : null}
-      image={hero?.image ?? { src: '/images/hero/main.jpg', alt: hero?.title }}
-    />
-  );
-}
-
-type SectionProps<T extends HomeSection> = {
-  section: T;
-  background?: PageSectionProps['background'];
-};
-
-function PersonasSection({ section, background }: SectionProps<PersonasSectionData>) {
-  const cards = Array.isArray(section?.cards) ? section.cards : [];
-  return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
-      <SectionIntro paragraphs={section?.intro} idPrefix={section?.id} />
-      <CardGrid
-        items={cards}
-        columns="three"
-        getKey={(card, index) => card?.id ?? card?.title ?? index}
-        renderCard={(card) => (
-          <CardShell iconName={card?.iconName} title={card?.title} className="h-full">
-            <Paragraphs
-              paragraphs={card?.summary}
-              idPrefix={`${card?.id}-summary`}
-              paragraphClassName={DEFAULT_PARAGRAPH_CLASS}
-            />
-            {card?.href ? (
-              <div className="mt-4">
-                <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-sustain-primary">
-                  {card?.ctaLabel ?? 'Learn more'}
-                  <span aria-hidden>→</span>
-                </Link>
-              </div>
-            ) : null}
-          </CardShell>
-        )}
-      />
-    </PageSection>
-  );
-}
-
-function PromoSection({ section, background }: SectionProps<PromoSectionData>) {
-  return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
-      <RevealSection>
-        <CardShell className="bg-white/95">
-          <Paragraphs
-            paragraphs={section?.body}
-            idPrefix={`${section?.id}-body`}
-            paragraphClassName={DEFAULT_PARAGRAPH_CLASS}
-          />
-          {section?.cta?.href ? (
-            <div className="mt-4">
-              <Button href={section.cta.href}>
-                {section?.cta?.label ?? 'Learn more'}
-              </Button>
-            </div>
-          ) : null}
-        </CardShell>
-      </RevealSection>
-    </PageSection>
-  );
-}
-
-function ComparisonSection({ section, background }: SectionProps<ComparisonSectionData>) {
-  const cards = [section?.leftCard, section?.rightCard].filter(Boolean);
-  return (
-    <PageSection id={section?.id} title={section?.title} background={background}>
-      <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
-      <CardGrid
-        columns="two"
-        items={cards}
-        revealGroupSize={2}
-        getKey={(card, index) => card?.title ?? index}
-        renderCard={(card, index) => (
-          <CardShell iconName={card?.iconName} title={card?.title}>
-            <ul className="space-y-2">
-              {toParagraphs(card?.bullets).map((bullet, bulletIndex) => (
-                <li
-                  key={`${card?.title ?? 'card'}-bullet-${bulletIndex}`}
-                  className="flex gap-3 text-base leading-relaxed text-ink/70"
-                >
-                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-sustain-primary" aria-hidden />
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
-          </CardShell>
-        )}
-      />
-    </PageSection>
-  );
-}
-
-function StepsSection({ section, background }: SectionProps<StepsSectionData>) {
-  const steps = Array.isArray(section?.steps)
-    ? section.steps.map((step, index) => ({
-      title: step?.title,
-      description: step?.description,
-      icon: step?.iconName,
-      stepNumber: index + 1,
-    }))
-    : [];
-  return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
-      <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
-      <div className="mt-8">
-        <RevealSection>
-          <StepList steps={steps} />
-        </RevealSection>
-      </div>
-    </PageSection>
-  );
-}
-
-function IntentSection({ section, background }: SectionProps<IntentSectionData>) {
-  const cards = Array.isArray(section?.cards) ? section.cards : [];
-  const SafeIcon = Icon as any;
-
-  return (
-    <PageSection id={section?.id} title={section?.title} className="bg-emerald-50/50" background={background}>
-      <div className="mb-10 text-center">
-        {section?.subtitle && <p className="text-lg text-slate-600 font-medium">{section.subtitle}</p>}
-      </div>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {cards.map((card) => (
-          <Link
-            key={card.id}
-            href={card.href}
-            className="group relative flex flex-col rounded-[2rem] bg-white p-10 shadow-sm ring-1 ring-slate-200/60 transition-all hover:-translate-y-1.5 hover:shadow-xl hover:shadow-emerald-900/5 hover:ring-emerald-400"
-          >
-            <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700 transition-all duration-300 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white group-hover:shadow-lg group-hover:shadow-emerald-200">
-              <SafeIcon name={card.icon ?? 'briefcase'} className="h-7 w-7" />
-            </div>
-            <h3 className="text-2xl font-bold tracking-tight text-slate-900">{card.title}</h3>
-            <p className="mt-4 flex-1 text-base leading-relaxed text-slate-500/90">{card.description}</p>
-            <div className="mt-10 flex items-center gap-2 text-sm font-bold text-emerald-600">
-              <span className="relative after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-emerald-400 after:transition-all group-hover:after:w-full">
-                Explore this path
-              </span>
-              <span className="transition-transform duration-300 group-hover:translate-x-1.5" aria-hidden>→</span>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </PageSection>
-  );
-}
-
-function TopicsSection({ section, background }: SectionProps<TopicsSectionData>) {
-  const cards = Array.isArray(section?.cards) ? section.cards : [];
-  return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
-      <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
-      <CardGrid
-        columns="four"
-        items={cards}
-        getKey={(card, index) => card?.id ?? card?.title ?? index}
-        renderCard={(card) => (
-          <CardShell iconName={card?.iconName} title={card?.title} className="h-full">
-            <Paragraphs
-              paragraphs={card?.summary}
-              idPrefix={`${card?.id}-summary`}
-              paragraphClassName={DEFAULT_PARAGRAPH_CLASS}
-            />
-          </CardShell>
-        )}
-      />
-    </PageSection>
-  );
-}
-
-function ServicesSection({ section, background }: SectionProps<ServicesSectionData>) {
-  const cards = Array.isArray(section?.cards) ? section.cards : [];
-  return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
-      <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
-      <CardGrid
-        items={cards}
-        columns="three"
-        getKey={(card, index) => card?.id ?? card?.title ?? index}
-        renderCard={(card) => (
-          <CardShell iconName={card?.iconName} title={card?.title} className="h-full">
-            <Paragraphs
-              paragraphs={card?.summary}
-              idPrefix={`${card?.id}-summary`}
-              paragraphClassName={DEFAULT_PARAGRAPH_CLASS}
-            />
-            {card?.href ? (
-              <div className="mt-4">
-                <Link href={card.href} className="inline-flex items-center gap-2 font-semibold text-sustain-primary">
-                  {card?.ctaLabel ?? 'Explore service'}
-                  <span aria-hidden>→</span>
-                </Link>
-              </div>
-            ) : null}
-          </CardShell>
-        )}
-      />
-    </PageSection>
-  );
-}
-
-function SplitSection({ section, background }: SectionProps<SplitSectionData>) {
-  const columns = [section?.left, section?.right].filter(Boolean);
-  return (
-    <PageSection id={section?.id} title={section?.title} background={background}>
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-        {columns.map((column, index) => (
-          <RevealSection key={column?.title ?? index} delay={index * 0.08}>
-            <CardShell eyebrow={column?.eyebrow} title={column?.title}>
-              <Paragraphs
-                paragraphs={column?.description}
-                idPrefix={`${section?.id}-${index}-description`}
-                paragraphClassName={DEFAULT_PARAGRAPH_CLASS}
-              />
-              {Array.isArray(column?.items) && column.items.length ? (
-                <div className="mt-4 space-y-3">
-                  {column.items.map((item, itemIndex) => (
-                    <div
-                      key={item?.id ?? item?.title ?? itemIndex}
-                      className="flex gap-3 rounded-2xl border border-sustain-cardBorder bg-white/90 p-3"
-                    >
-                      <Icon name={item?.iconName} />
-                      <div className="flex-1">
-                        <p className="font-semibold text-ink">{item?.title}</p>
-                        {item?.summary ? <p className="text-base text-ink/70">{item.summary}</p> : null}
-                        {item?.meta ? <p className="text-xs text-ink/60">{item.meta}</p> : null}
-                      </div>
-                      {item?.href ? (
-                        <Link href={item.href} className="inline-flex items-center gap-1 text-sm font-semibold text-sustain-primary">
-                          Open
-                          <span aria-hidden>→</span>
-                        </Link>
-                      ) : null}
-                    </div>
-                  ))}
-                </div>
-              ) : null}
-              {column?.link?.href ? (
-                <div className="mt-5">
-                  <Button href={column.link.href} variant="secondary">
-                    {column.link.label ?? 'Learn more'}
-                  </Button>
-                </div>
-              ) : null}
-            </CardShell>
-          </RevealSection>
-        ))}
-      </div>
-    </PageSection>
-  );
-}
-
-function AccordionSection({ section, background }: SectionProps<AccordionSectionData>) {
-  const items = Array.isArray(section?.faqs)
-    ? section.faqs.map((item) => ({
-      question: item?.question,
-      answer: Array.isArray(item?.answer) ? item.answer.join(' ') : item?.answer,
-    }))
-    : [];
-  return (
-    <PageSection id={section?.id} eyebrow={section?.eyebrow} title={section?.title} background={background}>
-      <SectionIntro paragraphs={section?.intro} idPrefix={`${section?.id}-intro`} />
-      <div className="mt-8">
-        <RevealSection>
-          <FAQAccordion items={items} />
-        </RevealSection>
-      </div>
-    </PageSection>
-  );
-}
-
-function FaqCtaSection({ section, background }: SectionProps<FaqCtaSectionData>) {
-  return (
-    <PageSection id={section?.id} background={background}>
-      <RevealSection>
-        <div className="rounded-[32px] border border-white/70 bg-white/95 p-8 text-center shadow-card">
-          {section?.title ? <h2 className="text-3xl font-semibold text-ink">{section.title}</h2> : null}
-          <Paragraphs paragraphs={section?.body} idPrefix={`${section?.id}-body`} />
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            {section?.primaryCta?.href ? (
-              <Button href={section.primaryCta.href} variant="secondary">
-                {section.primaryCta.label ?? 'Read more'}
-              </Button>
-            ) : null}
-            {section?.secondaryCta?.href ? (
-              <Button href={section.secondaryCta.href}>
-                {section.secondaryCta.label ?? 'Contact us'}
-              </Button>
-            ) : null}
-          </div>
-        </div>
-      </RevealSection>
-    </PageSection>
-  );
-}
-
-function SoftCTASection({ section, background }: SectionProps<SoftCTASectionData>) {
-  return (
-    <PageSection id={section?.id} title={section?.title} background={background}>
-      <RevealSection>
-        <div className="rounded-[32px] border border-white/70 bg-white/95 p-8 shadow-card">
-          <Paragraphs paragraphs={section?.body} idPrefix={`${section?.id}-body`} />
-          <div className="mt-6 flex flex-wrap gap-3">
-            {section?.primaryCta?.href ? (
-              <Button href={section.primaryCta.href}>
-                {section.primaryCta.label ?? 'Book a chat'}
-              </Button>
-            ) : null}
-            {section?.secondaryLink?.href ? (
-              <Button href={section.secondaryLink.href} variant="secondary">
-                {section.secondaryLink.label ?? 'Read more'}
-              </Button>
-            ) : null}
-          </div>
-        </div>
-      </RevealSection>
-    </PageSection>
-  );
-}
-
-export {
-  HomeHero,
-  PersonasSection,
-  PromoSection,
-  ComparisonSection,
-  StepsSection,
-  TopicsSection,
-  ServicesSection,
-  SplitSection,
-  AccordionSection,
-  FaqCtaSection,
-  SoftCTASection,
-};
-
-export const getStaticProps: GetStaticProps<HomePageProps> = async ({ locale = 'en-GB' }) => {
-  const { content, isFallback, usedLocale, fallbackNotice } = getHomePageContent(locale);
-  const typedContent = validateHomeContent(content, usedLocale);
-  const testimonials = (loadJSON('testimonials', locale) ?? []) as Testimonial[];
-
-  return toSerializable({
-    props: {
-      content: typedContent,
-      testimonials,
-      showFallbackNotice: isFallback,
-      fallbackNotice: fallbackNotice ?? typedContent?.fallbackNotice ?? null,
-      ...(await serverSideTranslations(locale ?? 'en-GB', ['common', 'nav', 'home', 'faq'])),
-    },
-  });
-};
-
-export default Home;
+export const getStaticProps: GetStaticProps = async ({ locale }) => ({ props: { locale: normaliseLocale(locale) } });

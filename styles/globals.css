@@ -3,25 +3,61 @@
 @tailwind components;
 @tailwind utilities;
 
+.ssg-primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3rem;
+    gap: .15rem;
+    border-radius: .85rem;
+    background: #173d2f;
+    padding: .8rem 1.2rem;
+    color: #fff;
+    font-size: .95rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+    transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.ssg-primary-button:hover {
+    background: #245c47;
+    box-shadow: 0 14px 32px rgba(16, 37, 29, .2);
+    transform: translateY(-1px);
+}
+
+.ssg-primary-button:active {
+    transform: translateY(1px) scale(.99);
+}
+
+.ssg-primary-button:focus-visible,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #d98b42;
+    outline-offset: 3px;
+}
+
 /* 2. 移植 index.html <style> 中的所有自訂規則 */
 
 :root {
     /* 1.1 色彩配置 - 與 tailwind.config.js 保持一致 */
-    --color-primary: #BDA789;
-    /* warm sand */
-    --color-primary-dark: #97866D;
-    --color-primary-soft: #F4EDE1;
+    --color-primary: #2B6A53;
+    --color-primary-dark: #173D2F;
+    --color-primary-soft: #E3ECE6;
 
-    --color-paper: #FAF7F1;
+    --color-paper: #F5F7F3;
     --color-surface: #FFFFFF;
 
-    --color-ink: #222222;
-    --color-ink-muted: #5B5B5B;
+    --color-ink: #10251D;
+    --color-ink-muted: #53675F;
 
     --color-brand-bg: var(--color-primary-soft);
     --color-brand-primary: var(--color-primary);
     --color-brand-primary-dark: var(--color-primary-dark);
-    --color-brand-sage: #4A6C56;
+    --color-brand-sage: #2B6A53;
     --color-brand-ink: var(--color-ink);
     --color-brand-border: rgba(0, 0, 0, 0.08);
 
@@ -97,8 +133,17 @@ body {
     }
 
     ::selection {
-        background-color: rgba(189, 167, 137, 0.3);
+        background-color: rgba(217, 139, 66, 0.28);
         color: var(--color-ink);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
 

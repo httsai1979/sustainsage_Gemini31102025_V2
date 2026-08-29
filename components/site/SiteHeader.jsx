@@ -1,202 +1,101 @@
-import { useEffect, useMemo, useState } from 'react';
-import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-
+import { Compass, List, X } from '@phosphor-icons/react';
 import cn from '@/lib/cn';
-import i18nConfig from '../../next-i18next.config';
+import { getSiteContent, normaliseLocale, primaryNavigation } from '@/content/siteStrategy';
 
-const NAV_LINKS = [
-  { href: '/services', label: 'services' },
-  { href: '/about', label: 'about' },
-  { href: '/contact', label: 'contact' },
-];
-
-const LOCALE_LABELS = {
-  'en-GB': 'EN',
-  'zh-TW': '繁體',
-  'zh-CN': '简体',
-};
-
-function SiteLogo({ className = '' }) {
+function SiteLogo() {
   return (
-    <Link href="/" className={`flex items-center gap-3 active:scale-95 transition-transform ${className}`}>
-      <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary-soft)] shadow-inner">
-        <Image src="/brand/ssg-logo-mark.png" alt="SustainSage Group logo" width={24} height={24} />
+    <Link href="/" className="group flex items-center gap-3" aria-label="SustainSage home">
+      <span aria-hidden className="grid h-10 w-10 place-items-center rounded-[.85rem] bg-[#173d2f] text-[#f5f0e7] shadow-[0_8px_22px_rgba(16,37,29,.14)] transition-transform group-hover:-rotate-3">
+        <Compass className="h-6 w-6" weight="regular" />
       </span>
-      <span className="text-sm font-bold tracking-tight text-[var(--color-ink)] sm:text-base">
-        SustainSage
-      </span>
+      <span className="text-base font-bold tracking-[-.025em] text-[#10251d]">SustainSage</span>
     </Link>
   );
 }
 
-function LocaleSwitcher({ activeLocale, onChange, variant = 'desktop', localeOptions = [] }) {
-  const baseClasses =
-    variant === 'desktop'
-      ? 'rounded-full px-3 py-1.5 text-[13px] font-bold transition-all duration-200 active:scale-95'
-      : 'rounded-full px-5 py-2.5 text-[15px] font-semibold transition-all duration-200 active:scale-95';
-
-  if (localeOptions.length <= 1) {
-    return null;
-  }
-
+function LocaleSwitcher({ activeLocale, onChange, mobile = false }) {
+  const options = [{ code: 'en-GB', label: 'EN' }, { code: 'zh-TW', label: '繁中' }];
   return (
-    <div className={variant === 'desktop' ? 'hidden items-center gap-1.5 md:flex' : 'flex items-center gap-2'}>
-      {localeOptions.map((locale) => {
-        const isActive = locale.code === activeLocale;
-        return (
-          <button
-            key={locale.code}
-            type="button"
-            onClick={() => onChange(locale.code)}
-            className={`${baseClasses} ${isActive
-              ? 'bg-[var(--color-primary)] text-white shadow-md'
-              : 'bg-white/50 text-[var(--color-ink-muted)] hover:bg-white hover:text-[var(--color-primary)] ring-1 ring-black/[0.05]'
-              }`}
-          >
-            {locale.label}
-          </button>
-        );
-      })}
+    <div className={mobile ? 'flex items-center gap-2' : 'hidden items-center gap-1 lg:flex'} aria-label="Language">
+      {options.map((locale) => (
+        <button
+          key={locale.code}
+          type="button"
+          aria-pressed={locale.code === activeLocale}
+          onClick={() => onChange(locale.code)}
+          className={cn(
+            'min-h-10 rounded-[.7rem] px-3 text-xs font-bold transition-colors',
+            locale.code === activeLocale ? 'bg-[#173d2f] text-white' : 'text-[#52665e] hover:bg-[#e2ebe5] hover:text-[#173d2f]',
+          )}
+        >
+          {locale.label}
+        </button>
+      ))}
     </div>
   );
 }
 
 export default function SiteHeader() {
-  const { t } = useTranslation('common');
-  const { t: tNav } = useTranslation('nav');
   const router = useRouter();
-  const [isScrolled, setIsScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const activeLocale = normaliseLocale(router.locale);
+  const content = getSiteContent(activeLocale);
 
-  const activeLocale = router.locale ?? router.defaultLocale ?? 'en';
-  const localeOptions = useMemo(() => {
-    const configuredLocales = i18nConfig?.i18n?.locales ?? [];
-    return configuredLocales
-      .filter((code) => LOCALE_LABELS[code])
-      .map((code) => ({ code, label: LOCALE_LABELS[code] }));
-  }, []);
-
-  useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 12);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const handleLocaleChange = (locale) => {
+  const changeLocale = (locale) => {
     setMenuOpen(false);
     router.push(router.asPath, undefined, { locale });
   };
 
   const isActive = (href) => {
-    const path = router.asPath.split('#')[0];
-    if (href === '/') return path === '/';
-    return path.startsWith(href);
+    const path = router.asPath.split(/[?#]/)[0];
+    return href === '/' ? path === '/' : path.startsWith(href);
   };
 
-  const headerClasses = cn(
-    'fixed inset-x-0 top-0 z-50 transition-all duration-500 border-b',
-    isScrolled
-      ? 'bg-white/95 backdrop-blur-md py-3 shadow-ssg border-emerald-950/5'
-      : 'bg-[var(--color-surface)] py-5 border-transparent'
-  );
-
   return (
-    <header className={headerClasses}>
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 sm:px-8">
-        <div className="flex items-center gap-10">
-          <SiteLogo />
-
-          {/* Layered Desktop Nav */}
-          <nav className="hidden items-center gap-10 md:flex">
-            {NAV_LINKS.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'text-[15px] font-bold tracking-tight transition-all duration-200',
-                  isActive(item.href)
-                    ? 'text-[var(--color-brand-sage)]'
-                    : 'text-slate-900/90 hover:text-[var(--color-brand-sage)]'
-                )}
-              >
-                {tNav(item.label)}
-              </Link>
-            ))}
-          </nav>
-        </div>
-
-        <div className="flex items-center gap-4">
-          <LocaleSwitcher
-            activeLocale={activeLocale}
-            onChange={handleLocaleChange}
-            localeOptions={localeOptions}
-          />
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-full bg-slate-100 p-2 text-slate-700 md:hidden active:scale-90 transition-transform"
-            onClick={() => setMenuOpen(true)}
-            aria-label={t('header.openMenu')}
-          >
-            <Bars3Icon className="h-6 w-6" />
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu with neutral transition */}
-      <div
-        className={cn(
-          'fixed inset-0 z-[60] bg-slate-900/40 backdrop-blur-sm transition-opacity duration-300 md:hidden',
-          menuOpen ? 'opacity-100' : 'pointer-events-none opacity-0'
-        )}
-        onClick={() => setMenuOpen(false)}
-      />
-      <div
-        className={cn(
-          'fixed inset-y-0 right-0 z-[70] w-full max-w-[320px] bg-white shadow-2xl transition-transform duration-500 ease-out md:hidden',
-          menuOpen ? 'translate-x-0' : 'translate-x-full'
-        )}
-      >
-        <div className="flex items-center justify-between border-b px-6 py-5">
-          <SiteLogo />
-          <button
-            type="button"
-            className="rounded-full bg-slate-100 p-2 text-slate-700 active:scale-90 transition-transform"
-            onClick={() => setMenuOpen(false)}
-            aria-label={t('header.closeMenu')}
-          >
-            <XMarkIcon className="h-6 w-6" />
-          </button>
-        </div>
-        <div className="flex flex-col gap-1 p-6">
-          <p className="px-4 py-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Navigation</p>
-          {NAV_LINKS.map((item) => (
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-[#173d2f]/10 bg-[#f5f7f3] shadow-[0_1px_18px_rgba(16,37,29,.06)]">
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-5 sm:px-8">
+        <SiteLogo />
+        <nav aria-label="Primary" className="hidden items-center gap-6 md:flex lg:gap-8">
+          {primaryNavigation.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              onClick={() => setMenuOpen(false)}
+              aria-current={isActive(item.href) ? 'page' : undefined}
               className={cn(
-                'flex items-center rounded-2xl px-4 py-4 text-[18px] font-bold transition-all',
-                isActive(item.href)
-                  ? 'bg-emerald-50 text-[var(--color-brand-sage)]'
-                  : 'text-slate-900 active:bg-slate-50'
+                'relative py-2 text-sm font-semibold tracking-[-.01em] transition-colors after:absolute after:inset-x-0 after:-bottom-1 after:h-0.5 after:origin-left after:rounded-full after:bg-[#d98b42] after:transition-transform',
+                isActive(item.href) ? 'text-[#173d2f] after:scale-x-100' : 'text-[#4a5d55] after:scale-x-0 hover:text-[#173d2f] hover:after:scale-x-100',
               )}
             >
-              {tNav(item.label)}
+              {content.nav[item.key]}
             </Link>
           ))}
+        </nav>
+        <div className="flex items-center gap-2">
+          <LocaleSwitcher activeLocale={activeLocale} onChange={changeLocale} />
+          <button type="button" onClick={() => setMenuOpen(true)} aria-expanded={menuOpen} aria-label={activeLocale === 'zh-TW' ? '開啟選單' : 'Open menu'} className="grid h-11 w-11 place-items-center rounded-[.8rem] bg-[#e2ebe5] text-[#173d2f] md:hidden">
+            <List className="h-6 w-6" />
+          </button>
         </div>
-        <div className="absolute bottom-10 left-0 w-full px-8">
-          <LocaleSwitcher
-            activeLocale={activeLocale}
-            onChange={handleLocaleChange}
-            variant="mobile"
-            localeOptions={localeOptions}
-          />
+      </div>
+      <div className={cn('fixed inset-0 z-[60] bg-[#10251d]/45 backdrop-blur-sm transition-opacity md:hidden', menuOpen ? 'opacity-100' : 'pointer-events-none opacity-0')} onClick={() => setMenuOpen(false)} />
+      <div className={cn('fixed inset-y-0 right-0 z-[70] w-full max-w-sm bg-[#f6f8f4] shadow-2xl transition-transform duration-300 md:hidden', menuOpen ? 'translate-x-0' : 'translate-x-full')}>
+        <div className="flex h-[72px] items-center justify-between border-b border-[#173d2f]/10 px-5">
+          <SiteLogo />
+          <button type="button" onClick={() => setMenuOpen(false)} aria-label={activeLocale === 'zh-TW' ? '關閉選單' : 'Close menu'} className="grid h-11 w-11 place-items-center rounded-[.8rem] bg-[#e2ebe5] text-[#173d2f]">
+            <X className="h-6 w-6" />
+          </button>
         </div>
+        <nav aria-label="Mobile" className="grid gap-2 p-5">
+          {primaryNavigation.map((item) => (
+            <Link key={item.href} href={item.href} onClick={() => setMenuOpen(false)} className={cn('rounded-[.9rem] px-5 py-4 text-lg font-semibold', isActive(item.href) ? 'bg-[#dfe9e2] text-[#173d2f]' : 'text-[#31483f]')}>
+              {content.nav[item.key]}
+            </Link>
+          ))}
+        </nav>
+        <div className="px-10 py-4"><LocaleSwitcher activeLocale={activeLocale} onChange={changeLocale} mobile /></div>
       </div>
     </header>
   );

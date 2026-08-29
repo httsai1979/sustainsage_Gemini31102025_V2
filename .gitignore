@@ -1,6 +1,8 @@
 # Node / Next
 node_modules/
+.npm-cache/
 .next/
+.netlify/
 out/
 dist/
 coverage/

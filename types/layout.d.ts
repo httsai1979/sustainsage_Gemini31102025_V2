@@ -11,6 +11,7 @@ declare module '@/components/layout/MainLayout' {
       noindex?: boolean;
       og?: Record<string, any>;
       ogImage?: string;
+      schema?: Record<string, any> | Array<Record<string, any>>;
     };
   }
 

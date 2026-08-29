@@ -12,7 +12,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+      sans: ['Manrope', '"Noto Sans TC"', 'Aptos', '"Segoe UI Variable"', 'system-ui', 'sans-serif'],
     },
     extend: {
       colors: {

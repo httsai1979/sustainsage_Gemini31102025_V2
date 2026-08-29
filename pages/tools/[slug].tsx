@@ -1,82 +1,57 @@
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-import { BehaviourExperimentLadder } from '@/components/tools/BehaviourExperimentLadder';
-import PageSection from '@/components/ui/PageSection';
-import SectionContainer from '@/components/ui/SectionContainer';
-import { useRouter } from 'next/router';
+import type { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
+import MainLayout from '@/components/layout/MainLayout';
+import { ContentSection, PageHero, PrimaryCTA } from '@/components/site/ContentPage';
+import GuidedWorksheet from '@/components/tools/GuidedWorksheet';
+import { getSiteContent, normaliseLocale } from '@/content/siteStrategy';
 
-const TOOL_MAP: Record<string, React.ComponentType> = {
-  'behaviour-ladder': BehaviourExperimentLadder,
-  'behaviour-experiment-ladder': BehaviourExperimentLadder,
-};
+type Props = { locale: string; slug: string };
 
-export default function ToolPage() {
-  const router = useRouter();
-  const { slug } = router.query;
-  const { t } = useTranslation('common');
-
-  const ToolComponent = TOOL_MAP[slug as string];
-
-  if (!ToolComponent) {
-    return (
-      <PageSection>
-        <SectionContainer>
-          <div className="py-20 text-center">
-            <h1 className="text-2xl font-bold">Tool Not Found</h1>
-            <p className="mt-4 text-slate-500 text-base">We are currently migrating this tool to the new React framework.</p>
-          </div>
-        </SectionContainer>
-      </PageSection>
-    );
-  }
-
+export default function ToolPage({ locale, slug }: Props) {
+  const content = getSiteContent(locale);
+  const zh = locale === 'zh-TW';
+  const allTools = [...content.changeTools, ...content.tools];
+  const guidedTool = content.changeTools.find((item) => item.slug === slug);
+  const tool = allTools.find((item) => item.slug === slug)!;
+  const nextTool = allTools.find((item) => item.slug === tool.nextSlug)!;
+  const iframeSlug = slug === 'behaviour-ladder' ? 'behaviour-experiment-ladder' : slug;
+  const stage = guidedTool ? content.changeToolStages[tool.stage - 1] : content.toolStages[tool.stage - 1];
   return (
-    <PageSection className="bg-slate-50 min-h-screen pt-32 pb-20">
-      <SectionContainer>
-        <div className="mb-12 text-center space-y-4">
-          <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-            {slug?.toString().split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
-          </h1>
-          <p className="mx-auto max-w-2xl text-base text-slate-600">
-            A diagnostic tool designed to help you untangle professional narratives and build evidence-based momentum.
-          </p>
-        </div>
-
-        <ToolComponent />
-
-        <div className="mt-20 rounded-3xl bg-emerald-950 p-10 text-white">
-          <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-            <div className="space-y-2">
-              <h2 className="text-2xl font-bold">Need a professional perspective?</h2>
-              <p className="text-emerald-100/70 max-w-lg">
-                Your tool results provide a <strong>data-driven foundation</strong>. Join a 20-minute consultation to turn these observations into a structured action plan.
-              </p>
+    <>
+      <PageHero eyebrow={`${guidedTool ? (zh ? '變革領導工具' : 'CHANGE LEADERSHIP TOOL') : (zh ? '個人反思工具' : 'PERSONAL REFLECTION TOOL')} · ${stage}`} title={tool.title} intro={tool.purpose} />
+      <ContentSection title={zh ? '何時適合使用' : 'When to use it'} tone="sage"><p className="text-lg leading-8 text-slate-750">{tool.whenToUse}</p></ContentSection>
+      <section className="bg-[#fcfaf5] px-4 py-16 sm:px-8">
+        <div className="mx-auto max-w-5xl">
+          {guidedTool ? <GuidedWorksheet tool={guidedTool} locale={locale} /> : (
+            <div className="overflow-hidden rounded-[1.5rem] border border-emerald-950/10 bg-white shadow-[0_18px_48px_rgba(28,55,44,.09)]">
+              <iframe title={tool.title} src={`/embedded-tools/${iframeSlug}.html`} className="min-h-[760px] w-full border-0" sandbox="allow-scripts allow-same-origin allow-downloads allow-modals" />
             </div>
-            <button className="rounded-full bg-emerald-500 px-8 py-4 font-bold shadow-lg shadow-emerald-900/40 transition-all hover:bg-emerald-400 active:scale-95">
-              Discuss Results (20m)
-            </button>
-          </div>
+          )}
         </div>
-      </SectionContainer>
-    </PageSection>
+      </section>
+      <ContentSection title={zh ? '界線與資料' : 'Limits and data handling'} tone="sand">
+        <div className="grid gap-7 md:grid-cols-2">
+          <div><h3 className="text-lg font-semibold text-slate-950">{zh ? '不能取代什麼' : 'What it cannot replace'}</h3><p className="mt-3 leading-7 text-slate-650">{tool.limits}</p></div>
+          <div><h3 className="text-lg font-semibold text-slate-950">{zh ? '資料如何處理' : 'How your data is handled'}</h3><p className="mt-3 leading-7 text-slate-650">{tool.data}</p></div>
+        </div>
+      </ContentSection>
+      <ContentSection title={zh ? '下一個相關工具' : 'A related next tool'}>
+        <Link className="inline-flex text-xl font-semibold text-emerald-800 underline decoration-2 underline-offset-4 hover:text-emerald-950" href={`/tools/${nextTool.slug}`}>{nextTool.title} →</Link>
+      </ContentSection>
+      <PrimaryCTA title={zh ? '這些觀察是否連結到跨境領導問題？' : 'Do these observations connect to a cross-border leadership issue?'} body={zh ? '你不需要提交工具內容。只需說明角色、組織脈絡與希望處理的問題。' : 'You do not need to submit your tool entries. Describe only the role, organisational context and issue you want to address.'} label={content.cta} />
+    </>
   );
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [
-      { params: { slug: 'behaviour-ladder' } },
-      { params: { slug: 'behaviour-experiment-ladder' } },
-    ],
-    fallback: true,
-  };
+ToolPage.getLayout = (page) => {
+  const content = getSiteContent(page.props.locale);
+  const tool = [...content.changeTools, ...content.tools].find((item) => item.slug === page.props.slug);
+  return <MainLayout seo={{ title: tool?.title, description: tool?.purpose }}>{page}</MainLayout>;
 };
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale ?? 'en-GB', ['common', 'nav'])),
-    },
-  };
+export const getStaticPaths: GetStaticPaths = async () => {
+  const content = getSiteContent('en-GB');
+  const slugs = [...content.changeTools, ...content.tools].map((tool) => tool.slug);
+  return { paths: slugs.flatMap((slug) => [{ params: { slug }, locale: 'en-GB' }, { params: { slug }, locale: 'zh-TW' }]), fallback: false };
 };
+export const getStaticProps: GetStaticProps<Props> = async ({ locale, params }) => ({ props: { locale: normaliseLocale(locale), slug: String(params?.slug || '') } });

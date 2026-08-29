@@ -1,0 +1,385 @@
+import { changeLeadershipStages, enChangeLeadershipTools, zhChangeLeadershipTools } from '@/content/changeLeadershipTools';
+
+export const SITE_URL = 'https://sustainsage-group.com';
+export const CONTACT_EMAIL = 'hc.tsai@sustainsage-group.com';
+export const PRIMARY_CTA_PATH = '/contact';
+
+export type SupportedLocale = 'en-GB' | 'zh-TW';
+
+type Situation = {
+  id: 'hq-local-expectations' | 'organisational-change' | 'resistance-adoption' | 'assignment-transition';
+  title: string;
+  summary: string;
+};
+
+type Tool = {
+  slug: string;
+  title: string;
+  stage: 1 | 2 | 3 | 4;
+  purpose: string;
+  whenToUse: string;
+  limits: string;
+  data: string;
+  nextSlug: string;
+};
+
+export const siteFacts = {
+  brand: 'SustainSage',
+  legalName: 'SUSTAINSAGE GROUP LTD',
+  companyNumber: '15220734',
+  jurisdiction: 'Registered in England and Wales',
+  registeredOffice: '148 Prince Albert Road, Southsea, PO4 8EL',
+  coach: 'Hao-Cheng Tsai',
+  email: CONTACT_EMAIL,
+  domain: SITE_URL,
+  serviceLanguages: ['English', '繁體中文'],
+  sessionCount: 6,
+  sessionMinutes: 60,
+  programmeWeeks: '12-16',
+} as const;
+
+const enSituations: Situation[] = [
+  {
+    id: 'hq-local-expectations',
+    title: 'Headquarters and local expectations',
+    summary: 'You are accountable to an Asian headquarters while building trust, clarity and momentum with a UK team.',
+  },
+  {
+    id: 'organisational-change',
+    title: 'Leading organisational change',
+    summary: 'You are responsible for turning a strategic decision into new behaviour, ownership and operating practice across UK and Asian teams.',
+  },
+  {
+    id: 'resistance-adoption',
+    title: 'Resistance, adoption and momentum',
+    summary: 'Formal agreement is not becoming real adoption, and you need to understand the concerns, losses or system friction underneath it.',
+  },
+  {
+    id: 'assignment-transition',
+    title: 'Assignment, return or role transition',
+    summary: 'You are preparing for an international assignment, returning from one, or deciding what the next role should be.',
+  },
+];
+
+const zhSituations: Situation[] = [
+  {
+    id: 'hq-local-expectations',
+    title: '總部與在地團隊的期待落差',
+    summary: '你需要對亞洲總部負責，同時在英國團隊中建立信任、清楚度與推進節奏。',
+  },
+  {
+    id: 'organisational-change',
+    title: '領導組織變革',
+    summary: '你需要把策略決定轉化為英國與亞洲團隊真正採用的新行為、責任與營運做法。',
+  },
+  {
+    id: 'resistance-adoption',
+    title: '阻力、採用與推進動能',
+    summary: '表面同意沒有轉化成真正採用，你需要看懂背後的疑慮、損失感或系統摩擦。',
+  },
+  {
+    id: 'assignment-transition',
+    title: '外派、回任或角色轉換',
+    summary: '你正準備開始或結束一段國際任務，或需要決定下一個角色應該是什麼。',
+  },
+];
+
+const enTools: Tool[] = [
+  {
+    slug: 'emotion-triangle',
+    title: 'Emotion Triangle',
+    stage: 1,
+    purpose: 'Notice how feelings, body signals and protective responses may be connected.',
+    whenToUse: 'Use it when a situation feels emotionally charged and you need language before deciding what to do.',
+    limits: 'It is a reflection aid, not a diagnostic tool or a substitute for mental health care.',
+    data: 'Your entries stay in your browser and are not sent to SustainSage.',
+    nextSlug: 'thought-log',
+  },
+  {
+    slug: 'thought-log',
+    title: 'Thought Log',
+    stage: 1,
+    purpose: 'Separate an event from the interpretation and response that followed it.',
+    whenToUse: 'Use it after a recurring worry, difficult interaction or decision loop.',
+    limits: 'It cannot assess or treat a mental health condition.',
+    data: 'Your entries stay in your browser and are not sent to SustainSage.',
+    nextSlug: 'self-talk-reframe',
+  },
+  {
+    slug: 'self-talk-reframe',
+    title: 'Self-talk Reframe',
+    stage: 2,
+    purpose: 'Turn harsh internal language into wording that is accurate, useful and humane.',
+    whenToUse: 'Use it when self-criticism is making a choice or action harder.',
+    limits: 'It does not replace therapy, crisis support or clinical care.',
+    data: 'Your entries stay in your browser and are not sent to SustainSage.',
+    nextSlug: 'values-map',
+  },
+  {
+    slug: 'values-map',
+    title: 'Values Map',
+    stage: 2,
+    purpose: 'Identify the values you want a work decision to respect.',
+    whenToUse: 'Use it when several reasonable options pull you in different directions.',
+    limits: 'It does not decide for you or provide financial, legal or immigration advice.',
+    data: 'Your entries stay in your browser and are not sent to SustainSage.',
+    nextSlug: 'role-separation',
+  },
+  {
+    slug: 'role-separation',
+    title: 'Role Separation',
+    stage: 2,
+    purpose: 'Distinguish what different roles ask of you, and where expectations conflict.',
+    whenToUse: 'Use it when work, family, migration and identity responsibilities feel tangled together.',
+    limits: 'It cannot resolve safeguarding, employment-law or relationship concerns.',
+    data: 'Your entries stay in your browser and are not sent to SustainSage.',
+    nextSlug: 'choice-clarifier',
+  },
+  {
+    slug: 'choice-clarifier',
+    title: 'Choice Clarifier',
+    stage: 3,
+    purpose: 'Compare choices using criteria that matter in your actual circumstances.',
+    whenToUse: 'Use it when you have options but no stable way to judge them.',
+    limits: 'It does not make decisions or provide regulated professional advice.',
+    data: 'Your entries stay in your browser and are not sent to SustainSage.',
+    nextSlug: 'behaviour-ladder',
+  },
+  {
+    slug: 'behaviour-ladder',
+    title: 'Behaviour Ladder',
+    stage: 4,
+    purpose: 'Turn a large, uncertain move into a small and observable experiment.',
+    whenToUse: 'Use it when you know the direction but the first step feels too risky or vague.',
+    limits: 'It cannot guarantee an outcome or remove the risks of a career decision.',
+    data: 'Your entries stay in your browser and are not sent to SustainSage.',
+    nextSlug: 'emotion-triangle',
+  },
+];
+
+const zhToolOverrides: Record<string, Partial<Tool>> = {
+  'emotion-triangle': {
+    title: '情緒三角',
+    purpose: '留意感受、身體訊號與保護反應之間可能的關聯。',
+    whenToUse: '當情境帶來強烈情緒，而你想先找到語言再決定行動時使用。',
+  },
+  'thought-log': {
+    title: '想法紀錄',
+    purpose: '把事件、詮釋與後續反應分開來看。',
+    whenToUse: '在反覆擔心、困難互動或決策迴圈之後使用。',
+  },
+  'self-talk-reframe': {
+    title: '自我對話重整',
+    purpose: '把苛刻的內在語言，改寫成準確、有用且有人性的說法。',
+    whenToUse: '當自我批評讓選擇或行動變得更困難時使用。',
+  },
+  'values-map': {
+    title: '價值地圖',
+    purpose: '找出你希望職涯決定尊重的核心價值。',
+    whenToUse: '當幾個合理選項把你拉向不同方向時使用。',
+  },
+  'role-separation': {
+    title: '角色分離',
+    purpose: '分辨不同角色對你的要求，以及期待衝突發生在哪裡。',
+    whenToUse: '當工作、家庭、移居與身分責任纏在一起時使用。',
+  },
+  'choice-clarifier': {
+    title: '選擇釐清器',
+    purpose: '用符合真實處境的條件比較選項。',
+    whenToUse: '當你有選項，卻缺乏穩定判斷方式時使用。',
+  },
+  'behaviour-ladder': {
+    title: '行為階梯',
+    purpose: '把龐大而不確定的改變，拆成小型、可觀察的實驗。',
+    whenToUse: '當方向大致清楚，但第一步仍太冒險或模糊時使用。',
+  },
+};
+
+const zhTools: Tool[] = enTools.map((tool) => ({
+  ...tool,
+  ...zhToolOverrides[tool.slug],
+  limits: '這是反思工具，不能取代心理治療、醫療、法律、財務或移民等專業服務。',
+  data: '你的輸入只留在瀏覽器內，不會傳送給 SustainSage。',
+}));
+
+const sharedBoundaries = {
+  en: [
+    'Coaching is not therapy or crisis support.',
+    'It is not medical, legal, financial or immigration advice.',
+    'It is not recruitment, CV writing or job-placement representation.',
+    'You remain responsible for your decisions and actions.',
+  ],
+  zh: [
+    'Coaching 不是心理治療或危機支援。',
+    '不提供醫療、法律、財務或移民建議。',
+    '不提供招聘仲介、代寫 CV 或代投履歷。',
+    '你仍對自己的決定與行動負責。',
+  ],
+};
+
+export const siteContent = {
+  'en-GB': {
+    localeLabel: 'English',
+    nav: {
+      home: 'Home',
+      coaching: 'Coaching',
+      companies: 'For Companies',
+      about: 'About',
+      tools: 'Resources',
+      contact: 'Contact',
+    },
+    cta: 'Write to Hao-Cheng',
+    positioning: 'Cross-cultural leadership coaching for SME founders, managers and assignees working between the UK and Asia.',
+    supporting: 'For leaders handling headquarters-local expectations, organisational change, resistance, sustainable adoption and international assignments.',
+    situations: enSituations,
+    canHelp: [
+      'Clarify the change mandate, business need and local operating reality.',
+      'Map stakeholders, decision rights and the sources of resistance.',
+      'Prepare difficult conversations and a credible change narrative.',
+      'Build adoption through small experiments, reinforcement and sustainable leadership capacity.',
+    ],
+    steps: [
+      'Send a confidential enquiry describing the role and situation.',
+      'If the work appears suitable, agree scope, confidentiality and success measures in writing.',
+      'Work through six focused sessions with decisions and field experiments between them.',
+    ],
+    programme: {
+      title: 'UK-Asia Cross-Border Leadership Coaching Programme',
+      summary: 'Six one-to-one online coaching sessions, each 60 minutes, normally completed over 12-16 weeks. Available for self-funded and organisation-sponsored work.',
+      details: [
+        'Clarify the mandate, current system and useful signs of progress.',
+        'Map stakeholders, resistance, expectations and decision rights across locations.',
+        'Prepare real conversations and test small adoption experiments between sessions.',
+        'Close with reinforcement, resilience and unresolved risks made explicit.',
+      ],
+      fees: 'After reviewing your enquiry, SustainSage will confirm whether the work is suitable and provide the scope, fee and written terms before any commitment.',
+    },
+    fit: {
+      suitable: [
+        'You are a founder, country manager, functional leader, assignee or sponsor responsible for a cross-border situation.',
+        'Your work connects the UK with China, Taiwan or wider Asia, often inside an SME or a lean local operation.',
+        'You retain decision authority and want a confidential space to think, prepare and act.',
+      ],
+      notSuitable: [
+        'You need therapy, crisis support or regulated professional advice.',
+        'You want recruitment, CV writing, job placement or someone to make the decision for you.',
+        'You are looking for graduate or early-career coaching.',
+      ],
+    },
+    about: {
+      title: 'A conversation where the difficult parts do not need to be simplified',
+      summary: 'Hao-Cheng works directly with leaders carrying responsibility between headquarters, local teams and cultures.',
+      paragraphs: [
+        'Hao-Cheng Tsai works with people who are accountable to headquarters, local teams and business outcomes at the same time. His background includes operational, commercial and people responsibilities across Asian and UK contexts, including manufacturing operations and cross-cultural teams.',
+        'That experience is not used to say, “I already know your situation.” Its value is recognising the tensions cross-border leaders often carry alone: responding to headquarters while earning local trust, and leading change while important concerns remain unspoken.',
+        'The work begins with the person inside the role: what you are trying to protect, what is difficult to say inside the organisation, what each relationship is asking of you and which decision you must ultimately own.',
+      ],
+      perspective: 'I will not begin by assuming that headquarters is wrong, the local team is resistant or one culture holds the answer. I want to understand what each side is trying to protect, what you are accountable for and what change is genuinely possible within the reality of the organisation.',
+      relationship: [
+        { title: 'Room for unfinished thinking', body: 'You do not need to arrive with a polished account. Contradiction, uncertainty and the parts that are difficult to say elsewhere often show where the real issue sits.' },
+        { title: 'Understood, not simply agreed with', body: 'Your context is taken seriously. Assumptions, avoidance and the consequences of a choice can still be examined with care and directness.' },
+        { title: 'Your decision stays yours', body: 'Hao-Cheng does not speak for headquarters or take over the role of consultant or decision-maker. The work helps you see responsibility clearly and prepare for real conversations.' },
+        { title: 'Language that serves the thinking', body: 'Sessions can be held in English or Chinese, so you can use the language that best carries the detail instead of having to prove how fluent you are.' },
+      ],
+    },
+    tools: enTools,
+    changeTools: enChangeLeadershipTools,
+    changeToolStages: changeLeadershipStages['en-GB'],
+    toolStages: ['Pause and notice', 'Understand yourself', 'Clarify a choice', 'Start a small action'],
+    boundaries: sharedBoundaries.en,
+  },
+  'zh-TW': {
+    localeLabel: '繁體中文',
+    nav: {
+      home: '首頁',
+      coaching: 'Coaching',
+      companies: '企業合作',
+      about: '關於',
+      tools: '資源',
+      contact: '聯絡',
+    },
+    cta: '把情境寫給 Hao-Cheng',
+    positioning: '為在英國與亞洲之間承擔管理責任的 SME 創辦人、主管與外派人才，提供跨文化領導 Coaching。',
+    supporting: '協助處理總部與在地團隊期待、組織變革、阻力與採用，以及外派任務中的持續領導。',
+    situations: zhSituations,
+    canHelp: [
+      '釐清變革授權、商業需求與在地營運現實。',
+      '整理利害關係人、決策權與阻力來源。',
+      '準備困難對話與可信的變革敘事。',
+      '透過小型實驗、強化機制與可持續承載力，讓採用真正發生。',
+    ],
+    steps: [
+      '提交保密合作詢問，說明你的角色與目前情境。',
+      '若議題適合，再以書面確認範圍、保密方式與成功標準。',
+      '進入六次聚焦會談，並在會談之間執行決策與小型實驗。',
+    ],
+    programme: {
+      title: '英國與亞洲跨境領導 Coaching 計畫',
+      summary: '六次一對一線上 Coaching，每次 60 分鐘，通常在 12-16 週內完成。可由個人自費或企業贊助。',
+      details: [
+        '釐清授權範圍、目前系統與有意義的進展指標。',
+        '整理跨地點的利害關係人、阻力、期待與決策權。',
+        '準備真實對話，並在會談之間測試小型採用實驗。',
+        '以強化機制、韌性安排與尚未解決的風險收尾。',
+      ],
+      fees: '閱讀你的詢問後，SustainSage 會先確認議題是否適合，再於任何承諾之前提供合作範圍、費用與書面條款。',
+    },
+    fit: {
+      suitable: [
+        '你是創辦人、Country Manager、功能主管、外派者或企業 Sponsor，並對跨境情境負有責任。',
+        '你的工作連結英國與中國、台灣或其他亞洲市場，常見於 SME 或精簡的在地營運單位。',
+        '你保有決策責任，並需要一個保密空間來思考、準備與行動。',
+      ],
+      notSuitable: [
+        '你需要心理治療、危機支援或受規管的專業意見。',
+        '你需要招聘、代寫 CV、代找職缺，或希望有人替你作決定。',
+        '你正在尋找畢業生或職涯初期 Coaching。',
+      ],
+    },
+    about: {
+      title: '一場不必把真正難處簡化掉的對話',
+      summary: 'Hao-Cheng 直接陪伴同時對總部、在地團隊與跨文化關係承擔責任的領導者。',
+      paragraphs: [
+        'Hao-Cheng Tsai 陪伴的是同時對總部、在地團隊與業務結果負責的人。他曾在亞洲與英國脈絡中承擔營運、商業與團隊責任，包括製造營運與跨文化團隊合作。',
+        '這些經歷不會被拿來告訴客戶「你的情況我早就懂」。它真正的價值，是能辨識跨境領導者經常獨自承受的拉扯：既要回應總部，又要取得在地信任；既要推動改變，也要面對沒有被說出口的顧慮。',
+        'Coaching 從角色裡的那個人開始：你正在保護什麼、哪些話很難在組織內說、每段關係向你要求什麼，以及哪個決定是你必須親自承擔的。',
+      ],
+      perspective: '我不會先假設總部錯了、在地團隊只是在抗拒，也不會把某一種文化當成標準答案。我想先理解每一方正在保護什麼、你真正要對什麼負責，以及在組織現實中，哪些改變是真的可行。',
+      relationship: [
+        { title: '可以先說還沒有整理好的版本', body: '你不需要表現得已經想清楚。矛盾、猶豫與不方便在公司裡說的部分，往往最能指出真正的問題在哪裡。' },
+        { title: '被理解，但不被一味認同', body: '你的處境會被認真看待；你的假設、迴避，以及每個選擇可能帶來的代價，也會被直接而審慎地檢視。' },
+        { title: '決定仍然屬於你', body: 'Hao-Cheng 不會替總部發言，也不會取代顧問或決策者的角色。這項工作協助你看清責任，並準備真實對話。' },
+        { title: '讓語言服務思考', body: '會談可使用英文或中文，讓你選擇最能承載細節的語言，而不是先證明自己的語言能力。' },
+      ],
+    },
+    tools: zhTools,
+    changeTools: zhChangeLeadershipTools,
+    changeToolStages: changeLeadershipStages['zh-TW'],
+    toolStages: ['停下來並留意', '理解自己', '釐清選擇', '開始一個小行動'],
+    boundaries: sharedBoundaries.zh,
+  },
+} as const;
+
+export function normaliseLocale(locale?: string): SupportedLocale {
+  return locale === 'zh-TW' ? 'zh-TW' : 'en-GB';
+}
+
+export function getSiteContent(locale?: string) {
+  return siteContent[normaliseLocale(locale)];
+}
+
+export const primaryNavigation = [
+  { key: 'home', href: '/' },
+  { key: 'coaching', href: '/coaching' },
+  { key: 'companies', href: '/for-companies' },
+  { key: 'about', href: '/about' },
+  { key: 'tools', href: '/reflection-tools' },
+  { key: 'contact', href: '/contact' },
+] as const;
+
+export const legalNavigation = [
+  { key: 'Privacy Policy', href: '/legal/privacy' },
+  { key: 'Cookie Policy', href: '/legal/cookie-policy' },
+  { key: 'Coaching Terms', href: '/legal/coaching-terms' },
+  { key: 'Coaching Boundaries', href: '/legal/coaching-boundaries' },
+] as const;

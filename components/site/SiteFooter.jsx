@@ -1,78 +1,43 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { useTranslation } from 'next-i18next';
-
-const NAV_LINKS = [
-  { href: '/', label: 'home' },
-  { href: '/services', label: 'services' },
-  { href: '/resources', label: 'resources' },
-  { href: '/blog', label: 'blog' },
-  { href: '/about', label: 'about' },
-  { href: '/contact', label: 'contact' },
-  { href: '/faq', label: 'faq' },
-];
+import { useRouter } from 'next/router';
+import { ArrowUpRight, Compass, EnvelopeSimple } from '@phosphor-icons/react';
+import { getSiteContent, legalNavigation, primaryNavigation, siteFacts } from '@/content/siteStrategy';
 
 export default function SiteFooter() {
-  const { t } = useTranslation('common');
-  const { t: tNav } = useTranslation('nav');
+  const router = useRouter();
+  const content = getSiteContent(router.locale);
   const year = new Date().getFullYear();
-
   return (
-    <footer className="ssg-site-footer">
-      <div className="ssg-footer-inner">
-        <div className="flex flex-1 flex-col gap-4 text-[var(--color-ink-muted)]">
-          <div className="flex items-center gap-3">
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--color-primary-soft)]">
-              <Image src="/brand/ssg-logo-mark.png" alt="SustainSage Group logo" width={22} height={22} />
-            </span>
-            <div>
-              <p className="text-base font-semibold text-[var(--color-ink)]">SustainSage Group</p>
-              <p className="text-xs text-[var(--color-ink-muted)]">{t('footer.copyright', { year })}</p>
-            </div>
+    <footer className="bg-[#10251d] text-[#cbd8d1]">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[1.35fr_.65fr_.65fr] lg:py-20">
+        <div>
+          <div className="flex items-center gap-3 text-white">
+            <span className="grid h-11 w-11 place-items-center rounded-[.9rem] bg-[#e7eee9] text-[#173d2f]"><Compass className="h-6 w-6" /></span>
+            <p className="text-xl font-bold tracking-[-.025em]">SustainSage</p>
           </div>
-          <p className="max-w-sm text-sm text-[var(--color-ink-muted)]">{t('footer.philosophy')}</p>
+          <p className="mt-5 max-w-md text-pretty text-sm leading-7">{content.positioning}</p>
+          <a className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#f0aa65] hover:text-white" href={`mailto:${siteFacts.email}`}>
+            <EnvelopeSimple className="h-5 w-5" />
+            {siteFacts.email}
+          </a>
         </div>
-        <div className="flex flex-1 flex-col gap-8 md:flex-row md:justify-end">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-muted)]">
-              {t('footer.sitemapTitle')}
-            </p>
-            <ul className="mt-3 space-y-2 text-sm">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-[var(--color-ink-muted)] transition-colors hover:text-[var(--color-primary)]"
-                  >
-                    {tNav(link.label)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-wide text-[var(--color-ink-muted)]">
-              {t('footer.contactTitle')}
-            </p>
-            <ul className="mt-3 space-y-2 text-sm text-[var(--color-ink-muted)]">
-              <li>
-                <a href="mailto:hello@sustainsage.com" className="ssg-link">
-                  hello@sustainsage.com
-                </a>
-              </li>
-              <li>Southsea, England</li>
-              <li>
-                <a
-                  href="https://linkedin.com/company/sustainsage-group-ltd"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="ssg-link"
-                >
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </div>
+        <nav aria-label="Footer" className="text-sm">
+          <p className="mb-5 font-bold tracking-[.12em] text-white">PAGES</p>
+          <ul className="grid gap-3">
+            {primaryNavigation.map((link) => <li key={link.href}><Link className="inline-flex items-center gap-1 hover:text-white" href={link.href}>{content.nav[link.key]}<ArrowUpRight className="h-3.5 w-3.5" /></Link></li>)}
+          </ul>
+        </nav>
+        <nav aria-label="Legal" className="text-sm">
+          <p className="mb-5 font-bold tracking-[.12em] text-white">LEGAL</p>
+          <ul className="grid gap-3">
+            {legalNavigation.map((link) => <li key={link.href}><Link className="hover:text-white" href={link.href}>{link.key}</Link></li>)}
+          </ul>
+        </nav>
+      </div>
+      <div className="border-t border-white/10">
+        <div className="mx-auto grid max-w-7xl gap-2 px-5 py-6 text-xs leading-5 sm:px-8 lg:grid-cols-2 lg:justify-between">
+          <p>© {year} {siteFacts.legalName}. Company No. {siteFacts.companyNumber}. {siteFacts.jurisdiction}.</p>
+          <p className="lg:text-right">Registered office: {siteFacts.registeredOffice}</p>
         </div>
       </div>
     </footer>
